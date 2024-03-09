@@ -8,7 +8,7 @@ The collection includes scripts for:
 - Real-time motion detection and object tracking.
 - Edge detection for improved visual analysis.
 - Dynamic image enhancements including brightness, contrast adjustments, and advanced noise reduction.
-- A Tkinter-based application launcher that allows users to manage and execute the aforementioned scripts dynamically.
+- A Tkinter-based application launcher, `app_launcher_v2.py`, that allows users to manage and execute the aforementioned scripts dynamically.
 
 Each script is designed to operate independently or in conjunction to provide a comprehensive suite of tools for drone vision applications.
 
@@ -24,16 +24,16 @@ Each script is designed to operate independently or in conjunction to provide a 
 
 3. **Download the Toolkit**: Clone or download the toolkit repository to your local machine.
 
-4. **Place Scripts in a Common Directory**: Ensure all scripts are located in a common directory, such as `C:\temp\Drone_CV_Vision`. The app launcher script (`tkinter_launcher.py`) will dynamically list and allow execution of scripts from this directory.
+4. **Place Scripts in a Common Directory**: Ensure all scripts are located in a common directory, such as `C:\temp\Drone_CV_Vision`. The app launcher script, `app_launcher_v2.py`, will dynamically list and allow execution of scripts from this directory.
 
 ## Running the App Launcher
 
-The Tkinter app launcher (`tkinter_launcher.py`) provides a graphical interface for launching and managing the drone vision scripts. Follow these steps to use the launcher:
+The Tkinter app launcher, `app_launcher_v2.py`, provides a graphical interface for launching and managing the drone vision scripts. Follow these steps to use the launcher:
 
-1. **Launch the App Launcher**: Navigate to the directory containing the scripts and run the `tkinter_launcher.py` script:
+1. **Launch the App Launcher**: Navigate to the directory containing the scripts and run the `app_launcher_v2.py` script:
 
     ```
-    python tkinter_launcher.py
+    python app_launcher_v2.py
     ```
 
 2. **Select and Launch Scripts**: The launcher will display buttons for each Python script prefixed with an underscore (`_`). Click on the button corresponding to the script you wish to run. The selected script will launch in a new window.
