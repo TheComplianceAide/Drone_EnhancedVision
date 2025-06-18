@@ -39,8 +39,8 @@ class App:
     def build_ui(self):
         self.master.title("⟦  DRONE CV  ⟧")
         self.master.configure(bg=COL_BG)
-        self.master.geometry("1180x480")   # widescreen panel
-        self.master.resizable(False, False)
+        self.master.geometry("1000x1000")   # taller panel with more rows and fewer columns
+        self.master.resizable(True, True)
 
         # HUD‑style title bar
         hdr = tk.Label(self.master, text="DRONE VISION OPS",
@@ -82,8 +82,8 @@ class App:
         style = ttk.Style(self.master)
         style.theme_use("clam")
         style.configure("Jet.TButton",
-                        foreground=COL_TXT, background=COL_BTN,
-                        font=FONT_BTN, padding=10, width=15)
+                                foreground=COL_TXT, background=COL_BTN,
+                                font=FONT_BTN, padding=10, width=40)
         style.map("Jet.TButton",
                   foreground=[("pressed", "#ffffff"), ("disabled", "#666666")],
                   background=[("active", "#3b3b3b")])
@@ -97,7 +97,7 @@ class App:
                               command=lambda s=script: self.select_script(s))
                 b.grid(row=row, column=col, padx=5, pady=5)
                 col += 1
-                if col == 4:
+                if col == 2:
                     col = 0; row += 1
 
     def select_script(self, script):
