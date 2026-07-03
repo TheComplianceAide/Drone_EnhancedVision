@@ -2,6 +2,10 @@
 Mavic 3 Click‑to‑Zoom RTMP Viewer (Touch‑Friendly + Zoom Buttons)
 """
 
+from venv_bootstrap import maybe_relaunch_into_venv
+
+maybe_relaunch_into_venv()
+
 import cv2, numpy as np, time, math
 
 # ─ Config ─

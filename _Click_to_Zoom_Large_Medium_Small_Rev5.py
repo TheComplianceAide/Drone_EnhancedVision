@@ -2,6 +2,10 @@
 Mavic 3 Click‑to‑Zoom RTMP Viewer  –  XL Touch Buttons
 """
 
+from venv_bootstrap import maybe_relaunch_into_venv
+
+maybe_relaunch_into_venv()
+
 import cv2, numpy as np, time, math
 
 # ─── Config ────────────────────────────────────────────────────────
@@ -67,7 +71,7 @@ x1_plus = x2_plus - BTN_W
 x2_minus = x1_plus - BTN_SP
 x1_minus = x2_minus - BTN_W
 btns += [
-    (x1_minus, BTN_Y1, x2_minus, BTN_Y2, (255,255,255), "−", "z_out"),
+    (x1_minus, BTN_Y1, x2_minus, BTN_Y2, (255,255,255), "-", "z_out"),
     (x1_plus,  BTN_Y1, x2_plus,  BTN_Y2, (255,255,255), "+", "z_in")
 ]
 
@@ -144,7 +148,7 @@ while True:
     now = time.time(); fps = 1/(now - prev_t); prev_t = now
     fps_buf.append(fps); fps_buf = fps_buf[-30:]
     gsd_cm = 2*ALT_FT*0.3048*math.tan(math.radians(FOV_DEG/2))/frame_w*100
-    bar = f"{time.strftime('%H:%M:%S')} | Z{z_lvl}× | GSD {gsd_cm:.1f} cm/px | FPS {sum(fps_buf)/len(fps_buf):.1f}"
+    bar = f"{time.strftime('%H:%M:%S')} | Z{z_lvl}x | GSD {gsd_cm:.1f} cm/px | FPS {sum(fps_buf)/len(fps_buf):.1f}"
     cv2.rectangle(live, (0,frame_h-30), (frame_w,frame_h), (0,0,0), -1)
     cv2.putText(live, bar, (10, frame_h-7),
                 cv2.FONT_HERSHEY_PLAIN, 1.6, (0,255,255), 2, cv2.LINE_AA)

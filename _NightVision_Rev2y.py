@@ -1,4 +1,8 @@
 
+from venv_bootstrap import maybe_relaunch_into_venv
+
+maybe_relaunch_into_venv()
+
 
 import cv2
 import numpy as np

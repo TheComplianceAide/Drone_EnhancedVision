@@ -3,6 +3,10 @@ DJI Mavic 3 Pro — enhanced‑vision RTMP viewer
 (only RTMP input + window‑resize modifications, everything else unchanged)
 """
 
+from venv_bootstrap import maybe_relaunch_into_venv
+
+maybe_relaunch_into_venv()
+
 import cv2
 import numpy as np
 import time

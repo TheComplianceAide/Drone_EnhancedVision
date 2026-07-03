@@ -3,6 +3,10 @@ DJI Mavic 3 Pro — motion‑detection RTMP viewer
 (only RTMP input + window‑resize; detection logic unchanged)
 """
 
+from venv_bootstrap import maybe_relaunch_into_venv
+
+maybe_relaunch_into_venv()
+
 import cv2
 import numpy as np
 

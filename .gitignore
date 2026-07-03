@@ -1,0 +1,19 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+
+.venv/
+.venv_py39_20260214_1349/
+
+# Runtime downloads / outputs
+models/
+snapshots/
+launcher_prefs.json
+logs/
+events/
+.playwright-cli/
+
+# If you add packaging later
+dist/
+build/
+*.egg-info/

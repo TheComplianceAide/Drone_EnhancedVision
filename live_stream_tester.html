@@ -2,11 +2,14 @@
 <html>
 <head><script src="https://cdn.jsdelivr.net/npm/flv.js@latest"></script></head>
 <body style="margin:0;background:#000;">
-  <video id="v" controls autoplay style="width:100%;height:100%"></video>
+  <video id="v" controls autoplay muted playsinline style="width:100%;height:100%"></video>
   <script>
     if (flvjs.isSupported()) {
       const flvPlayer = flvjs.createPlayer({
         type: 'flv',
+        isLive: true,
+        hasAudio: false,
+        enableStashBuffer: false,
         url: 'http://127.0.0.1:8000/live/mavic3.flv'
       });
       flvPlayer.attachMediaElement(document.getElementById('v'));

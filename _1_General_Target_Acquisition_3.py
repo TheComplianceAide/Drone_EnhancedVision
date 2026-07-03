@@ -1,12 +1,18 @@
+from venv_bootstrap import maybe_relaunch_into_venv
+
+maybe_relaunch_into_venv()
+
 import cv2
 import numpy as np
 import time
+import os
+import sys
 from collections import deque
 
 # ── User config ────────────────────────────────────────────────────
 RTMP_URL     = "rtmp://127.0.0.1:1935/live/mavic3"
-CFG_PATH     = "yolov4.cfg"
-WEIGHTS_PATH = "yolov4.weights"
+CFG_PATH     = "yolov4-tiny.cfg"
+WEIGHTS_PATH = "yolov4-tiny.weights"
 NAMES_PATH   = "coco.names"        # 80 classes
 WINDOW_NAME  = "Mavic3 — YOLOv4 TargetAcq"
 WIN_W, WIN_H = 1280, 720
@@ -15,6 +21,19 @@ NMS_THRESH   = 0.4                 # Non‑max suppression
 # If you *only* care about a subset, edit this set:
 TARGET_SET   = set(open(NAMES_PATH).read().strip().splitlines())  # all 80
 # ───────────────────────────────────────────────────────────────────
+
+def resolve_file(primary, fallback):
+    if os.path.exists(primary):
+        return primary
+    if os.path.exists(fallback):
+        return fallback
+    sys.exit(
+        f"Missing model file(s). Tried '{primary}' and '{fallback}'. "
+        "Place the YOLOv4 files in this folder."
+    )
+
+CFG_PATH = resolve_file(CFG_PATH, "yolov4.cfg")
+WEIGHTS_PATH = resolve_file(WEIGHTS_PATH, "yolov4.weights")
 
 # 1.  Load the network -------------------------------------------------
 net = cv2.dnn.readNetFromDarknet(CFG_PATH, WEIGHTS_PATH)

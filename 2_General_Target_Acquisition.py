@@ -13,8 +13,12 @@ pip install ultralytics opencv-python numpy
 import cv2
 import numpy as np
 import time
+import sys
 from collections import Counter, deque
-from ultralytics import YOLO
+try:
+    from ultralytics import YOLO
+except ImportError:
+    sys.exit("Missing dependency 'ultralytics'. Install with: pip install ultralytics")
 
 # ─── Runtime configuration ─────────────────────────────────────────
 RTMP_URL    = "rtmp://127.0.0.1:1935/live/mavic3"

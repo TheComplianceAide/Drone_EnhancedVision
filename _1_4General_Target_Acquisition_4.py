@@ -5,14 +5,20 @@ Author : Randy Blasik & ChatGPT — 2025-04-25
 Run    : python mavic3_tracker_ui.py --url rtmp://<ip>:1935/live/mavic3
 """
 
-import cv2, numpy as np, argparse, time, sys, scipy.fft
+from venv_bootstrap import maybe_relaunch_into_venv
+
+maybe_relaunch_into_venv()
+
+import cv2, numpy as np, argparse, time, sys
 from collections import OrderedDict
+
+from rtmp_latest import LatestFrameGrabber
 
 # ───────── CLI ─────────
 ap = argparse.ArgumentParser()
 ap.add_argument("--url", default="rtmp://127.0.0.1:1935/live/mavic3")
-ap.add_argument("--width",  type=int, default=3840)           # capture size
-ap.add_argument("--height", type=int, default=2160)
+ap.add_argument("--width",  type=int, default=1920)           # capture size (reliability first)
+ap.add_argument("--height", type=int, default=1080)
 ap.add_argument("--disp_w", type=int, default=960)            # window size
 ap.add_argument("--disp_h", type=int, default=540)
 ap.add_argument("--min-area", type=int, default=400)
@@ -75,15 +81,10 @@ class CentroidTracker:
         buf = self.objects[oid][3]
         if len(buf) < 12: return False
         sig = np.array(buf[-12:]) - np.mean(buf[-12:])
-        yf  = np.abs(scipy.fft.rfft(sig))
+        yf  = np.abs(np.fft.rfft(sig))
         return yf[4] / (yf[1] + 1e-6) > 3.0   # >4 Hz energy
 
 # ───────── Video / BG model ─────────
-cap = cv2.VideoCapture(args.url, cv2.CAP_FFMPEG)
-if not cap.isOpened(): sys.exit("❌ stream error")
-cap.set(cv2.CAP_PROP_FRAME_WIDTH,  args.width)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, args.height)
-
 bg  = cv2.createBackgroundSubtractorKNN(history=args.history, detectShadows=False)
 ker = cv2.getStructuringElement(cv2.MORPH_RECT,(3,3))
 ct  = CentroidTracker(args.ttl)
@@ -95,7 +96,7 @@ fps, t0 = 0, time.time()
 # ───────── On-screen button bar ─────────
 BTN_H   = 50                 # bar height @ display scale
 BTN_PAD = 10
-btn_defs = [("+", "+"), ("-", "-"), ("1x", "reset"), ("✕", "quit")]
+btn_defs = [("+", "+"), ("-", "-"), ("1x", "reset"), ("X", "quit")]
 
 def build_buttons():
     btns = []
@@ -134,7 +135,7 @@ def click(event,x,y,flags,param):
     if   lbl == "+":   zoom = min(15, zoom+0.5)
     elif lbl == "-":   zoom = max(1,  zoom-0.5)
     elif lbl == "1x":  zoom = 1
-    elif lbl == "✕":   cv2.destroyAllWindows(); sys.exit(0)
+    elif lbl == "X":   cv2.destroyAllWindows(); sys.exit(0)
     else:              # click on video → move centre
         zx = int(x * W / DW);  zy = int(y * H / DH)
 cv2.setMouseCallback("Mavic-3 Tracker", click)
@@ -145,9 +146,81 @@ def cross(img,x,y,wing=False):
     cv2.line(img,(x-size,y),(x+size,y),col,2)
     cv2.line(img,(x,y-size),(x,y+size),col,2)
 
+def draw_center_text(img, text, y_offset=0, color=(255, 255, 255)):
+    (tw, th), _ = cv2.getTextSize(text, cv2.FONT_HERSHEY_SIMPLEX, 0.9, 2)
+    x = max(10, (img.shape[1] - tw) // 2)
+    y = max(th + 10, (img.shape[0] // 2) + y_offset)
+    cv2.putText(img, text, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.9, color, 2, cv2.LINE_AA)
+
+grabber = None
+last_frame_ts = None
+last_ok_wall = 0.0
+reconnect_backoff = 0.2
+next_reconnect_at = 0.0
+last_err = ""
+last_probe = 0.0
+grabber_started_at = 0.0
+
 while True:
-    ok, frame = cap.read()
-    if not ok: break
+    now = time.time()
+
+    # (Re)connect if needed.
+    if grabber is None and now >= next_reconnect_at:
+        try:
+            grabber = LatestFrameGrabber(args.url, width=args.width, height=args.height)
+            reconnect_backoff = 0.2
+            last_err = ""
+            grabber_started_at = now
+        except Exception:
+            grabber = None
+            last_err = "open failed (retrying)"
+            next_reconnect_at = now + reconnect_backoff
+            reconnect_backoff = min(2.0, reconnect_backoff * 1.5)
+
+    frame = None
+    if grabber is not None:
+        frame, last_frame_ts = grabber.read_latest(copy=False)
+
+    # If we have no decoded frame yet, show a waiting screen.
+    if frame is None:
+        # If we connected but never got the first decodable frame, force a reconnect.
+        if grabber is not None and last_frame_ts is None and grabber_started_at and (now - grabber_started_at) > 2.0:
+            try:
+                grabber.close()
+            except Exception:
+                pass
+            grabber = None
+            last_err = "no frames yet (reconnecting)"
+            next_reconnect_at = now + 0.2
+
+        disp = np.zeros((DH, DW, 3), dtype=np.uint8)
+        draw_center_text(disp, "WAITING FOR RTMP...", y_offset=-20, color=(0, 255, 255))
+        draw_center_text(disp, args.url, y_offset=20, color=(200, 200, 200))
+        if last_err:
+            draw_center_text(disp, last_err, y_offset=60, color=(255, 180, 0))
+        cv2.imshow("Mavic-3 Tracker", disp)
+        if cv2.getWindowProperty("Mavic-3 Tracker", cv2.WND_PROP_VISIBLE) < 1:
+            break
+        key = cv2.waitKey(30) & 0xFF
+        if key in (ord('q'), 27):  # q or ESC
+            break
+        continue
+
+    last_ok_wall = now
+
+    # Detect stalled stream (no fresh frames) and reconnect.
+    if last_frame_ts is not None and (now - last_frame_ts) > 2.0:
+        if grabber is not None:
+            try:
+                grabber.close()
+            except Exception:
+                pass
+        grabber = None
+        disp = cv2.resize(frame, (DW, DH))
+        draw_center_text(disp, "RECONNECTING...", y_offset=0, color=(0, 0, 255))
+        cv2.imshow("Mavic-3 Tracker", disp)
+        cv2.waitKey(30)
+        continue
 
     mask = bg.apply(frame);   mask = cv2.morphologyEx(mask,cv2.MORPH_OPEN,ker,2)
     cnts,_ = cv2.findContours(mask,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
@@ -172,4 +245,9 @@ while True:
     cv2.imshow("Mavic-3 Tracker", disp)
     if cv2.getWindowProperty("Mavic-3 Tracker",cv2.WND_PROP_VISIBLE)<1: break
 
-cap.release(); cv2.destroyAllWindows()
+if grabber is not None:
+    try:
+        grabber.close()
+    except Exception:
+        pass
+cv2.destroyAllWindows()

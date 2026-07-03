@@ -5,11 +5,19 @@ Detects people, vehicles and animals from the drone’s RTMP stream.
 Runs on CPU or GPU; no ONNX/OpenCV compatibility headaches.
 """
 
+from venv_bootstrap import maybe_relaunch_into_venv
+
+maybe_relaunch_into_venv()
+
 import cv2
 import numpy as np
 import time
+import sys
 from collections import deque
-from ultralytics import YOLO
+try:
+    from ultralytics import YOLO
+except ImportError:
+    sys.exit("Missing dependency 'ultralytics'. Install with: pip install ultralytics")
 
 # ── User config ────────────────────────────────────────────────────
 RTMP_URL    = "rtmp://127.0.0.1:1935/live/mavic3"
@@ -24,9 +32,19 @@ TARGET_SET   = {
 # ───────────────────────────────────────────────────────────────────
 
 # 1.  Load the model on appropriate device for performance
-import torch
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
-model = YOLO(MODEL_PATH, device=device)
+try:
+    import torch
+except ImportError:
+    sys.exit("Missing dependency 'torch'. Install with: pip install torch")
+
+if torch.backends.mps.is_available():
+    device = "mps"
+elif torch.cuda.is_available():
+    device = "cuda"
+else:
+    device = "cpu"
+
+model = YOLO(MODEL_PATH)
 
 # 2.  Open the RTMP stream
 cap = cv2.VideoCapture(RTMP_URL, cv2.CAP_FFMPEG)
@@ -58,7 +76,8 @@ while True:
     frame_count += 1
     do_detect = (frame_count == 1) or (frame_count % DETECT_EVERY_N_FRAMES == 0)
     if do_detect:
-        results = model(frame, verbose=False, imgsz=(640,360), half=device=='cuda')[0]
+        # Use stride-aligned height to avoid repeated Ultralytics warnings.
+        results = model(frame, verbose=False, imgsz=(640,384), device=device, half=(device == "cuda"))[0]
         last_results = results
     else:
         results = last_results
