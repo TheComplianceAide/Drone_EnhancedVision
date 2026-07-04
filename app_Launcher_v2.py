@@ -73,14 +73,22 @@ def terminate_process_tree(pid, *, timeout_sec: float = 1.0) -> None:
             pass
 
 # ── custom cockpit colours & fonts ────────────────────────────────
-COL_BG   = "#1e1e1e"   # MFD bezel
-COL_BTN  = "#2d2d2d"
-COL_TXT  = "#18ff14"   # HUD green
-COL_WARN = "#ff4040"
+COL_BG = "#071013"
+COL_PANEL = "#0e1b20"
+COL_PANEL_2 = "#13262d"
+COL_BTN = "#183038"
+COL_TXT = "#dffcf5"
+COL_MUTED = "#8fb3ad"
+COL_ACCENT = "#38f2c2"
+COL_BLUE = "#4aa3ff"
+COL_WARN = "#ff5c7a"
+COL_AMBER = "#ffd166"
 FONT_FAMILY = "Menlo" if sys.platform == "darwin" else "Consolas"
-FONT_HDR = (FONT_FAMILY, 18, "bold")
-FONT_BTN = (FONT_FAMILY, 14, "bold")
+FONT_HDR = (FONT_FAMILY, 24, "bold")
+FONT_SUB = (FONT_FAMILY, 11, "bold")
+FONT_BTN = (FONT_FAMILY, 12, "bold")
 FONT_BIG = (FONT_FAMILY, 16, "bold")
+FONT_SMALL = (FONT_FAMILY, 10, "bold")
 
 
 def _prefs_path(base_dir: str) -> str:
@@ -161,6 +169,63 @@ class JetButton(ttk.Button):
     def __init__(self, master, style="Jet.TButton", **kw):
         ttk.Button.__init__(self, master, style=style, **kw)
 
+
+class MavicBadge(tk.Canvas):
+    def __init__(self, master, **kw):
+        super().__init__(master, width=220, height=82, bg=COL_BG, highlightthickness=0, **kw)
+        self.bind("<Configure>", self._draw)
+        self._draw()
+
+    def _draw(self, _evt=None):
+        self.delete("all")
+        w = max(180, int(self.winfo_width() or 220))
+        h = max(70, int(self.winfo_height() or 82))
+        cx = w / 2
+        cy = h * 0.47
+
+        # Neon frame.
+        self.create_rectangle(4, 4, w - 4, h - 4, outline="#1e3a43", width=1)
+        self.create_line(12, h - 12, 54, h - 12, fill=COL_ACCENT, width=2)
+        self.create_line(w - 54, 12, w - 12, 12, fill=COL_BLUE, width=2)
+
+        # Mavic-style folding quad silhouette.
+        rotor_r = h * 0.13
+        rotors = [
+            (cx - 70, cy - 22),
+            (cx + 70, cy - 22),
+            (cx - 78, cy + 22),
+            (cx + 78, cy + 22),
+        ]
+        body = [(cx - 28, cy - 12), (cx + 30, cy - 10), (cx + 38, cy + 7), (cx + 8, cy + 18), (cx - 32, cy + 10)]
+
+        for x, y in rotors:
+            self.create_oval(x - rotor_r * 1.6, y - rotor_r * 0.72, x + rotor_r * 1.6, y + rotor_r * 0.72, outline=COL_MUTED, width=1)
+            self.create_oval(x - 3, y - 3, x + 3, y + 3, fill=COL_ACCENT, outline="")
+
+        arm_pairs = [
+            (cx - 21, cy - 7, rotors[0][0] + 8, rotors[0][1]),
+            (cx + 26, cy - 6, rotors[1][0] - 8, rotors[1][1]),
+            (cx - 18, cy + 9, rotors[2][0] + 8, rotors[2][1]),
+            (cx + 18, cy + 9, rotors[3][0] - 8, rotors[3][1]),
+        ]
+        for x1, y1, x2, y2 in arm_pairs:
+            self.create_line(x1, y1, x2, y2, fill=COL_MUTED, width=4)
+            self.create_line(x1, y1, x2, y2, fill="#1b333b", width=2)
+
+        self.create_polygon(body, fill="#162b32", outline=COL_ACCENT, width=2)
+        self.create_polygon(
+            cx - 9, cy + 14,
+            cx + 15, cy + 14,
+            cx + 10, cy + 27,
+            cx - 5, cy + 27,
+            fill="#0a171b",
+            outline=COL_BLUE,
+            width=1,
+        )
+        self.create_oval(cx - 2, cy + 18, cx + 8, cy + 28, outline=COL_ACCENT, width=1)
+        self.create_text(16, 18, text="MAVIC 3 PRO", fill=COL_TXT, font=(FONT_FAMILY, 9, "bold"), anchor="w")
+        self.create_text(w - 16, h - 17, text="AIRFRAME", fill=COL_MUTED, font=(FONT_FAMILY, 8, "bold"), anchor="e")
+
 class App:
     def __init__(self, master, path):
         self.master = master
@@ -179,7 +244,9 @@ class App:
         self._last_shape = None
         self._last_connected = False
 
-        self.script_buttons: dict[str, ttk.Button] = {}
+        self.script_buttons: dict[str, list[ttk.Button]] = {}
+        self.advanced_visible = tk.BooleanVar(value=False)
+        self._icons: dict[tuple[str, str], tk.PhotoImage] = {}
 
         self.build_ui()
         self.display_ip_address()
@@ -199,155 +266,468 @@ class App:
             "_06_ISR_MainPanel_Motion_AutoZoom_Rev1.py": "ISR MAIN PANEL (Motion + AutoZoom)",
             "_07_Radar_Motion_GPU_AutoZoom_Rev1.py": "RADAR (Motion Only) + AutoZoom",
             "_08_M5_Radar_Motion_AutoZoom_Rev1.py": "M5 RADAR (Auto-Tuned Motion)",
+            "_09_M5_TemporalEventScope_Rev1.py": "M5 TEMPORAL EVENTSCOPE",
+            "_10_M5_ISR_ReconSuite_Rev1.py": "M5 ISR RECON SUITE",
+            "_11_M5_LakeHouse_AutoScout_Rev1.py": "M5 LAKEHOUSE AUTOSCOUT",
         }
         return mapping.get(script, script)
 
+    def _configure_styles(self) -> None:
+        style = ttk.Style(self.master)
+        style.theme_use("clam")
+        style.configure(
+            "Jet.TButton",
+            foreground=COL_TXT,
+            background=COL_BTN,
+            font=FONT_BTN,
+            padding=(12, 8),
+            borderwidth=0,
+            focusthickness=0,
+        )
+        style.configure(
+            "Primary.TButton",
+            foreground="#02110d",
+            background=COL_ACCENT,
+            font=(FONT_FAMILY, 14, "bold"),
+            padding=(16, 14),
+            borderwidth=0,
+        )
+        style.configure(
+            "Danger.TButton",
+            foreground="#1d0409",
+            background=COL_WARN,
+            font=FONT_BTN,
+            padding=(12, 10),
+            borderwidth=0,
+        )
+        style.configure(
+            "Ghost.TButton",
+            foreground=COL_TXT,
+            background=COL_PANEL_2,
+            font=FONT_BTN,
+            padding=(10, 8),
+            borderwidth=0,
+        )
+        style.configure(
+            "Mission.TButton",
+            foreground=COL_TXT,
+            background=COL_PANEL_2,
+            font=(FONT_FAMILY, 12, "bold"),
+            padding=(12, 10),
+            borderwidth=0,
+        )
+        style.configure(
+            "MissionSel.TButton",
+            foreground="#02110d",
+            background=COL_ACCENT,
+            font=(FONT_FAMILY, 12, "bold"),
+            padding=(12, 10),
+            borderwidth=0,
+        )
+        style.map("Jet.TButton", background=[("active", "#23444e"), ("disabled", "#1b2b30")])
+        style.map("Primary.TButton", background=[("active", "#7fffe0"), ("disabled", "#24423d")])
+        style.map("Danger.TButton", background=[("active", "#ff8aa0"), ("disabled", "#3f2229")])
+        style.map("Ghost.TButton", background=[("active", "#1d3a44"), ("disabled", "#16262b")])
+        style.map("Mission.TButton", background=[("active", "#1d3a44")])
+        style.map("MissionSel.TButton", background=[("active", "#7fffe0")])
+
+    def _panel(self, master, *, padx: int = 18, pady: int = 16) -> tk.Frame:
+        frame = tk.Frame(master, bg=COL_PANEL, highlightbackground="#1e3a43", highlightthickness=1)
+        frame.pack_propagate(False)
+        frame.grid_propagate(False)
+        frame._padx = padx  # type: ignore[attr-defined]
+        frame._pady = pady  # type: ignore[attr-defined]
+        return frame
+
+    def _label(self, master, text: str, *, fg: str = COL_TXT, bg: str | None = None, font=None, anchor: str = "w"):
+        return tk.Label(master, text=text, fg=fg, bg=bg or master.cget("bg"), font=font or FONT_SMALL, anchor=anchor)
+
+    def _button_icon(self, kind: str, color: str = COL_TXT) -> tk.PhotoImage:
+        key = (kind, color)
+        if key in self._icons:
+            return self._icons[key]
+
+        size = 24
+        img = tk.PhotoImage(master=self.master, width=size, height=size)
+
+        def dot(x: int, y: int, c: str = color) -> None:
+            if 0 <= x < size and 0 <= y < size:
+                img.put(c, (x, y))
+
+        def rect(x1: int, y1: int, x2: int, y2: int, c: str = color) -> None:
+            img.put(c, to=(max(0, x1), max(0, y1), min(size, x2), min(size, y2)))
+
+        def line(x1: int, y1: int, x2: int, y2: int, width: int = 2, c: str = color) -> None:
+            dx = abs(x2 - x1)
+            dy = -abs(y2 - y1)
+            sx = 1 if x1 < x2 else -1
+            sy = 1 if y1 < y2 else -1
+            err = dx + dy
+            x, y = x1, y1
+            while True:
+                for ox in range(-(width // 2), width // 2 + 1):
+                    for oy in range(-(width // 2), width // 2 + 1):
+                        dot(x + ox, y + oy, c)
+                if x == x2 and y == y2:
+                    break
+                e2 = 2 * err
+                if e2 >= dy:
+                    err += dy
+                    x += sx
+                if e2 <= dx:
+                    err += dx
+                    y += sy
+
+        def circle(cx: int, cy: int, r: int, *, fill: bool = True, width: int = 2, c: str = color) -> None:
+            r2 = r * r
+            inner = max(0, r - width)
+            inner2 = inner * inner
+            for y in range(cy - r, cy + r + 1):
+                for x in range(cx - r, cx + r + 1):
+                    d = (x - cx) * (x - cx) + (y - cy) * (y - cy)
+                    if d <= r2 and (fill or d >= inner2):
+                        dot(x, y, c)
+
+        def triangle(points: tuple[tuple[int, int], tuple[int, int], tuple[int, int]], c: str = color) -> None:
+            (x1, y1), (x2, y2), (x3, y3) = points
+            min_x, max_x = max(0, min(x1, x2, x3)), min(size - 1, max(x1, x2, x3))
+            min_y, max_y = max(0, min(y1, y2, y3)), min(size - 1, max(y1, y2, y3))
+            denom = (y2 - y3) * (x1 - x3) + (x3 - x2) * (y1 - y3)
+            if denom == 0:
+                return
+            for y in range(min_y, max_y + 1):
+                for x in range(min_x, max_x + 1):
+                    a = ((y2 - y3) * (x - x3) + (x3 - x2) * (y - y3)) / denom
+                    b = ((y3 - y1) * (x - x3) + (x1 - x3) * (y - y3)) / denom
+                    g = 1 - a - b
+                    if a >= 0 and b >= 0 and g >= 0:
+                        dot(x, y, c)
+
+        if kind == "play":
+            triangle(((8, 5), (8, 19), (20, 12)))
+        elif kind == "stop":
+            rect(7, 7, 18, 18)
+        elif kind == "stream":
+            circle(12, 12, 7, fill=False, width=3)
+            circle(12, 12, 3)
+        elif kind == "link":
+            circle(9, 12, 5, fill=False, width=2)
+            circle(15, 12, 5, fill=False, width=2)
+            rect(9, 10, 15, 14)
+        elif kind == "key":
+            circle(8, 10, 4, fill=False, width=2)
+            line(11, 13, 19, 21, width=2)
+            line(16, 18, 19, 15, width=2)
+            line(18, 20, 21, 17, width=2)
+        elif kind == "eye":
+            line(4, 12, 8, 8, width=2)
+            line(8, 8, 16, 8, width=2)
+            line(16, 8, 20, 12, width=2)
+            line(20, 12, 16, 16, width=2)
+            line(16, 16, 8, 16, width=2)
+            line(8, 16, 4, 12, width=2)
+            circle(12, 12, 3)
+        elif kind == "snapshot":
+            line(5, 7, 19, 7, width=2)
+            line(19, 7, 19, 18, width=2)
+            line(19, 18, 5, 18, width=2)
+            line(5, 18, 5, 7, width=2)
+            triangle(((8, 16), (12, 11), (17, 16)))
+        elif kind == "exit":
+            line(7, 7, 17, 17, width=3)
+            line(17, 7, 7, 17, width=3)
+        elif kind == "up":
+            triangle(((12, 6), (5, 17), (19, 17)))
+        elif kind == "down":
+            triangle(((5, 7), (19, 7), (12, 18)))
+        elif kind == "relaunch":
+            circle(12, 12, 7, fill=False, width=2)
+            triangle(((17, 4), (20, 10), (14, 9)))
+            rect(12, 4, 18, 7)
+        else:
+            circle(12, 12, 5, fill=False, width=2)
+
+        self._icons[key] = img
+        return img
+
     # ── UI layout ─────────────────────────────────────────────────
     def build_ui(self):
-        self.master.title("⟦  DRONE CV  ⟧")
+        self.master.title("Drone Vision Ops")
         self.master.configure(bg=COL_BG)
-        self.master.geometry("1100x900")
+        self.master.geometry("1180x820")
         self.master.resizable(True, True)
-        self.master.minsize(900, 600)
+        self.master.minsize(980, 650)
+        self._configure_styles()
 
-        # HUD‑style title bar
-        hdr = tk.Label(self.master, text="DRONE VISION OPS",
-                       fg=COL_TXT, bg=COL_BG, font=FONT_HDR)
-        hdr.pack(pady=(10, 5))
+        shell = tk.Frame(self.master, bg=COL_BG)
+        shell.pack(fill="both", expand=True, padx=18, pady=16)
+        shell.grid_columnconfigure(0, weight=1)
+        shell.grid_rowconfigure(2, weight=1)
 
-        # ----- top control row -----
-        ctrl = tk.Frame(self.master, bg=COL_BG)
-        ctrl.pack(pady=5)
+        header = tk.Frame(shell, bg=COL_BG)
+        header.grid(row=0, column=0, sticky="ew", pady=(0, 14))
+        header.grid_columnconfigure(1, weight=1)
 
-        self.launch_btn = JetButton(ctrl, text="LAUNCH SCRIPT",
-                                    command=self.launch_script, state="disabled")
-        self.launch_btn.grid(row=0, column=0, padx=8)
+        self.drone_badge = MavicBadge(header)
+        self.drone_badge.grid(row=0, column=0, rowspan=2, sticky="w", padx=(0, 14))
 
-        self.kill_btn = JetButton(ctrl, text="KILL SCRIPT",
-                                  command=self.kill_script, state="disabled")
-        self.kill_btn.grid(row=0, column=1, padx=8)
+        title = tk.Label(header, text="DRONE VISION OPS", fg=COL_TXT, bg=COL_BG, font=FONT_HDR)
+        title.grid(row=0, column=1, sticky="w")
+        subtitle = tk.Label(
+            header,
+            text="Mavic 3 RTMP ingest  /  auto-launch ISR console  /  field-ready experiments",
+            fg=COL_MUTED,
+            bg=COL_BG,
+            font=FONT_SUB,
+        )
+        subtitle.grid(row=1, column=1, sticky="w", pady=(3, 0))
 
-        self.start_stream_btn = JetButton(ctrl, text="START STREAM",
-                                          command=self.start_stream)
-        self.start_stream_btn.grid(row=0, column=2, padx=8)
+        self.status_label = tk.Label(
+            header,
+            fg=COL_WARN,
+            bg="#220c12",
+            font=(FONT_FAMILY, 13, "bold"),
+            text="STATUS  NO SIGNAL",
+            padx=18,
+            pady=10,
+        )
+        self.status_label.grid(row=0, column=2, rowspan=2, sticky="e")
 
-        self.stop_stream_btn = JetButton(ctrl, text="STOP STREAM",
-                                         command=self.stop_stream, state="disabled")
-        self.stop_stream_btn.grid(row=0, column=3, padx=8)
+        top = tk.Frame(shell, bg=COL_BG)
+        top.grid(row=1, column=0, sticky="ew", pady=(0, 14))
+        top.grid_columnconfigure(0, weight=1)
+        top.grid_columnconfigure(1, weight=1)
+        top.grid_columnconfigure(2, weight=1)
 
-        self.exit_btn = JetButton(ctrl, text="EXIT",
-                                  command=self.on_exit)
-        self.exit_btn.grid(row=0, column=4, padx=8)
+        mission = tk.Frame(top, bg=COL_PANEL, highlightbackground="#1e3a43", highlightthickness=1)
+        mission.grid(row=0, column=0, sticky="nsew", padx=(0, 10))
+        mission.grid_columnconfigure(0, weight=1)
+        tk.Label(mission, text="SELECTED MISSION", fg=COL_MUTED, bg=COL_PANEL, font=FONT_SMALL).grid(
+            row=0, column=0, sticky="w", padx=16, pady=(14, 3)
+        )
+        self.sel_label = tk.Label(
+            mission,
+            fg=COL_TXT,
+            bg=COL_PANEL,
+            font=(FONT_FAMILY, 18, "bold"),
+            text="(none)",
+            anchor="w",
+        )
+        self.sel_label.grid(row=1, column=0, sticky="ew", padx=16)
+        self.default_label = tk.Label(
+            mission,
+            fg=COL_MUTED,
+            bg=COL_PANEL,
+            font=FONT_SMALL,
+            text="Auto-launch waits for first RTMP signal",
+            anchor="w",
+        )
+        self.default_label.grid(row=2, column=0, sticky="ew", padx=16, pady=(6, 14))
 
-        # ----- options row -----
-        opts = tk.Frame(self.master, bg=COL_BG)
-        opts.pack(pady=(0, 8))
+        self.launch_btn = JetButton(
+            mission,
+            style="Primary.TButton",
+            text="LAUNCH MISSION",
+            image=self._button_icon("play", "#02110d"),
+            compound="left",
+            command=self.launch_script,
+            state="disabled",
+        )
+        self.launch_btn.grid(row=3, column=0, sticky="ew", padx=16, pady=(0, 12))
+        self.kill_btn = JetButton(
+            mission,
+            style="Danger.TButton",
+            text="STOP MISSION",
+            image=self._button_icon("stop", "#1d0409"),
+            compound="left",
+            command=self.kill_script,
+            state="disabled",
+        )
+        self.kill_btn.grid(row=4, column=0, sticky="ew", padx=16, pady=(0, 16))
+
+        stream = tk.Frame(top, bg=COL_PANEL, highlightbackground="#1e3a43", highlightthickness=1)
+        stream.grid(row=0, column=1, sticky="nsew", padx=10)
+        stream.grid_columnconfigure(0, weight=1)
+        tk.Label(stream, text="STREAM SETUP", fg=COL_MUTED, bg=COL_PANEL, font=FONT_SMALL).grid(
+            row=0, column=0, sticky="w", padx=16, pady=(14, 5)
+        )
+        self.ops_ip_label = tk.Label(stream, fg=COL_TXT, bg=COL_PANEL, font=FONT_SMALL, anchor="w")
+        self.ops_ip_label.grid(row=1, column=0, sticky="ew", padx=16, pady=2)
+        self.ops_server_label = tk.Label(stream, fg=COL_ACCENT, bg=COL_PANEL, font=FONT_SMALL, anchor="w")
+        self.ops_server_label.grid(row=2, column=0, sticky="ew", padx=16, pady=2)
+        self.ops_key_label = tk.Label(stream, fg=COL_TXT, bg=COL_PANEL, font=FONT_SMALL, anchor="w")
+        self.ops_key_label.grid(row=3, column=0, sticky="ew", padx=16, pady=(2, 10))
+
+        stream_actions = tk.Frame(stream, bg=COL_PANEL)
+        stream_actions.grid(row=4, column=0, sticky="ew", padx=16, pady=(0, 12))
+        stream_actions.grid_columnconfigure(0, weight=1)
+        stream_actions.grid_columnconfigure(1, weight=1)
+        self.start_stream_btn = JetButton(
+            stream_actions,
+            style="Primary.TButton",
+            text="START STREAM",
+            image=self._button_icon("stream", "#02110d"),
+            compound="left",
+            command=self.start_stream,
+        )
+        self.start_stream_btn.grid(row=0, column=0, sticky="ew", padx=(0, 6))
+        self.stop_stream_btn = JetButton(
+            stream_actions,
+            style="Danger.TButton",
+            text="STOP STREAM",
+            image=self._button_icon("stop", "#1d0409"),
+            compound="left",
+            command=self.stop_stream,
+            state="disabled",
+        )
+        self.stop_stream_btn.grid(row=0, column=1, sticky="ew", padx=(6, 0))
+
+        copy_actions = tk.Frame(stream, bg=COL_PANEL)
+        copy_actions.grid(row=5, column=0, sticky="ew", padx=16, pady=(0, 16))
+        copy_actions.grid_columnconfigure(0, weight=1)
+        copy_actions.grid_columnconfigure(1, weight=1)
+        self.copy_server_btn = JetButton(
+            copy_actions,
+            style="Ghost.TButton",
+            text="COPY URL",
+            image=self._button_icon("link", COL_TXT),
+            compound="left",
+            command=self.copy_server_url,
+        )
+        self.copy_server_btn.grid(row=0, column=0, sticky="ew", padx=(0, 6))
+        self.copy_key_btn = JetButton(
+            copy_actions,
+            style="Ghost.TButton",
+            text="COPY KEY",
+            image=self._button_icon("key", COL_TXT),
+            compound="left",
+            command=self.copy_stream_key,
+        )
+        self.copy_key_btn.grid(row=0, column=1, sticky="ew", padx=(6, 0))
+
+        utils = tk.Frame(top, bg=COL_PANEL, highlightbackground="#1e3a43", highlightthickness=1)
+        utils.grid(row=0, column=2, sticky="nsew", padx=(10, 0))
+        utils.grid_columnconfigure(0, weight=1)
+        tk.Label(utils, text="FIELD TOOLS", fg=COL_MUTED, bg=COL_PANEL, font=FONT_SMALL).grid(
+            row=0, column=0, sticky="w", padx=16, pady=(14, 5)
+        )
+        self.preview_btn = JetButton(
+            utils,
+            style="Ghost.TButton",
+            text="OPEN PREVIEW",
+            image=self._button_icon("eye", COL_TXT),
+            compound="left",
+            command=self.open_preview,
+        )
+        self.preview_btn.grid(row=1, column=0, sticky="ew", padx=16, pady=(0, 8))
+        self.snapshots_btn = JetButton(
+            utils,
+            style="Ghost.TButton",
+            text="OPEN SNAPSHOTS",
+            image=self._button_icon("snapshot", COL_TXT),
+            compound="left",
+            command=self.open_snapshots,
+        )
+        self.snapshots_btn.grid(row=2, column=0, sticky="ew", padx=16, pady=(0, 8))
 
         self.topmost_var = tk.BooleanVar(value=(sys.platform == "darwin"))
         self.topmost_chk = tk.Checkbutton(
-            opts,
-            text="ALWAYS ON TOP",
+            utils,
+            text="KEEP LAUNCHER ON TOP",
             variable=self.topmost_var,
             command=self.apply_topmost,
             fg=COL_TXT,
-            bg=COL_BG,
-            activebackground=COL_BG,
+            bg=COL_PANEL,
+            activebackground=COL_PANEL,
             activeforeground=COL_TXT,
-            selectcolor=COL_BG,
-            font=(FONT_FAMILY, 12, "bold"),
+            selectcolor=COL_PANEL_2,
+            font=FONT_SMALL,
         )
-        self.topmost_chk.grid(row=0, column=0, padx=10, pady=2, sticky="w")
+        self.topmost_chk.grid(row=3, column=0, sticky="w", padx=16, pady=(3, 8))
 
-        self.preview_btn = JetButton(opts, text="OPEN PREVIEW", command=self.open_preview)
-        self.preview_btn.grid(row=0, column=1, padx=8, pady=2)
-
-        self.snapshots_btn = JetButton(opts, text="OPEN SNAPSHOTS", command=self.open_snapshots)
-        self.snapshots_btn.grid(row=0, column=2, padx=8, pady=2)
-
-        # OPS HUD read-outs
-        self.ops_ip_label = tk.Label(self.master, fg=COL_TXT, bg=COL_BG, font=FONT_BIG)
-        self.ops_ip_label.pack(pady=(0, 2))
-        self.ops_server_label = tk.Label(self.master, fg=COL_TXT, bg=COL_BG, font=FONT_BIG)
-        self.ops_server_label.pack(pady=(0, 2))
-        self.ops_key_label = tk.Label(self.master, fg=COL_TXT, bg=COL_BG, font=FONT_BIG)
-        self.ops_key_label.pack(pady=(0, 8))
-
-        copyrow = tk.Frame(self.master, bg=COL_BG)
-        copyrow.pack(pady=(0, 10))
-        self.copy_server_btn = JetButton(copyrow, text="COPY SERVER URL", command=self.copy_server_url)
-        self.copy_server_btn.grid(row=0, column=0, padx=8)
-        self.copy_key_btn = JetButton(copyrow, text="COPY STREAM KEY", command=self.copy_stream_key)
-        self.copy_key_btn.grid(row=0, column=1, padx=8)
-
-        self.status_label = tk.Label(self.master, fg=COL_WARN, bg=COL_BG, font=(FONT_FAMILY, 14, "bold"), text="STATUS  NO SIGNAL")
-        self.status_label.pack(pady=(0, 10))
-
-        self.default_label = tk.Label(
-            self.master,
-            fg=COL_TXT,
-            bg=COL_BG,
-            font=(FONT_FAMILY, 12, "bold"),
-            text="DEFAULT  (none)",
-        )
-        self.default_label.pack(pady=(0, 10))
-
-        # Python interpreter readout (helps avoid running with system python on macOS)
         py = os.path.realpath(sys.executable)
         venv_dir = os.path.realpath(os.path.join(self.path, ".venv"))
-        in_venv = py.startswith(venv_dir + os.sep)
-        # Cache venv python if present (helps one-click relaunch).
+        in_venv = (
+            os.path.realpath(getattr(sys, "prefix", "")).startswith(venv_dir)
+            or os.environ.get("VIRTUAL_ENV") == os.path.join(self.path, ".venv")
+            or os.path.abspath(sys.executable).startswith(os.path.join(self.path, ".venv") + os.sep)
+        )
         if os.name == "nt":
             venv_py = os.path.join(venv_dir, "Scripts", "python.exe")
         else:
             venv_py = os.path.join(venv_dir, "bin", "python")
         self._venv_python = venv_py if os.path.exists(venv_py) else None
-
-        py_color = COL_TXT if in_venv else COL_WARN
+        py_color = COL_MUTED if in_venv else COL_WARN
         self.py_label = tk.Label(
-            self.master,
+            utils,
             fg=py_color,
-            bg=COL_BG,
-            font=(FONT_FAMILY, 10, "bold"),
-            text=f"PYTHON  {py}" + ("" if in_venv else "  (WARNING: not using .venv)"),
+            bg=COL_PANEL,
+            font=(FONT_FAMILY, 9, "bold"),
+            text=("PYTHON  .venv" if in_venv else "PYTHON WARNING  not using .venv"),
+            anchor="w",
         )
-        self.py_label.pack(pady=(0, 10))
-
+        self.py_label.grid(row=4, column=0, sticky="ew", padx=16, pady=(0, 8))
         if (not in_venv) and self._venv_python:
-            self.relaunch_btn = JetButton(self.master, text="RELAUNCH (.venv)", command=self.relaunch_with_venv)
-            self.relaunch_btn.pack(pady=(0, 10))
-
-        self.sel_label = tk.Label(
-            self.master,
-            fg=COL_TXT,
-            bg=COL_BG,
-            font=(FONT_FAMILY, 12, "bold"),
-            text="SELECTED  (none)",
+            self.relaunch_btn = JetButton(
+                utils,
+                style="Ghost.TButton",
+                text="RELAUNCH (.venv)",
+                image=self._button_icon("relaunch", COL_TXT),
+                compound="left",
+                command=self.relaunch_with_venv,
+            )
+            self.relaunch_btn.grid(row=5, column=0, sticky="ew", padx=16, pady=(0, 8))
+        self.exit_btn = JetButton(
+            utils,
+            style="Ghost.TButton",
+            text="EXIT",
+            image=self._button_icon("exit", COL_TXT),
+            compound="left",
+            command=self.on_exit,
         )
-        self.sel_label.pack(pady=(0, 6))
+        self.exit_btn.grid(row=6, column=0, sticky="ew", padx=16, pady=(0, 16))
 
-        # ----- script selection grid -----
-        self.scroll = ScrollableFrame(self.master)
-        self.scroll.pack(pady=5, fill="both", expand=True)
+        self.body = tk.Frame(shell, bg=COL_PANEL, highlightbackground="#1e3a43", highlightthickness=1)
+        self.body.grid(row=2, column=0, sticky="nsew")
+        self.body.grid_columnconfigure(0, weight=1)
+
+        body_header = tk.Frame(self.body, bg=COL_PANEL)
+        body_header.grid(row=0, column=0, sticky="ew", padx=16, pady=(14, 8))
+        body_header.grid_columnconfigure(0, weight=1)
+        tk.Label(body_header, text="MISSION APPS", fg=COL_TXT, bg=COL_PANEL, font=(FONT_FAMILY, 14, "bold")).grid(row=0, column=0, sticky="w")
+        self.advanced_btn = JetButton(
+            body_header,
+            style="Ghost.TButton",
+            text="SHOW ADVANCED",
+            image=self._button_icon("down", COL_TXT),
+            compound="left",
+            command=self.toggle_advanced_scripts,
+        )
+        self.advanced_btn.grid(row=0, column=1, sticky="e")
+
+        self.mission_grid = tk.Frame(self.body, bg=COL_PANEL)
+        self.mission_grid.grid(row=1, column=0, sticky="ew", padx=16, pady=(0, 8))
+        for c in range(4):
+            self.mission_grid.grid_columnconfigure(c, weight=1)
+
+        self.advanced_wrap = tk.Frame(self.body, bg=COL_PANEL)
+        self.advanced_wrap.grid_rowconfigure(0, weight=1)
+        self.advanced_wrap.grid_columnconfigure(0, weight=1)
+        self.scroll = ScrollableFrame(self.advanced_wrap)
         self.grid = self.scroll.inner
+
+        self.ready_note = tk.Label(
+            self.body,
+            text="Field flow: start DJI custom RTMP, wait for CONNECTED, and the selected mission launches automatically.",
+            fg=COL_MUTED,
+            bg=COL_PANEL,
+            font=FONT_SMALL,
+            anchor="w",
+        )
 
         self.build_script_buttons()
         self._apply_default_script_selection()
-
-        # ttk style overrides
-        style = ttk.Style(self.master)
-        style.theme_use("clam")
-        style.configure("Jet.TButton",
-                                foreground=COL_TXT, background=COL_BTN,
-                                font=FONT_BTN, padding=10, width=40)
-        style.configure("JetSel.TButton",
-                        foreground="#000000", background=COL_TXT,
-                        font=FONT_BTN, padding=10, width=40)
-        style.map("Jet.TButton",
-                  foreground=[("pressed", "#ffffff"), ("disabled", "#666666")],
-                  background=[("active", "#3b3b3b")])
-        style.map("JetSel.TButton",
-                  foreground=[("pressed", "#000000"), ("disabled", "#666666")],
-                  background=[("active", "#9cff9c")])
+        self._sync_advanced_visibility()
 
         self.apply_topmost()
         self.master.bind("<Return>", lambda _e: self.launch_script())
@@ -356,32 +736,121 @@ class App:
             self.master.bind("<Command-Q>", lambda _e: self.on_exit())
 
     # ── script buttons grid ───────────────────────────────────────
+    def _register_script_button(self, script: str, button: ttk.Button) -> None:
+        self.script_buttons.setdefault(script, []).append(button)
+
     def build_script_buttons(self):
-        col = row = 0
-        for script in sorted(os.listdir(self.path)):
-            if script.startswith("_") and script.endswith(".py"):
-                b = JetButton(self.grid, text=self._script_label(script),
-                              command=lambda s=script: self.select_script(s))
-                b.grid(row=row, column=col, padx=5, pady=5)
-                self.script_buttons[script] = b
-                col += 1
-                if col == 2:
-                    col = 0; row += 1
+        try:
+            self.scroll.canvas.configure(bg=COL_PANEL)
+            self.scroll.inner.configure(bg=COL_PANEL)
+        except Exception:
+            pass
+
+        all_scripts = [s for s in sorted(os.listdir(self.path)) if s.startswith("_") and s.endswith(".py")]
+        featured = [
+            (
+                "_11_M5_LakeHouse_AutoScout_Rev1.py",
+                "≈",
+                "LAKEHOUSE AUTOSCOUT",
+                "Auto fireworks + waves",
+            ),
+            (
+                "_10_M5_ISR_ReconSuite_Rev1.py",
+                "◈",
+                "ISR RECON SUITE",
+                "Fusion, radar, superzoom",
+            ),
+            (
+                "_09_M5_TemporalEventScope_Rev1.py",
+                "◎",
+                "TEMPORAL EVENTSCOPE",
+                "Faint motion and trails",
+            ),
+            (
+                "_08_M5_LuckySkylineSuperZoom_Rev1.py",
+                "⌖",
+                "LUCKY SKYLINE ZOOM",
+                "Stabilized detail zoom",
+            ),
+            (
+                "_08_M5_Radar_Motion_AutoZoom_Rev1.py",
+                "◌",
+                "M5 RADAR MOTION",
+                "Motion radar autozoom",
+            ),
+        ]
+
+        row = 0
+        col = 0
+        max_cols = 4
+        for script, glyph, title, desc in featured:
+            if script not in all_scripts:
+                continue
+            text = f"{glyph}  {title}\n{desc}"
+            b = JetButton(self.mission_grid, style="Mission.TButton", text=text, command=lambda s=script: self.select_script(s))
+            b.grid(row=row, column=col, sticky="ew", padx=(0 if col == 0 else 8, 0), pady=4, ipady=10)
+            self._register_script_button(script, b)
+            col += 1
+            if col == max_cols:
+                col = 0
+                row += 1
+
+        tk.Label(
+            self.grid,
+            text="Advanced experiments",
+            fg=COL_MUTED,
+            bg=COL_PANEL,
+            font=FONT_SMALL,
+            anchor="w",
+        ).grid(row=0, column=0, columnspan=2, sticky="ew", padx=4, pady=(2, 8))
+
+        row = 1
+        col = 0
+        for script in all_scripts:
+            b = JetButton(self.grid, style="Mission.TButton", text=self._script_label(script), command=lambda s=script: self.select_script(s))
+            b.grid(row=row, column=col, sticky="ew", padx=4, pady=4)
+            self._register_script_button(script, b)
+            col += 1
+            if col == 2:
+                col = 0
+                row += 1
+        self.grid.grid_columnconfigure(0, weight=1)
+        self.grid.grid_columnconfigure(1, weight=1)
+
+    def toggle_advanced_scripts(self) -> None:
+        self.advanced_visible.set(not bool(self.advanced_visible.get()))
+        self._sync_advanced_visibility()
+
+    def _sync_advanced_visibility(self) -> None:
+        if bool(self.advanced_visible.get()):
+            self.ready_note.grid_forget()
+            self.advanced_wrap.grid(row=2, column=0, sticky="nsew", padx=16, pady=(0, 16))
+            self.body.grid_rowconfigure(2, weight=1)
+            self.scroll.grid(row=0, column=0, sticky="nsew")
+            self.advanced_btn.configure(text="HIDE ADVANCED", image=self._button_icon("up", COL_TXT))
+        else:
+            self.scroll.grid_forget()
+            self.advanced_wrap.grid_forget()
+            self.body.grid_rowconfigure(2, weight=0)
+            self.ready_note.grid(row=2, column=0, sticky="ew", padx=16, pady=(4, 16))
+            self.advanced_btn.configure(text="SHOW ADVANCED", image=self._button_icon("down", COL_TXT))
 
     def select_script(self, script):
         # Clear previous selection highlight.
         if self.script and self.script in self.script_buttons:
-            try:
-                self.script_buttons[self.script].configure(style="Jet.TButton")
-            except Exception:
-                pass
+            for button in self.script_buttons[self.script]:
+                try:
+                    button.configure(style="Mission.TButton")
+                except Exception:
+                    pass
         self.script = script
         if script in self.script_buttons:
-            try:
-                self.script_buttons[script].configure(style="JetSel.TButton")
-            except Exception:
-                pass
-        self.sel_label.config(text=f"SELECTED  {self._script_label(script)}")
+            for button in self.script_buttons[script]:
+                try:
+                    button.configure(style="MissionSel.TButton")
+                except Exception:
+                    pass
+        self.sel_label.config(text=self._script_label(script))
         self.launch_btn.state(["!disabled"])
         # Persist "default script" choice for next start.
         try:
@@ -394,7 +863,13 @@ class App:
         saved = str(self.prefs.get("default_script") or "").strip()
         if saved and os.path.exists(os.path.join(self.path, saved)):
             return saved
-        # First-run default: prefer tonight's superzoom panel, else the general script, else SuperZoom.
+        # First-run default: prefer the lake-house auto console, then the consolidated ISR console.
+        if os.path.exists(os.path.join(self.path, "_11_M5_LakeHouse_AutoScout_Rev1.py")):
+            return "_11_M5_LakeHouse_AutoScout_Rev1.py"
+        if os.path.exists(os.path.join(self.path, "_10_M5_ISR_ReconSuite_Rev1.py")):
+            return "_10_M5_ISR_ReconSuite_Rev1.py"
+        if os.path.exists(os.path.join(self.path, "_09_M5_TemporalEventScope_Rev1.py")):
+            return "_09_M5_TemporalEventScope_Rev1.py"
         if os.path.exists(os.path.join(self.path, "_08_M5_LuckySkylineSuperZoom_Rev1.py")):
             return "_08_M5_LuckySkylineSuperZoom_Rev1.py"
         if os.path.exists(os.path.join(self.path, "_1_4General_Target_Acquisition_4.py")):
@@ -412,7 +887,7 @@ class App:
         # Select it (this also saves prefs), but don't auto-launch here.
         self.select_script(d)
         try:
-            self.default_label.config(text=f"DEFAULT  {self._script_label(d)}  (auto-launch on signal)")
+            self.default_label.config(text="Default mission. Auto-launches when Mavic RTMP connects.")
         except Exception:
             pass
 
@@ -431,8 +906,10 @@ class App:
         except Exception:
             pass
 
+        script_path = os.path.join(self.path, self.script)
+        print(f"Launching script: {script_path}", flush=True)
         self.process = subprocess.Popen(
-            [sys.executable, os.path.join(self.path, self.script)],
+            [sys.executable, script_path],
             cwd=self.path
         )
         self.pid = self.process.pid
@@ -568,9 +1045,9 @@ class App:
             ip = s.getsockname()[0]; s.close()
         except Exception: pass
         self._last_ip = ip
-        self.ops_ip_label.config(text=f"MAC IP: {ip}")
-        self.ops_server_label.config(text=f"RTMP SERVER: rtmp://{ip}:1935/live")
-        self.ops_key_label.config(text=f"STREAM KEY: {self.stream_key}")
+        self.ops_ip_label.config(text=f"Mac IP        {ip}")
+        self.ops_server_label.config(text=f"DJI RTMP URL  rtmp://{ip}:1935/live")
+        self.ops_key_label.config(text=f"Stream key    {self.stream_key}")
 
     def _start_ip_refresh(self) -> None:
         def tick():
@@ -626,6 +1103,25 @@ class App:
             last_shape = None
             connected = False
 
+            def open_probe_capture():
+                params = []
+                # Avoid 30s FFmpeg stalls when the RTMP server is up but no
+                # publisher is active yet. OpenCV wheels that support these
+                # properties honor them in the constructor.
+                for name, value in (
+                    ("CAP_PROP_OPEN_TIMEOUT_MSEC", 700),
+                    ("CAP_PROP_READ_TIMEOUT_MSEC", 700),
+                ):
+                    prop = getattr(cv2, name, None)
+                    if prop is not None:
+                        params.extend([int(prop), int(value)])
+                try:
+                    if params:
+                        return cv2.VideoCapture(url, cv2.CAP_FFMPEG, params)
+                except Exception:
+                    pass
+                return cv2.VideoCapture(url, cv2.CAP_FFMPEG)
+
             while not self._monitor_stop.is_set():
                 # Avoid OpenCV/FFmpeg spam while the RTMP server isn't even up yet.
                 if not self._is_port_open("127.0.0.1", 1935, timeout=0.15):
@@ -637,7 +1133,7 @@ class App:
                 # Probe RTMP briefly instead of holding an open subscriber connection.
                 # This reduces the chance of weird "second subscriber waits forever" behavior.
                 try:
-                    cap = cv2.VideoCapture(url, cv2.CAP_FFMPEG)
+                    cap = open_probe_capture()
                 except Exception:
                     cap = None
 
@@ -676,10 +1172,14 @@ class App:
         started = self._stream_started_at or 0.0
         if started and (now - started) < 5.0:
             txt = "STATUS  STARTING RTMP SERVER..."
+            bg = "#2a2110"
+            fg = COL_AMBER
         else:
             txt = "STATUS  RTMP SERVER DOWN"
+            bg = "#220c12"
+            fg = COL_WARN
         try:
-            self.status_label.config(fg=COL_WARN, text=txt)
+            self.status_label.config(fg=fg, bg=bg, text=txt)
         except Exception:
             pass
 
@@ -700,18 +1200,24 @@ class App:
         if connected and shape:
             h, w = int(shape[0]), int(shape[1])
             self.status_label.config(
-                fg=COL_TXT,
+                fg="#02110d",
+                bg=COL_ACCENT,
                 text=f"STATUS  CONNECTED  {w}x{h}  age {age_ms}ms",
             )
         else:
             self.status_label.config(
                 fg=COL_WARN,
+                bg="#220c12",
                 text="STATUS  NO SIGNAL",
             )
 
         # Auto-launch default script on NO SIGNAL -> CONNECTED transition.
         if connected and not self._last_connected:
             self._last_connected = True
+            print(
+                f"RTMP connected; selected={self.script}; auto_launch={bool(self.prefs.get('auto_launch_default_script', True))}",
+                flush=True,
+            )
             if bool(self.prefs.get("auto_launch_default_script", True)) and not self.process:
                 self.launch_script()
         elif not connected:

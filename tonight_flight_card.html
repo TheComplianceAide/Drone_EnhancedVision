@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tonight Flight Card</title>
+  <style>
+    :root {
+      --bg: #03090d;
+      --panel: #07151b;
+      --panel2: #0b2028;
+      --line: #1a4652;
+      --text: #edf8f4;
+      --muted: #8eb2b0;
+      --cyan: #21d7ff;
+      --green: #62f04e;
+      --amber: #ffc72e;
+      --red: #ff615b;
+      --purple: #bd75ff;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--text); }
+    body {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+
+    .screen {
+      min-height: 100vh;
+      padding: clamp(12px, 2vw, 22px);
+      background:
+        radial-gradient(circle at 50% -20%, rgba(33, 215, 255, .18), transparent 38%),
+        linear-gradient(180deg, #061219 0%, #03090d 62%, #020609 100%);
+    }
+
+    .frame {
+      max-width: 1480px;
+      min-height: calc(100vh - 36px);
+      margin: 0 auto;
+      border: 1px solid #2b5d68;
+      border-radius: 8px;
+      background: rgba(3, 9, 13, .86);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .42), inset 0 0 80px rgba(33, 215, 255, .05);
+      overflow: hidden;
+    }
+
+    header {
+      position: relative;
+      min-height: 210px;
+      padding: 20px 28px 16px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(3, 9, 13, .14), rgba(3, 9, 13, .92)),
+        radial-gradient(circle at 52% 28%, rgba(33, 215, 255, .20), transparent 26%),
+        linear-gradient(180deg, #101c25, #071118 45%, #04090d);
+    }
+
+    .skyline {
+      position: absolute;
+      inset: auto 0 0;
+      height: 74px;
+      opacity: .9;
+      background:
+        linear-gradient(transparent 22px, rgba(33, 215, 255, .22) 23px, transparent 25px),
+        linear-gradient(90deg, transparent 0 10%, #111f26 10% 12%, transparent 12% 17%, #13252c 17% 18%, transparent 18% 26%, #142a31 26% 30%, transparent 30% 52%, #172d34 52% 54%, transparent 54% 68%, #1c3740 68% 71%, transparent 71% 100%);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(280px, 1fr) minmax(280px, 420px);
+      gap: 22px;
+      align-items: start;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(38px, 5.7vw, 72px);
+      line-height: .9;
+      font-weight: 900;
+      color: var(--text);
+      text-shadow: 0 0 20px rgba(255, 255, 255, .12);
+    }
+
+    .sub {
+      margin-top: 12px;
+      font-size: clamp(17px, 2vw, 25px);
+      font-weight: 800;
+      color: var(--cyan);
+    }
+
+    .drone {
+      display: grid;
+      place-items: center;
+      min-height: 96px;
+      filter: drop-shadow(0 0 18px rgba(33, 215, 255, .35));
+    }
+
+    .drone svg { width: min(360px, 100%); height: auto; }
+
+    .status-row {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(120px, 1fr)) 1.35fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .status, .weather {
+      min-height: 62px;
+      border: 1px solid var(--line);
+      background: rgba(6, 18, 23, .88);
+      display: grid;
+      align-items: center;
+      padding: 12px 14px;
+    }
+
+    .status strong, .weather strong { display: block; font-size: 21px; color: var(--text); }
+    .status span, .weather span { display: block; margin-top: 4px; font-size: 13px; color: var(--muted); font-weight: 800; }
+    .green { color: var(--green) !important; }
+    .cyan { color: var(--cyan) !important; }
+    .amber { color: var(--amber) !important; }
+    .red { color: var(--red) !important; }
+
+    main { padding: 12px; }
+
+    .batteries {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .battery {
+      position: relative;
+      min-height: 154px;
+      padding: 14px 16px 12px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(10, 32, 39, .96), rgba(5, 12, 16, .96));
+      overflow: hidden;
+    }
+
+    .battery::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-left: 4px solid var(--accent);
+      pointer-events: none;
+      box-shadow: inset 0 0 34px color-mix(in srgb, var(--accent) 22%, transparent);
+    }
+
+    .battery.greenish { --accent: var(--green); }
+    .battery.amberish { --accent: var(--amber); }
+    .battery.cyanish { --accent: var(--cyan); }
+
+    .tag {
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .time {
+      margin-top: 8px;
+      font-size: clamp(34px, 4.3vw, 52px);
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .purpose {
+      margin-top: 8px;
+      min-height: 32px;
+      color: #c8dfdc;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .mode-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      min-width: 116px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 8px 12px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 900;
+      border-radius: 7px;
+      background: rgba(0, 0, 0, .22);
+    }
+
+    .lower {
+      display: grid;
+      grid-template-columns: 1.4fr .8fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      background: rgba(7, 21, 27, .94);
+      padding: 12px;
+    }
+
+    .panel h2 {
+      margin: 0 0 10px;
+      color: var(--cyan);
+      text-align: center;
+      font-size: 18px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .checks {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .check {
+      position: relative;
+      min-height: 88px;
+      border: 1px solid #2b5d68;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #0c1d25, #071219);
+      padding: 13px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .check input { position: absolute; opacity: 0; }
+    .tick {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #031008;
+      background: var(--green);
+      font-weight: 900;
+      opacity: .22;
+      transition: opacity .15s, transform .15s;
+    }
+    .check input:checked + .tick { opacity: 1; transform: scale(1.04); }
+    .ico { font-size: 25px; margin-bottom: 5px; }
+    .check span:last-child { color: #d8ece8; font-size: 12px; font-weight: 900; line-height: 1.2; }
+
+    .modes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .mode {
+      min-height: 82px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: linear-gradient(160deg, rgba(11, 32, 40, .95), rgba(3, 8, 12, .95));
+      font-weight: 900;
+      font-size: 20px;
+    }
+
+    .mode small {
+      display: block;
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    footer {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      color: #438fa1;
+      font-weight: 900;
+      text-align: center;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    footer div { padding: 10px; }
+
+    @media (max-width: 980px) {
+      .hero-grid, .status-row, .batteries, .lower { grid-template-columns: 1fr; }
+      .checks { grid-template-columns: repeat(2, 1fr); }
+      .modes { grid-template-columns: 1fr; }
+      header { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="screen">
+    <div class="frame">
+      <header>
+        <div class="skyline"></div>
+        <div class="hero-grid">
+          <div>
+            <h1>LAKE<br>& CITY</h1>
+            <div class="sub">DUSK MISSION · JULY 3</div>
+          </div>
+          <div class="drone" aria-hidden="true">
+            <svg viewBox="0 0 640 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="112" cy="58" rx="66" ry="16" stroke="#7cc4c5" stroke-width="5"/>
+              <ellipse cx="528" cy="58" rx="66" ry="16" stroke="#7cc4c5" stroke-width="5"/>
+              <ellipse cx="92" cy="166" rx="72" ry="17" stroke="#7cc4c5" stroke-width="5"/>
+              <ellipse cx="548" cy="166" rx="72" ry="17" stroke="#7cc4c5" stroke-width="5"/>
+              <path d="M190 72 L286 96 M450 72 L354 96 M180 152 L286 126 M460 152 L354 126" stroke="#789a9c" stroke-width="16" stroke-linecap="round"/>
+              <path d="M245 82 L393 82 L432 128 L362 166 L272 166 L210 128 Z" fill="#142a31" stroke="#21f0c0" stroke-width="6"/>
+              <rect x="283" y="120" width="78" height="56" rx="12" fill="#05090c" stroke="#21d7ff" stroke-width="5"/>
+              <circle cx="322" cy="148" r="18" stroke="#21f0c0" stroke-width="5"/>
+              <circle cx="112" cy="58" r="9" fill="#21f0c0"/>
+              <circle cx="528" cy="58" r="9" fill="#21f0c0"/>
+              <circle cx="92" cy="166" r="9" fill="#21f0c0"/>
+              <circle cx="548" cy="166" r="9" fill="#21f0c0"/>
+              <text x="258" y="62" fill="#edf8f4" font-family="Menlo, monospace" font-size="20" font-weight="800">MAVIC 3</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="status-row">
+          <div class="status"><strong class="green">iPhone 16</strong><span>controller</span></div>
+          <div class="status"><strong class="cyan">MacBook</strong><span>RTMP viewer</span></div>
+          <div class="status"><strong class="green">mavic3</strong><span>stream key</span></div>
+          <div class="status"><strong class="amber">3 packs</strong><span>batteries</span></div>
+          <div class="weather"><strong class="amber">Hot / Watch Sky</strong><span>heat alert + storm risk nearby</span></div>
+        </div>
+      </header>
+
+      <main>
+        <section class="batteries">
+          <article class="battery greenish">
+            <div class="tag">Battery 1</div>
+            <div class="time">7:45-8:15</div>
+            <div class="purpose">Set up · verify stream · start easy</div>
+            <div class="mode-row"><div class="pill">AUTO</div><div class="pill">BIRDS</div></div>
+          </article>
+          <article class="battery amberish">
+            <div class="tag">Battery 2</div>
+            <div class="time">8:20-8:50</div>
+            <div class="purpose">City look · motion · detail</div>
+            <div class="mode-row"><div class="pill">ISR</div><div class="pill">EVENT</div></div>
+          </article>
+          <article class="battery cyanish">
+            <div class="tag">Battery 3</div>
+            <div class="time">8:55-9:25</div>
+            <div class="purpose">Only if calm · lake/sky experiments</div>
+            <div class="mode-row"><div class="pill">WAVE</div><div class="pill">FIREWORKS</div></div>
+          </article>
+        </section>
+
+        <section class="lower">
+          <div class="panel">
+            <h2>Preflight</h2>
+            <div class="checks">
+              <label class="check"><input type="checkbox"><span class="tick">✓</span><span><span class="ico">📱</span><br>iPhone 16<br>controller</span></label>
+              <label class="check"><input type="checkbox"><span class="tick">✓</span><span><span class="ico">💻</span><br>MacBook<br>launcher open</span></label>
+              <label class="check"><input type="checkbox"><span class="tick">✓</span><span><span class="ico">📡</span><br>RTMP<br>mavic3</span></label>
+              <label class="check"><input type="checkbox"><span class="tick">✓</span><span><span class="ico">🔋</span><br>3 packs<br>ready</span></label>
+              <label class="check"><input type="checkbox"><span class="tick">✓</span><span><span class="ico">🧭</span><br>Home point<br>set</span></label>
+              <label class="check"><input type="checkbox"><span class="tick">✓</span><span><span class="ico">🌀</span><br>Props<br>secure</span></label>
+              <label class="check"><input type="checkbox"><span class="tick">✓</span><span><span class="ico">💾</span><br>Storage<br>open</span></label>
+              <label class="check"><input type="checkbox"><span class="tick">✓</span><span><span class="ico">🌦</span><br>Weather<br>still calm</span></label>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h2>Modes</h2>
+            <div class="modes">
+              <div class="mode" style="color:var(--green)">AUTO<small>default</small></div>
+              <div class="mode" style="color:var(--green)">BIRDS<small>all motion radar</small></div>
+              <div class="mode" style="color:var(--cyan)">WAVE<small>water behavior</small></div>
+              <div class="mode" style="color:var(--red)">FIREWORKS<small>late only</small></div>
+              <div class="mode" style="color:var(--amber)">ISR<small>recon suite</small></div>
+              <div class="mode" style="color:var(--purple)">EVENT<small>temporal scope</small></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div>Fly Smart</div>
+        <div>Fly Safe</div>
+        <div>Bring It Home</div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const key = "drone-flight-card-checks-v1";
+    const boxes = [...document.querySelectorAll("input[type='checkbox']")];
+    try {
+      const saved = JSON.parse(localStorage.getItem(key) || "[]");
+      boxes.forEach((box, i) => { box.checked = !!saved[i]; });
+    } catch {}
+    boxes.forEach((box) => box.addEventListener("change", () => {
+      localStorage.setItem(key, JSON.stringify(boxes.map((b) => b.checked)));
+    }));
+  </script>
+</body>
+</html>

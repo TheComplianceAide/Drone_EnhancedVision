@@ -17,6 +17,9 @@ Mouse:
 Keys:
   - + / = : zoom in
   - -     : zoom out
+  - a     : auto profile on/off
+  - c     : clean view, hide/show control buttons
+  - h     : force haze/dehaze profile
   - r     : reset temporal stack
   - s     : save Live + MagicZoom snapshots
   - q/ESC : quit
@@ -87,6 +90,148 @@ def _quick_dehaze(img: np.ndarray, *, radius: int = 11, strength: float = 0.62) 
     return out.astype(np.uint8)
 
 
+@dataclass(frozen=True)
+class SceneMetrics:
+    luma: float
+    contrast: float
+    saturation: float
+    highlight_clip: float
+    dark_ratio: float
+    haze_score: float
+
+
+@dataclass(frozen=True)
+class ProfileTuning:
+    name: str
+    sharp: int
+    denoise: int
+    contrast: int
+    glow: int
+    clarity: int
+    stack_alpha: float
+    night: bool
+    dehaze: bool
+    quality_scale: float
+
+
+PROFILES = {
+    "DAY": ProfileTuning("DAY", sharp=42, denoise=8, contrast=16, glow=3, clarity=58, stack_alpha=0.15, night=False, dehaze=False, quality_scale=1.30),
+    "DUSK": ProfileTuning("DUSK", sharp=50, denoise=15, contrast=28, glow=10, clarity=66, stack_alpha=0.17, night=True, dehaze=False, quality_scale=1.42),
+    "NIGHT": ProfileTuning("NIGHT", sharp=56, denoise=22, contrast=34, glow=18, clarity=72, stack_alpha=0.20, night=True, dehaze=False, quality_scale=1.36),
+    "HAZE": ProfileTuning("HAZE", sharp=54, denoise=12, contrast=26, glow=7, clarity=76, stack_alpha=0.16, night=False, dehaze=True, quality_scale=1.45),
+    "MANUAL": ProfileTuning("MANUAL", sharp=42, denoise=16, contrast=26, glow=10, clarity=58, stack_alpha=0.17, night=True, dehaze=False, quality_scale=1.34),
+}
+
+
+def _measure_scene(bgr: np.ndarray) -> SceneMetrics:
+    h, w = bgr.shape[:2]
+    sample_w = 320
+    sample_h = max(90, int(round(sample_w * h / max(1, w))))
+    small = cv2.resize(bgr, (sample_w, sample_h), interpolation=cv2.INTER_AREA)
+    hsv = cv2.cvtColor(small, cv2.COLOR_BGR2HSV)
+    gray = cv2.cvtColor(small, cv2.COLOR_BGR2GRAY).astype(np.float32)
+
+    luma = float(np.mean(gray))
+    contrast = float(np.std(gray))
+    saturation = float(np.mean(hsv[:, :, 1]))
+    highlight_clip = float(np.mean(gray > 242.0))
+    dark_ratio = float(np.mean(gray < 38.0))
+
+    low_contrast = np.clip((58.0 - contrast) / 58.0, 0.0, 1.0)
+    bright_enough = np.clip((luma - 75.0) / 120.0, 0.0, 1.0)
+    low_sat = np.clip((85.0 - saturation) / 85.0, 0.0, 1.0)
+    haze_score = float(np.clip(low_contrast * bright_enough * (0.65 + 0.35 * low_sat) + highlight_clip * 0.55, 0.0, 1.0))
+
+    return SceneMetrics(
+        luma=luma,
+        contrast=contrast,
+        saturation=saturation,
+        highlight_clip=highlight_clip,
+        dark_ratio=dark_ratio,
+        haze_score=haze_score,
+    )
+
+
+class AutoProfileController:
+    def __init__(self) -> None:
+        self.profile = "DAY"
+        self.metrics = SceneMetrics(0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
+        self._pending = ""
+        self._pending_count = 0
+
+    def _candidate(self, metrics: SceneMetrics, *, force_haze: bool) -> str:
+        if force_haze:
+            return "HAZE"
+        if metrics.luma < 52.0 or metrics.dark_ratio > 0.46:
+            return "NIGHT"
+        if metrics.haze_score > 0.42 and metrics.luma > 88.0:
+            return "HAZE"
+        if metrics.luma < 108.0:
+            return "DUSK"
+        return "DAY"
+
+    def update(self, bgr: np.ndarray, *, force_haze: bool, frame_index: int) -> tuple[str, ProfileTuning, SceneMetrics]:
+        # Sample every few frames to keep the profile stable and cheap.
+        if frame_index % 10 == 0:
+            metrics = _measure_scene(bgr)
+            cand = self._candidate(metrics, force_haze=force_haze)
+            self.metrics = metrics
+            if cand == self.profile:
+                self._pending = ""
+                self._pending_count = 0
+            elif cand == self._pending:
+                self._pending_count += 1
+                if self._pending_count >= 4:
+                    self.profile = cand
+                    self._pending = ""
+                    self._pending_count = 0
+            else:
+                self._pending = cand
+                self._pending_count = 1
+        return self.profile, PROFILES[self.profile], self.metrics
+
+
+class QualityGovernor:
+    def __init__(self) -> None:
+        self.multiplier = 1.06
+        self._last_update = 0.0
+
+    def update(self, fps_avg: float, *, now: float) -> None:
+        if fps_avg <= 0.0 or now - self._last_update < 1.0:
+            return
+        self._last_update = now
+        if fps_avg < 6.0:
+            self.multiplier = max(0.72, self.multiplier * 0.90)
+        elif fps_avg < 9.0:
+            self.multiplier = max(0.82, self.multiplier * 0.96)
+        elif fps_avg < 12.0:
+            self.multiplier = max(0.90, self.multiplier - 0.02)
+        elif fps_avg > 20.0:
+            self.multiplier = min(1.12, self.multiplier + 0.02)
+        elif fps_avg > 16.0:
+            self.multiplier = min(1.08, self.multiplier + 0.01)
+
+
+def _edge_clarity_pass(img: np.ndarray, *, amount: int) -> np.ndarray:
+    if amount <= 0:
+        return img
+    lab = cv2.cvtColor(img, cv2.COLOR_BGR2LAB).astype(np.float32)
+    l = lab[:, :, 0]
+
+    blur_fine = cv2.GaussianBlur(l, (0, 0), sigmaX=0.65, sigmaY=0.65)
+    blur_mid = cv2.GaussianBlur(l, (0, 0), sigmaX=1.8, sigmaY=1.8)
+    fine = l - blur_fine
+    mid = l - blur_mid
+
+    lap = np.abs(cv2.Laplacian(l, cv2.CV_32F, ksize=3))
+    edge_mask = np.clip((lap - 1.5) / 18.0, 0.0, 1.0)
+    strength = float(amount) / 100.0
+    boost = fine * (0.45 + 0.95 * strength) + mid * (0.10 + 0.30 * strength)
+    lab[:, :, 0] = np.clip(l + boost * (0.35 + 0.65 * edge_mask), 0, 255)
+
+    return cv2.cvtColor(lab.astype(np.uint8), cv2.COLOR_LAB2BGR)
+
+
 def _cv_detail_pass(
     img: np.ndarray,
     *,
@@ -94,6 +239,7 @@ def _cv_detail_pass(
     denoise: int,
     contrast: int,
     glow: int,
+    clarity: int,
     night: bool,
     dehaze: bool,
 ) -> np.ndarray:
@@ -129,6 +275,8 @@ def _cv_detail_pass(
         amount = 0.25 + (float(sharp) / 100.0) * 1.75
         blur = cv2.GaussianBlur(out, (0, 0), sigmaX=0.9, sigmaY=0.9)
         out = cv2.addWeighted(out, 1.0 + amount, blur, -amount, 0)
+
+    out = _edge_clarity_pass(out, amount=clarity)
 
     return out
 
@@ -291,10 +439,11 @@ def main() -> int:
     ap.add_argument("--zoom-w", type=int, default=1120)
     ap.add_argument("--zoom-h", type=int, default=630)
     ap.add_argument("--layout", choices=["auto", "split-v", "split-h"], default="auto")
-    ap.add_argument("--init-zoom", type=int, default=14)
+    ap.add_argument("--init-zoom", type=int, default=10)
     ap.add_argument("--min-zoom", type=int, default=2)
-    ap.add_argument("--max-zoom", type=int, default=80)
-    ap.add_argument("--quality-scale", type=float, default=1.35)
+    ap.add_argument("--max-zoom", type=int, default=36)
+    ap.add_argument("--quality-scale", type=float, default=1.45)
+    ap.add_argument("--show-controls", action="store_true", help="Show debug sliders in the zoom window")
     args = ap.parse_args()
 
     root = Path(__file__).resolve().parent
@@ -308,7 +457,7 @@ def main() -> int:
     )
     live_w, live_h = layout.main_wh
     zoom_w, zoom_h = layout.aux_wh
-    quality_scale = float(np.clip(args.quality_scale, 1.0, 2.0))
+    max_quality_scale = float(np.clip(args.quality_scale, 1.0, 2.0))
 
     min_zoom = max(1, int(args.min_zoom))
     max_zoom = max(min_zoom + 1, int(args.max_zoom))
@@ -319,22 +468,21 @@ def main() -> int:
     frame_h = 1
 
     modes = {
+        "auto": True,
         "stack": True,
         "gpu": True,
-        "night": True,
         "dehaze": False,
         "grid": True,
-        "glow": True,
         "hud": True,
+        "controls": True,
     }
 
     button_specs = [
+        ("AUTO", "auto"),
         ("STACK", "stack"),
         ("M5", "gpu"),
-        ("NIGHT", "night"),
         ("HAZE", "dehaze"),
         ("GRID", "grid"),
-        ("GLOW", "glow"),
         ("HUD", "hud"),
         ("RST", "reset"),
         ("-", "z_out"),
@@ -346,9 +494,9 @@ def main() -> int:
         buttons.clear()
         x = 10
         y = 10
-        bw = 92
-        bh = 48
-        gap = 8
+        bw = 72
+        bh = 38
+        gap = 6
         for label, action in button_specs:
             if x + bw > live_w - 10:
                 x = 10
@@ -360,6 +508,8 @@ def main() -> int:
 
     stack = StackState()
     mps = MpsDetailPass()
+    auto_profile = AutoProfileController()
+    quality_governor = QualityGovernor()
 
     cv2.namedWindow(LIVE_NAME, cv2.WINDOW_NORMAL)
     cv2.namedWindow(ZOOM_NAME, cv2.WINDOW_NORMAL)
@@ -370,34 +520,43 @@ def main() -> int:
     def _noop(_val: int) -> None:
         return
 
-    cv2.createTrackbar("Zoom", ZOOM_NAME, zoom_level, max_zoom, _noop)
-    cv2.createTrackbar("Stack Blend", ZOOM_NAME, 18, 80, _noop)
-    cv2.createTrackbar("Sharp", ZOOM_NAME, 42, 100, _noop)
-    cv2.createTrackbar("Denoise", ZOOM_NAME, 16, 100, _noop)
-    cv2.createTrackbar("Contrast", ZOOM_NAME, 35, 100, _noop)
-    cv2.createTrackbar("City Glow", ZOOM_NAME, 18, 100, _noop)
+    if args.show_controls:
+        cv2.createTrackbar("Zoom", ZOOM_NAME, zoom_level, max_zoom, _noop)
+        cv2.createTrackbar("Stack Blend", ZOOM_NAME, 18, 80, _noop)
+        cv2.createTrackbar("Sharp", ZOOM_NAME, PROFILES["MANUAL"].sharp, 100, _noop)
+        cv2.createTrackbar("Denoise", ZOOM_NAME, PROFILES["MANUAL"].denoise, 100, _noop)
+        cv2.createTrackbar("Contrast", ZOOM_NAME, PROFILES["MANUAL"].contrast, 100, _noop)
+        cv2.createTrackbar("City Glow", ZOOM_NAME, PROFILES["MANUAL"].glow, 100, _noop)
+
+    def set_zoom_level(value: int) -> None:
+        nonlocal zoom_level
+        zoom_level = _clamp(value, min_zoom, max_zoom)
+        if args.show_controls:
+            try:
+                cv2.setTrackbarPos("Zoom", ZOOM_NAME, zoom_level)
+            except Exception:
+                pass
 
     def on_mouse(evt, x, y, _flags, _param) -> None:
         nonlocal zx, zy, zoom_level
         if evt != cv2.EVENT_LBUTTONDOWN:
             return
-        for x1, y1, x2, y2, _label, action in buttons:
-            if x1 <= x <= x2 and y1 <= y <= y2:
-                if action == "z_in":
-                    zoom_level = min(max_zoom, zoom_level + 1)
-                    cv2.setTrackbarPos("Zoom", ZOOM_NAME, zoom_level)
-                    stack.reset()
-                elif action == "z_out":
-                    zoom_level = max(min_zoom, zoom_level - 1)
-                    cv2.setTrackbarPos("Zoom", ZOOM_NAME, zoom_level)
-                    stack.reset()
-                elif action == "reset":
-                    stack.reset()
-                elif action in modes:
-                    modes[action] = not modes[action]
-                    if action == "stack":
+        if modes["controls"]:
+            for x1, y1, x2, y2, _label, action in buttons:
+                if x1 <= x <= x2 and y1 <= y <= y2:
+                    if action == "z_in":
+                        set_zoom_level(zoom_level + 1)
                         stack.reset()
-                return
+                    elif action == "z_out":
+                        set_zoom_level(zoom_level - 1)
+                        stack.reset()
+                    elif action == "reset":
+                        stack.reset()
+                    elif action in modes:
+                        modes[action] = not modes[action]
+                        if action == "stack":
+                            stack.reset()
+                    return
         zx = int(x * frame_w / max(1, live_w))
         zy = int(y * frame_h / max(1, live_h))
         stack.reset()
@@ -411,6 +570,7 @@ def main() -> int:
 
     fps_buf: list[float] = []
     prev_loop = time.time()
+    frame_index = 0
 
     try:
         while True:
@@ -449,18 +609,15 @@ def main() -> int:
                     break
                 continue
 
+            frame_index += 1
             frame_h, frame_w = frame.shape[:2]
             if zx <= 0 or zy <= 0:
                 zx = frame_w // 2
                 zy = frame_h // 2
 
-            zbar = cv2.getTrackbarPos("Zoom", ZOOM_NAME)
-            zoom_level = _clamp(zbar if zbar else zoom_level, min_zoom, max_zoom)
-            alpha = max(0.03, cv2.getTrackbarPos("Stack Blend", ZOOM_NAME) / 100.0)
-            sharp = cv2.getTrackbarPos("Sharp", ZOOM_NAME)
-            denoise = cv2.getTrackbarPos("Denoise", ZOOM_NAME)
-            contrast = cv2.getTrackbarPos("Contrast", ZOOM_NAME)
-            glow = cv2.getTrackbarPos("City Glow", ZOOM_NAME) if modes["glow"] else 0
+            if args.show_controls:
+                zbar = cv2.getTrackbarPos("Zoom", ZOOM_NAME)
+                zoom_level = _clamp(zbar if zbar else zoom_level, min_zoom, max_zoom)
 
             roi_w = max(8, int(round(frame_w / float(zoom_level))))
             roi_h = max(8, int(round(frame_h / float(zoom_level))))
@@ -468,8 +625,58 @@ def main() -> int:
             y1 = _clamp(zy - roi_h // 2, 0, max(0, frame_h - roi_h))
             roi = frame[y1 : y1 + roi_h, x1 : x1 + roi_w]
 
-            build_w = max(zoom_w, int(round(zoom_w * quality_scale)))
-            build_h = max(zoom_h, int(round(zoom_h * quality_scale)))
+            profile_name, auto_tuning, scene_metrics = auto_profile.update(
+                roi,
+                force_haze=modes["dehaze"],
+                frame_index=frame_index,
+            )
+
+            if modes["auto"]:
+                tuning = auto_tuning
+            else:
+                if args.show_controls:
+                    tuning = ProfileTuning(
+                        "MANUAL",
+                        sharp=cv2.getTrackbarPos("Sharp", ZOOM_NAME),
+                        denoise=cv2.getTrackbarPos("Denoise", ZOOM_NAME),
+                        contrast=cv2.getTrackbarPos("Contrast", ZOOM_NAME),
+                        glow=cv2.getTrackbarPos("City Glow", ZOOM_NAME),
+                        clarity=PROFILES["MANUAL"].clarity,
+                        stack_alpha=max(0.03, cv2.getTrackbarPos("Stack Blend", ZOOM_NAME) / 100.0),
+                        night=True,
+                        dehaze=modes["dehaze"],
+                        quality_scale=PROFILES["MANUAL"].quality_scale,
+                    )
+                else:
+                    tuning = PROFILES["MANUAL"]
+                    if modes["dehaze"]:
+                        tuning = ProfileTuning(
+                            "MANUAL+HAZE",
+                            sharp=tuning.sharp,
+                            denoise=tuning.denoise,
+                            contrast=tuning.contrast,
+                            glow=tuning.glow,
+                            clarity=tuning.clarity,
+                            stack_alpha=tuning.stack_alpha,
+                            night=tuning.night,
+                            dehaze=True,
+                            quality_scale=tuning.quality_scale,
+                        )
+
+            alpha = tuning.stack_alpha
+            sharp = tuning.sharp
+            denoise = tuning.denoise
+            contrast = tuning.contrast
+            glow = tuning.glow
+            clarity = tuning.clarity
+            night = tuning.night
+            dehaze = tuning.dehaze or modes["dehaze"]
+            effective_quality_scale = float(
+                np.clip(tuning.quality_scale * quality_governor.multiplier, 1.0, max_quality_scale)
+            )
+
+            build_w = max(zoom_w, int(round(zoom_w * effective_quality_scale)))
+            build_h = max(zoom_h, int(round(zoom_h * effective_quality_scale)))
             zoom = cv2.resize(roi, (build_w, build_h), interpolation=cv2.INTER_LANCZOS4)
 
             stack_zoom, stack_status = _lucky_stack(
@@ -482,15 +689,16 @@ def main() -> int:
             zoom = stack_zoom
 
             if modes["gpu"] and mps.available:
-                zoom = mps.run(zoom, sharp=sharp, contrast=contrast, night=modes["night"], glow=glow)
+                zoom = mps.run(zoom, sharp=sharp, contrast=contrast, night=night, glow=glow)
                 zoom = _cv_detail_pass(
                     zoom,
                     sharp=max(0, sharp // 3),
                     denoise=denoise,
                     contrast=max(0, contrast // 3),
                     glow=0,
+                    clarity=clarity,
                     night=False,
-                    dehaze=modes["dehaze"],
+                    dehaze=dehaze,
                 )
                 detail_status = f"M5 {mps.device_name}"
             else:
@@ -500,13 +708,15 @@ def main() -> int:
                     denoise=denoise,
                     contrast=contrast,
                     glow=glow,
-                    night=modes["night"],
-                    dehaze=modes["dehaze"],
+                    clarity=clarity,
+                    night=night,
+                    dehaze=dehaze,
                 )
                 detail_status = "CV2 detail"
 
             if (build_w, build_h) != (zoom_w, zoom_h):
                 zoom = cv2.resize(zoom, (zoom_w, zoom_h), interpolation=cv2.INTER_AREA)
+                zoom = _edge_clarity_pass(zoom, amount=max(18, clarity // 2))
 
             live = cv2.resize(frame, (live_w, live_h), interpolation=cv2.INTER_AREA)
             rx1 = int(x1 * live_w / max(1, frame_w))
@@ -523,27 +733,30 @@ def main() -> int:
                 cv2.line(zoom, (zoom_w // 2, 0), (zoom_w // 2, zoom_h), (0, 180, 180), 1)
                 cv2.line(zoom, (0, zoom_h // 2), (zoom_w, zoom_h // 2), (0, 180, 180), 1)
 
-            for bx1, by1, bx2, by2, label, action in buttons:
-                active = modes.get(action, False)
-                if action in ("z_in", "z_out", "reset"):
-                    fill = (230, 230, 230)
-                    fg = (0, 0, 0)
-                else:
-                    fill = (0, 180, 80) if active else (55, 55, 55)
-                    fg = (0, 0, 0) if active else (230, 230, 230)
-                cv2.rectangle(live, (bx1, by1), (bx2, by2), fill, -1)
-                cv2.rectangle(live, (bx1, by1), (bx2, by2), (0, 0, 0), 2)
-                (tw, th), _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.62, 2)
-                cv2.putText(
-                    live,
-                    label,
-                    (bx1 + max(4, ((bx2 - bx1) - tw) // 2), by1 + ((by2 - by1) + th) // 2),
-                    cv2.FONT_HERSHEY_SIMPLEX,
-                    0.62,
-                    fg,
-                    2,
-                    cv2.LINE_AA,
-                )
+            if modes["controls"]:
+                for bx1, by1, bx2, by2, label, action in buttons:
+                    active = modes.get(action, False)
+                    if action == "dehaze":
+                        active = modes["dehaze"] or (modes["auto"] and tuning.dehaze)
+                    if action in ("z_in", "z_out", "reset"):
+                        fill = (230, 230, 230)
+                        fg = (0, 0, 0)
+                    else:
+                        fill = (0, 180, 80) if active else (55, 55, 55)
+                        fg = (0, 0, 0) if active else (230, 230, 230)
+                    cv2.rectangle(live, (bx1, by1), (bx2, by2), fill, -1)
+                    cv2.rectangle(live, (bx1, by1), (bx2, by2), (0, 0, 0), 2)
+                    (tw, th), _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.54, 2)
+                    cv2.putText(
+                        live,
+                        label,
+                        (bx1 + max(4, ((bx2 - bx1) - tw) // 2), by1 + ((by2 - by1) + th) // 2),
+                        cv2.FONT_HERSHEY_SIMPLEX,
+                        0.54,
+                        fg,
+                        2,
+                        cv2.LINE_AA,
+                    )
 
             loop_now = time.time()
             fps = 1.0 / max(1e-6, loop_now - prev_loop)
@@ -551,21 +764,30 @@ def main() -> int:
             fps_buf.append(fps)
             fps_buf = fps_buf[-30:]
             fps_avg = sum(fps_buf) / max(1, len(fps_buf))
+            quality_governor.update(fps_avg, now=loop_now)
 
             if modes["hud"]:
+                profile_label = profile_name if modes["auto"] else tuning.name
+                profile_mode = "AUTO" if modes["auto"] else "MANUAL"
+                stack_label = stack_status.split(" shift", 1)[0]
                 hud = (
-                    f"{time.strftime('%H:%M:%S')} | Z{zoom_level}x | FPS {fps_avg:4.1f} | "
-                    f"{detail_status} | {stack_status}"
+                    f"{time.strftime('%H:%M:%S')} | Z{zoom_level}x | {profile_label} | "
+                    f"{fps_avg:4.1f}fps | Q{effective_quality_scale:.2f} | {detail_status} | {stack_label}"
                 )
                 cv2.rectangle(live, (0, live_h - 36), (live_w, live_h), (0, 0, 0), -1)
                 _draw_label(live, hud[:135], (10, live_h - 11), color=(0, 255, 255))
                 cv2.rectangle(zoom, (0, 0), (zoom_w, 34), (0, 0, 0), -1)
                 _draw_label(
                     zoom,
-                    f"M5 Lucky Skyline | Z{zoom_level}x | sharp {sharp} denoise {denoise} contrast {contrast}",
+                    f"M5 | {profile_mode} {profile_label} | Z{zoom_level}x | S{sharp} DN{denoise} CL{clarity}",
                     (10, 24),
                     color=(0, 255, 255),
                 )
+                metrics_txt = (
+                    f"L {scene_metrics.luma:3.0f} C {scene_metrics.contrast:2.0f} "
+                    f"S {scene_metrics.saturation:2.0f} H {scene_metrics.haze_score:.2f}"
+                )
+                _draw_label(zoom, metrics_txt, (10, zoom_h - 14), color=(0, 255, 255))
 
             cv2.imshow(LIVE_NAME, live)
             cv2.imshow(ZOOM_NAME, zoom)
@@ -574,13 +796,17 @@ def main() -> int:
             if key in (27, ord("q")):
                 break
             if key in (ord("+"), ord("=")):
-                zoom_level = min(max_zoom, zoom_level + 1)
-                cv2.setTrackbarPos("Zoom", ZOOM_NAME, zoom_level)
+                set_zoom_level(zoom_level + 1)
                 stack.reset()
             elif key == ord("-"):
-                zoom_level = max(min_zoom, zoom_level - 1)
-                cv2.setTrackbarPos("Zoom", ZOOM_NAME, zoom_level)
+                set_zoom_level(zoom_level - 1)
                 stack.reset()
+            elif key == ord("a"):
+                modes["auto"] = not modes["auto"]
+            elif key == ord("c"):
+                modes["controls"] = not modes["controls"]
+            elif key == ord("h"):
+                modes["dehaze"] = not modes["dehaze"]
             elif key == ord("r"):
                 stack.reset()
             elif key == ord("s"):

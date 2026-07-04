@@ -339,8 +339,8 @@ def main() -> int:
 
     print("\nRecommended 3-way preflight sequence:")
     print("1) Start .venv app launcher: ./.venv/bin/python app_Launcher_v2.py")
-    print("2) Set DJI Fly custom RTMP to rtmp://{ip}:1935/live and stream key mavic3")
-    print("3) Launch ISR main panel before takeoff and verify NO SIGNAL -> CONNECTED transition")
+    print(f"2) Set DJI Fly custom RTMP to rtmp://{local_ip}:1935/live and stream key mavic3")
+    print("3) Let M5 LakeHouse AutoScout auto-launch on CONNECTED, or click it before takeoff")
     if not rtmp_server_up:
         print("\nHint: RTMP server is down. Use LAUNCHER START STREAM or run")
         print("  npx --yes node-media-server@latest node_media_server_config.js")

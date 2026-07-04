@@ -27,16 +27,47 @@ class LatestFrameGrabber:
         *,
         width: Optional[int] = None,
         height: Optional[int] = None,
+        open_timeout_ms: int = 1000,
+        read_timeout_ms: int = 1000,
     ) -> None:
         self.url = url
         self.api = api
         self._width = width
         self._height = height
+        self._open_timeout_ms = int(open_timeout_ms)
+        self._read_timeout_ms = int(read_timeout_ms)
 
-        self._cap = cv2.VideoCapture(self.url, self.api)
+        self._cap = self._open_capture()
         if not self._cap.isOpened():
             raise RuntimeError(f"Could not open stream: {self.url}")
 
+        self._configure_capture()
+
+        self._lock = threading.Lock()
+        self._frame: Optional[np.ndarray] = None
+        self._ts: Optional[float] = None
+        self._stop = threading.Event()
+
+        self._thread = threading.Thread(target=self._worker, name="LatestFrameGrabber", daemon=True)
+        self._thread.start()
+
+    def _open_capture(self):
+        params = []
+        for name, value in (
+            ("CAP_PROP_OPEN_TIMEOUT_MSEC", self._open_timeout_ms),
+            ("CAP_PROP_READ_TIMEOUT_MSEC", self._read_timeout_ms),
+        ):
+            prop = getattr(cv2, name, None)
+            if prop is not None and value and value > 0:
+                params.extend([int(prop), int(value)])
+        try:
+            if params:
+                return cv2.VideoCapture(self.url, self.api, params)
+        except Exception:
+            pass
+        return cv2.VideoCapture(self.url, self.api)
+
+    def _configure_capture(self) -> None:
         # Best-effort: request a capture size (FFmpeg/OpenCV may ignore).
         if self._width:
             try:
@@ -55,35 +86,14 @@ class LatestFrameGrabber:
         except Exception:
             pass
 
-        self._lock = threading.Lock()
-        self._frame: Optional[np.ndarray] = None
-        self._ts: Optional[float] = None
-        self._stop = threading.Event()
-
-        self._thread = threading.Thread(target=self._worker, name="LatestFrameGrabber", daemon=True)
-        self._thread.start()
-
     def _reopen(self) -> None:
         try:
             self._cap.release()
         except Exception:
             pass
-        self._cap = cv2.VideoCapture(self.url, self.api)
+        self._cap = self._open_capture()
         if self._cap.isOpened():
-            if self._width:
-                try:
-                    self._cap.set(cv2.CAP_PROP_FRAME_WIDTH, int(self._width))
-                except Exception:
-                    pass
-            if self._height:
-                try:
-                    self._cap.set(cv2.CAP_PROP_FRAME_HEIGHT, int(self._height))
-                except Exception:
-                    pass
-            try:
-                self._cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
-            except Exception:
-                pass
+            self._configure_capture()
 
     def _worker(self) -> None:
         fail_count = 0
