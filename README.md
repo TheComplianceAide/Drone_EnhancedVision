@@ -183,6 +183,10 @@ Field card
 
 - `tonight_flight_card.html`: One-page offline flight card for the MacBook. It keeps the three-battery sequence, stream key, weather caution, preflight checklist, and recommended modes visible without requiring internet.
 
+Rev2 verification
+
+- `m5_v2_smoke_test.py`: Synthetic per-script gate for the Rev2 M5 work. It checks at least 25% improvement proxies for EventScope faint-event pickup, Lucky Skyline stack smear rejection, ISR target utility, LakeHouse scoring, and Radar pixel-budget latency.
+
 Motion detection / tracking
 
 - `_08_M5_Radar_Motion_AutoZoom_Rev1.py` (MacBook M-series preset): Launches `_07_Radar_Motion_GPU_AutoZoom_Rev1.py` with low-latency FFmpeg capture settings, balanced/detail/low-latency inference profiles, and a startup CPU-vs-MPS benchmark so Apple Silicon does not waste time on GPU transfer overhead when CPU is faster.
