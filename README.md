@@ -28,6 +28,7 @@ This README documents the latest scripts, what they do, which ones are light/hea
 - `_Track_up_to_5_objects_wAdjustableObjectSize_Rev2.py`: Motion detection (median-size filter; RTMP input).
 - `_track5_LargestObjects_Rev2.py` / `_track5_LargestObjects_Rev3.py`: Motion detection (top‑5 largest; RTMP input; Rev3 adds persistence/M indicator).
 - `_08_M5_Radar_Motion_AutoZoom_Rev1.py`: Apple Silicon preset wrapper for the radar motion script; benchmarks CPU vs MPS and launches the faster path with low-latency RTMP settings.
+- `_08_M5_Radar_Motion_AutoZoom_Rev2.py`: Rev2 radar target: 25% better field reliability through adaptive profile selection and lower latency pixel budgets when benchmarks are inconclusive.
 - Legacy screen‑capture variants (MSS): files without a leading underscore (e.g., `MotionDetectionV1.py`, `NightVision_Rev1y.py`, `Click_to_Zoom_Large_Medium_Small_Rev2.py`, etc.). These do NOT read RTMP; they capture part of your desktop.
 - Streaming support: `node_media_server_config.js` (RTMP/HTTP FLV) and `live_stream_tester.html` (browser FLV player).
 - Models: `yolov8n.pt`, `yolov8s.pt`, `*.onnx`, `yolov4-tiny.*`, `coco.names`.
