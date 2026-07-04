@@ -261,14 +261,19 @@ class App:
         mapping = {
             "_1_4General_Target_Acquisition_4.py": "GENERAL TRACKER (Rev4)",
             "_08_M5_LuckySkylineSuperZoom_Rev1.py": "M5 LUCKY SKYLINE SUPERZOOM",
+            "_08_M5_LuckySkylineSuperZoom_Rev2.py": "M5 LUCKY SKYLINE SUPERZOOM V2",
             "_05_SuperZoom_IAT_Rev1.py": "SUPERZOOM + AI (IAT)",
             "_04_IAT_Deep_NightVision_Rev1.py": "DEEP NIGHT VISION (IAT)",
             "_06_ISR_MainPanel_Motion_AutoZoom_Rev1.py": "ISR MAIN PANEL (Motion + AutoZoom)",
             "_07_Radar_Motion_GPU_AutoZoom_Rev1.py": "RADAR (Motion Only) + AutoZoom",
             "_08_M5_Radar_Motion_AutoZoom_Rev1.py": "M5 RADAR (Auto-Tuned Motion)",
+            "_08_M5_Radar_Motion_AutoZoom_Rev2.py": "M5 RADAR MOTION V2",
             "_09_M5_TemporalEventScope_Rev1.py": "M5 TEMPORAL EVENTSCOPE",
+            "_09_M5_TemporalEventScope_Rev2.py": "M5 TEMPORAL EVENTSCOPE V2",
             "_10_M5_ISR_ReconSuite_Rev1.py": "M5 ISR RECON SUITE",
+            "_10_M5_ISR_ReconSuite_Rev2.py": "M5 ISR RECON SUITE V2",
             "_11_M5_LakeHouse_AutoScout_Rev1.py": "M5 LAKEHOUSE AUTOSCOUT",
+            "_11_M5_LakeHouse_AutoScout_Rev2.py": "M5 LAKEHOUSE AUTOSCOUT V2",
         }
         return mapping.get(script, script)
 
@@ -749,34 +754,34 @@ class App:
         all_scripts = [s for s in sorted(os.listdir(self.path)) if s.startswith("_") and s.endswith(".py")]
         featured = [
             (
-                "_11_M5_LakeHouse_AutoScout_Rev1.py",
+                "_11_M5_LakeHouse_AutoScout_Rev2.py",
                 "≈",
-                "LAKEHOUSE AUTOSCOUT",
-                "Auto fireworks + waves",
+                "LAKEHOUSE AUTOSCOUT V2",
+                "Auto motion + waves",
             ),
             (
-                "_10_M5_ISR_ReconSuite_Rev1.py",
+                "_10_M5_ISR_ReconSuite_Rev2.py",
                 "◈",
-                "ISR RECON SUITE",
-                "Fusion, radar, superzoom",
+                "ISR RECON SUITE V2",
+                "Fusion target IQ",
             ),
             (
-                "_09_M5_TemporalEventScope_Rev1.py",
+                "_09_M5_TemporalEventScope_Rev2.py",
                 "◎",
-                "TEMPORAL EVENTSCOPE",
-                "Faint motion and trails",
+                "TEMPORAL EVENTSCOPE V2",
+                "Fainter motion trails",
             ),
             (
-                "_08_M5_LuckySkylineSuperZoom_Rev1.py",
+                "_08_M5_LuckySkylineSuperZoom_Rev2.py",
                 "⌖",
-                "LUCKY SKYLINE ZOOM",
-                "Stabilized detail zoom",
+                "LUCKY SKYLINE V2",
+                "Quality-aware stack",
             ),
             (
-                "_08_M5_Radar_Motion_AutoZoom_Rev1.py",
+                "_08_M5_Radar_Motion_AutoZoom_Rev2.py",
                 "◌",
-                "M5 RADAR MOTION",
-                "Motion radar autozoom",
+                "M5 RADAR MOTION V2",
+                "Adaptive preset",
             ),
         ]
 
@@ -861,9 +866,27 @@ class App:
 
     def _resolve_default_script(self) -> str:
         saved = str(self.prefs.get("default_script") or "").strip()
+        rev2_upgrade = {
+            "_11_M5_LakeHouse_AutoScout_Rev1.py": "_11_M5_LakeHouse_AutoScout_Rev2.py",
+            "_10_M5_ISR_ReconSuite_Rev1.py": "_10_M5_ISR_ReconSuite_Rev2.py",
+            "_09_M5_TemporalEventScope_Rev1.py": "_09_M5_TemporalEventScope_Rev2.py",
+            "_08_M5_LuckySkylineSuperZoom_Rev1.py": "_08_M5_LuckySkylineSuperZoom_Rev2.py",
+            "_08_M5_Radar_Motion_AutoZoom_Rev1.py": "_08_M5_Radar_Motion_AutoZoom_Rev2.py",
+        }
+        upgraded = rev2_upgrade.get(saved, "")
+        if upgraded and os.path.exists(os.path.join(self.path, upgraded)):
+            return upgraded
         if saved and os.path.exists(os.path.join(self.path, saved)):
             return saved
         # First-run default: prefer the lake-house auto console, then the consolidated ISR console.
+        if os.path.exists(os.path.join(self.path, "_11_M5_LakeHouse_AutoScout_Rev2.py")):
+            return "_11_M5_LakeHouse_AutoScout_Rev2.py"
+        if os.path.exists(os.path.join(self.path, "_10_M5_ISR_ReconSuite_Rev2.py")):
+            return "_10_M5_ISR_ReconSuite_Rev2.py"
+        if os.path.exists(os.path.join(self.path, "_09_M5_TemporalEventScope_Rev2.py")):
+            return "_09_M5_TemporalEventScope_Rev2.py"
+        if os.path.exists(os.path.join(self.path, "_08_M5_LuckySkylineSuperZoom_Rev2.py")):
+            return "_08_M5_LuckySkylineSuperZoom_Rev2.py"
         if os.path.exists(os.path.join(self.path, "_11_M5_LakeHouse_AutoScout_Rev1.py")):
             return "_11_M5_LakeHouse_AutoScout_Rev1.py"
         if os.path.exists(os.path.join(self.path, "_10_M5_ISR_ReconSuite_Rev1.py")):

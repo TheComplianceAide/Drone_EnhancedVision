@@ -17,9 +17,13 @@ This README documents the latest scripts, what they do, which ones are light/hea
 - `_1_General_Target_Acquisition_3.py`: OpenCV DNN YOLOv4 detector (RTMP input; expects full YOLOv4 weights).
 - `_1_4General_Target_Acquisition_4.py`: Motion tracker with centroid tracking + “wing hop” frequency cue (RTMP input).
 - `_08_M5_LuckySkylineSuperZoom_Rev1.py`: Flight-night super zoom panel for Mac M-series/MPS. Uses click-to-center zoom, temporal “lucky imaging” frame stacking, dehaze/night/glow/detail controls, and an optional MPS detail pass.
+- `_08_M5_LuckySkylineSuperZoom_Rev2.py`: Rev2 skyline zoom target: 25% better usable zoom clarity through quality-aware temporal stacking and smear rejection.
 - `_09_M5_TemporalEventScope_Rev1.py`: Flight-night temporal event viewer for Mac M-series. Stabilizes drone drift, subtracts stabilized frames, accumulates brightening/dimming motion as colored trails, and auto-zooms the strongest pulse.
+- `_09_M5_TemporalEventScope_Rev2.py`: Rev2 event target: 25% better faint-event pickup using multi-cue edge/local/glint masks and smarter target ranking.
 - `_10_M5_ISR_ReconSuite_Rev1.py`: Consolidated ISR-style field console. Combines temporal event trails, radar motion, stabilized superzoom, night/haze enhancement, optional YOLO object detection, auto scene tuning, snapshots, and icon-first buttons.
+- `_10_M5_ISR_ReconSuite_Rev2.py`: Rev2 ISR target: 25% better operator usefulness by inheriting Rev2 event detection, target ranking, and stack quality control.
 - `_11_M5_LakeHouse_AutoScout_Rev1.py`: Auto-tuned lake/city recon console for Apple Silicon. Blends motion radar, wave/firework enhancement, stabilized event trails, and big simple mode buttons.
+- `_11_M5_LakeHouse_AutoScout_Rev2.py`: Rev2 lake target: 25% better field autonomy with wake/water scoring, stronger masks, and V2 target selection.
 - `tonight_flight_card.html`: Offline field card for a three-battery dusk mission with checklist buttons and suggested modes.
 - `_Track_up_to_5_objects_wAdjustableObjectSize_Rev2.py`: Motion detection (median-size filter; RTMP input).
 - `_track5_LargestObjects_Rev2.py` / `_track5_LargestObjects_Rev3.py`: Motion detection (top‑5 largest; RTMP input; Rev3 adds persistence/M indicator).
@@ -124,9 +128,13 @@ That script now auto-starts the launcher with the repo venv and avoids extra set
   - `_1_General_Target_Acquisition_2.py`, `_1_General_Target_Acquisition_3.py`
   - `_1_4General_Target_Acquisition_4.py` (accepts `--url` if you want to change it)
   - `_08_M5_LuckySkylineSuperZoom_Rev1.py` (accepts `--url`; default flight-night super zoom)
+  - `_08_M5_LuckySkylineSuperZoom_Rev2.py` (accepts `--url`; quality-aware super zoom)
   - `_09_M5_TemporalEventScope_Rev1.py` (accepts `--url`; default flight-night event/motion-trail viewer)
+  - `_09_M5_TemporalEventScope_Rev2.py` (accepts `--url`; multi-cue event viewer)
   - `_10_M5_ISR_ReconSuite_Rev1.py` (accepts `--url`; consolidated ISR recon console)
+  - `_10_M5_ISR_ReconSuite_Rev2.py` (accepts `--url`; V2 ISR recon console)
   - `_11_M5_LakeHouse_AutoScout_Rev1.py` (accepts `--url`; auto lake/city scout with motion radar, wave, and firework modes)
+  - `_11_M5_LakeHouse_AutoScout_Rev2.py` (accepts `--url`; V2 default lake/city scout)
 
 - Screen capture (MSS; no RTMP):
   - `MotionDetectionV1.py`, `Drone_enhancedVisionV1.py`,
@@ -154,18 +162,22 @@ Click‑to‑zoom
 - `_Click_to_Zoom_Large_Medium_Small_Rev3.py`: Trackbar‑style zoom; basic contrast + sharpen in the zoom pane.
 - `_05_SuperZoom_IAT_Rev1.py` (mission zoom): Two windows (“Live” + “SuperZoom”) with higher max digital zoom plus a heavy “SZ” pipeline for the zoom pane (detail enhance + denoise/sharpen trackbars). Optional “AI” uses IAT on the zoom pane (GPU via PyTorch MPS when available) to pull detail in low light; weights auto-download into `models/iat/`. Keys: `s` snapshots to `snapshots/`, `ESC` quits.
 - `_08_M5_LuckySkylineSuperZoom_Rev1.py` (tonight): Two windows (“Live - click target” + “M5 Lucky Skyline SuperZoom”). Click the live view to center the zoom, then use the zoom-pane trackbars for Zoom/Stack Blend/Sharp/Denoise/Contrast/City Glow. The main trick is temporal lucky stacking: it aligns recent zoom frames and blends them so distant static detail steadies up over a few seconds. Buttons toggle STACK, M5 GPU detail, NIGHT, HAZE, GRID, GLOW, and HUD. Keys: `+/-` zoom, `r` reset stack, `s` snapshot, `ESC` quits.
+- `_08_M5_LuckySkylineSuperZoom_Rev2.py` (V2 default skyline zoom): Same field controls as Rev1, but the stack now scores frame sharpness/exposure before blending. Clear frames reinforce faster; smeared frames are down-weighted so the stack is harder to poison during small gimbal bumps.
 
 Temporal event vision
 
 - `_09_M5_TemporalEventScope_Rev1.py`: Two windows (“Live - EventScope Aim” + “M5 Temporal EventScope”). It stabilizes small drone drift, subtracts the stabilized previous frame, and paints brightening/dimming changes as persistent cyan/yellow and magenta trails. The right-side “motion microscope” auto-zooms the strongest pulse; click the live view to manually aim it. Auto Tune classifies the scene as SKYLINE, TRAFFIC, or DARK FIELD and adjusts sensitivity, trail decay, zoom, heat view, and haze automatically. Best for distant traffic, skyline strobes, aircraft lights, fireworks, and glints. Buttons toggle TUNE, TRAIL, AUTOZ, HEAT, HAZE, FREEZE, and HUD. Keys: `+/-` zoom, `[`/`]` sensitivity, `a` auto tune, `t` trails, `z` auto-zoom, `h` haze, `f` freeze, `r` reset, `s` snapshot, `ESC` quits.
+- `_09_M5_TemporalEventScope_Rev2.py` (V2 default event scope): Adds a shared Rev2 event mask that combines absolute frame difference, edge motion, local saliency, and glint detection. Auto-zoom uses V2 track ranking so confirmed moving targets beat one-frame sparkle.
 
 Consolidated ISR console
 
 - `_10_M5_ISR_ReconSuite_Rev1.py`: Two windows (“M5 ISR Live” + “M5 ISR Recon Suite”). Default FUSION view combines temporal event trails, radar motion, and stabilized superzoom. AUTO classifies SKYLINE/TRAFFIC/DARK FIELD and tunes the event threshold, trail decay, zoom, heat view, haze, and night enhancement. The Live window uses icon-first buttons for AUTO, FUSION, EVENT, RADAR, ZOOM, AI, NIGHT, HAZE, TRAIL, LOCK, SNAP, RESET, and zoom +/-; tap the live image to manually aim the microscope. Optional AI loads YOLO only when the AI button is enabled.
+- `_10_M5_ISR_ReconSuite_Rev2.py` (V2 default ISR): Same simple ISR console, but it imports the Rev2 EventScope primitives, uses quality-aware superzoom stacking, and chooses targets by track confidence, velocity, scene focus, and edge penalties.
 
 Lake/city auto scout
 
 - `_11_M5_LakeHouse_AutoScout_Rev1.py` (current default): Simple button-first field console for flying over water, roads, skyline edges, and dark fields. `AUTO` continuously chooses between SCOUT, MOTION, WAVE, and FIREWORKS based on scene energy. The `BIRDS` button is a broad motion mode, not just bird detection: it highlights boats, people, cars, shoreline motion, flashing lights, and small moving targets with a radar panel, trails, flow tint, and auto zoom. `WAVE` enhances water/shore movement, while `FIREWORKS` biases toward burst/glint events. Uses Apple Silicon MPS/OpenCL/optical-flow paths when available.
+- `_11_M5_LakeHouse_AutoScout_Rev2.py` (current default): Keeps the same AUTO/FIREWORKS/WAVE/BIRDS/SNAP/RST UI, but uses the Rev2 event mask plus water-specific wake texture, sky burst, and shoreline motion boosts. This is the recommended one-button flight script.
 
 Field card
 
@@ -174,6 +186,7 @@ Field card
 Motion detection / tracking
 
 - `_08_M5_Radar_Motion_AutoZoom_Rev1.py` (MacBook M-series preset): Launches `_07_Radar_Motion_GPU_AutoZoom_Rev1.py` with low-latency FFmpeg capture settings, balanced/detail/low-latency inference profiles, and a startup CPU-vs-MPS benchmark so Apple Silicon does not waste time on GPU transfer overhead when CPU is faster.
+- `_08_M5_Radar_Motion_AutoZoom_Rev2.py` (V2 preset): Defaults to an adaptive profile. If MPS wins it selects detail; if CPU wins it keeps the reliable balanced path; if the benchmark is inconclusive it favors low latency.
 - `_track5_LargestObjects_Rev3.py` (latest): Frame differencing + blur + threshold → contours; draws X on up to 5 largest movers; adds persistence and an on‑screen “M” when motion is present. Very light CPU.
 - `_track5_LargestObjects_Rev2.py`: Same without persistence/M indicator.
 - `_Track_up_to_5_objects_wAdjustableObjectSize_Rev2.py`: Similar pipeline, but filters by object size near the median; slider controls tolerance. Very light CPU.
