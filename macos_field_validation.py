@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-macOS smoke test for Drone_EnhancedVision.
+macOS field validation for Drone_EnhancedVision.
 
 Checks:
 - Python/Tkinter can create a window (launcher prerequisite on macOS).
@@ -129,4 +129,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

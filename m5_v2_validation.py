@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Synthetic smoke checks for the M5 Rev2 vision helpers."""
+"""Deterministic validation gates for the M5 Rev2 vision helpers."""
 
 from __future__ import annotations
 
@@ -205,7 +205,7 @@ def main() -> int:
     gates.append(f"Radar pixel budget -{radar_latency_lift:.0%}")
 
     print(
-        "M5 Rev2 smoke ok | "
+        "M5 Rev2 validation ok | "
         f"event hits {rev1_hits}->{v2_hits} | "
         f"stack alpha {a_blur:.3f}->{a_sharp:.3f} | "
         f"lake wave {rev1_wave:.3f}->{rev2_wave:.3f} motion {rev1_motion:.3f}->{rev2_motion:.3f} | "

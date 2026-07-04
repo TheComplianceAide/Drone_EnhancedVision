@@ -186,7 +186,7 @@ Field card
 
 Rev2 verification
 
-- `m5_v2_smoke_test.py`: Synthetic per-script gate for the Rev2 M5 work. It checks at least 25% improvement proxies for EventScope faint-event pickup, Lucky Skyline stack smear rejection, ISR target utility, LakeHouse scoring, and Radar pixel-budget latency.
+- `m5_v2_validation.py`: Deterministic per-script validation gate for the Rev2 M5 work. It checks at least 25% improvement proxies for EventScope faint-event pickup, Lucky Skyline stack smear rejection, ISR target utility, LakeHouse scoring, and Radar pixel-budget latency.
 
 Motion detection / tracking
 
