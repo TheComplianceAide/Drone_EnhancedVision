@@ -274,6 +274,10 @@ class App:
             "_10_M5_ISR_ReconSuite_Rev2.py": "M5 ISR RECON SUITE V2",
             "_11_M5_LakeHouse_AutoScout_Rev1.py": "M5 LAKEHOUSE AUTOSCOUT",
             "_11_M5_LakeHouse_AutoScout_Rev2.py": "M5 LAKEHOUSE AUTOSCOUT V2",
+            "_09_M5_Fable_MotionISR_Rev1.py": "M5 FABLE MOTION ISR (Ego-Comp)",
+            "_10_M5_Fable_NightVision_Rev1.py": "M5 FABLE NIGHTVISION (Motion-Comp)",
+            "_11_M5_Fable_SuperRes_Rev1.py": "M5 FABLE SUPERRES (Multi-Frame)",
+            "_12_M5_Fable_Overwatch_Rev1.py": "M5 FABLE OVERWATCH (Sentry+DVR)",
         }
         return mapping.get(script, script)
 

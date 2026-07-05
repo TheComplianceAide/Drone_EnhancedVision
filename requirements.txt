@@ -3,3 +3,7 @@ mss
 numpy
 psutil
 Pillow
+torch
+# Optional extras (guarded imports; scripts degrade cleanly without them):
+# ultralytics   # _09 YOLO chip labeling (also used by older _0x scripts)
+# onnxruntime   # _11 Real-ESRGAN .onnx path (already installed in .venv)

@@ -1,0 +1,4 @@
+realesr-general-x4v3.pth — Real-ESRGAN compact model (SRVGGNetCompact)
+Source: https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesr-general-x4v3.pth
+Project: xinntao/Real-ESRGAN — License: BSD-3-Clause
+Downloaded 2026-07-03 at build time for _11_M5_Fable_SuperRes_Rev1.py (optional AI-enhance pass; runtime never touches the network).

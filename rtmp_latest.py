@@ -104,7 +104,10 @@ class LatestFrameGrabber:
                 # Avoid a hot loop when the stream is down.
                 time.sleep(0.05)
                 # Periodically try to reopen the capture if reads keep failing.
-                if fail_count in (20, 60, 120, 240):
+                # Keep retrying forever (every ~6s after the early attempts) so a
+                # capture that opened before the publisher started is not dead
+                # permanently.
+                if fail_count in (20, 60) or (fail_count >= 120 and fail_count % 120 == 0):
                     self._reopen()
                 continue
 

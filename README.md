@@ -29,6 +29,10 @@ This README documents the latest scripts, what they do, which ones are light/hea
 - `_track5_LargestObjects_Rev2.py` / `_track5_LargestObjects_Rev3.py`: Motion detection (top‑5 largest; RTMP input; Rev3 adds persistence/M indicator).
 - `_08_M5_Radar_Motion_AutoZoom_Rev1.py`: Apple Silicon preset wrapper for the radar motion script; benchmarks CPU vs MPS and launches the faster path with low-latency RTMP settings.
 - `_08_M5_Radar_Motion_AutoZoom_Rev2.py`: Rev2 radar target: 25% better field reliability through adaptive profile selection and lower latency pixel budgets when benchmarks are inconclusive.
+- `_10_M5_Fable_NightVision_Rev1.py`: Motion-compensated night vision viewer (RTMP input; moderate CPU, MPS-accelerated). Learned IAT low-light engine on MPS (weights vendored in `third_party/iat/weights/`, no network at runtime) with a Retinex/LIME classical fallback, anti-flicker smoothed gain/gamma, LK+RANSAC-registered temporal photon integration with a per-pixel motion mask (static ground integrates, movers stay ghost-free), hover long-exposure mode (~1 s effective exposure when stable), luma CLAHE + chroma denoise, focus peaking, Natural/NV-green/White-hot palettes.
+- `_09_M5_Fable_MotionISR_Rev1.py`: Ego-motion-compensated motion ISR panel (RTMP input; moderate CPU, optional MPS). LK+RANSAC homography registration so pans/orbits don't flood the frame, MOG2+registered-diff fusion, Kalman tracks with IDs/trails/speed, AutoZoom inset + radar mini-map.
+- `_11_M5_Fable_SuperRes_Rev1.py`: Click-to-target LONG-RANGE super resolution (RTMP input; moderate CPU, MPS-accelerated). Turbulence mitigation (DIS dense-flow registration to an averaged reference), lucky gate, Hann phase-correlation sub-pixel registration, drizzle onto a 2x-3x grid, Richardson-Lucy deconvolution, dark-channel dehaze; LIVE / LONG-RANGE modes plus a STILL burst button that stacks ~96 frames into a max-quality PNG. Self-calibrating (noise/turbulence/motion measured, all gates auto), FPS governor, optional Real-ESRGAN chip enhance from `third_party/realesrgan/` (offline, labeled synthesized).
+- `_12_M5_Fable_Overwatch_Rev1.py`: Autonomous overwatch sentinel (RTMP input; moderate CPU, optional MPS). Ego-motion-compensated sentry detection with real-vs-fake track discipline, click-to-lock/auto-lock virtual gimbal that coasts through occlusion and re-acquires by appearance, pre-roll event DVR (MP4 clips + thumbnails + incident log under `events/`), and a self-contained HTML mission briefing. No model weights required; zero operator tuning.
 - Legacy screen‑capture variants (MSS): files without a leading underscore (e.g., `MotionDetectionV1.py`, `NightVision_Rev1y.py`, `Click_to_Zoom_Large_Medium_Small_Rev2.py`, etc.). These do NOT read RTMP; they capture part of your desktop.
 - Streaming support: `node_media_server_config.js` (RTMP/HTTP FLV) and `live_stream_tester.html` (browser FLV player).
 - Models: `yolov8n.pt`, `yolov8s.pt`, `*.onnx`, `yolov4-tiny.*`, `coco.names`.
@@ -155,6 +159,7 @@ Night vision
 - `_NightVision_Rev4.py`: Similar to Rev5; earlier tuning.
 - `_NightVision_Rev2y.py`: Adds Reinhard tone mapping before CLAHE; slightly heavier.
 - `_04_IAT_Deep_NightVision_Rev1.py` (deep): PyTorch IAT (Illumination-Adaptive Transformer) low-light enhancement for RTMP video. Uses Apple Silicon MPS when available. Auto-downloads weights on first run into `models/iat/` (then works offline). Trackbars: Blend/Temporal/Denoise/Sharpen. Keys: `q` quit, `s` snapshot to `snapshots/`, `t` toggle enhance/exposure weights. Heavier than CLAHE-based scripts (FPS may drop), but can reveal more detail in very dark scenes.
+- `_10_M5_Fable_NightVision_Rev1.py` (latest): Single window. STAGE A is the learned IAT low-light net on Apple-Silicon MPS (weights vendored in `third_party/iat/weights/best_Epoch_lol_v1.pth`; never touches the network at runtime, and the HUD says which engine is live) with a classical fallback when weights/GPU are absent: Retinex/LIME illumination-map lift (guided-filter refined, reflectance preserved; torch on MPS with one upload/download per frame, numpy fallback), motion-compensated temporal denoise (sparse LK → RANSAC similarity registers the running stack; per-pixel motion mask keeps movers ghost-free while static ground integrates for a large SNR gain), then luma CLAHE + chroma denoise with scene-adaptive strength. Global gain/gamma are EMA-smoothed so brightness never pumps. HOVER long-exposure mode auto-engages when the platform is stable (effective 0.5-1.5 s exposure, shown on the HUD) and exits on motion. Buttons AUTO/TEMP/HOVR/PAL/PEAK/DN-/DN+/RST/HUD/SNAP, Blend trackbar, keys `a t e p f [ ] r h s q`; palettes Natural/NV-green/White-hot; snapshots save a clean full-res frame plus the annotated view. Also runs `--headless` and `--selftest` with no GUI. ~24 FPS at native 1080p on M5 Pro (auto-downscales processing if it falls behind, display stays full size).
 
 Click‑to‑zoom
 
@@ -188,8 +193,13 @@ Rev2 verification
 
 - `m5_v2_validation.py`: Deterministic per-script validation gate for the Rev2 M5 work. It checks at least 25% improvement proxies for EventScope faint-event pickup, Lucky Skyline stack smear rejection, ISR target utility, LakeHouse scoring, and Radar pixel-budget latency.
 
+Fable long-range super resolution
+
+- `_11_M5_Fable_SuperRes_Rev1.py` (latest): Two windows (“Live - click target” + “M5 Fable SuperRes”). Built for genuinely distant subjects (ridgelines, treelines, structures at extreme range): each ROI frame is lucky-gated by Laplacian variance, turbulence-stabilized with DIS dense optical flow against a temporally-averaged reference, refined with Hann-windowed sub-pixel phase correlation, and drizzled onto a 2x/3x finer grid with confidence weights (torch/MPS accumulation, numpy fallback); the stacked chip then gets Richardson-Lucy deconvolution and a dark-channel haze cut. Everything self-tunes from a startup calibration (noise/turbulence/motion measured with robust stats) and a governor holds the FPS target. The SR window shows the reconstruction next to plain bicubic of the same crop. Buttons: LIVE/LONG mode, STILL (burst ~96 frames to a max-quality PNG in `snapshots/`), AI (Real-ESRGAN chip enhance from `third_party/realesrgan/`, offline, labeled synthesized detail), MPS, 2X/3X/4X zoom, FRZ, RST, SAVE, AUTO; “Haze %” trackbar shows the auto strength live. Keys: `+/-` zoom, `r` reset, `f` freeze, `c` STILL, `s` snapshot, `q`/`ESC` quits. Also has `--headless`/`--selftest` modes; moderate CPU, best with MPS. Tip: select the Mavic 3 TELE camera in DJI Fly for long range.
+
 Motion detection / tracking
 
+- `_09_M5_Fable_MotionISR_Rev1.py` (latest; being rebuilt as the small-target Fable ISR — see "Fable M5 Suite" below): Two windows ("Fable ISR - Live" + "AutoZoom + Radar"). Estimates global camera motion every frame (sparse LK → RANSAC homography) and detects on the registered residual fused with MOG2, so panning/orbiting doesn't white out the panel; HUD shows REG/RAW with the inlier count. Kalman constant-velocity tracks with persistent IDs, trails, speed/heading, and coast-through-occlusion; click a target to LOCK the AutoZoom pane (lock-lost reacquire instead of silent retarget); radar mini-map shows all track bearings. Buttons REG/MOG/TRAILS/BOXES/LOCK/NEXT/-/+/SNAP/QUIT, trackbars Sens/MinPx, keys `g m t b l n s r +/- q`. Snapshots save the full-resolution frame. Also runs `--headless` and `--selftest` with no GUI. Moderate CPU; optional torch/MPS diff path with automatic CPU fallback.
 - `_08_M5_Radar_Motion_AutoZoom_Rev1.py` (MacBook M-series preset): Launches `_07_Radar_Motion_GPU_AutoZoom_Rev1.py` with low-latency FFmpeg capture settings, balanced/detail/low-latency inference profiles, and a startup CPU-vs-MPS benchmark so Apple Silicon does not waste time on GPU transfer overhead when CPU is faster.
 - `_08_M5_Radar_Motion_AutoZoom_Rev2.py` (V2 preset): Defaults to an adaptive profile. If MPS wins it selects detail; if CPU wins it keeps the reliable balanced path; if the benchmark is inconclusive it favors low latency.
 - `_track5_LargestObjects_Rev3.py` (latest): Frame differencing + blur + threshold → contours; draws X on up to 5 largest movers; adds persistence and an on‑screen “M” when motion is present. Very light CPU.
@@ -205,6 +215,38 @@ Object detection (YOLO)
 Legacy screen capture
 
 - `MotionDetectionV1.py`, `Drone_enhancedVisionV1.py`, `1_General_Target_Acquisition.py`, `Click_to_Zoom_Large_Medium_Small_Rev2.py`, `Track_up_to_5_objects_wAdjustableObjectSize_Rev1.py`, `track5_LargestObjects_Rev1.py`, `NightVision_Rev1y.py`: Original desktop‑capture versions. Keep for reference; not used by the launcher.
+
+## Fable M5 Suite (_09–_12)
+
+The `_09`–`_12` scripts are the current-generation "Fable" ISR suite, built Apple-Silicon-first for an M-series MacBook Pro. They share one design contract: startup auto-calibration (noise floor, turbulence and motion measured with robust median/MAD statistics), continuous re-adaptation while running, and an FPS governor — zero operator tuning. Heavy paths run on MPS when available with a clean CPU fallback, and nothing touches the network at runtime (all model weights are vendored in-repo).
+
+- `_09_M5_Fable_MotionISR_Rev1.py` (latest — currently being rebuilt; this describes the intended capability): Superhuman small-target motion ISR. Finds REAL tiny movers (mouse/small-animal scale, 2–6 px in frame) from a hovering or panning Mavic 3 and refuses to alert on fake motion (sensor noise, compression shimmer, vegetation sway, parallax). Headline techniques: ego-motion compensation (sparse LK grid flow → RANSAC homography), track-before-detect temporal energy integration — dim-target radar integration applied to pixels — over a drift-immune keyframe anchor, continuous Immerkaer noise-floor tracking, a full-resolution detection path (MPS when it wins a startup micro-benchmark), and a real-vs-fake Kalman track classifier so only CONFIRMED movers alert; AutoZoom chip + radar mini-map, optional YOLO chip labeling. Every threshold is derived from the ~2 s calibration phase and re-derived as the scene changes.
+- `_10_M5_Fable_NightVision_Rev1.py`: Motion-compensated night vision. Learned IAT low-light engine on MPS (weights vendored in `third_party/iat/weights/`) with a classical Retinex/LIME fallback, LK+RANSAC-registered temporal photon integration with a per-pixel motion mask (static ground integrates for a large SNR gain, movers stay ghost-free), hover long-exposure mode (~1 s effective exposure when the platform is stable), EMA-smoothed gain/gamma so brightness never pumps, scene-adaptive CLAHE + chroma denoise. All strengths are scene-adaptive — no knobs required.
+- `_11_M5_Fable_SuperRes_Rev1.py`: Click-to-target LONG-RANGE super resolution. Turbulence mitigation (DIS dense-flow registration to a temporally averaged reference), lucky-frame gating, Hann-windowed sub-pixel phase correlation, drizzle onto a 2x–3x finer grid, Richardson-Lucy deconvolution and dark-channel dehaze; a STILL burst stacks ~96 frames into a max-quality PNG; optional Real-ESRGAN chip enhance (offline, labeled synthesized). Noise, turbulence and motion are measured at startup and every gate is derived from them automatically.
+- `_12_M5_Fable_Overwatch_Rev1.py` (new): Autonomous overwatch sentinel — removes the operator from the vigilance loop. It WATCHES (ego-motion-compensated sentry detection with real-vs-fake track discipline; wind sway that oscillates in place is rejected), ACTS (click-to-lock or auto-lock virtual gimbal with critically damped digital pan/zoom that coasts through occlusion on the Kalman prediction and re-acquires the same target by appearance), and REMEMBERS (a RAM ring-buffer event DVR that writes every CONFIRMED event to an MP4 clip WITH pre-roll video from before the confirmation, plus a JPEG thumbnail and machine-readable incident log under `events/`, and a self-contained HTML mission briefing on demand or at exit). No model weights required; all detection thresholds come from startup auto-calibration and adapt continuously.
+
+### Setup (.venv)
+
+The suite runs from the repo `.venv` (Python 3.13):
+
+```bash
+python3.13 -m venv .venv
+. .venv/bin/activate
+pip install -r requirements.txt
+```
+
+`torch` is required (MPS acceleration on Apple Silicon; CPU fallback otherwise). `ultralytics` (optional YOLO chip labeling in `_09`/`_12`) and `onnxruntime` (`_11`'s Real-ESRGAN path) are optional — every script degrades cleanly without them.
+
+### Launch
+
+```bash
+.venv/bin/python _09_M5_Fable_MotionISR_Rev1.py
+.venv/bin/python _10_M5_Fable_NightVision_Rev1.py
+.venv/bin/python _11_M5_Fable_SuperRes_Rev1.py
+.venv/bin/python _12_M5_Fable_Overwatch_Rev1.py
+```
+
+All four default to `rtmp://127.0.0.1:1935/live/mavic3` and accept `--source <file-or-url>`; all four also support `--headless` for scripted runs and a `--selftest` mode that proves the headline features numerically with no GUI.
 
 ## Surface Pro 8 vs. Bigger GPU
 
