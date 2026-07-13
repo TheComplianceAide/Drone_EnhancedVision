@@ -46,7 +46,7 @@ import math
 import subprocess
 import sys
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
@@ -130,6 +130,7 @@ class Track:
     score: float
     miss: int = 0
     confirm: int = 0
+    history: List[Tuple[float, float]] = field(default_factory=list)
 
 
 class SimpleMultiTracker:
@@ -159,13 +160,17 @@ class SimpleMultiTracker:
             if best_i >= 0 and best_d <= self.max_jump:
                 used.add(best_i)
                 x, y, w, h, sc = dets[best_i]
-                t.cx = x + w * 0.5
-                t.cy = y + h * 0.5
-                t.w = float(w)
-                t.h = float(h)
-                t.score = float(sc)
+                cx = x + w * 0.5
+                cy = y + h * 0.5
+                t.cx = t.cx * 0.68 + cx * 0.32
+                t.cy = t.cy * 0.68 + cy * 0.32
+                t.w = t.w * 0.62 + float(w) * 0.38
+                t.h = t.h * 0.62 + float(h) * 0.38
+                t.score = t.score * 0.56 + float(sc) * 0.44
                 t.miss = 0
                 t.confirm = min(confirm_frames, t.confirm + 1)
+                t.history.append((t.cx, t.cy))
+                t.history = t.history[-24:]
 
         for i, (x, y, w, h, sc) in enumerate(dets):
             if i in used:
@@ -181,6 +186,7 @@ class SimpleMultiTracker:
                 score=float(sc),
                 miss=0,
                 confirm=1,
+                history=[(x + w * 0.5, y + h * 0.5)],
             )
 
         for tid in list(self.tracks.keys()):
@@ -378,6 +384,7 @@ def main() -> int:
     zoom_on = True
     lock_id: Optional[int] = None
     cycle_idx = 0
+    sticky_zoom_id: Optional[int] = None
     autozoom_created = False
     evidence_on = False
     evidence_flash_until = 0.0
@@ -411,14 +418,23 @@ def main() -> int:
     prev_t = time.time()
 
     def pick_target(tracks: List[Track]) -> Optional[Track]:
-        nonlocal cycle_idx
+        nonlocal cycle_idx, sticky_zoom_id
         if not tracks:
+            sticky_zoom_id = None
             return None
         if lock_id is not None:
             for t in tracks:
                 if t.tid == lock_id:
+                    sticky_zoom_id = t.tid
                     return t
+        if sticky_zoom_id is not None:
+            held = next((t for t in tracks if t.tid == sticky_zoom_id and t.miss <= 1), None)
+            if held is not None:
+                best = max(tracks, key=lambda tr: tr.score)
+                if held.score >= best.score * 0.58:
+                    return held
         cycle_idx = int(np.clip(cycle_idx, 0, len(tracks) - 1))
+        sticky_zoom_id = tracks[cycle_idx].tid
         return tracks[cycle_idx]
 
     def apply_zoom_enh(img: np.ndarray) -> np.ndarray:
@@ -698,8 +714,10 @@ def main() -> int:
                 if tgt is not None:
                     cx = tgt.cx * (fw / float(args.infer_w))
                     cy = tgt.cy * (fh / float(args.infer_h))
+                    zoom_caption = f"ID {tgt.tid}"
                 else:
                     cx, cy = fw / 2.0, fh / 2.0
+                    zoom_caption = "SCOUT CENTER | no confirmed target"
 
                 rw = max(40.0, float(fw) / float(zoom_level))
                 rh = max(40.0, float(fh) / float(zoom_level))
@@ -710,8 +728,8 @@ def main() -> int:
                 roi = frame[y1:y2, x1:x2]
                 zv = cv2.resize(roi, (ZOOM_W, ZOOM_H), interpolation=cv2.INTER_LANCZOS4)
                 zv = apply_zoom_enh(zv)
-                if tgt is not None:
-                    cv2.putText(zv, f"ID {tgt.tid}", (10, 26), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 255), 2)
+                cv2.rectangle(zv, (0, 0), (min(ZOOM_W - 1, 580), 38), (0, 0, 0), -1)
+                cv2.putText(zv, zoom_caption, (10, 26), cv2.FONT_HERSHEY_SIMPLEX, 0.78, (0, 255, 255), 2)
                 cv2.imshow("AutoZoom", zv)
             else:
                 if autozoom_created:

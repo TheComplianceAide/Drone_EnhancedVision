@@ -45,8 +45,67 @@ class LakeBoostV2:
     wake_texture: float
 
 
+@dataclass(frozen=True)
+class DetailSignalV2:
+    score: float
+    label: str
+    color: Tuple[int, int, int]
+    source_px: int
+    sharpness: float
+    confidence: float
+    stack_quality: float
+    ai_scale: float
+
+    @property
+    def hud(self) -> str:
+        return f"{self.label} {self.score:.2f} src{self.source_px}px"
+
+
 def _unit(v: float) -> float:
     return float(max(0.0, min(1.0, v)))
+
+
+def score_detail_v2(
+    bgr: np.ndarray,
+    *,
+    source_wh: Tuple[int, int],
+    zoom: int,
+    confidence: Optional[np.ndarray] = None,
+    stack_quality: float = 0.0,
+    sharpness_scale: float = 620.0,
+) -> DetailSignalV2:
+    """Estimate how much the enhanced crop can be trusted visually.
+
+    The score intentionally mixes source pixel count, current sharpness, stack
+    quality, confidence-map energy, and zoom level. It is not a detector; it is
+    an operator-facing honesty gate so high-zoom enhancement does not present
+    soft texture as confirmed detail.
+    """
+    if bgr.ndim == 3:
+        gray = cv2.cvtColor(bgr, cv2.COLOR_BGR2GRAY)
+    else:
+        gray = bgr
+    lap = cv2.Laplacian(gray.astype(np.float32), cv2.CV_32F, ksize=3)
+    sharpness = _unit(float(np.var(lap)) / max(1.0, float(sharpness_scale)))
+    conf_mean = _unit(float(np.mean(confidence))) if confidence is not None and confidence.size else 0.0
+    source_px = int(max(1, min(source_wh)))
+    source_term = _unit((source_px - 18.0) / 86.0)
+    zoom_term = _unit((44.0 - float(zoom)) / 32.0)
+    stack_term = _unit(stack_quality)
+    score = _unit(
+        0.30 * sharpness
+        + 0.24 * conf_mean
+        + 0.24 * stack_term
+        + 0.16 * source_term
+        + 0.06 * zoom_term
+    )
+    if source_px < 24 or score < 0.24:
+        return DetailSignalV2(score, "TOO FAR", (0, 80, 255), source_px, sharpness, conf_mean, stack_term, 0.20)
+    if score < 0.42:
+        return DetailSignalV2(score, "SOFT", (0, 185, 255), source_px, sharpness, conf_mean, stack_term, 0.45)
+    if score < 0.62:
+        return DetailSignalV2(score, "USABLE", (0, 255, 255), source_px, sharpness, conf_mean, stack_term, 0.72)
+    return DetailSignalV2(score, "GOOD", (0, 255, 90), source_px, sharpness, conf_mean, stack_term, 1.0)
 
 
 def frame_quality_v2(bgr_or_gray: np.ndarray) -> FrameQualityV2:

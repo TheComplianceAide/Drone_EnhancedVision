@@ -1,0 +1,63 @@
+{
+  "recordings": [
+    {
+      "output": "mac_screen_20260705_121157_10min.mov",
+      "sha256": "a16584131d037893885b90487e9a33596c1e19acaad823d5bb726ea3737d935b",
+      "size_bytes": 3968485746,
+      "parts": [
+        {
+          "path": "mac_screen_20260705_121157_10min/part-000",
+          "sha256": "16c74848bea913b89c4df1c06b6198076d7ac3c3e80c464793408ab4c25427f7",
+          "size_bytes": 1572864000
+        },
+        {
+          "path": "mac_screen_20260705_121157_10min/part-001",
+          "sha256": "8696353bc133b171ce6e443234b7921969dfba20281070f91d14e13d4e6ae4f2",
+          "size_bytes": 1572864000
+        },
+        {
+          "path": "mac_screen_20260705_121157_10min/part-002",
+          "sha256": "f5fa436983b645ac561a06b03789fb592fef2841811101f676cc33bdbf489804",
+          "size_bytes": 822757746
+        }
+      ]
+    },
+    {
+      "output": "mac_screen_20260705_122938_20min.mov",
+      "sha256": "719dc31bb4032c8567fa3915faf7f9269b0726b196c187535e96b9157e289b55",
+      "size_bytes": 8017429295,
+      "parts": [
+        {
+          "path": "mac_screen_20260705_122938_20min/part-000",
+          "sha256": "b7c1480c772feb6338df4c277f77d1ffdfcb937339326d04325b1fdec30ddb29",
+          "size_bytes": 1572864000
+        },
+        {
+          "path": "mac_screen_20260705_122938_20min/part-001",
+          "sha256": "0788330a33355eaeae9a1e53e33063d482a11e9fa4abb6ae871e72a8a208f7b6",
+          "size_bytes": 1572864000
+        },
+        {
+          "path": "mac_screen_20260705_122938_20min/part-002",
+          "sha256": "a4d43b6ddaf4035b5b5b4b7dee78abb615b2d7fb3592cde69f6ee716b63b642e",
+          "size_bytes": 1572864000
+        },
+        {
+          "path": "mac_screen_20260705_122938_20min/part-003",
+          "sha256": "c46aff3ca344cb1775a46d468ec4e87ef121adb19f8f1a2f0c41f053cffe92bb",
+          "size_bytes": 1572864000
+        },
+        {
+          "path": "mac_screen_20260705_122938_20min/part-004",
+          "sha256": "d7faa71494315d9f9d74821ab85ce7253df3e6e15db286baebf070693c965d19",
+          "size_bytes": 1572864000
+        },
+        {
+          "path": "mac_screen_20260705_122938_20min/part-005",
+          "sha256": "c705d0f4893da3777eafcd824f2cbbf17732439c4b981064ad4eac1a70c07f64",
+          "size_bytes": 153109295
+        }
+      ]
+    }
+  ]
+}

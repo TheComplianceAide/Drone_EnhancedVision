@@ -1,0 +1,6 @@
+file '/Users/randyblasik/Documents/Drone_EnhancedVision/analysis/video_review_20260705/highlights/_clips/01_mac_screen_20260705_121157_10min.mp4'
+file '/Users/randyblasik/Documents/Drone_EnhancedVision/analysis/video_review_20260705/highlights/_clips/02_mac_screen_20260705_121157_10min.mp4'
+file '/Users/randyblasik/Documents/Drone_EnhancedVision/analysis/video_review_20260705/highlights/_clips/03_mac_screen_20260705_122938_20min.mp4'
+file '/Users/randyblasik/Documents/Drone_EnhancedVision/analysis/video_review_20260705/highlights/_clips/04_mac_screen_20260705_122938_20min.mp4'
+file '/Users/randyblasik/Documents/Drone_EnhancedVision/analysis/video_review_20260705/highlights/_clips/05_mac_screen_20260705_122938_20min.mp4'
+file '/Users/randyblasik/Documents/Drone_EnhancedVision/analysis/video_review_20260705/highlights/_clips/06_mac_screen_20260705_124955_20min_continued.mp4'

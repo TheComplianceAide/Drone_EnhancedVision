@@ -24,6 +24,7 @@ This README documents the latest scripts, what they do, which ones are light/hea
 - `_10_M5_ISR_ReconSuite_Rev2.py`: Rev2 ISR target: 25% better operator usefulness by inheriting Rev2 event detection, target ranking, and stack quality control.
 - `_11_M5_LakeHouse_AutoScout_Rev1.py`: Auto-tuned lake/city recon console for Apple Silicon. Blends motion radar, wave/firework enhancement, stabilized event trails, and big simple mode buttons.
 - `_11_M5_LakeHouse_AutoScout_Rev2.py`: Rev2 lake target: 25% better field autonomy with wake/water scoring, stronger masks, and V2 target selection.
+- `_12_M5_NightVision_Max_Rev1.py`: Research-grade Apple Silicon night-vision proof console. Shows raw/current-style/temporal-stack/stack+AI ROI panes, uses confidence-guided temporal fusion, and runs IAT on the selected crop via MPS when available.
 - `tonight_flight_card.html`: Offline field card for a three-battery dusk mission with checklist buttons and suggested modes.
 - `_Track_up_to_5_objects_wAdjustableObjectSize_Rev2.py`: Motion detection (median-size filter; RTMP input).
 - `_track5_LargestObjects_Rev2.py` / `_track5_LargestObjects_Rev3.py`: Motion detection (top‑5 largest; RTMP input; Rev3 adds persistence/M indicator).
@@ -140,6 +141,7 @@ That script now auto-starts the launcher with the repo venv and avoids extra set
   - `_10_M5_ISR_ReconSuite_Rev2.py` (accepts `--url`; V2 ISR recon console)
   - `_11_M5_LakeHouse_AutoScout_Rev1.py` (accepts `--url`; auto lake/city scout with motion radar, wave, and firework modes)
   - `_11_M5_LakeHouse_AutoScout_Rev2.py` (accepts `--url`; V2 default lake/city scout)
+  - `_12_M5_NightVision_Max_Rev1.py` (accepts `--url`; temporal ROI night-vision proof viewer)
 
 - Screen capture (MSS; no RTMP):
   - `MotionDetectionV1.py`, `Drone_enhancedVisionV1.py`,
@@ -160,6 +162,16 @@ Night vision
 - `_NightVision_Rev2y.py`: Adds Reinhard tone mapping before CLAHE; slightly heavier.
 - `_04_IAT_Deep_NightVision_Rev1.py` (deep): PyTorch IAT (Illumination-Adaptive Transformer) low-light enhancement for RTMP video. Uses Apple Silicon MPS when available. Auto-downloads weights on first run into `models/iat/` (then works offline). Trackbars: Blend/Temporal/Denoise/Sharpen. Keys: `q` quit, `s` snapshot to `snapshots/`, `t` toggle enhance/exposure weights. Heavier than CLAHE-based scripts (FPS may drop), but can reveal more detail in very dark scenes.
 - `_10_M5_Fable_NightVision_Rev1.py` (latest): Single window. STAGE A is the learned IAT low-light net on Apple-Silicon MPS (weights vendored in `third_party/iat/weights/best_Epoch_lol_v1.pth`; never touches the network at runtime, and the HUD says which engine is live) with a classical fallback when weights/GPU are absent: Retinex/LIME illumination-map lift (guided-filter refined, reflectance preserved; torch on MPS with one upload/download per frame, numpy fallback), motion-compensated temporal denoise (sparse LK → RANSAC similarity registers the running stack; per-pixel motion mask keeps movers ghost-free while static ground integrates for a large SNR gain), then luma CLAHE + chroma denoise with scene-adaptive strength. Global gain/gamma are EMA-smoothed so brightness never pumps. HOVER long-exposure mode auto-engages when the platform is stable (effective 0.5-1.5 s exposure, shown on the HUD) and exits on motion. Buttons AUTO/TEMP/HOVR/PAL/PEAK/DN-/DN+/RST/HUD/SNAP, Blend trackbar, keys `a t e p f [ ] r h s q`; palettes Natural/NV-green/White-hot; snapshots save a clean full-res frame plus the annotated view. Also runs `--headless` and `--selftest` with no GUI. ~24 FPS at native 1080p on M5 Pro (auto-downscales processing if it falls behind, display stays full size).
+- `_12_M5_NightVision_Max_Rev1.py` (research max): Two windows ("M5 NightVision Max - Live" + "M5 NightVision Max - Proof"). Click/tap the live feed to select an ROI. The proof window shows four panes: raw crop, current-style CLAHE/denoise/sharpen, temporally aligned stack, and stack+AI/detail. It rejects poorly aligned frames, builds a repeatability/confidence map, applies enhancement more strongly where real signal repeats, and runs IAT only on the fused crop so Apple Silicon MPS stays practical. Buttons toggle AUTO, AIM, AI, STACK, HAZE, HUD, reset, snapshot, and zoom +/-.
+
+  Self-test without a drone:
+
+  ```bash
+  .venv/bin/python _12_M5_NightVision_Max_Rev1.py --self-test
+  .venv/bin/python _12_M5_NightVision_Max_Rev1.py --self-test-ai
+  ```
+
+  The self-test writes proof images to `snapshots/` and reports the raw-vs-stacked noise ratio.
 
 Click‑to‑zoom
 

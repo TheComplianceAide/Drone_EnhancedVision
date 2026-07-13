@@ -526,6 +526,26 @@ def _crop_frame(frame: np.ndarray, cx: float, cy: float, zoom_level: int, out_wh
     return cv2.resize(roi, (out_w, out_h), interpolation=cv2.INTER_LANCZOS4)
 
 
+def _adaptive_overlay_alpha(
+    base_alpha: float,
+    *,
+    raw_ratio: float,
+    camera_motion_hold: bool,
+    track_count: int,
+    edge_density: float,
+) -> float:
+    alpha = float(base_alpha)
+    if camera_motion_hold:
+        alpha *= 0.42
+    if track_count == 0:
+        alpha *= 0.58
+    elif track_count < 2 and edge_density > 0.14:
+        alpha *= 0.68
+    if raw_ratio > 0.16:
+        alpha *= 0.48
+    return float(np.clip(alpha, 0.06, 0.42))
+
+
 def _compose_scope(
     event_map: np.ndarray,
     zoom: Optional[np.ndarray],
@@ -864,7 +884,11 @@ def main() -> int:
 
             if modes["autozoom"]:
                 manual_center_proc = None
-                selected = select_track_v2(tracks, (proc_h, proc_w), focus=active_profile_name)
+                selected = None
+                if selected_tid is not None:
+                    selected = next((tr for tr in tracks if tr.tid == selected_tid and tr.miss <= 1), None)
+                if selected is None:
+                    selected = select_track_v2(tracks, (proc_h, proc_w), focus=active_profile_name)
                 selected_tid = selected.tid if selected else None
             else:
                 selected = None
@@ -872,6 +896,7 @@ def main() -> int:
 
             zoom_img = None
             zoom_label = "manual"
+            zoom_display = zoom_level
             if selected is not None:
                 cx_frame = selected.cx * frame_w / max(1, proc_w)
                 cy_frame = selected.cy * frame_h / max(1, proc_h)
@@ -880,14 +905,19 @@ def main() -> int:
             elif manual_center_proc is not None:
                 cx_frame = manual_center_proc[0] * frame_w / max(1, proc_w)
                 cy_frame = manual_center_proc[1] * frame_h / max(1, proc_h)
+                zoom_label = "AIM"
                 zoom_img = _crop_frame(frame, cx_frame, cy_frame, zoom_level, (max(360, scope_w // 3), max(240, scope_h)))
+            else:
+                zoom_display = max(args.min_zoom, min(zoom_level, 7))
+                zoom_label = "SCOUT"
+                zoom_img = _crop_frame(frame, frame_w * 0.5, frame_h * 0.5, zoom_display, (max(360, scope_w // 3), max(240, scope_h)))
 
             if zoom_img is not None:
                 zoom_img = _enhance_microscope(zoom_img, haze=modes["haze"])
                 cv2.rectangle(zoom_img, (0, 0), (zoom_img.shape[1] - 1, zoom_img.shape[0] - 1), (0, 255, 255), 2)
                 _draw_label(
                     zoom_img,
-                    f"MOTION MICROSCOPE {zoom_label} | Z{zoom_level}x",
+                    f"MOTION MICROSCOPE {zoom_label} | Z{zoom_display}x",
                     (10, 26),
                     color=(0, 255, 255),
                     scale=0.58,
@@ -920,6 +950,13 @@ def main() -> int:
             fps_buf.append(fps)
             fps_buf = fps_buf[-30:]
             fps_avg = sum(fps_buf) / max(1, len(fps_buf))
+            overlay_alpha = _adaptive_overlay_alpha(
+                active_tuning.overlay_alpha if modes["tune"] else 0.34,
+                raw_ratio=raw_ratio,
+                camera_motion_hold=camera_motion_hold,
+                track_count=len(tracks),
+                edge_density=scene_metrics.edge_density,
+            )
 
             hold_txt = "HOLD" if camera_motion_hold else "LOCK"
             zoom_mode_txt = "AUTOZ" if modes["autozoom"] else "AIM"
@@ -931,7 +968,7 @@ def main() -> int:
             hud2 = (
                 f"sens {sensitivity} th {threshold:.1f} decay {trail_decay:.2f} Z{zoom_level} "
                 f"B {scene_metrics.bright_ratio:.3f} E {scene_metrics.event_ratio:.3f} "
-                f"V2 {event_v2.edge_ratio:.3f}/{event_v2.glint_ratio:.3f} "
+                f"V2 {event_v2.edge_ratio:.3f}/{event_v2.glint_ratio:.3f} OA{overlay_alpha:.2f} "
                 f"trail {'ON' if modes['trail'] else 'OFF'}"
             )
 
@@ -945,7 +982,6 @@ def main() -> int:
 
             live = cv2.resize(frame, (live_w, live_h), interpolation=cv2.INTER_AREA)
             overlay = cv2.resize(event_map, (live_w, live_h), interpolation=cv2.INTER_AREA)
-            overlay_alpha = active_tuning.overlay_alpha if modes["tune"] else 0.34
             live = cv2.addWeighted(live, 1.0, overlay, overlay_alpha if modes["trail"] else 0.0, 0)
             _draw_tracks(
                 live,

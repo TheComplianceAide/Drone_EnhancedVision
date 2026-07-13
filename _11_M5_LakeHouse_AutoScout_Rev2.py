@@ -541,6 +541,46 @@ def _track_score(tr: PulseTrack, tuning: LakeTuning, zones: LakeZones) -> float:
     return score
 
 
+def _track_center_with_lead(tr: PulseTrack, tuning: LakeTuning) -> Tuple[float, float]:
+    cx, cy = float(tr.cx), float(tr.cy)
+    if tuning.name == "WAVE" and len(tr.history) >= 2:
+        span = min(8, len(tr.history) - 1)
+        x0, y0 = tr.history[-1 - span]
+        x1, y1 = tr.history[-1]
+        cx += (x1 - x0) * 0.55
+        cy += (y1 - y0) * 0.55
+    return cx, cy
+
+
+def _rank_summary(tracks: Sequence[PulseTrack], tuning: LakeTuning, zones: LakeZones) -> str:
+    parts = []
+    for tr in tracks[:3]:
+        parts.append(f"P{tr.tid}:{_track_score(tr, tuning, zones) / 100.0:.1f}")
+    return "top " + ",".join(parts) if parts else "top none"
+
+
+def _adaptive_lake_overlay_alpha(
+    tuning: LakeTuning,
+    metrics: LakeMetrics,
+    *,
+    raw_ratio: float,
+    camera_motion_hold: bool,
+    track_count: int,
+) -> float:
+    alpha = float(tuning.overlay_alpha)
+    if camera_motion_hold:
+        alpha *= 0.42
+    if track_count == 0:
+        alpha *= 0.55
+    elif track_count < 2 and metrics.water_texture > 0.38:
+        alpha *= 0.66
+    if raw_ratio > 0.16:
+        alpha *= 0.46
+    if metrics.water_event_ratio > 0.075 and metrics.water_texture > 0.50 and tuning.name != "WAVE":
+        alpha *= 0.58
+    return float(np.clip(alpha, 0.06, 0.47))
+
+
 def _pick_target(tracks: Sequence[PulseTrack], tuning: LakeTuning, zones: LakeZones) -> Optional[PulseTrack]:
     if not tracks:
         return None
@@ -1125,14 +1165,24 @@ def main() -> int:
                 ttl=tuning.ttl,
             )
             tracks = state.tracker.ranked()
-            selected = _pick_target(tracks, tuning, zones)
+            selected = None
+            if selected_tid is not None:
+                held = next((tr for tr in tracks if tr.tid == selected_tid and tr.miss <= 1), None)
+                if held is not None:
+                    top = _pick_target(tracks, tuning, zones)
+                    if top is None or held.tid == top.tid or _track_score(held, tuning, zones) >= _track_score(top, tuning, zones) * 0.58:
+                        selected = held
+            if selected is None:
+                selected = _pick_target(tracks, tuning, zones)
             selected_tid = selected.tid if selected is not None else None
 
             zoom_img = None
             zoom_label = "AUTO"
+            zoom_display = zoom_level
             if selected is not None:
-                cx_frame = selected.cx * frame_w / max(1, proc_w)
-                cy_frame = selected.cy * frame_h / max(1, proc_h)
+                lead_x, lead_y = _track_center_with_lead(selected, tuning)
+                cx_frame = lead_x * frame_w / max(1, proc_w)
+                cy_frame = lead_y * frame_h / max(1, proc_h)
                 zoom_label = f"P{selected.tid}"
                 zoom_img = _crop_frame(frame, cx_frame, cy_frame, zoom_level, (max(420, console_w // 3), max(260, console_h)))
             elif manual_center_proc is not None:
@@ -1140,13 +1190,18 @@ def main() -> int:
                 cy_frame = manual_center_proc[1] * frame_h / max(1, proc_h)
                 zoom_label = "AIM"
                 zoom_img = _crop_frame(frame, cx_frame, cy_frame, zoom_level, (max(420, console_w // 3), max(260, console_h)))
+            else:
+                zoom_display = max(args.min_zoom, min(zoom_level, 7))
+                cy_bias = 0.62 if tuning.name == "WAVE" else 0.52
+                zoom_label = "SCOUT"
+                zoom_img = _crop_frame(frame, frame_w * 0.5, frame_h * cy_bias, zoom_display, (max(420, console_w // 3), max(260, console_h)))
 
             if zoom_img is not None:
                 zoom_img = _enhance_microscope(zoom_img, haze=tuning.haze)
                 cv2.rectangle(zoom_img, (0, 0), (zoom_img.shape[1] - 1, zoom_img.shape[0] - 1), (0, 255, 255), 2)
                 _draw_label(
                     zoom_img,
-                    f"{tuning.name} MICROSCOPE {zoom_label} | Z{zoom_level}x",
+                    f"{tuning.name} MICROSCOPE {zoom_label} | Z{zoom_display}x",
                     (10, 26),
                     color=(0, 255, 255),
                     scale=0.56,
@@ -1184,6 +1239,13 @@ def main() -> int:
             fps_buf.append(fps)
             fps_buf = fps_buf[-30:]
             fps_avg = sum(fps_buf) / max(1, len(fps_buf))
+            overlay_alpha = _adaptive_lake_overlay_alpha(
+                tuning,
+                metrics,
+                raw_ratio=raw_ratio,
+                camera_motion_hold=camera_motion_hold,
+                track_count=len(tracks),
+            )
 
             hold_txt = "HOLD" if camera_motion_hold else "LOCK"
             mode_txt = f"AUTO->{active_profile}" if intent == "AUTO" else f"HINT->{active_profile}"
@@ -1194,7 +1256,7 @@ def main() -> int:
             hud2 = (
                 f"burst {metrics.burst_score:.2f} wave {metrics.wave_score:.2f} motion {metrics.motion_score:.2f} "
                 f"sky {metrics.sky_event_ratio:.3f} water {metrics.water_event_ratio:.3f} "
-                f"Z{zoom_level} | {layers.status} {last_auto_note}"
+                f"Z{zoom_level} OA{overlay_alpha:.2f} {_rank_summary(tracks, tuning, zones)} | {layers.status} {last_auto_note}"
             )
 
             console = _compose_console(
@@ -1211,7 +1273,7 @@ def main() -> int:
             live = cv2.resize(frame, (live_w, live_h), interpolation=cv2.INTER_AREA)
             live = _enhance_lake_live(live, tuning=tuning, metrics=metrics)
             overlay = cv2.resize(event_map, (live_w, live_h), interpolation=cv2.INTER_AREA)
-            live = cv2.addWeighted(live, 1.0, overlay, tuning.overlay_alpha, 0)
+            live = cv2.addWeighted(live, 1.0, overlay, overlay_alpha, 0)
             _draw_tracks(
                 live,
                 tracks,

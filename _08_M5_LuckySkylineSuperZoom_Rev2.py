@@ -55,7 +55,7 @@ except Exception:  # pragma: no cover - the script has a CPU/OpenCV fallback.
 
 from ops_window import apply_two_window_layout_cv2, compute_two_window_layout
 from rtmp_latest import LatestFrameGrabber
-from m5_v2_core import frame_quality_v2, stack_alpha_v2
+from m5_v2_core import frame_quality_v2, score_detail_v2, stack_alpha_v2
 
 
 LIVE_NAME = "Live - click target"
@@ -728,6 +728,13 @@ def main() -> int:
             if (build_w, build_h) != (zoom_w, zoom_h):
                 zoom = cv2.resize(zoom, (zoom_w, zoom_h), interpolation=cv2.INTER_AREA)
                 zoom = _edge_clarity_pass(zoom, amount=max(18, clarity // 2))
+            detail_signal = score_detail_v2(
+                zoom,
+                stack_quality=stack.quality,
+                source_wh=(roi_w, roi_h),
+                zoom=zoom_level,
+                sharpness_scale=680.0,
+            )
 
             live = cv2.resize(frame, (live_w, live_h), interpolation=cv2.INTER_AREA)
             rx1 = int(x1 * live_w / max(1, frame_w))
@@ -783,16 +790,16 @@ def main() -> int:
                 stack_label = stack_status.split(" shift", 1)[0]
                 hud = (
                     f"{time.strftime('%H:%M:%S')} | Z{zoom_level}x | {profile_label} | "
-                    f"{fps_avg:4.1f}fps | Q{effective_quality_scale:.2f} | {detail_status} | {stack_label}"
+                    f"{fps_avg:4.1f}fps | {detail_signal.hud} | Q{effective_quality_scale:.2f} | {detail_status} | {stack_label}"
                 )
                 cv2.rectangle(live, (0, live_h - 36), (live_w, live_h), (0, 0, 0), -1)
                 _draw_label(live, hud[:135], (10, live_h - 11), color=(0, 255, 255))
                 cv2.rectangle(zoom, (0, 0), (zoom_w, 34), (0, 0, 0), -1)
                 _draw_label(
                     zoom,
-                    f"M5 | {profile_mode} {profile_label} | Z{zoom_level}x | S{sharp} DN{denoise} CL{clarity}",
+                    f"M5 | {profile_mode} {profile_label} | Z{zoom_level}x | {detail_signal.hud} | S{sharp} DN{denoise} CL{clarity}",
                     (10, 24),
-                    color=(0, 255, 255),
+                    color=detail_signal.color,
                 )
                 metrics_txt = (
                     f"L {scene_metrics.luma:3.0f} C {scene_metrics.contrast:2.0f} "

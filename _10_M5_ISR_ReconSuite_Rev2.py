@@ -45,6 +45,7 @@ from _09_M5_TemporalEventScope_Rev2 import (
     AutoSceneTuner,
     EventState,
     PulseTrack,
+    _adaptive_overlay_alpha,
     _apply_lab_clahe,
     _center_text,
     _clamp,
@@ -742,11 +743,15 @@ def main() -> int:
                 if selected is None:
                     locked_tid = None
             if selected is None and modes["autozoom"]:
-                selected = select_track_v2(tracks, (proc_h, proc_w), focus=active_profile)
+                if selected_tid is not None:
+                    selected = next((tr for tr in tracks if tr.tid == selected_tid and tr.miss <= 1), None)
+                if selected is None:
+                    selected = select_track_v2(tracks, (proc_h, proc_w), focus=active_profile)
             selected_tid = selected.tid if selected is not None else None
 
             zoom_img = None
             zoom_label = "manual"
+            zoom_display = zoom_level
             if selected is not None:
                 cx_frame = selected.cx * frame_w / max(1, proc_w)
                 cy_frame = selected.cy * frame_h / max(1, proc_h)
@@ -757,6 +762,10 @@ def main() -> int:
                 cy_frame = manual_center_proc[1] * frame_h / max(1, proc_h)
                 zoom_label = "AIM"
                 zoom_img = _crop_frame(frame, cx_frame, cy_frame, zoom_level, (max(420, recon_w // 3), max(260, recon_h)))
+            else:
+                zoom_display = max(args.min_zoom, min(zoom_level, 7))
+                zoom_label = "SCOUT"
+                zoom_img = _crop_frame(frame, frame_w * 0.5, frame_h * 0.5, zoom_display, (max(420, recon_w // 3), max(260, recon_h)))
 
             stack_status = "stack idle"
             if zoom_img is not None:
@@ -765,7 +774,7 @@ def main() -> int:
                 cv2.rectangle(zoom_img, (0, 0), (zoom_img.shape[1] - 1, zoom_img.shape[0] - 1), (0, 255, 255), 2)
                 _draw_label(
                     zoom_img,
-                    f"SUPERZOOM {zoom_label} | Z{zoom_level}x | {stack_status}",
+                    f"SUPERZOOM {zoom_label} | Z{zoom_display}x | {stack_status}",
                     (10, 26),
                     color=(0, 255, 255),
                     scale=0.56,
@@ -791,6 +800,13 @@ def main() -> int:
             fps_buf.append(fps)
             fps_buf = fps_buf[-30:]
             fps_avg = sum(fps_buf) / max(1, len(fps_buf))
+            overlay_alpha = _adaptive_overlay_alpha(
+                active_tuning.overlay_alpha if modes["tune"] else 0.34,
+                raw_ratio=raw_ratio,
+                camera_motion_hold=camera_motion_hold,
+                track_count=len(tracks),
+                edge_density=scene_metrics.edge_density,
+            )
 
             hold_txt = "HOLD" if camera_motion_hold else "LOCK"
             tune_txt = f"AUTO {active_profile}" if modes["tune"] else "MANUAL"
@@ -800,7 +816,7 @@ def main() -> int:
             )
             hud2 = (
                 f"Z{zoom_level} sens {sensitivity} th {threshold:.1f} decay {trail_decay:.2f} "
-                f"B {scene_metrics.bright_ratio:.3f} E {scene_metrics.event_ratio:.3f} | {ai.status}"
+                f"B {scene_metrics.bright_ratio:.3f} E {scene_metrics.event_ratio:.3f} OA{overlay_alpha:.2f} | {ai.status}"
             )
 
             recon = _compose_recon(
@@ -816,7 +832,6 @@ def main() -> int:
             live = cv2.resize(frame, (live_w, live_h), interpolation=cv2.INTER_AREA)
             live = _enhance_live(live, night=modes["night"], haze=modes["haze"])
             overlay = cv2.resize(event_map, (live_w, live_h), interpolation=cv2.INTER_AREA)
-            overlay_alpha = active_tuning.overlay_alpha if modes["tune"] else 0.34
             live = cv2.addWeighted(live, 1.0, overlay, overlay_alpha if modes["trail"] else 0.0, 0)
             _draw_tracks(
                 live,

@@ -260,6 +260,7 @@ class App:
     def _script_label(self, script: str) -> str:
         mapping = {
             "_1_4General_Target_Acquisition_4.py": "GENERAL TRACKER (Rev4)",
+            "_12_M5_NightVision_Max_Rev1.py": "M5 NIGHTVISION MAX",
             "_08_M5_LuckySkylineSuperZoom_Rev1.py": "M5 LUCKY SKYLINE SUPERZOOM",
             "_08_M5_LuckySkylineSuperZoom_Rev2.py": "M5 LUCKY SKYLINE SUPERZOOM V2",
             "_05_SuperZoom_IAT_Rev1.py": "SUPERZOOM + AI (IAT)",
@@ -758,6 +759,12 @@ class App:
         all_scripts = [s for s in sorted(os.listdir(self.path)) if s.startswith("_") and s.endswith(".py")]
         featured = [
             (
+                "_12_M5_NightVision_Max_Rev1.py",
+                "NV",
+                "NIGHTVISION MAX",
+                "Stack + AI proof",
+            ),
+            (
                 "_11_M5_LakeHouse_AutoScout_Rev2.py",
                 "≈",
                 "LAKEHOUSE AUTOSCOUT V2",
@@ -942,6 +949,11 @@ class App:
         self.pid = self.process.pid
         self.launch_btn.state(["disabled"])
         self.kill_btn.state(["!disabled"])
+        # Field cockpit: keep the mission windows visible once launch succeeds.
+        try:
+            self.master.after(350, self.master.iconify)
+        except Exception:
+            pass
 
     def kill_script(self):
         terminate_process_tree(self.pid, timeout_sec=1.0)

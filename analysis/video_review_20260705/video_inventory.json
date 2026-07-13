@@ -1,0 +1,62 @@
+[
+  {
+    "path": "recordings/mac_screen_20260705_121112.mov",
+    "size_bytes": 47057902,
+    "duration_sec": 10.006667,
+    "width": 3024,
+    "height": 1964,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "fps": "23040/401",
+    "start_time": "0.000000",
+    "bit_rate": "37621239"
+  },
+  {
+    "path": "recordings/mac_screen_20260705_121157_10min.mov",
+    "size_bytes": 3968485746,
+    "duration_sec": 600.008333,
+    "width": 3024,
+    "height": 1964,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "fps": "10340700/180011",
+    "start_time": "0.000000",
+    "bit_rate": "52912408"
+  },
+  {
+    "path": "recordings/mac_screen_20260705_122938_20min.mov",
+    "size_bytes": 8017429295,
+    "duration_sec": 1200.008333,
+    "width": 3024,
+    "height": 1964,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "fps": "2759920/48001",
+    "start_time": "0.000000",
+    "bit_rate": "53449157"
+  },
+  {
+    "path": "recordings/mac_screen_20260705_124955_20min_continued.mov",
+    "size_bytes": 1433287856,
+    "duration_sec": 173.565,
+    "width": 3024,
+    "height": 1964,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "fps": "665600/11571",
+    "start_time": "0.000000",
+    "bit_rate": "66063450"
+  },
+  {
+    "path": "recordings/mac_screen_20260705_143116_20min_continued.mov",
+    "size_bytes": 1443175434,
+    "duration_sec": 1200.0,
+    "width": 3024,
+    "height": 1964,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "fps": "5155125/90001",
+    "start_time": "0.000000",
+    "bit_rate": "9621169"
+  }
+]

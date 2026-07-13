@@ -1,0 +1,100 @@
+{
+  "generated_at": "2026-07-05T17:13:33",
+  "output": "analysis/video_review_20260705/highlights/m5_flight_highlights_90s_drone_only.mp4",
+  "duration_sec": 90.033,
+  "target_duration_sec": 90.0,
+  "canvas": "1920x1080",
+  "fit": "preserve pane aspect ratio with black letterbox/pillarbox as needed",
+  "clips": [
+    {
+      "source": "recordings/mac_screen_20260705_121157_10min.mov",
+      "start": 300.0,
+      "duration": 15.0,
+      "label": "LakeHouse wake acquisition",
+      "crop": {
+        "x": 40,
+        "y": 660,
+        "width": 1448,
+        "height": 448
+      },
+      "pane": "left live ISR pane",
+      "reason": "Removes Codex/browser/app chrome and keeps only the visible aerial frame.",
+      "filter": "crop=1448:448:40:660,scale='if(gt(a,16/9),1920,-2)':'if(gt(a,16/9),-2,1080)':flags=lanczos,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:black,fps=30,setsar=1,format=yuv420p"
+    },
+    {
+      "source": "recordings/mac_screen_20260705_121157_10min.mov",
+      "start": 405.0,
+      "duration": 15.0,
+      "label": "Boat and wake tracking",
+      "crop": {
+        "x": 40,
+        "y": 660,
+        "width": 1448,
+        "height": 448
+      },
+      "pane": "left live ISR pane",
+      "reason": "Best raw aerial lake view with boat/wake motion.",
+      "filter": "crop=1448:448:40:660,scale='if(gt(a,16/9),1920,-2)':'if(gt(a,16/9),-2,1080)':flags=lanczos,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:black,fps=30,setsar=1,format=yuv420p"
+    },
+    {
+      "source": "recordings/mac_screen_20260705_122938_20min.mov",
+      "start": 100.0,
+      "duration": 15.0,
+      "label": "Lake target reacquire",
+      "crop": {
+        "x": 40,
+        "y": 660,
+        "width": 1448,
+        "height": 448
+      },
+      "pane": "left live ISR pane",
+      "reason": "Keeps the lake target view while dropping desktop and chat UI.",
+      "filter": "crop=1448:448:40:660,scale='if(gt(a,16/9),1920,-2)':'if(gt(a,16/9),-2,1080)':flags=lanczos,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:black,fps=30,setsar=1,format=yuv420p"
+    },
+    {
+      "source": "recordings/mac_screen_20260705_122938_20min.mov",
+      "start": 205.0,
+      "duration": 15.0,
+      "label": "Sustained water microscope",
+      "crop": {
+        "x": 40,
+        "y": 660,
+        "width": 1448,
+        "height": 448
+      },
+      "pane": "left live ISR pane",
+      "reason": "Cleanest aerial water/shore framing in the ISR window.",
+      "filter": "crop=1448:448:40:660,scale='if(gt(a,16/9),1920,-2)':'if(gt(a,16/9),-2,1080)':flags=lanczos,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:black,fps=30,setsar=1,format=yuv420p"
+    },
+    {
+      "source": "recordings/mac_screen_20260705_122938_20min.mov",
+      "start": 1000.0,
+      "duration": 15.0,
+      "label": "SuperZoom structures",
+      "crop": {
+        "x": 1530,
+        "y": 476,
+        "width": 1444,
+        "height": 674
+      },
+      "pane": "right enhanced SuperZoom pane",
+      "reason": "The enhanced pane carries the usable detail; desktop/launcher UI is cropped away.",
+      "filter": "crop=1444:674:1530:476,scale='if(gt(a,16/9),1920,-2)':'if(gt(a,16/9),-2,1080)':flags=lanczos,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:black,fps=30,setsar=1,format=yuv420p"
+    },
+    {
+      "source": "recordings/mac_screen_20260705_124955_20min_continued.mov",
+      "start": 0.0,
+      "duration": 15.0,
+      "label": "SuperZoom close detail",
+      "crop": {
+        "x": 1530,
+        "y": 476,
+        "width": 1444,
+        "height": 674
+      },
+      "pane": "right enhanced SuperZoom pane",
+      "reason": "Keeps the close-detail enhancement panel only.",
+      "filter": "crop=1444:674:1530:476,scale='if(gt(a,16/9),1920,-2)':'if(gt(a,16/9),-2,1080)':flags=lanczos,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:black,fps=30,setsar=1,format=yuv420p"
+    }
+  ]
+}

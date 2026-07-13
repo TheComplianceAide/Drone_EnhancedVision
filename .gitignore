@@ -14,6 +14,10 @@ logs/
 events/
 .playwright-cli/
 
+# Restored exactly from recordings/lfs_chunks/ by the reconstruction tool.
+/recordings/mac_screen_20260705_121157_10min.mov
+/recordings/mac_screen_20260705_122938_20min.mov
+
 # If you add packaging later
 dist/
 build/

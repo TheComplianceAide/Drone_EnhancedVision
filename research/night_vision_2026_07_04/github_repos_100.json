@@ -1,0 +1,2610 @@
+{
+  "count": 100,
+  "total_unique": 552,
+  "items": [
+    {
+      "defaultBranch": "master",
+      "description": "\u8c03\u7528CoreML\u5b9e\u73b0\u7684\u5b9e\u65f6\u89c6\u9891\u6697\u5149\u589e\u5f3a iOS app\u3002",
+      "forksCount": 0,
+      "fullName": "LeiGitHub1024/iOSRealTimeLowLightVideoEnhancement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Objective-C",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2022-11-03T09:03:50Z",
+      "stargazersCount": 2,
+      "updatedAt": "2023-08-10T22:26:14Z",
+      "url": "https://github.com/LeiGitHub1024/iOSRealTimeLowLightVideoEnhancement",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 25.275,
+      "tags": [
+        "lowlight",
+        "video",
+        "apple"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Learning Temporal Consistency for Low Light Video Enhancement from Single Images (CVPR2021)",
+      "forksCount": 23,
+      "fullName": "zkawfanx/StableLLVE",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2022-09-02T12:14:10Z",
+      "stargazersCount": 165,
+      "updatedAt": "2026-06-24T09:25:42Z",
+      "url": "https://github.com/zkawfanx/StableLLVE",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 24.972,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "This is the official Pytorch implementation for our paper \"Semantic-Guided Zero-Shot Learning for Low-Light Image/Video Enhancement.\"",
+      "forksCount": 19,
+      "fullName": "ShenZheng2000/Semantic-Guided-Low-Light-Image-Enhancement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2025-11-04T23:30:06Z",
+      "stargazersCount": 130,
+      "updatedAt": "2026-07-01T03:10:40Z",
+      "url": "https://github.com/ShenZheng2000/Semantic-Guided-Low-Light-Image-Enhancement",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement"
+      ],
+      "score": 24.494,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "[ICCV2025] Implementation of \"MobileIE: An Extremely Lightweight and Effective ConvNet for Real-Time Image Enhancement on Mobile Devices\"",
+      "forksCount": 19,
+      "fullName": "AVC2-UESTC/MobileIE",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "pushedAt": "2025-08-05T08:44:01Z",
+      "stargazersCount": 129,
+      "updatedAt": "2026-07-03T03:36:54Z",
+      "url": "https://github.com/AVC2-UESTC/MobileIE",
+      "matchedQueries": [
+        "real-time image enhancement"
+      ],
+      "score": 24.479,
+      "tags": [
+        "video",
+        "apple"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Official Code for \"Reti-Diff: Illumination Degradation Image Restoration with Retinex-based Latent Diffusion Model\". A SOTA algorithm in low-light image enhancement, underwater image enhancement, and backlit image enhancement.",
+      "forksCount": 2,
+      "fullName": "ChunmingHe/Reti-Diff",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2025-06-03T19:14:48Z",
+      "stargazersCount": 121,
+      "updatedAt": "2026-06-25T02:55:59Z",
+      "url": "https://github.com/ChunmingHe/Reti-Diff",
+      "matchedQueries": [
+        "underwater image enhancement"
+      ],
+      "score": 24.358,
+      "tags": [
+        "lowlight",
+        "underwater"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "\"Retinexformer: One-stage Retinex-based Transformer for Low-light Image Enhancement\" (ICCV 2023 Top-10 Cited \ud83c\udfc6) & (NTIRE 2024 Runner-Up \ud83c\udfc6) & (NTIRE 2025 Winner \ud83c\udfc6) & (NTIRE 2026 Winner \ud83c\udfc6)",
+      "forksCount": 121,
+      "fullName": "caiyuanhao1998/Retinexformer",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2026-05-23T16:09:23Z",
+      "stargazersCount": 1489,
+      "updatedAt": "2026-07-03T13:43:38Z",
+      "url": "https://github.com/caiyuanhao1998/Retinexformer",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement",
+        "Retinexformer"
+      ],
+      "score": 23.898,
+      "tags": [
+        "lowlight"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "This is the project for the paper of \"Low-Light Video Enhancement via Spatial-Temporal Consistent Decomposition\" in IJCAI2025",
+      "forksCount": 9,
+      "fullName": "xiaogang00/LLVE_STCD",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2025-07-29T11:20:16Z",
+      "stargazersCount": 91,
+      "updatedAt": "2026-07-01T03:13:44Z",
+      "url": "https://github.com/xiaogang00/LLVE_STCD",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 23.849,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Denoising Diffusion Post-Processing for Low-Light Image Enhancement",
+      "forksCount": 6,
+      "fullName": "savvaki/LPDM",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "other",
+        "name": "Other",
+        "url": ""
+      },
+      "pushedAt": "2025-04-25T10:42:44Z",
+      "stargazersCount": 61,
+      "updatedAt": "2026-03-23T13:10:28Z",
+      "url": "https://github.com/savvaki/LPDM",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement"
+      ],
+      "score": 23.216,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Official repository for the paper, \"Towards Real-world Event-guided Low-light Video Enhancement and Deblurring\", ECCV 2024.",
+      "forksCount": 1,
+      "fullName": "intelpro/ELEDNet",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2025-02-19T11:31:49Z",
+      "stargazersCount": 59,
+      "updatedAt": "2026-06-11T09:01:50Z",
+      "url": "https://github.com/intelpro/ELEDNet",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 23.167,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "FastLLVE: Real-Time Low-Light Video Enhancement with Intensity-Aware Lookup Table (ACM MM 2023)",
+      "forksCount": 7,
+      "fullName": "Wenhao-Li-777/FastLLVE",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "pushedAt": "2023-12-19T19:17:22Z",
+      "stargazersCount": 57,
+      "updatedAt": "2026-06-12T07:52:10Z",
+      "url": "https://github.com/Wenhao-Li-777/FastLLVE",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 23.117,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "DiffWater: Underwater Image Enhancement Based on Conditional Denoising Diffusion Probabilistic Model",
+      "forksCount": 3,
+      "fullName": "Guan-MS/DiffWater",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "pushedAt": "2024-06-11T03:49:23Z",
+      "stargazersCount": 37,
+      "updatedAt": "2026-05-30T17:14:16Z",
+      "url": "https://github.com/Guan-MS/DiffWater",
+      "matchedQueries": [
+        "underwater image enhancement"
+      ],
+      "score": 22.539,
+      "tags": [
+        "video",
+        "underwater"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Coherent Event Guided Low-Light Video Enhancement",
+      "forksCount": 4,
+      "fullName": "sherrycattt/EvLowLight",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "pushedAt": "2024-06-13T15:35:46Z",
+      "stargazersCount": 36,
+      "updatedAt": "2025-12-20T19:03:18Z",
+      "url": "https://github.com/sherrycattt/EvLowLight",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 22.505,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "Repository for the ECCV 2020 paper: \"Low Light Video Enhancement using Synthetic Data Produced with an Intermediate Domain Mapping\"",
+      "forksCount": 4,
+      "fullName": "sjmoran/low-light-video-enhancement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "other",
+        "name": "Other",
+        "url": ""
+      },
+      "pushedAt": "2021-10-14T06:11:32Z",
+      "stargazersCount": 34,
+      "updatedAt": "2026-04-24T08:59:41Z",
+      "url": "https://github.com/sjmoran/low-light-video-enhancement",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 22.436,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "PyTorch implementation for \"A Wavelet-based Dual-stream Network for Underwater Image Enhancement\", ICASSP, 2022. ",
+      "forksCount": 3,
+      "fullName": "ZZiyin/UIE-WD_Code",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2022-04-05T14:32:07Z",
+      "stargazersCount": 34,
+      "updatedAt": "2026-04-12T02:37:14Z",
+      "url": "https://github.com/ZZiyin/UIE-WD_Code",
+      "matchedQueries": [
+        "underwater image enhancement"
+      ],
+      "score": 22.436,
+      "tags": [
+        "video",
+        "underwater"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "This is the official implementation for the paper \"SNR-aware low-light image enhancement\" in CVPR2022",
+      "forksCount": 108,
+      "fullName": "JIA-Lab-research/SNR-Aware-Low-Light-Enhance",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2022-11-21T06:45:49Z",
+      "stargazersCount": 1033,
+      "updatedAt": "2026-07-03T14:28:30Z",
+      "url": "https://github.com/JIA-Lab-research/SNR-Aware-Low-Light-Enhance",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement"
+      ],
+      "score": 22.348,
+      "tags": [
+        "lowlight"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "\u4f7f\u7528onnxruntime\u90e8\u7f72LYT-Net\u8f7b\u91cf\u7ea7\u4f4e\u5149\u56fe\u50cf\u589e\u5f3a\uff0c\u5305\u542bC++\u548cPython\u4e24\u4e2a\u7248\u672c\u7684\u7a0b\u5e8f",
+      "forksCount": 7,
+      "fullName": "hpc203/Low-Light-Image-Enhancement-onnxrun",
+      "isArchived": false,
+      "isFork": false,
+      "language": "C++",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2024-06-11T11:43:28Z",
+      "stargazersCount": 29,
+      "updatedAt": "2026-05-12T07:30:37Z",
+      "url": "https://github.com/hpc203/Low-Light-Image-Enhancement-onnxrun",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement"
+      ],
+      "score": 22.25,
+      "tags": [
+        "lowlight",
+        "apple"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "\u4f7f\u7528OpenCV\u90e8\u7f72\u4f4e\u5149\u7167\u56fe\u50cf\u589e\u5f3a\uff0c\u5305\u542bC++\u548cPython\u4e24\u4e2a\u7248\u672c\u7684\u7a0b\u5e8f",
+      "forksCount": 3,
+      "fullName": "hpc203/low-light-image-enhancement-opencv-dnn",
+      "isArchived": false,
+      "isFork": false,
+      "language": "C++",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2024-02-11T13:46:58Z",
+      "stargazersCount": 26,
+      "updatedAt": "2026-01-19T06:12:29Z",
+      "url": "https://github.com/hpc203/low-light-image-enhancement-opencv-dnn",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement"
+      ],
+      "score": 22.128,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Double Domains-Guided Real-time Low-light Image Enhancement for UHD Transportation Surveillance",
+      "forksCount": 2,
+      "fullName": "QuJX/DDNet",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2024-10-23T02:54:02Z",
+      "stargazersCount": 21,
+      "updatedAt": "2025-07-18T03:35:49Z",
+      "url": "https://github.com/QuJX/DDNet",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement"
+      ],
+      "score": 21.903,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Underwater Image Enhancement with Physical-based Denoising Diffusion Implicit Models",
+      "forksCount": 6,
+      "fullName": "bachzz/UW-DiffPhys",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2025-03-24T05:56:40Z",
+      "stargazersCount": 20,
+      "updatedAt": "2026-06-24T15:03:00Z",
+      "url": "https://github.com/bachzz/UW-DiffPhys",
+      "matchedQueries": [
+        "underwater image enhancement"
+      ],
+      "score": 21.853,
+      "tags": [
+        "video",
+        "underwater"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "A GAN-based system that transforms dark, poorly lit images into well-illuminated versions. Using a custom encoder-decoder architecture, it enhances brightness and contrast while preserving image details. Effective across various low-light conditions, this model improves visibility for photography, surveillance, and mobile applications.",
+      "forksCount": 3,
+      "fullName": "DarylFernandes99/Low-light-Image-Enhancement-using-GAN",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Jupyter Notebook",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2025-05-22T18:48:28Z",
+      "stargazersCount": 15,
+      "updatedAt": "2026-04-14T20:09:49Z",
+      "url": "https://github.com/DarylFernandes99/Low-light-Image-Enhancement-using-GAN",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement"
+      ],
+      "score": 21.58,
+      "tags": [
+        "lowlight",
+        "apple"
+      ]
+    },
+    {
+      "defaultBranch": "lingyzhu0101",
+      "description": "[IJCV'24] Temporally Consistent Enhancement of Low-light Videos via Spatial-Temporal Compatible Learning",
+      "forksCount": 1,
+      "fullName": "lingyzhu0101/low-light-video-enhancement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2024-10-23T12:04:53Z",
+      "stargazersCount": 15,
+      "updatedAt": "2026-03-26T07:30:19Z",
+      "url": "https://github.com/lingyzhu0101/low-light-video-enhancement",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 21.58,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "",
+      "forksCount": 4,
+      "fullName": "conquerhuang/video-low-light-image-enhancement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "C++",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2019-05-22T09:03:14Z",
+      "stargazersCount": 14,
+      "updatedAt": "2025-01-16T07:55:26Z",
+      "url": "https://github.com/conquerhuang/video-low-light-image-enhancement",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement"
+      ],
+      "score": 21.519,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "[CVPR2025 && NTIRE2025] HVI: A New Color Space for Low-light Image Enhancement (Official Implementation)",
+      "forksCount": 86,
+      "fullName": "Fediory/HVI-CIDNet",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2026-03-09T13:47:42Z",
+      "stargazersCount": 824,
+      "updatedAt": "2026-07-03T11:23:47Z",
+      "url": "https://github.com/Fediory/HVI-CIDNet",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement"
+      ],
+      "score": 21.485,
+      "tags": [
+        "lowlight"
+      ]
+    },
+    {
+      "defaultBranch": "lingyzhu0101",
+      "description": "[ECCV'24] Unrolled Decomposed Unpaired Learning for Controllable Low-Light Video Enhancement",
+      "forksCount": 3,
+      "fullName": "lingyzhu0101/UDU",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2025-05-06T10:20:20Z",
+      "stargazersCount": 13,
+      "updatedAt": "2025-12-02T08:57:29Z",
+      "url": "https://github.com/lingyzhu0101/UDU",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 21.454,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "Dehazing and Low Light Image Enhancement",
+      "forksCount": 4,
+      "fullName": "evmavrop/Hyperion",
+      "isArchived": false,
+      "isFork": false,
+      "language": "C++",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2018-05-14T10:15:08Z",
+      "stargazersCount": 12,
+      "updatedAt": "2026-03-05T02:42:14Z",
+      "url": "https://github.com/evmavrop/Hyperion",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement"
+      ],
+      "score": 21.386,
+      "tags": [
+        "lowlight",
+        "underwater"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "Implementation of our paper published in Springer's Signal, Image and Video Processing",
+      "forksCount": 7,
+      "fullName": "sohaibali01/low-light-video-enhancement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "C++",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2020-12-05T22:47:21Z",
+      "stargazersCount": 12,
+      "updatedAt": "2026-03-05T02:33:49Z",
+      "url": "https://github.com/sohaibali01/low-light-video-enhancement",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 21.386,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "(TIP2026) Downstream Task Inspired Underwater Image Enhancement: A Perception-Aware Study from Dataset Construction to Network Design",
+      "forksCount": 2,
+      "fullName": "oucailab/DTIUIE",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-03-17T03:03:06Z",
+      "stargazersCount": 12,
+      "updatedAt": "2026-06-30T09:09:41Z",
+      "url": "https://github.com/oucailab/DTIUIE",
+      "matchedQueries": [
+        "underwater image enhancement"
+      ],
+      "score": 21.386,
+      "tags": [
+        "video",
+        "underwater"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "",
+      "forksCount": 3,
+      "fullName": "Tian-Yu-CAO/DNnet-A-Lightweight-Network-For-Real-Time-4K-Underwater-Image-Enhancement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2025-03-19T09:01:31Z",
+      "stargazersCount": 12,
+      "updatedAt": "2026-03-25T13:41:35Z",
+      "url": "https://github.com/Tian-Yu-CAO/DNnet-A-Lightweight-Network-For-Real-Time-4K-Underwater-Image-Enhancement",
+      "matchedQueries": [
+        "underwater image enhancement"
+      ],
+      "score": 21.386,
+      "tags": [
+        "video",
+        "underwater"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Official repository for our paper titled \"UnDIVE: Generalized Underwater Video Enhancement Using Generative Priors\"",
+      "forksCount": 1,
+      "fullName": "suhas-srinath/undive",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2025-04-16T10:36:28Z",
+      "stargazersCount": 12,
+      "updatedAt": "2026-06-22T19:10:01Z",
+      "url": "https://github.com/suhas-srinath/undive",
+      "matchedQueries": [
+        "underwater video enhancement"
+      ],
+      "score": 21.386,
+      "tags": [
+        "video",
+        "underwater"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Low-Light Image Enhancement\u30e2\u30c7\u30eb\u3067\u3042\u308bBread\u306ePython\u3067\u306eONNX\u63a8\u8ad6\u30b5\u30f3\u30d7\u30eb",
+      "forksCount": 1,
+      "fullName": "Kazuhito00/Bread-ONNX-Sample",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "pushedAt": "2023-01-29T09:20:46Z",
+      "stargazersCount": 11,
+      "updatedAt": "2024-01-04T17:14:59Z",
+      "url": "https://github.com/Kazuhito00/Bread-ONNX-Sample",
+      "matchedQueries": [
+        "LLIE"
+      ],
+      "score": 21.315,
+      "tags": [
+        "lowlight",
+        "apple"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "Single Underwater Image Enhancement and Color Restoration, which is Python implementation for a comprehensive review paper \"An Experimental-based Review of Image Enhancement and Image Restoration Methods for Underwater Imaging\"",
+      "forksCount": 157,
+      "fullName": "wangyanckxx/Single-Underwater-Image-Enhancement-and-Color-Restoration",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2021-06-05T08:17:13Z",
+      "stargazersCount": 761,
+      "updatedAt": "2026-07-03T01:18:36Z",
+      "url": "https://github.com/wangyanckxx/Single-Underwater-Image-Enhancement-and-Color-Restoration",
+      "matchedQueries": [
+        "underwater image enhancement"
+      ],
+      "score": 21.197,
+      "tags": [
+        "underwater"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Optimizing 4D Lookup Table for Low-light Video Enhancement via Wavelet Priori.(TMM)",
+      "forksCount": 1,
+      "fullName": "hejh8/WaveLUT",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2025-04-21T08:44:08Z",
+      "stargazersCount": 8,
+      "updatedAt": "2026-04-30T18:43:15Z",
+      "url": "https://github.com/hejh8/WaveLUT",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 21.071,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Our paper 'CompEvent: Complex-valued Event-RGB Fusion for Low-light Video Enhancement and Deblurring' has been accepted at AAAI 2026.",
+      "forksCount": 0,
+      "fullName": "YuXie1/CompEvent",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-03-10T16:35:32Z",
+      "stargazersCount": 7,
+      "updatedAt": "2026-07-02T01:07:10Z",
+      "url": "https://github.com/YuXie1/CompEvent",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 20.976,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Code for the paper \u201cA Lightweight Real-Time Low-Light Enhancement Network for Embedded Automotive Vision Systems\u201d",
+      "forksCount": 1,
+      "fullName": "YuhanChen2024/UltraFast-LiNET",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "pushedAt": "2026-03-03T19:52:14Z",
+      "stargazersCount": 7,
+      "updatedAt": "2026-06-30T06:50:36Z",
+      "url": "https://github.com/YuhanChen2024/UltraFast-LiNET",
+      "matchedQueries": [
+        "real time low light enhancement"
+      ],
+      "score": 20.976,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Low-Light Image Enhancement\u30e2\u30c7\u30eb\u3067\u3042\u308balbrateanu/LYT-Net\u306eONNX\u63a8\u8ad6\u30b5\u30f3\u30d7\u30eb",
+      "forksCount": 1,
+      "fullName": "Kazuhito00/LYT-Net-ONNX-Sample",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Jupyter Notebook",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2024-04-24T11:28:14Z",
+      "stargazersCount": 7,
+      "updatedAt": "2026-03-20T11:45:48Z",
+      "url": "https://github.com/Kazuhito00/LYT-Net-ONNX-Sample",
+      "matchedQueries": [
+        "LLIE"
+      ],
+      "score": 20.976,
+      "tags": [
+        "lowlight",
+        "apple"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "Extreme low light denoising",
+      "forksCount": 0,
+      "fullName": "samyakjain0112/Image-Denoising-in-extreme-low-light",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2020-01-11T12:48:59Z",
+      "stargazersCount": 7,
+      "updatedAt": "2025-09-16T13:53:41Z",
+      "url": "https://github.com/samyakjain0112/Image-Denoising-in-extreme-low-light",
+      "matchedQueries": [
+        "low light denoising"
+      ],
+      "score": 20.976,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Resources for our paper \"Low-Light Image and Video Enhancement: A Comprehensive Survey and Beyond\"",
+      "forksCount": 8,
+      "fullName": "ShenZheng2000/LLIE_Survey",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2024-10-09T19:47:17Z",
+      "stargazersCount": 155,
+      "updatedAt": "2026-07-01T03:12:19Z",
+      "url": "https://github.com/ShenZheng2000/LLIE_Survey",
+      "matchedQueries": [
+        "LLIE"
+      ],
+      "score": 20.843,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "",
+      "forksCount": 2,
+      "fullName": "shivamchhirolya/Low-Light-Video-Enhancement-by-Learning-on-Static-Videos-with-Cross-Frame-Attention",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2022-10-30T02:27:07Z",
+      "stargazersCount": 5,
+      "updatedAt": "2025-10-28T09:28:20Z",
+      "url": "https://github.com/shivamchhirolya/Low-Light-Video-Enhancement-by-Learning-on-Static-Videos-with-Cross-Frame-Attention",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 20.756,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "A SPATIO-TEMPORAL ALIGNED SUNET MODEL FOR LOW-LIGHT VIDEO ENHANCEMENT",
+      "forksCount": 0,
+      "fullName": "lrr-rachel/STA-SUNet",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "pushedAt": "2024-11-01T18:04:35Z",
+      "stargazersCount": 5,
+      "updatedAt": "2025-09-30T18:38:02Z",
+      "url": "https://github.com/lrr-rachel/STA-SUNet",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 20.756,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "3D2Unet: 3D Deformable Unet for Low-Light Video Enhancement (PRCV2021)",
+      "forksCount": 2,
+      "fullName": "YDDDDG/3D2Unet",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2022-01-06T13:14:23Z",
+      "stargazersCount": 4,
+      "updatedAt": "2024-10-20T03:25:33Z",
+      "url": "https://github.com/YDDDDG/3D2Unet",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 20.625,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "A customed ZeroDCE implementation on Jetson Nano with CSI camera.",
+      "forksCount": 0,
+      "fullName": "Chen-KaiTsai/ZeroDCE_JetsonNano",
+      "isArchived": false,
+      "isFork": false,
+      "language": "C",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2024-11-22T20:43:17Z",
+      "stargazersCount": 4,
+      "updatedAt": "2025-04-06T10:34:32Z",
+      "url": "https://github.com/Chen-KaiTsai/ZeroDCE_JetsonNano",
+      "matchedQueries": [
+        "Zero-DCE"
+      ],
+      "score": 20.625,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "[TOMM 2024] Official repository for \"Real-time Attentive Dilated U-Net for Extremely Dark Image Enhancement\".",
+      "forksCount": 0,
+      "fullName": "biubiubiiu/ADU-Net",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "pushedAt": "2024-06-12T14:28:41Z",
+      "stargazersCount": 4,
+      "updatedAt": "2025-11-11T03:33:56Z",
+      "url": "https://github.com/biubiubiiu/ADU-Net",
+      "matchedQueries": [
+        "dark image enhancement"
+      ],
+      "score": 20.625,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Official code of 2-Shots in the Dark: Low-Light Denoising with Minimal Data Acquisition (CVPR 2026)",
+      "forksCount": 0,
+      "fullName": "IVRL/2-Shots-in-the-Dark",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-05-20T11:07:47Z",
+      "stargazersCount": 4,
+      "updatedAt": "2026-06-16T21:23:48Z",
+      "url": "https://github.com/IVRL/2-Shots-in-the-Dark",
+      "matchedQueries": [
+        "low light denoising"
+      ],
+      "score": 20.625,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "Fast underwater image enhancement for Improved Visual Perception. #TensorFlow #PyTorch #RAL2020",
+      "forksCount": 121,
+      "fullName": "xahidbuffon/FUnIE-GAN",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "other",
+        "name": "Other",
+        "url": ""
+      },
+      "pushedAt": "2024-04-08T21:42:09Z",
+      "stargazersCount": 637,
+      "updatedAt": "2026-06-30T06:53:26Z",
+      "url": "https://github.com/xahidbuffon/FUnIE-GAN",
+      "matchedQueries": [
+        "underwater image enhancement"
+      ],
+      "score": 20.582,
+      "tags": [
+        "underwater"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "License Plate Recognition and Image Enhancement is a deep learning-based project that combines optical character recognition (OCR) with image enhancement techniques. It improves the accuracy of license plate recognition under challenging conditions like low light, rain, and fog using ZeroDCE for real-time image enhancement and a CNN-based model",
+      "forksCount": 2,
+      "fullName": "shreyansh-21/LumaPlate",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Jupyter Notebook",
+      "license": {
+        "key": "other",
+        "name": "Other",
+        "url": ""
+      },
+      "pushedAt": "2025-04-16T17:24:24Z",
+      "stargazersCount": 3,
+      "updatedAt": "2025-05-14T23:19:04Z",
+      "url": "https://github.com/shreyansh-21/LumaPlate",
+      "matchedQueries": [
+        "real-time image enhancement"
+      ],
+      "score": 20.469,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Real Time Low Light Video Enhancement with the help of Zero-DCE Network on TI SK-AM62A-LP",
+      "forksCount": 0,
+      "fullName": "srinandakv/Real-Time-LLVE",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Jupyter Notebook",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2025-09-28T06:41:26Z",
+      "stargazersCount": 2,
+      "updatedAt": "2025-09-28T06:41:30Z",
+      "url": "https://github.com/srinandakv/Real-Time-LLVE",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 20.275,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "\ud83d\udd0d Smart Surveillance System using YOLO & Flask . A real-time AI-powered web app for advanced surveillance tasks including:  Weapon Detection (guns, knives, rifles) , Vehicle Detection & Tracking, Image Change Detection,  Night Vision Enhancement for Low-Light.",
+      "forksCount": 0,
+      "fullName": "Endlesscodingz/Object-detection-and-tracking-using-YOLO",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2025-07-29T06:11:42Z",
+      "stargazersCount": 2,
+      "updatedAt": "2026-02-07T08:35:12Z",
+      "url": "https://github.com/Endlesscodingz/Object-detection-and-tracking-using-YOLO",
+      "matchedQueries": [
+        "night vision enhancement"
+      ],
+      "score": 20.275,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "Underwater Video Enhancement",
+      "forksCount": 0,
+      "fullName": "w9ahmed/underwater-video-enhancement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2016-09-03T18:39:01Z",
+      "stargazersCount": 2,
+      "updatedAt": "2020-07-03T13:49:40Z",
+      "url": "https://github.com/w9ahmed/underwater-video-enhancement",
+      "matchedQueries": [
+        "underwater video enhancement"
+      ],
+      "score": 20.275,
+      "tags": [
+        "video",
+        "underwater"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "Deep Sensor Field Denoising for Dark Image Enhancement",
+      "forksCount": 0,
+      "fullName": "parasmaharjan/DSFDNet",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2019-12-02T23:48:48Z",
+      "stargazersCount": 2,
+      "updatedAt": "2025-08-10T03:40:48Z",
+      "url": "https://github.com/parasmaharjan/DSFDNet",
+      "matchedQueries": [
+        "dark image enhancement"
+      ],
+      "score": 20.275,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "Python implementation of two low-light image enhancement techniques via illumination map estimation",
+      "forksCount": 69,
+      "fullName": "pvnieo/Low-light-Image-Enhancement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2022-08-18T14:10:18Z",
+      "stargazersCount": 572,
+      "updatedAt": "2026-07-03T07:08:13Z",
+      "url": "https://github.com/pvnieo/Low-light-Image-Enhancement",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement"
+      ],
+      "score": 20.228,
+      "tags": [
+        "lowlight"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Self-supervised Adaptive Low-light Video Enhancement",
+      "forksCount": 0,
+      "fullName": "zohrehazizi/SALVE",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2023-01-09T18:26:37Z",
+      "stargazersCount": 1,
+      "updatedAt": "2025-03-28T08:07:01Z",
+      "url": "https://github.com/zohrehazizi/SALVE",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 20.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Real-time low-light video enhancement pipeline using EnlightenGAN + YOLOv8 for traffic object detection, with an ADAS-style HUD and Docker deployment.",
+      "forksCount": 0,
+      "fullName": "karthiii12/Night_dayy",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-05-16T03:03:36Z",
+      "stargazersCount": 1,
+      "updatedAt": "2026-05-19T07:43:48Z",
+      "url": "https://github.com/karthiii12/Night_dayy",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 20.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "Official Repository for Temporal adaptation via memory injection (TAMI): improving temporal consistency for low-light video enhancement (LLVE) without retraining the image backbone from scratch.",
+      "forksCount": 0,
+      "fullName": "Yangzhichen763/TAMI",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-01-22T08:53:17Z",
+      "stargazersCount": 1,
+      "updatedAt": "2026-03-24T12:51:29Z",
+      "url": "https://github.com/Yangzhichen763/TAMI",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 20.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "A customed ZeroDCE implementation on Raspberry Pi 3. Ported from Jetson Nano Version",
+      "forksCount": 0,
+      "fullName": "Chen-KaiTsai/ZeroDCE_VideoCore_IV",
+      "isArchived": false,
+      "isFork": false,
+      "language": "C",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2024-11-05T11:52:58Z",
+      "stargazersCount": 1,
+      "updatedAt": "2025-01-23T13:14:22Z",
+      "url": "https://github.com/Chen-KaiTsai/ZeroDCE_VideoCore_IV",
+      "matchedQueries": [
+        "Zero-DCE"
+      ],
+      "score": 20.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "",
+      "forksCount": 70,
+      "fullName": "Li-Chongyi/Zero-DCE_extension",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2024-01-26T02:42:28Z",
+      "stargazersCount": 503,
+      "updatedAt": "2026-07-03T08:57:26Z",
+      "url": "https://github.com/Li-Chongyi/Zero-DCE_extension",
+      "matchedQueries": [
+        "Zero-DCE"
+      ],
+      "score": 19.822,
+      "tags": [
+        "lowlight"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "Zero-DCE code and model",
+      "forksCount": 226,
+      "fullName": "Li-Chongyi/Zero-DCE",
+      "isArchived": false,
+      "isFork": false,
+      "language": "HTML",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2024-01-12T02:00:12Z",
+      "stargazersCount": 1054,
+      "updatedAt": "2026-07-03T08:57:18Z",
+      "url": "https://github.com/Li-Chongyi/Zero-DCE",
+      "matchedQueries": [
+        "Zero-DCE"
+      ],
+      "score": 19.429,
+      "tags": [
+        "lowlight"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Guideline following Large Language Model for Information Extraction",
+      "forksCount": 27,
+      "fullName": "hitz-zentroa/GoLLIE",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "pushedAt": "2024-10-27T20:44:54Z",
+      "stargazersCount": 441,
+      "updatedAt": "2026-06-10T16:37:48Z",
+      "url": "https://github.com/hitz-zentroa/GoLLIE",
+      "matchedQueries": [
+        "LLIE"
+      ],
+      "score": 19.425,
+      "tags": [
+        "lowlight"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Low-light video enhancement baseline and experiments",
+      "forksCount": 0,
+      "fullName": "dgdgksj/low-light-enhancement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-03-18T06:51:52Z",
+      "stargazersCount": 0,
+      "updatedAt": "2026-03-18T06:51:55Z",
+      "url": "https://github.com/dgdgksj/low-light-enhancement",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "",
+      "forksCount": 0,
+      "fullName": "akmalfayyazi/low-light-video-enhancement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Jupyter Notebook",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-06-24T19:30:09Z",
+      "stargazersCount": 0,
+      "updatedAt": "2026-06-24T19:30:21Z",
+      "url": "https://github.com/akmalfayyazi/low-light-video-enhancement",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": " An end-to-end, zero-reference low-light video enhancement web app built with PyTorch, OpenCV, and Streamlit. Features real-time processing, dynamic FFmpeg codec conversion, and unsupervised learning math constraints.",
+      "forksCount": 0,
+      "fullName": "aaquib1303/zero-dce-low-light-video-enhancement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-04-28T16:08:37Z",
+      "stargazersCount": 0,
+      "updatedAt": "2026-04-28T16:08:43Z",
+      "url": "https://github.com/aaquib1303/zero-dce-low-light-video-enhancement",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "",
+      "forksCount": 0,
+      "fullName": "ifrahanjum/zero-dce-low-light-video-enhancement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-06-14T05:58:53Z",
+      "stargazersCount": 0,
+      "updatedAt": "2026-06-14T05:58:56Z",
+      "url": "https://github.com/ifrahanjum/zero-dce-low-light-video-enhancement",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "",
+      "forksCount": 0,
+      "fullName": "lxinyan03/curriculum-guided-low-light-video-enhancement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-05-21T12:24:20Z",
+      "stargazersCount": 0,
+      "updatedAt": "2026-05-21T12:24:27Z",
+      "url": "https://github.com/lxinyan03/curriculum-guided-low-light-video-enhancement",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "",
+      "forksCount": 0,
+      "fullName": "ahnjihyun/3-tier-Low-Light-Video-Enhancement-Net",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2021-04-29T13:50:15Z",
+      "stargazersCount": 0,
+      "updatedAt": "2021-04-29T13:50:17Z",
+      "url": "https://github.com/ahnjihyun/3-tier-Low-Light-Video-Enhancement-Net",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "",
+      "forksCount": 0,
+      "fullName": "HUANGjunbin711/Real-time-low-light-video-enhancement-for-endoscopic-surgery",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2025-05-13T05:51:51Z",
+      "stargazersCount": 0,
+      "updatedAt": "2025-05-13T05:51:54Z",
+      "url": "https://github.com/HUANGjunbin711/Real-time-low-light-video-enhancement-for-endoscopic-surgery",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "An AI-based system that enhances low-light videos, improves object visibility, and detects anomalous events in surveillance footage using deep learning and computer vision techniques.",
+      "forksCount": 0,
+      "fullName": "Abhinandpv10/AI-Based-Low-Light-Video-Enhancement-and-Anomaly-Detection",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Jupyter Notebook",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-06-11T15:50:28Z",
+      "stargazersCount": 0,
+      "updatedAt": "2026-06-11T15:50:32Z",
+      "url": "https://github.com/Abhinandpv10/AI-Based-Low-Light-Video-Enhancement-and-Anomaly-Detection",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "",
+      "forksCount": 0,
+      "fullName": "Vaishu-999/Low-Light-Video-Enhancement-Using-a-Retinex-Based-Fast-Algorithm",
+      "isArchived": false,
+      "isFork": false,
+      "language": "C",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2025-06-30T19:23:47Z",
+      "stargazersCount": 0,
+      "updatedAt": "2025-06-30T19:23:50Z",
+      "url": "https://github.com/Vaishu-999/Low-Light-Video-Enhancement-Using-a-Retinex-Based-Fast-Algorithm",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Liquid Neural Networks (CfC) for low-light video enhancement on top of a RetinexFormer pipeline.",
+      "forksCount": 0,
+      "fullName": "AlexanderRumyantcev/LNN-LowLight",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-07-03T09:00:00Z",
+      "stargazersCount": 0,
+      "updatedAt": "2026-07-03T09:00:05Z",
+      "url": "https://github.com/AlexanderRumyantcev/LNN-LowLight",
+      "matchedQueries": [
+        "low-light video enhancement",
+        "Retinexformer"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "",
+      "forksCount": 0,
+      "fullName": "nanafork/Implementation-of-Spatio-temporal-propagation-and-reconstruction-for-low-light-video-enhancement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Jupyter Notebook",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2023-08-06T19:49:41Z",
+      "stargazersCount": 0,
+      "updatedAt": "2023-08-06T15:00:37Z",
+      "url": "https://github.com/nanafork/Implementation-of-Spatio-temporal-propagation-and-reconstruction-for-low-light-video-enhancement",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "An efficient, zero-reference deep learning model for low-light video enhancement based on an improved Retinex architecture .",
+      "forksCount": 0,
+      "fullName": "Sagnik2003/ELVE-Retinex",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2026-07-02T01:09:36Z",
+      "stargazersCount": 0,
+      "updatedAt": "2026-07-02T01:45:33Z",
+      "url": "https://github.com/Sagnik2003/ELVE-Retinex",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "A multi-stage research project exploring low-light video enhancement, object detection, temporal consistency, and human-in-the-loop evaluation for drone imagery.",
+      "forksCount": 0,
+      "fullName": "jrangamar/LLVE",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-06-18T06:56:44Z",
+      "stargazersCount": 0,
+      "updatedAt": "2026-06-18T06:56:48Z",
+      "url": "https://github.com/jrangamar/LLVE",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Extend Zero-DCE from image enhancement to low-light video enhancement. Adapted the Zero-DCE framework to process video frames consistently, ensuring temporal stability and visual quality across sequences.",
+      "forksCount": 0,
+      "fullName": "Abhi-604/Video-Enhancement-software-using-Zero-DCE",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Jupyter Notebook",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-01-07T17:06:38Z",
+      "stargazersCount": 0,
+      "updatedAt": "2026-01-07T17:06:42Z",
+      "url": "https://github.com/Abhi-604/Video-Enhancement-software-using-Zero-DCE",
+      "matchedQueries": [
+        "low-light video enhancement"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Real-time biometric HUD system with night vision enhancement, drowsiness detection, and rangefinder capabilities using OpenCV and MediaPipe.",
+      "forksCount": 0,
+      "fullName": "Vr0cks/jarvis-vision-hud",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2025-12-22T08:44:47Z",
+      "stargazersCount": 0,
+      "updatedAt": "2025-12-22T08:44:51Z",
+      "url": "https://github.com/Vr0cks/jarvis-vision-hud",
+      "matchedQueries": [
+        "night vision enhancement"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "",
+      "forksCount": 0,
+      "fullName": "asukagg/Computer-Vision-Project-Night-Vision-Enhancement-with-Downstream-Object-Detection-Improvement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2026-05-21T03:20:32Z",
+      "stargazersCount": 0,
+      "updatedAt": "2026-05-21T03:20:35Z",
+      "url": "https://github.com/asukagg/Computer-Vision-Project-Night-Vision-Enhancement-with-Downstream-Object-Detection-Improvement",
+      "matchedQueries": [
+        "night vision enhancement"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "\ud83d\udee1\ufe0f FarmGuard \u2014 Real-time wildlife intrusion detection system for farms. Uses YOLOv8 to identify elephants, buffalos, rhinos & zebras from live video feeds, with instant WhatsApp alerts via Twilio. Built with Streamlit, OpenCV, and optional night-vision enhancement.",
+      "forksCount": 0,
+      "fullName": "anuragpp77/FarmGuard-",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-03-18T11:08:24Z",
+      "stargazersCount": 0,
+      "updatedAt": "2026-03-18T11:08:27Z",
+      "url": "https://github.com/anuragpp77/FarmGuard-",
+      "matchedQueries": [
+        "night vision enhancement"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "",
+      "forksCount": 0,
+      "fullName": "Fekkky/ZeroDCE-Realtime-Deploy",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2026-03-19T05:01:54Z",
+      "stargazersCount": 0,
+      "updatedAt": "2026-03-19T05:01:58Z",
+      "url": "https://github.com/Fekkky/ZeroDCE-Realtime-Deploy",
+      "matchedQueries": [
+        "Zero-DCE"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Low-Light Image Enhancement \u30e2\u30c7\u30eb\u3067\u3042\u308b caiyuanhao1998/Retinexformer \u306eONNX\u63a8\u8ad6\u30b5\u30f3\u30d7\u30eb",
+      "forksCount": 0,
+      "fullName": "Kazuhito00/Retinexformer-ONNX-Sample",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2026-01-21T04:53:09Z",
+      "stargazersCount": 0,
+      "updatedAt": "2026-01-21T04:53:38Z",
+      "url": "https://github.com/Kazuhito00/Retinexformer-ONNX-Sample",
+      "matchedQueries": [
+        "Retinexformer"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "apple"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "\u57fa\u4e8e RetinexFormer \u7684\u6d77\u4e8b\u53bb\u96fe\u6539\u8fdb\u6a21\u578b",
+      "forksCount": 0,
+      "fullName": "wr-ux/Maritime-Dehazing",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2026-01-04T07:32:59Z",
+      "stargazersCount": 0,
+      "updatedAt": "2026-01-04T07:33:04Z",
+      "url": "https://github.com/wr-ux/Maritime-Dehazing",
+      "matchedQueries": [
+        "Retinexformer"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "underwater"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "Trained a new temporal transformer architecture for low-light video restoration by extending Retinexformer with 3D convs, frame alignment, and temporal fusion, achieving strong PSNR/SSIM and stable flicker-free outputs.",
+      "forksCount": 0,
+      "fullName": "rajtiwariee/LumiTrace",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2025-11-30T13:56:59Z",
+      "stargazersCount": 0,
+      "updatedAt": "2025-12-08T05:10:16Z",
+      "url": "https://github.com/rajtiwariee/LumiTrace",
+      "matchedQueries": [
+        "Retinexformer"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "Underwater video processing tools",
+      "forksCount": 1,
+      "fullName": "vchernov/underwater_video_enhancement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "C++",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2016-10-14T22:01:48Z",
+      "stargazersCount": 0,
+      "updatedAt": "2016-10-14T21:45:04Z",
+      "url": "https://github.com/vchernov/underwater_video_enhancement",
+      "matchedQueries": [
+        "underwater video enhancement"
+      ],
+      "score": 19.0,
+      "tags": [
+        "video",
+        "underwater"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "Real-time underwater video enhancement with adaptive filters, presets, and cross-platform support (Windows/OrangePi)",
+      "forksCount": 0,
+      "fullName": "ekholopov/underwater-video-processing",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-05-28T10:46:08Z",
+      "stargazersCount": 0,
+      "updatedAt": "2026-05-30T21:44:55Z",
+      "url": "https://github.com/ekholopov/underwater-video-processing",
+      "matchedQueries": [
+        "underwater video enhancement"
+      ],
+      "score": 19.0,
+      "tags": [
+        "video",
+        "underwater"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Dark image enhancer with exponential inverse gamma filter that enhances dark/shady details on a dark image, has built in denoising and modifiable gamma coefficient",
+      "forksCount": 0,
+      "fullName": "abiniveshr/noctra",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-03-29T10:16:26Z",
+      "stargazersCount": 0,
+      "updatedAt": "2026-03-29T10:16:29Z",
+      "url": "https://github.com/abiniveshr/noctra",
+      "matchedQueries": [
+        "dark image enhancement"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "U-Net Implementation",
+      "forksCount": 0,
+      "fullName": "SATYAM111872/Low_Light_Denoising",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Jupyter Notebook",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2024-08-09T18:52:13Z",
+      "stargazersCount": 0,
+      "updatedAt": "2024-08-09T18:52:17Z",
+      "url": "https://github.com/SATYAM111872/Low_Light_Denoising",
+      "matchedQueries": [
+        "low light denoising"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "CNN architecture comparison for extreme low-light denoising, evaluated with PSNR, SSIM, LPIPS on SID dataset",
+      "forksCount": 0,
+      "fullName": "carlos-silvap/low-light-denoising",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Jupyter Notebook",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-05-12T18:43:29Z",
+      "stargazersCount": 0,
+      "updatedAt": "2026-05-12T20:15:15Z",
+      "url": "https://github.com/carlos-silvap/low-light-denoising",
+      "matchedQueries": [
+        "low light denoising"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "",
+      "forksCount": 0,
+      "fullName": "matti-ac24/Low-light-Denoising",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-05-31T20:06:38Z",
+      "stargazersCount": 0,
+      "updatedAt": "2026-05-31T20:06:41Z",
+      "url": "https://github.com/matti-ac24/Low-light-Denoising",
+      "matchedQueries": [
+        "low light denoising"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "The project of vey low light denosing in CUHKSZ",
+      "forksCount": 0,
+      "fullName": "vonzate/veryLowLightDenoising",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2023-12-21T07:08:23Z",
+      "stargazersCount": 0,
+      "updatedAt": "2023-12-16T07:26:44Z",
+      "url": "https://github.com/vonzate/veryLowLightDenoising",
+      "matchedQueries": [
+        "low light denoising"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "LOW LIGHT IMAGE DENOISING",
+      "forksCount": 0,
+      "fullName": "anirudha125/Low-Light-Denoising-NTIRE-Challenge-2024-",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Jupyter Notebook",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2025-04-11T09:41:09Z",
+      "stargazersCount": 0,
+      "updatedAt": "2025-06-07T09:30:25Z",
+      "url": "https://github.com/anirudha125/Low-Light-Denoising-NTIRE-Challenge-2024-",
+      "matchedQueries": [
+        "low light denoising"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "",
+      "forksCount": 0,
+      "fullName": "maximilian-drach/Comprehensive-Review-and-Implementation-of-Novel-Amplification-Factors-in-Low-Light-Denoising",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2024-09-10T21:15:49Z",
+      "stargazersCount": 0,
+      "updatedAt": "2024-09-10T21:15:53Z",
+      "url": "https://github.com/maximilian-drach/Comprehensive-Review-and-Implementation-of-Novel-Amplification-Factors-in-Low-Light-Denoising",
+      "matchedQueries": [
+        "low light denoising"
+      ],
+      "score": 19.0,
+      "tags": [
+        "lowlight",
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "[AAAI 2022] The code release of paper \"AAAI Low-Light Image Enhancement with Normalizing Flow\"",
+      "forksCount": 41,
+      "fullName": "wyf0912/LLFlow",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "other",
+        "name": "Other",
+        "url": ""
+      },
+      "pushedAt": "2024-04-21T14:27:58Z",
+      "stargazersCount": 361,
+      "updatedAt": "2026-07-01T06:55:23Z",
+      "url": "https://github.com/wyf0912/LLFlow",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement"
+      ],
+      "score": 18.855,
+      "tags": [
+        "lowlight"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "Kindling the Darkness: a Practical Low-light Image Enhancer",
+      "forksCount": 64,
+      "fullName": "zhangyhuaee/KinD",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2024-07-23T02:23:06Z",
+      "stargazersCount": 346,
+      "updatedAt": "2026-06-30T16:35:48Z",
+      "url": "https://github.com/zhangyhuaee/KinD",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement"
+      ],
+      "score": 18.739,
+      "tags": [
+        "lowlight"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Official pytorch implementation for \"Low-light Image Enhancement with Wavelet-based Diffusion Models\"",
+      "forksCount": 40,
+      "fullName": "JianghaiSCU/Diffusion-Low-Light",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2024-07-08T14:31:07Z",
+      "stargazersCount": 311,
+      "updatedAt": "2026-07-01T07:28:28Z",
+      "url": "https://github.com/JianghaiSCU/Diffusion-Low-Light",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement"
+      ],
+      "score": 18.455,
+      "tags": [
+        "lowlight"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "U-shape Transformer for Underwater Image Enhancement",
+      "forksCount": 31,
+      "fullName": "LintaoPeng/U-shape_Transformer_for_Underwater_Image_Enhancement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Jupyter Notebook",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2025-05-09T03:47:48Z",
+      "stargazersCount": 308,
+      "updatedAt": "2026-07-01T06:50:09Z",
+      "url": "https://github.com/LintaoPeng/U-shape_Transformer_for_Underwater_Image_Enhancement",
+      "matchedQueries": [
+        "underwater image enhancement"
+      ],
+      "score": 18.43,
+      "tags": [
+        "underwater"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Official pytorch implementation for \"LightenDiffusion: Unsupervised Low-Light Image Enhancement with Latent-Retinex Diffusion Models\"",
+      "forksCount": 21,
+      "fullName": "JianghaiSCU/LightenDiffusion",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-05-19T11:33:29Z",
+      "stargazersCount": 276,
+      "updatedAt": "2026-07-03T03:15:36Z",
+      "url": "https://github.com/JianghaiSCU/LightenDiffusion",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement"
+      ],
+      "score": 18.15,
+      "tags": [
+        "lowlight"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "Code repository for our paper Chongyi Li, Chunle Guo, Wenqi Ren, Runmin Cong, Junhui Hou, Sam Kwong, Dacheng Tao , \"An Underwater Image Enhancement Benchmark Dataset and Beyond\" IEEE TIP 2019.",
+      "forksCount": 61,
+      "fullName": "Li-Chongyi/Water-Net_Code",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2022-12-08T11:47:25Z",
+      "stargazersCount": 271,
+      "updatedAt": "2026-06-30T16:31:30Z",
+      "url": "https://github.com/Li-Chongyi/Water-Net_Code",
+      "matchedQueries": [
+        "underwater image enhancement"
+      ],
+      "score": 18.105,
+      "tags": [
+        "underwater"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "[ICCV 2023] Implicit Neural Representation for Cooperative Low-light Image Enhancement",
+      "forksCount": 16,
+      "fullName": "Ysz2022/NeRCo",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2024-03-18T02:53:48Z",
+      "stargazersCount": 268,
+      "updatedAt": "2026-06-10T12:25:08Z",
+      "url": "https://github.com/Ysz2022/NeRCo",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement"
+      ],
+      "score": 18.077,
+      "tags": [
+        "lowlight"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "An implementation of 'Deep Bilateral Learning for Real-Time Image Enhancements', SIGGRAPH 2017",
+      "forksCount": 84,
+      "fullName": "mgharbi/hdrnet_legacy",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "pushedAt": "2018-03-31T15:15:03Z",
+      "stargazersCount": 265,
+      "updatedAt": "2026-01-05T07:11:18Z",
+      "url": "https://github.com/mgharbi/hdrnet_legacy",
+      "matchedQueries": [
+        "real-time image enhancement"
+      ],
+      "score": 18.049,
+      "tags": [
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "This is the source code for CVPR paper \"Low-Light Image Enhancement via Structure Modeling and Guidance\"",
+      "forksCount": 29,
+      "fullName": "xiaogang00/SMG-LLIE",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2023-06-21T14:32:19Z",
+      "stargazersCount": 257,
+      "updatedAt": "2026-07-01T19:40:28Z",
+      "url": "https://github.com/xiaogang00/SMG-LLIE",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement",
+        "LLIE"
+      ],
+      "score": 17.974,
+      "tags": [
+        "lowlight"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "Unofficial PyTorch implementation of 'Deep Bilateral Learning for Real-Time Image Enhancement', SIGGRAPH 2017 https://groups.csail.mit.edu/graphics/hdrnet/",
+      "forksCount": 49,
+      "fullName": "creotiv/hdrnet-pytorch",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2023-10-03T21:54:09Z",
+      "stargazersCount": 250,
+      "updatedAt": "2026-05-28T07:04:57Z",
+      "url": "https://github.com/creotiv/hdrnet-pytorch",
+      "matchedQueries": [
+        "real-time image enhancement"
+      ],
+      "score": 17.907,
+      "tags": [
+        "video"
+      ]
+    },
+    {
+      "defaultBranch": "master",
+      "description": "This is a resouce list for low light image enhancement",
+      "forksCount": 240,
+      "fullName": "zhihongz/awesome-low-light-image-enhancement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "MATLAB",
+      "license": {
+        "key": "",
+        "name": "",
+        "url": ""
+      },
+      "pushedAt": "2026-05-12T12:34:13Z",
+      "stargazersCount": 1833,
+      "updatedAt": "2026-07-03T07:08:29Z",
+      "url": "https://github.com/zhihongz/awesome-low-light-image-enhancement",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement"
+      ],
+      "score": 17.871,
+      "tags": [
+        "lowlight"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "Semantic-Aware LLIE. CVPR 2023 TPAMI 2024",
+      "forksCount": 10,
+      "fullName": "langmanbusi/Semantic-Aware-Low-Light-Image-Enhancement",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "pushedAt": "2024-10-14T06:55:27Z",
+      "stargazersCount": 240,
+      "updatedAt": "2026-04-07T17:04:00Z",
+      "url": "https://github.com/langmanbusi/Semantic-Aware-Low-Light-Image-Enhancement",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement",
+        "LLIE"
+      ],
+      "score": 17.809,
+      "tags": [
+        "lowlight"
+      ]
+    },
+    {
+      "defaultBranch": "main",
+      "description": "The code release of paper \"Ultra-High-Definition Low-Light Image Enhancement: A Benchmark and Transformer-Based Method\", AAAI 2023",
+      "forksCount": 14,
+      "fullName": "TaoWangzj/LLFormer",
+      "isArchived": false,
+      "isFork": false,
+      "language": "Python",
+      "license": {
+        "key": "other",
+        "name": "Other",
+        "url": ""
+      },
+      "pushedAt": "2023-11-30T02:22:01Z",
+      "stargazersCount": 240,
+      "updatedAt": "2026-07-01T06:58:25Z",
+      "url": "https://github.com/TaoWangzj/LLFormer",
+      "matchedQueries": [
+        "low-light image enhancement",
+        "low light image enhancement"
+      ],
+      "score": 17.809,
+      "tags": [
+        "lowlight"
+      ]
+    }
+  ]
+}
