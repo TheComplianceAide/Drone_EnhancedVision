@@ -1,0 +1,7 @@
+[superres-ab] scene=soft_barn_soak frames<=256
+[superres-ab] scene=construction_facade frames<=256
+[superres-ab] scene=skyline_rail frames<=256
+PASS_METRICS_REVIEW_REQUIRED: 0 failure(s), 2 warning(s)
+receipt: /private/tmp/drone-upgrade-20260904/final-superres-ab/superres_ab_validation.json
+WARN: construction_facade: fixture ended after 212 decoded frames; requested 256
+WARN: skyline_rail: fixture ended after 209 decoded frames; requested 256

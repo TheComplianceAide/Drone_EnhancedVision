@@ -1,0 +1,18 @@
+{
+  "_09_M5_Fable_MotionISR_Rev3.py": "f801621a8809c0ec232450fd0e0e41d813019dad98974ab97f93f6f979736eb7",
+  "_10_M5_Fable_ImageScout_Rev3.py": "2507df3f24289382e5a2f30d1129342ee43e13655a24758e88b55347be9984e0",
+  "_11_M5_Fable_SuperRes_Rev3.py": "1e81e58d6dc0dd15359bba8469d1ceba99cb99f9ba0c2b57265667d2e4f7ea8d",
+  "_11_M5_Fable_SuperRes_Rev4.py": "e765240efef118384abeac7d471c4ad7854e8df8a5f725ce331f855b0ce8d359",
+  "_12_M5_NightVision_Max_Rev3.py": "07c12a12e699039d5e14f65880eb764e8db43623eb2a309b6625fd2e35925e64",
+  "m5_operator_view.py": "71a8d3c26200e1023174c56ea020b5af1961903ff4115edd9a545fba02f822e3",
+  "m5_isr_evidence.py": "2c8abaddaf1772fec15da8f42b5a621184673b993ce38fccfc2a32ec43eba78f",
+  "m5_motion_metal.py": "d778fa6b1b740efd7a71159bac10556d62ba4024dd1264fdb5f3769cd8e89e07",
+  "m5_motion_gpu_validation.py": "8eb95feba238f18a7b390f54fbc928395599151f669a4c71c548d27591cd7bc5",
+  "m5_operator_view_validation.py": "674c4604c95ed85023fbb637166f97f64f4cef84ade2b40e43da2485250254e0",
+  "m5_v3_imaging.py": "f2c1fdb669ef333010a89e0cb6b874b24038c22f0ee0132ec45a637a85cffd1e",
+  "ops_window.py": "46655cb0e38b7f043d12fb070591562e317049807c00ded0e319c1ac05cc783c",
+  "app_Launcher_v2.py": "206d53537f5b24dc3dbda75dd9ae57d8a7c475c1ca0182578df7ff3c43d5a898",
+  "tests/test_operator_views.py": "c502af870b7f01d39c19b79033b1225843e0bb68568798b1fff15f86037f1b83",
+  "tests/test_motion_metal.py": "8001c69c1b22a0a4dc2fd95d226fe83aa7f05382c132989f1ff4f6932eba334c",
+  "Start_MotionISR_GPU_Experimental.command": "b453e9d21f8d759fc85098dec23c07db4031d740a6bb18c8a6bd1722bfd65a5c"
+}

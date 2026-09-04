@@ -1,0 +1,100 @@
+{
+  "status": "PASS_UI_ONLY_AMENDMENT",
+  "file": "_11_M5_Fable_SuperRes_Rev3.py",
+  "quality_validated_sha256": "003c35ee485743dae7d3732a308c26739bb150ab2a4d063252e8fcb939a23d5d",
+  "final_sha256": "1e81e58d6dc0dd15359bba8469d1ceba99cb99f9ba0c2b57265667d2e4f7ea8d",
+  "changed_functions": [
+    "run_gui"
+  ],
+  "exact_one_line_gui_render_call_only": true,
+  "all_reconstruction_and_validation_functions_AST_identical": true,
+  "meaning": "Display label correction only; the completed full quality receipts bind the preserved pre-label code, not the final GUI label bytes. No algorithm, input, threshold, or image pixels changed.",
+  "gui_replay": {
+    "app": "_11_M5_Fable_SuperRes_Rev4.py",
+    "args": [
+      "--source",
+      "/tmp/drone-upgrade-20260904/derived_gui_lowlight.mkv",
+      "--zoom",
+      "16",
+      "--quality-device",
+      "mps",
+      "--output-dir",
+      "/tmp/drone-upgrade-20260904/gui-grid-label-output"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 12.062332666944712,
+    "imshow_calls": 406,
+    "actions": [
+      {
+        "key": "]",
+        "elapsed": 2.013003167230636,
+        "windows": [
+          "Fable SuperRes V4 - click static target",
+          "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+        ]
+      },
+      {
+        "key": "6",
+        "elapsed": 3.0511729582212865,
+        "windows": [
+          "Fable SuperRes V4 - click static target",
+          "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+        ]
+      },
+      {
+        "key": "+",
+        "elapsed": 4.042823541909456,
+        "windows": [
+          "Fable SuperRes V4 - click static target",
+          "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+        ]
+      },
+      {
+        "key": "v",
+        "elapsed": 5.034147208090872,
+        "windows": [
+          "Fable SuperRes V4 - click static target",
+          "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+        ]
+      },
+      {
+        "key": "f",
+        "elapsed": 6.034846167080104,
+        "windows": [
+          "Fable SuperRes V4 - click static target",
+          "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+        ]
+      },
+      {
+        "key": "f",
+        "elapsed": 7.039424125105143,
+        "windows": [
+          "Fable SuperRes V4 - click static target",
+          "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+        ]
+      },
+      {
+        "key": "i",
+        "elapsed": 8.032676000148058,
+        "windows": [
+          "Fable SuperRes V4 - click static target",
+          "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+        ]
+      },
+      {
+        "key": "q",
+        "elapsed": 12.046522167045623,
+        "windows": [
+          "Fable SuperRes V4 - click static target",
+          "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+        ]
+      }
+    ],
+    "windows": [
+      "Fable SuperRes V4 - click static target",
+      "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+    ],
+    "mode": "real OpenCV windows; automated keys; derived file decoded at <=30fps; no live RTMP claim"
+  },
+  "original_resolution_visual_review": "PASS: registered input grid and input-grid dimensions displayed; 16x ROI control remains active"
+}

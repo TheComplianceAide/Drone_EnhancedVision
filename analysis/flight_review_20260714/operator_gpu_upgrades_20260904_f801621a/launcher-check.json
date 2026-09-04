@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "scope": "actual launcher command builder with process spawn mocked; separate real OpenCV app checks",
+  "rows": [
+    {
+      "script": "_09_M5_Fable_MotionISR_Rev3.py",
+      "command": [
+        "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python",
+        "/Users/randyblasik/Documents/Drone_EnhancedVision/_09_M5_Fable_MotionISR_Rev3.py",
+        "--device",
+        "cpu"
+      ],
+      "cwd": "/Users/randyblasik/Documents/Drone_EnhancedVision",
+      "exists": true
+    },
+    {
+      "script": "_10_M5_Fable_ImageScout_Rev3.py",
+      "command": [
+        "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python",
+        "/Users/randyblasik/Documents/Drone_EnhancedVision/_10_M5_Fable_ImageScout_Rev3.py"
+      ],
+      "cwd": "/Users/randyblasik/Documents/Drone_EnhancedVision",
+      "exists": true
+    },
+    {
+      "script": "_11_M5_Fable_SuperRes_Rev4.py",
+      "command": [
+        "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python",
+        "/Users/randyblasik/Documents/Drone_EnhancedVision/_11_M5_Fable_SuperRes_Rev4.py"
+      ],
+      "cwd": "/Users/randyblasik/Documents/Drone_EnhancedVision",
+      "exists": true
+    },
+    {
+      "script": "_12_M5_NightVision_Max_Rev3.py",
+      "command": [
+        "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python",
+        "/Users/randyblasik/Documents/Drone_EnhancedVision/_12_M5_NightVision_Max_Rev3.py"
+      ],
+      "cwd": "/Users/randyblasik/Documents/Drone_EnhancedVision",
+      "exists": true
+    }
+  ],
+  "launcher_sha256": "206d53537f5b24dc3dbda75dd9ae57d8a7c475c1ca0182578df7ff3c43d5a898",
+  "featured_cards": [
+    [
+      "_10_M5_Fable_ImageScout_Rev3.py",
+      "\u25d0",
+      "FABLE IMAGE SCOUT V3",
+      "Night preview + click-to-inspect"
+    ],
+    [
+      "_09_M5_Fable_MotionISR_Rev3.py",
+      "\u25c9",
+      "FABLE MOTION ISR V3",
+      "CPU search + track history + night view"
+    ],
+    [
+      "_12_M5_NightVision_Max_Rev3.py",
+      "NV",
+      "NIGHTVISION MAX V3",
+      "Full-frame night preview + 2x ROI soak"
+    ],
+    [
+      "_11_M5_Fable_SuperRes_Rev4.py",
+      "SR",
+      "FABLE SUPERRES V4",
+      "2-16x ROI + large RAW/CLEAR inspection"
+    ]
+  ],
+  "experimental_rev4_not_featured": true
+}

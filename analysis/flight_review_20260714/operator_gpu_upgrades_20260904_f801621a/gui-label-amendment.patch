@@ -1,0 +1,11 @@
+--- quality-validated/_11_M5_Fable_SuperRes_Rev3.py
++++ final/_11_M5_Fable_SuperRes_Rev3.py
+@@ -5603,7 +5603,7 @@
+                         selected = night_preview(selected)[0]
+                         title += " + NIGHT DISPLAY"
+                     panel = inspector.render(raw_grid, selected, width=proof_w, height=proof_h,
+-                        title=title, status=f"Source crop {raw_native.shape[1]}x{raw_native.shape[0]} px | ROI /{session.zoom_div} | i: proof grid; +/- ROI; v: night display")
++                        raw_label="REGISTERED INPUT GRID", title=title, status=f"Input grid {raw_native.shape[1]}x{raw_native.shape[0]} px | ROI /{session.zoom_div} | i: proof grid; +/- ROI; v: night display")
+                 if frozen and frozen_panel is None:
+                     frozen_panel = panel.copy()
+             else:
