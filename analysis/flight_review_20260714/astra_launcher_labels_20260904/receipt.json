@@ -1,0 +1,165 @@
+{
+  "status": "PASS_LAUNCHER_UI_COMMANDS",
+  "scope": "display names only; no source script filenames or GPU launch arguments changed",
+  "commands": [
+    [
+      "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python",
+      "/Users/randyblasik/Documents/Drone_EnhancedVision/_09_M5_Fable_MotionISR_Rev3.py",
+      "--device",
+      "mps",
+      "--require-mps"
+    ],
+    [
+      "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python",
+      "/Users/randyblasik/Documents/Drone_EnhancedVision/_11_M5_Fable_SuperRes_Rev4.py",
+      "--quality-device",
+      "mps",
+      "--require-mps"
+    ],
+    [
+      "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python",
+      "/Users/randyblasik/Documents/Drone_EnhancedVision/_12_M5_NightVision_Max_Rev3.py",
+      "--quality-device",
+      "mps",
+      "--require-mps"
+    ]
+  ],
+  "labels": [
+    "Astra MOTION ISR V3  \u25c9\nGPU search + track history + night view",
+    "Astra MOTION ISR V3 (Flight-Learned)",
+    "Astra SUPERRES V4  SR\nGPU reconstruction + 2-16x ROI inspection",
+    "Astra SUPERRES V4 (GPU-AWARE COHERENT SOAK)",
+    "Astra NIGHTVISION MAX V3  NV\nGPU night reconstruction + raw/quality view",
+    "Astra NIGHTVISION MAX V3 (GPU-AWARE 2X SOAK)"
+  ],
+  "all_labels": {
+    "_10_M5_Fable_ImageScout_Rev3.py": [
+      "Astra IMAGE SCOUT V3  \u25d0\nNight preview + click-to-inspect",
+      "Astra IMAGE SCOUT V3 (Honest Enhance)"
+    ],
+    "_09_M5_Fable_MotionISR_Rev3.py": [
+      "Astra MOTION ISR V3  \u25c9\nGPU search + track history + night view",
+      "Astra MOTION ISR V3 (Flight-Learned)"
+    ],
+    "_12_M5_NightVision_Max_Rev3.py": [
+      "Astra NIGHTVISION MAX V3  NV\nGPU night reconstruction + raw/quality view",
+      "Astra NIGHTVISION MAX V3 (GPU-AWARE 2X SOAK)"
+    ],
+    "_11_M5_LakeHouse_AutoScout_Rev2.py": [
+      "Astra LAKEHOUSE AUTOSCOUT V2  \u2248\nAuto motion + waves",
+      "Astra LAKEHOUSE AUTOSCOUT V2"
+    ],
+    "_10_M5_ISR_ReconSuite_Rev2.py": [
+      "Astra ISR RECON SUITE V2  \u25c8\nFusion target IQ",
+      "Astra ISR RECON SUITE V2"
+    ],
+    "_09_M5_TemporalEventScope_Rev2.py": [
+      "Astra TEMPORAL EVENTSCOPE V2  \u25ce\nFainter motion trails",
+      "Astra TEMPORAL EVENTSCOPE V2"
+    ],
+    "_08_M5_LuckySkylineSuperZoom_Rev2.py": [
+      "Astra LUCKY SKYLINE V2  \u2316\nQuality-aware stack",
+      "Astra LUCKY SKYLINE SUPERZOOM V2"
+    ],
+    "_11_M5_Fable_SuperRes_Rev4.py": [
+      "Astra SUPERRES V4  SR\nGPU reconstruction + 2-16x ROI inspection",
+      "Astra SUPERRES V4 (GPU-AWARE COHERENT SOAK)"
+    ],
+    "_04_IAT_Deep_NightVision_Rev1.py": [
+      "Astra DEEP NIGHT VISION (IAT)"
+    ],
+    "_05_SuperZoom_IAT_Rev1.py": [
+      "Astra SUPERZOOM + AI (IAT)"
+    ],
+    "_06_ISR_MainPanel_Motion_AutoZoom_Rev1.py": [
+      "Astra ISR MAIN PANEL (Motion + AutoZoom)"
+    ],
+    "_07_Radar_Motion_GPU_AutoZoom_Rev1.py": [
+      "Astra RADAR (Motion Only) + AutoZoom"
+    ],
+    "_08_M5_LuckySkylineSuperZoom_Rev1.py": [
+      "Astra LUCKY SKYLINE SUPERZOOM"
+    ],
+    "_08_M5_Radar_Motion_AutoZoom_Rev1.py": [
+      "Astra RADAR (Auto-Tuned Motion)"
+    ],
+    "_08_M5_Radar_Motion_AutoZoom_Rev2.py": [
+      "Astra RADAR MOTION V2"
+    ],
+    "_09_M5_Fable_MotionISR_Rev1.py": [
+      "Astra MOTION ISR (Ego-Comp)"
+    ],
+    "_09_M5_Fable_MotionISR_Rev4.py": [
+      "Astra 09 M5 Fable MotionISR Rev4"
+    ],
+    "_09_M5_Fable_MotionISR_Rev5.py": [
+      "Astra Faint-Target ISR V5 (EXPERIMENTAL; Acceptance Open)"
+    ],
+    "_09_M5_TemporalEventScope_Rev1.py": [
+      "Astra TEMPORAL EVENTSCOPE"
+    ],
+    "_10_M5_Fable_NightVision_Rev1.py": [
+      "Astra NIGHTVISION (Motion-Comp)"
+    ],
+    "_10_M5_ISR_ReconSuite_Rev1.py": [
+      "Astra ISR RECON SUITE"
+    ],
+    "_11_M5_Fable_SuperRes_Rev1.py": [
+      "Astra SUPERRES (Multi-Frame)"
+    ],
+    "_11_M5_Fable_SuperRes_Rev3.py": [
+      "Astra SUPERRES V3 (GPU-Aware Quality Soak)"
+    ],
+    "_11_M5_LakeHouse_AutoScout_Rev1.py": [
+      "Astra LAKEHOUSE AUTOSCOUT"
+    ],
+    "_12_M5_Fable_Overwatch_Rev1.py": [
+      "Astra OVERWATCH (Sentry+DVR)"
+    ],
+    "_12_M5_NightVision_Max_Rev1.py": [
+      "Astra NIGHTVISION MAX"
+    ],
+    "_12_M5_NightVision_Max_Rev2.py": [
+      "Astra 12 M5 NightVision Max Rev2"
+    ],
+    "_1_4General_Target_Acquisition_4.py": [
+      "Astra GENERAL TRACKER (Rev4)"
+    ],
+    "_1_General_Target_Acquisition_2.py": [
+      "Astra 1 General Target Acquisition 2"
+    ],
+    "_1_General_Target_Acquisition_3.py": [
+      "Astra 1 General Target Acquisition 3"
+    ],
+    "_Click_to_Zoom_Large_Medium_Small_Rev3.py": [
+      "Astra Click to Zoom Large Medium Small Rev3"
+    ],
+    "_Click_to_Zoom_Large_Medium_Small_Rev4 copy.py": [
+      "Astra Click to Zoom Large Medium Small Rev4 copy"
+    ],
+    "_Click_to_Zoom_Large_Medium_Small_Rev5.py": [
+      "Astra Click to Zoom Large Medium Small Rev5"
+    ],
+    "_NightVision_Rev2y.py": [
+      "Astra NightVision Rev2y"
+    ],
+    "_NightVision_Rev4.py": [
+      "Astra NightVision Rev4"
+    ],
+    "_NightVision_Rev5.py": [
+      "Astra NightVision Rev5"
+    ],
+    "_Track_up_to_5_objects_wAdjustableObjectSize_Rev2.py": [
+      "Astra Track up to 5 objects wAdjustableObjectSize Rev2"
+    ],
+    "_track5_LargestObjects_Rev2.py": [
+      "Astra track5 LargestObjects Rev2"
+    ],
+    "_track5_LargestObjects_Rev3.py": [
+      "Astra track5 LargestObjects Rev3"
+    ]
+  },
+  "preferences_unchanged": true,
+  "launcher_sha256": "a9e56f8c5be3b8a24cafb576e6310001d0558c2b5506f4d71a04618eb4a17999",
+  "refreshed_launcher_pid": 25991
+}

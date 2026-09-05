@@ -279,7 +279,7 @@ class App:
             "_11_M5_LakeHouse_AutoScout_Rev1.py": "M5 LAKEHOUSE AUTOSCOUT",
             "_11_M5_LakeHouse_AutoScout_Rev2.py": "M5 LAKEHOUSE AUTOSCOUT V2",
             "_09_M5_Fable_MotionISR_Rev1.py": "M5 FABLE MOTION ISR (Ego-Comp)",
-            "_09_M5_Fable_MotionISR_Rev5.py": "EXPERIMENTAL M5 Faint-Target ISR V5 (Acceptance Open)",
+            "_09_M5_Fable_MotionISR_Rev5.py": "Faint-Target ISR V5 (EXPERIMENTAL; Acceptance Open)",
             "_09_M5_Fable_MotionISR_Rev3.py": "M5 FABLE MOTION ISR V3 (Flight-Learned)",
             "_10_M5_Fable_NightVision_Rev1.py": "M5 FABLE NIGHTVISION (Motion-Comp)",
             "_10_M5_Fable_ImageScout_Rev3.py": "M5 FABLE IMAGE SCOUT V3 (Honest Enhance)",
@@ -288,7 +288,9 @@ class App:
             "_11_M5_Fable_SuperRes_Rev4.py": "M5 FABLE SUPERRES V4 (GPU-AWARE COHERENT SOAK)",
             "_12_M5_Fable_Overwatch_Rev1.py": "M5 FABLE OVERWATCH (Sentry+DVR)",
         }
-        return mapping.get(script, script)
+        label = mapping.get(script, os.path.splitext(script)[0].replace("_", " ").strip())
+        label = label.removeprefix("M5 ").removeprefix("FABLE ")
+        return f"Astra {label}"
 
     def _configure_styles(self) -> None:
         style = ttk.Style(self.master)
@@ -822,7 +824,8 @@ class App:
         for script, glyph, title, desc in featured:
             if script not in all_scripts:
                 continue
-            text = f"{glyph}  {title}\n{desc}"
+            title = title.removeprefix("FABLE ")
+            text = f"Astra {title}  {glyph}\n{desc}"
             b = JetButton(self.mission_grid, style="Mission.TButton", text=text, command=lambda s=script: self.select_script(s))
             b.grid(row=row, column=col, sticky="ew", padx=(0 if col == 0 else 8, 0), pady=4, ipady=10)
             self._register_script_button(script, b)
