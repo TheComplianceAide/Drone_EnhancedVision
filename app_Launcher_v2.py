@@ -13,6 +13,7 @@ import shutil
 import sys
 import threading
 import time
+import traceback
 import webbrowser
 
 import psutil
@@ -20,12 +21,12 @@ import psutil
 import tkinter as tk  # noqa: E402
 from tkinter import ttk  # noqa: E402
 
-# ── helper: locate npx ─────────────────────────────────────────────
-def locate_npx():
-    path = shutil.which("npx")
+# ── helper: locate node ────────────────────────────────────────────
+def locate_node():
+    path = shutil.which("node")
     if not path:
         raise RuntimeError(
-            "'npx' not found. Install Node.js LTS or add it to PATH."
+            "'node' not found. Install Node.js LTS or add it to PATH."
         )
     return path
 
@@ -237,6 +238,7 @@ class App:
         self.stream_process = self.stream_pid = None
         self._stream_started_at = None
         self._nms_log = None
+        self._nms_state_path = os.path.join(self.path, "logs", "nms_state.json")
         self._venv_python = None
         self._monitor_stop = threading.Event()
         self._monitor_thread = None
@@ -261,6 +263,7 @@ class App:
         mapping = {
             "_1_4General_Target_Acquisition_4.py": "GENERAL TRACKER (Rev4)",
             "_12_M5_NightVision_Max_Rev1.py": "M5 NIGHTVISION MAX",
+            "_12_M5_NightVision_Max_Rev3.py": "M5 NIGHTVISION MAX V3 (GPU-AWARE 2X SOAK)",
             "_08_M5_LuckySkylineSuperZoom_Rev1.py": "M5 LUCKY SKYLINE SUPERZOOM",
             "_08_M5_LuckySkylineSuperZoom_Rev2.py": "M5 LUCKY SKYLINE SUPERZOOM V2",
             "_05_SuperZoom_IAT_Rev1.py": "SUPERZOOM + AI (IAT)",
@@ -276,8 +279,13 @@ class App:
             "_11_M5_LakeHouse_AutoScout_Rev1.py": "M5 LAKEHOUSE AUTOSCOUT",
             "_11_M5_LakeHouse_AutoScout_Rev2.py": "M5 LAKEHOUSE AUTOSCOUT V2",
             "_09_M5_Fable_MotionISR_Rev1.py": "M5 FABLE MOTION ISR (Ego-Comp)",
+            "_09_M5_Fable_MotionISR_Rev5.py": "EXPERIMENTAL M5 Faint-Target ISR V5 (Acceptance Open)",
+            "_09_M5_Fable_MotionISR_Rev3.py": "M5 FABLE MOTION ISR V3 (Flight-Learned)",
             "_10_M5_Fable_NightVision_Rev1.py": "M5 FABLE NIGHTVISION (Motion-Comp)",
+            "_10_M5_Fable_ImageScout_Rev3.py": "M5 FABLE IMAGE SCOUT V3 (Honest Enhance)",
             "_11_M5_Fable_SuperRes_Rev1.py": "M5 FABLE SUPERRES (Multi-Frame)",
+            "_11_M5_Fable_SuperRes_Rev3.py": "M5 FABLE SUPERRES V3 (GPU-Aware Quality Soak)",
+            "_11_M5_Fable_SuperRes_Rev4.py": "M5 FABLE SUPERRES V4 (GPU-AWARE COHERENT SOAK)",
             "_12_M5_Fable_Overwatch_Rev1.py": "M5 FABLE OVERWATCH (Sentry+DVR)",
         }
         return mapping.get(script, script)
@@ -759,10 +767,22 @@ class App:
         all_scripts = [s for s in sorted(os.listdir(self.path)) if s.startswith("_") and s.endswith(".py")]
         featured = [
             (
-                "_12_M5_NightVision_Max_Rev1.py",
+                "_10_M5_Fable_ImageScout_Rev3.py",
+                "\u25d0",
+                "FABLE IMAGE SCOUT V3",
+                "Night preview + click-to-inspect",
+            ),
+            (
+                "_09_M5_Fable_MotionISR_Rev3.py",
+                "\u25c9",
+                "FABLE MOTION ISR V3",
+                "GPU search + track history + night view",
+            ),
+            (
+                "_12_M5_NightVision_Max_Rev3.py",
                 "NV",
-                "NIGHTVISION MAX",
-                "Stack + AI proof",
+                "NIGHTVISION MAX V3",
+                "GPU night reconstruction + raw/quality view",
             ),
             (
                 "_11_M5_LakeHouse_AutoScout_Rev2.py",
@@ -789,10 +809,10 @@ class App:
                 "Quality-aware stack",
             ),
             (
-                "_08_M5_Radar_Motion_AutoZoom_Rev2.py",
-                "◌",
-                "M5 RADAR MOTION V2",
-                "Adaptive preset",
+                "_11_M5_Fable_SuperRes_Rev4.py",
+                "SR",
+                "FABLE SUPERRES V4",
+                "GPU reconstruction + 2-16x ROI inspection",
             ),
         ]
 
@@ -889,7 +909,10 @@ class App:
             return upgraded
         if saved and os.path.exists(os.path.join(self.path, saved)):
             return saved
-        # First-run default: prefer the lake-house auto console, then the consolidated ISR console.
+        # Owner-selected GPU suite default; preserve an explicit saved selection.
+        if os.path.exists(os.path.join(self.path, "_09_M5_Fable_MotionISR_Rev3.py")):
+            return "_09_M5_Fable_MotionISR_Rev3.py"
+        # Legacy fallbacks for incomplete checkouts.
         if os.path.exists(os.path.join(self.path, "_11_M5_LakeHouse_AutoScout_Rev2.py")):
             return "_11_M5_LakeHouse_AutoScout_Rev2.py"
         if os.path.exists(os.path.join(self.path, "_10_M5_ISR_ReconSuite_Rev2.py")):
@@ -941,9 +964,13 @@ class App:
             pass
 
         script_path = os.path.join(self.path, self.script)
-        print(f"Launching script: {script_path}", flush=True)
+        command = [sys.executable, script_path]
+        # Owner selected GPU operation for tonight; backend failure is explicit.
+        from m5_field_launch import mission_arguments
+        command.extend(mission_arguments(self.script))
+        print(f"Launching script: {' '.join(command)}", flush=True)
         self.process = subprocess.Popen(
-            [sys.executable, script_path],
+            command,
             cwd=self.path
         )
         self.pid = self.process.pid
@@ -969,16 +996,30 @@ class App:
         if self.stream_process:
             self.stop_stream()
 
-        cfg = os.path.join(self.path, "node_media_server_config.js")
-        cmd = [locate_npx(), "--yes", "node-media-server@latest"]
-        if os.path.exists(cfg): cmd.append(cfg)
+        runner = os.path.join(self.path, "nms_local_server.js")
+        package_meta = os.path.join(self.path, "node_modules", "node-media-server", "package.json")
 
         try:
+            with open(package_meta, "r", encoding="utf-8") as f:
+                installed_version = str(json.load(f).get("version", ""))
+            if installed_version != "4.2.8":
+                raise RuntimeError(
+                    "Pinned Node Media Server 4.2.8 is not installed. Run 'npm install' in the project folder."
+                )
+            if not os.path.exists(runner):
+                raise RuntimeError(f"Missing local media-server runner: {runner}")
             os.makedirs(os.path.join(self.path, "logs"), exist_ok=True)
             log_path = os.path.join(self.path, "logs", "nms.log")
+            try:
+                os.unlink(self._nms_state_path)
+            except FileNotFoundError:
+                pass
             self._nms_log = open(log_path, "ab", buffering=0)
+            env = dict(os.environ)
+            env["DRONE_NMS_STATE_PATH"] = self._nms_state_path
+            env["DRONE_NMS_STREAM_PATH"] = f"/live/{self.stream_key}"
             self.stream_process = subprocess.Popen(
-                cmd, cwd=self.path,
+                [locate_node(), runner], cwd=self.path, env=env,
                 stdout=self._nms_log, stderr=subprocess.STDOUT
             )
             self.stream_pid = self.stream_process.pid
@@ -1009,6 +1050,10 @@ class App:
         except Exception:
             pass
         self._nms_log = None
+        try:
+            os.unlink(self._nms_state_path)
+        except FileNotFoundError:
+            pass
 
     def open_preview(self):
         test_html = os.path.join(self.path, "live_stream_tester.html")
@@ -1046,6 +1091,7 @@ class App:
 
     def on_exit(self):
         # Ensure background processes don't linger.
+        print("Drone Vision Ops: shutdown requested", flush=True)
         try:
             self._monitor_stop.set()
         except Exception:
@@ -1129,69 +1175,44 @@ class App:
             pass
 
     def _start_connection_monitor(self) -> None:
-        url = f"rtmp://127.0.0.1:1935/live/{self.stream_key}"
-
         def worker():
-            # Lazy import: keeps launcher startup snappy.
-            try:
-                import cv2  # type: ignore
-            except Exception:
-                return
-
             last_ok = 0.0
             last_shape = None
-            connected = False
-
-            def open_probe_capture():
-                params = []
-                # Avoid 30s FFmpeg stalls when the RTMP server is up but no
-                # publisher is active yet. OpenCV wheels that support these
-                # properties honor them in the constructor.
-                for name, value in (
-                    ("CAP_PROP_OPEN_TIMEOUT_MSEC", 700),
-                    ("CAP_PROP_READ_TIMEOUT_MSEC", 700),
-                ):
-                    prop = getattr(cv2, name, None)
-                    if prop is not None:
-                        params.extend([int(prop), int(value)])
-                try:
-                    if params:
-                        return cv2.VideoCapture(url, cv2.CAP_FFMPEG, params)
-                except Exception:
-                    pass
-                return cv2.VideoCapture(url, cv2.CAP_FFMPEG)
 
             while not self._monitor_stop.is_set():
-                # Avoid OpenCV/FFmpeg spam while the RTMP server isn't even up yet.
-                if not self._is_port_open("127.0.0.1", 1935, timeout=0.15):
+                now = time.time()
+                state = None
+                try:
+                    with open(self._nms_state_path, "r", encoding="utf-8") as f:
+                        candidate = json.load(f)
+                    state_pid = int(candidate.get("pid", 0) or 0)
+                    state_age = now - float(candidate.get("updated_at_ms", 0) or 0) / 1000.0
+                    if (state_pid == int(self.stream_pid or 0)
+                            and bool(candidate.get("server_alive"))
+                            and 0.0 <= state_age < 1.5):
+                        state = candidate
+                except Exception:
+                    state = None
+
+                if state is None:
+                    # The local runner heartbeat is authoritative. A TCP port
+                    # probe creates a throwaway NMS session and log entry even
+                    # without decoding video, so do not poll the RTMP socket.
                     self.master.after(0, self._update_server_down)
                     time.sleep(0.25)
                     continue
 
-                now = time.time()
-                # Probe RTMP briefly instead of holding an open subscriber connection.
-                # This reduces the chance of weird "second subscriber waits forever" behavior.
-                try:
-                    cap = open_probe_capture()
-                except Exception:
-                    cap = None
-
-                ok = False
-                frame = None
-                if cap is not None and cap.isOpened():
-                    ok, frame = cap.read()
-                    try:
-                        cap.release()
-                    except Exception:
-                        pass
-
-                if ok and frame is not None:
-                    last_ok = now
-                    last_shape = frame.shape[:2]  # (h,w)
-
-                connected = (now - last_ok) < 1.5
+                pub = state.get("publisher") if state else None
+                byte_ts = float((pub or {}).get("last_byte_advance_at_ms", 0) or 0) / 1000.0
+                connected = bool(pub) and 0.0 <= now - byte_ts < 2.0
+                if connected:
+                    last_ok = byte_ts
+                    h = int((pub or {}).get("video_height", 0) or 0)
+                    w = int((pub or {}).get("video_width", 0) or 0)
+                    if h > 0 and w > 0:
+                        last_shape = (h, w)
                 self.master.after(0, lambda c=connected, s=last_shape, t=last_ok: self._update_status(c, s, t))
-                time.sleep(0.35)
+                time.sleep(0.25)
 
         self._monitor_thread = threading.Thread(target=worker, name="rtmp-monitor", daemon=True)
         self._monitor_thread.start()
@@ -1207,6 +1228,7 @@ class App:
             return False
 
     def _update_server_down(self) -> None:
+        self._last_connected = False
         now = time.time()
         started = self._stream_started_at or 0.0
         if started and (now - started) < 5.0:
@@ -1225,24 +1247,40 @@ class App:
     def _update_status(self, connected: bool, shape, last_ok_ts: float) -> None:
         # Reap exited child process so auto-launch can trigger again.
         try:
-            if self.process is not None and self.process.poll() is not None:
+            returncode = self.process.poll() if self.process is not None else None
+            if self.process is not None and returncode is not None:
+                if returncode != 0:
+                    print(f"Mission process exited unexpectedly (code {returncode}).", flush=True)
+                    self.default_label.config(
+                        text=f"Mission stopped unexpectedly (exit {returncode}). Press LAUNCH to retry."
+                    )
                 self.process = self.pid = None
                 self.kill_btn.state(["disabled"])
                 # Re-enable launch button if a script is selected.
                 if self.script:
                     self.launch_btn.state(["!disabled"])
+                # launch_script() deliberately minimizes the cockpit so the
+                # OpenCV mission window owns the field display.  Always bring
+                # the cockpit back when that child exits; otherwise a normal
+                # `q` quit or a crash looks like the launcher vanished.
+                try:
+                    self.master.deiconify()
+                    self.master.lift()
+                    self.master.after_idle(self.master.focus_force)
+                except Exception:
+                    pass
         except Exception:
             pass
 
         now = time.time()
         age_ms = int(max(0.0, now - (last_ok_ts or 0.0)) * 1000.0)
-        if connected and shape:
-            h, w = int(shape[0]), int(shape[1])
-            self.status_label.config(
-                fg="#02110d",
-                bg=COL_ACCENT,
-                text=f"STATUS  CONNECTED  {w}x{h}  age {age_ms}ms",
-            )
+        if connected:
+            if shape:
+                h, w = int(shape[0]), int(shape[1])
+                text = f"STATUS  CONNECTED  {w}x{h}  age {age_ms}ms"
+            else:
+                text = f"STATUS  CONNECTED  LIVE  age {age_ms}ms"
+            self.status_label.config(fg="#02110d", bg=COL_ACCENT, text=text)
         else:
             self.status_label.config(
                 fg=COL_WARN,
@@ -1264,6 +1302,12 @@ class App:
 
 # ── main ───────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    root = tk.Tk()
-    App(root, os.path.dirname(os.path.abspath(__file__)))
-    root.mainloop()
+    try:
+        root = tk.Tk()
+        App(root, os.path.dirname(os.path.abspath(__file__)))
+        root.mainloop()
+        print("Drone Vision Ops: Tk mainloop exited", flush=True)
+    except BaseException:
+        print("Drone Vision Ops: unhandled launcher exception", flush=True)
+        traceback.print_exc()
+        raise

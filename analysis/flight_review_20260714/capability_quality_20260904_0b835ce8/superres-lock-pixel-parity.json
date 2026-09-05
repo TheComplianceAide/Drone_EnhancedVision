@@ -1,0 +1,28 @@
+{
+  "fixture_sha256": "604ac73e9a898281ee81c57e431d76bf97f5c8cec1260576ad29f01a3b65f9da",
+  "baseline_sha256": "9fb3719ead887e87073041d5058a68182a6a6b8c004601173f56e3d431eb7846",
+  "candidate_sha256": "9baad35fe27bbe0e2bbf05b352e69cd34df2cd26eb430fe9ca9afe45314765ae",
+  "backend": "mps",
+  "results": [
+    {
+      "name": "source",
+      "byte_identical": true,
+      "sha256": "604ac73e9a898281ee81c57e431d76bf97f5c8cec1260576ad29f01a3b65f9da"
+    },
+    {
+      "name": "rl4_conservative",
+      "byte_identical": true,
+      "sha256": "7cb5b6c152beb1d277f9ec9acadc7a48bfa39d781ad841c7cf2122748e7531b8"
+    },
+    {
+      "name": "rl8_balanced",
+      "byte_identical": true,
+      "sha256": "91c46fdc41211385d79471e894ac422aec365c4e28f00c11fa40331dab2c12ba"
+    },
+    {
+      "name": "rl12_detail",
+      "byte_identical": true,
+      "sha256": "c2a3e338b8a084d83b2b01415458b8356d5bd76f03e226ed9bbb53cb9edf62cf"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "status": "PASS_NON_RELEASE",
+  "date_utc": "2026-09-05T00:03:39.944308+00:00",
+  "baseline_commit": "8d63c156aa904d527bb9f7eb6b82b8d2fc82d79b",
+  "candidate_code_sha256": {
+    "m5_temporal_quality.py": "46f2f9ed754666f85a95bc7f577b850298f1e5857c9b24e7a9759ceddb3f236b",
+    "m5_gpu_runtime.py": "8b815775e29a0e319f8618b6b7c7a81c0052c3b11afa7521272fc68d66d70ab7",
+    "m5_temporal_quality_validation.py": "8cd2db56335d2c3e4328828b5dde964a4d74b1aebd1df6c4b3c50310434a3958",
+    "m5_micro_detection_ab_validation.py": "61e618ad254d6836958694b487d4ece56932e5fafe7acee55c619d6ad273fbc9",
+    "m5_motionisr_rev5.py": "0b835ce8519711c430d2983cb36d65c01829f4c711d8f4036762c8a7072c16cc",
+    "_09_M5_Fable_MotionISR_Rev5.py": "a0632f0cf330ddd9d26eda8dcc664f307456c1ea41f40b916f016ce1675f1ffa",
+    "Start_MotionISR_Capability_Experimental.command": "ea5480e72589bf1b653991dbc173ad98fefd709cc8f64716f11a2c94849c121f",
+    "m5_motionisr_rev4_validation.py": "19238ae9e7cd7212b4a4df0b612c48a2746c2633f330a5097b8d474ff04d7997",
+    "m5_superres_mps.py": "9baad35fe27bbe0e2bbf05b352e69cd34df2cd26eb430fe9ca9afe45314765ae",
+    "m5_nightvision_rev3.py": "8148d1c1fbfb0eb2e37b6992d56d120f43f0d2fcfd1ec67ece3603a3d9b28822",
+    "_09_M5_Fable_MotionISR_Rev3.py": "7c818e08660ec9f99c1830cd1381bc326d3b18e79cdee34de30eaecb7dfa267c",
+    "_10_M5_Fable_ImageScout_Rev3.py": "65824b8d5e0ce4ebc2ff53e1400b3efa3933ca492e9b75fece45b90f14da071b",
+    "_11_M5_Fable_SuperRes_Rev3.py": "d6f42cb61ef1bf7431641512439bd85e6e247b001e69afcf3a6b5e5e265778f6",
+    "_12_M5_NightVision_Max_Rev3.py": "6943ae1211f735e157d9b9cdff07b1b91e1402e341de416a2db9514ac03e219d",
+    "app_Launcher_v2.py": "1b6f36e544c8969ef923cbff68ccfe744b39dcbe314128ff6c81f7779c8ce3b7",
+    "tests/test_temporal_quality.py": "542938ed53a736d03f3530eddc7fbef0e20631243347b2e6beb8799e03b36e1d",
+    "tests/test_motionisr_rev5.py": "9e2e4f2e17b0ce26807132b0c49f14d03d7c23835dcc3c00219eba9232b0b2b2"
+  },
+  "unchanged_rev4_sha256": "7eb37afb2d7578e5bc8fbfb56086584b9aea500afb31bfdfb444100748fbc9dc",
+  "quality_status": "PASS_METRICS_REVIEW_REQUIRED",
+  "quality_display_error_ratios": [
+    0.0848104080705209,
+    0.19551465688546057,
+    0.4502379735263769
+  ],
+  "detector_status": "PASS_BOUNDED_DETECTOR",
+  "full_rev5_acceptance_status": "FAIL",
+  "full_rev5_acceptance_failures": [
+    "FAIL_TARGET_1_COVERAGE",
+    "FAIL_TARGET_2_COVERAGE",
+    "FAIL_TARGET_3_COVERAGE",
+    "FAIL_TARGET_1_COVERAGE_GAIN",
+    "FAIL_TARGET_2_COVERAGE_GAIN",
+    "FAIL_TARGET_3_COVERAGE_GAIN",
+    "FAIL_TARGET_1_DOMINANT_SHARE",
+    "FAIL_TARGET_2_DOMINANT_SHARE",
+    "FAIL_MICRO_OFF_PATH_INCREASE_VS_CLEAN",
+    "FAIL_TOTAL_OFF_PATH_EXCESS_VS_REV3_CPU",
+    "FAIL_MICRO_OFF_PATH_UNIQUE_INCREASE_VS_CLEAN"
+  ],
+  "rev5_selftest_status": "FAIL; four retained failure lines in rev5-selftest-borderfix.log",
+  "unit_tests": 146,
+  "recommended_app_selftests": "all four pass; detection/reconstruction function bodies unchanged after scheduling/UI edits",
+  "scope": "local macOS drone apps; no cloud/commercial/government/MSP/MCP deployment is applicable",
+  "cost_usd": 0,
+  "limitations": [
+    "Flight-derived low-light proxies, not native night-flight range.",
+    "Rev5 improves controlled point detections but fails frozen acceptance and existing full selftest; experimental only.",
+    "Quality mode is opt-in; 1080p MPS compute measured about195ms and5.59GiB driver allocation, not30fps.",
+    "NightVision temporal denoiser usesCPU while inverse reconstruction retainsMPS.",
+    "No GPU-saturation claim, no optical resolution or semantic identification claim.",
+    "No liveRTMP/flight test this turn; paced derived-file GUI startup/toggle/reset/quit tests only.",
+    "All42 NightVision reconstruction PNGs and four SuperRes terminal outputs byte-identical after scheduling; full SuperRes dual acceptance not rerun because algorithm bodies unchanged.",
+    "Human operator image acceptance remains open."
+  ]
+}

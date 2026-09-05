@@ -1,0 +1,72 @@
+[
+  {
+    "command": [
+      ".venv/bin/python",
+      "m5_motion_gpu_validation.py",
+      "--output-dir",
+      "/tmp/drone-upgrade-20260904/final-gpu-benchmark"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "_09_M5_Fable_MotionISR_Rev3.py",
+      "--selftest",
+      "--device",
+      "mps"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "m5_operator_view_validation.py",
+      "--baseline-dir",
+      "/tmp/drone-upgrade-20260904/baseline",
+      "--output-dir",
+      "/tmp/drone-upgrade-20260904/final-preview-validation"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "_10_M5_Fable_ImageScout_Rev3.py",
+      "--selftest"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "_11_M5_Fable_SuperRes_Rev4.py",
+      "--selftest"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "_12_M5_NightVision_Max_Rev3.py",
+      "--selftest"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "/tmp/drone-upgrade-20260904/gui_check.py",
+      "_11_M5_Fable_SuperRes_Rev4.py",
+      "--source",
+      "/tmp/drone-upgrade-20260904/derived_gui_lowlight.mkv",
+      "--zoom",
+      "16",
+      "--quality-device",
+      "mps",
+      "--output-dir",
+      "/tmp/drone-upgrade-20260904/gui-superres-maxzoom-output"
+    ],
+    "exit_code": 0
+  }
+]

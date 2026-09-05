@@ -1,0 +1,19 @@
+[9/4/2026, 8:26:43 PM] [INFO] Node-Media-Server v4.2.8
+[9/4/2026, 8:26:43 PM] [INFO] Homepage: https://github.com/illuspas/Node-Media-Server
+[9/4/2026, 8:26:43 PM] [INFO] License: Apache-2.0
+[9/4/2026, 8:26:43 PM] [INFO] Author: Chen Mingliang
+[9/4/2026, 8:26:43 PM] [INFO] WebSocket server listening on port undefined:18080
+[9/4/2026, 8:26:43 PM] [INFO] HTTP server listening on port undefined:18080
+[9/4/2026, 8:26:43 PM] [INFO] Rtmp Server listening on port undefined:21935
+[9/4/2026, 8:26:43 PM] [INFO] RTMP session mtnn7k0ioy50na7m close
+[9/4/2026, 8:26:43 PM] [INFO] RTMP session mtnn7k1a1asbdk20 ::ffff:127.0.0.1:53142 start push /live/qa_tonight
+[9/4/2026, 8:26:47 PM] [INFO] RTMP session mtnn7n0gkw348ehk ::ffff:127.0.0.1:53146 start play /live/qa_tonight
+[9/4/2026, 8:27:23 PM] [INFO] RTMP session mtnn7n0gkw348ehk close
+[9/4/2026, 8:27:25 PM] [INFO] RTMP session mtnn8g53898r0jb1 ::ffff:127.0.0.1:53163 start play /live/qa_tonight
+[9/4/2026, 8:28:02 PM] [INFO] RTMP session mtnn8g53898r0jb1 close
+[9/4/2026, 8:28:04 PM] [INFO] RTMP session mtnn9a5f1fk5u9eo ::ffff:127.0.0.1:53181 start play /live/qa_tonight
+[9/4/2026, 8:28:41 PM] [INFO] RTMP session mtnn9a5f1fk5u9eo close
+[9/4/2026, 8:28:42 PM] [INFO] RTMP session mtnna3ojc1h8v6tw ::ffff:127.0.0.1:53225 start play /live/qa_tonight
+[9/4/2026, 8:29:19 PM] [INFO] RTMP session mtnna3ojc1h8v6tw close
+[9/4/2026, 8:29:19 PM] [INFO] RTMP session mtnn7k1a1asbdk20 close
+[nms-heartbeat] stopping on SIGINT

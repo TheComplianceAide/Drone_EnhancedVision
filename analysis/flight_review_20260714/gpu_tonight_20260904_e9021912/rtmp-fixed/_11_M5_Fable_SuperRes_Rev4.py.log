@@ -1,0 +1,4 @@
+2026-09-04 20:28:04.073 Python[23838:44396550] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/s_/_6kcd3r51pnbk8j5k2k3fsf80000gn/T/org.python.python.savedState
+[superres-v3] milestone n=4 phase=3/4 Q=59.62929479425125 proof=/private/tmp/drone-tonight-gpu-20260904/rtmp-fixed/qa-superres-output/20260904_202804_fad86a/milestone_0004_proof.png
+[superres-v3] quit cancelled unsolved milestone job(s): 4
+GUI_RESULT 0 38.09094208292663 712

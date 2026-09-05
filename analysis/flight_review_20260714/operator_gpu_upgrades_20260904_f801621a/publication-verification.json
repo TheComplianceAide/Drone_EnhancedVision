@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-04",
+  "workspace": "isolated worktree based on origin/main 25ac9a3df478f4935c6a9927516589e35500ce76",
+  "unit_tests": {
+    "passed": 132,
+    "failed": 0,
+    "log": "publication-tests.log"
+  },
+  "compile": "all published Python source and test files passed",
+  "featured_cli_help": {
+    "MotionISR Rev3": 0,
+    "ImageScout Rev3": 0,
+    "SuperRes Rev4": 0,
+    "NightVision Max Rev3": 0
+  },
+  "node_media_server": {
+    "npm_ci_exit": 0,
+    "version": "4.2.8",
+    "node_syntax_check_exit": 0
+  },
+  "candidate_sha256_match_count": 16,
+  "unchanged_root_rev1": true,
+  "excluded": "all recording changes, raw footage, large visual artifacts, unrelated project analysis and field card changes",
+  "baseline_note": "Preserved pre-upgrade local code is included under baseline; root Rev1 files keep origin/main bytes."
+}

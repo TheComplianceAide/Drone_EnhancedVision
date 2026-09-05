@@ -1,0 +1,1 @@
+-[IOGPUMetalCommandBuffer validate]:214: failed assertion `commit an already committed command buffer'

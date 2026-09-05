@@ -1,0 +1,36 @@
+{
+  "status": "PASS_LAUNCHER_UI_COMMANDS",
+  "scope": "Real Tk widgets and launch callback; child process spawn intercepted, actual missions tested separately via RTMP",
+  "commands": [
+    [
+      "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python",
+      "/Users/randyblasik/Documents/Drone_EnhancedVision/_09_M5_Fable_MotionISR_Rev3.py",
+      "--device",
+      "mps",
+      "--require-mps"
+    ],
+    [
+      "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python",
+      "/Users/randyblasik/Documents/Drone_EnhancedVision/_11_M5_Fable_SuperRes_Rev4.py",
+      "--quality-device",
+      "mps",
+      "--require-mps"
+    ],
+    [
+      "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python",
+      "/Users/randyblasik/Documents/Drone_EnhancedVision/_12_M5_NightVision_Max_Rev3.py",
+      "--quality-device",
+      "mps",
+      "--require-mps"
+    ]
+  ],
+  "labels": [
+    "\u25c9  FABLE MOTION ISR V3\nGPU search + track history + night view",
+    "M5 FABLE MOTION ISR V3 (Flight-Learned)",
+    "SR  FABLE SUPERRES V4\nGPU reconstruction + 2-16x ROI inspection",
+    "M5 FABLE SUPERRES V4 (GPU-AWARE COHERENT SOAK)",
+    "NV  NIGHTVISION MAX V3\nGPU night reconstruction + raw/quality view",
+    "M5 NIGHTVISION MAX V3 (GPU-AWARE 2X SOAK)"
+  ],
+  "preferences_unchanged": true
+}

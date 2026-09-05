@@ -5,13 +5,16 @@ ops_window.py
 Tiny OpenCV-window tiling helpers for field ops. The goal is to stop fighting
 with multi-window scripts (Live + Zoom) while flying.
 
-We avoid external dependencies. Screen size is fetched via Tkinter when
-available; otherwise we fall back to 1920x1080.
+We avoid external dependencies. macOS uses CoreGraphics without creating a Tk
+application inside an OpenCV/Cocoa process. Other systems use Tk when available.
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
+import ctypes
+import sys
+import warnings
 from typing import Optional, Tuple
 
 
@@ -29,8 +32,36 @@ def _screen_wh_fallback() -> Tuple[int, int]:
     return (1920, 1080)
 
 
+def _mac_screen_wh() -> Tuple[int, int]:
+    class Point(ctypes.Structure):
+        _fields_ = [("x", ctypes.c_double), ("y", ctypes.c_double)]
+
+    class Size(ctypes.Structure):
+        _fields_ = [("width", ctypes.c_double), ("height", ctypes.c_double)]
+
+    class Rect(ctypes.Structure):
+        _fields_ = [("origin", Point), ("size", Size)]
+
+    core = ctypes.CDLL("/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics")
+    core.CGMainDisplayID.argtypes = []
+    core.CGMainDisplayID.restype = ctypes.c_uint32
+    core.CGDisplayBounds.argtypes = [ctypes.c_uint32]
+    core.CGDisplayBounds.restype = Rect
+    bounds = core.CGDisplayBounds(core.CGMainDisplayID())
+    width, height = int(bounds.size.width), int(bounds.size.height)
+    if width <= 0 or height <= 0:
+        raise RuntimeError("CoreGraphics returned empty display bounds")
+    return width, height
+
+
 def get_primary_screen_wh() -> Tuple[int, int]:
-    # Tkinter works without Screen Recording permission (unlike screen capture libs).
+    if sys.platform == "darwin":
+        try:
+            return _mac_screen_wh()
+        except (OSError, AttributeError, RuntimeError, ValueError) as exc:
+            warnings.warn(f"Screen geometry unavailable: {exc}; using 1920x1080", RuntimeWarning)
+            return _screen_wh_fallback()
+    # Tkinter works without Screen Recording permission on other systems.
     try:
         import tkinter as tk
 
