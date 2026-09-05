@@ -57,6 +57,7 @@ from m5_v2_core import DetailSignalV2, score_detail_v2
 from ops_window import apply_two_window_layout_cv2, compute_two_window_layout
 from rtmp_latest import LatestFrameGrabber
 from m5_operator_view import InspectionView, night_preview
+from m5_temporal_quality import QualityView
 
 
 LIVE_NAME = "M5 NightVision Max Rev3 - Live"
@@ -501,6 +502,9 @@ def main() -> int:
         "controls": True,
     }
     inspector = InspectionView()
+    # The persistent inverse reconstruction owns MPS continuously. Use spare
+    # CPU cores for live temporal inspection instead of starving either job.
+    temporal_view = QualityView(device="cpu")
     detail_view = False
     preview_enabled = not args.raw_overview
     preview_frame = None
@@ -752,8 +756,9 @@ def main() -> int:
                 )
 
             if is_new_frame or preview_frame is None:
-                preview_frame, preview_meta = night_preview(frame)
-            live_source = preview_frame if preview_enabled else frame
+                quality_source = temporal_view.process(frame, source_ts)
+                preview_frame, preview_meta = night_preview(quality_source)
+            live_source = preview_frame if preview_enabled else (quality_source if temporal_view.enabled else frame)
             live = cv2.resize(live_source, (live_w, live_h), interpolation=cv2.INTER_AREA)
             source_age = max(0.0, time.time() - source_ts) if local_reader is None else 0.0
             if completion is None:
@@ -765,6 +770,7 @@ def main() -> int:
                 frames_status = str(completion.result.stats.frames)
                 backend = completion.result.receipt.actual_backend
             hud = (
+                f"{temporal_view.label} | "
                 f"{'FILE PTS ' + str(round(source_ts, 2)) if local_reader is not None else time.strftime('%H:%M:%S')} | Z{zoom}x | {frames_status}/{args.stack_frames}f | "
                 f"{backend} | {quality_status} | source age {source_age:.2f}s | "
                 f"pending {jobs.qsize()} replaced {counters['replaced']} stale {counters['stale']}"
@@ -787,7 +793,7 @@ def main() -> int:
             # Two short lines keep source/result freshness visible on a laptop.
             cv2.rectangle(live, (0, live_h - 52), (live_w, live_h), (0, 0, 0), -1)
             live_lines = [
-                f"Z{zoom}x | {frames_status}/{args.stack_frames}f | {backend} | {quality_status}",
+                f"{temporal_view.label} | Z{zoom}x | {frames_status}/{args.stack_frames}f | {quality_status}",
                 f"v:night {int(preview_enabled)} i:detail | source {source_age:.2f}s result {quality_age:.1f}s | queue {jobs.qsize()} skip {counters['replaced']}",
             ]
             if current_error or snapshot_status:
@@ -796,7 +802,16 @@ def main() -> int:
                 cv2.putText(live, line, (8, yy), cv2.FONT_HERSHEY_SIMPLEX, .46,
                             (0, 0, 255) if current_error else (0, 255, 255), 1, cv2.LINE_AA)
             cv2.imshow(LIVE_NAME, live)
-            if detail_view and completion is not None:
+            if detail_view and temporal_view.enabled and last_roi_rect is not None:
+                qx, qy, qw, qh = last_roi_rect
+                raw_chip = frame[qy:qy+qh, qx:qx+qw]
+                quality_chip = quality_source[qy:qy+qh, qx:qx+qw]
+                if preview_enabled:
+                    quality_chip = night_preview(quality_chip)[0]
+                shown_panel = inspector.render(raw_chip, quality_chip, width=panel_w, height=panel_h,
+                    raw_label="CURRENT SOURCE GRID", title=temporal_view.label,
+                    status="t: temporal/reconstruction view | i: exact proof grid | v: display lift")
+            elif detail_view and completion is not None:
                 selected_display = completion.terminals.selection.image
                 if preview_enabled:
                     selected_display = night_preview(selected_display)[0]
@@ -868,7 +883,10 @@ def main() -> int:
             key = cv2.waitKey(1) & 0xFF
             if key in (27, ord("q")):
                 break
-            if key == ord("v"):
+            if key == ord("t"):
+                temporal_view.toggle()
+                preview_frame = None
+            elif key == ord("v"):
                 preview_enabled = not preview_enabled
             elif key == ord("i"):
                 detail_view = not detail_view
@@ -882,6 +900,7 @@ def main() -> int:
                 pending_snapshot = True
             elif key == ord("r"):
                 reset_quality()
+                temporal_view.reset()
                 auto_aim.reset()
             elif key == ord("m"):
                 modes["aim"] = not modes["aim"]

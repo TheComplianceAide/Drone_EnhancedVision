@@ -348,3 +348,18 @@ track-history persistence. SuperRes offers 2–16x source ROI selection; this is
 digital magnification, not an optical-resolution claim. See
 [operator controls and evidence limits](OPERATOR_UPGRADES.md). The existing CPU
 pin and experimental Motion Rev4 boundary remain in force.
+
+
+### Temporal image quality and experimental faint-target detection
+
+The current four apps now have an opt-in **t** temporal-quality view using up to
+eight source observations and checked camera registration. Raw comparisons stay
+available, including during detailed zoom inspection. See [operator controls and
+GPU scheduling](OPERATOR_UPGRADES.md#capability-follow-up-temporal-quality-and-experimental-faint-target-isr).
+
+The launcher also lists **EXPERIMENTAL M5 Faint-Target ISR V5 (Acceptance Open)**.
+It adds source-relative PSF evidence and trajectory support tests; its controlled
+point-detection improvements do not clear the frozen flight-derived gates. The
+normal field Motion choice remains CPU-pinned Rev3.
+
+[Capability quality receipt](analysis/flight_review_20260714/capability_quality_20260904_0b835ce8/README.md) records the bounded gains, full detector failures, original-resolution comparisons and measured processing cost.

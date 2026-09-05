@@ -195,3 +195,12 @@ A field-script change is done only when:
 6. launcher integration is verified when a field app changes;
 7. a new receipt and reusable command are saved without overwriting prior evidence;
 8. documentation and the flight catalog remain consistent.
+
+
+## Capability follow-up runtime boundaries
+
+- `m5_temporal_quality.py` owns opt-in eight-observation display fusion (`t`). It must not feed Motion detection or reconstruction acceptance. Preserve current raw comparisons and honest source timestamps.
+- `m5_gpu_runtime.py` owns the shared reentrant GPU submission lock. SuperRes solves, NightVision updates/refinement and GPU temporal views use it; live GPU views never wait for a reconstruction lease. NightVision's extra temporal preview uses CPU so GPU reconstruction cannot starve it.
+- `_09_M5_Fable_MotionISR_Rev5.py` / `m5_motionisr_rev5.py` are experimental. Controlled synthetic A/B does not clear frozen flight acceptance. Keep Rev4 unchanged and the featured Motion Rev3 CPU pin.
+- `m5_motionisr_rev4_validation.py --candidate-core m5_motionisr_rev5.py --candidate-app _09_M5_Fable_MotionISR_Rev5.py` reuses all existing gates. Historical `rev4` result keys refer to the explicit candidate recorded in provenance. Do not substitute synthetic A/B success for this lane.
+- Run `m5_temporal_quality_validation.py --baseline-dir <frozen baseline> --output-dir <new directory> --device mps` and the CPU lane for NightVision preview. Run `m5_micro_detection_ab_validation.py` separately for known-negative and injection-attributable point detection.

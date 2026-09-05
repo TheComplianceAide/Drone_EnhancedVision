@@ -1000,6 +1000,15 @@ def _evaluate(
 
 
 def run(args: argparse.Namespace) -> dict[str, Any]:
+    selected_core = Path(getattr(args, "candidate_core", None) or ROOT / "m5_motionisr_rev4.py").resolve()
+    selected_app = Path(getattr(args, "candidate_app", None) or ROOT / "_09_M5_Fable_MotionISR_Rev4.py").resolve()
+    spec = importlib.util.spec_from_file_location("motion_candidate_core", selected_core)
+    if spec is None or spec.loader is None:
+        raise RuntimeError("cannot load selected candidate core")
+    selected = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = selected
+    spec.loader.exec_module(selected)
+    candidate_code_before = {str(p): _sha256_file(p) for p in (selected_core, selected_app)}
     if args.frames <= ELIGIBLE_START + 20:
         raise ValueError(f"--frames must exceed {ELIGIBLE_START + 20}")
     catalog = load_catalog(args.catalog)
@@ -1052,7 +1061,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     rev3_cpu = modules["rev3_cpu"]
     rev3_mps = modules["rev3_mps"]
     rev4_base = modules["rev4"]
-    rev4_options = MicroTBDOptions(
+    rev4_options = selected.MicroTBDOptions(
         device=args.device,
         require_mps=bool(args.require_mps),
         threshold=args.micro_threshold,
@@ -1060,7 +1069,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         integration_tau_s=args.micro_tau,
         enabled=True,
     )
-    rev4_base.Pipeline = build_rev4_pipeline(rev4_base, rev4_options)
+    rev4_base.Pipeline = selected.build_rev4_pipeline(rev4_base, rev4_options)
     pipeline_configs = {
         "rev3_cpu": {
             "frontend_device": "cpu",
@@ -1154,12 +1163,14 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     )
     code = {
         "baseline": ROOT / "_09_M5_Fable_MotionISR_Rev3.py",
-        "candidate": ROOT / "_09_M5_Fable_MotionISR_Rev4.py",
-        "candidate_core": ROOT / "m5_motionisr_rev4.py",
+        "candidate": selected_app,
+        "candidate_core": selected_core,
         "validator": Path(__file__).resolve(),
         "catalog_module": ROOT / "m5_flight_catalog.py",
         "catalog": Path(str(catalog["_catalog_path"])),
     }
+    if any(_sha256_file(Path(p)) != digest for p, digest in candidate_code_before.items()):
+        failures.append("FAIL_CANDIDATE_CODE_DRIFT")
     provenance = {name: _file_receipt(path) for name, path in code.items()}
     artifacts = {
         path.name: _file_receipt(path)
@@ -1253,6 +1264,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--candidate-core", type=Path, help="Explicit experiment core; existing gates and historical rev4 result keys remain unchanged")
+    parser.add_argument("--candidate-app", type=Path, help="Entrypoint paired with candidate core for provenance")
     parser.add_argument("--catalog", type=Path, default=DEFAULT_CATALOG)
     parser.add_argument("--scene", default=DEFAULT_SCENE)
     parser.add_argument("--frames", type=int, default=240)

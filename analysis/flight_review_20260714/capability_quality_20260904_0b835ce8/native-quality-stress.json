@@ -1,0 +1,199 @@
+{
+  "status": "MEASURED",
+  "scope": "1920x1080 processing stress from an explicitly upscaled source fixture; no physical-resolution or quality inference",
+  "derived_from": "/tmp/drone-capability-20260904/quality-frozen-mps/construction_facade/source.png",
+  "derived_source_sha256": "45ed8ad5269ba699274b71edd7cc1a2c1b37e9fa93c296281d40ceab5bb1488c",
+  "derivation": "resize to1920x1080; exposure.115 +black1.8 +seed713 Gaussian noise sigma2.35; i/30 timestamps",
+  "candidate_sha256": {
+    "m5_temporal_quality.py": "46f2f9ed754666f85a95bc7f577b850298f1e5857c9b24e7a9759ceddb3f236b",
+    "m5_gpu_runtime.py": "8b815775e29a0e319f8618b6b7c7a81c0052c3b11afa7521272fc68d66d70ab7"
+  },
+  "warmup_frames": 8,
+  "measured_frames": 12,
+  "p50_ms": 194.99972881749272,
+  "p95_ms": 199.08910419326276,
+  "max_ms": 201.5281249769032,
+  "peak_observed_driver_bytes": 6000738304,
+  "rows": [
+    {
+      "frame": 0,
+      "input_sha256": "013d7996687e5fdf040a7ce41dc321dae6a4584ee329211581402871f3c0c5ec",
+      "output_sha256": "013d7996687e5fdf040a7ce41dc321dae6a4584ee329211581402871f3c0c5ec",
+      "ms": 86.70245809480548,
+      "history": 1,
+      "mps_allocated_bytes": 24883200,
+      "driver_allocated_bytes": 1074216960
+    },
+    {
+      "frame": 1,
+      "input_sha256": "60a4d3bfdae90140f9c51d3cddfac3666fd5f75825f157efe2527476c6047469",
+      "output_sha256": "963632e335f9324e61aa56578dc551e991f98f702a2e773d13a3a58cb58e2e36",
+      "ms": 189.9548750370741,
+      "history": 2,
+      "mps_allocated_bytes": 74649600,
+      "driver_allocated_bytes": 1152139264
+    },
+    {
+      "frame": 2,
+      "input_sha256": "67b6d23189cbcb175acec915c38a35da8665147f55461056925b0fb6d440352b",
+      "output_sha256": "569a7219ef0b6cb8eb48e2596d85d17ac38e3cb00133292a507e624540c8748c",
+      "ms": 115.13916682451963,
+      "history": 3,
+      "mps_allocated_bytes": 99532800,
+      "driver_allocated_bytes": 1202470912
+    },
+    {
+      "frame": 3,
+      "input_sha256": "9afe61a66a705b63ae961eb1fd2f82cc5d2c99a710e837cf0cc21bdc0bcb4f2a",
+      "output_sha256": "a60a73a4629fe09bd0bf561497d3a9c95b6589d6ac9c3c12a1492bdf5236c366",
+      "ms": 166.28841683268547,
+      "history": 4,
+      "mps_allocated_bytes": 124416000,
+      "driver_allocated_bytes": 2343321600
+    },
+    {
+      "frame": 4,
+      "input_sha256": "0de59f933ef6369beed08aacf2dcb0eda4d112387113decb10c9a20cdf81e149",
+      "output_sha256": "24a919099aca64e88d074ae8707e082b0bd357b48376716d6ed7ad9d800aade6",
+      "ms": 144.82766715809703,
+      "history": 5,
+      "mps_allocated_bytes": 149299200,
+      "driver_allocated_bytes": 2427207680
+    },
+    {
+      "frame": 5,
+      "input_sha256": "dcb6aa9eb1ea0dfc302d6bb1ea504908335859661278af87ad6f24136dec904d",
+      "output_sha256": "b0ca4b855c90722719561d9fd1455bab354c75929af4d6ac2128122d7c06aa7f",
+      "ms": 172.58233297616243,
+      "history": 6,
+      "mps_allocated_bytes": 182476800,
+      "driver_allocated_bytes": 3601612800
+    },
+    {
+      "frame": 6,
+      "input_sha256": "04f2f4a03d56b28861bf1ea929658278a44ff4caf91dfdb8d6f30b5621b7f175",
+      "output_sha256": "0a3b3ad4ab556cf7c91b393a20fea3f9a610c121ba12f502192d90e8d7260bf4",
+      "ms": 212.59016683325171,
+      "history": 7,
+      "mps_allocated_bytes": 215654400,
+      "driver_allocated_bytes": 4792778752
+    },
+    {
+      "frame": 7,
+      "input_sha256": "9a31d1543aae269a4395e68ebeebc27ec09e89df2d37c13655bc567968cdd9e2",
+      "output_sha256": "74c230f40478ce4cd486b80e7d0d461070c1d6031a2b3967b6412bfdb368cb70",
+      "ms": 227.18591708689928,
+      "history": 8,
+      "mps_allocated_bytes": 248832000,
+      "driver_allocated_bytes": 6000738304
+    },
+    {
+      "frame": 8,
+      "input_sha256": "f725dd58eaf384e05ecf0e8cb3eac5d2d06ea64ac3f7b28bb2992dd273588f15",
+      "output_sha256": "98201b4f66f8fe01563fcdad3c2c81f3c12767b34ae31b1b13a16fc205074b80",
+      "ms": 193.41649999842048,
+      "history": 8,
+      "mps_allocated_bytes": 273715200,
+      "driver_allocated_bytes": 6000738304
+    },
+    {
+      "frame": 9,
+      "input_sha256": "9d0d2aba2394a57d7907302c4a3026d7b28efc3c95f9bad036ba758ef05680db",
+      "output_sha256": "eb507cdc2a6f0f17d57264658c2a1bb177250dcc0561ff764ad1d7420dcc5b9e",
+      "ms": 195.05416695028543,
+      "history": 8,
+      "mps_allocated_bytes": 273715200,
+      "driver_allocated_bytes": 6000738304
+    },
+    {
+      "frame": 10,
+      "input_sha256": "8af1861aea994ba9ab78b1939a991f8bdaa593405268dee809cbe465e2ee830e",
+      "output_sha256": "cb60c5c587afdfea9e94b9bb74ddc5f393f3a62776fdbd04a54423bfbbcc0109",
+      "ms": 201.5281249769032,
+      "history": 8,
+      "mps_allocated_bytes": 273715200,
+      "driver_allocated_bytes": 6000738304
+    },
+    {
+      "frame": 11,
+      "input_sha256": "e50727a1eac99703ac227c946cea25af9c714daa2bedc21553a5ae50019e906f",
+      "output_sha256": "1c47135b0faff25c911d0ac2ce52ed014c97e9f0b3cf9f733fc3010e037dfdcd",
+      "ms": 181.3853750936687,
+      "history": 8,
+      "mps_allocated_bytes": 273715200,
+      "driver_allocated_bytes": 6000738304
+    },
+    {
+      "frame": 12,
+      "input_sha256": "2640224c4a1e08b04633e5ff43ac5036b09ca0ac850e15ed1116e4eedd800e0b",
+      "output_sha256": "5a5556f0c75b49016985225230591968f19f9082ad8050bd5617141d0a5c7fa5",
+      "ms": 193.07058304548264,
+      "history": 8,
+      "mps_allocated_bytes": 273715200,
+      "driver_allocated_bytes": 6000738304
+    },
+    {
+      "frame": 13,
+      "input_sha256": "92732a6cff3b5547e39f85d2ea8a1d35c7720989a727a5a4bbaad5ba9744b909",
+      "output_sha256": "903e2e189d207c5d13957bbfe00130b4422d6360bfebf35574dd4b052300ac89",
+      "ms": 183.3287919871509,
+      "history": 8,
+      "mps_allocated_bytes": 265420800,
+      "driver_allocated_bytes": 6000738304
+    },
+    {
+      "frame": 14,
+      "input_sha256": "d17d9bbbb49080cd14482d68040f6ebfeae77d1c737c244dae1ebaf812ea4ee3",
+      "output_sha256": "2e7638d52532615f207b26b3dfcbdd77a495efa17f15cea433e0f7c3591f5a85",
+      "ms": 195.28058404102921,
+      "history": 8,
+      "mps_allocated_bytes": 265420800,
+      "driver_allocated_bytes": 6000738304
+    },
+    {
+      "frame": 15,
+      "input_sha256": "6b268905f80853a406a0a8fdab55dff6615d92e89a05cb99e0e8c69af0c3d7e7",
+      "output_sha256": "5836e62316d136346deea11a50e63b4341ea9837651c6b2afd8b4de228afb9f8",
+      "ms": 195.91958401724696,
+      "history": 8,
+      "mps_allocated_bytes": 265420800,
+      "driver_allocated_bytes": 6000738304
+    },
+    {
+      "frame": 16,
+      "input_sha256": "5ae6e508e85c28431e92a5ac0804142378006c6de7343d0aa3faffbcca675f7b",
+      "output_sha256": "bce88dbcb27bf42b7bc70162b425aa1aaf1d7e36a5141bfe4b78dc4e6cd9d0c7",
+      "ms": 180.74708292260766,
+      "history": 8,
+      "mps_allocated_bytes": 248832000,
+      "driver_allocated_bytes": 6000738304
+    },
+    {
+      "frame": 17,
+      "input_sha256": "654b4cd81075f2749744b832943d1101e0da463a4be23bfd76f712b5739b841d",
+      "output_sha256": "6d9b8cd97e3eacad1b168c825b5676f30349f7d10f4e4257e806eff13ebec044",
+      "ms": 197.09354173392057,
+      "history": 8,
+      "mps_allocated_bytes": 273715200,
+      "driver_allocated_bytes": 6000738304
+    },
+    {
+      "frame": 18,
+      "input_sha256": "a5f46f3d4d970b2219cbd4854033f6e55e3f9e7dd6b337d5c8866bdce45ad5a1",
+      "output_sha256": "bbd81299ea448a81184c59d342b33c8ba5fd7282fb4148f0e2e3bf8241261136",
+      "ms": 194.9452906847,
+      "history": 8,
+      "mps_allocated_bytes": 273715200,
+      "driver_allocated_bytes": 6000738304
+    },
+    {
+      "frame": 19,
+      "input_sha256": "e16298b34759b221aa283e3d8ae4040160b15957b7e128a68dd8213465a2c766",
+      "output_sha256": "3d70dcd5119cc4bd0706d582ce3ad1b2d89d91bf2cae301da07904fd0ed23016",
+      "ms": 195.26524981483817,
+      "history": 8,
+      "mps_allocated_bytes": 273715200,
+      "driver_allocated_bytes": 6000738304
+    }
+  ]
+}

@@ -279,6 +279,7 @@ class App:
             "_11_M5_LakeHouse_AutoScout_Rev1.py": "M5 LAKEHOUSE AUTOSCOUT",
             "_11_M5_LakeHouse_AutoScout_Rev2.py": "M5 LAKEHOUSE AUTOSCOUT V2",
             "_09_M5_Fable_MotionISR_Rev1.py": "M5 FABLE MOTION ISR (Ego-Comp)",
+            "_09_M5_Fable_MotionISR_Rev5.py": "EXPERIMENTAL M5 Faint-Target ISR V5 (Acceptance Open)",
             "_09_M5_Fable_MotionISR_Rev3.py": "M5 FABLE MOTION ISR V3 (Flight-Learned)",
             "_10_M5_Fable_NightVision_Rev1.py": "M5 FABLE NIGHTVISION (Motion-Comp)",
             "_10_M5_Fable_ImageScout_Rev3.py": "M5 FABLE IMAGE SCOUT V3 (Honest Enhance)",

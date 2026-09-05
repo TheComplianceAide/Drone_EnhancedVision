@@ -2891,6 +2891,7 @@ class ChipLabeler:
 
 
 from m5_isr_evidence import EvidenceLog
+from m5_temporal_quality import QualityView
 from m5_operator_view import InspectionView, night_preview, select_track, crop_at
 
 
@@ -2919,6 +2920,8 @@ class UiState:
     cycle_idx: int = 0
     chip_zoom: Optional[int] = None  # None = auto 4-8x
     night: bool = False
+    temporal_view: object = field(default_factory=QualityView)
+    quality_frame: Optional[np.ndarray] = None
     preview_ts: Optional[float] = None
     preview: Optional[np.ndarray] = None
     history: dict = field(default_factory=dict)
@@ -2945,10 +2948,11 @@ def render(frame_bgr: np.ndarray, res: FrameResult, pipe: Pipeline, ui: UiState,
     h, w = frame_bgr.shape[:2]
     canvas = np.zeros((max(h, 720), w + PANEL_W, 3), dtype=np.uint8)
     live = canvas[:h, :w]
-    if ui.night and (ui.preview_ts != res.ts or ui.preview is None):
-        ui.preview, _ = night_preview(frame_bgr)
+    if ui.preview_ts != res.ts or ui.preview is None:
+        ui.quality_frame = ui.temporal_view.process(frame_bgr, res.ts)
+        ui.preview = night_preview(ui.quality_frame)[0] if ui.night else ui.quality_frame
         ui.preview_ts = res.ts
-    np.copyto(live, ui.preview if ui.night else frame_bgr)
+    np.copyto(live, ui.preview if ui.night or ui.temporal_view.enabled else frame_bgr)
     # Image-plane trails are cleared during camera movement or lost stabilization.
     if ui.history_ts != res.ts:
         if res.suppressed or res.calibrating or res.global_motion > 2 or (ui.history_ts is not None and res.ts < ui.history_ts):
@@ -4043,6 +4047,7 @@ def run_interactive(cfg: Config) -> int:
                 else:
                     canvas, chip = make_waiting_canvas(1280, 720, "WAITING FOR MAVIC RTMP",
                                                        cfg.source), None
+                _draw_label(canvas, ui.temporal_view.label, (20, 180), scale=.5)
                 if evidence.error:
                     _draw_label(canvas, evidence.status[:120], (20, 150), color=(0, 0, 255))
                 cv2.imshow(WIN_NAME, canvas)
@@ -4057,7 +4062,7 @@ def run_interactive(cfg: Config) -> int:
                         cx = int(np.clip(target.x, half, max(half, fw - half)))
                         cy = int(np.clip(target.y, half, max(half, fh - half)))
                         raw_chip = last_frame[max(0, cy-half):cy+half, max(0, cx-half):cx+half]
-                        enhanced_chip = night_preview(raw_chip)[0] if ui.night else raw_chip.copy()
+                        enhanced_chip = ui.preview[max(0, cy-half):cy+half, max(0, cx-half):cx+half].copy()
                         inspect = inspector.render(raw_chip, enhanced_chip, title="NIGHT DISPLAY" if ui.night else "SOURCE PIXELS",
                             status=f"Track #{target.tid}; identity unknown | +/- target crop | i:close | v:night")
                     cv2.imshow(inspect_name, inspect)
@@ -4076,7 +4081,11 @@ def run_interactive(cfg: Config) -> int:
                     inspect_open = cv2.getWindowProperty(inspect_name, cv2.WND_PROP_VISIBLE) >= 1
                 except cv2.error:
                     inspect_open = False
-            if key == ord("i"):
+            if key == ord("t"):
+                ui.temporal_view.toggle()
+                ui.preview = None
+                dirty = True
+            elif key == ord("i"):
                 inspect_open = not inspect_open
                 if inspect_open:
                     cv2.namedWindow(inspect_name, cv2.WINDOW_NORMAL)
@@ -4086,6 +4095,7 @@ def run_interactive(cfg: Config) -> int:
                 dirty = True
             elif key == ord("v"):
                 ui.night = not ui.night
+                ui.preview = None
                 dirty = True
             if inspector.handle_key(key):
                 dirty = True
@@ -4157,6 +4167,8 @@ def run_interactive(cfg: Config) -> int:
                     ui.cycle_idx += 1
                 elif act == "reset":
                     pipe.reset_dynamics()
+                    ui.temporal_view.reset()
+                    ui.preview = None
                     ui.history.clear()
                     ui.lock_id = None
                 elif act == "snap" and last_frame is not None:

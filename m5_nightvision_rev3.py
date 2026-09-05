@@ -342,6 +342,10 @@ def compose_terminals(
     )
 
 
+from m5_gpu_runtime import serialized_gpu
+
+
+@serialized_gpu
 def refine_terminal_on_device(
     image: np.ndarray,
     detail_support: np.ndarray,
@@ -496,6 +500,7 @@ class PersistentNightReconstruction:
         self._last_registration_correlation = 0.0
         self._last_result: Optional[NightVisionRev3Result] = None
 
+    @serialized_gpu
     def reset(self) -> None:
         self.base.reset()
         self._bank = None
@@ -977,6 +982,7 @@ class PersistentNightReconstruction:
             receipt=receipt,
         )
 
+    @serialized_gpu
     def update(
         self,
         bgr: np.ndarray,

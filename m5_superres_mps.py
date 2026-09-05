@@ -215,7 +215,9 @@ SelectionHook = Callable[[Sequence["RestorationCandidate"]], Union[int, str]]
 CancelHook = Callable[[], bool]
 
 
-_MPS_SOLVE_LOCK = threading.Lock()
+from m5_gpu_runtime import GPU_LOCK
+
+_MPS_SOLVE_LOCK = GPU_LOCK
 
 
 def _check_cancel(cancel_hook: Optional[CancelHook]) -> None:

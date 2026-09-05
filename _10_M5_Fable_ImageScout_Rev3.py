@@ -443,6 +443,10 @@ def run_headless(args: argparse.Namespace) -> int:
 
 
 def run_interactive(args: argparse.Namespace) -> int:
+    from m5_temporal_quality import QualityView
+    from m5_operator_view import night_preview
+    temporal_view = QualityView()
+    last_display = None
     source = FrameSource(args.source)
     config = ImagingConfig(profile=args.profile)
     imager = HonestAdaptiveImager(config)
@@ -479,10 +483,12 @@ def run_interactive(args: argparse.Namespace) -> int:
 
     def compose():
         if detail_view:
-            return inspector.render(last_raw, last_enhanced, width=args.disp_w,
-                                    title=last_tel.profile_active, status="i: overview | n: night profile | s: raw + enhanced snapshot")
-        return _compose_view(last_raw, last_enhanced, last_tel, view=view,
-                             display_width=args.disp_w, zebra=zebra)
+            return inspector.render(last_raw, last_display, width=args.disp_w,
+                                    title=last_tel.profile_active + " | " + temporal_view.label, status="i: overview | n: night profile | s: raw + enhanced snapshot")
+        canvas = _compose_view(last_raw, last_display, last_tel, view=view,
+                               display_width=args.disp_w, zebra=zebra)
+        cv2.putText(canvas, temporal_view.label, (12, 26), cv2.FONT_HERSHEY_SIMPLEX, .55, (0, 255, 255), 1, cv2.LINE_AA)
+        return canvas
 
     cv2.namedWindow(WIN_NAME, cv2.WINDOW_NORMAL)
     cv2.resizeWindow(WIN_NAME, min(args.disp_w, 1600), max(480, int(args.disp_w * 0.36)))
@@ -495,6 +501,8 @@ def run_interactive(args: argparse.Namespace) -> int:
                 sink.write(tel)
                 last_raw = frame
                 last_enhanced = enhanced
+                quality_source = temporal_view.process(frame, float(ts))
+                last_display = (night_preview(quality_source)[0] if config.profile == "night" else quality_source) if temporal_view.enabled else enhanced
                 last_tel = tel
                 last_canvas = compose()
                 cv2.imshow(WIN_NAME, last_canvas)
@@ -506,13 +514,17 @@ def run_interactive(args: argparse.Namespace) -> int:
                 break
             if inspector.handle_key(key):
                 detail_view = True
-            if key == ord("i"):
+            if key == ord("t"):
+                temporal_view.toggle()
+                last_display = last_enhanced
+            elif key == ord("i"):
                 detail_view = not detail_view
             elif key == ord("n"):
                 config.profile = "auto" if config.profile == "night" else "night"
                 imager.reset()
                 if last_raw is not None and last_tel is not None:
                     last_enhanced, last_tel = imager.process(last_raw, timestamp=last_tel.timestamp)
+                    last_display = last_enhanced
             elif key == ord("v"):
                 view = VIEW_CHOICES[(VIEW_CHOICES.index(view) + 1) % len(VIEW_CHOICES)]
             elif key == ord("z"):
@@ -521,6 +533,7 @@ def run_interactive(args: argparse.Namespace) -> int:
                 config.profile = PROFILE_CHOICES[(PROFILE_CHOICES.index(config.profile) + 1) % len(PROFILE_CHOICES)]
                 imager.reset()
             elif key == ord("r"):
+                temporal_view.reset()
                 imager.reset()
             elif key == ord("s") and last_raw is not None and last_enhanced is not None and last_tel is not None:
                 try:

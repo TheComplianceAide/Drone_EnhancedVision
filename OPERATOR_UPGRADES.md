@@ -66,3 +66,44 @@ distributions, backend identity and allocation. The retained eager implementatio
 is the numerical reference for kernel fusion; CPU remains the detection reference.
 
 Measured results and retained failures: [September 4 receipt](analysis/flight_review_20260714/operator_gpu_upgrades_20260904_f801621a/README.md). The SuperRes detail pane labels its registered input grid explicitly because processing can resize a small ROI.
+
+
+## Capability follow-up: temporal quality and experimental faint-target ISR
+
+Press **t** in any of the four current apps to enable temporal quality. It keeps
+up to eight unmodified source observations, registers camera movement using
+forward/backward optical flow or independently checked global translation, and
+averages consistent pixels. Every observation is resampled once. The raw view,
+detector input, and saved reconstruction proof remain available and unchanged.
+ImageScout and Motion inspection show the temporal result; NightVision and
+SuperRes switch their detailed pane to the current raw/temporal source ROI while
+this mode is enabled. Turn **t** off to return to reconstruction inspection.
+
+This mode is intended for deliberate inspection and costs processing time. Very
+faint moving details can be attenuated, so always compare the raw pane. Detectable
+changes, clipped pixels, weak registration, source gaps and resets prevent
+unsupported averaging; no learned or generated detail is added. It does not
+increase optical resolution or validate higher zoom reconstruction.
+
+ImageScout, Motion and SuperRes temporal views use MPS when available. NightVision
+keeps the GPU for its persistent inverse reconstruction and uses CPU cores for
+the added live denoiser. A shared reentrant GPU lock prevents concurrent worker
+submission; GPU previews use a nonblocking lease and label the current raw view
+when the device is busy. This scheduling was added after a real GUI concurrency
+crash, followed by repeated startup, toggle, reset and quit checks.
+
+**EXPERIMENTAL M5 Faint-Target ISR V5 (Acceptance Open)** is available in the
+launcher's script list and through `Start_MotionISR_Capability_Experimental.command`.
+It uses the retained CPU frontend with a required-MPS 72-trajectory detector bank.
+The new bank compares PSF responses against registered source history, preserves
+point energy with phase-accumulated transport, and requires independently
+supported moving paths to beat stationary/alternate paths. Duplicate timestamps
+cannot add evidence. Rev4 remains unchanged as a comparison baseline.
+
+Rev5 improves controlled bright/dark point detection and known-negative false
+alarms, but it still fails the frozen flight-derived acceptance test. It is not
+featured or field-recommended. Normal launcher Motion remains CPU-pinned Rev3.
+Synthetic detection, confirmed tracking, native-flight recall and semantic
+identification are separate claims; only the reported tested scope is supported.
+
+[Capability quality receipt](analysis/flight_review_20260714/capability_quality_20260904_0b835ce8/README.md) records the bounded gains, full detector failures, original-resolution comparisons and measured processing cost.

@@ -1,0 +1,92 @@
+{
+  "catalog": "/Users/randyblasik/Documents/Drone_EnhancedVision/testdata/flight_scenes/2026-07-14.json",
+  "full_hash": true,
+  "ok": true,
+  "schema": "m5.flight-source-verification.v1",
+  "sources": [
+    {
+      "actual_bytes": 358895612,
+      "actual_sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744",
+      "exists": true,
+      "expected_bytes": 358895612,
+      "expected_sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744",
+      "hash_ok": true,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_191345_attempt1.mp4",
+      "role": "canonical",
+      "size_ok": true,
+      "source": "seg_191345"
+    },
+    {
+      "actual_bytes": 408065138,
+      "actual_sha256": "499add8093ab589e5b050cb7b49ca3bc16b5ee35fc201765c0371f8fb7541851",
+      "exists": true,
+      "expected_bytes": 408065138,
+      "expected_sha256": "499add8093ab589e5b050cb7b49ca3bc16b5ee35fc201765c0371f8fb7541851",
+      "hash_ok": true,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_192339_attempt1.mp4",
+      "role": "canonical",
+      "size_ok": true,
+      "source": "seg_192339"
+    },
+    {
+      "actual_bytes": 449967995,
+      "actual_sha256": "c3e102b5f607d139811ca0d50f8bf362d5a0f8aa61a4358fa2e8f84bc9f40419",
+      "exists": true,
+      "expected_bytes": 449967995,
+      "expected_sha256": "c3e102b5f607d139811ca0d50f8bf362d5a0f8aa61a4358fa2e8f84bc9f40419",
+      "hash_ok": true,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_193338_attempt1.mp4",
+      "role": "canonical",
+      "size_ok": true,
+      "source": "seg_193338"
+    },
+    {
+      "actual_bytes": 455310717,
+      "actual_sha256": "2507c542ab029d1db69ef8ca60b73c4634b4dd9b0aa40fb7e31de6106cdb5a23",
+      "exists": true,
+      "expected_bytes": 455310717,
+      "expected_sha256": "2507c542ab029d1db69ef8ca60b73c4634b4dd9b0aa40fb7e31de6106cdb5a23",
+      "hash_ok": true,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_194336_attempt1.mp4",
+      "role": "canonical",
+      "size_ok": true,
+      "source": "seg_194336"
+    },
+    {
+      "actual_bytes": 457650637,
+      "actual_sha256": "5096d8eed9c12d8905e0c484aa356598eb9f56534b172102ac37a94d19ff8ba6",
+      "exists": true,
+      "expected_bytes": 457650637,
+      "expected_sha256": "5096d8eed9c12d8905e0c484aa356598eb9f56534b172102ac37a94d19ff8ba6",
+      "hash_ok": true,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_195336_attempt1.mp4",
+      "role": "canonical",
+      "size_ok": true,
+      "source": "seg_195336"
+    },
+    {
+      "actual_bytes": 483337480,
+      "actual_sha256": "d2bf09908553f25abae626e7b837cf430dbca73f7a574c455c0bf099c303c228",
+      "exists": true,
+      "expected_bytes": 483337480,
+      "expected_sha256": "d2bf09908553f25abae626e7b837cf430dbca73f7a574c455c0bf099c303c228",
+      "hash_ok": true,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_200336_attempt1.mp4",
+      "role": "canonical",
+      "size_ok": true,
+      "source": "seg_200336"
+    },
+    {
+      "actual_bytes": 145909867,
+      "actual_sha256": "838ac1ed6045a9c72ae5faa6887ff90963697d28d193f60cb0cb496cd6422682",
+      "exists": true,
+      "expected_bytes": 145909867,
+      "expected_sha256": "838ac1ed6045a9c72ae5faa6887ff90963697d28d193f60cb0cb496cd6422682",
+      "hash_ok": true,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_201336_attempt1.mp4",
+      "role": "canonical",
+      "size_ok": true,
+      "source": "seg_201336"
+    }
+  ]
+}

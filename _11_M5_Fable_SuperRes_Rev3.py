@@ -3448,7 +3448,9 @@ class RobustRegistrar:
         return FrameCandidate(seq, crop.copy(), (dx, dy), (0, 0), weight, metrics), "accepted"
 
 
-_RECONSTRUCTION_SOLVE_LOCK = threading.Lock()
+from m5_gpu_runtime import GPU_LOCK
+
+_RECONSTRUCTION_SOLVE_LOCK = GPU_LOCK
 
 
 def _solve_snapshot_unlocked(
@@ -5466,7 +5468,9 @@ def run_gui(args: argparse.Namespace) -> int:
     live_w, live_h = layout.main_wh
     proof_w, proof_h = layout.aux_wh
     from m5_operator_view import InspectionView, night_preview
+    from m5_temporal_quality import QualityView
     operator_tools = bool(getattr(args, "operator_tools", False))
+    temporal_view = QualityView()
     inspector = InspectionView()
     inspect_mode = operator_tools
     preview_enabled = False
@@ -5586,11 +5590,17 @@ def run_gui(args: argparse.Namespace) -> int:
             frame_h, frame_w = frame.shape[:2]
             if fresh and not frozen:
                 session.ingest(frame, source_ts)
+            quality_source = temporal_view.process(frame, source_ts) if operator_tools else frame
             if not frozen or frozen_panel is None:
                 panel = session.proof_panel()
                 if operator_tools and inspect_mode and session.engine.anchor is not None:
                     engine = session.engine
-                    if engine.best_stack is not None:
+                    if temporal_view.enabled:
+                        qx, qy, qw, qh = session.roi_rect(frame_w, frame_h)
+                        raw_native = frame[qy:qy+qh, qx:qx+qw]
+                        selected = quality_source[qy:qy+qh, qx:qx+qw]
+                        title = temporal_view.label
+                    elif engine.best_stack is not None:
                         raw_native = engine.best_stack.prior_native
                         selected = engine.best_stack.post
                         title = f"CLEAR BEST n={engine.best_stack.n}"
@@ -5603,15 +5613,16 @@ def run_gui(args: argparse.Namespace) -> int:
                         selected = night_preview(selected)[0]
                         title += " + NIGHT DISPLAY"
                     panel = inspector.render(raw_grid, selected, width=proof_w, height=proof_h,
-                        raw_label="REGISTERED INPUT GRID", title=title, status=f"Input grid {raw_native.shape[1]}x{raw_native.shape[0]} px | ROI /{session.zoom_div} | i: proof grid; +/- ROI; v: night display")
+                        raw_label="CURRENT SOURCE GRID" if temporal_view.enabled else "REGISTERED INPUT GRID", title=title, status=f"Input grid {raw_native.shape[1]}x{raw_native.shape[0]} px | ROI /{session.zoom_div} | i: proof grid; +/- ROI; v: night display")
                 if frozen and frozen_panel is None:
                     frozen_panel = panel.copy()
             else:
                 panel = frozen_panel
 
-            if operator_tools and preview_enabled:
+            if operator_tools and (preview_enabled or temporal_view.enabled):
                 if fresh or preview_frame is None:
-                    preview_frame, _ = night_preview(frame)
+                    quality_source = temporal_view.process(frame, source_ts)
+                    preview_frame = night_preview(quality_source)[0] if preview_enabled else quality_source
                 live_source = preview_frame
             else:
                 live_source = frame
@@ -5628,7 +5639,7 @@ def run_gui(args: argparse.Namespace) -> int:
                 cv2.rectangle(live, (x1b, y1b), (x2b, y2b), (0, 0, 0), 2)
                 cv2.putText(live, text, (x1b + 13, y1b + 37), cv2.FONT_HERSHEY_SIMPLEX, 0.57,
                             (0, 0, 0) if active else (230, 230, 230), 2, cv2.LINE_AA)
-            hud = f"{time.strftime('%H:%M:%S')} | {session.stats_line()} | {status}"
+            hud = f"{temporal_view.label if operator_tools else ''} | {time.strftime('%H:%M:%S')} | {session.stats_line()} | {status}"
             cv2.rectangle(live, (0, live_h - 36), (live_w, live_h), (0, 0, 0), -1)
             cv2.putText(live, hud[:145], (9, live_h - 11), cv2.FONT_HERSHEY_SIMPLEX, 0.52,
                         (0, 255, 255), 2, cv2.LINE_AA)
@@ -5638,7 +5649,11 @@ def run_gui(args: argparse.Namespace) -> int:
             key = cv2.waitKey(1) & 0xFF
             if key in (27, ord("q")):
                 break
-            if operator_tools and key == ord("i"):
+            if operator_tools and key == ord("t"):
+                temporal_view.toggle()
+                preview_frame = None
+                frozen_panel = None
+            elif operator_tools and key == ord("i"):
                 inspect_mode = not inspect_mode
                 frozen_panel = None
             elif operator_tools and key == ord("v"):
@@ -5654,6 +5669,7 @@ def run_gui(args: argparse.Namespace) -> int:
                 session.set_zoom(zooms[int(np.clip(index + (-1 if key == ord("-") else 1), 0, len(zooms)-1))])
                 frozen_panel = None
             elif key == ord("r"):
+                temporal_view.reset()
                 session.manual_reset()
             elif key == ord("s"):
                 save_requested = True

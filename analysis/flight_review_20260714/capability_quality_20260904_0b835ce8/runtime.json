@@ -1,0 +1,9 @@
+{
+  "date": "2026-09-04T19:19:25.194372",
+  "machine": "arm64",
+  "macos": "26.1",
+  "torch": "2.10.0",
+  "mps_available": true,
+  "baseline_commit": "8d63c156aa904d527bb9f7eb6b82b8d2fc82d79b",
+  "additional_service_cost_usd": 0
+}
