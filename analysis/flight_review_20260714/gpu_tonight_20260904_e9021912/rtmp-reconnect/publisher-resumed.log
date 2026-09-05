@@ -1,0 +1,3 @@
+[vist#0:0/ffv1 @ 0xc11008300] Resumed reading at pts 0.000 with rate 1.050 after a lag of 0.500s
+[flv @ 0xc11010280] Failed to update header with correct duration.
+[flv @ 0xc11010280] Failed to update header with correct filesize.

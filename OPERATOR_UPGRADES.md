@@ -1,7 +1,7 @@
 # Night vision, ISR and zoom upgrades — September 4, 2026
 
 Open `Start_DroneVision_Ops.command` and use the four featured field apps. The
-Motion ISR CPU pin remains in place. These are local changes; nothing was deployed.
+Motion ISR now uses the owner-selected GPU-required launcher profile. These are local changes; nothing was deployed.
 
 | App | New capability | Controls |
 | --- | --- | --- |
@@ -43,8 +43,8 @@ reconstruction evidence still covers bounded static 2x reconstruction. Motion
 Rev4 remains experimental and inherits the improved operator UI/history, but its
 micro-target acceptance failure is not cleared. Motion Rev3 now clears its full
 built-in self-test, including MPS parity, after matching CPU filtering, borders,
-warp phases, and warmup. The field launcher still uses CPU pending native-flight
-acceptance. Native night-flight effectiveness,
+warp phases, and warmup. The owner-selected launcher now explicitly requires MPS; native-flight
+acceptance remains open. Native night-flight effectiveness,
 whole-flight target recall, and identifying distant detail remain unproven.
 
 The current machine is an Apple M5 with 10 CPU cores, 10 GPU cores and 24 GB unified
@@ -85,9 +85,9 @@ changes, clipped pixels, weak registration, source gaps and resets prevent
 unsupported averaging; no learned or generated detail is added. It does not
 increase optical resolution or validate higher zoom reconstruction.
 
-ImageScout, Motion and SuperRes temporal views use MPS when available. NightVision
-keeps the GPU for its persistent inverse reconstruction and uses CPU cores for
-the added live denoiser. A shared reentrant GPU lock prevents concurrent worker
+ImageScout and Motion temporal views use MPS when available. NightVision and
+SuperRes keep the GPU for reconstruction and use CPU cores for the added live
+denoiser. A shared reentrant GPU lock prevents concurrent worker
 submission; GPU previews use a nonblocking lease and label the current raw view
 when the device is busy. This scheduling was added after a real GUI concurrency
 crash, followed by repeated startup, toggle, reset and quit checks.
@@ -102,8 +102,12 @@ cannot add evidence. Rev4 remains unchanged as a comparison baseline.
 
 Rev5 improves controlled bright/dark point detection and known-negative false
 alarms, but it still fails the frozen flight-derived acceptance test. It is not
-featured or field-recommended. Normal launcher Motion remains CPU-pinned Rev3.
+featured or field-recommended. Normal launcher Motion is now GPU-required Rev3 under the owner-selected tonight profile.
 Synthetic detection, confirmed tracking, native-flight recall and semantic
 identification are separate claims; only the reported tested scope is supported.
 
 [Capability quality receipt](analysis/flight_review_20260714/capability_quality_20260904_0b835ce8/README.md) records the bounded gains, full detector failures, original-resolution comparisons and measured processing cost.
+
+Tonight: use `Start_Tonights_GPU_Launcher.command` or the regular launcher. Motion, NightVision reconstruction and SuperRes reconstruction explicitly require MPS. See [tonight controls](TONIGHT_GPU.md).
+
+[GPU launch and live RTMP rehearsal receipt](analysis/flight_review_20260714/gpu_tonight_20260904_e9021912/README.md).

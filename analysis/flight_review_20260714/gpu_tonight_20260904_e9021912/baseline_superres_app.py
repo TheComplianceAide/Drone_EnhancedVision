@@ -5470,8 +5470,7 @@ def run_gui(args: argparse.Namespace) -> int:
     from m5_operator_view import InspectionView, night_preview
     from m5_temporal_quality import QualityView
     operator_tools = bool(getattr(args, "operator_tools", False))
-    # Keep the MPS reconstruction bank working while CPU cores denoise the overview.
-    temporal_view = QualityView(device="cpu")
+    temporal_view = QualityView()
     inspector = InspectionView()
     inspect_mode = operator_tools
     preview_enabled = False

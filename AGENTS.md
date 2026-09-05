@@ -9,12 +9,12 @@ The goal is field-reliable drone video tooling whose improvements are measurable
 ## Authoritative project surfaces
 
 - Recommended field builds:
-  - `_09_M5_Fable_MotionISR_Rev3.py --device cpu` (launcher-pinned CPU-safe path)
+  - `_09_M5_Fable_MotionISR_Rev3.py --device mps --require-mps` (owner-selected GPU launcher path)
   - `_10_M5_Fable_ImageScout_Rev3.py`
   - `_11_M5_Fable_SuperRes_Rev4.py`
   - `_12_M5_NightVision_Max_Rev3.py`
 - `_09_M5_Fable_MotionISR_Rev4.py` is experimental only. Its delta-8 support diagnostic passes, but the full acceptance validator still fails; do not feature or describe it as flight-recommended until the frozen gates pass.
-- Historical Motion Rev3 MPS parity failed (mover-1 coverage `0.332 < 0.75`, false-positive rate `0.075 > 0.02`). The September 4 local fix clears the full self-test including MPS parity (all three coverages 1.0, false-positive rate 0). Native-flight annotation/acceptance remains open. Keep the field launcher explicitly on `--device cpu`; use `Start_MotionISR_GPU_Experimental.command` for the separate engineering lane, and do not call it flight-validated.
+- Historical Motion Rev3 MPS parity failed (mover-1 coverage `0.332 < 0.75`, false-positive rate `0.075 > 0.02`). The September 4 local fix clears the full self-test including MPS parity (all three coverages 1.0, false-positive rate 0). Native-flight annotation/acceptance remains open. The owner subsequently explicitly selected GPU operation for tonight. `m5_field_launch.py` now supplies `--device mps --require-mps`; unavailable/failed MPS must stop visibly. This configuration change does not claim native-flight recall is validated.
 - Keep Rev1 implementations as controlled comparison baselines. Do not silently rewrite them to match Rev3.
 - `app_Launcher_v2.py` is the field launcher. It discovers root `_*.py` scripts and also has an explicit featured-card list; new field apps may need both a label and a card.
 - `testdata/flight_scenes/2026-07-14.json` is the canonical source/scene catalog. Do not create a second hardcoded scene list; use `m5_flight_catalog.py`.
@@ -107,7 +107,7 @@ env DRONE_VISION_NO_RELAUNCH=1 \
 
 A validator run without candidate artifacts reports `PASS_NON_RELEASE` and is only a source/validator smoke test. `--require-candidate` also needs the missing ground-truth/transition inputs, repeatable `--code-file` arguments for candidate/baseline/core provenance, and automatically verified full source hashes; do not call it passing until those inputs exist and every gate passes.
 
-The CPU pin above is part of the recommended field configuration, not a general claim that GPU compute is undesirable. The September MPS implementation clears synthetic parity with corrected border/filter/interpolation semantics and a native Metal state kernel, but native-flight acceptance remains an open engineering lane. NightVision and SuperRes have separate fail-closed MPS evidence and are unaffected.
+The CPU command above is a comparison/self-test lane. The owner-selected launcher configuration now explicitly requires MPS. The September MPS implementation clears synthetic parity with corrected border/filter/interpolation semantics and a native Metal state kernel, but native-flight acceptance remains an open engineering lane. NightVision and SuperRes have separate fail-closed MPS evidence and are unaffected.
 
 ### SuperRes V4
 
@@ -200,7 +200,13 @@ A field-script change is done only when:
 ## Capability follow-up runtime boundaries
 
 - `m5_temporal_quality.py` owns opt-in eight-observation display fusion (`t`). It must not feed Motion detection or reconstruction acceptance. Preserve current raw comparisons and honest source timestamps.
-- `m5_gpu_runtime.py` owns the shared reentrant GPU submission lock. SuperRes solves, NightVision updates/refinement and GPU temporal views use it; live GPU views never wait for a reconstruction lease. NightVision's extra temporal preview uses CPU so GPU reconstruction cannot starve it.
-- `_09_M5_Fable_MotionISR_Rev5.py` / `m5_motionisr_rev5.py` are experimental. Controlled synthetic A/B does not clear frozen flight acceptance. Keep Rev4 unchanged and the featured Motion Rev3 CPU pin.
+- `m5_gpu_runtime.py` owns the shared reentrant GPU submission lock. SuperRes solves, NightVision updates/refinement and GPU temporal views use it; live GPU views never wait for a reconstruction lease. NightVision and SuperRes extra temporal previews use CPU so GPU reconstruction cannot starve them.
+- `_09_M5_Fable_MotionISR_Rev5.py` / `m5_motionisr_rev5.py` are experimental. Controlled synthetic A/B does not clear frozen flight acceptance. Keep Rev4 unchanged and the featured Motion Rev3 GPU-required policy; never substitute Rev5 for the featured detector before its gates pass.
 - `m5_motionisr_rev4_validation.py --candidate-core m5_motionisr_rev5.py --candidate-app _09_M5_Fable_MotionISR_Rev5.py` reuses all existing gates. Historical `rev4` result keys refer to the explicit candidate recorded in provenance. Do not substitute synthetic A/B success for this lane.
 - Run `m5_temporal_quality_validation.py --baseline-dir <frozen baseline> --output-dir <new directory> --device mps` and the CPU lane for NightVision preview. Run `m5_micro_detection_ab_validation.py` separately for known-negative and injection-attributable point detection.
+
+## Tonight GPU launcher policy
+
+`m5_field_launch.py` is the single launch-argument policy for the current GPU missions. MotionRev3 uses `--device mps --require-mps`; NightVisionRev3 and SuperResRev4 use `--quality-device mps --require-mps`. CPU support remains a deliberate CLI option, never a silent fallback in these launcher modes. All night/zoom/history/temporal controls remain available. The local RTMP rehearsal is not aircraft/radio-link or native-night detection acceptance.
+
+`rtmp_latest.open_latest_capture` scopes low-latency probe options to network capture construction and restores the environment afterward. Preserve explicit capture-option overrides and timeout parameters; do not fall back to an unbounded capture open. Validate actual decoded frames, source dimensions and frame progression, not just GUI exit0.

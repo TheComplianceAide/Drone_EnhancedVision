@@ -1,0 +1,5 @@
+{
+  "stopped_at": 1788568214.668282,
+  "restarted_at": 1788568218.677141,
+  "method": "SIGINT/finalize owned publisher, wait4seconds, start a new RTMP publishing session"
+}

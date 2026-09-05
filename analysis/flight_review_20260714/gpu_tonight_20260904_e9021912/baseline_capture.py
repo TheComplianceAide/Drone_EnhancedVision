@@ -11,37 +11,12 @@ the most recent decoded frame.
 
 from __future__ import annotations
 
-import os
 import threading
 import time
 from typing import Optional, Tuple
 
 import cv2
 import numpy as np
-
-
-_OPEN_LOCK = threading.Lock()
-_STREAM_OPTIONS = "fflags;nobuffer|flags;low_delay|probesize;32|analyzeduration;0|rw_timeout;5000000"
-
-
-def open_latest_capture(url, api, params):
-    """Apply bounded live probing only while opening a network source.
-
-    FFmpeg consumes this environment option during open; restore it so later
-    local-file readers do not inherit live-only flags. Preserve explicit overrides.
-    """
-    is_stream = str(url).lower().startswith(("rtmp://", "rtsp://", "http://", "https://", "udp://", "tcp://"))
-    with _OPEN_LOCK:
-        previous = os.environ.get("OPENCV_FFMPEG_CAPTURE_OPTIONS")
-        if is_stream and previous is None:
-            os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = _STREAM_OPTIONS
-        try:
-            return cv2.VideoCapture(url, api, params) if params else cv2.VideoCapture(url, api)
-        finally:
-            if previous is None:
-                os.environ.pop("OPENCV_FFMPEG_CAPTURE_OPTIONS", None)
-            else:
-                os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = previous
 
 
 class LatestFrameGrabber:
@@ -85,7 +60,12 @@ class LatestFrameGrabber:
             prop = getattr(cv2, name, None)
             if prop is not None and value and value > 0:
                 params.extend([int(prop), int(value)])
-        return open_latest_capture(self.url, self.api, params)
+        try:
+            if params:
+                return cv2.VideoCapture(self.url, self.api, params)
+        except Exception:
+            pass
+        return cv2.VideoCapture(self.url, self.api)
 
     def _configure_capture(self) -> None:
         # Best-effort: request a capture size (FFmpeg/OpenCV may ignore).

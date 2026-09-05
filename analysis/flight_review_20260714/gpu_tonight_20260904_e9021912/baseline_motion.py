@@ -246,7 +246,6 @@ DEFAULT_PRESET_IDX = 3
 class Config:
     source: str = DEFAULT_URL
     device: str = "auto"  # auto | cpu | mps
-    require_mps: bool = False  # explicit GPU launch must never silently fall back
     preset_idx: int = DEFAULT_PRESET_IDX
     fps_target: float = FPS_TARGET_DEFAULT
     use_reg: bool = True
@@ -1227,12 +1226,6 @@ def _bench_heavy(cls, w: int, h: int, loops: int = 10) -> Optional[float]:
 
 
 def choose_device(cfg: Config, w: int, h: int) -> str:
-    if cfg.require_mps:
-        if cfg.device != "mps" or cfg.deterministic:
-            raise ValueError("--require-mps requires --device mps and non-deterministic runtime")
-        if not _mps_available():
-            raise RuntimeError("Required Apple GPU is unavailable; GPU mission cannot start")
-        return "mps"
     if cfg.device == "cpu" or cfg.deterministic:
         return "cpu"
     if cfg.device == "mps":
@@ -1623,10 +1616,7 @@ class Pipeline:
         if self.device == "mps":
             try:
                 self.heavy = HeavyMPS(w, h)
-            except Exception as exc:
-                if self.cfg.require_mps:
-                    raise RuntimeError("Required Apple GPU initialization failed") from exc
-                print(f"[fable-isr] GPU initialization failed; CPU fallback: {exc}", file=sys.stderr, flush=True)
+            except Exception:
                 self.device = "cpu"
                 self.heavy = HeavyCPU(w, h)
         else:
@@ -2642,7 +2632,7 @@ class Pipeline:
         except Exception as exc:
             # Field rule: GPU fallback is explicit; CPU failures cannot look like warmup.
             print(f"[fable-isr] {self.device} processing failed: {exc}", file=sys.stderr, flush=True)
-            if self.cfg.require_mps or isinstance(self.heavy, HeavyCPU):
+            if isinstance(self.heavy, HeavyCPU):
                 raise
             if not isinstance(self.heavy, HeavyCPU):
                 self.device = "cpu"
@@ -4236,7 +4226,6 @@ def main() -> int:
                     help="RTMP URL or video file (default: local Mavic RTMP)")
     ap.add_argument("--url", dest="source", help="alias for --source")
     ap.add_argument("--device", choices=["auto", "cpu", "mps"], default="cpu")
-    ap.add_argument("--require-mps", action="store_true", help="stop visibly if required GPU is unavailable or fails; no CPU fallback")
     ap.add_argument("--preset", choices=[p.name.lower() for p in PRESETS],
                     default=DEFAULT_PRESET_NAME,
                     help="SEARCH is the measured field default; SMALL-GAME "
@@ -4257,8 +4246,6 @@ def main() -> int:
                     help="write 1 Hz Rev3 black-box telemetry to this JSONL path")
     ap.add_argument("--no-low-latency-ffmpeg", action="store_true")
     args = ap.parse_args()
-    if args.require_mps and args.device != "mps":
-        ap.error("--require-mps requires --device mps")
 
     is_stream = args.source.lower().startswith(("rtmp://", "rtsp://", "http://", "https://", "udp://", "tcp://"))
     if is_stream and not args.no_low_latency_ffmpeg and not args.selftest:
@@ -4270,7 +4257,7 @@ def main() -> int:
         stamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
         telemetry_path = str(Path(__file__).resolve().parent / "logs"
                              / f"fable_rev3_telemetry_{stamp}.jsonl")
-    cfg = Config(source=args.source, device=args.device, require_mps=args.require_mps, preset_idx=preset_idx,
+    cfg = Config(source=args.source, device=args.device, preset_idx=preset_idx,
                  fps_target=args.fps_target, chip_labels=args.chip_labels,
                  cap_guard=not args.no_cap_guard, telemetry_path=telemetry_path)
     cfg.source_fps = args.source_fps

@@ -1,0 +1,22 @@
+[9/4/2026, 8:29:57 PM] [INFO] Node-Media-Server v4.2.8
+[9/4/2026, 8:29:57 PM] [INFO] Homepage: https://github.com/illuspas/Node-Media-Server
+[9/4/2026, 8:29:57 PM] [INFO] License: Apache-2.0
+[9/4/2026, 8:29:57 PM] [INFO] Author: Chen Mingliang
+[9/4/2026, 8:29:57 PM] [INFO] WebSocket server listening on port undefined:18080
+[9/4/2026, 8:29:57 PM] [INFO] HTTP server listening on port undefined:18080
+[9/4/2026, 8:29:57 PM] [INFO] Rtmp Server listening on port undefined:21935
+[9/4/2026, 8:29:57 PM] [INFO] RTMP session mtnnbpoy1007eu00 close
+[9/4/2026, 8:29:57 PM] [INFO] RTMP session mtnnbppq3zh05c32 ::ffff:127.0.0.1:53326 start push /live/qa_tonight
+[9/4/2026, 8:30:01 PM] [INFO] RTMP session mtnnbsskcifbht5a ::ffff:127.0.0.1:53335 start play /live/qa_tonight
+[9/4/2026, 8:30:14 PM] [INFO] RTMP session mtnnbppq3zh05c32 close
+[9/4/2026, 8:30:18 PM] [INFO] RTMP session mtnnc5zqequwqvxo ::ffff:127.0.0.1:53358 start push /live/qa_tonight
+[9/4/2026, 8:30:18 PM] [INFO] RTMP session mtnnbsskcifbht5a close
+[9/4/2026, 8:30:18 PM] [INFO] RTMP session mtnnc64tw3qomh5j ::ffff:127.0.0.1:53359 start play /live/qa_tonight
+[9/4/2026, 8:30:22 PM] [INFO] RTMP session mtnnc64tw3qomh5j socket error, Error: read ECONNRESET
+[9/4/2026, 8:30:22 PM] [INFO] RTMP session mtnnc64tw3qomh5j close
+[9/4/2026, 8:30:22 PM] [INFO] RTMP session mtnnc8p02ibfm7t2 ::ffff:127.0.0.1:53369 start play /live/qa_tonight
+[9/4/2026, 8:30:23 PM] [INFO] RTMP session mtnnc8p02ibfm7t2 close
+[9/4/2026, 8:30:23 PM] [INFO] RTMP session mtnnc9ftqb73o3dt ::ffff:127.0.0.1:53372 start play /live/qa_tonight
+[9/4/2026, 8:31:04 PM] [INFO] RTMP session mtnnc9ftqb73o3dt close
+[9/4/2026, 8:31:05 PM] [INFO] RTMP session mtnnc5zqequwqvxo close
+[nms-heartbeat] stopping on SIGINT

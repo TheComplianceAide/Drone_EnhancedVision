@@ -776,13 +776,13 @@ class App:
                 "_09_M5_Fable_MotionISR_Rev3.py",
                 "\u25c9",
                 "FABLE MOTION ISR V3",
-                "GPU search + track history + night view",
+                "CPU search + track history + night view",
             ),
             (
                 "_12_M5_NightVision_Max_Rev3.py",
                 "NV",
                 "NIGHTVISION MAX V3",
-                "GPU night reconstruction + raw/quality view",
+                "Full-frame night preview + 2x ROI soak",
             ),
             (
                 "_11_M5_LakeHouse_AutoScout_Rev2.py",
@@ -812,7 +812,7 @@ class App:
                 "_11_M5_Fable_SuperRes_Rev4.py",
                 "SR",
                 "FABLE SUPERRES V4",
-                "GPU reconstruction + 2-16x ROI inspection",
+                "2-16x ROI + large RAW/CLEAR inspection",
             ),
         ]
 
@@ -909,10 +909,7 @@ class App:
             return upgraded
         if saved and os.path.exists(os.path.join(self.path, saved)):
             return saved
-        # Owner-selected GPU suite default; preserve an explicit saved selection.
-        if os.path.exists(os.path.join(self.path, "_09_M5_Fable_MotionISR_Rev3.py")):
-            return "_09_M5_Fable_MotionISR_Rev3.py"
-        # Legacy fallbacks for incomplete checkouts.
+        # First-run default: prefer the lake-house auto console, then the consolidated ISR console.
         if os.path.exists(os.path.join(self.path, "_11_M5_LakeHouse_AutoScout_Rev2.py")):
             return "_11_M5_LakeHouse_AutoScout_Rev2.py"
         if os.path.exists(os.path.join(self.path, "_10_M5_ISR_ReconSuite_Rev2.py")):
@@ -965,9 +962,12 @@ class App:
 
         script_path = os.path.join(self.path, self.script)
         command = [sys.executable, script_path]
-        # Owner selected GPU operation for tonight; backend failure is explicit.
-        from m5_field_launch import mission_arguments
-        command.extend(mission_arguments(self.script))
+        # The Rev3 CPU detector passes its deterministic tiny-target and
+        # false-positive lanes. The September MPS fix clears synthetic parity,
+        # but native-flight acceptance remains open. Keep the approved field
+        # pin; Start_MotionISR_GPU_Experimental.command is an explicit test lane.
+        if self.script == "_09_M5_Fable_MotionISR_Rev3.py":
+            command.extend(["--device", "cpu"])
         print(f"Launching script: {' '.join(command)}", flush=True)
         self.process = subprocess.Popen(
             command,
