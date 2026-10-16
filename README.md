@@ -8,6 +8,24 @@ The current flow is:
 
 This README documents the latest scripts, what they do, which ones are light/heavy, how to launch with `app_Launcher_v2.py`, and how to configure/verify RTMP.
 
+## Review the results before flying
+
+For changes to vision or operator controls, the normal handoff includes a short
+video of the actual script processing recorded footage. Review what it detects,
+misses, follows, loses, and enhances while the drone is still on the ground;
+use those observations to improve the script and replay the same case again.
+
+Demos should keep the screen mostly video, preserve a raw comparison, and show
+both useful behavior and failures. The accompanying explanation should say what
+to watch, what changed, which checks passed or failed, and what remains unproven.
+Replay results are not aircraft-link or flight-readiness acceptance. The detailed
+workflow is in [AGENTS.md](AGENTS.md#operator-review-before-flight).
+
+The [AstraOct26 Follow regression receipt](analysis/astraoct26_follow_fix_20261016_134545_ce95b8a8/README.md)
+shows this process: an actual replay exposed false following of a driveway,
+the same source sequence reproduced the failure, and the corrected demo keeps
+the target explicitly **LOST** when it can no longer verify it.
+
 ## What’s In This Repo
 
 - `app_Launcher_v2.py`: Glass-cockpit Tkinter launcher. Starts/stops the pinned local RTMP server, reports publisher-heartbeat state, shows your IP, and launches root `_*.py` scripts.

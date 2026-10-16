@@ -6,6 +6,20 @@ This file applies to the entire repository. More specific rules in `recordings/A
 
 The goal is field-reliable drone video tooling whose improvements are measurable on reusable footage, preserve source truth, stay responsive during live work, and leave an auditable receipt. A change is not done because it looks clever or produces a sharper screenshot.
 
+## Operator review before flight
+
+The owner wants to see how scripts actually behave while still on the ground, catch problems visually, and iterate quickly before flying. Make this the default delivery workflow for changes to detection, tracking, enhancement, or the operator interface:
+
+- Run the actual candidate script on reusable recorded footage and deliver a short, playable demo video in the chat, alongside its saved evidence path. A code summary, test count, or still screenshot alone does not demonstrate motion or tracking behavior.
+- Show the useful result and representative failure cases. For relevant changes include multiple moving objects, small targets, background clutter, camera movement, target loss/recovery, and the controls the operator will use. Do not hide missed targets, false cues, stale labels, or loss of lock by choosing only favorable footage.
+- Keep an untouched raw comparison available. Clearly distinguish actual app output from analysis overlays or simulations, and recorded replay from a live aircraft feed. Never invent detections or enhanced detail for a demonstration.
+- Make demos easy to review: mostly video, minimal text, a short explanation of what to watch and when, and a clear statement of remaining limitations. The solo operator is also flying the drone; diagnostics belong in the receipt or advanced view.
+- For an observed bug, retain the failing baseline and replay the same source timestamps and selection/control sequence after the fix. Show the corrected behavior and preserve measured failures as well as improvements.
+- Share the demo early enough for operator feedback to guide another iteration before flight. When the owner spots a problem, turn it into a reusable regression case and provide an updated demo after the repair.
+- Record code/source hashes, decoded PTS, settings, device, commands, timing, warnings, and proof paths under the existing experiment protocol. State a blocked or incomplete demo honestly; do not replace it with a claim of flight readiness.
+
+Operator review of a replay complements the existing checks; it does not establish native-flight recall, aircraft-link latency, or night-flight acceptance. Documentation-only changes do not require a new flight demo.
+
 ## Authoritative project surfaces
 
 - Recommended field builds:
@@ -195,6 +209,7 @@ A field-script change is done only when:
 6. launcher integration is verified when a field app changes;
 7. a new receipt and reusable command are saved without overwriting prior evidence;
 8. documentation and the flight catalog remain consistent.
+9. a playable demonstration of changed operator-visible behavior is delivered for preflight review, with failures and limitations stated and any requested iteration addressed.
 
 
 ## Capability follow-up runtime boundaries

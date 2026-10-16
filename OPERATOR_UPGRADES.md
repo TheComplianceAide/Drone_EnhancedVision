@@ -111,3 +111,81 @@ identification are separate claims; only the reported tested scope is supported.
 Tonight: use `Start_Tonights_GPU_Launcher.command` or the regular launcher. Motion, NightVision reconstruction and SuperRes reconstruction explicitly require MPS. See [tonight controls](TONIGHT_GPU.md).
 
 [GPU launch and live RTMP rehearsal receipt](analysis/flight_review_20260714/gpu_tonight_20260904_e9021912/README.md).
+
+## AstraOct26 — one integrated experimental app
+
+Select **AstraOct26** in the launcher, or run:
+
+```bash
+.venv/bin/python _AstraOct26.py --device mps --require-mps
+```
+
+The main screen is almost entirely video. Click an area to inspect it. Eight
+large controls stay visible: **Follow**, **Night**, **Clear**, **Zoom +**,
+**Zoom -**, **Save**, **More**, **Quit**. **More** holds advanced tools and
+technical status; close it to restore the unobstructed video. Escape/q quits.
+The launcher's existing default mission remains Motion Rev3.
+
+All five October research additions are in this one application:
+
+- Current inspection and retained **Best** raw sample, with its age and a raw
+  comparison beside the optional preview. Best keeps a sharper observation;
+  it does not perform SuperRes reconstruction. Reasons and sample counts are
+  under More. Digital zoom cannot create optical resolution.
+- **Follow** uses checked raw optical flow and template recovery. Optional
+  **Deep Track** adds TAPNext++, and **Outline** adds an EdgeTAM point mask.
+  An unsupported lock is explicitly lost. Brief gaps may resume from the last
+  verified raw target image through at most 0.2 source seconds of checked
+  flow; tentative positions never display as **Follow**. Longer losses require
+  a distinct original-template match within one source second of the last
+  accepted observation. Optical flow cannot restart from a held background
+  position. Raw color, brightness and contrast must also remain consistent
+  with the original selection. After that window, click the target again.
+  Labels and enhanced
+  previews cannot hide **LOST**; tracking can still lose a changing or occluded
+  target. This policy prevents the observed driveway reacquisition and does
+  not establish whole-flight identity accuracy.
+- **Clear** enables a bounded three-observation TSRN deblur preview for the
+  selected crop. It is labeled **AI preview**, retains its exact raw comparison,
+  preserves clipped pixels, and limits channel changes to 24 code values.
+  This is learned display processing, not accepted evidence reconstruction.
+- **Labels** runs YOLO26n asynchronously for the selected point. Unsupported
+  classifications remain unknown. Labels do not suppress motion detections.
+- **Align** uses XFeat on CPU when the point is lost, checks geometry and raw
+  pixels before recovery, and rejects ambiguous matches.
+
+Labels and Align are enabled initially; Deep Track, Outline and Clear are
+optional. Their first use loads models in the background. Deep Track is
+substantially heavier than the other tools. Raw video remains visible while
+jobs run. GPU jobs share bounded, fair turns; the original Motion Rev3 detector
+still receives native raw frames, but fewer frames may reach detection when
+heavy research tools are active. Detector age and job times are under More.
+No learned preview, mask, label, night transform or retained sample enters
+Motion detection or accepted SuperRes/NightVision reconstruction.
+
+**Night** is a spatial display adjustment. **Raw View** under More bypasses
+preview adjustments. **Save** reports Saving, Saved or Save failed and writes
+raw/view/available crops plus source timestamps and checksums. **Reset** clears
+target/model history. Stream loss and source discontinuity also clear stale
+selections. A signal-loss banner remains until decoded frames return.
+
+Model sources, weights and additional dependency versions are pinned in
+`astra_oct26_models.json`. They are installed outside the shared venv in
+`~/Library/Caches/DroneEnhancedVision/AstraOct26`. This Mac has the assets.
+For another checkout/Mac, complete setup before going into the field:
+
+```bash
+.venv/bin/python _AstraOct26.py --setup-models
+.venv/bin/python _AstraOct26.py --check-models --device mps --output-dir /tmp/astra_models_new_run
+.venv/bin/python _AstraOct26.py --selftest
+```
+
+Normal operation does not download weights. Missing assets or MPS failures are
+visible errors. The launcher requires MPS; CPU is an explicit development CLI
+option (`--device cpu`). File replay uses decoded source PTS in a separate
+decoder process; network age means time since local receipt, not aircraft
+capture latency. Research asset licenses are recorded in the manifest.
+
+This remains an experimental flight-evaluation app. Controlled execution,
+source-binding and regression checks do not establish native-flight recall,
+tracking accuracy, improved physical resolution or native night effectiveness.

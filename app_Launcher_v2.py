@@ -260,6 +260,8 @@ class App:
         self.master.protocol("WM_DELETE_WINDOW", self.on_exit)
 
     def _script_label(self, script: str) -> str:
+        if script == "_AstraOct26.py":
+            return "AstraOct26"
         mapping = {
             "_1_4General_Target_Acquisition_4.py": "GENERAL TRACKER (Rev4)",
             "_12_M5_NightVision_Max_Rev1.py": "M5 NIGHTVISION MAX",
@@ -769,6 +771,12 @@ class App:
         all_scripts = [s for s in sorted(os.listdir(self.path)) if s.startswith("_") and s.endswith(".py")]
         featured = [
             (
+                "_AstraOct26.py",
+                "A26",
+                "AstraOct26",
+                "EXPERIMENTAL: track, inspect, deblur + labels",
+            ),
+            (
                 "_10_M5_Fable_ImageScout_Rev3.py",
                 "\u25d0",
                 "FABLE IMAGE SCOUT V3",
@@ -825,7 +833,8 @@ class App:
             if script not in all_scripts:
                 continue
             title = title.removeprefix("FABLE ")
-            text = f"Astra {title}  {glyph}\n{desc}"
+            display_title = title if title.startswith("Astra") else f"Astra {title}"
+            text = f"{display_title}  {glyph}\n{desc}"
             b = JetButton(self.mission_grid, style="Mission.TButton", text=text, command=lambda s=script: self.select_script(s))
             b.grid(row=row, column=col, sticky="ew", padx=(0 if col == 0 else 8, 0), pady=4, ipady=10)
             self._register_script_button(script, b)

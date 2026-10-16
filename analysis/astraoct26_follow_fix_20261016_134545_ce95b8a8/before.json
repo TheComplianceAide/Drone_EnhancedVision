@@ -1,0 +1,10 @@
+{
+  "code": {
+    "astra_oct26_runtime.py": "1008121f0aaecd960e21553f73f2eebf531c3117ff9b98e97a9b6a584cce03d5",
+    "astra_oct26.py": "92b40811ad06b2f7de7725be448f866b225a715e7ccd91282a6364546e381447",
+    "tests/test_astra_oct26.py": "93a5f7de9a00065291cd0a9ae880d72bc9bf4ec96b06feb162ebe9ee7eea56e8",
+    "OPERATOR_UPGRADES.md": "925f1025f19f8aecf989b3046f261c5e3b5a189a1b816d2f1d71d3dfe96f042e",
+    "m5_field_launch.py": "f26cd4ec71b6acf08519c85a0c7a2450b89a8f1bb475afc4b03d301dfb6050a9",
+    "app_Launcher_v2.py": "3c8dd7138e723a2dcc740e4325fc8b91d48fa0d0365b1434534ff736e8610e6f"
+  }
+}
