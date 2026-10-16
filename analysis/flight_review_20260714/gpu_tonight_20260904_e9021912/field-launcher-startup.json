@@ -1,0 +1,19 @@
+{
+  "status": "RUNNING_WAITING_FOR_PUBLISHER",
+  "launcher_pid": 25019,
+  "server_pid": 25030,
+  "source_path": "/live/mavic3",
+  "publisher_present": false,
+  "launcher_preferences": {
+    "auto_launch_default_script": true,
+    "auto_start_stream": true,
+    "default_script": "_09_M5_Fable_MotionISR_Rev3.py",
+    "last_ip": "192.168.1.190",
+    "stream_key": "mavic3"
+  },
+  "fresh_heartbeat_age_ms": 220.530029296875,
+  "scope": "Process liveness plus independent fresh NMS heartbeat; no recording or incoming aircraft feed claim",
+  "ui_inspection_tool": "CUA native-app inventory timed out; real Tk callback test separately passed",
+  "independent_native_window_title": "Drone Vision Ops",
+  "window_verification": "System Events window name for exact launcher PID"
+}

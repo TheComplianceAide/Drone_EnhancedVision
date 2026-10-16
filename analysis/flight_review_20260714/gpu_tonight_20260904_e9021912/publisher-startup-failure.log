@@ -1,0 +1,5 @@
+[tcp @ 0xa22c20320] Connection to tcp://127.0.0.1:21935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0xa22c20280] Cannot open connection tcp://127.0.0.1:21935?tcp_nodelay=0
+[out#0/flv @ 0xa22c48240] Error opening output rtmp://127.0.0.1:21935/live/qa_tonight: Connection refused
+Error opening output file rtmp://127.0.0.1:21935/live/qa_tonight.
+Error opening output files: Connection refused

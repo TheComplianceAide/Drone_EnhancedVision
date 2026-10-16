@@ -1,0 +1,21 @@
+[
+  {
+    "app": "_09_M5_Fable_MotionISR_Rev3.py",
+    "command": [
+      "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python",
+      "/tmp/drone-tonight-gpu-20260904/gui_reconnect.py",
+      "_09_M5_Fable_MotionISR_Rev3.py",
+      "--source",
+      "rtmp://127.0.0.1:21935/live/qa_tonight",
+      "--device",
+      "mps",
+      "--require-mps",
+      "--telemetry-jsonl",
+      "/tmp/drone-tonight-gpu-20260904/rtmp-reconnect/motion-live-telemetry.jsonl",
+      "-ApplePersistenceIgnoreState",
+      "YES"
+    ],
+    "exit_code": 0,
+    "wall_s": 65.68238091468811
+  }
+]

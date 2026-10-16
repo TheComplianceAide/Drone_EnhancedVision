@@ -1,0 +1,31 @@
+{
+  "counts": {
+    "baseline": {
+      "background_region_follow": 183,
+      "negative_window_frames": 187,
+      "total_tracking_frames": 455,
+      "losses": 5,
+      "reacquired": 5
+    },
+    "candidate": {
+      "background_region_follow": 0,
+      "negative_window_frames": 187,
+      "total_tracking_frames": 211,
+      "losses": 7,
+      "reacquired": 6
+    }
+  },
+  "timing_ms": {
+    "baseline": {
+      "p50": 2.4106244964059442,
+      "p95": 2.8570228809257965,
+      "max": 4.385666979942471
+    },
+    "candidate": {
+      "p50": 0.2050624752882868,
+      "p95": 2.5510954874334857,
+      "max": 3.9393329643644392
+    }
+  },
+  "decoded": 780
+}

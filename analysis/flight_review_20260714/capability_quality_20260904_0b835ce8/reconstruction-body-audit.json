@@ -1,0 +1,41 @@
+{
+  "m5_nightvision_rev3.py": {
+    "changed_function_bodies": [],
+    "baseline_sha256": "f8e8e7894793759754379d5f3b3b5e31766b85da8b1f6dc13c4e0835d4d0a2c9",
+    "candidate_sha256": "8148d1c1fbfb0eb2e37b6992d56d120f43f0d2fcfd1ec67ece3603a3d9b28822"
+  },
+  "m5_superres_mps.py": {
+    "changed_function_bodies": [],
+    "baseline_sha256": "9fb3719ead887e87073041d5058a68182a6a6b8c004601173f56e3d431eb7846",
+    "candidate_sha256": "9baad35fe27bbe0e2bbf05b352e69cd34df2cd26eb430fe9ca9afe45314765ae"
+  },
+  "_11_M5_Fable_SuperRes_Rev3.py": {
+    "changed_function_bodies": [
+      "run_gui"
+    ],
+    "baseline_sha256": "1e81e58d6dc0dd15359bba8469d1ceba99cb99f9ba0c2b57265667d2e4f7ea8d",
+    "candidate_sha256": "d6f42cb61ef1bf7431641512439bd85e6e247b001e69afcf3a6b5e5e265778f6"
+  },
+  "_12_M5_NightVision_Max_Rev3.py": {
+    "changed_function_bodies": [
+      "main"
+    ],
+    "baseline_sha256": "07c12a12e699039d5e14f65880eb764e8db43623eb2a309b6625fd2e35925e64",
+    "candidate_sha256": "6943ae1211f735e157d9b9cdff07b1b91e1402e341de416a2db9514ac03e219d"
+  },
+  "_09_M5_Fable_MotionISR_Rev3.py": {
+    "changed_function_bodies": [
+      "render",
+      "run_interactive"
+    ],
+    "baseline_sha256": "f801621a8809c0ec232450fd0e0e41d813019dad98974ab97f93f6f979736eb7",
+    "candidate_sha256": "7c818e08660ec9f99c1830cd1381bc326d3b18e79cdee34de30eaecb7dfa267c"
+  },
+  "_10_M5_Fable_ImageScout_Rev3.py": {
+    "changed_function_bodies": [
+      "run_interactive"
+    ],
+    "baseline_sha256": "2507df3f24289382e5a2f30d1129342ee43e13655a24758e88b55347be9984e0",
+    "candidate_sha256": "65824b8d5e0ce4ebc2ff53e1400b3efa3933ca492e9b75fece45b90f14da071b"
+  }
+}

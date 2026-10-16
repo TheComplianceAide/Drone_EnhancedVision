@@ -1,0 +1,35 @@
+{
+  "schema": "m5.recorder-regression.v1",
+  "case": "duplicate-launch-six-seconds-apart",
+  "source": "sanitized observations from the local July 14 recording status and logs",
+  "observed": {
+    "primary": {
+      "started_local": "2026-07-14 19:13:45 EDT",
+      "stopped_local": "2026-07-14 20:19:04 EDT",
+      "final_state": "stopped_by_user",
+      "segment_count": 7,
+      "raw_media_catalog": "../flight_scenes/2026-07-14.json"
+    },
+    "duplicate": {
+      "started_local": "2026-07-14 19:13:51 EDT",
+      "start_offset_s": 6,
+      "final_state": "stopped_process_not_running",
+      "video_count": 1,
+      "video_duration_s": 20.254021,
+      "video_bytes": 13817360,
+      "video_sha256": "0f70aff625db7dc5269d82924f87825fb94ae541b1b242e6ae7c5b694475e8a1"
+    }
+  },
+  "expected_future_assertions": [
+    "Only one recorder wrapper may own the same live source at a time.",
+    "A second launch is refused before it writes a media file.",
+    "Recording-active state requires a live wrapper, live FFmpeg child, and growing output file.",
+    "A stale PID or status file never reports active recording.",
+    "Stopping first disables wrapper reconnect, then sends FFmpeg SIGINT, waits for container finalization, and probes every completed segment.",
+    "The final receipt records segment paths, byte sizes, durations, process exits, and stop reason."
+  ],
+  "limitations": [
+    "This is a sanitized historical fixture, not proof that the current wrapper passes these assertions.",
+    "Raw logs and media remain local and immutable."
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "app": "_11_M5_Fable_SuperRes_Rev4.py",
+    "command": [
+      "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python",
+      "/tmp/drone-tonight-gpu-20260904/gui_rehearsal.py",
+      "_11_M5_Fable_SuperRes_Rev4.py",
+      "--source",
+      "rtmp://127.0.0.1:21935/live/qa_tonight",
+      "--quality-device",
+      "mps",
+      "--require-mps",
+      "--zoom",
+      "4",
+      "--output-dir",
+      "/tmp/drone-tonight-gpu-20260904/rtmp-superres-balanced/qa-superres-output",
+      "-ApplePersistenceIgnoreState",
+      "YES"
+    ],
+    "exit_code": 0,
+    "wall_s": 43.380638122558594
+  }
+]

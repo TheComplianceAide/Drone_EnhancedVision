@@ -1,0 +1,35 @@
+{
+  "status": "PASS_COMPILATION_WITH_EXISTING_UNIT_FAILURE",
+  "tests": {
+    "total": 176,
+    "passed": 175,
+    "failed": 1,
+    "failure": "test_file_decoder_preserves_nonuniform_pts_and_prompt_close",
+    "preexisting": true
+  },
+  "source_matches_shared_snapshot": {
+    "_AstraOct26.py": true,
+    "astra_oct26.py": true,
+    "astra_oct26_runtime.py": true,
+    "astra_oct26_models.py": true,
+    "astra_oct26_decode.py": true,
+    "astra_oct26_models.json": true,
+    "astra_oct26_validation.py": true,
+    "app_Launcher_v2.py": true,
+    "m5_field_launch.py": true,
+    "tests/test_astra_oct26.py": true,
+    "AGENTS.md": true,
+    "README.md": true
+  },
+  "unchanged_shared_core_sha256": {
+    "_09_M5_Fable_MotionISR_Rev3.py": "cbb54ccaa7d2d225f80d9c49952fb9fbd4dc3e94030f12d2db9c261a44c896a5",
+    "m5_gpu_runtime.py": "8b815775e29a0e319f8618b6b7c7a81c0052c3b11afa7521272fc68d66d70ab7",
+    "m5_operator_view.py": "71a8d3c26200e1023174c56ea020b5af1961903ff4115edd9a545fba02f822e3",
+    "m5_motion_metal.py": "d778fa6b1b740efd7a71159bac10556d62ba4024dd1264fdb5f3769cd8e89e07",
+    "ops_window.py": "46655cb0e38b7f043d12fb070591562e317049807c00ded0e319c1ac05cc783c",
+    "rtmp_latest.py": "e9021912990e237b7607fbef4ce355b5433f00ba89dbfd5d0c3c92ef61ea7040"
+  },
+  "worktree": "/Users/randyblasik/.codex/worktrees/astra-demo-workflow-sync/Drone_EnhancedVision",
+  "no_source_behavior_changes_this_turn": true,
+  "git_diff_check": "Source/docs pass. Retained follow_fix.patch has valid space-prefixed blank context lines that git diff --check reports as trailing whitespace; evidence left unchanged."
+}

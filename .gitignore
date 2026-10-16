@@ -22,3 +22,6 @@ events/
 dist/
 build/
 *.egg-info/
+
+# Pinned local RTMP server dependency
+node_modules/

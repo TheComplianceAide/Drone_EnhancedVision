@@ -1,0 +1,32 @@
+[h264 @ 0x70b408a80] missing picture in access unit with size 30
+[h264 @ 0x70b408e00] no frame!
+[h264 @ 0x70b408a80] missing picture in access unit with size 30
+[h264 @ 0x70b409180] no frame!
+[h264 @ 0x70b408a80] missing picture in access unit with size 30
+[h264 @ 0x70b409500] no frame!
+[h264 @ 0x70b408a80] missing picture in access unit with size 30
+[h264 @ 0x70b409880] no frame!
+soft_barn_soak {'brightness_ratio_median': 4.105263157894737, 'normalized_noise_ratio_median': 0.4153126067789974}
+[h264 @ 0x70b408a80] missing picture in access unit with size 30
+[h264 @ 0x70b408e00] no frame!
+[h264 @ 0x70b408a80] missing picture in access unit with size 30
+[h264 @ 0x70b409180] no frame!
+[h264 @ 0x70b408a80] missing picture in access unit with size 30
+[h264 @ 0x70b409500] no frame!
+[h264 @ 0x70b408a80] missing picture in access unit with size 30
+[h264 @ 0x70b409880] no frame!
+[h264 @ 0x70b408a80] missing picture in access unit with size 30
+[h264 @ 0x70b409c00] no frame!
+construction_facade {'brightness_ratio_median': 4.875, 'normalized_noise_ratio_median': 0.49691853412306175}
+[h264 @ 0x70b408a80] missing picture in access unit with size 30
+[h264 @ 0x70b408e00] no frame!
+[h264 @ 0x70b408a80] missing picture in access unit with size 30
+[h264 @ 0x70b409180] no frame!
+[h264 @ 0x70b408a80] missing picture in access unit with size 30
+[h264 @ 0x70b409500] no frame!
+[h264 @ 0x70b408a80] missing picture in access unit with size 30
+[h264 @ 0x70b409880] no frame!
+[h264 @ 0x70b408a80] missing picture in access unit with size 30
+[h264 @ 0x70b409c00] no frame!
+skyline_rail {'brightness_ratio_median': 3.6666666666666665, 'normalized_noise_ratio_median': 0.59432144471449}
+PASS_METRICS_REVIEW_REQUIRED []

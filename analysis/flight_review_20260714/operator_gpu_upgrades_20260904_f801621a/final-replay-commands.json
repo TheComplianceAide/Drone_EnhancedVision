@@ -1,0 +1,74 @@
+[
+  {
+    "command": [
+      ".venv/bin/python",
+      "m5_v3_validation.py",
+      "--replay-frames",
+      "60",
+      "--require-recordings",
+      "--json-out",
+      "/tmp/drone-upgrade-20260904/final-v3-source-smoke.json"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "m5_nightvision_rev3_validation.py",
+      "--candidate-device",
+      "mps",
+      "--require-mps",
+      "--frames",
+      "64",
+      "--truth-max-width",
+      "640",
+      "--output-dir",
+      "/tmp/drone-upgrade-20260904/final-night-validation"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "m5_superres_ab_validation.py",
+      "--baseline",
+      "_11_M5_Fable_SuperRes_Rev1.py",
+      "--candidate",
+      "_11_M5_Fable_SuperRes_Rev4.py",
+      "--scenes",
+      "all",
+      "--max-frames",
+      "256",
+      "--proc-max-width",
+      "640",
+      "--candidate-quality-device",
+      "mps",
+      "--require-mps",
+      "--output-dir",
+      "/tmp/drone-upgrade-20260904/final-superres-ab"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "m5_superres_v3_validation.py",
+      "--python",
+      ".venv/bin/python",
+      "--candidate",
+      "_11_M5_Fable_SuperRes_Rev4.py",
+      "--scenes",
+      "all",
+      "--milestones",
+      "4,8,16,32,64",
+      "--max-frames",
+      "256",
+      "--candidate-quality-device",
+      "mps",
+      "--require-mps",
+      "--output-dir",
+      "/tmp/drone-upgrade-20260904/final-superres-independent"
+    ],
+    "exit_code": 0
+  }
+]

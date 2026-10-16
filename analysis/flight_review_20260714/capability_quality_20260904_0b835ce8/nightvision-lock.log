@@ -1,0 +1,3372 @@
+[h264 @ 0x843e6d500] missing picture in access unit with size 30
+[h264 @ 0x843e6d880] no frame!
+[h264 @ 0x843e6d500] missing picture in access unit with size 30
+[h264 @ 0x843e6dc00] no frame!
+[h264 @ 0x843e6d500] missing picture in access unit with size 30
+[h264 @ 0x843e6df80] no frame!
+[h264 @ 0x843e6d500] missing picture in access unit with size 30
+[h264 @ 0x843e6e300] no frame!
+[h264 @ 0x843e6f800] missing picture in access unit with size 30
+[h264 @ 0x843e6f480] no frame!
+[h264 @ 0x843e6f800] missing picture in access unit with size 30
+[h264 @ 0x843e6f100] no frame!
+[h264 @ 0x843e6f800] missing picture in access unit with size 30
+[h264 @ 0x843e6ed80] no frame!
+[h264 @ 0x843e6f800] missing picture in access unit with size 30
+[h264 @ 0x843e6ea00] no frame!
+[h264 @ 0x843e6f800] missing picture in access unit with size 30
+[h264 @ 0x843e6e680] no frame!
+[h264 @ 0x843e6d180] missing picture in access unit with size 30
+[h264 @ 0x843e6fb80] no frame!
+[h264 @ 0x843e6d180] missing picture in access unit with size 30
+[h264 @ 0x843e6d880] no frame!
+[h264 @ 0x843e6d180] missing picture in access unit with size 30
+[h264 @ 0x843e6dc00] no frame!
+[h264 @ 0x843e6d180] missing picture in access unit with size 30
+[h264 @ 0x843e6df80] no frame!
+[h264 @ 0x843e6d180] missing picture in access unit with size 30
+[h264 @ 0x843e6e300] no frame!
+{
+  "command": "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python m5_nightvision_rev3_validation.py --candidate-device mps --require-mps --frames 64 --truth-max-width 640 --output-dir /tmp/drone-capability-20260904/nightvision-lock",
+  "conclusion": "Rev3 materially promotes 2 of 3 canonical scenes over the accepted Rev2 floor; scenes without sufficient registered subpixel support return the Rev2 terminal byte-for-byte. Original-resolution review and native night validation remain required.",
+  "controls": {
+    "candidate_device": "mps",
+    "catalog_suite": "m5_nightvision_rev3_validation",
+    "execution_order": "Rev1 and Rev3 order alternated for each byte-identical observation; Rev2 floor is embedded in Rev3.",
+    "frames_per_scene": 64,
+    "ibp_iterations": 3,
+    "require_mps": true,
+    "scenes": [
+      "superres.soft_barn_soak",
+      "superres.construction_facade",
+      "superres.skyline_rail"
+    ],
+    "truth_max_width": 640
+  },
+  "created_utc": "2026-09-04T23:48:40.492317+00:00",
+  "failures": [],
+  "limits": {
+    "existing_rev2_vs_rev1": {
+      "clipping_fraction_max": 0.02,
+      "clipping_increase_max": 0.01,
+      "flat_false_detail_ratio_max": 0.88,
+      "ghosting_ratio_max": 1.15,
+      "shadow_snr_gain_db_min": 1.5,
+      "source_edge_cnr_ratio_min": 1.2,
+      "source_edge_correlation_gain_min": -0.005
+    },
+    "incremental_rev3_vs_rev2": {
+      "clipping_increase_max": 0.003,
+      "detector_phases_min": 3,
+      "flat_false_detail_ratio_max": 1.02,
+      "forward_gain_db_min": 0.001,
+      "ghosting_ratio_max": 1.05,
+      "selected_changed_fraction_min": 0.001,
+      "selector_novel_edge_rate_max": 0.006,
+      "selector_supported_edge_cnr_ratio_min": 1.005,
+      "selector_unsupported_detail_ratio_max": 0.96,
+      "shadow_snr_gain_db_min": 0.04,
+      "source_edge_cnr_ratio_min": 1.005,
+      "source_edge_correlation_gain_min": 0.0015,
+      "split_consistency_min": 0.72
+    }
+  },
+  "promoted_scenes": [
+    "superres.soft_barn_soak",
+    "superres.construction_facade"
+  ],
+  "provenance": {
+    "catalog": {
+      "bytes": 20429,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/testdata/flight_scenes/2026-07-14.json",
+      "sha256": "5b1f2cf5b08e03f5b1f33ec97d445d208636b521dc3919e903132c3cf79251f1"
+    },
+    "catalog_module": {
+      "bytes": 14018,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_flight_catalog.py",
+      "sha256": "5b372cab61a1e4180f64e935545e583cd806ff094eeff570f10be60855c499a0"
+    },
+    "rev1_baseline": {
+      "bytes": 47424,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/_12_M5_NightVision_Max_Rev1.py",
+      "sha256": "e4c1e12b04581bb0b8b95ff33c8f1b7bbcebf414d976ba8d4eed6f6090719435"
+    },
+    "rev2_accepted_floor": {
+      "bytes": 18316,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/_12_M5_NightVision_Max_Rev2.py",
+      "sha256": "f4f3d57066b25b2641f7e95beab26d75f0e86b1cafe599757e8783259b9fc6ae"
+    },
+    "rev2_core": {
+      "bytes": 24699,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_nightvision_rev2.py",
+      "sha256": "10c4d58353194bd0fe28711838631ba3b0f2b9f7b6628c4360dfd9a6ea24b958"
+    },
+    "rev3_core": {
+      "bytes": 45131,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_nightvision_rev3.py",
+      "sha256": "8148d1c1fbfb0eb2e37b6992d56d120f43f0d2fcfd1ec67ece3603a3d9b28822"
+    },
+    "rev3_field_app": {
+      "bytes": 37764,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/_12_M5_NightVision_Max_Rev3.py",
+      "sha256": "6943ae1211f735e157d9b9cdff07b1b91e1402e341de416a2db9514ac03e219d"
+    },
+    "shared_rev2_validator": {
+      "bytes": 27612,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_nightvision_ab_validation.py",
+      "sha256": "522d1440b5843e3814da138d5831e7925f9310523b7c4d36645cee3ebfdf2936"
+    },
+    "validator": {
+      "bytes": 40621,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_nightvision_rev3_validation.py",
+      "sha256": "7830249a93f10611911a37fc99880e8e7ae35e2dab3dbed621392d61d345dc23"
+    }
+  },
+  "receipt": {
+    "bytes": 93242,
+    "path": "/private/tmp/drone-capability-20260904/nightvision-lock/nightvision_rev3_validation.json",
+    "sha256": "6dbaf9145f07fa30a5a34463d58c0b742630c5d464dd558c791ad5fc64e92a7c"
+  },
+  "runtime": {
+    "mps": {
+      "mps_available": true,
+      "mps_built": true,
+      "platform": "Darwin 25.1.0 arm64",
+      "reason": "available",
+      "torch_imported": true,
+      "torch_version": "2.10.0"
+    },
+    "numpy": "2.4.2",
+    "opencv": "4.13.0",
+    "platform": "macOS-26.1-arm64-arm-64bit",
+    "python": "3.11.14",
+    "torch": "2.10.0"
+  },
+  "scenes": {
+    "superres.construction_facade": {
+      "artifacts": {
+        "comparison.png": {
+          "bytes": 2000459,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_construction_facade/comparison.png",
+          "sha256": "ccd54d2ea2e9f1136d90c90629f755fbc10cf640eccbd0bf493dedabf966ed8c"
+        },
+        "derived_clean_lowlight.png": {
+          "bytes": 191553,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_construction_facade/derived_clean_lowlight.png",
+          "sha256": "18e9cd4b08ec94c9b169022af5982384b00a8a8bbdd731f12988b3be7dfb76ff"
+        },
+        "detail_crops_3x.png": {
+          "bytes": 851160,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_construction_facade/detail_crops_3x.png",
+          "sha256": "d00f67262ca8ece96c95be4bb8496aa98af904141c12aa7b39b23ece585d021e"
+        },
+        "ghost_mask.png": {
+          "bytes": 2078,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_construction_facade/ghost_mask.png",
+          "sha256": "3254757668e06f24eb1f22c7441787295fa8c423f3844e87b87713c1cb5d44f3"
+        },
+        "raw_detector_nearest.png": {
+          "bytes": 334517,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_construction_facade/raw_detector_nearest.png",
+          "sha256": "30d89ea3202c1bb2a604bf35a37fd2e223a8366480054e3efec71c08114b7629"
+        },
+        "rev1.png": {
+          "bytes": 279412,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_construction_facade/rev1.png",
+          "sha256": "b79a9295941bb54703f945402b3c95501cfe001a35f31472eeb7c4ef4fc2e103"
+        },
+        "rev2_floor.png": {
+          "bytes": 283926,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_construction_facade/rev2_floor.png",
+          "sha256": "cc72e481ded946d2678ece30bc65cd9432a8f9e662c27bc7fbb4e6ed59224fa1"
+        },
+        "rev3_confidence.png": {
+          "bytes": 189432,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_construction_facade/rev3_confidence.png",
+          "sha256": "95514430aacd0ba95573802258e9af7889372e7a7a492cd65272b06afd8c7065"
+        },
+        "rev3_detail_support.png": {
+          "bytes": 66812,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_construction_facade/rev3_detail_support.png",
+          "sha256": "8e7325256ee753bdfad556291826e33e2df35e5e52841dbe8e3eadbd0fccd9b2"
+        },
+        "rev3_reconstruction_preterminal.png": {
+          "bytes": 195685,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_construction_facade/rev3_reconstruction_preterminal.png",
+          "sha256": "c22a60466dca66ba1985a074debba2effa937f4c993a7eceaa631e6872c9775c"
+        },
+        "rev3_selected.png": {
+          "bytes": 262452,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_construction_facade/rev3_selected.png",
+          "sha256": "bc041301e7f9f2981b3b61fb4ecb2f5da0328d5459eea79e83d6ae95e63d1b25"
+        },
+        "rev3_split_consistency.png": {
+          "bytes": 210789,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_construction_facade/rev3_split_consistency.png",
+          "sha256": "2d8df822f3c8c80f4dee65e17f8100a7a84c2ce5e7dc9f05fcc9a5e32374dbe5"
+        },
+        "rev3_trial.png": {
+          "bytes": 262452,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_construction_facade/rev3_trial.png",
+          "sha256": "bc041301e7f9f2981b3b61fb4ecb2f5da0328d5459eea79e83d6ae95e63d1b25"
+        },
+        "source_reference.png": {
+          "bytes": 461509,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_construction_facade/source_reference.png",
+          "sha256": "45ed8ad5269ba699274b71edd7cc1a2c1b37e9fa93c296281d40ceab5bb1488c"
+        }
+      },
+      "existing_rev1_relative_comparisons": {
+        "clipping_increase": 0.0,
+        "flat_false_detail_ratio": 0.628124392176577,
+        "ghosting_ratio": 1.0471048545906247,
+        "shadow_snr_gain_db": 3.552924872148023,
+        "source_edge_cnr_ratio": 1.505380352759143,
+        "source_edge_correlation_gain": 0.024066144222451347
+      },
+      "failures": [],
+      "final_result": {
+        "reconstruction_receipt": {
+          "accepted_frames": 64,
+          "actual_backend": "mps",
+          "candidate_forward_mse": 0.0003112449194304645,
+          "compute_ms": 1911.9625422172248,
+          "detector_phases_xy": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "download_ms": 2.7801250107586384,
+          "ecc_registration_count": 63,
+          "fallback_reason": "",
+          "fallback_used": false,
+          "forward_gain_db": 0.006581534278780853,
+          "forward_projection_count": 10400,
+          "ibp_iterations_requested": 3,
+          "ibp_iterations_run": 3,
+          "last_registration_correlation": 0.7316574925912912,
+          "mps_current_allocated_bytes": 201525248,
+          "mps_driver_allocated_bytes": 24746262528,
+          "native_input_shape": [
+            231,
+            320,
+            3
+          ],
+          "native_upload_count": 64,
+          "output_download_count": 64,
+          "output_shape": [
+            462,
+            640,
+            3
+          ],
+          "persistent_native_bank": true,
+          "prior_forward_mse": 0.00031171695445664227,
+          "reconstruction_count": 64,
+          "registration_backend": "OpenCV local-contrast ECC translation with Rev2 phase-correlation fallback",
+          "registration_fallback_count": 0,
+          "requested_backend": "mps",
+          "split_consistency_mean": 0.934403657913208,
+          "split_disagreement_rmse": 0.003016483038663864,
+          "synchronization_count": 64,
+          "total_ms": 2051.43054202199,
+          "upload_ms": 28.571750037372112
+        },
+        "rev1_stack": {
+          "frames": 24,
+          "quality": 0.9797206151637905,
+          "rejects": 0,
+          "resets": 0,
+          "response": 0.7761830848455429,
+          "shift": [
+            0.5381499228022619,
+            0.3982314250454664
+          ],
+          "status": "stack 24/24"
+        },
+        "rev2_floor_receipt": {
+          "accepted_frames": 64,
+          "actual_backend": "mps",
+          "compute_ms": 45.38425011560321,
+          "download_count": 64,
+          "download_ms": 37.22979174926877,
+          "fallback_reason": "",
+          "fallback_used": false,
+          "frame_shape": [
+            231,
+            320,
+            3
+          ],
+          "persistent_bank": true,
+          "requested_backend": "mps",
+          "robust_iterations": 2,
+          "synchronization_count": 64,
+          "total_ms": 85.57991730049253,
+          "upload_count": 64,
+          "upload_ms": 0.7544998079538345
+        },
+        "stats": {
+          "forward_gain_db": 0.006581534278780853,
+          "frames": 64,
+          "occupied_detector_phases": 4,
+          "output_scale": 2,
+          "split_consistency_mean": 0.934403657913208,
+          "split_disagreement_rmse": 0.003016483038663864,
+          "status": "2x forward reconstruction 64f 4/4 phases"
+        },
+        "terminal_refinement_receipt": {
+          "actual_backend": "mps",
+          "compute_ms": 44.05416687950492,
+          "detail_restore": 0.65,
+          "download_ms": 0.3955001011490822,
+          "fallback_reason": "",
+          "fallback_used": false,
+          "input_uploads": 1,
+          "kernel": "bounded 5x5 bilateral plus split-supported detail restore",
+          "output_downloads": 1,
+          "requested_backend": "mps",
+          "sigma_color_code_values": 4.0,
+          "sigma_space": 1.55,
+          "synchronization_count": 3,
+          "total_ms": 79.06545791774988,
+          "upload_ms": 33.73266709968448
+        }
+      },
+      "fixture": {
+        "black_offset_code_values": 1.8,
+        "decoded_input_sha256": "68fe297af789cd954712088702197bcfd0784338aece5be925c2fde7ce4f347b",
+        "detector_integration": "OpenCV INTER_AREA 2x",
+        "detector_observation_wh": [
+          320,
+          231
+        ],
+        "exposure_scale": 0.115,
+        "frames": 64,
+        "jpeg_quality": 88,
+        "kind": "deterministic flight-derived 2x detector low-light fixture",
+        "limitations": [
+          "The fixture is derived from real flight structure but simulates low exposure and detector sampling; it is not native night footage.",
+          "The sensor response/noise model is simplified and does not characterize the Mavic 3 camera."
+        ],
+        "poisson_photons_at_unity": 150.0,
+        "read_noise_sigma_code_values": 2.35,
+        "scale": 2,
+        "seed": 2026072712,
+        "source_truth_wh": [
+          640,
+          462
+        ],
+        "subpixel_shifts_lr_xy": [
+          [
+            0.0,
+            0.08
+          ],
+          [
+            0.528929234557197,
+            0.07665951004101577
+          ],
+          [
+            0.05394303293025161,
+            0.566917011993215
+          ],
+          [
+            0.5716558948544038,
+            0.5515861237792001
+          ],
+          [
+            0.3296704675630112,
+            0.7819471623525018
+          ],
+          [
+            0.826902016238024,
+            0.2596402215493893
+          ],
+          [
+            0.06372523777888695,
+            -0.013471795835926144
+          ],
+          [
+            0.541923547334982,
+            -0.03545875325325672
+          ],
+          [
+            0.014447701431538633,
+            0.4455155295594278
+          ],
+          [
+            0.48501642691656777,
+            0.4310399330327949
+          ],
+          [
+            0.20761310872732053,
+            0.6723233467880327
+          ],
+          [
+            0.6859466574259345,
+            0.1700937125458225
+          ],
+          [
+            -0.07705047444586531,
+            -0.07546276792387807
+          ],
+          [
+            0.420380813938467,
+            -0.06471718293040686
+          ],
+          [
+            -0.07141181435425878,
+            0.4514330795568836
+          ],
+          [
+            0.44646081141789906,
+            0.4716392747961494
+          ],
+          [
+            0.2215797152009566,
+            0.7442139379797397
+          ],
+          [
+            0.7505451712059816,
+            0.26727180821534835
+          ],
+          [
+            0.029436840845790773,
+            0.03888727090303522
+          ],
+          [
+            0.5543443721715852,
+            0.057255170141124884
+          ],
+          [
+            0.07189664766493016,
+            0.5708415613553055
+          ],
+          [
+            0.5797180491792481,
+            0.578511814459832
+          ],
+          [
+            0.32674998671142913,
+            0.8296253693677411
+          ],
+          [
+            0.8133941735926823,
+            0.3240892306043164
+          ],
+          [
+            0.04145825647367814,
+            0.062365733568327045
+          ],
+          [
+            0.5139111588304347,
+            0.045433933863095646
+          ],
+          [
+            -0.015518748900311779,
+            0.5247078441611936
+          ],
+          [
+            0.45715173323085667,
+            0.5019183468260763
+          ],
+          [
+            0.18562152725892261,
+            0.7289686440331999
+          ],
+          [
+            0.672804645559425,
+            0.2077753170760966
+          ],
+          [
+            -0.07956420705631914,
+            -0.05989173164779189
+          ],
+          [
+            0.4288355825004411,
+            -0.0725570871667898
+          ],
+          [
+            -0.05313285788160761,
+            0.42083696284255745
+          ],
+          [
+            0.47208998479311504,
+            0.420842096120583
+          ],
+          [
+            0.2510903170942896,
+            0.6774578839756944
+          ],
+          [
+            0.7799430800916606,
+            0.19013182708537218
+          ],
+          [
+            0.05474318766796409,
+            -0.04219450404284877
+          ],
+          [
+            0.5721340616053113,
+            -0.02099707724408344
+          ],
+          [
+            0.07976192870056002,
+            0.501953862697229
+          ],
+          [
+            0.5765943929263105,
+            0.524741631170508
+          ],
+          [
+            0.3130601653900253,
+            0.7954631703814379
+          ],
+          [
+            0.7909910402968092,
+            0.3123879779882981
+          ],
+          [
+            0.013373970197082957,
+            0.07410262524437741
+          ],
+          [
+            0.4839467959713118,
+            0.07962879561137633
+          ],
+          [
+            -0.04330765239816088,
+            0.57850498617373
+          ],
+          [
+            0.4352993868190761,
+            0.5708250487849952
+          ],
+          [
+            0.17266335050605353,
+            0.8072303522884892
+          ],
+          [
+            0.6704944668994132,
+            0.2888562203627626
+          ],
+          [
+            -0.0709137157793792,
+            0.01723711808788887
+          ],
+          [
+            0.44727594030128814,
+            -0.0058214946843454666
+          ],
+          [
+            -0.027398449477569004,
+            0.47160605865690375
+          ],
+          [
+            0.501635412348426,
+            0.45140485389696783
+          ],
+          [
+            0.28044792878512737,
+            0.6852619390773458
+          ],
+          [
+            0.805139460898453,
+            0.17452544531962952
+          ],
+          [
+            0.0723681256500775,
+            -0.07990799863637209
+          ],
+          [
+            0.5798021040891883,
+            -0.07766814591519054
+          ],
+          [
+            0.07643524210842141,
+            0.4310579483450564
+          ],
+          [
+            0.5627232286822099,
+            0.44554154838793103
+          ],
+          [
+            0.29052192050182857,
+            0.7145730962006045
+          ],
+          [
+            0.7628361604784475,
+            0.2365632244237723
+          ],
+          [
+            -0.016586913648540702,
+            0.009675487994277933
+          ],
+          [
+            0.4562349731740716,
+            0.0319797298024546
+          ],
+          [
+            -0.06501974893344872,
+            0.5516132724532283
+          ],
+          [
+            0.42252564695574246,
+            0.5669364746444936
+          ]
+        ],
+        "transient_rects_lr_xyxy": [
+          [
+            55,
+            166,
+            62,
+            173
+          ],
+          [
+            58,
+            171,
+            65,
+            178
+          ],
+          [
+            61,
+            173,
+            68,
+            180
+          ],
+          [
+            64,
+            173,
+            71,
+            180
+          ],
+          [
+            67,
+            170,
+            74,
+            177
+          ],
+          [
+            70,
+            164,
+            77,
+            171
+          ],
+          [
+            73,
+            160,
+            80,
+            167
+          ],
+          [
+            76,
+            158,
+            83,
+            165
+          ],
+          [
+            79,
+            159,
+            86,
+            166
+          ],
+          [
+            82,
+            163,
+            89,
+            170
+          ],
+          [
+            85,
+            168,
+            92,
+            175
+          ],
+          [
+            88,
+            172,
+            95,
+            179
+          ],
+          [
+            91,
+            174,
+            98,
+            181
+          ],
+          [
+            94,
+            172,
+            101,
+            179
+          ],
+          [
+            97,
+            167,
+            104,
+            174
+          ],
+          [
+            100,
+            162,
+            107,
+            169
+          ],
+          [
+            103,
+            158,
+            110,
+            165
+          ],
+          [
+            106,
+            158,
+            113,
+            165
+          ],
+          [
+            109,
+            161,
+            116,
+            168
+          ],
+          [
+            113,
+            165,
+            120,
+            172
+          ],
+          [
+            116,
+            170,
+            123,
+            177
+          ],
+          [
+            119,
+            173,
+            126,
+            180
+          ],
+          [
+            122,
+            173,
+            129,
+            180
+          ],
+          [
+            125,
+            170,
+            132,
+            177
+          ],
+          [
+            128,
+            165,
+            135,
+            172
+          ],
+          [
+            131,
+            160,
+            138,
+            167
+          ],
+          [
+            134,
+            158,
+            141,
+            165
+          ],
+          [
+            137,
+            159,
+            144,
+            166
+          ],
+          [
+            140,
+            163,
+            147,
+            170
+          ],
+          [
+            143,
+            168,
+            150,
+            175
+          ],
+          [
+            146,
+            172,
+            153,
+            179
+          ],
+          [
+            149,
+            174,
+            156,
+            181
+          ],
+          [
+            152,
+            172,
+            159,
+            179
+          ],
+          [
+            155,
+            167,
+            162,
+            174
+          ],
+          [
+            158,
+            162,
+            165,
+            169
+          ],
+          [
+            161,
+            158,
+            168,
+            165
+          ],
+          [
+            164,
+            158,
+            171,
+            165
+          ],
+          [
+            167,
+            160,
+            174,
+            167
+          ],
+          [
+            170,
+            165,
+            177,
+            172
+          ],
+          [
+            173,
+            170,
+            180,
+            177
+          ],
+          [
+            177,
+            173,
+            184,
+            180
+          ],
+          [
+            180,
+            173,
+            187,
+            180
+          ],
+          [
+            183,
+            170,
+            190,
+            177
+          ],
+          [
+            186,
+            165,
+            193,
+            172
+          ],
+          [
+            189,
+            160,
+            196,
+            167
+          ],
+          [
+            192,
+            158,
+            199,
+            165
+          ],
+          [
+            195,
+            159,
+            202,
+            166
+          ],
+          [
+            198,
+            163,
+            205,
+            170
+          ],
+          [
+            201,
+            168,
+            208,
+            175
+          ],
+          [
+            204,
+            172,
+            211,
+            179
+          ],
+          [
+            207,
+            174,
+            214,
+            181
+          ],
+          [
+            210,
+            172,
+            217,
+            179
+          ],
+          [
+            213,
+            168,
+            220,
+            175
+          ],
+          [
+            216,
+            162,
+            223,
+            169
+          ],
+          [
+            219,
+            158,
+            226,
+            165
+          ],
+          [
+            222,
+            158,
+            229,
+            165
+          ],
+          [
+            225,
+            160,
+            232,
+            167
+          ],
+          [
+            228,
+            165,
+            235,
+            172
+          ],
+          [
+            231,
+            170,
+            238,
+            177
+          ],
+          [
+            234,
+            173,
+            241,
+            180
+          ],
+          [
+            237,
+            173,
+            244,
+            180
+          ],
+          [
+            241,
+            170,
+            248,
+            177
+          ],
+          [
+            244,
+            165,
+            251,
+            172
+          ],
+          [
+            247,
+            160,
+            254,
+            167
+          ]
+        ]
+      },
+      "incremental_rev3_vs_rev2_comparisons": {
+        "clipping_increase": 0.0,
+        "flat_false_detail_ratio": 0.8277337203499123,
+        "ghosting_ratio": 0.9902824329878095,
+        "selected_changed_fraction": 0.5930803571428571,
+        "shadow_snr_gain_db": 2.1359794805955694,
+        "source_edge_cnr_ratio": 1.278789241941369,
+        "source_edge_correlation_gain": 0.0016729078517156992
+      },
+      "measured_existing_gate_failures_not_enforced": [],
+      "metrics": {
+        "raw": {
+          "clipping_fraction": 0.0013167388167388168,
+          "edge_pixels": 54337.0,
+          "edge_signal": 0.008606169372797012,
+          "flat_false_detail": 0.15046114510837605,
+          "flat_noise": 0.010275037959218025,
+          "flat_pixels": 87943.0,
+          "ghost_pixels": 23900.0,
+          "ghosting_mae": 0.10652259508373355,
+          "mean_luma": 0.06847105920314789,
+          "shadow_snr_db": -1.539470921090287,
+          "source_edge_cnr": 0.8375802996500052,
+          "source_edge_correlation": 0.15777487063117326
+        },
+        "rev1": {
+          "clipping_fraction": 0.0,
+          "edge_pixels": 54337.0,
+          "edge_signal": 0.006105080246925354,
+          "flat_false_detail": 0.025610635979524753,
+          "flat_noise": 0.0027935034595429897,
+          "flat_pixels": 87943.0,
+          "ghost_pixels": 23900.0,
+          "ghosting_mae": 0.054581916254969845,
+          "mean_luma": 0.11270991712808609,
+          "shadow_snr_db": 6.790843265443956,
+          "source_edge_cnr": 2.185456483352317,
+          "source_edge_correlation": 0.8456461438840759
+        },
+        "rev2": {
+          "clipping_fraction": 0.0,
+          "edge_pixels": 54337.0,
+          "edge_signal": 0.006599351763725281,
+          "flat_false_detail": 0.019434589605814484,
+          "flat_noise": 0.0025651445612311363,
+          "flat_pixels": 87943.0,
+          "ghost_pixels": 23900.0,
+          "ghosting_mae": 0.05771382746940178,
+          "mean_luma": 0.13771112263202667,
+          "shadow_snr_db": 8.20778865699641,
+          "source_edge_cnr": 2.5727016962186076,
+          "source_edge_correlation": 0.8680393802548115
+        },
+        "rev3_selected": {
+          "clipping_fraction": 0.0,
+          "edge_pixels": 54337.0,
+          "edge_signal": 0.006964951753616333,
+          "flat_false_detail": 0.01608666515789456,
+          "flat_noise": 0.0021170431282371283,
+          "flat_pixels": 87943.0,
+          "ghost_pixels": 23900.0,
+          "ghosting_mae": 0.05715298948343786,
+          "mean_luma": 0.13710065186023712,
+          "shadow_snr_db": 10.34376813759198,
+          "source_edge_cnr": 3.2899432518486673,
+          "source_edge_correlation": 0.8697122881065272
+        },
+        "rev3_trial": {
+          "clipping_fraction": 0.0,
+          "edge_pixels": 54337.0,
+          "edge_signal": 0.006964951753616333,
+          "flat_false_detail": 0.01608666515789456,
+          "flat_noise": 0.0021170431282371283,
+          "flat_pixels": 87943.0,
+          "ghost_pixels": 23900.0,
+          "ghosting_mae": 0.05715298948343786,
+          "mean_luma": 0.13710065186023712,
+          "shadow_snr_db": 10.34376813759198,
+          "source_edge_cnr": 3.2899432518486673,
+          "source_edge_correlation": 0.8697122881065272
+        }
+      },
+      "pixel_hashes": {
+        "derived_clean_lowlight": "92e936244b214b739655c914226ad8e6a98b851f20b3817e7fbee4a85ac9ab9e",
+        "ghost_mask": "48d505d797694ddb554def529bc9936e84837420b54becf551eb6b92e387a1d1",
+        "raw_detector_nearest": "3f9622e646a608e0b4f62139c50febfdcb3897984d9c979bd26c26bf6e7fe0a4",
+        "rev1": "629a24ff746358fe16d70c111a3d19a9cffc2e56fdd7de7babc3285eb55fc4a7",
+        "rev2_floor": "7733ee397c64a704d327c5c5d5720deb86f71a3ea004551f40c00392ad37a09d",
+        "rev3_confidence": "c10ba9f804faacac48e84811891055c7ba1b10992c382b58bf42b9b2816d2569",
+        "rev3_detail_support": "55dd16b49544db328dc31450ac8688b68d2c0f037130afaa939368efc29aa387",
+        "rev3_reconstruction_preterminal": "ec1ca1d225227df35ef81af7082a98bbdb284a9e0d25b5b26bf493672e97ac14",
+        "rev3_selected": "a078c93af9aa1a6ab41bfa9c4214a4b8352f40e5b0b6198e2ca10e367513ec6b",
+        "rev3_split_consistency": "ce2cd11de9b8e9c9bf405bef24e5a03871e60c4eb46b055132b1176a7d2a918f",
+        "rev3_trial": "a078c93af9aa1a6ab41bfa9c4214a4b8352f40e5b0b6198e2ca10e367513ec6b",
+        "source_reference": "172fd09dea24405fd62ece5a32d36e4ce1217eeef0a271fdb359585defc7f479"
+      },
+      "scene": {
+        "canonical_id": "superres.construction_facade",
+        "decode_failures": 4,
+        "decoded_reference_sha256": "172fd09dea24405fd62ece5a32d36e4ce1217eeef0a271fdb359585defc7f479",
+        "decoded_source_frames": 121,
+        "decoder": "OpenCV 4.13.0 FFmpeg backend",
+        "processing_wh": [
+          640,
+          462
+        ],
+        "purpose": "Short stable hold with roof lines, windows, framing and utility poles.",
+        "roi_xywh": [
+          700,
+          180,
+          720,
+          520
+        ],
+        "seek_pts_s": 217.5,
+        "selected_pts_s": 221.0120625,
+        "source_expected_sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744",
+        "source_id": "seg_191345",
+        "source_path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_191345_attempt1.mp4",
+        "target_pts_s": 221.0
+      },
+      "selector": {
+        "baseline_sha256": "7733ee397c64a704d327c5c5d5720deb86f71a3ea004551f40c00392ad37a09d",
+        "candidate_sha256": "a078c93af9aa1a6ab41bfa9c4214a4b8352f40e5b0b6198e2ca10e367513ec6b",
+        "failures": [],
+        "fallback_byte_identical": false,
+        "metrics": {
+          "changed_fraction": 0.5930803571428571,
+          "forward_gain_db": 0.006581534278780853,
+          "frames": 64,
+          "novel_edge_rate": 0.0,
+          "occupied_detector_phases": 4,
+          "split_consistency_mean": 0.9344431161880493,
+          "supported_edge_cnr_ratio": 1.2424110658566248,
+          "supported_edge_ratio": 0.9533473270178597,
+          "terminal_refinement_receipt": {
+            "actual_backend": "mps",
+            "compute_ms": 44.05416687950492,
+            "detail_restore": 0.65,
+            "download_ms": 0.3955001011490822,
+            "fallback_reason": "",
+            "fallback_used": false,
+            "input_uploads": 1,
+            "kernel": "bounded 5x5 bilateral plus split-supported detail restore",
+            "output_downloads": 1,
+            "requested_backend": "mps",
+            "sigma_color_code_values": 4.0,
+            "sigma_space": 1.55,
+            "synchronization_count": 3,
+            "total_ms": 79.06545791774988,
+            "upload_ms": 33.73266709968448
+          },
+          "unsupported_detail_ratio": 0.7673364743902537
+        },
+        "promoted": true,
+        "selected_sha256": "a078c93af9aa1a6ab41bfa9c4214a4b8352f40e5b0b6198e2ca10e367513ec6b",
+        "status": "REV3_PROMOTED"
+      },
+      "status": "PASS_PROMOTED_METRICS_REVIEW_REQUIRED",
+      "timing_ms": {
+        "note": "Per-frame distributions preserve first-use warm-up and include synchronization/output transfer.",
+        "rev1_update": {
+          "count": 64,
+          "maximum": 164.95545906946063,
+          "mean": 55.49569729191717,
+          "minimum": 0.19837496802210808,
+          "p50": 58.97677061147988,
+          "p90": 78.15040801651776,
+          "p95": 82.26744583807884
+        },
+        "rev2_floor_inside_rev3": {
+          "count": 64,
+          "maximum": 120.18037494271994,
+          "mean": 58.49999405472772,
+          "minimum": 25.39612539112568,
+          "p50": 51.72025039792061,
+          "p90": 92.8463790100068,
+          "p95": 98.49114846438168
+        },
+        "rev3_total_update": {
+          "count": 64,
+          "maximum": 7460.0438750348985,
+          "mean": 1008.396503952099,
+          "minimum": 122.77487479150295,
+          "p50": 625.0158541370183,
+          "p90": 1864.1777875833225,
+          "p95": 4419.313773140308
+        }
+      }
+    },
+    "superres.skyline_rail": {
+      "artifacts": {
+        "comparison.png": {
+          "bytes": 1230814,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_skyline_rail/comparison.png",
+          "sha256": "5e27a1ae175cb1bb46b1eb8738913ffa5169a3fa716aa702eb7b4698c21bf251"
+        },
+        "derived_clean_lowlight.png": {
+          "bytes": 45890,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_skyline_rail/derived_clean_lowlight.png",
+          "sha256": "d46133390e482616b20ca2ad5683b46196a468b311ec895a092b89246ad7bc6b"
+        },
+        "detail_crops_3x.png": {
+          "bytes": 469848,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_skyline_rail/detail_crops_3x.png",
+          "sha256": "6050ba4e7b6173087ceb439aa59b51fd230b10965c1027a24909695735322260"
+        },
+        "ghost_mask.png": {
+          "bytes": 1912,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_skyline_rail/ghost_mask.png",
+          "sha256": "e71a3809c769734724f63ee0adf5e06c2ee9a2b276b302648757594627e17291"
+        },
+        "raw_detector_nearest.png": {
+          "bytes": 306352,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_skyline_rail/raw_detector_nearest.png",
+          "sha256": "c49e39f8a5cde7deeff5ab711903a6f53c5f78d0e6a7e0220a03b9ed0f8d4864"
+        },
+        "rev1.png": {
+          "bytes": 176836,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_skyline_rail/rev1.png",
+          "sha256": "432c94673a7009d5efa52c8db320a1253786aa80e5b3f48bad6e0be5796a2e70"
+        },
+        "rev2_floor.png": {
+          "bytes": 176649,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_skyline_rail/rev2_floor.png",
+          "sha256": "3131ed80ec5e605288e2746fb0577c1ee6f78555621b4d744c64e2a7340b7e0e"
+        },
+        "rev3_confidence.png": {
+          "bytes": 148961,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_skyline_rail/rev3_confidence.png",
+          "sha256": "7da929f8dff7aba3748c396c72f46387516f0cff24a1a57536b29027f13e8955"
+        },
+        "rev3_detail_support.png": {
+          "bytes": 11875,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_skyline_rail/rev3_detail_support.png",
+          "sha256": "f6d968c1102a1fe21d4cb3659c0417998c8a54032f8992ed51f5bd1e21283401"
+        },
+        "rev3_reconstruction_preterminal.png": {
+          "bytes": 153325,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_skyline_rail/rev3_reconstruction_preterminal.png",
+          "sha256": "fbce332516ca2945e7434048be3d558f96b84b63beaf8454118cfb1cc0e55b3c"
+        },
+        "rev3_selected.png": {
+          "bytes": 176649,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_skyline_rail/rev3_selected.png",
+          "sha256": "3131ed80ec5e605288e2746fb0577c1ee6f78555621b4d744c64e2a7340b7e0e"
+        },
+        "rev3_split_consistency.png": {
+          "bytes": 212047,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_skyline_rail/rev3_split_consistency.png",
+          "sha256": "04f349ad1bc5ad0137c360ac9fed1418c30b55b45c7c17f50c72a315c4c7b902"
+        },
+        "rev3_trial.png": {
+          "bytes": 146631,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_skyline_rail/rev3_trial.png",
+          "sha256": "8cd4d7f09bdae4b88859aad5b4ae875e94850c105bbf195080a0b9062ba49847"
+        },
+        "source_reference.png": {
+          "bytes": 138005,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_skyline_rail/source_reference.png",
+          "sha256": "7a26e84bb31bbbcab0be40f02addbd0d7f86ba0d49659be2be60848f332c33bc"
+        }
+      },
+      "existing_rev1_relative_comparisons": {
+        "clipping_increase": 0.0,
+        "flat_false_detail_ratio": 0.7848211574377815,
+        "ghosting_ratio": 0.7828740221785802,
+        "shadow_snr_gain_db": 0.6002034782559749,
+        "source_edge_cnr_ratio": 1.0715444072642735,
+        "source_edge_correlation_gain": 0.04139412846906054
+      },
+      "failures": [],
+      "final_result": {
+        "reconstruction_receipt": {
+          "accepted_frames": 41,
+          "actual_backend": "mps",
+          "candidate_forward_mse": 0.00036784919211640954,
+          "compute_ms": 5131.196832749993,
+          "detector_phases_xy": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "download_ms": 1.7066667787730694,
+          "ecc_registration_count": 0,
+          "fallback_reason": "",
+          "fallback_used": false,
+          "forward_gain_db": 0.0004720932428466196,
+          "forward_projection_count": 5490,
+          "ibp_iterations_requested": 3,
+          "ibp_iterations_run": 3,
+          "last_registration_correlation": 0.0,
+          "mps_current_allocated_bytes": 186779648,
+          "mps_driver_allocated_bytes": 24747130880,
+          "native_input_shape": [
+            206,
+            320,
+            3
+          ],
+          "native_upload_count": 41,
+          "output_download_count": 64,
+          "output_shape": [
+            412,
+            640,
+            3
+          ],
+          "persistent_native_bank": true,
+          "prior_forward_mse": 0.0003678891807794571,
+          "reconstruction_count": 64,
+          "registration_backend": "OpenCV local-contrast ECC translation with Rev2 phase-correlation fallback",
+          "registration_fallback_count": 63,
+          "requested_backend": "mps",
+          "split_consistency_mean": 0.8863468766212463,
+          "split_disagreement_rmse": 0.00575132854282856,
+          "synchronization_count": 64,
+          "total_ms": 5234.207084402442,
+          "upload_ms": 24.840374942868948
+        },
+        "rev1_stack": {
+          "frames": 24,
+          "quality": 0.32182950889490763,
+          "rejects": 0,
+          "resets": 5,
+          "response": 0.18337374528249104,
+          "shift": [
+            0.5306113889471931,
+            0.10455088412538771
+          ],
+          "status": "stack 24/24"
+        },
+        "rev2_floor_receipt": {
+          "accepted_frames": 26,
+          "actual_backend": "mps",
+          "compute_ms": 36.35737486183643,
+          "download_count": 64,
+          "download_ms": 17.250792123377323,
+          "fallback_reason": "",
+          "fallback_used": false,
+          "frame_shape": [
+            206,
+            320,
+            3
+          ],
+          "persistent_bank": true,
+          "requested_backend": "mps",
+          "robust_iterations": 2,
+          "synchronization_count": 64,
+          "total_ms": 60.09233416989446,
+          "upload_count": 41,
+          "upload_ms": 4.711625166237354
+        },
+        "stats": {
+          "forward_gain_db": 0.0004720932428466196,
+          "frames": 41,
+          "occupied_detector_phases": 4,
+          "output_scale": 2,
+          "split_consistency_mean": 0.8863468766212463,
+          "split_disagreement_rmse": 0.00575132854282856,
+          "status": "2x forward reconstruction 41f 4/4 phases"
+        },
+        "terminal_refinement_receipt": {
+          "actual_backend": "mps",
+          "compute_ms": 61.50566693395376,
+          "detail_restore": 0.65,
+          "download_ms": 0.4598749801516533,
+          "fallback_reason": "",
+          "fallback_used": false,
+          "input_uploads": 1,
+          "kernel": "bounded 5x5 bilateral plus split-supported detail restore",
+          "output_downloads": 1,
+          "requested_backend": "mps",
+          "sigma_color_code_values": 4.0,
+          "sigma_space": 1.55,
+          "synchronization_count": 3,
+          "total_ms": 69.52595757320523,
+          "upload_ms": 6.293625105172396
+        }
+      },
+      "fixture": {
+        "black_offset_code_values": 1.8,
+        "decoded_input_sha256": "45dee52c62cf833fccd19d2845d2469bcf9ee61e79e11bf9ff87d3c7192b978a",
+        "detector_integration": "OpenCV INTER_AREA 2x",
+        "detector_observation_wh": [
+          320,
+          206
+        ],
+        "exposure_scale": 0.115,
+        "frames": 64,
+        "jpeg_quality": 88,
+        "kind": "deterministic flight-derived 2x detector low-light fixture",
+        "limitations": [
+          "The fixture is derived from real flight structure but simulates low exposure and detector sampling; it is not native night footage.",
+          "The sensor response/noise model is simplified and does not characterize the Mavic 3 camera."
+        ],
+        "poisson_photons_at_unity": 150.0,
+        "read_noise_sigma_code_values": 2.35,
+        "scale": 2,
+        "seed": 2026073721,
+        "source_truth_wh": [
+          640,
+          412
+        ],
+        "subpixel_shifts_lr_xy": [
+          [
+            0.0,
+            0.08
+          ],
+          [
+            0.528929234557197,
+            0.07665951004101577
+          ],
+          [
+            0.05394303293025161,
+            0.566917011993215
+          ],
+          [
+            0.5716558948544038,
+            0.5515861237792001
+          ],
+          [
+            0.3296704675630112,
+            0.7819471623525018
+          ],
+          [
+            0.826902016238024,
+            0.2596402215493893
+          ],
+          [
+            0.06372523777888695,
+            -0.013471795835926144
+          ],
+          [
+            0.541923547334982,
+            -0.03545875325325672
+          ],
+          [
+            0.014447701431538633,
+            0.4455155295594278
+          ],
+          [
+            0.48501642691656777,
+            0.4310399330327949
+          ],
+          [
+            0.20761310872732053,
+            0.6723233467880327
+          ],
+          [
+            0.6859466574259345,
+            0.1700937125458225
+          ],
+          [
+            -0.07705047444586531,
+            -0.07546276792387807
+          ],
+          [
+            0.420380813938467,
+            -0.06471718293040686
+          ],
+          [
+            -0.07141181435425878,
+            0.4514330795568836
+          ],
+          [
+            0.44646081141789906,
+            0.4716392747961494
+          ],
+          [
+            0.2215797152009566,
+            0.7442139379797397
+          ],
+          [
+            0.7505451712059816,
+            0.26727180821534835
+          ],
+          [
+            0.029436840845790773,
+            0.03888727090303522
+          ],
+          [
+            0.5543443721715852,
+            0.057255170141124884
+          ],
+          [
+            0.07189664766493016,
+            0.5708415613553055
+          ],
+          [
+            0.5797180491792481,
+            0.578511814459832
+          ],
+          [
+            0.32674998671142913,
+            0.8296253693677411
+          ],
+          [
+            0.8133941735926823,
+            0.3240892306043164
+          ],
+          [
+            0.04145825647367814,
+            0.062365733568327045
+          ],
+          [
+            0.5139111588304347,
+            0.045433933863095646
+          ],
+          [
+            -0.015518748900311779,
+            0.5247078441611936
+          ],
+          [
+            0.45715173323085667,
+            0.5019183468260763
+          ],
+          [
+            0.18562152725892261,
+            0.7289686440331999
+          ],
+          [
+            0.672804645559425,
+            0.2077753170760966
+          ],
+          [
+            -0.07956420705631914,
+            -0.05989173164779189
+          ],
+          [
+            0.4288355825004411,
+            -0.0725570871667898
+          ],
+          [
+            -0.05313285788160761,
+            0.42083696284255745
+          ],
+          [
+            0.47208998479311504,
+            0.420842096120583
+          ],
+          [
+            0.2510903170942896,
+            0.6774578839756944
+          ],
+          [
+            0.7799430800916606,
+            0.19013182708537218
+          ],
+          [
+            0.05474318766796409,
+            -0.04219450404284877
+          ],
+          [
+            0.5721340616053113,
+            -0.02099707724408344
+          ],
+          [
+            0.07976192870056002,
+            0.501953862697229
+          ],
+          [
+            0.5765943929263105,
+            0.524741631170508
+          ],
+          [
+            0.3130601653900253,
+            0.7954631703814379
+          ],
+          [
+            0.7909910402968092,
+            0.3123879779882981
+          ],
+          [
+            0.013373970197082957,
+            0.07410262524437741
+          ],
+          [
+            0.4839467959713118,
+            0.07962879561137633
+          ],
+          [
+            -0.04330765239816088,
+            0.57850498617373
+          ],
+          [
+            0.4352993868190761,
+            0.5708250487849952
+          ],
+          [
+            0.17266335050605353,
+            0.8072303522884892
+          ],
+          [
+            0.6704944668994132,
+            0.2888562203627626
+          ],
+          [
+            -0.0709137157793792,
+            0.01723711808788887
+          ],
+          [
+            0.44727594030128814,
+            -0.0058214946843454666
+          ],
+          [
+            -0.027398449477569004,
+            0.47160605865690375
+          ],
+          [
+            0.501635412348426,
+            0.45140485389696783
+          ],
+          [
+            0.28044792878512737,
+            0.6852619390773458
+          ],
+          [
+            0.805139460898453,
+            0.17452544531962952
+          ],
+          [
+            0.0723681256500775,
+            -0.07990799863637209
+          ],
+          [
+            0.5798021040891883,
+            -0.07766814591519054
+          ],
+          [
+            0.07643524210842141,
+            0.4310579483450564
+          ],
+          [
+            0.5627232286822099,
+            0.44554154838793103
+          ],
+          [
+            0.29052192050182857,
+            0.7145730962006045
+          ],
+          [
+            0.7628361604784475,
+            0.2365632244237723
+          ],
+          [
+            -0.016586913648540702,
+            0.009675487994277933
+          ],
+          [
+            0.4562349731740716,
+            0.0319797298024546
+          ],
+          [
+            -0.06501974893344872,
+            0.5516132724532283
+          ],
+          [
+            0.42252564695574246,
+            0.5669364746444936
+          ]
+        ],
+        "transient_rects_lr_xyxy": [
+          [
+            55,
+            147,
+            62,
+            154
+          ],
+          [
+            58,
+            152,
+            65,
+            159
+          ],
+          [
+            61,
+            154,
+            68,
+            161
+          ],
+          [
+            64,
+            154,
+            71,
+            161
+          ],
+          [
+            67,
+            151,
+            74,
+            158
+          ],
+          [
+            70,
+            146,
+            77,
+            153
+          ],
+          [
+            73,
+            142,
+            80,
+            149
+          ],
+          [
+            76,
+            140,
+            83,
+            147
+          ],
+          [
+            79,
+            141,
+            86,
+            148
+          ],
+          [
+            82,
+            145,
+            89,
+            152
+          ],
+          [
+            85,
+            150,
+            92,
+            157
+          ],
+          [
+            88,
+            153,
+            95,
+            160
+          ],
+          [
+            91,
+            155,
+            98,
+            162
+          ],
+          [
+            94,
+            153,
+            101,
+            160
+          ],
+          [
+            97,
+            149,
+            104,
+            156
+          ],
+          [
+            100,
+            144,
+            107,
+            151
+          ],
+          [
+            103,
+            141,
+            110,
+            148
+          ],
+          [
+            106,
+            140,
+            113,
+            147
+          ],
+          [
+            109,
+            143,
+            116,
+            150
+          ],
+          [
+            113,
+            147,
+            120,
+            154
+          ],
+          [
+            116,
+            152,
+            123,
+            159
+          ],
+          [
+            119,
+            154,
+            126,
+            161
+          ],
+          [
+            122,
+            154,
+            129,
+            161
+          ],
+          [
+            125,
+            151,
+            132,
+            158
+          ],
+          [
+            128,
+            146,
+            135,
+            153
+          ],
+          [
+            131,
+            142,
+            138,
+            149
+          ],
+          [
+            134,
+            140,
+            141,
+            147
+          ],
+          [
+            137,
+            141,
+            144,
+            148
+          ],
+          [
+            140,
+            145,
+            147,
+            152
+          ],
+          [
+            143,
+            149,
+            150,
+            156
+          ],
+          [
+            146,
+            153,
+            153,
+            160
+          ],
+          [
+            149,
+            155,
+            156,
+            162
+          ],
+          [
+            152,
+            153,
+            159,
+            160
+          ],
+          [
+            155,
+            149,
+            162,
+            156
+          ],
+          [
+            158,
+            144,
+            165,
+            151
+          ],
+          [
+            161,
+            141,
+            168,
+            148
+          ],
+          [
+            164,
+            140,
+            171,
+            147
+          ],
+          [
+            167,
+            143,
+            174,
+            150
+          ],
+          [
+            170,
+            147,
+            177,
+            154
+          ],
+          [
+            173,
+            151,
+            180,
+            158
+          ],
+          [
+            177,
+            154,
+            184,
+            161
+          ],
+          [
+            180,
+            154,
+            187,
+            161
+          ],
+          [
+            183,
+            151,
+            190,
+            158
+          ],
+          [
+            186,
+            147,
+            193,
+            154
+          ],
+          [
+            189,
+            142,
+            196,
+            149
+          ],
+          [
+            192,
+            140,
+            199,
+            147
+          ],
+          [
+            195,
+            141,
+            202,
+            148
+          ],
+          [
+            198,
+            145,
+            205,
+            152
+          ],
+          [
+            201,
+            149,
+            208,
+            156
+          ],
+          [
+            204,
+            153,
+            211,
+            160
+          ],
+          [
+            207,
+            155,
+            214,
+            162
+          ],
+          [
+            210,
+            153,
+            217,
+            160
+          ],
+          [
+            213,
+            149,
+            220,
+            156
+          ],
+          [
+            216,
+            144,
+            223,
+            151
+          ],
+          [
+            219,
+            141,
+            226,
+            148
+          ],
+          [
+            222,
+            140,
+            229,
+            147
+          ],
+          [
+            225,
+            143,
+            232,
+            150
+          ],
+          [
+            228,
+            147,
+            235,
+            154
+          ],
+          [
+            231,
+            151,
+            238,
+            158
+          ],
+          [
+            234,
+            154,
+            241,
+            161
+          ],
+          [
+            237,
+            154,
+            244,
+            161
+          ],
+          [
+            241,
+            151,
+            248,
+            158
+          ],
+          [
+            244,
+            147,
+            251,
+            154
+          ],
+          [
+            247,
+            143,
+            254,
+            150
+          ]
+        ]
+      },
+      "incremental_rev3_vs_rev2_comparisons": {
+        "clipping_increase": 0.0,
+        "flat_false_detail_ratio": 1.0,
+        "ghosting_ratio": 1.0,
+        "selected_changed_fraction": 0.0,
+        "shadow_snr_gain_db": 0.0,
+        "source_edge_cnr_ratio": 1.0,
+        "source_edge_correlation_gain": 0.0
+      },
+      "measured_existing_gate_failures_not_enforced": [
+        "FAIL_SHADOW_SNR_GAIN",
+        "FAIL_SOURCE_EDGE_CNR_RATIO"
+      ],
+      "metrics": {
+        "raw": {
+          "clipping_fraction": 6.0679611650485434e-05,
+          "edge_pixels": 49661.0,
+          "edge_signal": 0.00808165967464447,
+          "flat_false_detail": 0.15374859390214862,
+          "flat_noise": 0.01282506063580513,
+          "flat_pixels": 99644.0,
+          "ghost_pixels": 23120.0,
+          "ghosting_mae": 0.07548998131197657,
+          "mean_luma": 0.07964973151683807,
+          "shadow_snr_db": -4.011177382071789,
+          "source_edge_cnr": 0.6301459232155218,
+          "source_edge_correlation": 0.008912513252216892
+        },
+        "rev1": {
+          "clipping_fraction": 0.0,
+          "edge_pixels": 49661.0,
+          "edge_signal": 0.0018066391348838806,
+          "flat_false_detail": 0.021508623691862995,
+          "flat_noise": 0.0024020082782953978,
+          "flat_pixels": 99644.0,
+          "ghost_pixels": 23120.0,
+          "ghosting_mae": 0.04088800840787797,
+          "mean_luma": 0.10876338928937912,
+          "shadow_snr_db": -2.474061725345803,
+          "source_edge_cnr": 0.7521369310875043,
+          "source_edge_correlation": 0.6213872472584433
+        },
+        "rev2": {
+          "clipping_fraction": 0.0,
+          "edge_pixels": 49661.0,
+          "edge_signal": 0.0018756985664367676,
+          "flat_false_detail": 0.016880422940741605,
+          "flat_noise": 0.002327319234609604,
+          "flat_pixels": 99644.0,
+          "ghost_pixels": 23120.0,
+          "ghosting_mae": 0.03201015960114703,
+          "mean_luma": 0.13419826328754425,
+          "shadow_snr_db": -1.873858247089828,
+          "source_edge_cnr": 0.8059481220037296,
+          "source_edge_correlation": 0.6627813757275038
+        },
+        "rev3_selected": {
+          "clipping_fraction": 0.0,
+          "edge_pixels": 49661.0,
+          "edge_signal": 0.0018756985664367676,
+          "flat_false_detail": 0.016880422940741605,
+          "flat_noise": 0.002327319234609604,
+          "flat_pixels": 99644.0,
+          "ghost_pixels": 23120.0,
+          "ghosting_mae": 0.03201015960114703,
+          "mean_luma": 0.13419826328754425,
+          "shadow_snr_db": -1.873858247089828,
+          "source_edge_cnr": 0.8059481220037296,
+          "source_edge_correlation": 0.6627813757275038
+        },
+        "rev3_trial": {
+          "clipping_fraction": 0.0,
+          "edge_pixels": 49661.0,
+          "edge_signal": 0.0014197975397109985,
+          "flat_false_detail": 0.01198166053184192,
+          "flat_noise": 0.0016465401276946068,
+          "flat_pixels": 99644.0,
+          "ghost_pixels": 23120.0,
+          "ghosting_mae": 0.03030703199762973,
+          "mean_luma": 0.13374634087085724,
+          "shadow_snr_db": -1.286918001167205,
+          "source_edge_cnr": 0.8622914897913356,
+          "source_edge_correlation": 0.7271478680783446
+        }
+      },
+      "pixel_hashes": {
+        "derived_clean_lowlight": "1b0c07ba60b2841a4534ec1fd0f929457e049dc09b7640db57733c915927cff3",
+        "ghost_mask": "79ea23e60197deae2b6fc2eacf1187234e9bf75dfe7fb03eca6c4b3bd4461eef",
+        "raw_detector_nearest": "dee9b468e903e51e1694fa0ac66e7dec2dcaa05b873f8bf14284719b1e07b54e",
+        "rev1": "b1f0356195f34104d7d8db4e266afe347823aa2c1dae63501284c99f0217f1ad",
+        "rev2_floor": "076fabc9dac2c4e7bb6811def7cd7b41037cc03fd8f6a90107fcfdd155ee912c",
+        "rev3_confidence": "1175e43fa7485eda29e6a2a72cd7ca106fc703d0af1bfebc72c4b73f44662a37",
+        "rev3_detail_support": "ecfab6465b0a72344256359da3daed9dcbab9444c0f35cf932cdd35e8277b297",
+        "rev3_reconstruction_preterminal": "82685a0f347fb619a838f1ff9d1256124c25a3af7a07607b044db6ad70a8d388",
+        "rev3_selected": "076fabc9dac2c4e7bb6811def7cd7b41037cc03fd8f6a90107fcfdd155ee912c",
+        "rev3_split_consistency": "7c013d67821a2ee9097759f224fc0678d7816172a3b497dc591ab053abc77b32",
+        "rev3_trial": "5f97918460b3920b7c51843bb8749239ddadbfecf0ac3820e66e0544ff2775ed",
+        "source_reference": "3ccc7642366d7893b991aab1bd0cd1a336d84d2494e60bbc8229599541d164b3"
+      },
+      "scene": {
+        "canonical_id": "superres.skyline_rail",
+        "decode_failures": 3,
+        "decoded_reference_sha256": "9af39aaf58757774437f7ce90d44dd348d0a05f2f7dc3296ee1a1e82c34b93bb",
+        "decoded_source_frames": 113,
+        "decoder": "OpenCV 4.13.0 FFmpeg backend",
+        "processing_wh": [
+          640,
+          413
+        ],
+        "purpose": "Distant skyline and rail yard before the camera begins its next move.",
+        "roi_xywh": [
+          320,
+          100,
+          960,
+          620
+        ],
+        "seek_pts_s": 298.5,
+        "selected_pts_s": 302.0299375,
+        "source_expected_sha256": "5096d8eed9c12d8905e0c484aa356598eb9f56534b172102ac37a94d19ff8ba6",
+        "source_id": "seg_195336",
+        "source_path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_195336_attempt1.mp4",
+        "target_pts_s": 302.0
+      },
+      "selector": {
+        "baseline_sha256": "076fabc9dac2c4e7bb6811def7cd7b41037cc03fd8f6a90107fcfdd155ee912c",
+        "candidate_sha256": "5f97918460b3920b7c51843bb8749239ddadbfecf0ac3820e66e0544ff2775ed",
+        "failures": [
+          "FAIL_NO_FORWARD_MODEL_GAIN",
+          "FAIL_NO_SUPPORTED_EDGE_CNR_GAIN"
+        ],
+        "fallback_byte_identical": true,
+        "metrics": {
+          "changed_fraction": 0.5529239987864077,
+          "forward_gain_db": 0.0004720932428466196,
+          "frames": 41,
+          "novel_edge_rate": 8.027357233451604e-06,
+          "occupied_detector_phases": 4,
+          "split_consistency_mean": 0.8860660195350647,
+          "supported_edge_cnr_ratio": 0.8458709617125092,
+          "supported_edge_ratio": 0.6885121790232278,
+          "terminal_refinement_receipt": {
+            "actual_backend": "mps",
+            "compute_ms": 61.50566693395376,
+            "detail_restore": 0.65,
+            "download_ms": 0.4598749801516533,
+            "fallback_reason": "",
+            "fallback_used": false,
+            "input_uploads": 1,
+            "kernel": "bounded 5x5 bilateral plus split-supported detail restore",
+            "output_downloads": 1,
+            "requested_backend": "mps",
+            "sigma_color_code_values": 4.0,
+            "sigma_space": 1.55,
+            "synchronization_count": 3,
+            "total_ms": 69.52595757320523,
+            "upload_ms": 6.293625105172396
+          },
+          "unsupported_detail_ratio": 0.8139683358195671
+        },
+        "promoted": false,
+        "selected_sha256": "076fabc9dac2c4e7bb6811def7cd7b41037cc03fd8f6a90107fcfdd155ee912c",
+        "status": "REV2_FAIL_CLOSED"
+      },
+      "status": "PASS_BYTE_IDENTICAL_FAIL_CLOSED_CONTROL",
+      "timing_ms": {
+        "note": "Per-frame distributions preserve first-use warm-up and include synchronization/output transfer.",
+        "rev1_update": {
+          "count": 64,
+          "maximum": 447.98891618847847,
+          "mean": 45.04943683423335,
+          "minimum": 0.23683300241827965,
+          "p50": 3.348521189764142,
+          "p90": 141.1637544631958,
+          "p95": 181.58611226826898
+        },
+        "rev2_floor_inside_rev3": {
+          "count": 64,
+          "maximum": 157.515374943614,
+          "mean": 30.668016981508117,
+          "minimum": 4.529625177383423,
+          "p50": 18.382479436695576,
+          "p90": 58.387945126742125,
+          "p95": 71.3619730900973
+        },
+        "rev3_total_update": {
+          "count": 64,
+          "maximum": 5234.367707744241,
+          "mean": 513.3365995789063,
+          "minimum": 66.42254069447517,
+          "p50": 283.1700413953513,
+          "p90": 650.278978701681,
+          "p95": 770.7400356885046
+        }
+      }
+    },
+    "superres.soft_barn_soak": {
+      "artifacts": {
+        "comparison.png": {
+          "bytes": 1914366,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_soft_barn_soak/comparison.png",
+          "sha256": "a7ec6cd01f6dfc22c51e5ad53c7308d3b5d5f902d222522c1e1242d31aa648c6"
+        },
+        "derived_clean_lowlight.png": {
+          "bytes": 37955,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_soft_barn_soak/derived_clean_lowlight.png",
+          "sha256": "cb8b8df519e96610346e7fc9ccc1daee86ab462b3b8cc5127e39d33acd6a8411"
+        },
+        "detail_crops_3x.png": {
+          "bytes": 659858,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_soft_barn_soak/detail_crops_3x.png",
+          "sha256": "b604292c0731a434897ada1af03480a17447d63b9b2b20b0afca10b85d341ef2"
+        },
+        "ghost_mask.png": {
+          "bytes": 2165,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_soft_barn_soak/ghost_mask.png",
+          "sha256": "b06da57ae76a175a16c5e025d97a7bb89a31def1ef379262af76acd8df5c5736"
+        },
+        "raw_detector_nearest.png": {
+          "bytes": 353437,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_soft_barn_soak/raw_detector_nearest.png",
+          "sha256": "067dc62fecc72dc92b0e76d531e893b2db6eb391c742c11166ce9f665f3e211e"
+        },
+        "rev1.png": {
+          "bytes": 365061,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_soft_barn_soak/rev1.png",
+          "sha256": "cc1dcf4c4433b969909b82341ba2a8b4980d928050836a2ef4254eb074cba3c3"
+        },
+        "rev2_floor.png": {
+          "bytes": 363937,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_soft_barn_soak/rev2_floor.png",
+          "sha256": "8ac17a6d298e83cfff93a5d0aafb5647d82119e959170dbcff2edea531629979"
+        },
+        "rev3_confidence.png": {
+          "bytes": 199789,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_soft_barn_soak/rev3_confidence.png",
+          "sha256": "68036631d31153f8c36c83a0b941ff8f97e426ad7a648abf26ae89f0c7a78d4a"
+        },
+        "rev3_detail_support.png": {
+          "bytes": 12554,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_soft_barn_soak/rev3_detail_support.png",
+          "sha256": "070a9ff4318ae172bd2fe3401ec4ed10b1b762a9951a07591f639dfe58545b7a"
+        },
+        "rev3_reconstruction_preterminal.png": {
+          "bytes": 282491,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_soft_barn_soak/rev3_reconstruction_preterminal.png",
+          "sha256": "c489676a949afca716b4e058b91fcd53ed8b7e6b0da26650caf751101b09c5e5"
+        },
+        "rev3_selected.png": {
+          "bytes": 318985,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_soft_barn_soak/rev3_selected.png",
+          "sha256": "0dee0e9975cd01f2106abab6a4b2c2ebd79f6c66311b446d6a46fc43d52e7d6b"
+        },
+        "rev3_split_consistency.png": {
+          "bytes": 242051,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_soft_barn_soak/rev3_split_consistency.png",
+          "sha256": "fc05b655fdbf37e8b21475ee8a12871b4e5b865cef0cb4f682f6ddeee25b9d89"
+        },
+        "rev3_trial.png": {
+          "bytes": 318985,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_soft_barn_soak/rev3_trial.png",
+          "sha256": "0dee0e9975cd01f2106abab6a4b2c2ebd79f6c66311b446d6a46fc43d52e7d6b"
+        },
+        "source_reference.png": {
+          "bytes": 105146,
+          "path": "/private/tmp/drone-capability-20260904/nightvision-lock/superres_soft_barn_soak/source_reference.png",
+          "sha256": "430b6f6edbd959de554b923e2afeb799e083da5d0aca1da0eb151d30c00454ea"
+        }
+      },
+      "existing_rev1_relative_comparisons": {
+        "clipping_increase": -6.510416666666667e-06,
+        "flat_false_detail_ratio": 0.6779027779792881,
+        "ghosting_ratio": 0.957774659602939,
+        "shadow_snr_gain_db": 0.15589587531108418,
+        "source_edge_cnr_ratio": 1.018110212405151,
+        "source_edge_correlation_gain": 0.0033313648872708365
+      },
+      "failures": [],
+      "final_result": {
+        "reconstruction_receipt": {
+          "accepted_frames": 33,
+          "actual_backend": "mps",
+          "candidate_forward_mse": 0.00043957808520644903,
+          "compute_ms": 477.4546669796109,
+          "detector_phases_xy": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "download_ms": 0.6888750940561295,
+          "ecc_registration_count": 0,
+          "fallback_reason": "",
+          "fallback_used": false,
+          "forward_gain_db": 0.001179616843012123,
+          "forward_projection_count": 5600,
+          "ibp_iterations_requested": 3,
+          "ibp_iterations_run": 3,
+          "last_registration_correlation": 0.0,
+          "mps_current_allocated_bytes": 201525248,
+          "mps_driver_allocated_bytes": 7563870208,
+          "native_input_shape": [
+            240,
+            320,
+            3
+          ],
+          "native_upload_count": 33,
+          "output_download_count": 64,
+          "output_shape": [
+            480,
+            640,
+            3
+          ],
+          "persistent_native_bank": true,
+          "prior_forward_mse": 0.000439697498222813,
+          "reconstruction_count": 64,
+          "registration_backend": "OpenCV local-contrast ECC translation with Rev2 phase-correlation fallback",
+          "registration_fallback_count": 63,
+          "requested_backend": "mps",
+          "split_consistency_mean": 0.8961751461029053,
+          "split_disagreement_rmse": 0.00500975688919425,
+          "synchronization_count": 64,
+          "total_ms": 507.124749943614,
+          "upload_ms": 0.0
+        },
+        "rev1_stack": {
+          "frames": 4,
+          "quality": 0.16941599999999998,
+          "rejects": 3,
+          "resets": 7,
+          "response": 0.6879430359105269,
+          "shift": [
+            19.038934670690708,
+            -4.999071760569436
+          ],
+          "status": "stack reject r=0.69"
+        },
+        "rev2_floor_receipt": {
+          "accepted_frames": 4,
+          "actual_backend": "mps",
+          "compute_ms": 2.616917248815298,
+          "download_count": 64,
+          "download_ms": 4.687540698796511,
+          "fallback_reason": "",
+          "fallback_used": false,
+          "frame_shape": [
+            240,
+            320,
+            3
+          ],
+          "persistent_bank": true,
+          "requested_backend": "mps",
+          "robust_iterations": 2,
+          "synchronization_count": 64,
+          "total_ms": 8.918624836951494,
+          "upload_count": 33,
+          "upload_ms": 0.0
+        },
+        "stats": {
+          "forward_gain_db": 0.001179616843012123,
+          "frames": 33,
+          "occupied_detector_phases": 4,
+          "output_scale": 2,
+          "split_consistency_mean": 0.8961751461029053,
+          "split_disagreement_rmse": 0.00500975688919425,
+          "status": "2x forward reconstruction 33f 4/4 phases"
+        },
+        "terminal_refinement_receipt": {
+          "actual_backend": "mps",
+          "compute_ms": 34.45674991235137,
+          "detail_restore": 0.65,
+          "download_ms": 0.7347906939685345,
+          "fallback_reason": "",
+          "fallback_used": false,
+          "input_uploads": 1,
+          "kernel": "bounded 5x5 bilateral plus split-supported detail restore",
+          "output_downloads": 1,
+          "requested_backend": "mps",
+          "sigma_color_code_values": 4.0,
+          "sigma_space": 1.55,
+          "synchronization_count": 3,
+          "total_ms": 38.71020907536149,
+          "upload_ms": 2.519332803785801
+        }
+      },
+      "fixture": {
+        "black_offset_code_values": 1.8,
+        "decoded_input_sha256": "b14c93cf461a00292f2e09982116b49a2c6c790353f2e5cedab09f39ebc7557f",
+        "detector_integration": "OpenCV INTER_AREA 2x",
+        "detector_observation_wh": [
+          320,
+          240
+        ],
+        "exposure_scale": 0.115,
+        "frames": 64,
+        "jpeg_quality": 88,
+        "kind": "deterministic flight-derived 2x detector low-light fixture",
+        "limitations": [
+          "The fixture is derived from real flight structure but simulates low exposure and detector sampling; it is not native night footage.",
+          "The sensor response/noise model is simplified and does not characterize the Mavic 3 camera."
+        ],
+        "poisson_photons_at_unity": 150.0,
+        "read_noise_sigma_code_values": 2.35,
+        "scale": 2,
+        "seed": 2026071703,
+        "source_truth_wh": [
+          640,
+          480
+        ],
+        "subpixel_shifts_lr_xy": [
+          [
+            0.0,
+            0.08
+          ],
+          [
+            0.528929234557197,
+            0.07665951004101577
+          ],
+          [
+            0.05394303293025161,
+            0.566917011993215
+          ],
+          [
+            0.5716558948544038,
+            0.5515861237792001
+          ],
+          [
+            0.3296704675630112,
+            0.7819471623525018
+          ],
+          [
+            0.826902016238024,
+            0.2596402215493893
+          ],
+          [
+            0.06372523777888695,
+            -0.013471795835926144
+          ],
+          [
+            0.541923547334982,
+            -0.03545875325325672
+          ],
+          [
+            0.014447701431538633,
+            0.4455155295594278
+          ],
+          [
+            0.48501642691656777,
+            0.4310399330327949
+          ],
+          [
+            0.20761310872732053,
+            0.6723233467880327
+          ],
+          [
+            0.6859466574259345,
+            0.1700937125458225
+          ],
+          [
+            -0.07705047444586531,
+            -0.07546276792387807
+          ],
+          [
+            0.420380813938467,
+            -0.06471718293040686
+          ],
+          [
+            -0.07141181435425878,
+            0.4514330795568836
+          ],
+          [
+            0.44646081141789906,
+            0.4716392747961494
+          ],
+          [
+            0.2215797152009566,
+            0.7442139379797397
+          ],
+          [
+            0.7505451712059816,
+            0.26727180821534835
+          ],
+          [
+            0.029436840845790773,
+            0.03888727090303522
+          ],
+          [
+            0.5543443721715852,
+            0.057255170141124884
+          ],
+          [
+            0.07189664766493016,
+            0.5708415613553055
+          ],
+          [
+            0.5797180491792481,
+            0.578511814459832
+          ],
+          [
+            0.32674998671142913,
+            0.8296253693677411
+          ],
+          [
+            0.8133941735926823,
+            0.3240892306043164
+          ],
+          [
+            0.04145825647367814,
+            0.062365733568327045
+          ],
+          [
+            0.5139111588304347,
+            0.045433933863095646
+          ],
+          [
+            -0.015518748900311779,
+            0.5247078441611936
+          ],
+          [
+            0.45715173323085667,
+            0.5019183468260763
+          ],
+          [
+            0.18562152725892261,
+            0.7289686440331999
+          ],
+          [
+            0.672804645559425,
+            0.2077753170760966
+          ],
+          [
+            -0.07956420705631914,
+            -0.05989173164779189
+          ],
+          [
+            0.4288355825004411,
+            -0.0725570871667898
+          ],
+          [
+            -0.05313285788160761,
+            0.42083696284255745
+          ],
+          [
+            0.47208998479311504,
+            0.420842096120583
+          ],
+          [
+            0.2510903170942896,
+            0.6774578839756944
+          ],
+          [
+            0.7799430800916606,
+            0.19013182708537218
+          ],
+          [
+            0.05474318766796409,
+            -0.04219450404284877
+          ],
+          [
+            0.5721340616053113,
+            -0.02099707724408344
+          ],
+          [
+            0.07976192870056002,
+            0.501953862697229
+          ],
+          [
+            0.5765943929263105,
+            0.524741631170508
+          ],
+          [
+            0.3130601653900253,
+            0.7954631703814379
+          ],
+          [
+            0.7909910402968092,
+            0.3123879779882981
+          ],
+          [
+            0.013373970197082957,
+            0.07410262524437741
+          ],
+          [
+            0.4839467959713118,
+            0.07962879561137633
+          ],
+          [
+            -0.04330765239816088,
+            0.57850498617373
+          ],
+          [
+            0.4352993868190761,
+            0.5708250487849952
+          ],
+          [
+            0.17266335050605353,
+            0.8072303522884892
+          ],
+          [
+            0.6704944668994132,
+            0.2888562203627626
+          ],
+          [
+            -0.0709137157793792,
+            0.01723711808788887
+          ],
+          [
+            0.44727594030128814,
+            -0.0058214946843454666
+          ],
+          [
+            -0.027398449477569004,
+            0.47160605865690375
+          ],
+          [
+            0.501635412348426,
+            0.45140485389696783
+          ],
+          [
+            0.28044792878512737,
+            0.6852619390773458
+          ],
+          [
+            0.805139460898453,
+            0.17452544531962952
+          ],
+          [
+            0.0723681256500775,
+            -0.07990799863637209
+          ],
+          [
+            0.5798021040891883,
+            -0.07766814591519054
+          ],
+          [
+            0.07643524210842141,
+            0.4310579483450564
+          ],
+          [
+            0.5627232286822099,
+            0.44554154838793103
+          ],
+          [
+            0.29052192050182857,
+            0.7145730962006045
+          ],
+          [
+            0.7628361604784475,
+            0.2365632244237723
+          ],
+          [
+            -0.016586913648540702,
+            0.009675487994277933
+          ],
+          [
+            0.4562349731740716,
+            0.0319797298024546
+          ],
+          [
+            -0.06501974893344872,
+            0.5516132724532283
+          ],
+          [
+            0.42252564695574246,
+            0.5669364746444936
+          ]
+        ],
+        "transient_rects_lr_xyxy": [
+          [
+            55,
+            172,
+            62,
+            179
+          ],
+          [
+            58,
+            177,
+            65,
+            184
+          ],
+          [
+            61,
+            180,
+            68,
+            187
+          ],
+          [
+            64,
+            180,
+            71,
+            187
+          ],
+          [
+            67,
+            176,
+            74,
+            183
+          ],
+          [
+            70,
+            171,
+            77,
+            178
+          ],
+          [
+            73,
+            166,
+            80,
+            173
+          ],
+          [
+            76,
+            164,
+            83,
+            171
+          ],
+          [
+            79,
+            165,
+            86,
+            172
+          ],
+          [
+            82,
+            169,
+            89,
+            176
+          ],
+          [
+            85,
+            175,
+            92,
+            182
+          ],
+          [
+            88,
+            179,
+            95,
+            186
+          ],
+          [
+            91,
+            181,
+            98,
+            188
+          ],
+          [
+            94,
+            178,
+            101,
+            185
+          ],
+          [
+            97,
+            174,
+            104,
+            181
+          ],
+          [
+            100,
+            168,
+            107,
+            175
+          ],
+          [
+            103,
+            165,
+            110,
+            172
+          ],
+          [
+            106,
+            164,
+            113,
+            171
+          ],
+          [
+            109,
+            167,
+            116,
+            174
+          ],
+          [
+            113,
+            172,
+            120,
+            179
+          ],
+          [
+            116,
+            177,
+            123,
+            184
+          ],
+          [
+            119,
+            180,
+            126,
+            187
+          ],
+          [
+            122,
+            180,
+            129,
+            187
+          ],
+          [
+            125,
+            176,
+            132,
+            183
+          ],
+          [
+            128,
+            171,
+            135,
+            178
+          ],
+          [
+            131,
+            166,
+            138,
+            173
+          ],
+          [
+            134,
+            164,
+            141,
+            171
+          ],
+          [
+            137,
+            165,
+            144,
+            172
+          ],
+          [
+            140,
+            169,
+            147,
+            176
+          ],
+          [
+            143,
+            175,
+            150,
+            182
+          ],
+          [
+            146,
+            179,
+            153,
+            186
+          ],
+          [
+            149,
+            181,
+            156,
+            188
+          ],
+          [
+            152,
+            179,
+            159,
+            186
+          ],
+          [
+            155,
+            174,
+            162,
+            181
+          ],
+          [
+            158,
+            169,
+            165,
+            176
+          ],
+          [
+            161,
+            165,
+            168,
+            172
+          ],
+          [
+            164,
+            164,
+            171,
+            171
+          ],
+          [
+            167,
+            167,
+            174,
+            174
+          ],
+          [
+            170,
+            172,
+            177,
+            179
+          ],
+          [
+            173,
+            177,
+            180,
+            184
+          ],
+          [
+            177,
+            180,
+            184,
+            187
+          ],
+          [
+            180,
+            180,
+            187,
+            187
+          ],
+          [
+            183,
+            177,
+            190,
+            184
+          ],
+          [
+            186,
+            171,
+            193,
+            178
+          ],
+          [
+            189,
+            166,
+            196,
+            173
+          ],
+          [
+            192,
+            164,
+            199,
+            171
+          ],
+          [
+            195,
+            165,
+            202,
+            172
+          ],
+          [
+            198,
+            169,
+            205,
+            176
+          ],
+          [
+            201,
+            174,
+            208,
+            181
+          ],
+          [
+            204,
+            179,
+            211,
+            186
+          ],
+          [
+            207,
+            181,
+            214,
+            188
+          ],
+          [
+            210,
+            179,
+            217,
+            186
+          ],
+          [
+            213,
+            174,
+            220,
+            181
+          ],
+          [
+            216,
+            169,
+            223,
+            176
+          ],
+          [
+            219,
+            165,
+            226,
+            172
+          ],
+          [
+            222,
+            164,
+            229,
+            171
+          ],
+          [
+            225,
+            167,
+            232,
+            174
+          ],
+          [
+            228,
+            172,
+            235,
+            179
+          ],
+          [
+            231,
+            177,
+            238,
+            184
+          ],
+          [
+            234,
+            180,
+            241,
+            187
+          ],
+          [
+            237,
+            180,
+            244,
+            187
+          ],
+          [
+            241,
+            177,
+            248,
+            184
+          ],
+          [
+            244,
+            172,
+            251,
+            179
+          ],
+          [
+            247,
+            167,
+            254,
+            174
+          ]
+        ]
+      },
+      "incremental_rev3_vs_rev2_comparisons": {
+        "clipping_increase": 0.0,
+        "flat_false_detail_ratio": 0.7435966510179962,
+        "ghosting_ratio": 0.961156641467572,
+        "selected_changed_fraction": 0.766494140625,
+        "shadow_snr_gain_db": 0.24729198322391177,
+        "source_edge_cnr_ratio": 1.0288797013508746,
+        "source_edge_correlation_gain": 0.003536207400504289
+      },
+      "measured_existing_gate_failures_not_enforced": [
+        "FAIL_SHADOW_SNR_GAIN",
+        "FAIL_SOURCE_EDGE_CNR_RATIO"
+      ],
+      "metrics": {
+        "raw": {
+          "clipping_fraction": 4.340277777777778e-05,
+          "edge_pixels": 59792.0,
+          "edge_signal": 0.00826573558151722,
+          "flat_false_detail": 0.15288883533258465,
+          "flat_noise": 0.01146184466779232,
+          "flat_pixels": 108710.0,
+          "ghost_pixels": 24436.0,
+          "ghosting_mae": 0.034977892382679975,
+          "mean_luma": 0.07665247470140457,
+          "shadow_snr_db": -2.8394602068103603,
+          "source_edge_cnr": 0.7211522945118827,
+          "source_edge_correlation": 0.04827849446651778
+        },
+        "rev1": {
+          "clipping_fraction": 6.510416666666667e-06,
+          "edge_pixels": 59792.0,
+          "edge_signal": 0.005608249455690384,
+          "flat_false_detail": 0.0642556889033626,
+          "flat_noise": 0.007889891974627972,
+          "flat_pixels": 108710.0,
+          "ghost_pixels": 24436.0,
+          "ghosting_mae": 0.034496158446012316,
+          "mean_luma": 0.12544381618499756,
+          "shadow_snr_db": -2.964874683831538,
+          "source_edge_cnr": 0.710814479301515,
+          "source_edge_correlation": 0.03725882219470293
+        },
+        "rev2": {
+          "clipping_fraction": 0.0,
+          "edge_pixels": 59792.0,
+          "edge_signal": 0.005544636398553848,
+          "flat_false_detail": 0.05857894861270458,
+          "flat_noise": 0.007882910780608654,
+          "flat_pixels": 108710.0,
+          "ghost_pixels": 24436.0,
+          "ghosting_mae": 0.034374778249246694,
+          "mean_luma": 0.1371888369321823,
+          "shadow_snr_db": -3.0562707917443657,
+          "source_edge_cnr": 0.7033742424426801,
+          "source_edge_correlation": 0.03705397968146948
+        },
+        "rev3_selected": {
+          "clipping_fraction": 0.0,
+          "edge_pixels": 59792.0,
+          "edge_signal": 0.00422804057598114,
+          "flat_false_detail": 0.04355911000856242,
+          "flat_noise": 0.005842356942594051,
+          "flat_pixels": 108710.0,
+          "ghost_pixels": 24436.0,
+          "ghosting_mae": 0.033039546413238495,
+          "mean_luma": 0.13672764599323273,
+          "shadow_snr_db": -2.808978808520454,
+          "source_edge_cnr": 0.7236874805023223,
+          "source_edge_correlation": 0.04059018708197377
+        },
+        "rev3_trial": {
+          "clipping_fraction": 0.0,
+          "edge_pixels": 59792.0,
+          "edge_signal": 0.00422804057598114,
+          "flat_false_detail": 0.04355911000856242,
+          "flat_noise": 0.005842356942594051,
+          "flat_pixels": 108710.0,
+          "ghost_pixels": 24436.0,
+          "ghosting_mae": 0.033039546413238495,
+          "mean_luma": 0.13672764599323273,
+          "shadow_snr_db": -2.808978808520454,
+          "source_edge_cnr": 0.7236874805023223,
+          "source_edge_correlation": 0.04059018708197377
+        }
+      },
+      "pixel_hashes": {
+        "derived_clean_lowlight": "ebd67bc33576d997a57917d18233513d0daa0f4ff9dc71c14972c0df64aa0ddc",
+        "ghost_mask": "16dabcecae92fe24c216f34518dff2bf3fbad678566aea7b5337d913d3b70111",
+        "raw_detector_nearest": "04389f24c9b4720055530284a960ad9fcaed9d1af72d6c5954fc54f1cf9586e7",
+        "rev1": "73310ff9a33a5737c8ddc3bc82148ff2e48046be4ef7d98d3a9ab3fd9ad93bb0",
+        "rev2_floor": "d922f2a871fbe6b3d4f4a0da039d5ec90c886b8eb4cb0a5cf902b258fdbef187",
+        "rev3_confidence": "05c0d16347a746256e4ead69056d90935d81790590ddb404a5fd1a594729cf53",
+        "rev3_detail_support": "176ab25277f52df3493a0d23c1a7d8418cf878cde8e0cdf9dc3ba6fbf792e407",
+        "rev3_reconstruction_preterminal": "347e27d6654daeeef56f178b4466f514db24d42dad56b378bbdc20ef10724916",
+        "rev3_selected": "3c85ca05aab9d88fdc7d0680ffc5086677c4dc6e27c23c7db4507d2667762744",
+        "rev3_split_consistency": "e37bf773a75e8b27f76ebac0eeeb4f4fc6c401eb18aa6f0be6db70320eb1f2b7",
+        "rev3_trial": "3c85ca05aab9d88fdc7d0680ffc5086677c4dc6e27c23c7db4507d2667762744",
+        "source_reference": "75099c3e1869f21fbf58ae0b24cc9af0063faeaf3606e038d0373ffb6a59573d"
+      },
+      "scene": {
+        "canonical_id": "superres.soft_barn_soak",
+        "decode_failures": 4,
+        "decoded_reference_sha256": "75099c3e1869f21fbf58ae0b24cc9af0063faeaf3606e038d0373ffb6a59573d",
+        "decoded_source_frames": 110,
+        "decoder": "OpenCV 4.13.0 FFmpeg backend",
+        "processing_wh": [
+          640,
+          480
+        ],
+        "purpose": "Long telephoto hold on a white barn, tree line, poles and field tracks.",
+        "roi_xywh": [
+          640,
+          300,
+          640,
+          480
+        ],
+        "seek_pts_s": 506.5,
+        "selected_pts_s": 510.011,
+        "source_expected_sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744",
+        "source_id": "seg_191345",
+        "source_path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_191345_attempt1.mp4",
+        "target_pts_s": 510.0
+      },
+      "selector": {
+        "baseline_sha256": "d922f2a871fbe6b3d4f4a0da039d5ec90c886b8eb4cb0a5cf902b258fdbef187",
+        "candidate_sha256": "3c85ca05aab9d88fdc7d0680ffc5086677c4dc6e27c23c7db4507d2667762744",
+        "failures": [],
+        "fallback_byte_identical": false,
+        "metrics": {
+          "changed_fraction": 0.766494140625,
+          "forward_gain_db": 0.001179616843012123,
+          "frames": 33,
+          "novel_edge_rate": 0.0,
+          "occupied_detector_phases": 4,
+          "split_consistency_mean": 0.8959505558013916,
+          "supported_edge_cnr_ratio": 1.6825564307713998,
+          "supported_edge_ratio": 0.8343705096098533,
+          "terminal_refinement_receipt": {
+            "actual_backend": "mps",
+            "compute_ms": 34.45674991235137,
+            "detail_restore": 0.65,
+            "download_ms": 0.7347906939685345,
+            "fallback_reason": "",
+            "fallback_used": false,
+            "input_uploads": 1,
+            "kernel": "bounded 5x5 bilateral plus split-supported detail restore",
+            "output_downloads": 1,
+            "requested_backend": "mps",
+            "sigma_color_code_values": 4.0,
+            "sigma_space": 1.55,
+            "synchronization_count": 3,
+            "total_ms": 38.71020907536149,
+            "upload_ms": 2.519332803785801
+          },
+          "unsupported_detail_ratio": 0.4958945176224017
+        },
+        "promoted": true,
+        "selected_sha256": "3c85ca05aab9d88fdc7d0680ffc5086677c4dc6e27c23c7db4507d2667762744",
+        "status": "REV3_PROMOTED"
+      },
+      "status": "PASS_PROMOTED_METRICS_REVIEW_REQUIRED",
+      "timing_ms": {
+        "note": "Per-frame distributions preserve first-use warm-up and include synchronization/output transfer.",
+        "rev1_update": {
+          "count": 64,
+          "maximum": 15.701124910265207,
+          "mean": 4.991270761820488,
+          "minimum": 0.1260829158127308,
+          "p50": 3.058020956814289,
+          "p90": 11.842729384079576,
+          "p95": 13.019606121815738
+        },
+        "rev2_floor_inside_rev3": {
+          "count": 64,
+          "maximum": 124.45687502622604,
+          "mean": 13.417485781246796,
+          "minimum": 3.149708267301321,
+          "p50": 9.474063059315085,
+          "p90": 19.43791238591075,
+          "p95": 26.405491959303614
+        },
+        "rev3_total_update": {
+          "count": 64,
+          "maximum": 874.457208905369,
+          "mean": 332.2770630766172,
+          "minimum": 112.7081667073071,
+          "p50": 317.3874579370022,
+          "p90": 511.7283706087619,
+          "p95": 569.7291276883332
+        }
+      }
+    }
+  },
+  "schema": "m5.nightvision-rev3-validation.v2",
+  "source_verification": {
+    "catalog": "/Users/randyblasik/Documents/Drone_EnhancedVision/testdata/flight_scenes/2026-07-14.json",
+    "full_hash": true,
+    "ok": true,
+    "schema": "m5.flight-source-verification.v1",
+    "sources": [
+      {
+        "actual_bytes": 358895612,
+        "actual_sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744",
+        "exists": true,
+        "expected_bytes": 358895612,
+        "expected_sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744",
+        "hash_ok": true,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_191345_attempt1.mp4",
+        "role": "canonical",
+        "size_ok": true,
+        "source": "seg_191345"
+      },
+      {
+        "actual_bytes": 457650637,
+        "actual_sha256": "5096d8eed9c12d8905e0c484aa356598eb9f56534b172102ac37a94d19ff8ba6",
+        "exists": true,
+        "expected_bytes": 457650637,
+        "expected_sha256": "5096d8eed9c12d8905e0c484aa356598eb9f56534b172102ac37a94d19ff8ba6",
+        "hash_ok": true,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_195336_attempt1.mp4",
+        "role": "canonical",
+        "size_ok": true,
+        "source": "seg_195336"
+      }
+    ]
+  },
+  "status": "PASS_METRICS_REVIEW_REQUIRED",
+  "warnings": [
+    "The fixture is a deterministic low-light/detector simulation derived from canonical flight structure; native night-flight validation remains open.",
+    "A pass cannot prove identifying detail, physical resolution recovery, or detail absent from the source observations.",
+    "Automatic success remains review-required; inspect every full-resolution comparison and 3x nearest-neighbor crop sheet."
+  ]
+}

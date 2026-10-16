@@ -1,0 +1,22 @@
+[selftest] deterministic synthetic ISR scene 960x540 frames=400 fps=30 pan=1.15px/f movers=3(delta=10,2-4px) sway=2 noise sigma=2.5 salt=10px/f device=cpu
+[selftest] S1 mover1: coverage=1.000 dominant_id=262 dominant_share=1.000 first_confirm_frame=120
+[selftest] S1 mover2: coverage=1.000 dominant_id=280 dominant_share=1.000 first_confirm_frame=120
+[selftest] S1 mover3: coverage=1.000 dominant_id=282 dominant_share=1.000 first_confirm_frame=120
+[selftest] S1 sway_confirmed_tracks=0 confirmed_fp_per_frame=0.0000 candidates_per_frame=45.69 raw_blobs_per_frame=45.53 motion_px_frac=0.00181 sigma=2.47 reg_frames=399/400
+[selftest] S2 ego-comp OFF: confirmed_fp_per_frame=26.5607 candidates_per_frame=47.88 raw_blobs_per_frame=129.65 motion_px_frac=0.01106 sigma=2.47
+[selftest] S2 vs S1: confirmed_fp 26.5607 vs 0.0000 | sigma 2.47 vs 2.47 | raw_blobs 129.65 vs 45.53
+[selftest] S3 TBD ON : recall=1.000 confirm_latency_frames=[120, 120, 120]
+[selftest] S3 TBD OFF: recall=0.000 confirm_latency_frames=['never', 'never', 'never']
+[selftest] S4 noise step 2.5->7.0 at frame 220: baseline_dets/f=39.78 bound=101.45 peak_after_step=37 reconverged_after=0 frames (sigma 2.47 -> 6.96) confirmed_fp_per_frame=0.0125
+[selftest] S5 MPS parity: coverage=['1.000', '1.000', '1.000'] sway_confirmed_tracks=0 confirmed_fp_per_frame=0.0000 reg_frames=399/400
+[selftest] S6 Rev3 diversity: components=210 dets=48 cells=25 mog_only_dets=0 near_tracks(no/yes)=0/1
+[selftest] S7 transition gates: zoom='ZOOM 1.040x' pan='FAST-PAN 110px'
+[selftest] S8 cap guard: pressure=0.865 sens_scale=0.550 min_floor=50.0
+[selftest] S9 stationary reacquire: blocked=0 matches=1 expired=0 misses=20
+[selftest] S10 RAW fallback: local=0.008/0.0 cut=0.768/75.0 reasons='RAW-CUT 77%'/'RAW-RESEED x10' held='' zoom=HFalse/16 raw=0.194/16.0 scale=2.00 q=0.976/-0.014 gate='RAW-ZOOM 2.00x q=0.98'
+[selftest] S11 TBD coordinates: point=(30.0, 60.0) dets=1 track_reserved=1
+[selftest] S12 telemetry clock: due=[0.0, 1.0, 2.0] reset=True/True period_ms=33.33 every_other_gaps=12
+[selftest] S13 stream stall: before=False after=True stale_age=True
+[selftest] S14 preset default: names=('SMALL-GAME', 'STANDARD', 'VEHICLES', 'SEARCH') cli='search' idx=3 values=(50.0, 0.02, 0.0025, 1.5, 0.5)
+[selftest] wall time 42.6s
+SELFTEST PASS

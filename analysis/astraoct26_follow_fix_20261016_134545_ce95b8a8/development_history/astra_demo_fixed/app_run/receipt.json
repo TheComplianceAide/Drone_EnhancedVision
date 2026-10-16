@@ -1,0 +1,640 @@
+{
+  "app": "AstraOct26",
+  "status": "EXPERIMENTAL_NOT_FLIGHT_ACCEPTED",
+  "source_timestamp_kind": "decoded_source_PTS",
+  "source_ts": 62.705938,
+  "decoded_frames_seen": 590,
+  "source_dimensions": [
+    1920,
+    1080
+  ],
+  "device": "mps",
+  "require_mps": true,
+  "controls": {
+    "deep_track": false,
+    "outline": true,
+    "deblur": true,
+    "labels": true,
+    "align": true,
+    "night": true,
+    "follow": true,
+    "roi_size": 192
+  },
+  "selection": {
+    "id": "click-1",
+    "generation": 2,
+    "point": [
+      1220.8441162109375,
+      544.990966796875
+    ],
+    "status": "LOST / SELECT AGAIN",
+    "losses": 7,
+    "reacquisitions": 6
+  },
+  "best": {
+    "kind": "best_raw_sample_not_reconstruction",
+    "seen": 396,
+    "accepted": 7,
+    "source_ts": 53.17,
+    "sequence": 305,
+    "sharpness_proxy": 14.56168270111084,
+    "reasons": {
+      "retained sharper raw observation": 7,
+      "no sharper raw observation": 97,
+      "target lost": 292
+    }
+  },
+  "models": {
+    "labels": {
+      "backend": "mps",
+      "load_seconds": 0.2624205420142971
+    },
+    "align": {
+      "backend": "cpu",
+      "load_seconds": 0.023093875031918287
+    }
+  },
+  "errors": [],
+  "detector": {
+    "counts": {
+      "submitted": 590,
+      "replaced_pending": 319,
+      "completed": 269
+    },
+    "pending": 0,
+    "busy": null,
+    "processing_ms": {
+      "count": 269,
+      "p50": 49.52108295401558,
+      "p95": 63.965758215636015,
+      "max": 106.47495900047943
+    }
+  },
+  "research": {
+    "counts": {
+      "invalidated_pending": 0,
+      "submitted": 19,
+      "completed": 15,
+      "replaced_pending": 1
+    },
+    "pending": 0,
+    "busy": "outline",
+    "processing_ms": {
+      "count": 15,
+      "p50": 9.50675003696233,
+      "p95": 219.26939979311962,
+      "max": 536.5450410172343
+    }
+  },
+  "writer": {
+    "counts": {},
+    "pending": 0,
+    "busy": null,
+    "processing_ms": {
+      "count": 0
+    }
+  },
+  "render_ms": {
+    "count": 578,
+    "p50": 27.919707994442433,
+    "p95": 29.326223194948398,
+    "max": 36.498708999715745
+  },
+  "local_receive_age_ms": {
+    "count": 0
+  },
+  "events": [
+    {
+      "event": "selection",
+      "source_ts": 44.990938,
+      "sequence": 60,
+      "generation": 1,
+      "point": [
+        520,
+        480
+      ],
+      "track_id": "click-1"
+    },
+    {
+      "event": "scheduled_source_control",
+      "source_ts": 44.990938,
+      "sequence": 60,
+      "generation": 1,
+      "control": {
+        "source_pts": 44.990938,
+        "select": [
+          520,
+          480
+        ]
+      }
+    },
+    {
+      "event": "model_result",
+      "source_ts": 45.430937,
+      "sequence": 73,
+      "generation": 1,
+      "model": "labels",
+      "job_source_ts": 45.040937,
+      "elapsed_ms": 536.5450410172343,
+      "value": {
+        "label": "horse",
+        "confidence": 0.4364461302757263,
+        "box": [
+          89.71122741699219,
+          71.61576080322266,
+          179.86361694335938,
+          228.36013793945312
+        ],
+        "backend": "mps",
+        "model": "YOLO26n"
+      }
+    },
+    {
+      "event": "model_result",
+      "source_ts": 45.730938,
+      "sequence": 82,
+      "generation": 1,
+      "model": "labels",
+      "job_source_ts": 45.698937,
+      "elapsed_ms": 9.644709003623575,
+      "value": {
+        "label": "person",
+        "confidence": 0.6759584546089172,
+        "box": [
+          91.01896667480469,
+          88.63021087646484,
+          138.47694396972656,
+          231.85263061523438
+        ],
+        "backend": "mps",
+        "model": "YOLO26n"
+      }
+    },
+    {
+      "event": "model_result",
+      "source_ts": 46.127938,
+      "sequence": 94,
+      "generation": 1,
+      "model": "align",
+      "job_source_ts": 46.068938,
+      "elapsed_ms": 83.29412498278543,
+      "value": {
+        "point": null,
+        "geometry": {
+          "reason": "geometry rejected",
+          "matches": 412,
+          "inliers": 121,
+          "inlier_ratio": 0.2936893203883495,
+          "median_error_px": 1.4437386989593506,
+          "scale": 0.9911252103430263
+        },
+        "model": "XFeat",
+        "backend": "cpu"
+      }
+    },
+    {
+      "event": "model_result",
+      "source_ts": 46.773938,
+      "sequence": 113,
+      "generation": 1,
+      "model": "align",
+      "job_source_ts": 46.735937,
+      "elapsed_ms": 38.29920897260308,
+      "value": {
+        "point": null,
+        "geometry": {
+          "reason": "geometry rejected",
+          "matches": 482,
+          "inliers": 170,
+          "inlier_ratio": 0.35269709543568467,
+          "median_error_px": 1.3656895160675049,
+          "scale": 0.9860676903888416
+        },
+        "model": "XFeat",
+        "backend": "cpu"
+      }
+    },
+    {
+      "event": "model_result",
+      "source_ts": 47.269937,
+      "sequence": 128,
+      "generation": 1,
+      "model": "labels",
+      "job_source_ts": 47.226937,
+      "elapsed_ms": 9.50675003696233,
+      "value": {
+        "label": "person",
+        "confidence": 0.8383367657661438,
+        "box": [
+          96.33602142333984,
+          84.80085754394531,
+          144.16845703125,
+          229.60400390625
+        ],
+        "backend": "mps",
+        "model": "YOLO26n"
+      }
+    },
+    {
+      "event": "model_result",
+      "source_ts": 47.929938,
+      "sequence": 148,
+      "generation": 1,
+      "model": "labels",
+      "job_source_ts": 47.895938,
+      "elapsed_ms": 8.103083004243672,
+      "value": {
+        "label": "person",
+        "confidence": 0.8504733443260193,
+        "box": [
+          93.15919494628906,
+          85.28630065917969,
+          146.78994750976562,
+          232.1251983642578
+        ],
+        "backend": "mps",
+        "model": "YOLO26n"
+      }
+    },
+    {
+      "event": "model_result",
+      "source_ts": 48.590938,
+      "sequence": 168,
+      "generation": 1,
+      "model": "labels",
+      "job_source_ts": 48.569938,
+      "elapsed_ms": 7.787749986164272,
+      "value": {
+        "label": "person",
+        "confidence": 0.8002722263336182,
+        "box": [
+          98.92719268798828,
+          83.57982635498047,
+          154.7874298095703,
+          229.17074584960938
+        ],
+        "backend": "mps",
+        "model": "YOLO26n"
+      }
+    },
+    {
+      "event": "model_result",
+      "source_ts": 49.258938,
+      "sequence": 188,
+      "generation": 1,
+      "model": "labels",
+      "job_source_ts": 49.235937,
+      "elapsed_ms": 7.87287502316758,
+      "value": {
+        "label": "person",
+        "confidence": 0.8672048449516296,
+        "box": [
+          95.26847839355469,
+          84.67213439941406,
+          159.66830444335938,
+          228.2121124267578
+        ],
+        "backend": "mps",
+        "model": "YOLO26n"
+      }
+    },
+    {
+      "event": "control",
+      "source_ts": 49.467937,
+      "sequence": 194,
+      "generation": 2,
+      "action": "zoom_in"
+    },
+    {
+      "event": "scheduled_source_control",
+      "source_ts": 49.467937,
+      "sequence": 194,
+      "generation": 2,
+      "control": {
+        "source_pts": 49.467937,
+        "action": "zoom_in"
+      }
+    },
+    {
+      "event": "model_result",
+      "source_ts": 49.534937,
+      "sequence": 196,
+      "generation": 2,
+      "model": "labels",
+      "job_source_ts": 49.490938,
+      "elapsed_ms": 8.655374986119568,
+      "value": {
+        "label": "person",
+        "confidence": 0.8722547888755798,
+        "box": [
+          76.05213165283203,
+          53.500160217285156,
+          120.82904052734375,
+          192.0
+        ],
+        "backend": "mps",
+        "model": "YOLO26n"
+      }
+    },
+    {
+      "event": "model_result",
+      "source_ts": 50.195937,
+      "sequence": 216,
+      "generation": 2,
+      "model": "labels",
+      "job_source_ts": 50.159,
+      "elapsed_ms": 8.253749983850867,
+      "value": {
+        "label": "person",
+        "confidence": 0.4705822765827179,
+        "box": [
+          69.346923828125,
+          55.18714141845703,
+          127.35144805908203,
+          191.7464599609375
+        ],
+        "backend": "mps",
+        "model": "YOLO26n"
+      }
+    },
+    {
+      "event": "model_result",
+      "source_ts": 50.726937,
+      "sequence": 232,
+      "generation": 2,
+      "model": "align",
+      "job_source_ts": 50.703938,
+      "elapsed_ms": 47.632207977585495,
+      "value": {
+        "point": null,
+        "geometry": {
+          "reason": "geometry rejected",
+          "matches": 101,
+          "inliers": 8,
+          "inlier_ratio": 0.07920792079207921,
+          "median_error_px": 0.9739463925361633,
+          "scale": 0.45988214106592895
+        },
+        "model": "XFeat",
+        "backend": "cpu"
+      }
+    },
+    {
+      "event": "model_result",
+      "source_ts": 50.959938,
+      "sequence": 239,
+      "generation": 2,
+      "model": "labels",
+      "job_source_ts": 50.936937,
+      "elapsed_ms": 7.666999998036772,
+      "value": {
+        "label": "person",
+        "confidence": 0.8924961686134338,
+        "box": [
+          47.72660446166992,
+          54.777530670166016,
+          125.69631958007812,
+          191.21182250976562
+        ],
+        "backend": "mps",
+        "model": "YOLO26n"
+      }
+    },
+    {
+      "event": "model_result",
+      "source_ts": 51.664938,
+      "sequence": 260,
+      "generation": 2,
+      "model": "labels",
+      "job_source_ts": 51.603938,
+      "elapsed_ms": 10.189416992943734,
+      "value": {
+        "label": "person",
+        "confidence": 0.7795174717903137,
+        "box": [
+          54.66886901855469,
+          54.79386520385742,
+          119.07147216796875,
+          192.0
+        ],
+        "backend": "mps",
+        "model": "YOLO26n"
+      }
+    },
+    {
+      "event": "model_result",
+      "source_ts": 52.162,
+      "sequence": 275,
+      "generation": 2,
+      "model": "align",
+      "job_source_ts": 52.136938,
+      "elapsed_ms": 47.89749998599291,
+      "value": {
+        "point": null,
+        "geometry": {
+          "reason": "geometry rejected",
+          "matches": 46,
+          "inliers": 7,
+          "inlier_ratio": 0.15217391304347827,
+          "median_error_px": 0.9416967034339905,
+          "scale": 0.8602733246790523
+        },
+        "model": "XFeat",
+        "backend": "cpu"
+      }
+    },
+    {
+      "event": "model_result",
+      "source_ts": 52.665937,
+      "sequence": 290,
+      "generation": 2,
+      "model": "labels",
+      "job_source_ts": 52.631937,
+      "elapsed_ms": 9.02954099001363,
+      "value": {
+        "label": "person",
+        "confidence": 0.7077348232269287,
+        "box": [
+          44.721500396728516,
+          27.58527946472168,
+          130.99444580078125,
+          191.69064331054688
+        ],
+        "backend": "mps",
+        "model": "YOLO26n"
+      }
+    },
+    {
+      "event": "control",
+      "source_ts": 53.238937,
+      "sequence": 307,
+      "generation": 2,
+      "action": "outline"
+    },
+    {
+      "event": "scheduled_source_control",
+      "source_ts": 53.238937,
+      "sequence": 307,
+      "generation": 2,
+      "control": {
+        "source_pts": 53.238937,
+        "action": "outline"
+      }
+    },
+    {
+      "event": "control",
+      "source_ts": 56.986938,
+      "sequence": 419,
+      "generation": 2,
+      "action": "deblur"
+    },
+    {
+      "event": "scheduled_source_control",
+      "source_ts": 56.986938,
+      "sequence": 419,
+      "generation": 2,
+      "control": {
+        "source_pts": 56.986938,
+        "action": "deblur"
+      }
+    },
+    {
+      "event": "control",
+      "source_ts": 61.529938,
+      "sequence": 555,
+      "generation": 2,
+      "action": "night"
+    },
+    {
+      "event": "scheduled_source_control",
+      "source_ts": 61.529938,
+      "sequence": 555,
+      "generation": 2,
+      "control": {
+        "source_pts": 61.529938,
+        "action": "night"
+      }
+    },
+    {
+      "event": "shutdown",
+      "source_ts": 62.705938,
+      "sequence": 590,
+      "generation": 2,
+      "workers_finished": {
+        "detector": true,
+        "research": false,
+        "writer": true
+      }
+    }
+  ],
+  "event_history_total": 26,
+  "event_history_overflow": 0,
+  "command": [
+    "/Users/randyblasik/.codex/visualizations/2026/10/16/01a145a7-a364-7981-8dec-d6f471f11c65/astra_demo_fixed/record_demo.py"
+  ],
+  "source": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_201336_attempt1.mp4",
+  "wall_seconds": 42.97543666703859,
+  "exit_code": 0,
+  "shutdown": {
+    "detector": true,
+    "research": false,
+    "writer": true
+  },
+  "code_sha256": {
+    "_AstraOct26.py": "ea2cc642e2a486184b5c6f6bd6bbbb72b8422438b1234ffce7fda14b084659d4",
+    "astra_oct26.py": "12e0d501c5843d3cd0d5179bfb60ae4eb190c8eecab4ff0dc25dc2937705c564",
+    "astra_oct26_runtime.py": "ce95b8a89e6a935c45959577bf85b352b887585a355129840d118ca80dcf7bf6",
+    "astra_oct26_models.py": "73fcade76c4b40f813d61a0cd763b6305f408fd86d98d35c25cfabd46c6c763d",
+    "astra_oct26_decode.py": "f53ec94cad195ae3296be9629978d0c45d58d007af0e3991ac65060308283009",
+    "astra_oct26_models.json": "23ab12ac2f888f15d87f74561a278b4f3f1c1c1015f115258aacf009fa66852c",
+    "_09_M5_Fable_MotionISR_Rev3.py": "cbb54ccaa7d2d225f80d9c49952fb9fbd4dc3e94030f12d2db9c261a44c896a5"
+  },
+  "source_sha256": "838ac1ed6045a9c72ae5faa6887ff90963697d28d193f60cb0cb496cd6422682",
+  "file_decode_counts": {
+    "warning_lines": 80,
+    "decoded": 590,
+    "delivered": 590
+  },
+  "file_decode_warnings": [
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1271 >= 1271",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1319 >= 1319",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1326 >= 1326",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1334 >= 1334",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1338 >= 1338",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1375 >= 1375",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1391 >= 1391",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1393 >= 1393",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1395 >= 1395",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1397 >= 1397",
+    "frame=  132 fps= 24 q=-0.0 size=  795825KiB time=00:00:03.83 bitrate=1702122.6kbits/s speed=0.687x elapsed=0:00:05.57    \r[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1399 >= 1399",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1453 >= 1453",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1455 >= 1455",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1458 >= 1458",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1460 >= 1460",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1463 >= 1463",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1465 >= 1465",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1474 >= 1474",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1507 >= 1507",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1518 >= 1518",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1521 >= 1521",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1524 >= 1524",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1526 >= 1526",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1578 >= 1578",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1583 >= 1583",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1598 >= 1598",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1630 >= 1630",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1634 >= 1634",
+    "frame=  376 fps= 21 q=-0.0 size= 2278125KiB time=00:00:11.96 bitrate=1559748.2kbits/s speed=0.674x elapsed=0:00:17.75    \r[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1639 >= 1639",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1642 >= 1642",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1645 >= 1645",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1649 >= 1649",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1651 >= 1651",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1654 >= 1654",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1658 >= 1658",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1662 >= 1662",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1664 >= 1664",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1668 >= 1668",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1705 >= 1705",
+    "frame=  453 fps= 21 q=-0.0 size= 2745900KiB time=00:00:14.54 bitrate=1546960.0kbits/s speed=0.683x elapsed=0:00:21.30    \r[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1715 >= 1715",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1717 >= 1717",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1720 >= 1720",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1725 >= 1725",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1731 >= 1731",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1742 >= 1742",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "frame=  509 fps= 21 q=-0.0 size= 3086100KiB time=00:00:16.43 bitrate=1537871.0kbits/s speed=0.689x elapsed=0:00:23.84    \r[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1770 >= 1770",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1778 >= 1778",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1783 >= 1783",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1787 >= 1787",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1795 >= 1795",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1798 >= 1798",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1815 >= 1815",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1818 >= 1818",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1823 >= 1823",
+    "frame=  564 fps= 21 q=-0.0 size= 3420225KiB time=00:00:18.26 bitrate=1533619.3kbits/s speed=0.693x elapsed=0:00:26.38    \r[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1825 >= 1825",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1831 >= 1831",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1837 >= 1837",
+    "[vist#0:0/h264 @ 0xaf4c10300] [dec:h264 @ 0xaf4c18280] Error submitting packet to decoder: Invalid data found when processing input",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1840 >= 1840",
+    "[rawvideo @ 0xaf4c23700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1845 >= 1845"
+  ]
+}

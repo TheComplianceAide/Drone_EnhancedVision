@@ -1,0 +1,31 @@
+[9/4/2026, 8:22:42 PM] [INFO] Node-Media-Server v4.2.8
+[9/4/2026, 8:22:42 PM] [INFO] Homepage: https://github.com/illuspas/Node-Media-Server
+[9/4/2026, 8:22:42 PM] [INFO] License: Apache-2.0
+[9/4/2026, 8:22:42 PM] [INFO] Author: Chen Mingliang
+[9/4/2026, 8:22:42 PM] [INFO] WebSocket server listening on port undefined:18080
+[9/4/2026, 8:22:42 PM] [INFO] HTTP server listening on port undefined:18080
+[9/4/2026, 8:22:42 PM] [INFO] Rtmp Server listening on port undefined:21935
+[9/4/2026, 8:22:42 PM] [INFO] RTMP session mtnn2dre9geyng9y close
+[9/4/2026, 8:22:42 PM] [INFO] RTMP session mtnn2drwade0js0i ::ffff:127.0.0.1:52994 start push /live/qa_tonight
+[9/4/2026, 8:22:47 PM] [INFO] RTMP session mtnn2hk9kv8dafnu ::ffff:127.0.0.1:53000 start play /live/qa_tonight
+[9/4/2026, 8:23:22 PM] [INFO] RTMP session mtnn2hk9kv8dafnu close
+[9/4/2026, 8:23:23 PM] [INFO] RTMP session mtnn39tnkc9cwetp ::ffff:127.0.0.1:53042 start play /live/qa_tonight
+[9/4/2026, 8:23:27 PM] [INFO] RTMP session mtnn39tnkc9cwetp socket error, Error: read ECONNRESET
+[9/4/2026, 8:23:27 PM] [INFO] RTMP session mtnn39tnkc9cwetp close
+[9/4/2026, 8:23:27 PM] [INFO] RTMP session mtnn3cd0yxh69hon ::ffff:127.0.0.1:53047 start play /live/qa_tonight
+[9/4/2026, 8:23:30 PM] [INFO] RTMP session mtnn3cd0yxh69hon socket error, Error: read ECONNRESET
+[9/4/2026, 8:23:30 PM] [INFO] RTMP session mtnn3cd0yxh69hon close
+[9/4/2026, 8:23:30 PM] [INFO] RTMP session mtnn3ewitr4yxnww ::ffff:127.0.0.1:53051 start play /live/qa_tonight
+[9/4/2026, 8:23:33 PM] [INFO] RTMP session mtnn3ewitr4yxnww socket error, Error: read ECONNRESET
+[9/4/2026, 8:23:33 PM] [INFO] RTMP session mtnn3ewitr4yxnww close
+[9/4/2026, 8:23:33 PM] [INFO] RTMP session mtnn3hfhmio8zdof ::ffff:127.0.0.1:53053 start play /live/qa_tonight
+[9/4/2026, 8:23:36 PM] [INFO] RTMP session mtnn3hfhmio8zdof socket error, Error: read ECONNRESET
+[9/4/2026, 8:23:36 PM] [INFO] RTMP session mtnn3hfhmio8zdof close
+[9/4/2026, 8:23:36 PM] [INFO] RTMP session mtnn3jy7jc7cejmb ::ffff:127.0.0.1:53056 start play /live/qa_tonight
+[9/4/2026, 8:24:01 PM] [INFO] RTMP session mtnn3jy7jc7cejmb close
+[9/4/2026, 8:24:02 PM] [INFO] RTMP session mtnn43rob7qud4gs ::ffff:127.0.0.1:53066 start play /live/qa_tonight
+[9/4/2026, 8:24:39 PM] [INFO] RTMP session mtnn43rob7qud4gs close
+[9/4/2026, 8:24:40 PM] [INFO] RTMP session mtnn4x8ynlr91dj2 ::ffff:127.0.0.1:53081 start play /live/qa_tonight
+[9/4/2026, 8:25:18 PM] [INFO] RTMP session mtnn4x8ynlr91dj2 close
+[9/4/2026, 8:25:18 PM] [INFO] RTMP session mtnn2drwade0js0i close
+[nms-heartbeat] stopping on SIGINT

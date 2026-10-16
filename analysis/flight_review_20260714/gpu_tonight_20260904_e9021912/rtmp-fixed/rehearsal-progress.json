@@ -1,0 +1,73 @@
+[
+  {
+    "app": "_09_M5_Fable_MotionISR_Rev3.py",
+    "command": [
+      "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python",
+      "/tmp/drone-tonight-gpu-20260904/gui_rehearsal.py",
+      "_09_M5_Fable_MotionISR_Rev3.py",
+      "--source",
+      "rtmp://127.0.0.1:21935/live/qa_tonight",
+      "--device",
+      "mps",
+      "--require-mps",
+      "--telemetry-jsonl",
+      "/tmp/drone-tonight-gpu-20260904/rtmp-fixed/motion-live-telemetry.jsonl",
+      "-ApplePersistenceIgnoreState",
+      "YES"
+    ],
+    "exit_code": 0,
+    "wall_s": 38.564777851104736
+  },
+  {
+    "app": "_12_M5_NightVision_Max_Rev3.py",
+    "command": [
+      "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python",
+      "/tmp/drone-tonight-gpu-20260904/gui_rehearsal.py",
+      "_12_M5_NightVision_Max_Rev3.py",
+      "--source",
+      "rtmp://127.0.0.1:21935/live/qa_tonight",
+      "--quality-device",
+      "mps",
+      "--require-mps",
+      "-ApplePersistenceIgnoreState",
+      "YES"
+    ],
+    "exit_code": 0,
+    "wall_s": 38.77851486206055
+  },
+  {
+    "app": "_11_M5_Fable_SuperRes_Rev4.py",
+    "command": [
+      "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python",
+      "/tmp/drone-tonight-gpu-20260904/gui_rehearsal.py",
+      "_11_M5_Fable_SuperRes_Rev4.py",
+      "--source",
+      "rtmp://127.0.0.1:21935/live/qa_tonight",
+      "--quality-device",
+      "mps",
+      "--require-mps",
+      "--zoom",
+      "4",
+      "--output-dir",
+      "/tmp/drone-tonight-gpu-20260904/rtmp-fixed/qa-superres-output",
+      "-ApplePersistenceIgnoreState",
+      "YES"
+    ],
+    "exit_code": 0,
+    "wall_s": 38.49248695373535
+  },
+  {
+    "app": "_10_M5_Fable_ImageScout_Rev3.py",
+    "command": [
+      "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python",
+      "/tmp/drone-tonight-gpu-20260904/gui_rehearsal.py",
+      "_10_M5_Fable_ImageScout_Rev3.py",
+      "--source",
+      "rtmp://127.0.0.1:21935/live/qa_tonight",
+      "-ApplePersistenceIgnoreState",
+      "YES"
+    ],
+    "exit_code": 0,
+    "wall_s": 38.45235085487366
+  }
+]

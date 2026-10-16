@@ -1,0 +1,3604 @@
+{
+  "automatic_scope": "artifact completeness, source-honesty proxies, supported-edge utility, noise, phase coverage and best-so-far progression",
+  "candidate": "/Users/randyblasik/Documents/Drone_EnhancedVision/_11_M5_Fable_SuperRes_Rev4.py",
+  "failures": [],
+  "human_gate": "comparison contact sheets must show obvious useful improvement; automatic metrics cannot prove memorable resolution gain",
+  "max_frames": 256,
+  "milestones": [
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "provenance": {
+    "code": {
+      "candidate": {
+        "bytes": 14805,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/_11_M5_Fable_SuperRes_Rev4.py",
+        "sha256": "e765240efef118384abeac7d471c4ad7854e8df8a5f725ce331f855b0ce8d359"
+      },
+      "candidate_rev1_dependency": {
+        "bytes": 107327,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/_11_M5_Fable_SuperRes_Rev1.py",
+        "sha256": "1d827662c14dcd46a614084c4afe82af5e4001fbf6abad461fe116160003fa0d"
+      },
+      "candidate_rev3_base": {
+        "bytes": 246634,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/_11_M5_Fable_SuperRes_Rev3.py",
+        "sha256": "003c35ee485743dae7d3732a308c26739bb150ab2a4d063252e8fcb939a23d5d"
+      },
+      "candidate_v4_refinement": {
+        "bytes": 16633,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_v4_mps.py",
+        "sha256": "6c626ba18369acd1d286e89c77d35449958e74c85310f5932842308b6dab7bb9"
+      },
+      "capture_guidance": {
+        "bytes": 21746,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_capture.py",
+        "sha256": "9d2cc8e2e99f6a765239bb8103552e320e11580d36829abadd8709cfc3e5ee8c"
+      },
+      "flight_catalog": {
+        "bytes": 20429,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/testdata/flight_scenes/2026-07-14.json",
+        "sha256": "5b1f2cf5b08e03f5b1f33ec97d445d208636b521dc3919e903132c3cf79251f1"
+      },
+      "flight_catalog_module": {
+        "bytes": 14018,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_flight_catalog.py",
+        "sha256": "5b372cab61a1e4180f64e935545e583cd806ff094eeff570f10be60855c499a0"
+      },
+      "mps_restoration": {
+        "bytes": 54034,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_mps.py",
+        "sha256": "9fb3719ead887e87073041d5058a68182a6a6b8c004601173f56e3d431eb7846"
+      },
+      "pair_metric_helpers": {
+        "bytes": 55643,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_v3_validation.py",
+        "sha256": "04c9c77d1ee6cd20264556c77f0834fa0aac4692bfe16b57320c008dcccad82f"
+      },
+      "reconstruction_core": {
+        "bytes": 42892,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_v3_ibp.py",
+        "sha256": "f420666672ac7ec1f4fe407e7572f4e6d39a6f469b025472ca12bec90262af0e"
+      },
+      "regional_restoration": {
+        "bytes": 77244,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_v3_regional.py",
+        "sha256": "3b88a4355d57623c4677971998e3f01e88793affb071284933858b9043b3b3de"
+      },
+      "shared_perceptual": {
+        "bytes": 12889,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_perceptual.py",
+        "sha256": "1a210138d2119cce688ea31f41258bfd31ea686d330e5b19d30ab1df69e29698"
+      },
+      "validator": {
+        "bytes": 70499,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_v3_validation.py",
+        "sha256": "c2b82934d310183e136ad92b721204bc49c58f3430050b6c451cfe4f59b62c2e"
+      },
+      "venv_bootstrap": {
+        "bytes": 1806,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/venv_bootstrap.py",
+        "sha256": "ffa92e03cc144f8ee7f00230992e8a642a0918f9f2d039eb494b12a259b44c55"
+      }
+    },
+    "code_at_end": {
+      "candidate": {
+        "bytes": 14805,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/_11_M5_Fable_SuperRes_Rev4.py",
+        "sha256": "e765240efef118384abeac7d471c4ad7854e8df8a5f725ce331f855b0ce8d359"
+      },
+      "candidate_rev1_dependency": {
+        "bytes": 107327,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/_11_M5_Fable_SuperRes_Rev1.py",
+        "sha256": "1d827662c14dcd46a614084c4afe82af5e4001fbf6abad461fe116160003fa0d"
+      },
+      "candidate_rev3_base": {
+        "bytes": 246634,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/_11_M5_Fable_SuperRes_Rev3.py",
+        "sha256": "003c35ee485743dae7d3732a308c26739bb150ab2a4d063252e8fcb939a23d5d"
+      },
+      "candidate_v4_refinement": {
+        "bytes": 16633,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_v4_mps.py",
+        "sha256": "6c626ba18369acd1d286e89c77d35449958e74c85310f5932842308b6dab7bb9"
+      },
+      "capture_guidance": {
+        "bytes": 21746,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_capture.py",
+        "sha256": "9d2cc8e2e99f6a765239bb8103552e320e11580d36829abadd8709cfc3e5ee8c"
+      },
+      "flight_catalog": {
+        "bytes": 20429,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/testdata/flight_scenes/2026-07-14.json",
+        "sha256": "5b1f2cf5b08e03f5b1f33ec97d445d208636b521dc3919e903132c3cf79251f1"
+      },
+      "flight_catalog_module": {
+        "bytes": 14018,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_flight_catalog.py",
+        "sha256": "5b372cab61a1e4180f64e935545e583cd806ff094eeff570f10be60855c499a0"
+      },
+      "mps_restoration": {
+        "bytes": 54034,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_mps.py",
+        "sha256": "9fb3719ead887e87073041d5058a68182a6a6b8c004601173f56e3d431eb7846"
+      },
+      "pair_metric_helpers": {
+        "bytes": 55643,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_v3_validation.py",
+        "sha256": "04c9c77d1ee6cd20264556c77f0834fa0aac4692bfe16b57320c008dcccad82f"
+      },
+      "reconstruction_core": {
+        "bytes": 42892,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_v3_ibp.py",
+        "sha256": "f420666672ac7ec1f4fe407e7572f4e6d39a6f469b025472ca12bec90262af0e"
+      },
+      "regional_restoration": {
+        "bytes": 77244,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_v3_regional.py",
+        "sha256": "3b88a4355d57623c4677971998e3f01e88793affb071284933858b9043b3b3de"
+      },
+      "shared_perceptual": {
+        "bytes": 12889,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_perceptual.py",
+        "sha256": "1a210138d2119cce688ea31f41258bfd31ea686d330e5b19d30ab1df69e29698"
+      },
+      "validator": {
+        "bytes": 70499,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_v3_validation.py",
+        "sha256": "c2b82934d310183e136ad92b721204bc49c58f3430050b6c451cfe4f59b62c2e"
+      },
+      "venv_bootstrap": {
+        "bytes": 1806,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/venv_bootstrap.py",
+        "sha256": "ffa92e03cc144f8ee7f00230992e8a642a0918f9f2d039eb494b12a259b44c55"
+      }
+    },
+    "code_at_start": {
+      "candidate": {
+        "bytes": 14805,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/_11_M5_Fable_SuperRes_Rev4.py",
+        "sha256": "e765240efef118384abeac7d471c4ad7854e8df8a5f725ce331f855b0ce8d359"
+      },
+      "candidate_rev1_dependency": {
+        "bytes": 107327,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/_11_M5_Fable_SuperRes_Rev1.py",
+        "sha256": "1d827662c14dcd46a614084c4afe82af5e4001fbf6abad461fe116160003fa0d"
+      },
+      "candidate_rev3_base": {
+        "bytes": 246634,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/_11_M5_Fable_SuperRes_Rev3.py",
+        "sha256": "003c35ee485743dae7d3732a308c26739bb150ab2a4d063252e8fcb939a23d5d"
+      },
+      "candidate_v4_refinement": {
+        "bytes": 16633,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_v4_mps.py",
+        "sha256": "6c626ba18369acd1d286e89c77d35449958e74c85310f5932842308b6dab7bb9"
+      },
+      "capture_guidance": {
+        "bytes": 21746,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_capture.py",
+        "sha256": "9d2cc8e2e99f6a765239bb8103552e320e11580d36829abadd8709cfc3e5ee8c"
+      },
+      "flight_catalog": {
+        "bytes": 20429,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/testdata/flight_scenes/2026-07-14.json",
+        "sha256": "5b1f2cf5b08e03f5b1f33ec97d445d208636b521dc3919e903132c3cf79251f1"
+      },
+      "flight_catalog_module": {
+        "bytes": 14018,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_flight_catalog.py",
+        "sha256": "5b372cab61a1e4180f64e935545e583cd806ff094eeff570f10be60855c499a0"
+      },
+      "mps_restoration": {
+        "bytes": 54034,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_mps.py",
+        "sha256": "9fb3719ead887e87073041d5058a68182a6a6b8c004601173f56e3d431eb7846"
+      },
+      "pair_metric_helpers": {
+        "bytes": 55643,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_v3_validation.py",
+        "sha256": "04c9c77d1ee6cd20264556c77f0834fa0aac4692bfe16b57320c008dcccad82f"
+      },
+      "reconstruction_core": {
+        "bytes": 42892,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_v3_ibp.py",
+        "sha256": "f420666672ac7ec1f4fe407e7572f4e6d39a6f469b025472ca12bec90262af0e"
+      },
+      "regional_restoration": {
+        "bytes": 77244,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_v3_regional.py",
+        "sha256": "3b88a4355d57623c4677971998e3f01e88793affb071284933858b9043b3b3de"
+      },
+      "shared_perceptual": {
+        "bytes": 12889,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_perceptual.py",
+        "sha256": "1a210138d2119cce688ea31f41258bfd31ea686d330e5b19d30ab1df69e29698"
+      },
+      "validator": {
+        "bytes": 70499,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_superres_v3_validation.py",
+        "sha256": "c2b82934d310183e136ad92b721204bc49c58f3430050b6c451cfe4f59b62c2e"
+      },
+      "venv_bootstrap": {
+        "bytes": 1806,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/venv_bootstrap.py",
+        "sha256": "ffa92e03cc144f8ee7f00230992e8a642a0918f9f2d039eb494b12a259b44c55"
+      }
+    },
+    "code_stability": {
+      "changed": {},
+      "passed": true,
+      "scope": "this validator invocation"
+    },
+    "runtime": {
+      "numpy": "2.4.2",
+      "opencv": "4.13.0",
+      "python": "3.11.14 (main, Oct  9 2025, 16:16:55) [Clang 17.0.0 (clang-1700.6.3.2)]"
+    },
+    "sources": [
+      {
+        "bytes": 358895612,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_191345_attempt1.mp4",
+        "sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744"
+      },
+      {
+        "bytes": 457650637,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_195336_attempt1.mp4",
+        "sha256": "5096d8eed9c12d8905e0c484aa356598eb9f56534b172102ac37a94d19ff8ba6"
+      }
+    ]
+  },
+  "python": "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python",
+  "scenes": [
+    {
+      "candidate_run": {
+        "command": "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python /Users/randyblasik/Documents/Drone_EnhancedVision/_11_M5_Fable_SuperRes_Rev4.py --headless --source /private/tmp/m5_superres_v3_fixtures/soft_barn_soak_e6fa40dcd9c12996.mkv --roi 0,0,640,480 --start-seconds 0.000 --max-frames 256 --milestones 4,8,16,32,64 --output-dir /private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate --report-json /private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate_report.json --quality-device mps --require-mps",
+        "elapsed_s": 174.5011820839718,
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "[superres-v3] milestone n=4 phase=2/4 Q=-2.665758505334311 proof=/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0004_proof.png\n[superres-v3] milestone n=8 phase=4/4 Q=-0.24732188432140434 proof=/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0008_proof.png\n[superres-v3] milestone n=16 phase=4/4 Q=4.578642275985536 proof=/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0016_proof.png\n[superres-v3] milestone n=32 phase=4/4 Q=41.23080907533592 proof=/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0032_proof.png\n[superres-v3] milestone n=64 phase=4/4 Q=61.31248691203251 proof=/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0064_proof.png\n[superres-v3] frames=256 fps=1.50 reservoir=64 accepted=64 rejected=187 phase=4/4 resets=0\n[superres-v3] Q=61.312 HOLD=-0.05dB edge=1.162x noise=1.000x repeat=4.8% beta=1.00 PSF=1.30/1.63 best=4559d0586604\n[superres-v3] report=/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate_report.json\n"
+      },
+      "failures": [],
+      "fixture": {
+        "command": "ffmpeg -y -hide_banner -loglevel warning -err_detect ignore_err -ss 510.000 -i /Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_191345_attempt1.mp4 -t 12.667 -map 0:v:0 -vf crop=640:480:640:300 -an -fps_mode passthrough -c:v libx264 -preset ultrafast -qp 0 -pix_fmt yuv420p /private/tmp/m5_superres_v3_fixtures/soft_barn_soak_e6fa40dcd9c12996.mkv",
+        "duration_requested_s": 12.666666666666666,
+        "ffmpeg_version": "ffmpeg version 8.0.1 Copyright (c) 2000-2025 the FFmpeg developers",
+        "fixture": "/private/tmp/m5_superres_v3_fixtures/soft_barn_soak_e6fa40dcd9c12996.mkv",
+        "fixture_key": "e6fa40dcd9c12996",
+        "fixture_receipt": {
+          "bytes": 7516212,
+          "path": "/private/tmp/m5_superres_v3_fixtures/soft_barn_soak_e6fa40dcd9c12996.mkv",
+          "sha256": "383b596e35f17650e14b4a8fd48ebe42d2de13ecf077f1237fcb01097be2cad5"
+        },
+        "note": "bounded source crop, lossless H.264 QP 0; no enhancement",
+        "probe": {
+          "format": {
+            "duration": "12.684000",
+            "size": "7516212"
+          },
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "avg_frame_rate": "4235/158",
+              "codec_name": "h264",
+              "height": 480,
+              "nb_read_frames": "377",
+              "pix_fmt": "yuv420p",
+              "width": 640
+            }
+          ]
+        },
+        "scene": {
+          "extended": true,
+          "file": "stream_20260714_191345_attempt1.mp4",
+          "max_duration_s": 70.0,
+          "name": "soft_barn_soak",
+          "purpose": "Long telephoto hold on a white barn, tree line, poles and field tracks.",
+          "roi": [
+            640,
+            300,
+            640,
+            480
+          ],
+          "start_s": 510.0
+        },
+        "source": {
+          "mtime_ns": 1784071419805592541,
+          "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_191345_attempt1.mp4",
+          "size": 358895612
+        },
+        "source_catalog": {
+          "bytes": 358895612,
+          "sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744",
+          "source_id": "seg_191345"
+        },
+        "stderr_tail": "es\n[h264 @ 0x816c64e00] missing picture in access unit with size 30\n[h264 @ 0x816c65f80] no frame!\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n    Last message repeated 1 times\n[vist#0:0/h264 @ 0x817008300] [dec:h264 @ 0x816c18280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n[h264 @ 0x816c64e00] missing picture in access unit with size 30\n[h264 @ 0x816c65880] no frame!\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n    Last message repeated 1 times\n[vist#0:0/h264 @ 0x817008300] [dec:h264 @ 0x816c18280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n[h264 @ 0x816c64e00] missing picture in access unit with size 30\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n    Last message repeated 1 times\n[h264 @ 0x816c67800] no frame!\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n[vist#0:0/h264 @ 0x817008300] [dec:h264 @ 0x816c18280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n[h264 @ 0x816c64e00] missing picture in access unit with size 30\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n[h264 @ 0x816c67100] no frame!\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n    Last message repeated 2 times\n[vist#0:0/h264 @ 0x817008300] [dec:h264 @ 0x816c18280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n[h264 @ 0x816c64e00] missing picture in access unit with size 30\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n[h264 @ 0x816c66a00] no frame!\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n[vist#0:0/h264 @ 0x817008300] [dec:h264 @ 0x816c18280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n[h264 @ 0x816c64e00] missing picture in access unit with size 30\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n    Last message repeated 1 times\n[h264 @ 0x816c66300] no frame!\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n[vist#0:0/h264 @ 0x817008300] [dec:h264 @ 0x816c18280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n    Last message repeated 1 times\n[h264 @ 0x816c64e00] missing picture in access unit with size 30\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n[h264 @ 0x816c65c00] no frame!\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n[vist#0:0/h264 @ 0x817008300] [dec:h264 @ 0x816c18280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n    Last message repeated 1 times\n[h264 @ 0x816c64e00] missing picture in access unit with size 30\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n[h264 @ 0x816c67b80] no frame!\n[vist#0:0/h264 @ 0x817008300] [dec:h264 @ 0x816c18280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n    Last message repeated 2 times\n[h264 @ 0x816c64e00] missing picture in access unit with size 30\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n[h264 @ 0x816c67480] no frame!\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n[vist#0:0/h264 @ 0x817008300] [dec:h264 @ 0x816c18280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n[h264 @ 0x816c64e00] missing picture in access unit with size 30\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n[h264 @ 0x816c66d80] no frame!\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n    Last message repeated 1 times\n[vist#0:0/h264 @ 0x817008300] [dec:h264 @ 0x816c18280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0x816c65180] non-strictly-monotonic PTS\n    Last message repeated 1 times\n",
+        "transcode_elapsed_s": 0.8600626662373543
+      },
+      "measurements": {
+        "candidate_summary": {
+          "accepted": 64,
+          "frames_ingested": 256,
+          "rejected": 187,
+          "resets": 0
+        },
+        "contact_sheet": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/milestone_contact_sheet.png",
+        "milestones": [
+          {
+            "artifact_mode": "best_single_fallback",
+            "baseline_alignment": {
+              "best_single": {
+                "applied": 1.0,
+                "dx": 4.105231710127555e-10,
+                "dy": 7.958078640513122e-13,
+                "response": 0.9999997054122165
+              },
+              "bicubic": {
+                "applied": 1.0,
+                "dx": 4.105231710127555e-10,
+                "dy": 7.958078640513122e-13,
+                "response": 0.9999997054122165
+              }
+            },
+            "best_n": null,
+            "best_phase_bins": null,
+            "best_prior_seq": null,
+            "best_revision": null,
+            "best_source_end_s": null,
+            "best_source_span_s": null,
+            "best_source_start_s": null,
+            "candidate_best_raw_sha256": null,
+            "candidate_best_sha256": null,
+            "candidate_quality_score": -2.665758505334311,
+            "comparison": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/milestone_0004_comparison.png",
+            "current_n": 4,
+            "current_prior_seq": 1,
+            "current_revision": 4,
+            "current_source_end_s": 0.112,
+            "current_source_span_s": 0.112,
+            "current_source_start_s": 0.0,
+            "evidence_score": 0.0,
+            "is_best_so_far": false,
+            "n": 4,
+            "paths": {
+              "best_single": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0004_best_single_native.png",
+              "bicubic": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0004_best_single_bicubic.png",
+              "stack": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0004_best_stack.png",
+              "stack_raw": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0004_best_stack_raw.png"
+            },
+            "phase_bins": [
+              [
+                2,
+                0
+              ],
+              [
+                2,
+                0
+              ]
+            ],
+            "phase_coverage": 0.5,
+            "raw_evidence_score": 0.0,
+            "raw_vs_best_single": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 60.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 60.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            },
+            "shape": [
+              960,
+              1280,
+              3
+            ],
+            "source_shapes": {
+              "best_single": [
+                480,
+                640,
+                3
+              ],
+              "bicubic": [
+                960,
+                1280,
+                3
+              ],
+              "stack": [
+                960,
+                1280,
+                3
+              ],
+              "stack_raw": [
+                960,
+                1280,
+                3
+              ]
+            },
+            "stack_file_sha256": "6fe872025bcde7a9a3151c520b438674f1224c616cd5561e78a50ff9f53ac75e",
+            "stack_pixel_sha256": "a14ae7bd66d92da8fcf4935a687f90c6b7acc078fb64d00d1e0527a88b11a04f",
+            "stack_raw_file_sha256": "6fe872025bcde7a9a3151c520b438674f1224c616cd5561e78a50ff9f53ac75e",
+            "stack_raw_pixel_sha256": "a14ae7bd66d92da8fcf4935a687f90c6b7acc078fb64d00d1e0527a88b11a04f",
+            "validation_role": "milestone",
+            "vs_best_single": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 60.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 60.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            },
+            "vs_bicubic": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 60.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 60.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            }
+          },
+          {
+            "artifact_mode": "best_single_fallback",
+            "baseline_alignment": {
+              "best_single": {
+                "applied": 1.0,
+                "dx": 4.105231710127555e-10,
+                "dy": 7.958078640513122e-13,
+                "response": 0.9999997054122165
+              },
+              "bicubic": {
+                "applied": 1.0,
+                "dx": 4.105231710127555e-10,
+                "dy": 7.958078640513122e-13,
+                "response": 0.9999997054122165
+              }
+            },
+            "best_n": null,
+            "best_phase_bins": null,
+            "best_prior_seq": null,
+            "best_revision": null,
+            "best_source_end_s": null,
+            "best_source_span_s": null,
+            "best_source_start_s": null,
+            "candidate_best_raw_sha256": null,
+            "candidate_best_sha256": null,
+            "candidate_quality_score": -0.24732188432140434,
+            "comparison": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/milestone_0008_comparison.png",
+            "current_n": 8,
+            "current_prior_seq": 1,
+            "current_revision": 8,
+            "current_source_end_s": 0.41000000000000003,
+            "current_source_span_s": 0.41000000000000003,
+            "current_source_start_s": 0.0,
+            "evidence_score": 0.0,
+            "is_best_so_far": false,
+            "n": 8,
+            "paths": {
+              "best_single": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0008_best_single_native.png",
+              "bicubic": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0008_best_single_bicubic.png",
+              "stack": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0008_best_stack.png",
+              "stack_raw": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0008_best_stack_raw.png"
+            },
+            "phase_bins": [
+              [
+                3,
+                1
+              ],
+              [
+                3,
+                1
+              ]
+            ],
+            "phase_coverage": 1.0,
+            "raw_evidence_score": 0.0,
+            "raw_vs_best_single": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 60.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 60.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            },
+            "shape": [
+              960,
+              1280,
+              3
+            ],
+            "source_shapes": {
+              "best_single": [
+                480,
+                640,
+                3
+              ],
+              "bicubic": [
+                960,
+                1280,
+                3
+              ],
+              "stack": [
+                960,
+                1280,
+                3
+              ],
+              "stack_raw": [
+                960,
+                1280,
+                3
+              ]
+            },
+            "stack_file_sha256": "6fe872025bcde7a9a3151c520b438674f1224c616cd5561e78a50ff9f53ac75e",
+            "stack_pixel_sha256": "a14ae7bd66d92da8fcf4935a687f90c6b7acc078fb64d00d1e0527a88b11a04f",
+            "stack_raw_file_sha256": "6fe872025bcde7a9a3151c520b438674f1224c616cd5561e78a50ff9f53ac75e",
+            "stack_raw_pixel_sha256": "a14ae7bd66d92da8fcf4935a687f90c6b7acc078fb64d00d1e0527a88b11a04f",
+            "validation_role": "milestone",
+            "vs_best_single": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 60.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 60.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            },
+            "vs_bicubic": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 60.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 60.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            }
+          },
+          {
+            "artifact_mode": "best_single_fallback",
+            "baseline_alignment": {
+              "best_single": {
+                "applied": 1.0,
+                "dx": 4.105231710127555e-10,
+                "dy": 7.958078640513122e-13,
+                "response": 0.9999997054122165
+              },
+              "bicubic": {
+                "applied": 1.0,
+                "dx": 4.105231710127555e-10,
+                "dy": 7.958078640513122e-13,
+                "response": 0.9999997054122165
+              }
+            },
+            "best_n": null,
+            "best_phase_bins": null,
+            "best_prior_seq": null,
+            "best_revision": null,
+            "best_source_end_s": null,
+            "best_source_span_s": null,
+            "best_source_start_s": null,
+            "candidate_best_raw_sha256": null,
+            "candidate_best_sha256": null,
+            "candidate_quality_score": 4.578642275985536,
+            "comparison": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/milestone_0016_comparison.png",
+            "current_n": 16,
+            "current_prior_seq": 1,
+            "current_revision": 16,
+            "current_source_end_s": 1.3800000000000003,
+            "current_source_span_s": 1.3800000000000003,
+            "current_source_start_s": 0.0,
+            "evidence_score": 0.0,
+            "is_best_so_far": false,
+            "n": 16,
+            "paths": {
+              "best_single": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0016_best_single_native.png",
+              "bicubic": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0016_best_single_bicubic.png",
+              "stack": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0016_best_stack.png",
+              "stack_raw": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0016_best_stack_raw.png"
+            },
+            "phase_bins": [
+              [
+                3,
+                3
+              ],
+              [
+                7,
+                3
+              ]
+            ],
+            "phase_coverage": 1.0,
+            "raw_evidence_score": 0.0,
+            "raw_vs_best_single": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 60.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 60.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            },
+            "shape": [
+              960,
+              1280,
+              3
+            ],
+            "source_shapes": {
+              "best_single": [
+                480,
+                640,
+                3
+              ],
+              "bicubic": [
+                960,
+                1280,
+                3
+              ],
+              "stack": [
+                960,
+                1280,
+                3
+              ],
+              "stack_raw": [
+                960,
+                1280,
+                3
+              ]
+            },
+            "stack_file_sha256": "6fe872025bcde7a9a3151c520b438674f1224c616cd5561e78a50ff9f53ac75e",
+            "stack_pixel_sha256": "a14ae7bd66d92da8fcf4935a687f90c6b7acc078fb64d00d1e0527a88b11a04f",
+            "stack_raw_file_sha256": "6fe872025bcde7a9a3151c520b438674f1224c616cd5561e78a50ff9f53ac75e",
+            "stack_raw_pixel_sha256": "a14ae7bd66d92da8fcf4935a687f90c6b7acc078fb64d00d1e0527a88b11a04f",
+            "validation_role": "milestone",
+            "vs_best_single": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 60.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 60.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            },
+            "vs_bicubic": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 60.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 60.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            }
+          },
+          {
+            "artifact_mode": "promoted_best",
+            "baseline_alignment": {
+              "best_single": {
+                "applied": 1.0,
+                "dx": 0.009530948014003116,
+                "dy": -0.06402314155411659,
+                "response": 0.9041247387727102
+              },
+              "bicubic": {
+                "applied": 1.0,
+                "dx": 0.009530948014003116,
+                "dy": -0.06402314155411659,
+                "response": 0.9041247387727102
+              }
+            },
+            "best_n": 32,
+            "best_phase_bins": [
+              [
+                3,
+                4
+              ],
+              [
+                9,
+                16
+              ]
+            ],
+            "best_prior_seq": 1,
+            "best_revision": 32,
+            "best_source_end_s": 2.388,
+            "best_source_span_s": 2.388,
+            "best_source_start_s": 0.0,
+            "candidate_best_raw_sha256": "6afb514e7619ed0c88fa5a9d2d2d3a053ca7e8a4a71dc9908b7f7b30575933bc",
+            "candidate_best_sha256": "901da290864f6904acda77edc01364fb1c9325581bad103fe10f2bc781672dd2",
+            "candidate_quality_score": 41.23080907533592,
+            "comparison": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/milestone_0032_comparison.png",
+            "current_n": 32,
+            "current_prior_seq": 1,
+            "current_revision": 32,
+            "current_source_end_s": 2.388,
+            "current_source_span_s": 2.388,
+            "current_source_start_s": 0.0,
+            "evidence_score": 0.5373007956156726,
+            "is_best_so_far": true,
+            "n": 32,
+            "paths": {
+              "best_single": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0032_best_single_native.png",
+              "bicubic": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0032_best_single_bicubic.png",
+              "stack": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0032_best_stack.png",
+              "stack_raw": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0032_best_stack_raw.png"
+            },
+            "phase_bins": [
+              [
+                3,
+                4
+              ],
+              [
+                9,
+                16
+              ]
+            ],
+            "phase_coverage": 1.0,
+            "raw_evidence_score": 0.09181540787109976,
+            "raw_vs_best_single": {
+              "acutance_gain": 0.09181540787109976,
+              "added_energy_per_pixel": 0.3772914377848307,
+              "contrast_enhanced": 59.0,
+              "contrast_gain": -0.01666666666666672,
+              "contrast_raw": 60.0,
+              "downsample_psnr_db": 57.951446797122266,
+              "downsample_ssim": 0.9992576241493225,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 0.9992608428001404,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 1.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            },
+            "shape": [
+              960,
+              1280,
+              3
+            ],
+            "source_shapes": {
+              "best_single": [
+                480,
+                640,
+                3
+              ],
+              "bicubic": [
+                960,
+                1280,
+                3
+              ],
+              "stack": [
+                960,
+                1280,
+                3
+              ],
+              "stack_raw": [
+                960,
+                1280,
+                3
+              ]
+            },
+            "stack_file_sha256": "d3dfd229cbdf19524244d9856325a82a167583f529e8eeddb5a29bb9ba9d087f",
+            "stack_pixel_sha256": "901da290864f6904acda77edc01364fb1c9325581bad103fe10f2bc781672dd2",
+            "stack_raw_file_sha256": "fa0b96124dcded38568e37ce54e1db3f65b1443630d03b66395b15fa3b6828e8",
+            "stack_raw_pixel_sha256": "6afb514e7619ed0c88fa5a9d2d2d3a053ca7e8a4a71dc9908b7f7b30575933bc",
+            "validation_role": "milestone",
+            "vs_best_single": {
+              "acutance_gain": 0.5468418112406725,
+              "added_energy_per_pixel": 2.2612418619791668,
+              "contrast_enhanced": 71.0,
+              "contrast_gain": 0.18333333333333335,
+              "contrast_raw": 60.0,
+              "downsample_psnr_db": 17.164850708984766,
+              "downsample_ssim": 0.9511242508888245,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 0.992033064365387,
+              "novel_edge_rate": 0.0047705078125,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.7167417370674732,
+              "supported_added_energy_gate_applies": true,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            },
+            "vs_bicubic": {
+              "acutance_gain": 0.5468418112406725,
+              "added_energy_per_pixel": 2.2612418619791668,
+              "contrast_enhanced": 71.0,
+              "contrast_gain": 0.18333333333333335,
+              "contrast_raw": 60.0,
+              "downsample_psnr_db": 17.164850708984766,
+              "downsample_ssim": 0.9511242508888245,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 0.992033064365387,
+              "novel_edge_rate": 0.0047705078125,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.7167417370674732,
+              "supported_added_energy_gate_applies": true,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            }
+          },
+          {
+            "artifact_mode": "promoted_best",
+            "baseline_alignment": {
+              "best_single": {
+                "applied": 1.0,
+                "dx": 0.12848111244625215,
+                "dy": -0.030068348715303728,
+                "response": 0.792083178559939
+              },
+              "bicubic": {
+                "applied": 1.0,
+                "dx": 0.12848111244625215,
+                "dy": -0.030068348715303728,
+                "response": 0.792083178559939
+              }
+            },
+            "best_n": 64,
+            "best_phase_bins": [
+              [
+                11,
+                9
+              ],
+              [
+                21,
+                23
+              ]
+            ],
+            "best_prior_seq": 1,
+            "best_revision": 64,
+            "best_source_end_s": 8.581,
+            "best_source_span_s": 8.581,
+            "best_source_start_s": 0.0,
+            "candidate_best_raw_sha256": "703c3c79ea4d52439dc11284deea423393895aecf0ac3b66fb9d2a511f225e31",
+            "candidate_best_sha256": "4559d05866046151134456c82d29e9503fdc1621eb7c56712ff7e9ede348a5a7",
+            "candidate_quality_score": 61.31248691203251,
+            "comparison": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/milestone_0064_comparison.png",
+            "current_n": 64,
+            "current_prior_seq": 1,
+            "current_revision": 64,
+            "current_source_end_s": 8.581,
+            "current_source_span_s": 8.581,
+            "current_source_start_s": 0.0,
+            "evidence_score": 0.8631867878618116,
+            "is_best_so_far": true,
+            "n": 64,
+            "paths": {
+              "best_single": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0064_best_single_native.png",
+              "bicubic": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0064_best_single_bicubic.png",
+              "stack": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0064_best_stack.png",
+              "stack_raw": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/milestone_0064_best_stack_raw.png"
+            },
+            "phase_bins": [
+              [
+                11,
+                9
+              ],
+              [
+                21,
+                23
+              ]
+            ],
+            "phase_coverage": 1.0,
+            "raw_evidence_score": 0.1621185884252201,
+            "raw_vs_best_single": {
+              "acutance_gain": 0.1621185884252201,
+              "added_energy_per_pixel": 0.7068387858072916,
+              "contrast_enhanced": 59.0,
+              "contrast_gain": -0.01666666666666672,
+              "contrast_raw": 60.0,
+              "downsample_psnr_db": 53.157492803847674,
+              "downsample_ssim": 0.9977372288703918,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 0.9999997287326389,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 0.9977383613586426,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 2.712673611111111e-07,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 1.0,
+              "supported_added_energy_gate_applies": true,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            },
+            "shape": [
+              960,
+              1280,
+              3
+            ],
+            "source_shapes": {
+              "best_single": [
+                480,
+                640,
+                3
+              ],
+              "bicubic": [
+                960,
+                1280,
+                3
+              ],
+              "stack": [
+                960,
+                1280,
+                3
+              ],
+              "stack_raw": [
+                960,
+                1280,
+                3
+              ]
+            },
+            "stack_file_sha256": "2fbd77383f2961d7e4fc0eb8f8d30e1fa3dee75d17038d6944e5b2656104ca57",
+            "stack_pixel_sha256": "4559d05866046151134456c82d29e9503fdc1621eb7c56712ff7e9ede348a5a7",
+            "stack_raw_file_sha256": "aff992de577a3a7d085450ffba9001f82a43f5f262119fc112ac3dd3edf502b9",
+            "stack_raw_pixel_sha256": "703c3c79ea4d52439dc11284deea423393895aecf0ac3b66fb9d2a511f225e31",
+            "validation_role": "milestone",
+            "vs_best_single": {
+              "acutance_gain": 0.8731444701534783,
+              "added_energy_per_pixel": 3.7611482747395835,
+              "contrast_enhanced": 72.0,
+              "contrast_gain": 0.19999999999999996,
+              "contrast_raw": 60.0,
+              "downsample_psnr_db": 14.22950915310217,
+              "downsample_ssim": 0.8915236592292786,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 0.9999338107638889,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 0.9819524884223938,
+              "novel_edge_rate": 0.004978841145833334,
+              "saturated_channel_enhanced": 6.618923611111112e-05,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 1.6276041666666668e-06,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.7593208687973838,
+              "supported_added_energy_gate_applies": true,
+              "true_clip_enhanced": 0.00013020833333333333,
+              "true_clip_raw": 0.0
+            },
+            "vs_bicubic": {
+              "acutance_gain": 0.8731444701534783,
+              "added_energy_per_pixel": 3.7611482747395835,
+              "contrast_enhanced": 72.0,
+              "contrast_gain": 0.19999999999999996,
+              "contrast_raw": 60.0,
+              "downsample_psnr_db": 14.22950915310217,
+              "downsample_ssim": 0.8915236592292786,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 0.9999338107638889,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 0.9819524884223938,
+              "novel_edge_rate": 0.004978841145833334,
+              "saturated_channel_enhanced": 6.618923611111112e-05,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 1.6276041666666668e-06,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.7593208687973838,
+              "supported_added_energy_gate_applies": true,
+              "true_clip_enhanced": 0.00013020833333333333,
+              "true_clip_raw": 0.0
+            }
+          }
+        ],
+        "quality_curve": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/quality_curve.csv",
+        "report": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate_report.json",
+        "terminal": {
+          "artifact_mode": "promoted_best",
+          "baseline_alignment": {
+            "best_single": {
+              "applied": 1.0,
+              "dx": 0.12848111244625215,
+              "dy": -0.030068348715303728,
+              "response": 0.792083178559939
+            },
+            "bicubic": {
+              "applied": 1.0,
+              "dx": 0.12848111244625215,
+              "dy": -0.030068348715303728,
+              "response": 0.792083178559939
+            }
+          },
+          "best_n": 64,
+          "best_phase_bins": [
+            [
+              11,
+              9
+            ],
+            [
+              21,
+              23
+            ]
+          ],
+          "best_prior_seq": 1,
+          "best_revision": 64,
+          "best_source_end_s": 8.581,
+          "best_source_span_s": 8.581,
+          "best_source_start_s": 0.0,
+          "candidate_best_raw_sha256": "703c3c79ea4d52439dc11284deea423393895aecf0ac3b66fb9d2a511f225e31",
+          "candidate_best_sha256": "4559d05866046151134456c82d29e9503fdc1621eb7c56712ff7e9ede348a5a7",
+          "candidate_quality_score": 61.31248691203251,
+          "comparison": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/terminal_comparison.png",
+          "current_n": 64,
+          "current_prior_seq": 1,
+          "current_revision": 64,
+          "current_source_end_s": 8.581,
+          "current_source_span_s": 8.581,
+          "current_source_start_s": 0.0,
+          "evidence_score": 0.8631867878618116,
+          "is_best_so_far": true,
+          "n": 64,
+          "paths": {
+            "best_single": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/final_184543_best_single_native.png",
+            "bicubic": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/final_184543_best_single_bicubic.png",
+            "stack": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/final_184543_best_stack.png",
+            "stack_raw": "/private/tmp/drone-upgrade-20260904/final-superres-independent/soft_barn_soak/candidate/20260904_184252_057780/final_184543_best_stack_raw.png"
+          },
+          "phase_bins": [
+            [
+              11,
+              9
+            ],
+            [
+              21,
+              23
+            ]
+          ],
+          "phase_coverage": 1.0,
+          "raw_evidence_score": 0.1621185884252201,
+          "raw_vs_best_single": {
+            "acutance_gain": 0.1621185884252201,
+            "added_energy_per_pixel": 0.7068387858072916,
+            "contrast_enhanced": 59.0,
+            "contrast_gain": -0.01666666666666672,
+            "contrast_raw": 60.0,
+            "downsample_psnr_db": 53.157492803847674,
+            "downsample_ssim": 0.9977372288703918,
+            "flat_clip_pixels": 0,
+            "flat_clip_texture_rms_enhanced": null,
+            "flat_clip_texture_rms_raw": null,
+            "highlight_headroom_enhanced": 0.9999997287326389,
+            "highlight_headroom_raw": 1.0,
+            "histogram_matched_ssim": 0.9977383613586426,
+            "novel_edge_rate": 0.0,
+            "saturated_channel_enhanced": 2.712673611111111e-07,
+            "saturated_channel_raw": 0.0,
+            "shadow_enhanced": 0.0,
+            "shadow_raw": 0.0,
+            "smooth_noise_ratio": 1.0,
+            "supported_added_energy": 1.0,
+            "supported_added_energy_gate_applies": true,
+            "true_clip_enhanced": 0.0,
+            "true_clip_raw": 0.0
+          },
+          "shape": [
+            960,
+            1280,
+            3
+          ],
+          "source_shapes": {
+            "best_single": [
+              480,
+              640,
+              3
+            ],
+            "bicubic": [
+              960,
+              1280,
+              3
+            ],
+            "stack": [
+              960,
+              1280,
+              3
+            ],
+            "stack_raw": [
+              960,
+              1280,
+              3
+            ]
+          },
+          "stack_file_sha256": "2fbd77383f2961d7e4fc0eb8f8d30e1fa3dee75d17038d6944e5b2656104ca57",
+          "stack_pixel_sha256": "4559d05866046151134456c82d29e9503fdc1621eb7c56712ff7e9ede348a5a7",
+          "stack_raw_file_sha256": "aff992de577a3a7d085450ffba9001f82a43f5f262119fc112ac3dd3edf502b9",
+          "stack_raw_pixel_sha256": "703c3c79ea4d52439dc11284deea423393895aecf0ac3b66fb9d2a511f225e31",
+          "validation_role": "terminal",
+          "vs_best_single": {
+            "acutance_gain": 0.8731444701534783,
+            "added_energy_per_pixel": 3.7611482747395835,
+            "contrast_enhanced": 72.0,
+            "contrast_gain": 0.19999999999999996,
+            "contrast_raw": 60.0,
+            "downsample_psnr_db": 14.22950915310217,
+            "downsample_ssim": 0.8915236592292786,
+            "flat_clip_pixels": 0,
+            "flat_clip_texture_rms_enhanced": null,
+            "flat_clip_texture_rms_raw": null,
+            "highlight_headroom_enhanced": 0.9999338107638889,
+            "highlight_headroom_raw": 1.0,
+            "histogram_matched_ssim": 0.9819524884223938,
+            "novel_edge_rate": 0.004978841145833334,
+            "saturated_channel_enhanced": 6.618923611111112e-05,
+            "saturated_channel_raw": 0.0,
+            "shadow_enhanced": 1.6276041666666668e-06,
+            "shadow_raw": 0.0,
+            "smooth_noise_ratio": 1.0,
+            "supported_added_energy": 0.7593208687973838,
+            "supported_added_energy_gate_applies": true,
+            "true_clip_enhanced": 0.00013020833333333333,
+            "true_clip_raw": 0.0
+          },
+          "vs_bicubic": {
+            "acutance_gain": 0.8731444701534783,
+            "added_energy_per_pixel": 3.7611482747395835,
+            "contrast_enhanced": 72.0,
+            "contrast_gain": 0.19999999999999996,
+            "contrast_raw": 60.0,
+            "downsample_psnr_db": 14.22950915310217,
+            "downsample_ssim": 0.8915236592292786,
+            "flat_clip_pixels": 0,
+            "flat_clip_texture_rms_enhanced": null,
+            "flat_clip_texture_rms_raw": null,
+            "highlight_headroom_enhanced": 0.9999338107638889,
+            "highlight_headroom_raw": 1.0,
+            "histogram_matched_ssim": 0.9819524884223938,
+            "novel_edge_rate": 0.004978841145833334,
+            "saturated_channel_enhanced": 6.618923611111112e-05,
+            "saturated_channel_raw": 0.0,
+            "shadow_enhanced": 1.6276041666666668e-06,
+            "shadow_raw": 0.0,
+            "smooth_noise_ratio": 1.0,
+            "supported_added_energy": 0.7593208687973838,
+            "supported_added_energy_gate_applies": true,
+            "true_clip_enhanced": 0.00013020833333333333,
+            "true_clip_raw": 0.0
+          }
+        }
+      },
+      "scene": {
+        "extended": true,
+        "file": "stream_20260714_191345_attempt1.mp4",
+        "max_duration_s": 70.0,
+        "name": "soft_barn_soak",
+        "purpose": "Long telephoto hold on a white barn, tree line, poles and field tracks.",
+        "roi": [
+          640,
+          300,
+          640,
+          480
+        ],
+        "start_s": 510.0
+      },
+      "warnings": []
+    },
+    {
+      "candidate_run": {
+        "command": "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python /Users/randyblasik/Documents/Drone_EnhancedVision/_11_M5_Fable_SuperRes_Rev4.py --headless --source /private/tmp/m5_superres_v3_fixtures/construction_facade_16cca13a62af2dd6.mkv --roi 0,0,720,520 --start-seconds 0.000 --max-frames 256 --milestones 4,8,16,32,64 --output-dir /private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate --report-json /private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate_report.json --quality-device mps --require-mps",
+        "elapsed_s": 277.08622720791027,
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "[superres-v3] milestone n=4 phase=2/4 Q=18.42799499684555 proof=/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0004_proof.png\n[superres-v3] milestone n=8 phase=4/4 Q=24.186256601920185 proof=/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0008_proof.png\n[superres-v3] milestone n=16 phase=4/4 Q=19.074841362768826 proof=/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0016_proof.png\n[superres-v3] milestone n=32 phase=4/4 Q=19.074841362768826 proof=/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0032_proof.png\n[superres-v3] milestone n=64 phase=4/4 Q=19.074841362768826 proof=/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0064_proof.png\n[superres-v3] frames=212 fps=0.77 reservoir=150 accepted=150 rejected=57 phase=4/4 resets=0\n[superres-v3] Q=26.061 HOLD=-0.04dB edge=1.038x noise=1.000x repeat=10.7% beta=0.75 PSF=0.85/0.58 best=7f3276892b3e\n[superres-v3] report=/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate_report.json\n"
+      },
+      "failures": [],
+      "fixture": {
+        "command": "ffmpeg -y -hide_banner -loglevel warning -err_detect ignore_err -ss 221.000 -i /Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_191345_attempt1.mp4 -t 9.000 -map 0:v:0 -vf crop=720:520:700:180 -an -fps_mode passthrough -c:v libx264 -preset ultrafast -qp 0 -pix_fmt yuv420p /private/tmp/m5_superres_v3_fixtures/construction_facade_16cca13a62af2dd6.mkv",
+        "duration_requested_s": 9.0,
+        "ffmpeg_version": "ffmpeg version 8.0.1 Copyright (c) 2000-2025 the FFmpeg developers",
+        "fixture": "/private/tmp/m5_superres_v3_fixtures/construction_facade_16cca13a62af2dd6.mkv",
+        "fixture_key": "16cca13a62af2dd6",
+        "fixture_receipt": {
+          "bytes": 19972833,
+          "path": "/private/tmp/m5_superres_v3_fixtures/construction_facade_16cca13a62af2dd6.mkv",
+          "sha256": "a6d87cca8b283427f6ad68660a1c1e8d0c6c506fb8713d53a021946202b8fadb"
+        },
+        "note": "bounded source crop, lossless H.264 QP 0; no enhancement",
+        "probe": {
+          "format": {
+            "duration": "9.028000",
+            "size": "19972833"
+          },
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "avg_frame_rate": "4235/158",
+              "codec_name": "h264",
+              "height": 520,
+              "nb_read_frames": "212",
+              "pix_fmt": "yuv420p",
+              "width": 720
+            }
+          ]
+        },
+        "scene": {
+          "extended": false,
+          "file": "stream_20260714_191345_attempt1.mp4",
+          "max_duration_s": 9.0,
+          "name": "construction_facade",
+          "purpose": "Short stable hold with roof lines, windows, framing and utility poles.",
+          "roi": [
+            700,
+            180,
+            720,
+            520
+          ],
+          "start_s": 221.0
+        },
+        "source": {
+          "mtime_ns": 1784071419805592541,
+          "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_191345_attempt1.mp4",
+          "size": 358895612
+        },
+        "source_catalog": {
+          "bytes": 358895612,
+          "sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744",
+          "source_id": "seg_191345"
+        },
+        "stderr_tail": "[h264 @ 0xb5ec6ce00] missing picture in access unit with size 30\n[h264 @ 0xb5ec6f480] no frame!\n[vist#0:0/h264 @ 0xb5ec14300] [dec:h264 @ 0xb5ec1c280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n[h264 @ 0xb5ec6ce00] missing picture in access unit with size 30\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n[h264 @ 0xb5ec6ed80] no frame!\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n[vist#0:0/h264 @ 0xb5ec14300] [dec:h264 @ 0xb5ec1c280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n[h264 @ 0xb5ec6ce00] missing picture in access unit with size 30\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n[h264 @ 0xb5ec6e680] no frame!\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n    Last message repeated 2 times\n[vist#0:0/h264 @ 0xb5ec14300] [dec:h264 @ 0xb5ec1c280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n    Last message repeated 1 times\n[h264 @ 0xb5ec6ce00] missing picture in access unit with size 30\n[h264 @ 0xb5ec6fb80] no frame!\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n[vist#0:0/h264 @ 0xb5ec14300] [dec:h264 @ 0xb5ec1c280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n    Last message repeated 2 times\n[h264 @ 0xb5ec6ce00] missing picture in access unit with size 30\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n[h264 @ 0xb5ec6f480] no frame!\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n    Last message repeated 1 times\n[vist#0:0/h264 @ 0xb5ec14300] [dec:h264 @ 0xb5ec1c280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n    Last message repeated 2 times\n[h264 @ 0xb5ec6ce00] missing picture in access unit with size 30\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n[h264 @ 0xb5ec6ed80] no frame!\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n    Last message repeated 1 times\n[vist#0:0/h264 @ 0xb5ec14300] [dec:h264 @ 0xb5ec1c280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n[h264 @ 0xb5ec6ce00] missing picture in access unit with size 30\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n[h264 @ 0xb5ec6ea00] no frame!\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n[vist#0:0/h264 @ 0xb5ec14300] [dec:h264 @ 0xb5ec1c280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n[h264 @ 0xb5ec6ce00] missing picture in access unit with size 30\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n    Last message repeated 1 times\n[h264 @ 0xb5ec6e300] no frame!\n[libx264 @ 0xb5ec6d180] non-strictly-monotonic PTS\n    Last message repeated 1 times\n[vist#0:0/h264 @ 0xb5ec14300] [dec:h264 @ 0xb5ec1c280] Error submitting packet to decoder: Invalid data found when processing input\n",
+        "transcode_elapsed_s": 0.3524064999073744
+      },
+      "measurements": {
+        "candidate_summary": {
+          "accepted": 150,
+          "frames_ingested": 212,
+          "rejected": 57,
+          "resets": 0
+        },
+        "contact_sheet": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/milestone_contact_sheet.png",
+        "milestones": [
+          {
+            "artifact_mode": "best_single_fallback",
+            "baseline_alignment": {
+              "best_single": {
+                "applied": 1.0,
+                "dx": -3.7357494875323027e-10,
+                "dy": 4.945377440890297e-12,
+                "response": 1.0000043961178502
+              },
+              "bicubic": {
+                "applied": 1.0,
+                "dx": -3.7357494875323027e-10,
+                "dy": 4.945377440890297e-12,
+                "response": 1.0000043961178502
+              }
+            },
+            "best_n": null,
+            "best_phase_bins": null,
+            "best_prior_seq": null,
+            "best_revision": null,
+            "best_source_end_s": null,
+            "best_source_span_s": null,
+            "best_source_start_s": null,
+            "candidate_best_raw_sha256": null,
+            "candidate_best_sha256": null,
+            "candidate_quality_score": 18.42799499684555,
+            "comparison": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/milestone_0004_comparison.png",
+            "current_n": 4,
+            "current_prior_seq": 7,
+            "current_revision": 4,
+            "current_source_end_s": 0.298,
+            "current_source_span_s": 0.149,
+            "current_source_start_s": 0.149,
+            "evidence_score": 0.0,
+            "is_best_so_far": false,
+            "n": 4,
+            "paths": {
+              "best_single": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0004_best_single_native.png",
+              "bicubic": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0004_best_single_bicubic.png",
+              "stack": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0004_best_stack.png",
+              "stack_raw": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0004_best_stack_raw.png"
+            },
+            "phase_bins": [
+              [
+                3,
+                1
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "phase_coverage": 0.5,
+            "raw_evidence_score": 0.0,
+            "raw_vs_best_single": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 197.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 197.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 10060,
+              "flat_clip_texture_rms_enhanced": 0.09609795361757278,
+              "flat_clip_texture_rms_raw": 0.09609795361757278,
+              "highlight_headroom_enhanced": 0.9856015512265512,
+              "highlight_headroom_raw": 0.9856015512265512,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.014398448773448773,
+              "saturated_channel_raw": 0.014398448773448773,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.030385044642857142,
+              "true_clip_raw": 0.030385044642857142
+            },
+            "shape": [
+              924,
+              1280,
+              3
+            ],
+            "source_shapes": {
+              "best_single": [
+                462,
+                640,
+                3
+              ],
+              "bicubic": [
+                924,
+                1280,
+                3
+              ],
+              "stack": [
+                924,
+                1280,
+                3
+              ],
+              "stack_raw": [
+                924,
+                1280,
+                3
+              ]
+            },
+            "stack_file_sha256": "e8531f7ef309f84f889ad97152220366360cf665ad651c3b3b94c889a7f6cf7c",
+            "stack_pixel_sha256": "f310caf9fd2cb6055b1d27819a6ee99690a04b55acd1e14a65eb5a826b9fe4e9",
+            "stack_raw_file_sha256": "e8531f7ef309f84f889ad97152220366360cf665ad651c3b3b94c889a7f6cf7c",
+            "stack_raw_pixel_sha256": "f310caf9fd2cb6055b1d27819a6ee99690a04b55acd1e14a65eb5a826b9fe4e9",
+            "validation_role": "milestone",
+            "vs_best_single": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 197.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 197.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 10060,
+              "flat_clip_texture_rms_enhanced": 0.09609795361757278,
+              "flat_clip_texture_rms_raw": 0.09609795361757278,
+              "highlight_headroom_enhanced": 0.9856015512265512,
+              "highlight_headroom_raw": 0.9856015512265512,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.014398448773448773,
+              "saturated_channel_raw": 0.014398448773448773,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.030385044642857142,
+              "true_clip_raw": 0.030385044642857142
+            },
+            "vs_bicubic": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 197.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 197.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 10060,
+              "flat_clip_texture_rms_enhanced": 0.09609795361757278,
+              "flat_clip_texture_rms_raw": 0.09609795361757278,
+              "highlight_headroom_enhanced": 0.9856015512265512,
+              "highlight_headroom_raw": 0.9856015512265512,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.014398448773448773,
+              "saturated_channel_raw": 0.014398448773448773,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.030385044642857142,
+              "true_clip_raw": 0.030385044642857142
+            }
+          },
+          {
+            "artifact_mode": "best_single_fallback",
+            "baseline_alignment": {
+              "best_single": {
+                "applied": 1.0,
+                "dx": -3.7357494875323027e-10,
+                "dy": 4.945377440890297e-12,
+                "response": 1.0000043961178502
+              },
+              "bicubic": {
+                "applied": 1.0,
+                "dx": -3.7357494875323027e-10,
+                "dy": 4.945377440890297e-12,
+                "response": 1.0000043961178502
+              }
+            },
+            "best_n": null,
+            "best_phase_bins": null,
+            "best_prior_seq": null,
+            "best_revision": null,
+            "best_source_end_s": null,
+            "best_source_span_s": null,
+            "best_source_start_s": null,
+            "candidate_best_raw_sha256": null,
+            "candidate_best_sha256": null,
+            "candidate_quality_score": 24.186256601920185,
+            "comparison": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/milestone_0008_comparison.png",
+            "current_n": 8,
+            "current_prior_seq": 7,
+            "current_revision": 8,
+            "current_source_end_s": 0.41000000000000003,
+            "current_source_span_s": 0.261,
+            "current_source_start_s": 0.149,
+            "evidence_score": 0.0,
+            "is_best_so_far": false,
+            "n": 8,
+            "paths": {
+              "best_single": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0008_best_single_native.png",
+              "bicubic": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0008_best_single_bicubic.png",
+              "stack": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0008_best_stack.png",
+              "stack_raw": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0008_best_stack_raw.png"
+            },
+            "phase_bins": [
+              [
+                3,
+                2
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "phase_coverage": 1.0,
+            "raw_evidence_score": 0.0,
+            "raw_vs_best_single": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 197.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 197.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 10060,
+              "flat_clip_texture_rms_enhanced": 0.09609795361757278,
+              "flat_clip_texture_rms_raw": 0.09609795361757278,
+              "highlight_headroom_enhanced": 0.9856015512265512,
+              "highlight_headroom_raw": 0.9856015512265512,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.014398448773448773,
+              "saturated_channel_raw": 0.014398448773448773,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.030385044642857142,
+              "true_clip_raw": 0.030385044642857142
+            },
+            "shape": [
+              924,
+              1280,
+              3
+            ],
+            "source_shapes": {
+              "best_single": [
+                462,
+                640,
+                3
+              ],
+              "bicubic": [
+                924,
+                1280,
+                3
+              ],
+              "stack": [
+                924,
+                1280,
+                3
+              ],
+              "stack_raw": [
+                924,
+                1280,
+                3
+              ]
+            },
+            "stack_file_sha256": "e8531f7ef309f84f889ad97152220366360cf665ad651c3b3b94c889a7f6cf7c",
+            "stack_pixel_sha256": "f310caf9fd2cb6055b1d27819a6ee99690a04b55acd1e14a65eb5a826b9fe4e9",
+            "stack_raw_file_sha256": "e8531f7ef309f84f889ad97152220366360cf665ad651c3b3b94c889a7f6cf7c",
+            "stack_raw_pixel_sha256": "f310caf9fd2cb6055b1d27819a6ee99690a04b55acd1e14a65eb5a826b9fe4e9",
+            "validation_role": "milestone",
+            "vs_best_single": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 197.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 197.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 10060,
+              "flat_clip_texture_rms_enhanced": 0.09609795361757278,
+              "flat_clip_texture_rms_raw": 0.09609795361757278,
+              "highlight_headroom_enhanced": 0.9856015512265512,
+              "highlight_headroom_raw": 0.9856015512265512,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.014398448773448773,
+              "saturated_channel_raw": 0.014398448773448773,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.030385044642857142,
+              "true_clip_raw": 0.030385044642857142
+            },
+            "vs_bicubic": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 197.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 197.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 10060,
+              "flat_clip_texture_rms_enhanced": 0.09609795361757278,
+              "flat_clip_texture_rms_raw": 0.09609795361757278,
+              "highlight_headroom_enhanced": 0.9856015512265512,
+              "highlight_headroom_raw": 0.9856015512265512,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.014398448773448773,
+              "saturated_channel_raw": 0.014398448773448773,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.030385044642857142,
+              "true_clip_raw": 0.030385044642857142
+            }
+          },
+          {
+            "artifact_mode": "promoted_best",
+            "baseline_alignment": {
+              "best_single": {
+                "applied": 1.0,
+                "dx": 0.003141612755484857,
+                "dy": 0.028584450791754534,
+                "response": 0.9575085433820884
+              },
+              "bicubic": {
+                "applied": 1.0,
+                "dx": 0.003141612755484857,
+                "dy": 0.028584450791754534,
+                "response": 0.9575085433820884
+              }
+            },
+            "best_n": 16,
+            "best_phase_bins": [
+              [
+                3,
+                2
+              ],
+              [
+                2,
+                9
+              ]
+            ],
+            "best_prior_seq": 21,
+            "best_revision": 16,
+            "best_source_end_s": 0.672,
+            "best_source_span_s": 0.523,
+            "best_source_start_s": 0.149,
+            "candidate_best_raw_sha256": "f96d659ad44662380d8dced65954bd70456441e1a180982ebcecd8965fbb22b8",
+            "candidate_best_sha256": "7f3276892b3ec21ca18dda355e01ad930ebcb9e0e356419aaa3391963a1f4eee",
+            "candidate_quality_score": 19.074841362768826,
+            "comparison": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/milestone_0016_comparison.png",
+            "current_n": 16,
+            "current_prior_seq": 21,
+            "current_revision": 16,
+            "current_source_end_s": 0.672,
+            "current_source_span_s": 0.523,
+            "current_source_start_s": 0.149,
+            "evidence_score": 0.2863535107214989,
+            "is_best_so_far": true,
+            "n": 16,
+            "paths": {
+              "best_single": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0016_best_single_native.png",
+              "bicubic": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0016_best_single_bicubic.png",
+              "stack": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0016_best_stack.png",
+              "stack_raw": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0016_best_stack_raw.png"
+            },
+            "phase_bins": [
+              [
+                3,
+                2
+              ],
+              [
+                2,
+                9
+              ]
+            ],
+            "phase_coverage": 1.0,
+            "raw_evidence_score": 0.034176997341757547,
+            "raw_vs_best_single": {
+              "acutance_gain": 0.03417868835907356,
+              "added_energy_per_pixel": 0.6378356140929383,
+              "contrast_enhanced": 197.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 197.0,
+              "downsample_psnr_db": 52.086099944297175,
+              "downsample_ssim": 0.999418318271637,
+              "flat_clip_pixels": 6064,
+              "flat_clip_texture_rms_enhanced": 0.12381802499294281,
+              "flat_clip_texture_rms_raw": 0.1249801516532898,
+              "highlight_headroom_enhanced": 0.9865744498556999,
+              "highlight_headroom_raw": 0.9866838023088023,
+              "histogram_matched_ssim": 0.9994269609451294,
+              "novel_edge_rate": 8.45508658008658e-07,
+              "saturated_channel_enhanced": 0.013425550144300144,
+              "saturated_channel_raw": 0.013316197691197691,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.9991564275177619,
+              "supported_added_energy_gate_applies": true,
+              "true_clip_enhanced": 0.02849786931818182,
+              "true_clip_raw": 0.028337222673160172
+            },
+            "shape": [
+              924,
+              1280,
+              3
+            ],
+            "source_shapes": {
+              "best_single": [
+                462,
+                640,
+                3
+              ],
+              "bicubic": [
+                924,
+                1280,
+                3
+              ],
+              "stack": [
+                924,
+                1280,
+                3
+              ],
+              "stack_raw": [
+                924,
+                1280,
+                3
+              ]
+            },
+            "stack_file_sha256": "6f30a5a8b8937b4c133ab350faba301d157d88b809b4f5263a2c7921b151d93d",
+            "stack_pixel_sha256": "7f3276892b3ec21ca18dda355e01ad930ebcb9e0e356419aaa3391963a1f4eee",
+            "stack_raw_file_sha256": "90437eeb05c670dfdc3aa8b370be39f9963119e4ec5ab71e567fe0b15b89c6d5",
+            "stack_raw_pixel_sha256": "f96d659ad44662380d8dced65954bd70456441e1a180982ebcecd8965fbb22b8",
+            "validation_role": "milestone",
+            "vs_best_single": {
+              "acutance_gain": 0.288411478795092,
+              "added_energy_per_pixel": 6.2015811011904765,
+              "contrast_enhanced": 198.0,
+              "contrast_gain": 0.0050761421319796,
+              "contrast_raw": 197.0,
+              "downsample_psnr_db": 31.865967965883865,
+              "downsample_ssim": 0.9700106382369995,
+              "flat_clip_pixels": 6064,
+              "flat_clip_texture_rms_enhanced": 0.15375876426696777,
+              "flat_clip_texture_rms_raw": 0.1249801516532898,
+              "highlight_headroom_enhanced": 0.9997252096861472,
+              "highlight_headroom_raw": 0.9866838023088023,
+              "histogram_matched_ssim": 0.9708632230758667,
+              "novel_edge_rate": 0.0010289840367965369,
+              "saturated_channel_enhanced": 0.00027479031385281387,
+              "saturated_channel_raw": 0.013316197691197691,
+              "shadow_enhanced": 0.0002553436147186147,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.9178428283834151,
+              "supported_added_energy_gate_applies": true,
+              "true_clip_enhanced": 0.0003390489718614719,
+              "true_clip_raw": 0.028337222673160172
+            },
+            "vs_bicubic": {
+              "acutance_gain": 0.288411478795092,
+              "added_energy_per_pixel": 6.2015811011904765,
+              "contrast_enhanced": 198.0,
+              "contrast_gain": 0.0050761421319796,
+              "contrast_raw": 197.0,
+              "downsample_psnr_db": 31.865967965883865,
+              "downsample_ssim": 0.9700106382369995,
+              "flat_clip_pixels": 6064,
+              "flat_clip_texture_rms_enhanced": 0.15375876426696777,
+              "flat_clip_texture_rms_raw": 0.1249801516532898,
+              "highlight_headroom_enhanced": 0.9997252096861472,
+              "highlight_headroom_raw": 0.9866838023088023,
+              "histogram_matched_ssim": 0.9708632230758667,
+              "novel_edge_rate": 0.0010289840367965369,
+              "saturated_channel_enhanced": 0.00027479031385281387,
+              "saturated_channel_raw": 0.013316197691197691,
+              "shadow_enhanced": 0.0002553436147186147,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.9178428283834151,
+              "supported_added_energy_gate_applies": true,
+              "true_clip_enhanced": 0.0003390489718614719,
+              "true_clip_raw": 0.028337222673160172
+            }
+          },
+          {
+            "artifact_mode": "promoted_best",
+            "baseline_alignment": {
+              "best_single": {
+                "applied": 1.0,
+                "dx": 0.003141612755484857,
+                "dy": 0.028584450791754534,
+                "response": 0.9575085433820884
+              },
+              "bicubic": {
+                "applied": 1.0,
+                "dx": 0.003141612755484857,
+                "dy": 0.028584450791754534,
+                "response": 0.9575085433820884
+              }
+            },
+            "best_n": 16,
+            "best_phase_bins": [
+              [
+                3,
+                2
+              ],
+              [
+                2,
+                9
+              ]
+            ],
+            "best_prior_seq": 21,
+            "best_revision": 16,
+            "best_source_end_s": 0.672,
+            "best_source_span_s": 0.523,
+            "best_source_start_s": 0.149,
+            "candidate_best_raw_sha256": "f96d659ad44662380d8dced65954bd70456441e1a180982ebcecd8965fbb22b8",
+            "candidate_best_sha256": "7f3276892b3ec21ca18dda355e01ad930ebcb9e0e356419aaa3391963a1f4eee",
+            "candidate_quality_score": 19.074841362768826,
+            "comparison": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/milestone_0032_comparison.png",
+            "current_n": 32,
+            "current_prior_seq": 22,
+            "current_revision": 32,
+            "current_source_end_s": 1.231,
+            "current_source_span_s": 1.082,
+            "current_source_start_s": 0.149,
+            "evidence_score": 0.2863535107214989,
+            "is_best_so_far": true,
+            "n": 32,
+            "paths": {
+              "best_single": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0032_best_single_native.png",
+              "bicubic": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0032_best_single_bicubic.png",
+              "stack": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0032_best_stack.png",
+              "stack_raw": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0032_best_stack_raw.png"
+            },
+            "phase_bins": [
+              [
+                8,
+                3
+              ],
+              [
+                10,
+                11
+              ]
+            ],
+            "phase_coverage": 1.0,
+            "raw_evidence_score": 0.034176997341757547,
+            "raw_vs_best_single": {
+              "acutance_gain": 0.03417868835907356,
+              "added_energy_per_pixel": 0.6378356140929383,
+              "contrast_enhanced": 197.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 197.0,
+              "downsample_psnr_db": 52.086099944297175,
+              "downsample_ssim": 0.999418318271637,
+              "flat_clip_pixels": 6064,
+              "flat_clip_texture_rms_enhanced": 0.12381802499294281,
+              "flat_clip_texture_rms_raw": 0.1249801516532898,
+              "highlight_headroom_enhanced": 0.9865744498556999,
+              "highlight_headroom_raw": 0.9866838023088023,
+              "histogram_matched_ssim": 0.9994269609451294,
+              "novel_edge_rate": 8.45508658008658e-07,
+              "saturated_channel_enhanced": 0.013425550144300144,
+              "saturated_channel_raw": 0.013316197691197691,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.9991564275177619,
+              "supported_added_energy_gate_applies": true,
+              "true_clip_enhanced": 0.02849786931818182,
+              "true_clip_raw": 0.028337222673160172
+            },
+            "shape": [
+              924,
+              1280,
+              3
+            ],
+            "source_shapes": {
+              "best_single": [
+                462,
+                640,
+                3
+              ],
+              "bicubic": [
+                924,
+                1280,
+                3
+              ],
+              "stack": [
+                924,
+                1280,
+                3
+              ],
+              "stack_raw": [
+                924,
+                1280,
+                3
+              ]
+            },
+            "stack_file_sha256": "6f30a5a8b8937b4c133ab350faba301d157d88b809b4f5263a2c7921b151d93d",
+            "stack_pixel_sha256": "7f3276892b3ec21ca18dda355e01ad930ebcb9e0e356419aaa3391963a1f4eee",
+            "stack_raw_file_sha256": "90437eeb05c670dfdc3aa8b370be39f9963119e4ec5ab71e567fe0b15b89c6d5",
+            "stack_raw_pixel_sha256": "f96d659ad44662380d8dced65954bd70456441e1a180982ebcecd8965fbb22b8",
+            "validation_role": "milestone",
+            "vs_best_single": {
+              "acutance_gain": 0.288411478795092,
+              "added_energy_per_pixel": 6.2015811011904765,
+              "contrast_enhanced": 198.0,
+              "contrast_gain": 0.0050761421319796,
+              "contrast_raw": 197.0,
+              "downsample_psnr_db": 31.865967965883865,
+              "downsample_ssim": 0.9700106382369995,
+              "flat_clip_pixels": 6064,
+              "flat_clip_texture_rms_enhanced": 0.15375876426696777,
+              "flat_clip_texture_rms_raw": 0.1249801516532898,
+              "highlight_headroom_enhanced": 0.9997252096861472,
+              "highlight_headroom_raw": 0.9866838023088023,
+              "histogram_matched_ssim": 0.9708632230758667,
+              "novel_edge_rate": 0.0010289840367965369,
+              "saturated_channel_enhanced": 0.00027479031385281387,
+              "saturated_channel_raw": 0.013316197691197691,
+              "shadow_enhanced": 0.0002553436147186147,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.9178428283834151,
+              "supported_added_energy_gate_applies": true,
+              "true_clip_enhanced": 0.0003390489718614719,
+              "true_clip_raw": 0.028337222673160172
+            },
+            "vs_bicubic": {
+              "acutance_gain": 0.288411478795092,
+              "added_energy_per_pixel": 6.2015811011904765,
+              "contrast_enhanced": 198.0,
+              "contrast_gain": 0.0050761421319796,
+              "contrast_raw": 197.0,
+              "downsample_psnr_db": 31.865967965883865,
+              "downsample_ssim": 0.9700106382369995,
+              "flat_clip_pixels": 6064,
+              "flat_clip_texture_rms_enhanced": 0.15375876426696777,
+              "flat_clip_texture_rms_raw": 0.1249801516532898,
+              "highlight_headroom_enhanced": 0.9997252096861472,
+              "highlight_headroom_raw": 0.9866838023088023,
+              "histogram_matched_ssim": 0.9708632230758667,
+              "novel_edge_rate": 0.0010289840367965369,
+              "saturated_channel_enhanced": 0.00027479031385281387,
+              "saturated_channel_raw": 0.013316197691197691,
+              "shadow_enhanced": 0.0002553436147186147,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.9178428283834151,
+              "supported_added_energy_gate_applies": true,
+              "true_clip_enhanced": 0.0003390489718614719,
+              "true_clip_raw": 0.028337222673160172
+            }
+          },
+          {
+            "artifact_mode": "promoted_best",
+            "baseline_alignment": {
+              "best_single": {
+                "applied": 1.0,
+                "dx": 0.003141612755484857,
+                "dy": 0.028584450791754534,
+                "response": 0.9575085433820884
+              },
+              "bicubic": {
+                "applied": 1.0,
+                "dx": 0.003141612755484857,
+                "dy": 0.028584450791754534,
+                "response": 0.9575085433820884
+              }
+            },
+            "best_n": 16,
+            "best_phase_bins": [
+              [
+                3,
+                2
+              ],
+              [
+                2,
+                9
+              ]
+            ],
+            "best_prior_seq": 21,
+            "best_revision": 16,
+            "best_source_end_s": 0.672,
+            "best_source_span_s": 0.523,
+            "best_source_start_s": 0.149,
+            "candidate_best_raw_sha256": "f96d659ad44662380d8dced65954bd70456441e1a180982ebcecd8965fbb22b8",
+            "candidate_best_sha256": "7f3276892b3ec21ca18dda355e01ad930ebcb9e0e356419aaa3391963a1f4eee",
+            "candidate_quality_score": 19.074841362768826,
+            "comparison": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/milestone_0064_comparison.png",
+            "current_n": 64,
+            "current_prior_seq": 51,
+            "current_revision": 64,
+            "current_source_end_s": 2.313,
+            "current_source_span_s": 2.164,
+            "current_source_start_s": 0.149,
+            "evidence_score": 0.2863535107214989,
+            "is_best_so_far": true,
+            "n": 64,
+            "paths": {
+              "best_single": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0064_best_single_native.png",
+              "bicubic": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0064_best_single_bicubic.png",
+              "stack": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0064_best_stack.png",
+              "stack_raw": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/milestone_0064_best_stack_raw.png"
+            },
+            "phase_bins": [
+              [
+                8,
+                4
+              ],
+              [
+                10,
+                42
+              ]
+            ],
+            "phase_coverage": 1.0,
+            "raw_evidence_score": 0.034176997341757547,
+            "raw_vs_best_single": {
+              "acutance_gain": 0.03417868835907356,
+              "added_energy_per_pixel": 0.6378356140929383,
+              "contrast_enhanced": 197.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 197.0,
+              "downsample_psnr_db": 52.086099944297175,
+              "downsample_ssim": 0.999418318271637,
+              "flat_clip_pixels": 6064,
+              "flat_clip_texture_rms_enhanced": 0.12381802499294281,
+              "flat_clip_texture_rms_raw": 0.1249801516532898,
+              "highlight_headroom_enhanced": 0.9865744498556999,
+              "highlight_headroom_raw": 0.9866838023088023,
+              "histogram_matched_ssim": 0.9994269609451294,
+              "novel_edge_rate": 8.45508658008658e-07,
+              "saturated_channel_enhanced": 0.013425550144300144,
+              "saturated_channel_raw": 0.013316197691197691,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.9991564275177619,
+              "supported_added_energy_gate_applies": true,
+              "true_clip_enhanced": 0.02849786931818182,
+              "true_clip_raw": 0.028337222673160172
+            },
+            "shape": [
+              924,
+              1280,
+              3
+            ],
+            "source_shapes": {
+              "best_single": [
+                462,
+                640,
+                3
+              ],
+              "bicubic": [
+                924,
+                1280,
+                3
+              ],
+              "stack": [
+                924,
+                1280,
+                3
+              ],
+              "stack_raw": [
+                924,
+                1280,
+                3
+              ]
+            },
+            "stack_file_sha256": "6f30a5a8b8937b4c133ab350faba301d157d88b809b4f5263a2c7921b151d93d",
+            "stack_pixel_sha256": "7f3276892b3ec21ca18dda355e01ad930ebcb9e0e356419aaa3391963a1f4eee",
+            "stack_raw_file_sha256": "90437eeb05c670dfdc3aa8b370be39f9963119e4ec5ab71e567fe0b15b89c6d5",
+            "stack_raw_pixel_sha256": "f96d659ad44662380d8dced65954bd70456441e1a180982ebcecd8965fbb22b8",
+            "validation_role": "milestone",
+            "vs_best_single": {
+              "acutance_gain": 0.288411478795092,
+              "added_energy_per_pixel": 6.2015811011904765,
+              "contrast_enhanced": 198.0,
+              "contrast_gain": 0.0050761421319796,
+              "contrast_raw": 197.0,
+              "downsample_psnr_db": 31.865967965883865,
+              "downsample_ssim": 0.9700106382369995,
+              "flat_clip_pixels": 6064,
+              "flat_clip_texture_rms_enhanced": 0.15375876426696777,
+              "flat_clip_texture_rms_raw": 0.1249801516532898,
+              "highlight_headroom_enhanced": 0.9997252096861472,
+              "highlight_headroom_raw": 0.9866838023088023,
+              "histogram_matched_ssim": 0.9708632230758667,
+              "novel_edge_rate": 0.0010289840367965369,
+              "saturated_channel_enhanced": 0.00027479031385281387,
+              "saturated_channel_raw": 0.013316197691197691,
+              "shadow_enhanced": 0.0002553436147186147,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.9178428283834151,
+              "supported_added_energy_gate_applies": true,
+              "true_clip_enhanced": 0.0003390489718614719,
+              "true_clip_raw": 0.028337222673160172
+            },
+            "vs_bicubic": {
+              "acutance_gain": 0.288411478795092,
+              "added_energy_per_pixel": 6.2015811011904765,
+              "contrast_enhanced": 198.0,
+              "contrast_gain": 0.0050761421319796,
+              "contrast_raw": 197.0,
+              "downsample_psnr_db": 31.865967965883865,
+              "downsample_ssim": 0.9700106382369995,
+              "flat_clip_pixels": 6064,
+              "flat_clip_texture_rms_enhanced": 0.15375876426696777,
+              "flat_clip_texture_rms_raw": 0.1249801516532898,
+              "highlight_headroom_enhanced": 0.9997252096861472,
+              "highlight_headroom_raw": 0.9866838023088023,
+              "histogram_matched_ssim": 0.9708632230758667,
+              "novel_edge_rate": 0.0010289840367965369,
+              "saturated_channel_enhanced": 0.00027479031385281387,
+              "saturated_channel_raw": 0.013316197691197691,
+              "shadow_enhanced": 0.0002553436147186147,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.9178428283834151,
+              "supported_added_energy_gate_applies": true,
+              "true_clip_enhanced": 0.0003390489718614719,
+              "true_clip_raw": 0.028337222673160172
+            }
+          }
+        ],
+        "quality_curve": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/quality_curve.csv",
+        "report": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate_report.json",
+        "terminal": {
+          "artifact_mode": "promoted_best",
+          "baseline_alignment": {
+            "best_single": {
+              "applied": 1.0,
+              "dx": 0.003141612755484857,
+              "dy": 0.028584450791754534,
+              "response": 0.9575085433820884
+            },
+            "bicubic": {
+              "applied": 1.0,
+              "dx": 0.003141612755484857,
+              "dy": 0.028584450791754534,
+              "response": 0.9575085433820884
+            }
+          },
+          "best_n": 16,
+          "best_phase_bins": [
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              9
+            ]
+          ],
+          "best_prior_seq": 21,
+          "best_revision": 16,
+          "best_source_end_s": 0.672,
+          "best_source_span_s": 0.523,
+          "best_source_start_s": 0.149,
+          "candidate_best_raw_sha256": "f96d659ad44662380d8dced65954bd70456441e1a180982ebcecd8965fbb22b8",
+          "candidate_best_sha256": "7f3276892b3ec21ca18dda355e01ad930ebcb9e0e356419aaa3391963a1f4eee",
+          "candidate_quality_score": 19.074841362768826,
+          "comparison": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/terminal_comparison.png",
+          "current_n": 150,
+          "current_prior_seq": 51,
+          "current_revision": 150,
+          "current_source_end_s": 8.917,
+          "current_source_span_s": 8.768,
+          "current_source_start_s": 0.149,
+          "evidence_score": 0.2863535107214989,
+          "is_best_so_far": true,
+          "n": 150,
+          "paths": {
+            "best_single": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/final_185022_best_single_native.png",
+            "bicubic": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/final_185022_best_single_bicubic.png",
+            "stack": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/final_185022_best_stack.png",
+            "stack_raw": "/private/tmp/drone-upgrade-20260904/final-superres-independent/construction_facade/candidate/20260904_184546_7613c2/final_185022_best_stack_raw.png"
+          },
+          "phase_bins": [
+            [
+              10,
+              4
+            ],
+            [
+              94,
+              42
+            ]
+          ],
+          "phase_coverage": 1.0,
+          "raw_evidence_score": 0.034176997341757547,
+          "raw_vs_best_single": {
+            "acutance_gain": 0.03417868835907356,
+            "added_energy_per_pixel": 0.6378356140929383,
+            "contrast_enhanced": 197.0,
+            "contrast_gain": 0.0,
+            "contrast_raw": 197.0,
+            "downsample_psnr_db": 52.086099944297175,
+            "downsample_ssim": 0.999418318271637,
+            "flat_clip_pixels": 6064,
+            "flat_clip_texture_rms_enhanced": 0.12381802499294281,
+            "flat_clip_texture_rms_raw": 0.1249801516532898,
+            "highlight_headroom_enhanced": 0.9865744498556999,
+            "highlight_headroom_raw": 0.9866838023088023,
+            "histogram_matched_ssim": 0.9994269609451294,
+            "novel_edge_rate": 8.45508658008658e-07,
+            "saturated_channel_enhanced": 0.013425550144300144,
+            "saturated_channel_raw": 0.013316197691197691,
+            "shadow_enhanced": 0.0,
+            "shadow_raw": 0.0,
+            "smooth_noise_ratio": 1.0,
+            "supported_added_energy": 0.9991564275177619,
+            "supported_added_energy_gate_applies": true,
+            "true_clip_enhanced": 0.02849786931818182,
+            "true_clip_raw": 0.028337222673160172
+          },
+          "shape": [
+            924,
+            1280,
+            3
+          ],
+          "source_shapes": {
+            "best_single": [
+              462,
+              640,
+              3
+            ],
+            "bicubic": [
+              924,
+              1280,
+              3
+            ],
+            "stack": [
+              924,
+              1280,
+              3
+            ],
+            "stack_raw": [
+              924,
+              1280,
+              3
+            ]
+          },
+          "stack_file_sha256": "6f30a5a8b8937b4c133ab350faba301d157d88b809b4f5263a2c7921b151d93d",
+          "stack_pixel_sha256": "7f3276892b3ec21ca18dda355e01ad930ebcb9e0e356419aaa3391963a1f4eee",
+          "stack_raw_file_sha256": "90437eeb05c670dfdc3aa8b370be39f9963119e4ec5ab71e567fe0b15b89c6d5",
+          "stack_raw_pixel_sha256": "f96d659ad44662380d8dced65954bd70456441e1a180982ebcecd8965fbb22b8",
+          "validation_role": "terminal",
+          "vs_best_single": {
+            "acutance_gain": 0.288411478795092,
+            "added_energy_per_pixel": 6.2015811011904765,
+            "contrast_enhanced": 198.0,
+            "contrast_gain": 0.0050761421319796,
+            "contrast_raw": 197.0,
+            "downsample_psnr_db": 31.865967965883865,
+            "downsample_ssim": 0.9700106382369995,
+            "flat_clip_pixels": 6064,
+            "flat_clip_texture_rms_enhanced": 0.15375876426696777,
+            "flat_clip_texture_rms_raw": 0.1249801516532898,
+            "highlight_headroom_enhanced": 0.9997252096861472,
+            "highlight_headroom_raw": 0.9866838023088023,
+            "histogram_matched_ssim": 0.9708632230758667,
+            "novel_edge_rate": 0.0010289840367965369,
+            "saturated_channel_enhanced": 0.00027479031385281387,
+            "saturated_channel_raw": 0.013316197691197691,
+            "shadow_enhanced": 0.0002553436147186147,
+            "shadow_raw": 0.0,
+            "smooth_noise_ratio": 1.0,
+            "supported_added_energy": 0.9178428283834151,
+            "supported_added_energy_gate_applies": true,
+            "true_clip_enhanced": 0.0003390489718614719,
+            "true_clip_raw": 0.028337222673160172
+          },
+          "vs_bicubic": {
+            "acutance_gain": 0.288411478795092,
+            "added_energy_per_pixel": 6.2015811011904765,
+            "contrast_enhanced": 198.0,
+            "contrast_gain": 0.0050761421319796,
+            "contrast_raw": 197.0,
+            "downsample_psnr_db": 31.865967965883865,
+            "downsample_ssim": 0.9700106382369995,
+            "flat_clip_pixels": 6064,
+            "flat_clip_texture_rms_enhanced": 0.15375876426696777,
+            "flat_clip_texture_rms_raw": 0.1249801516532898,
+            "highlight_headroom_enhanced": 0.9997252096861472,
+            "highlight_headroom_raw": 0.9866838023088023,
+            "histogram_matched_ssim": 0.9708632230758667,
+            "novel_edge_rate": 0.0010289840367965369,
+            "saturated_channel_enhanced": 0.00027479031385281387,
+            "saturated_channel_raw": 0.013316197691197691,
+            "shadow_enhanced": 0.0002553436147186147,
+            "shadow_raw": 0.0,
+            "smooth_noise_ratio": 1.0,
+            "supported_added_energy": 0.9178428283834151,
+            "supported_added_energy_gate_applies": true,
+            "true_clip_enhanced": 0.0003390489718614719,
+            "true_clip_raw": 0.028337222673160172
+          }
+        }
+      },
+      "scene": {
+        "extended": false,
+        "file": "stream_20260714_191345_attempt1.mp4",
+        "max_duration_s": 9.0,
+        "name": "construction_facade",
+        "purpose": "Short stable hold with roof lines, windows, framing and utility poles.",
+        "roi": [
+          700,
+          180,
+          720,
+          520
+        ],
+        "start_s": 221.0
+      },
+      "warnings": []
+    },
+    {
+      "candidate_run": {
+        "command": "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python /Users/randyblasik/Documents/Drone_EnhancedVision/_11_M5_Fable_SuperRes_Rev4.py --headless --source /private/tmp/m5_superres_v3_fixtures/skyline_rail_01c9283ed80e4367.mkv --roi 0,0,960,620 --start-seconds 0.000 --max-frames 256 --milestones 4,8,16,32,64 --output-dir /private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate --report-json /private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate_report.json --quality-device mps --require-mps",
+        "elapsed_s": 286.8744760421105,
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "[superres-v3] milestone n=4 phase=3/4 Q=49.05529087410867 proof=/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0004_proof.png\n[superres-v3] milestone n=8 phase=3/4 Q=50.827395265635715 proof=/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0008_proof.png\n[superres-v3] milestone n=16 phase=3/4 Q=43.80336979881223 proof=/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0016_proof.png\n[superres-v3] milestone n=32 phase=4/4 Q=84.55593091337946 proof=/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0032_proof.png\n[superres-v3] milestone n=64 phase=4/4 Q=84.55593091337946 proof=/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0064_proof.png\n[superres-v3] frames=209 fps=0.73 reservoir=156 accepted=156 rejected=48 phase=4/4 resets=0\n[superres-v3] Q=93.736 HOLD=-0.06dB edge=1.132x noise=1.000x repeat=8.1% beta=1.00 PSF=1.30/1.49 best=0cde48c5ca66\n[superres-v3] report=/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate_report.json\n"
+      },
+      "failures": [],
+      "fixture": {
+        "command": "ffmpeg -y -hide_banner -loglevel warning -err_detect ignore_err -ss 302.000 -i /Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_195336_attempt1.mp4 -t 7.000 -map 0:v:0 -vf crop=960:620:320:100 -an -fps_mode passthrough -c:v libx264 -preset ultrafast -qp 0 -pix_fmt yuv420p /private/tmp/m5_superres_v3_fixtures/skyline_rail_01c9283ed80e4367.mkv",
+        "duration_requested_s": 7.0,
+        "ffmpeg_version": "ffmpeg version 8.0.1 Copyright (c) 2000-2025 the FFmpeg developers",
+        "fixture": "/private/tmp/m5_superres_v3_fixtures/skyline_rail_01c9283ed80e4367.mkv",
+        "fixture_key": "01c9283ed80e4367",
+        "fixture_receipt": {
+          "bytes": 14520799,
+          "path": "/private/tmp/m5_superres_v3_fixtures/skyline_rail_01c9283ed80e4367.mkv",
+          "sha256": "57de0f760cb939ab1c3b086801c0779efc954dba292ba861621c2ef6c0be815c"
+        },
+        "note": "bounded source crop, lossless H.264 QP 0; no enhancement",
+        "probe": {
+          "format": {
+            "duration": "7.007000",
+            "size": "14520799"
+          },
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "avg_frame_rate": "5017/162",
+              "codec_name": "h264",
+              "height": 620,
+              "nb_read_frames": "209",
+              "pix_fmt": "yuv420p",
+              "width": 960
+            }
+          ]
+        },
+        "scene": {
+          "extended": false,
+          "file": "stream_20260714_195336_attempt1.mp4",
+          "max_duration_s": 7.0,
+          "name": "skyline_rail",
+          "purpose": "Distant skyline and rail yard before the camera begins its next move.",
+          "roi": [
+            320,
+            100,
+            960,
+            620
+          ],
+          "start_s": 302.0
+        },
+        "source": {
+          "mtime_ns": 1784073816720684366,
+          "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_195336_attempt1.mp4",
+          "size": 457650637
+        },
+        "source_catalog": {
+          "bytes": 457650637,
+          "sha256": "5096d8eed9c12d8905e0c484aa356598eb9f56534b172102ac37a94d19ff8ba6",
+          "source_id": "seg_195336"
+        },
+        "stderr_tail": "[h264 @ 0x8f0c40e00] missing picture in access unit with size 30\n[h264 @ 0x8f0c43480] no frame!\n[vist#0:0/h264 @ 0x8f1008300] [dec:h264 @ 0x8f1010280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0x8f0c41180] non-strictly-monotonic PTS\n    Last message repeated 1 times\n[h264 @ 0x8f0c40e00] missing picture in access unit with size 30\n[libx264 @ 0x8f0c41180] non-strictly-monotonic PTS\n[h264 @ 0x8f0c42d80] no frame!\n[vist#0:0/h264 @ 0x8f1008300] [dec:h264 @ 0x8f1010280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0x8f0c41180] non-strictly-monotonic PTS\n    Last message repeated 1 times\n[h264 @ 0x8f0c40e00] missing picture in access unit with size 30\n[h264 @ 0x8f0c42680] no frame!\n[vist#0:0/h264 @ 0x8f1008300] [dec:h264 @ 0x8f1010280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0x8f0c41180] non-strictly-monotonic PTS\n[h264 @ 0x8f0c40e00] missing picture in access unit with size 30\n[libx264 @ 0x8f0c41180] non-strictly-monotonic PTS\n[h264 @ 0x8f0c41f80] no frame!\n[vist#0:0/h264 @ 0x8f1008300] [dec:h264 @ 0x8f1010280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0x8f0c41180] non-strictly-monotonic PTS\n[h264 @ 0x8f0c40e00] missing picture in access unit with size 30\n[libx264 @ 0x8f0c41180] non-strictly-monotonic PTS\n[h264 @ 0x8f0c41880] no frame!\n[vist#0:0/h264 @ 0x8f1008300] [dec:h264 @ 0x8f1010280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0x8f0c41180] non-strictly-monotonic PTS\n[h264 @ 0x8f0c40e00] missing picture in access unit with size 30\n[libx264 @ 0x8f0c41180] non-strictly-monotonic PTS\n[h264 @ 0x8f0c43800] no frame!\n[vist#0:0/h264 @ 0x8f1008300] [dec:h264 @ 0x8f1010280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0x8f0c41180] non-strictly-monotonic PTS\n[h264 @ 0x8f0c40e00] missing picture in access unit with size 30\n[libx264 @ 0x8f0c41180] non-strictly-monotonic PTS\n[h264 @ 0x8f0c43100] no frame!\n[vist#0:0/h264 @ 0x8f1008300] [dec:h264 @ 0x8f1010280] Error submitting packet to decoder: Invalid data found when processing input\n[libx264 @ 0x8f0c41180] non-strictly-monotonic PTS\n    Last message repeated 2 times\n[h264 @ 0x8f0c40e00] missing picture in access unit with size 30\n[libx264 @ 0x8f0c41180] non-strictly-monotonic PTS\n[h264 @ 0x8f0c42a00] no frame!\n",
+        "transcode_elapsed_s": 0.3170914580114186
+      },
+      "measurements": {
+        "candidate_summary": {
+          "accepted": 156,
+          "frames_ingested": 209,
+          "rejected": 48,
+          "resets": 0
+        },
+        "contact_sheet": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/milestone_contact_sheet.png",
+        "milestones": [
+          {
+            "artifact_mode": "best_single_fallback",
+            "baseline_alignment": {
+              "best_single": {
+                "applied": 1.0,
+                "dx": -1.786588654795196e-09,
+                "dy": -2.2737367544323206e-13,
+                "response": 1.000002174991985
+              },
+              "bicubic": {
+                "applied": 1.0,
+                "dx": -1.786588654795196e-09,
+                "dy": -2.2737367544323206e-13,
+                "response": 1.000002174991985
+              }
+            },
+            "best_n": null,
+            "best_phase_bins": null,
+            "best_prior_seq": null,
+            "best_revision": null,
+            "best_source_end_s": null,
+            "best_source_span_s": null,
+            "best_source_start_s": null,
+            "candidate_best_raw_sha256": null,
+            "candidate_best_sha256": null,
+            "candidate_quality_score": 49.05529087410867,
+            "comparison": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/milestone_0004_comparison.png",
+            "current_n": 4,
+            "current_prior_seq": 4,
+            "current_revision": 4,
+            "current_source_end_s": 0.226,
+            "current_source_span_s": 0.129,
+            "current_source_start_s": 0.097,
+            "evidence_score": 0.0,
+            "is_best_so_far": false,
+            "n": 4,
+            "paths": {
+              "best_single": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0004_best_single_native.png",
+              "bicubic": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0004_best_single_bicubic.png",
+              "stack": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0004_best_stack.png",
+              "stack_raw": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0004_best_stack_raw.png"
+            },
+            "phase_bins": [
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "phase_coverage": 0.75,
+            "raw_evidence_score": 0.0,
+            "raw_vs_best_single": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 65.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 65.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            },
+            "shape": [
+              826,
+              1280,
+              3
+            ],
+            "source_shapes": {
+              "best_single": [
+                413,
+                640,
+                3
+              ],
+              "bicubic": [
+                826,
+                1280,
+                3
+              ],
+              "stack": [
+                826,
+                1280,
+                3
+              ],
+              "stack_raw": [
+                826,
+                1280,
+                3
+              ]
+            },
+            "stack_file_sha256": "3cdb5052e7e6f3e2f6ce3dd263fe332aa79226d83509e5ef6f688c8351bd2a41",
+            "stack_pixel_sha256": "1b5237d27498bcd3f72f6876a9aa6f45b4474357c18d1c37e035af8f7771876e",
+            "stack_raw_file_sha256": "3cdb5052e7e6f3e2f6ce3dd263fe332aa79226d83509e5ef6f688c8351bd2a41",
+            "stack_raw_pixel_sha256": "1b5237d27498bcd3f72f6876a9aa6f45b4474357c18d1c37e035af8f7771876e",
+            "validation_role": "milestone",
+            "vs_best_single": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 65.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 65.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            },
+            "vs_bicubic": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 65.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 65.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            }
+          },
+          {
+            "artifact_mode": "best_single_fallback",
+            "baseline_alignment": {
+              "best_single": {
+                "applied": 1.0,
+                "dx": -1.786588654795196e-09,
+                "dy": -2.2737367544323206e-13,
+                "response": 1.000002174991985
+              },
+              "bicubic": {
+                "applied": 1.0,
+                "dx": -1.786588654795196e-09,
+                "dy": -2.2737367544323206e-13,
+                "response": 1.000002174991985
+              }
+            },
+            "best_n": null,
+            "best_phase_bins": null,
+            "best_prior_seq": null,
+            "best_revision": null,
+            "best_source_end_s": null,
+            "best_source_span_s": null,
+            "best_source_start_s": null,
+            "candidate_best_raw_sha256": null,
+            "candidate_best_sha256": null,
+            "candidate_quality_score": 50.827395265635715,
+            "comparison": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/milestone_0008_comparison.png",
+            "current_n": 8,
+            "current_prior_seq": 4,
+            "current_revision": 8,
+            "current_source_end_s": 0.42,
+            "current_source_span_s": 0.32299999999999995,
+            "current_source_start_s": 0.097,
+            "evidence_score": 0.0,
+            "is_best_so_far": false,
+            "n": 8,
+            "paths": {
+              "best_single": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0008_best_single_native.png",
+              "bicubic": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0008_best_single_bicubic.png",
+              "stack": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0008_best_stack.png",
+              "stack_raw": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0008_best_stack_raw.png"
+            },
+            "phase_bins": [
+              [
+                1,
+                0
+              ],
+              [
+                4,
+                3
+              ]
+            ],
+            "phase_coverage": 0.75,
+            "raw_evidence_score": 0.0,
+            "raw_vs_best_single": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 65.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 65.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            },
+            "shape": [
+              826,
+              1280,
+              3
+            ],
+            "source_shapes": {
+              "best_single": [
+                413,
+                640,
+                3
+              ],
+              "bicubic": [
+                826,
+                1280,
+                3
+              ],
+              "stack": [
+                826,
+                1280,
+                3
+              ],
+              "stack_raw": [
+                826,
+                1280,
+                3
+              ]
+            },
+            "stack_file_sha256": "3cdb5052e7e6f3e2f6ce3dd263fe332aa79226d83509e5ef6f688c8351bd2a41",
+            "stack_pixel_sha256": "1b5237d27498bcd3f72f6876a9aa6f45b4474357c18d1c37e035af8f7771876e",
+            "stack_raw_file_sha256": "3cdb5052e7e6f3e2f6ce3dd263fe332aa79226d83509e5ef6f688c8351bd2a41",
+            "stack_raw_pixel_sha256": "1b5237d27498bcd3f72f6876a9aa6f45b4474357c18d1c37e035af8f7771876e",
+            "validation_role": "milestone",
+            "vs_best_single": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 65.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 65.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            },
+            "vs_bicubic": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 65.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 65.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            }
+          },
+          {
+            "artifact_mode": "best_single_fallback",
+            "baseline_alignment": {
+              "best_single": {
+                "applied": 1.0,
+                "dx": 1.7985257727559656e-10,
+                "dy": 2.7284841053187847e-12,
+                "response": 1.000002063262865
+              },
+              "bicubic": {
+                "applied": 1.0,
+                "dx": 1.7985257727559656e-10,
+                "dy": 2.7284841053187847e-12,
+                "response": 1.000002063262865
+              }
+            },
+            "best_n": null,
+            "best_phase_bins": null,
+            "best_prior_seq": null,
+            "best_revision": null,
+            "best_source_end_s": null,
+            "best_source_span_s": null,
+            "best_source_start_s": null,
+            "candidate_best_raw_sha256": null,
+            "candidate_best_sha256": null,
+            "candidate_quality_score": 43.80336979881223,
+            "comparison": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/milestone_0016_comparison.png",
+            "current_n": 16,
+            "current_prior_seq": 18,
+            "current_revision": 16,
+            "current_source_end_s": 0.808,
+            "current_source_span_s": 0.7110000000000001,
+            "current_source_start_s": 0.097,
+            "evidence_score": 0.0,
+            "is_best_so_far": false,
+            "n": 16,
+            "paths": {
+              "best_single": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0016_best_single_native.png",
+              "bicubic": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0016_best_single_bicubic.png",
+              "stack": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0016_best_stack.png",
+              "stack_raw": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0016_best_stack_raw.png"
+            },
+            "phase_bins": [
+              [
+                2,
+                0
+              ],
+              [
+                6,
+                8
+              ]
+            ],
+            "phase_coverage": 0.75,
+            "raw_evidence_score": 0.0,
+            "raw_vs_best_single": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 65.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 65.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            },
+            "shape": [
+              826,
+              1280,
+              3
+            ],
+            "source_shapes": {
+              "best_single": [
+                413,
+                640,
+                3
+              ],
+              "bicubic": [
+                826,
+                1280,
+                3
+              ],
+              "stack": [
+                826,
+                1280,
+                3
+              ],
+              "stack_raw": [
+                826,
+                1280,
+                3
+              ]
+            },
+            "stack_file_sha256": "5396927c29d3aeb13c6bddf2f82c720fd6fefe09a5ed995b7f38fae6ac673a23",
+            "stack_pixel_sha256": "ad55bd0d3cbf8eae523045ae9158af4f7661a436647546fc879812874b4ffc26",
+            "stack_raw_file_sha256": "5396927c29d3aeb13c6bddf2f82c720fd6fefe09a5ed995b7f38fae6ac673a23",
+            "stack_raw_pixel_sha256": "ad55bd0d3cbf8eae523045ae9158af4f7661a436647546fc879812874b4ffc26",
+            "validation_role": "milestone",
+            "vs_best_single": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 65.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 65.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            },
+            "vs_bicubic": {
+              "acutance_gain": 0.0,
+              "added_energy_per_pixel": 0.0,
+              "contrast_enhanced": 65.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 65.0,
+              "downsample_psnr_db": Infinity,
+              "downsample_ssim": 1.0,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 1.0,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.0,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            }
+          },
+          {
+            "artifact_mode": "promoted_best",
+            "baseline_alignment": {
+              "best_single": {
+                "applied": 1.0,
+                "dx": -0.055370966405348554,
+                "dy": -0.06205354395979157,
+                "response": 0.9220778361514762
+              },
+              "bicubic": {
+                "applied": 1.0,
+                "dx": -0.055370966405348554,
+                "dy": -0.06205354395979157,
+                "response": 0.9220778361514762
+              }
+            },
+            "best_n": 32,
+            "best_phase_bins": [
+              [
+                4,
+                11
+              ],
+              [
+                6,
+                11
+              ]
+            ],
+            "best_prior_seq": 44,
+            "best_revision": 32,
+            "best_source_end_s": 1.679,
+            "best_source_span_s": 1.582,
+            "best_source_start_s": 0.097,
+            "candidate_best_raw_sha256": "ed2a198c463d57f871f8472d098b6b8293fe514dd711ab7f2e808fede1f3d1b0",
+            "candidate_best_sha256": "bd2fdf1b35e1e63072ab3cff1ce91186701afb45cbcfa5ee9856c65eba1faa0c",
+            "candidate_quality_score": 84.55593091337946,
+            "comparison": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/milestone_0032_comparison.png",
+            "current_n": 32,
+            "current_prior_seq": 44,
+            "current_revision": 32,
+            "current_source_end_s": 1.679,
+            "current_source_span_s": 1.582,
+            "current_source_start_s": 0.097,
+            "evidence_score": 1.4527635631368203,
+            "is_best_so_far": true,
+            "n": 32,
+            "paths": {
+              "best_single": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0032_best_single_native.png",
+              "bicubic": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0032_best_single_bicubic.png",
+              "stack": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0032_best_stack.png",
+              "stack_raw": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0032_best_stack_raw.png"
+            },
+            "phase_bins": [
+              [
+                4,
+                11
+              ],
+              [
+                6,
+                11
+              ]
+            ],
+            "phase_coverage": 1.0,
+            "raw_evidence_score": 0.0002191739512866775,
+            "raw_vs_best_single": {
+              "acutance_gain": 0.0002191739512866775,
+              "added_energy_per_pixel": 0.01773083481315262,
+              "contrast_enhanced": 64.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 64.0,
+              "downsample_psnr_db": 67.75139857321419,
+              "downsample_ssim": 0.9999772906303406,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 0.9999791979789734,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 1.0000001041863535,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            },
+            "shape": [
+              826,
+              1280,
+              3
+            ],
+            "source_shapes": {
+              "best_single": [
+                413,
+                640,
+                3
+              ],
+              "bicubic": [
+                826,
+                1280,
+                3
+              ],
+              "stack": [
+                826,
+                1280,
+                3
+              ],
+              "stack_raw": [
+                826,
+                1280,
+                3
+              ]
+            },
+            "stack_file_sha256": "dbffd9bab4454c98cd0b8df8838baf54a610145952b9cfebb909112e20831e44",
+            "stack_pixel_sha256": "bd2fdf1b35e1e63072ab3cff1ce91186701afb45cbcfa5ee9856c65eba1faa0c",
+            "stack_raw_file_sha256": "303d9f76a6f93b8a826a6e42e17ec4ee43cb62b7041af5657f95eb5bc4fa6590",
+            "stack_raw_pixel_sha256": "ed2a198c463d57f871f8472d098b6b8293fe514dd711ab7f2e808fede1f3d1b0",
+            "validation_role": "milestone",
+            "vs_best_single": {
+              "acutance_gain": 1.4615786357760454,
+              "added_energy_per_pixel": 5.0776766797820825,
+              "contrast_enhanced": 84.0,
+              "contrast_gain": 0.3125,
+              "contrast_raw": 64.0,
+              "downsample_psnr_db": 15.279175432113634,
+              "downsample_ssim": 0.9094613194465637,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 0.9999728864003229,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 0.9760094881057739,
+              "novel_edge_rate": 0.004407536319612591,
+              "saturated_channel_enhanced": 2.7113599677159e-05,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.001060267857142857,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.8353034892631609,
+              "supported_added_energy_gate_applies": true,
+              "true_clip_enhanced": 3.7832929782082326e-05,
+              "true_clip_raw": 0.0
+            },
+            "vs_bicubic": {
+              "acutance_gain": 1.4615786357760454,
+              "added_energy_per_pixel": 5.0776766797820825,
+              "contrast_enhanced": 84.0,
+              "contrast_gain": 0.3125,
+              "contrast_raw": 64.0,
+              "downsample_psnr_db": 15.279175432113634,
+              "downsample_ssim": 0.9094613194465637,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 0.9999728864003229,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 0.9760094881057739,
+              "novel_edge_rate": 0.004407536319612591,
+              "saturated_channel_enhanced": 2.7113599677159e-05,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.001060267857142857,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.8353034892631609,
+              "supported_added_energy_gate_applies": true,
+              "true_clip_enhanced": 3.7832929782082326e-05,
+              "true_clip_raw": 0.0
+            }
+          },
+          {
+            "artifact_mode": "promoted_best",
+            "baseline_alignment": {
+              "best_single": {
+                "applied": 1.0,
+                "dx": -0.055370966405348554,
+                "dy": -0.06205354395979157,
+                "response": 0.9220778361514762
+              },
+              "bicubic": {
+                "applied": 1.0,
+                "dx": -0.055370966405348554,
+                "dy": -0.06205354395979157,
+                "response": 0.9220778361514762
+              }
+            },
+            "best_n": 32,
+            "best_phase_bins": [
+              [
+                4,
+                11
+              ],
+              [
+                6,
+                11
+              ]
+            ],
+            "best_prior_seq": 44,
+            "best_revision": 32,
+            "best_source_end_s": 1.679,
+            "best_source_span_s": 1.582,
+            "best_source_start_s": 0.097,
+            "candidate_best_raw_sha256": "ed2a198c463d57f871f8472d098b6b8293fe514dd711ab7f2e808fede1f3d1b0",
+            "candidate_best_sha256": "bd2fdf1b35e1e63072ab3cff1ce91186701afb45cbcfa5ee9856c65eba1faa0c",
+            "candidate_quality_score": 84.55593091337946,
+            "comparison": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/milestone_0064_comparison.png",
+            "current_n": 64,
+            "current_prior_seq": 44,
+            "current_revision": 64,
+            "current_source_end_s": 2.745,
+            "current_source_span_s": 2.648,
+            "current_source_start_s": 0.097,
+            "evidence_score": 1.4527635631368203,
+            "is_best_so_far": true,
+            "n": 64,
+            "paths": {
+              "best_single": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0064_best_single_native.png",
+              "bicubic": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0064_best_single_bicubic.png",
+              "stack": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0064_best_stack.png",
+              "stack_raw": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/milestone_0064_best_stack_raw.png"
+            },
+            "phase_bins": [
+              [
+                11,
+                22
+              ],
+              [
+                9,
+                22
+              ]
+            ],
+            "phase_coverage": 1.0,
+            "raw_evidence_score": 0.0002191739512866775,
+            "raw_vs_best_single": {
+              "acutance_gain": 0.0002191739512866775,
+              "added_energy_per_pixel": 0.01773083481315262,
+              "contrast_enhanced": 64.0,
+              "contrast_gain": 0.0,
+              "contrast_raw": 64.0,
+              "downsample_psnr_db": 67.75139857321419,
+              "downsample_ssim": 0.9999772906303406,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 1.0,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 0.9999791979789734,
+              "novel_edge_rate": 0.0,
+              "saturated_channel_enhanced": 0.0,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.0,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 1.0000001041863535,
+              "supported_added_energy_gate_applies": false,
+              "true_clip_enhanced": 0.0,
+              "true_clip_raw": 0.0
+            },
+            "shape": [
+              826,
+              1280,
+              3
+            ],
+            "source_shapes": {
+              "best_single": [
+                413,
+                640,
+                3
+              ],
+              "bicubic": [
+                826,
+                1280,
+                3
+              ],
+              "stack": [
+                826,
+                1280,
+                3
+              ],
+              "stack_raw": [
+                826,
+                1280,
+                3
+              ]
+            },
+            "stack_file_sha256": "dbffd9bab4454c98cd0b8df8838baf54a610145952b9cfebb909112e20831e44",
+            "stack_pixel_sha256": "bd2fdf1b35e1e63072ab3cff1ce91186701afb45cbcfa5ee9856c65eba1faa0c",
+            "stack_raw_file_sha256": "303d9f76a6f93b8a826a6e42e17ec4ee43cb62b7041af5657f95eb5bc4fa6590",
+            "stack_raw_pixel_sha256": "ed2a198c463d57f871f8472d098b6b8293fe514dd711ab7f2e808fede1f3d1b0",
+            "validation_role": "milestone",
+            "vs_best_single": {
+              "acutance_gain": 1.4615786357760454,
+              "added_energy_per_pixel": 5.0776766797820825,
+              "contrast_enhanced": 84.0,
+              "contrast_gain": 0.3125,
+              "contrast_raw": 64.0,
+              "downsample_psnr_db": 15.279175432113634,
+              "downsample_ssim": 0.9094613194465637,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 0.9999728864003229,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 0.9760094881057739,
+              "novel_edge_rate": 0.004407536319612591,
+              "saturated_channel_enhanced": 2.7113599677159e-05,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.001060267857142857,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.8353034892631609,
+              "supported_added_energy_gate_applies": true,
+              "true_clip_enhanced": 3.7832929782082326e-05,
+              "true_clip_raw": 0.0
+            },
+            "vs_bicubic": {
+              "acutance_gain": 1.4615786357760454,
+              "added_energy_per_pixel": 5.0776766797820825,
+              "contrast_enhanced": 84.0,
+              "contrast_gain": 0.3125,
+              "contrast_raw": 64.0,
+              "downsample_psnr_db": 15.279175432113634,
+              "downsample_ssim": 0.9094613194465637,
+              "flat_clip_pixels": 0,
+              "flat_clip_texture_rms_enhanced": null,
+              "flat_clip_texture_rms_raw": null,
+              "highlight_headroom_enhanced": 0.9999728864003229,
+              "highlight_headroom_raw": 1.0,
+              "histogram_matched_ssim": 0.9760094881057739,
+              "novel_edge_rate": 0.004407536319612591,
+              "saturated_channel_enhanced": 2.7113599677159e-05,
+              "saturated_channel_raw": 0.0,
+              "shadow_enhanced": 0.001060267857142857,
+              "shadow_raw": 0.0,
+              "smooth_noise_ratio": 1.0,
+              "supported_added_energy": 0.8353034892631609,
+              "supported_added_energy_gate_applies": true,
+              "true_clip_enhanced": 3.7832929782082326e-05,
+              "true_clip_raw": 0.0
+            }
+          }
+        ],
+        "quality_curve": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/quality_curve.csv",
+        "report": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate_report.json",
+        "terminal": {
+          "artifact_mode": "promoted_best",
+          "baseline_alignment": {
+            "best_single": {
+              "applied": 1.0,
+              "dx": 0.025133703728101864,
+              "dy": -0.002639729250745404,
+              "response": 0.9303606087962787
+            },
+            "bicubic": {
+              "applied": 1.0,
+              "dx": 0.025133703728101864,
+              "dy": -0.002639729250745404,
+              "response": 0.9303606087962787
+            }
+          },
+          "best_n": 156,
+          "best_phase_bins": [
+            [
+              22,
+              63
+            ],
+            [
+              21,
+              50
+            ]
+          ],
+          "best_prior_seq": 177,
+          "best_revision": 156,
+          "best_source_end_s": 6.9430000000000005,
+          "best_source_span_s": 6.846,
+          "best_source_start_s": 0.097,
+          "candidate_best_raw_sha256": "9dd2b9bb2084c9837bd647a725142078bbca318fe01923ccee8712f2078ec33d",
+          "candidate_best_sha256": "0cde48c5ca66ee1c5ca267c6ff47aa7d335a4d0913e0139c9aa081b32cf6a03e",
+          "candidate_quality_score": 93.73581798544323,
+          "comparison": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/terminal_comparison.png",
+          "current_n": 156,
+          "current_prior_seq": 177,
+          "current_revision": 156,
+          "current_source_end_s": 6.9430000000000005,
+          "current_source_span_s": 6.846,
+          "current_source_start_s": 0.097,
+          "evidence_score": 1.884167216313242,
+          "is_best_so_far": true,
+          "n": 156,
+          "paths": {
+            "best_single": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/final_185511_best_single_native.png",
+            "bicubic": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/final_185511_best_single_bicubic.png",
+            "stack": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/final_185511_best_stack.png",
+            "stack_raw": "/private/tmp/drone-upgrade-20260904/final-superres-independent/skyline_rail/candidate/20260904_185025_385704/final_185511_best_stack_raw.png"
+          },
+          "phase_bins": [
+            [
+              22,
+              63
+            ],
+            [
+              21,
+              50
+            ]
+          ],
+          "phase_coverage": 1.0,
+          "raw_evidence_score": 0.13201148901520177,
+          "raw_vs_best_single": {
+            "acutance_gain": 0.13201148901520177,
+            "added_energy_per_pixel": 0.547437883058414,
+            "contrast_enhanced": 65.0,
+            "contrast_gain": 0.0,
+            "contrast_raw": 65.0,
+            "downsample_psnr_db": 51.3972022374424,
+            "downsample_ssim": 0.9979981780052185,
+            "flat_clip_pixels": 0,
+            "flat_clip_texture_rms_enhanced": null,
+            "flat_clip_texture_rms_raw": null,
+            "highlight_headroom_enhanced": 1.0,
+            "highlight_headroom_raw": 1.0,
+            "histogram_matched_ssim": 0.9980525374412537,
+            "novel_edge_rate": 0.0,
+            "saturated_channel_enhanced": 0.0,
+            "saturated_channel_raw": 0.0,
+            "shadow_enhanced": 0.0,
+            "shadow_raw": 0.0,
+            "smooth_noise_ratio": 1.0,
+            "supported_added_energy": 1.0,
+            "supported_added_energy_gate_applies": true,
+            "true_clip_enhanced": 0.0,
+            "true_clip_raw": 0.0
+          },
+          "shape": [
+            826,
+            1280,
+            3
+          ],
+          "source_shapes": {
+            "best_single": [
+              413,
+              640,
+              3
+            ],
+            "bicubic": [
+              826,
+              1280,
+              3
+            ],
+            "stack": [
+              826,
+              1280,
+              3
+            ],
+            "stack_raw": [
+              826,
+              1280,
+              3
+            ]
+          },
+          "stack_file_sha256": "3be6cb34b9da93b7d2b21b656035c213434bc47f01d35d5601617e6c4fbad3fb",
+          "stack_pixel_sha256": "0cde48c5ca66ee1c5ca267c6ff47aa7d335a4d0913e0139c9aa081b32cf6a03e",
+          "stack_raw_file_sha256": "a4fd21a1370dc3e2cef0984a1c8cbc3742a9442c534f1a697558894aaf56d1bb",
+          "stack_raw_pixel_sha256": "9dd2b9bb2084c9837bd647a725142078bbca318fe01923ccee8712f2078ec33d",
+          "validation_role": "terminal",
+          "vs_best_single": {
+            "acutance_gain": 1.8937938052962928,
+            "added_energy_per_pixel": 5.824053703843826,
+            "contrast_enhanced": 75.0,
+            "contrast_gain": 0.15384615384615374,
+            "contrast_raw": 65.0,
+            "downsample_psnr_db": 12.935140266290466,
+            "downsample_ssim": 0.8691878914833069,
+            "flat_clip_pixels": 0,
+            "flat_clip_texture_rms_enhanced": null,
+            "flat_clip_texture_rms_raw": null,
+            "highlight_headroom_enhanced": 0.9997742635189669,
+            "highlight_headroom_raw": 1.0,
+            "histogram_matched_ssim": 0.9710256457328796,
+            "novel_edge_rate": 0.004813294491525424,
+            "saturated_channel_enhanced": 0.0002257364810330912,
+            "saturated_channel_raw": 0.0,
+            "shadow_enhanced": 0.0027362666464891042,
+            "shadow_raw": 0.0,
+            "smooth_noise_ratio": 1.0,
+            "supported_added_energy": 0.8925049477029041,
+            "supported_added_energy_gate_applies": true,
+            "true_clip_enhanced": 0.0002894219128329298,
+            "true_clip_raw": 0.0
+          },
+          "vs_bicubic": {
+            "acutance_gain": 1.8937938052962928,
+            "added_energy_per_pixel": 5.824053703843826,
+            "contrast_enhanced": 75.0,
+            "contrast_gain": 0.15384615384615374,
+            "contrast_raw": 65.0,
+            "downsample_psnr_db": 12.935140266290466,
+            "downsample_ssim": 0.8691878914833069,
+            "flat_clip_pixels": 0,
+            "flat_clip_texture_rms_enhanced": null,
+            "flat_clip_texture_rms_raw": null,
+            "highlight_headroom_enhanced": 0.9997742635189669,
+            "highlight_headroom_raw": 1.0,
+            "histogram_matched_ssim": 0.9710256457328796,
+            "novel_edge_rate": 0.004813294491525424,
+            "saturated_channel_enhanced": 0.0002257364810330912,
+            "saturated_channel_raw": 0.0,
+            "shadow_enhanced": 0.0027362666464891042,
+            "shadow_raw": 0.0,
+            "smooth_noise_ratio": 1.0,
+            "supported_added_energy": 0.8925049477029041,
+            "supported_added_energy_gate_applies": true,
+            "true_clip_enhanced": 0.0002894219128329298,
+            "true_clip_raw": 0.0
+          }
+        }
+      },
+      "scene": {
+        "extended": false,
+        "file": "stream_20260714_195336_attempt1.mp4",
+        "max_duration_s": 7.0,
+        "name": "skyline_rail",
+        "purpose": "Distant skyline and rail yard before the camera begins its next move.",
+        "roi": [
+          320,
+          100,
+          960,
+          620
+        ],
+        "start_s": 302.0
+      },
+      "warnings": []
+    }
+  ],
+  "schema_version": 1,
+  "source_verification": {
+    "catalog": "/Users/randyblasik/Documents/Drone_EnhancedVision/testdata/flight_scenes/2026-07-14.json",
+    "full_hash": true,
+    "ok": true,
+    "schema": "m5.flight-source-verification.v1",
+    "sources": [
+      {
+        "actual_bytes": 358895612,
+        "actual_sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744",
+        "exists": true,
+        "expected_bytes": 358895612,
+        "expected_sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744",
+        "hash_ok": true,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_191345_attempt1.mp4",
+        "role": "canonical",
+        "size_ok": true,
+        "source": "seg_191345"
+      },
+      {
+        "actual_bytes": 457650637,
+        "actual_sha256": "5096d8eed9c12d8905e0c484aa356598eb9f56534b172102ac37a94d19ff8ba6",
+        "exists": true,
+        "expected_bytes": 457650637,
+        "expected_sha256": "5096d8eed9c12d8905e0c484aa356598eb9f56534b172102ac37a94d19ff8ba6",
+        "hash_ok": true,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_195336_attempt1.mp4",
+        "role": "canonical",
+        "size_ok": true,
+        "source": "seg_195336"
+      }
+    ]
+  },
+  "status": "PASS_METRICS_REVIEW_REQUIRED",
+  "thresholds": {
+    "max_display_novel_edge_rate": 0.005,
+    "max_evidence_regression": 0.03,
+    "max_raw_novel_edge_rate": 0.005,
+    "max_smooth_noise_ratio": 1.15,
+    "min_display_acutance_gain": 0.15,
+    "min_display_downsample_ssim": 0.78,
+    "min_display_structural_ssim": 0.97,
+    "min_display_supported_added_energy": 0.62,
+    "min_final_evidence_gain": 0.01,
+    "min_raw_acutance_gain": 0.02,
+    "min_raw_structural_ssim": 0.98,
+    "min_raw_supported_added_energy": 0.9
+  },
+  "validate_only_historical_binding": {
+    "changed_dependencies": {},
+    "historical_receipt": null,
+    "missing_dependencies": [],
+    "passed": true,
+    "required": false
+  },
+  "warnings": []
+}

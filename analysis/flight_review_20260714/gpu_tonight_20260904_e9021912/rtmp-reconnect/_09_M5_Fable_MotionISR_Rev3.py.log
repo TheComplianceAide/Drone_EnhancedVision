@@ -1,0 +1,11 @@
+2026-09-04 20:30:01.542 Python[24090:44399805] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/s_/_6kcd3r51pnbk8j5k2k3fsf80000gn/T/org.python.python.savedState
+[ WARN:0@15.929] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 1009.311234 ms
+[ WARN:0@15.929] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 1009.688435 ms
+[ WARN:0@16.948] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 1009.839662 ms
+[ WARN:0@18.012] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 1009.859576 ms
+[ WARN:0@19.076] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 1008.991940 ms
+[ WARN:1@20.332] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 1006.365625 ms
+[ WARN:1@20.332] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 1006.415208 ms
+[ WARN:1@21.349] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 1015.221415 ms
+[flv @ 0xba7ea7480] Packet mismatch 1459619959 11 56613
+GUI_RESULT 0 65.19429533416405 1124

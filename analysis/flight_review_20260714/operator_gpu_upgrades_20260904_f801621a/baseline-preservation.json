@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "checks": {
+    "_08_M5_LuckySkylineSuperZoom_Rev1.py": true,
+    "_10_M5_Fable_NightVision_Rev1.py": true,
+    "_12_M5_Fable_Overwatch_Rev1.py": true,
+    "_10_M5_ISR_ReconSuite_Rev1.py": true,
+    "track5_LargestObjects_Rev1.py": true,
+    "Track_up_to_5_objects_wAdjustableObjectSize_Rev1.py": true,
+    "_07_Radar_Motion_GPU_AutoZoom_Rev1.py": true,
+    "NightVision_Rev1y.py": true,
+    "_09_M5_TemporalEventScope_Rev1.py": true,
+    "_04_IAT_Deep_NightVision_Rev1.py": true,
+    "_11_M5_Fable_SuperRes_Rev1.py": true,
+    "_11_M5_LakeHouse_AutoScout_Rev1.py": true,
+    "_06_ISR_MainPanel_Motion_AutoZoom_Rev1.py": true,
+    "_09_M5_Fable_MotionISR_Rev1.py": true,
+    "_12_M5_NightVision_Max_Rev1.py": true,
+    "_05_SuperZoom_IAT_Rev1.py": true,
+    "_08_M5_Radar_Motion_AutoZoom_Rev1.py": true
+  }
+}

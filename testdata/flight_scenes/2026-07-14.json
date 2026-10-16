@@ -1,0 +1,326 @@
+{
+  "schema": "m5.flight-scenes.v1",
+  "flight_id": "2026-07-14-research-stream",
+  "description": "Canonical local replay catalog for the July 14, 2026 Mavic 3 research flight.",
+  "recording_root": "recordings/research_stream_20260714_191345",
+  "clock": {
+    "unit": "seconds",
+    "meaning": "decoded source PTS local to each MP4 segment",
+    "warning": "Do not derive time from nominal container FPS; the damaged capture metadata is not a valid mission clock."
+  },
+  "landmark_hash_semantics": {
+    "payload": "Full-resolution contiguous decoded BGR8 pixel bytes, row-major with no annotation or container metadata.",
+    "decode_rule": "Start a fresh sequential FFmpeg-backed decode at pts_s minus warmup_s, then advance to the recorded selected PTS; do not use nominal-FPS frame arithmetic or direct random frame-number seeking.",
+    "limitation": "The current landmarks are audit anchors, not yet an automated cross-decoder conformance gate. Preserve decoder/version and decoded PTS when adding a new landmark."
+  },
+  "source_policy": {
+    "immutable": true,
+    "acceptance_requires_sha256": true,
+    "derived_fixture_location": "/tmp/m5_superres_v3_fixtures",
+    "rules": [
+      "Never edit, repair, normalize, trim, rename, overwrite, or transcode a canonical source in place.",
+      "Use source PTS for scene addressing and verify the source SHA-256 before acceptance or benchmark work.",
+      "Keep timing-corruption tests on the original MP4; use labeled bounded lossless fixtures for image-quality comparison.",
+      "A derived fixture or output is not source truth and must retain source identity, command, crop, and timing metadata."
+    ]
+  },
+  "sources": {
+    "seg_191345": {
+      "file": "stream_20260714_191345_attempt1.mp4",
+      "bytes": 358895612,
+      "sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744",
+      "probe": {"codec": "h264", "width": 1920, "height": 1080, "duration_s": 600.902},
+      "audit": {"decoded_frames": 14828, "gaps_gt_100ms": 156, "largest_gap_s": 2.110937}
+    },
+    "seg_192339": {
+      "file": "stream_20260714_192339_attempt1.mp4",
+      "bytes": 408065138,
+      "sha256": "499add8093ab589e5b050cb7b49ca3bc16b5ee35fc201765c0371f8fb7541851",
+      "probe": {"codec": "h264", "width": 1920, "height": 1080, "duration_s": 599.4965},
+      "audit": {"decoded_frames": 15463, "gaps_gt_100ms": 106, "largest_gap_s": 3.75}
+    },
+    "seg_193338": {
+      "file": "stream_20260714_193338_attempt1.mp4",
+      "bytes": 449967995,
+      "sha256": "c3e102b5f607d139811ca0d50f8bf362d5a0f8aa61a4358fa2e8f84bc9f40419",
+      "probe": {"codec": "h264", "width": 1920, "height": 1080, "duration_s": 600.463938},
+      "audit": {"decoded_frames": 16267, "gaps_gt_100ms": 78, "largest_gap_s": 3.04}
+    },
+    "seg_194336": {
+      "file": "stream_20260714_194336_attempt1.mp4",
+      "bytes": 455310717,
+      "sha256": "2507c542ab029d1db69ef8ca60b73c4634b4dd9b0aa40fb7e31de6106cdb5a23",
+      "probe": {"codec": "h264", "width": 1920, "height": 1080, "duration_s": 599.307333},
+      "audit": {"decoded_frames": 16933, "gaps_gt_100ms": 1, "largest_gap_s": 34.389001}
+    },
+    "seg_195336": {
+      "file": "stream_20260714_195336_attempt1.mp4",
+      "bytes": 457650637,
+      "sha256": "5096d8eed9c12d8905e0c484aa356598eb9f56534b172102ac37a94d19ff8ba6",
+      "probe": {"codec": "h264", "width": 1920, "height": 1080, "duration_s": 600.599333},
+      "audit": {"decoded_frames": 18000, "gaps_gt_100ms": 0, "largest_gap_s": 0.07}
+    },
+    "seg_200336": {
+      "file": "stream_20260714_200336_attempt1.mp4",
+      "bytes": 483337480,
+      "sha256": "d2bf09908553f25abae626e7b837cf430dbca73f7a574c455c0bf099c303c228",
+      "probe": {"codec": "h264", "width": 1920, "height": 1080, "duration_s": 600.1805},
+      "audit": {"decoded_frames": 17928, "gaps_gt_100ms": 6, "largest_gap_s": 0.74}
+    },
+    "seg_201336": {
+      "file": "stream_20260714_201336_attempt1.mp4",
+      "bytes": 145909867,
+      "sha256": "838ac1ed6045a9c72ae5faa6887ff90963697d28d193f60cb0cb496cd6422682",
+      "probe": {"codec": "h264", "width": 1920, "height": 1080, "duration_s": 191.432},
+      "audit": {"decoded_frames": 5351, "gaps_gt_100ms": 19, "largest_gap_s": 1.32}
+    }
+  },
+  "excluded_sources": {
+    "duplicate_recorder_191352": {
+      "path": "recordings/research_stream_20260714_191351/stream_20260714_191352_attempt1.mp4",
+      "bytes": 13817360,
+      "duration_s": 20.254021,
+      "sha256": "0f70aff625db7dc5269d82924f87825fb94ae541b1b242e6ae7c5b694475e8a1",
+      "reason": "Accidental second recorder. Use only for single-instance, duplicate-detection, and stale-status regression tests."
+    }
+  },
+  "scenes": {
+    "motion.human_sequence": {
+      "source": "seg_201336",
+      "start_pts_s": 32.0,
+      "quick_frames": 540,
+      "purpose": "Two people; full acceptance window is local 32-110 seconds.",
+      "validates": ["human recall", "ID retention", "confirmation latency", "post-gap reacquisition"],
+      "limitations": ["The required synchronized 5 Hz human ground truth does not yet exist; do not claim recall."]
+    },
+    "motion.human_clutter_perf": {
+      "source": "seg_201336",
+      "start_pts_s": 25.0,
+      "quick_frames": 300,
+      "purpose": "Mixed trees, roofs, roads and approach motion.",
+      "validates": ["cap pressure", "clutter churn", "native-1080p throughput"]
+    },
+    "motion.human_clutter_ab": {
+      "source": "seg_201336",
+      "start_pts_s": 32.0,
+      "quick_frames": 300,
+      "purpose": "Controlled Rev1/Rev3 human-clutter A/B window.",
+      "validates": ["matched-input A/B", "cap duty", "track churn proxies"],
+      "limitations": ["This is intentionally distinct from motion.human_clutter_perf at 25 seconds."]
+    },
+    "motion.stable_wide": {
+      "source": "seg_195336",
+      "start_pts_s": 300.0,
+      "quick_frames": 300,
+      "purpose": "Stable control; useful imagery must not be overprocessed.",
+      "validates": ["registration stability", "stable-scene false alarms", "performance"],
+      "landmark": {"pts_s": 310.0049375, "warmup_s": 3.5, "source_frame_sha256": "fd93905c5a1448e75b089116ecfb35a91e2177fb4675e11e7762587a31b2f5c3"}
+    },
+    "motion.soft_telephoto": {
+      "source": "seg_191345",
+      "start_pts_s": 495.0,
+      "quick_frames": 300,
+      "purpose": "Start of the audited 138-second haze and softness interval.",
+      "validates": ["low-texture behavior", "haze warnings", "performance"],
+      "landmark": {"pts_s": 519.987, "warmup_s": 3.5, "source_frame_sha256": "d9e61e162c354d6343f508e93978494a9ffd2f2ecedf0757307df6c69b811db7"}
+    },
+    "motion.rapid_pan_zoom": {
+      "source": "seg_192339",
+      "start_pts_s": 150.0,
+      "quick_frames": 300,
+      "purpose": "Hard camera transition and registration recovery.",
+      "validates": ["transition suppression", "registration reset", "track-cap recovery"]
+    },
+    "motion.highlight_transition": {
+      "source": "seg_200336",
+      "start_pts_s": 116.0,
+      "quick_frames": 300,
+      "purpose": "Sky sweep containing the measured bright-clipping peak.",
+      "validates": ["highlight honesty", "transition suppression", "recovery"],
+      "landmark": {"pts_s": 119.3919375, "warmup_s": 4.0, "source_frame_sha256": "cce33b1cced71c80d79800746274b660f1f4eea5f673f5dbbedfc336b52e0093"}
+    },
+    "image.human_landmark": {
+      "source": "seg_201336",
+      "start_pts_s": 49.9729375,
+      "purpose": "Both visible people are unobstructed for an ImageScout honesty comparison.",
+      "validates": ["raw immutability", "human-structure preservation"],
+      "landmark": {"pts_s": 49.9729375, "warmup_s": 3.5, "source_frame_sha256": "babbb13b4c3ec3052bc29fff2b58013073998c0587bcccf615b6080e7acad2c7"}
+    },
+    "superres.soft_barn_soak": {
+      "source": "seg_191345",
+      "start_pts_s": 510.0,
+      "roi_xywh": [640, 300, 640, 480],
+      "max_duration_s": 70.0,
+      "extended": true,
+      "purpose": "Long telephoto hold on a white barn, tree line, poles and field tracks.",
+      "validates": ["long soak", "detector-phase coverage", "haze-supported detail"]
+    },
+    "superres.construction_facade": {
+      "source": "seg_191345",
+      "start_pts_s": 221.0,
+      "roi_xywh": [700, 180, 720, 520],
+      "max_duration_s": 9.0,
+      "extended": false,
+      "purpose": "Short stable hold with roof lines, windows, framing and utility poles.",
+      "validates": ["short-hold geometry", "bounded PSF restoration", "no invented lines"]
+    },
+    "superres.skyline_rail": {
+      "source": "seg_195336",
+      "start_pts_s": 302.0,
+      "roi_xywh": [320, 100, 960, 620],
+      "max_duration_s": 7.0,
+      "extended": false,
+      "purpose": "Distant skyline and rail yard before the camera begins its next move.",
+      "validates": ["distant fine structure", "detector-phase coverage", "pre-motion stop"]
+    },
+    "capture.long_blackout": {
+      "source": "seg_194336",
+      "start_pts_s": 209.573937,
+      "duration_s": 34.389001,
+      "purpose": "Longest audited input blackout.",
+      "validates": ["stale-frame alarm", "discontinuity handling", "tracker reset and recovery"]
+    }
+  },
+  "suites": {
+    "m5_v3_validation": [
+      {"scene": "motion.human_sequence", "name": "human_sequence"},
+      {"scene": "motion.human_clutter_perf", "name": "human_clutter"},
+      {"scene": "motion.stable_wide", "name": "stable_wide"},
+      {"scene": "motion.soft_telephoto", "name": "soft_telephoto"},
+      {"scene": "motion.rapid_pan_zoom", "name": "rapid_pan_zoom"},
+      {"scene": "motion.highlight_transition", "name": "highlight_transition"}
+    ],
+    "m5_superres_v3_validation": [
+      {"scene": "superres.soft_barn_soak", "name": "soft_barn_soak"},
+      {"scene": "superres.construction_facade", "name": "construction_facade"},
+      {"scene": "superres.skyline_rail", "name": "skyline_rail"}
+    ],
+    "m5_nightvision_rev3_validation": [
+      {"scene": "superres.soft_barn_soak", "name": "soft_barn_soak"},
+      {"scene": "superres.construction_facade", "name": "construction_facade"},
+      {"scene": "superres.skyline_rail", "name": "skyline_rail"}
+    ]
+  },
+  "canonical_results": {
+    "flight_audit": {
+      "report": "analysis/flight_review_20260714/flight_system_audit.md",
+      "interpretation": "Historical pre-fix whole-recording audit; not a current release receipt."
+    },
+    "motion_imagescout_v3": {
+      "report": "analysis/flight_review_20260714/v3_implementation_results.md",
+      "interpretation": "Bounded Motion/ImageScout evidence with documented remaining failures and no whole-flight recall claim."
+    },
+    "superres_v3_release_e13": {
+      "report": "analysis/flight_review_20260714/superres_v3_release_e13/superres_v3_validation.json",
+      "report_sha256": "4aef87ab9d3730690a860c96a3a524b860b9bb011ce3beb2708a1c28c6b0f624",
+      "status": "PASS_METRICS_REVIEW_REQUIRED",
+      "candidate_sha256": "e13f2e511a844d5bc83e60d7952f8ac9a7d15edc4c8f2cf1934b3c9e9ed996ab",
+      "core_sha256": "cce33f2820652ff1de9b1e049950b95b83ee6b627f6bb485cc4fc35ee6292cc9",
+      "validator_at_run_sha256": "929bae71784ded80030e4cd50c3ae5961d0789c9369be1bbf68587519b57587f",
+      "provenance_note": "Validator hash was recorded from the contemporaneous pre-catalog-integration working tree; the frozen receipt did not embed it. Future validators embed their own provenance.",
+      "scope": "Three static 2x ROIs; not moving targets, not the whole flight, and not a 3x validation."
+    },
+    "superres_v3_quality_soak_d251ec99_20260716": {
+      "report": "analysis/flight_review_20260714/superres_v3_quality_soak_d251ec99_20260716/experiment.md",
+      "direct_ab_receipt": "analysis/flight_review_20260714/superres_v3_quality_soak_d251ec99_20260716/superres_ab_validation.json",
+      "direct_ab_receipt_sha256": "00545ec0826c062b8e58f8879fb72cd5929b081c7ef2abc0a0128f2bd11aa7c6",
+      "direct_ab_status": "PASS_METRICS_REVIEW_REQUIRED",
+      "visual_review": "ACCEPTED",
+      "independent_receipt": "analysis/flight_review_20260714/superres_v3_quality_soak_d251ec99_20260716/superres_v3_validation.json",
+      "independent_receipt_sha256": "83992da6424ea98e526b2799bc46444c991a3354e40f8877d2e10661839a6c03",
+      "independent_status": "FAIL",
+      "independent_failures": 8,
+      "long_soak_receipt": "analysis/flight_review_20260714/superres_v3_quality_soak_d251ec99_20260716/barn_30s/superres_ab_validation.json",
+      "long_soak_receipt_sha256": "642bb8b114d9aa03ed6904448b17de993d470dba8603e8d793b27078b3ddb838",
+      "baseline_sha256": "1d827662c14dcd46a614084c4afe82af5e4001fbf6abad461fe116160003fa0d",
+      "candidate_sha256": "d251ec9935b352eeed286b863a426aa6cd5ab3d0ae52df53f39d877f525b32a7",
+      "core_sha256": "cce33f2820652ff1de9b1e049950b95b83ee6b627f6bb485cc4fc35ee6292cc9",
+      "perceptual_sha256": "1a210138d2119cce688ea31f41258bfd31ea686d330e5b19d30ab1df69e29698",
+      "direct_validator_sha256": "76555b5023749f1103a86cd515b529ad445c5ea7b83a787f83b9c2c6fa868726",
+      "independent_validator_sha256": "892b699af6139e3340b05a6de7dd118284be0051024f6cd40dcf640adbe8e2de",
+      "catalog_at_run_sha256": "a4061d62641f7a99776caf0444097c4cb59fb881a13912637df19254a5fe52cf",
+      "provenance_note": "This canonical-result entry was appended after validation; sources, scene definitions, suites, and run inputs were unchanged.",
+      "scope": "Three static 2x ROIs plus one 900-frame / 30.145-second barn soak; not moving targets, not the whole flight, and not a 3x validation."
+    },
+    "superres_v3_mps_quality_4d600463_20260716": {
+      "report": "analysis/flight_review_20260714/superres_v3_mps_quality_4d600463_20260716/experiment.md",
+      "direct_ab_receipt": "analysis/flight_review_20260714/superres_v3_mps_quality_4d600463_20260716/direct_ab/superres_ab_validation.json",
+      "direct_ab_receipt_sha256": "933a83d19cb8ed54215bf6069144d3834552e164381dda839b29506ceb86f3b9",
+      "direct_ab_status": "PASS_METRICS_REVIEW_REQUIRED",
+      "direct_ab_failures": 0,
+      "direct_ab_warnings": 2,
+      "visual_review": "ACCEPTED",
+      "independent_receipt": "analysis/flight_review_20260714/superres_v3_mps_quality_4d600463_20260716/independent/superres_v3_validation.json",
+      "independent_receipt_sha256": "2795357d25df39a157b35e95d7ab91896186584b785e886eab81436f78bf9366",
+      "independent_status": "FAIL",
+      "independent_failures": 8,
+      "long_soak_receipt": "analysis/flight_review_20260714/superres_v3_mps_quality_4d600463_20260716/long_soak/superres_ab_validation.json",
+      "long_soak_receipt_sha256": "f922f4c6a6d25139ee9c8b6a452817cdfe4c5173e7ff4aa0acd38dfd9d60b195",
+      "cpu_parity_receipt": "analysis/flight_review_20260714/superres_v3_mps_quality_4d600463_20260716/cpu_parity/superres_ab_validation.json",
+      "cpu_parity_receipt_sha256": "f11518bb8fd153f1bc41fb784db3a0827950d5415f6bf5d7712ecd06b4ef55fd",
+      "mps_repeat_receipt": "analysis/flight_review_20260714/superres_v3_mps_quality_4d600463_20260716/mps_repeat/superres_ab_validation.json",
+      "mps_repeat_receipt_sha256": "28fdff89318a2df0e21d62a704c591dee1537d3644c6ffcc30c6b4f3763d4e86",
+      "baseline_sha256": "1d827662c14dcd46a614084c4afe82af5e4001fbf6abad461fe116160003fa0d",
+      "candidate_sha256": "4d600463fb8d823ce071eb7d3dbc46abc520dd77293e00b9426bce525341b5f4",
+      "mps_module_sha256": "9fb3719ead887e87073041d5058a68182a6a6b8c004601173f56e3d431eb7846",
+      "core_sha256": "f420666672ac7ec1f4fe407e7572f4e6d39a6f469b025472ca12bec90262af0e",
+      "perceptual_sha256": "1a210138d2119cce688ea31f41258bfd31ea686d330e5b19d30ab1df69e29698",
+      "direct_validator_sha256": "94dc5fd29d8d624f08de2fc16db1e9aa622abef3dd40aabb2aea0890616414a1",
+      "independent_validator_sha256": "a7e1eb64e1641c435a196c86bbf0926fa658590e1a13b96d51ca2479140a0541",
+      "catalog_at_run_sha256": "a28f16d1235d92b802d755fb1c645a1c56a30cf42346bde877e6b94f40e3a516",
+      "quality_device": "mps",
+      "mps_execution": {
+        "terminal_hypotheses": 32,
+        "terminal_psf_paths": 7,
+        "terminal_rl_iterations": 464,
+        "input_uploads": 1,
+        "fallback_used": false,
+        "benchmark_mean_speedup": 2.8306353
+      },
+      "provenance_note": "This canonical-result entry was appended after frozen direct, independent, long-soak, parity, and repeat validation. Machine receipts retain the catalog bytes used during each run.",
+      "scope": "Three static 2x ROIs plus one 900-frame / 30.145-second barn soak. The barn terminal promotes MPS; shorter construction and skyline fixtures execute a 30-hypothesis preterminal MPS bank and retain CPU legacy. Not moving targets, not the whole flight, and not a 3x validation."
+    },
+    "superres_rev4_mps_ced59fb8_20260717": {
+      "report": "analysis/flight_review_20260714/superres_rev4_mps_ced59fb8_20260717/experiment.md",
+      "report_sha256": "eaddded1efa342f860869e71b23822021cd7d24acbb41da882f2be47ffc602c1",
+      "direct_ab_receipt": "analysis/flight_review_20260714/superres_rev4_mps_ced59fb8_20260717/direct/superres_ab_validation.json",
+      "direct_ab_receipt_sha256": "a0efd6c73304d5b846f24634fa9aa5039c62fe143650066ed6a1fbeee9f56035",
+      "direct_ab_status": "PASS_METRICS_REVIEW_REQUIRED",
+      "direct_ab_failures": 0,
+      "direct_ab_warnings": 2,
+      "independent_receipt": "analysis/flight_review_20260714/superres_rev4_mps_ced59fb8_20260717/independent/superres_v3_validation.json",
+      "independent_receipt_sha256": "3234ca4378eccc64b1682172224ade910ba6521a31bc6ea4cad8982bc322352a",
+      "independent_status": "PASS_METRICS_REVIEW_REQUIRED",
+      "independent_failures": 0,
+      "independent_warnings": 0,
+      "visual_review": "ACCEPTED_REVIEW_REQUIRED",
+      "baseline_sha256": "1d827662c14dcd46a614084c4afe82af5e4001fbf6abad461fe116160003fa0d",
+      "rev3_foundation_sha256": "0c4fbed0871b6fba6591e0689cea5cb23ceceef22e40ddfe521eedcbc35f5b31",
+      "candidate_sha256": "ced59fb88d5fdfab53ca35669a1924a3d6eff61cdd7d5316c328e5eea6a5cc76",
+      "rev4_mps_module_sha256": "6c626ba18369acd1d286e89c77d35449958e74c85310f5932842308b6dab7bb9",
+      "direct_validator_sha256": "a1ee782fc16eebc52991ee491e71bccba3c7647e0a7c1749f0784b10cf33099b",
+      "independent_validator_sha256": "c2b82934d310183e136ad92b721204bc49c58f3430050b6c451cfe4f59b62c2e",
+      "catalog_at_run_sha256": "34ac75f82d220fcf451200f2ef0a15978dbc997a769ffcce8e470e1bc876d54f",
+      "quality_device": "mps",
+      "provenance_note": "This canonical-result entry was appended after the frozen direct and independent validations; the source, scene, suite, and run-input bytes remain those embedded in the receipts.",
+      "scope": "Three static 2x ROIs with 6.8 to 8.8 seconds of selected evidence; not 3x flight validation, moving-target deblurring, identifying detail, physical-resolution recovery, GPU saturation, or whole-flight quality."
+    },
+    "nightvision_rev3_mps_f8e8e789_20260717": {
+      "report": "analysis/flight_review_20260714/nightvision_rev3_mps_f8e8e789_20260717/experiment.md",
+      "report_sha256": "b4bb817565f4dccacb9ab8503267dc693e90341698ce131b65634120b37e0bdf",
+      "receipt": "analysis/flight_review_20260714/nightvision_rev3_mps_f8e8e789_20260717/nightvision_rev3_validation.json",
+      "receipt_sha256": "5d13d63034d56a08c5c09aa6631c593efef8da45b6d5d360d96e204b327287b6",
+      "status": "PASS_METRICS_REVIEW_REQUIRED",
+      "failures": 0,
+      "visual_review": "ACCEPTED_REVIEW_REQUIRED",
+      "rev2_floor_sha256": "f4f3d57066b25b2641f7e95beab26d75f0e86b1cafe599757e8783259b9fc6ae",
+      "candidate_sha256": "9956c3cda5628396029220c476682773955a80cce5698ee93fa33929fbbe3abd",
+      "core_sha256": "f8e8e7894793759754379d5f3b3b5e31766b85da8b1f6dc13c4e0835d4d0a2c9",
+      "validator_sha256": "7830249a93f10611911a37fc99880e8e7ae35e2dab3dbed621392d61d345dc23",
+      "catalog_at_run_sha256": "34ac75f82d220fcf451200f2ef0a15978dbc997a769ffcce8e470e1bc876d54f",
+      "quality_device": "mps",
+      "provenance_note": "This canonical-result entry was appended after the frozen validator run; the source, scene, suite, and run-input bytes remain those embedded in the receipt.",
+      "scope": "Deterministic flight-derived 2x low-light and detector-sampling proxy across three static ROIs; not native night footage, a characterized Mavic 3 sensor, farther identifying range, physical-resolution recovery, absent detail, or whole-flight evidence."
+    }
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "app": "_11_M5_Fable_SuperRes_Rev4.py",
+  "args": [
+    "--source",
+    "rtmp://127.0.0.1:21935/live/qa_tonight",
+    "--quality-device",
+    "mps",
+    "--require-mps",
+    "--zoom",
+    "4",
+    "--output-dir",
+    "/tmp/drone-tonight-gpu-20260904/rtmp-fixed/qa-superres-output"
+  ],
+  "exit_code": 0,
+  "elapsed_s": 38.09094208292663,
+  "imshow_calls": 712,
+  "actions": [
+    {
+      "key": "v",
+      "elapsed": 5.018143707886338,
+      "windows": [
+        "Fable SuperRes V4 - click static target",
+        "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+      ]
+    },
+    {
+      "key": "i",
+      "elapsed": 8.054287541657686,
+      "windows": [
+        "Fable SuperRes V4 - click static target",
+        "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+      ]
+    },
+    {
+      "key": "]",
+      "elapsed": 10.048909625038505,
+      "windows": [
+        "Fable SuperRes V4 - click static target",
+        "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+      ]
+    },
+    {
+      "key": "t",
+      "elapsed": 12.028496499639004,
+      "windows": [
+        "Fable SuperRes V4 - click static target",
+        "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+      ]
+    },
+    {
+      "key": "r",
+      "elapsed": 32.53869974985719,
+      "windows": [
+        "Fable SuperRes V4 - click static target",
+        "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+      ]
+    },
+    {
+      "key": "t",
+      "elapsed": 34.00127820763737,
+      "windows": [
+        "Fable SuperRes V4 - click static target",
+        "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+      ]
+    },
+    {
+      "key": "t",
+      "elapsed": 34.06303949980065,
+      "windows": [
+        "Fable SuperRes V4 - click static target",
+        "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+      ]
+    },
+    {
+      "key": "t",
+      "elapsed": 34.141296749934554,
+      "windows": [
+        "Fable SuperRes V4 - click static target",
+        "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+      ]
+    },
+    {
+      "key": "q",
+      "elapsed": 38.06975404173136,
+      "windows": [
+        "Fable SuperRes V4 - click static target",
+        "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+      ]
+    }
+  ],
+  "windows": [
+    "Fable SuperRes V4 - click static target",
+    "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+  ],
+  "temporal_quality_calls": [
+    {
+      "device": "mps",
+      "requested_device": "auto",
+      "history_frames": 1,
+      "effective_looks_mean": 1.0,
+      "protected_fraction": 1.0,
+      "noise_sigma_codes": 0.75,
+      "registration": {
+        "reason": "operator-reset"
+      },
+      "source_timestamp": 1788568117.108242,
+      "processing_ms": 14.20820876955986,
+      "frame_uploads": 1,
+      "synchronized_steps": 0,
+      "fallback_reason": "",
+      "resampling": "each raw observation once"
+    },
+    {
+      "device": "mps",
+      "requested_device": "auto",
+      "history_frames": 1,
+      "effective_looks_mean": 1.0,
+      "protected_fraction": 1.0,
+      "noise_sigma_codes": 0.75,
+      "registration": {
+        "reason": "operator-reset"
+      },
+      "source_timestamp": 1788568117.108242,
+      "processing_ms": 14.20820876955986,
+      "frame_uploads": 1,
+      "synchronized_steps": 0,
+      "fallback_reason": "",
+      "resampling": "each raw observation once",
+      "repeated_timestamp": true
+    },
+    {
+      "device": "mps",
+      "requested_device": "auto",
+      "history_frames": 1,
+      "effective_looks_mean": 1.0,
+      "protected_fraction": 1.0,
+      "noise_sigma_codes": 0.75,
+      "registration": {
+        "reason": "quality-toggle"
+      },
+      "source_timestamp": 1788568117.251044,
+      "processing_ms": 15.625208150595427,
+      "frame_uploads": 2,
+      "synchronized_steps": 0,
+      "fallback_reason": "",
+      "resampling": "each raw observation once"
+    },
+    {
+      "device": "mps",
+      "requested_device": "auto",
+      "history_frames": 1,
+      "effective_looks_mean": 1.0,
+      "protected_fraction": 1.0,
+      "noise_sigma_codes": 0.75,
+      "registration": {
+        "reason": "quality-toggle"
+      },
+      "source_timestamp": 1788568117.251044,
+      "processing_ms": 15.625208150595427,
+      "frame_uploads": 2,
+      "synchronized_steps": 0,
+      "fallback_reason": "",
+      "resampling": "each raw observation once",
+      "repeated_timestamp": true
+    }
+  ],
+  "capture": {
+    "unique_frames": 316,
+    "first_elapsed_s": 1.6025527496822178,
+    "last_source_ts": 1788568121.173813,
+    "frame_shape": [
+      1080,
+      1920,
+      3
+    ],
+    "max_read_age_ms": 177.74486541748047
+  },
+  "mode": "real OpenCV windows; automated keys; isolated local RTMP via pinned NMS and real-time FFmpeg publisher; no aircraft/radio link claim"
+}

@@ -1,0 +1,34 @@
+[selftest] PASS four-phase-accounting
+[selftest] PASS same-phase-not-superres
+[selftest] PASS opposite-subpixels-distinct
+[selftest] PASS high-haze-clear-deterministic
+[selftest] PASS high-haze-guided-transmission
+[selftest] PASS high-haze-chroma-preserved
+[selftest] PASS high-haze-no-new-clipping
+[selftest] synthetic phases=[[7, 1], [10, 6]] shifts=[(0.0, 0.0), (0.801, 0.002), (0.004, 0.206), (0.815, 0.823), (-0.001, 0.002), (0.793, -0.002), (-0.0, 0.203), (0.201, 0.195), (-0.005, 0.012), (0.203, 0.007), (-0.007, 0.191), (0.807, 0.827)] rejects={'lucky-quality': 4} metrics={'score': 10.96749791329815, 'support_frac': 1.0, 'neff_p10': 3.0, 'holes_frac': 0.0, 'phase_occupied': 4, 'phase_total': 4, 'train_phase_occupied': 3, 'phase_balance': 0.8678866585354992, 'backproj_psnr': 0.7278789383471628, 'grad_ncc': 0.9999399880568186, 'detail_ratio': 1.1184902855310528, 'noise': 26.686799999999998, 'ringing': 0.012427331704440103, 'edge_ratio': 1.1184902855310528, 'noise_ratio': 1.070614251224734, 'structural_ssim': 0.996795654296875, 'novel_edge_rate': 0.0, 'supported_added_energy': 0.9999999391719205, 'holdout_gain_db': 0.7278789383471628, 'repeat_confidence': 0.8537259615384616, 'blend_beta': 1.0, 'sharp_strength': 0.24, 'psf_sigma_hr': 0.85, 'y_rl_beta': 0.0, 'y_rl_sigma_hr': 0.0, 'reconstruction_n': 6, 'holdout_n': 1, 'raw_score': 14.727252708270793, 'display_edge_ratio': 1.1184902855310528, 'display_noise_ratio': 1.070614251224734, 'display_structural_ssim': 0.996795654296875, 'display_novel_edge_rate': 0.0, 'display_supported_added_energy': 0.9999999391719205, 'clear_strength': 0.0, 'clear_target': 0.1792481250360578, 'clear_progress': 0.3169925001442312, 'measured_haze_strength': 0.0, 'clear_detail_strength': 0.0, 'clear_guided_transmission': 0.0, 'clear_dark_radius': 0.0, 'clear_guide_radius': 0.0, 'clear_guide_eps': 0.0, 'clear_transmission_floor': 0.0, 'clear_clahe_mix': 0.0, 'clear_detail_edge_percentile': 0.0, 'clear_detail_mask_dilate': 0.0, 'clear_detail_mask_blur': 0.0, 'clear_detail_sigma': 0.0, 'clear_luma_rl_iters': 0.0, 'clear_luma_rl_sigma': 0.0, 'clear_luma_rl_blend': 0.0, 'clear_luma_sharp_strength': 0.0, 'clear_block_cleanup': 0.0, 'clear_block_edge_percentile': 0.0, 'clear_block_edge_dilate': 0.0, 'clear_block_mask_blur': 0.0, 'clear_block_local_window': 0.0, 'clear_block_range_low': 0.0, 'clear_block_range_high': 0.0, 'clear_block_bilateral_sigma_color': 0.0, 'clear_block_bilateral_sigma_space': 0.0, 'clear_block_mask_fraction': 0.0, 'clear_highlight_shoulder_strength': 0.0, 'clear_output_true_clip_fraction': 0.005393629807692308, 'clear_output_saturated_channel_fraction': 0.006570512820512821, 'clear_smooth_cleanup': 0.0, 'clear_smooth_blur_sigma': 0.0, 'clear_smooth_mask_blur': 0.0, 'clear_smooth_mask_fraction': 0.0, 'clear_smooth_gradient_percentile': 0.0, 'clear_smooth_range_percentile': 0.0, 'clear_foundation_stack_n': 0.0, 'clear_foundation_frames_in': 0.0, 'clear_foundation_rl_iters': 0.0, 'clear_foundation_rl_sigma': 0.0, 'clear_foundation_sharp_amt': 0.0, 'clear_foundation_alignment_response': 0.0, 'clear_foundation_alignment_applied': 0.0, 'clear_foundation_direct_focus_gain': 1.0, 'clear_foundation_direct_texture_ratio': 1.0, 'clear_foundation_direct_grid_ratio': 1.0, 'clear_foundation_direct_halo_ratio': 1.0, 'clear_foundation_haze_blend': 0.0, 'clear_foundation_branch': 0.0, 'clear_compute_backend': 0.0, 'clear_gpu_hypotheses': 0.0, 'clear_gpu_shortlist': 0.0, 'clear_gpu_total_ms': 0.0, 'clear_gpu_upload_ms': 0.0, 'clear_gpu_compute_ms': 0.0, 'clear_gpu_download_ms': 0.0, 'clear_gpu_sync_ms': 0.0, 'clear_gpu_peak_bytes': 0.0, 'clear_gpu_driver_bytes': 0.0, 'clear_gpu_fallback': 0.0, 'clear_gpu_rl_iterations': 0.0}
+[selftest] PASS synthetic-reconstruction-ready
+[selftest] PASS synthetic-phase-coverage
+[selftest] PASS finite-metrics
+[selftest] PASS material-foundation-promotes-with-honest-raw-fallback
+[selftest] PASS plain-foundation-does-not-bypass-raw-gates
+[selftest] PASS acquisition-solver-phase-taxonomy
+[selftest] PASS fallback-no-fake-promotion
+[selftest] PASS fallback-exact-best-single
+[ibp-selftest] selection-deterministic: PASS
+[ibp-selftest] phase-taxonomy-consistent: PASS
+[ibp-selftest] opposite-subpixels-distinct: PASS
+[ibp-selftest] phase-balanced: PASS
+[ibp-selftest] finite-result: PASS
+[ibp-selftest] shape: PASS
+[ibp-selftest] clean-multiphase-promoted: PASS
+[ibp-selftest] ground-truth-error-improved: PASS
+[ibp-selftest] fallback-beta-zero: PASS
+[ibp-selftest] fallback-exact: PASS
+[ibp-selftest] train=10 holdout=1 phases=3 beta=1.000 holdout=+3.491dB gt_mse=0.002131->0.001701
+IBP SELFTEST PASS
+[selftest] PASS ibp-core-selftest
+[superres-v3] background reconstruction failed: expected selftest solve failure
+[selftest] PASS blocking-save-surfaces-solve-failure
+[selftest] PASS failed-revision-not-retried
+SELFTEST PASS
+[selftest] PASS v4-mps-refinement

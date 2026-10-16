@@ -1,0 +1,7272 @@
+{
+  "artifacts": {
+    "candidate_clean_vs_injected_trajectories.png": {
+      "bytes": 406012,
+      "path": "/private/tmp/drone-upgrade-20260904/motion-rev4-metal-validation/candidate_clean_vs_injected_trajectories.png",
+      "sha256": "2608f041c4ba6d3ec754b3fc862c00732ba77a7524184a1811d1ba483c859fd5"
+    },
+    "candidate_vs_baselines_trajectories.png": {
+      "bytes": 417566,
+      "path": "/private/tmp/drone-upgrade-20260904/motion-rev4-metal-validation/candidate_vs_baselines_trajectories.png",
+      "sha256": "b0a19efb7d72f552c97bf32f5e0b436c784bb3d7a31309436a9be57f73889ba9"
+    },
+    "input_first.png": {
+      "bytes": 105172,
+      "path": "/private/tmp/drone-upgrade-20260904/motion-rev4-metal-validation/input_first.png",
+      "sha256": "b2ca8ae58312398509e12d4c109c5f9c202db4d2265e5cd2035263c886420b84"
+    },
+    "magnified_source_injected_diff.png": {
+      "bytes": 137109,
+      "path": "/private/tmp/drone-upgrade-20260904/motion-rev4-metal-validation/magnified_source_injected_diff.png",
+      "sha256": "8da7e7e2a561b6a16df15f3ffabcc0d73dc59157821f5432cbaff31f7af288d1"
+    },
+    "source_first.png": {
+      "bytes": 105146,
+      "path": "/private/tmp/drone-upgrade-20260904/motion-rev4-metal-validation/source_first.png",
+      "sha256": "430b6f6edbd959de554b923e2afeb799e083da5d0aca1da0eb151d30c00454ea"
+    },
+    "source_input_ground_truth.png": {
+      "bytes": 916234,
+      "path": "/private/tmp/drone-upgrade-20260904/motion-rev4-metal-validation/source_input_ground_truth.png",
+      "sha256": "5ca48dce9d4588f763b55d3dfac237fae9f54d4c14113df5887c2f9ed836dfa8"
+    }
+  },
+  "command": "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python m5_motionisr_rev4_validation.py --device mps --require-mps --output-dir /tmp/drone-upgrade-20260904/motion-rev4-metal-validation",
+  "comparisons": {
+    "best_rev3_injection_attributable_coverage": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "candidate_coverage_gain": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "candidate_injection_attributable_micro_coverage": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "candidate_micro_off_path_increase_vs_clean_per_frame": 0.0,
+    "candidate_micro_off_path_unique_count_increase_vs_clean": 0,
+    "candidate_micro_receipts": {
+      "clean": {
+        "blobness_mean": 0.03252100571990013,
+        "cfar_z_max": 16.324851989746094,
+        "confirmed": 0,
+        "continuity_last_reason": "ZOOM 0.976x",
+        "continuity_last_transform": [
+          [
+            0.9776232432486611,
+            -0.010296993456306672,
+            4.323582067479246
+          ],
+          [
+            -0.004710006023553658,
+            0.9817695283353367,
+            2.587062149885477
+          ],
+          [
+            -2.542686298320607e-05,
+            -2.4510608031783272e-05,
+            1.0
+          ]
+        ],
+        "continuity_policy": "GPU bank and candidates reset at every transition; confirmed tracks alone are rebased across exact registered zoom 0.94..1.06 and require fresh-detection reacquisition",
+        "coord_generation": 0,
+        "device": "mps",
+        "eligible_cells": 113,
+        "even_support_max": 3.82138991355896,
+        "explicit_reanchors": 0,
+        "fallback_reason": "",
+        "fallback_used": false,
+        "frame_uploads": 156,
+        "frames": 8,
+        "frontend_device": "cpu",
+        "hypotheses": 72,
+        "input_kind": "rev3_deposit_plus_spatial_psf",
+        "integration_tau_s": 1.8,
+        "invalid_reanchors": 0,
+        "last_step_ms": 115.20358268171549,
+        "max_ready_frames": 99,
+        "odd_support_max": 3.769310712814331,
+        "peaks": 48,
+        "psf_likelihood_max": 21.680923461914062,
+        "quality_max": 18.324851989746094,
+        "quality_mean": 0.003256694646552205,
+        "quality_std": 0.17382179200649261,
+        "raw_margin_max": 3.481490135192871,
+        "ready_frames": 8,
+        "requested_frontend_device": "mps",
+        "runner_far_max": 19.12222671508789,
+        "small_parameter_uploads": 156,
+        "small_zoom_continuity_events": 2,
+        "state_reprojections": 0,
+        "state_resets": 2,
+        "stationary_max": 19.217510223388672,
+        "support_margin_max": 4.611360549926758,
+        "support_margin_mean": 0.7859483361244202,
+        "synchronized_steps": 156,
+        "threshold": 7.0,
+        "tracks": 48,
+        "view_detections": [
+          {
+            "energy": 2.6178359985351562,
+            "origin": "rev4_micro_tbd",
+            "x": 482.947372647224,
+            "y": 254.07992713688355
+          },
+          {
+            "energy": 2.29247556413923,
+            "origin": "rev4_micro_tbd",
+            "x": 577.71417983937,
+            "y": 251.09596213770573
+          },
+          {
+            "energy": 1.9651795795985632,
+            "origin": "rev4_micro_tbd",
+            "x": 95.07207991037869,
+            "y": 177.7257243384778
+          },
+          {
+            "energy": 1.8908872604370117,
+            "origin": "rev4_micro_tbd",
+            "x": 70.11583364918845,
+            "y": 137.57543939299012
+          },
+          {
+            "energy": 1.760915892464774,
+            "origin": "rev4_micro_tbd",
+            "x": 85.0514655239839,
+            "y": 177.7194991925689
+          },
+          {
+            "energy": 1.7223649706159319,
+            "origin": "rev4_micro_tbd",
+            "x": 355.2383237712952,
+            "y": 169.87199703046758
+          },
+          {
+            "energy": 1.6503050667898995,
+            "origin": "rev4_micro_tbd",
+            "x": 180.91947746772652,
+            "y": 315.23507458865913
+          },
+          {
+            "energy": 1.6170102528163366,
+            "origin": "rev4_micro_tbd",
+            "x": 494.1784479419598,
+            "y": 19.865080818954596
+          },
+          {
+            "energy": 1.5897645950317383,
+            "origin": "rev4_micro_tbd",
+            "x": 421.1010551425383,
+            "y": 213.98946141811794
+          },
+          {
+            "energy": 1.5845627103533064,
+            "origin": "rev4_micro_tbd",
+            "x": 414.0706189425562,
+            "y": 244.04489946707605
+          },
+          {
+            "energy": 1.5352961676461356,
+            "origin": "rev4_micro_tbd",
+            "x": 275.06122572784903,
+            "y": 288.13784821223993
+          },
+          {
+            "energy": 1.508619717189244,
+            "origin": "rev4_micro_tbd",
+            "x": 576.6293604165047,
+            "y": 358.2606260326794
+          },
+          {
+            "energy": 1.4981287547520228,
+            "origin": "rev4_micro_tbd",
+            "x": 576.5694129818122,
+            "y": 431.41488216063925
+          },
+          {
+            "energy": 1.4827720097133092,
+            "origin": "rev4_micro_tbd",
+            "x": 565.6579020576996,
+            "y": 358.2645681820888
+          },
+          {
+            "energy": 1.477823121207101,
+            "origin": "rev4_micro_tbd",
+            "x": 598.7905283620199,
+            "y": 62.009544232675104
+          },
+          {
+            "energy": 1.4647584642682756,
+            "origin": "rev4_micro_tbd",
+            "x": 169.98473575559225,
+            "y": 276.09215582511956
+          },
+          {
+            "energy": 1.4042861121041434,
+            "origin": "rev4_micro_tbd",
+            "x": 146.89912246423702,
+            "y": 298.17310495491154
+          },
+          {
+            "energy": 1.3787570680890764,
+            "origin": "rev4_micro_tbd",
+            "x": 595.6081661169754,
+            "y": 317.1862736402267
+          },
+          {
+            "energy": 1.363349097115653,
+            "origin": "rev4_micro_tbd",
+            "x": 61.56684802657796,
+            "y": 354.4269914615006
+          },
+          {
+            "energy": 1.34414427621024,
+            "origin": "rev4_micro_tbd",
+            "x": 119.39706023761318,
+            "y": 54.39179438420418
+          },
+          {
+            "energy": 1.337278093610491,
+            "origin": "rev4_micro_tbd",
+            "x": 562.9317345769135,
+            "y": 49.96414025416965
+          },
+          {
+            "energy": 1.3329824720110213,
+            "origin": "rev4_micro_tbd",
+            "x": 493.82537495879285,
+            "y": 346.2628511425856
+          },
+          {
+            "energy": 1.3259447642735072,
+            "origin": "rev4_micro_tbd",
+            "x": 95.83190507611356,
+            "y": 281.10564338949877
+          },
+          {
+            "energy": 1.3229707990373885,
+            "origin": "rev4_micro_tbd",
+            "x": 41.82674426145975,
+            "y": 226.87915901119985
+          },
+          {
+            "energy": 1.3020553588867188,
+            "origin": "rev4_micro_tbd",
+            "x": 512.101208092159,
+            "y": 43.8955925010618
+          },
+          {
+            "energy": 1.2940014430454798,
+            "origin": "rev4_micro_tbd",
+            "x": 396.0788118179255,
+            "y": 253.05971272270335
+          },
+          {
+            "energy": 1.2590460096086775,
+            "origin": "rev4_micro_tbd",
+            "x": 567.7436788303338,
+            "y": 251.0937316980899
+          },
+          {
+            "energy": 1.2476328441074915,
+            "origin": "rev4_micro_tbd",
+            "x": 531.0288128672315,
+            "y": 58.923941019152565
+          },
+          {
+            "energy": 1.2317592075892858,
+            "origin": "rev4_micro_tbd",
+            "x": 91.8106912906773,
+            "y": 286.12564703513925
+          },
+          {
+            "energy": 1.2268172672816686,
+            "origin": "rev4_micro_tbd",
+            "x": 192.66095862878697,
+            "y": 450.79108673184743
+          },
+          {
+            "energy": 1.2255633217947823,
+            "origin": "rev4_micro_tbd",
+            "x": 605.4734408699039,
+            "y": 460.45908778497505
+          },
+          {
+            "energy": 1.2128571101597376,
+            "origin": "rev4_micro_tbd",
+            "x": 446.1510756107227,
+            "y": 141.8957592810296
+          },
+          {
+            "energy": 1.203584943498884,
+            "origin": "rev4_micro_tbd",
+            "x": 448.82269204047543,
+            "y": 405.43470018952667
+          },
+          {
+            "energy": 1.1916304997035436,
+            "origin": "rev4_micro_tbd",
+            "x": 445.92864726626374,
+            "y": 322.2183526618212
+          },
+          {
+            "energy": 1.1795708792550224,
+            "origin": "rev4_micro_tbd",
+            "x": 83.14288133581914,
+            "y": 137.58636883500432
+          },
+          {
+            "energy": 1.169567653111049,
+            "origin": "rev4_micro_tbd",
+            "x": 343.24768751137617,
+            "y": 169.8640258026877
+          },
+          {
+            "energy": 1.1640235355922155,
+            "origin": "rev4_micro_tbd",
+            "x": 433.2925133031782,
+            "y": 49.793297855617986
+          },
+          {
+            "energy": 1.162734031677246,
+            "origin": "rev4_micro_tbd",
+            "x": 345.08278545183646,
+            "y": 275.1048620389577
+          },
+          {
+            "energy": 1.1540372031075614,
+            "origin": "rev4_micro_tbd",
+            "x": 288.0011502055495,
+            "y": 325.25381613369984
+          },
+          {
+            "energy": 1.1526257651192802,
+            "origin": "rev4_micro_tbd",
+            "x": 252.03804719551783,
+            "y": 294.1566820878319
+          },
+          {
+            "energy": 1.1518302645002092,
+            "origin": "rev4_micro_tbd",
+            "x": 427.30086639256064,
+            "y": 52.78765220095039
+          },
+          {
+            "energy": 1.1473985399518694,
+            "origin": "rev4_micro_tbd",
+            "x": 609.7470419856758,
+            "y": 63.023095006616224
+          },
+          {
+            "energy": 1.1326480593000139,
+            "origin": "rev4_micro_tbd",
+            "x": 542.7022013759348,
+            "y": 370.29806111221285
+          },
+          {
+            "energy": 1.1308627128601074,
+            "origin": "rev4_micro_tbd",
+            "x": 430.0878241862296,
+            "y": 213.9932827243277
+          },
+          {
+            "energy": 1.1246027265276228,
+            "origin": "rev4_micro_tbd",
+            "x": 550.683870143225,
+            "y": 370.2946711470471
+          },
+          {
+            "energy": 1.1230511665344238,
+            "origin": "rev4_micro_tbd",
+            "x": 278.99732787141284,
+            "y": 325.2554319551572
+          },
+          {
+            "energy": 1.1146838324410575,
+            "origin": "rev4_micro_tbd",
+            "x": 506.112423360791,
+            "y": 49.88926208599769
+          },
+          {
+            "energy": 1.109917368207659,
+            "origin": "rev4_micro_tbd",
+            "x": 377.2898076539103,
+            "y": 119.80591038033434
+          }
+        ],
+        "visible_confirmed": 0,
+        "zoom_assisted_reacquisitions": 1,
+        "zoom_reacquisition_candidates": 1,
+        "zoom_tracks_pending": 0,
+        "zoom_tracks_preserved": 6,
+        "zoom_tracks_reacquired": 1
+      },
+      "injected": {
+        "blobness_mean": 0.03251983970403671,
+        "cfar_z_max": 16.198732376098633,
+        "confirmed": 0,
+        "continuity_last_reason": "ZOOM 0.976x",
+        "continuity_last_transform": [
+          [
+            0.9776248672231336,
+            -0.01029854048718392,
+            4.323319502892349
+          ],
+          [
+            -0.004709814465277987,
+            0.981765644167252,
+            2.5872217172089527
+          ],
+          [
+            -2.5424291329490516e-05,
+            -2.452397862151643e-05,
+            1.0
+          ]
+        ],
+        "continuity_policy": "GPU bank and candidates reset at every transition; confirmed tracks alone are rebased across exact registered zoom 0.94..1.06 and require fresh-detection reacquisition",
+        "coord_generation": 0,
+        "device": "mps",
+        "eligible_cells": 112,
+        "even_support_max": 3.82138991355896,
+        "explicit_reanchors": 0,
+        "fallback_reason": "",
+        "fallback_used": false,
+        "frame_uploads": 156,
+        "frames": 8,
+        "frontend_device": "cpu",
+        "hypotheses": 72,
+        "input_kind": "rev3_deposit_plus_spatial_psf",
+        "integration_tau_s": 1.8,
+        "invalid_reanchors": 0,
+        "last_step_ms": 147.81204191967845,
+        "max_ready_frames": 99,
+        "odd_support_max": 3.769310712814331,
+        "peaks": 48,
+        "psf_likelihood_max": 21.680932998657227,
+        "quality_max": 18.198732376098633,
+        "quality_mean": 0.0032304797787219286,
+        "quality_std": 0.17316603660583496,
+        "raw_margin_max": 3.499011993408203,
+        "ready_frames": 8,
+        "requested_frontend_device": "mps",
+        "runner_far_max": 19.09880256652832,
+        "small_parameter_uploads": 156,
+        "small_zoom_continuity_events": 2,
+        "state_reprojections": 0,
+        "state_resets": 2,
+        "stationary_max": 19.200237274169922,
+        "support_margin_max": 4.613239288330078,
+        "support_margin_mean": 0.786512017250061,
+        "synchronized_steps": 156,
+        "threshold": 7.0,
+        "tracks": 48,
+        "view_detections": [
+          {
+            "energy": 2.599818910871233,
+            "origin": "rev4_micro_tbd",
+            "x": 482.94753202495775,
+            "y": 254.0801623200512
+          },
+          {
+            "energy": 2.2909188951764787,
+            "origin": "rev4_micro_tbd",
+            "x": 577.7143426497086,
+            "y": 251.0962289583417
+          },
+          {
+            "energy": 1.9681856972830636,
+            "origin": "rev4_micro_tbd",
+            "x": 95.07206018857181,
+            "y": 177.72571753054743
+          },
+          {
+            "energy": 1.8985436303274972,
+            "origin": "rev4_micro_tbd",
+            "x": 70.11578080893263,
+            "y": 137.57537206268339
+          },
+          {
+            "energy": 1.7612991333007812,
+            "origin": "rev4_micro_tbd",
+            "x": 85.05144006029526,
+            "y": 177.7194882153285
+          },
+          {
+            "energy": 1.723459107535226,
+            "origin": "rev4_micro_tbd",
+            "x": 355.2384033388456,
+            "y": 169.87208971962886
+          },
+          {
+            "energy": 1.6475011280604772,
+            "origin": "rev4_micro_tbd",
+            "x": 180.91957486607626,
+            "y": 315.2352807994211
+          },
+          {
+            "energy": 1.6058954511369978,
+            "origin": "rev4_micro_tbd",
+            "x": 494.1784380989122,
+            "y": 19.865096702685214
+          },
+          {
+            "energy": 1.584749358040946,
+            "origin": "rev4_micro_tbd",
+            "x": 421.10117725109006,
+            "y": 213.98962895102113
+          },
+          {
+            "energy": 1.5747511727469308,
+            "origin": "rev4_micro_tbd",
+            "x": 414.0707601670894,
+            "y": 244.04509789993685
+          },
+          {
+            "energy": 1.5163733618600028,
+            "origin": "rev4_micro_tbd",
+            "x": 576.6296067606771,
+            "y": 358.2610115229546
+          },
+          {
+            "energy": 1.4989005497523717,
+            "origin": "rev4_micro_tbd",
+            "x": 275.0613526105736,
+            "y": 288.13805009152793
+          },
+          {
+            "energy": 1.4924697875976562,
+            "origin": "rev4_micro_tbd",
+            "x": 576.5697163418172,
+            "y": 431.41535715934305
+          },
+          {
+            "energy": 1.4831759589059013,
+            "origin": "rev4_micro_tbd",
+            "x": 565.6581475929446,
+            "y": 358.2649503796097
+          },
+          {
+            "energy": 1.4798834664481026,
+            "origin": "rev4_micro_tbd",
+            "x": 598.790540854185,
+            "y": 62.00964639782022
+          },
+          {
+            "energy": 1.4608020782470703,
+            "origin": "rev4_micro_tbd",
+            "x": 169.9848065736799,
+            "y": 276.0923052837228
+          },
+          {
+            "energy": 1.4044641767229353,
+            "origin": "rev4_micro_tbd",
+            "x": 146.89919193096551,
+            "y": 298.17327635012913
+          },
+          {
+            "energy": 1.3744194848196847,
+            "origin": "rev4_micro_tbd",
+            "x": 595.6083810005389,
+            "y": 317.18661799637715
+          },
+          {
+            "energy": 1.3633787972586495,
+            "origin": "rev4_micro_tbd",
+            "x": 61.56688948096203,
+            "y": 354.42721638984096
+          },
+          {
+            "energy": 1.3456518990652901,
+            "origin": "rev4_micro_tbd",
+            "x": 119.39699301697091,
+            "y": 54.391653875084586
+          },
+          {
+            "energy": 1.3373061588832311,
+            "origin": "rev4_micro_tbd",
+            "x": 562.9317422101844,
+            "y": 49.96421514569254
+          },
+          {
+            "energy": 1.3328478676932198,
+            "origin": "rev4_micro_tbd",
+            "x": 493.825602663189,
+            "y": 346.26319707098367
+          },
+          {
+            "energy": 1.325430461338588,
+            "origin": "rev4_micro_tbd",
+            "x": 41.82671447073277,
+            "y": 226.87919512350004
+          },
+          {
+            "energy": 1.321474347795759,
+            "origin": "rev4_micro_tbd",
+            "x": 95.8319353083097,
+            "y": 281.10577362830077
+          },
+          {
+            "energy": 1.306689671107701,
+            "origin": "rev4_micro_tbd",
+            "x": 512.101215097441,
+            "y": 43.89563711904897
+          },
+          {
+            "energy": 1.2908894675118583,
+            "origin": "rev4_micro_tbd",
+            "x": 396.07895520687146,
+            "y": 253.05991486055527
+          },
+          {
+            "energy": 1.2694926943097795,
+            "origin": "rev4_micro_tbd",
+            "x": 567.7438415888055,
+            "y": 251.09399484070133
+          },
+          {
+            "energy": 1.244544437953404,
+            "origin": "rev4_micro_tbd",
+            "x": 531.0288300341932,
+            "y": 58.924007484103285
+          },
+          {
+            "energy": 1.2314299174717493,
+            "origin": "rev4_micro_tbd",
+            "x": 91.81072137153463,
+            "y": 286.1257828605581
+          },
+          {
+            "energy": 1.2293128967285156,
+            "origin": "rev4_micro_tbd",
+            "x": 605.4737701229509,
+            "y": 460.4596069924283
+          },
+          {
+            "energy": 1.2259870256696428,
+            "origin": "rev4_micro_tbd",
+            "x": 193.66293950031508,
+            "y": 450.79063153879486
+          },
+          {
+            "energy": 1.2141621453421456,
+            "origin": "rev4_micro_tbd",
+            "x": 446.1511513757309,
+            "y": 141.89586197709295
+          },
+          {
+            "energy": 1.2038249969482422,
+            "origin": "rev4_micro_tbd",
+            "x": 448.8229524395407,
+            "y": 405.4351080641308
+          },
+          {
+            "energy": 1.1812793186732702,
+            "origin": "rev4_micro_tbd",
+            "x": 445.9288488410384,
+            "y": 322.2186542285581
+          },
+          {
+            "energy": 1.1782945905412947,
+            "origin": "rev4_micro_tbd",
+            "x": 83.14283585707578,
+            "y": 137.58630726038237
+          },
+          {
+            "energy": 1.1721128736223494,
+            "origin": "rev4_micro_tbd",
+            "x": 343.24776421586415,
+            "y": 169.86411344374105
+          },
+          {
+            "energy": 1.1638693128313338,
+            "origin": "rev4_micro_tbd",
+            "x": 433.29252416386214,
+            "y": 49.793308231849906
+          },
+          {
+            "energy": 1.1637646811349052,
+            "origin": "rev4_micro_tbd",
+            "x": 345.08292941223846,
+            "y": 275.10507206038716
+          },
+          {
+            "energy": 1.158907209123884,
+            "origin": "rev4_micro_tbd",
+            "x": 252.03816785211285,
+            "y": 294.1568838488727
+          },
+          {
+            "energy": 1.1497056143624442,
+            "origin": "rev4_micro_tbd",
+            "x": 427.30087894664996,
+            "y": 52.78766226471762
+          },
+          {
+            "energy": 1.147073200770787,
+            "origin": "rev4_micro_tbd",
+            "x": 609.7470536101455,
+            "y": 63.023203325730655
+          },
+          {
+            "energy": 1.1352387837001257,
+            "origin": "rev4_micro_tbd",
+            "x": 288.0013044798381,
+            "y": 325.2540706201032
+          },
+          {
+            "energy": 1.1266187259129115,
+            "origin": "rev4_micro_tbd",
+            "x": 430.0879478149952,
+            "y": 213.99345378636463
+          },
+          {
+            "energy": 1.1234422411237444,
+            "origin": "rev4_micro_tbd",
+            "x": 542.7024538420403,
+            "y": 370.29845093667245
+          },
+          {
+            "energy": 1.1212849617004395,
+            "origin": "rev4_micro_tbd",
+            "x": 550.6841235055541,
+            "y": 370.29506330519916
+          },
+          {
+            "energy": 1.1175761904035295,
+            "origin": "rev4_micro_tbd",
+            "x": 377.28985921096904,
+            "y": 119.80596036739799
+          },
+          {
+            "energy": 1.116807324545724,
+            "origin": "rev4_micro_tbd",
+            "x": 277.99699888011645,
+            "y": 325.25586277279433
+          },
+          {
+            "energy": 1.1144533157348633,
+            "origin": "rev4_micro_tbd",
+            "x": 505.1016858052739,
+            "y": 62.89264811075688
+          }
+        ],
+        "visible_confirmed": 0,
+        "zoom_assisted_reacquisitions": 1,
+        "zoom_reacquisition_candidates": 1,
+        "zoom_tracks_pending": 0,
+        "zoom_tracks_preserved": 6,
+        "zoom_tracks_reacquired": 1
+      }
+    },
+    "candidate_total_off_path_delta_vs_clean_per_frame": -0.8083333333333336,
+    "candidate_total_off_path_excess_vs_rev3_cpu_per_frame": 0.15833333333333321,
+    "coverage_gate_uses": "injection-attributable explicit Rev4 micro confirmations at 9 px; best paired-clean Rev3 confirmation baseline",
+    "reference_rev3_cpu_off_path_delta_vs_clean_per_frame": -0.9666666666666668
+  },
+  "conclusion": "Rev4 has not yet cleared every frozen tiny-target improvement, clean-relative nuisance, identity, and required-MPS gate.",
+  "controls": {
+    "eligible_start": 120,
+    "execution_order": [
+      {
+        "condition": "clean",
+        "pipeline": "rev3_cpu"
+      },
+      {
+        "condition": "injected",
+        "pipeline": "rev4"
+      },
+      {
+        "condition": "clean",
+        "pipeline": "rev3_mps"
+      },
+      {
+        "condition": "injected",
+        "pipeline": "rev3_cpu"
+      },
+      {
+        "condition": "clean",
+        "pipeline": "rev4"
+      },
+      {
+        "condition": "injected",
+        "pipeline": "rev3_mps"
+      }
+    ],
+    "exhaustive_distance_bin_edges_px": [
+      3.0,
+      5.0,
+      9.0,
+      16.0
+    ],
+    "frames": 240,
+    "gate_match_tolerance_px": 9.0,
+    "off_path_definition": "nearest injection path distance > 9 px",
+    "paired_conditions": [
+      "clean",
+      "injected"
+    ],
+    "pipeline_configs": {
+      "rev3_cpu": {
+        "deterministic": true,
+        "frontend_device": "cpu",
+        "preset_index": 0,
+        "preset_name": "SMALL-GAME",
+        "use_registration": true,
+        "use_tbd": true
+      },
+      "rev3_mps": {
+        "deterministic": false,
+        "frontend_device": "mps",
+        "preset_index": 0,
+        "preset_name": "SMALL-GAME",
+        "use_registration": true,
+        "use_tbd": true
+      },
+      "rev4": {
+        "deterministic": true,
+        "effective_frontend_device": "cpu",
+        "micro_tbd": {
+          "device": "mps",
+          "enabled": true,
+          "hypotheses": 72,
+          "integration_tau_s": 1.8,
+          "max_candidates": 48,
+          "require_mps": true,
+          "support_tau_s": 2.2,
+          "threshold": 7.0
+        },
+        "preset_index": 0,
+        "preset_name": "SMALL-GAME",
+        "requested_frontend_device": "mps",
+        "use_registration": true,
+        "use_tbd": true
+      }
+    },
+    "reported_match_tolerances_px": [
+      3.0,
+      5.0,
+      9.0
+    ]
+  },
+  "created_utc": "2026-09-04T22:30:02.957521+00:00",
+  "decode": {
+    "decode_failures": 0,
+    "decoded_frames": 240,
+    "decoded_frames_sha256": "26c481cb749cb601b73a121cb52fc0e75eb31d2886fb371d24f37cd619790f3f",
+    "decoder": "OpenCV 4.13.0 FFmpeg backend for pixels only",
+    "source_pts_authority": "FFmpeg showinfo on exact source frames decoded for fixture; derived-container OpenCV timestamps ignored",
+    "source_pts_backwards_count": 0,
+    "source_pts_delta_s": {
+      "count": 239,
+      "maximum": 0.06300000000010186,
+      "mean": 0.03358577405857735,
+      "minimum": 0.009999999999990905,
+      "p50": 0.03499999999996817,
+      "p90": 0.04699999999993452,
+      "p95": 0.04899999999997817
+    },
+    "source_pts_duplicate_count": 0,
+    "source_pts_first_s": 510.011,
+    "source_pts_last_s": 518.038,
+    "source_pts_s": [
+      510.011,
+      510.044,
+      510.07,
+      510.117,
+      510.142,
+      510.176,
+      510.21,
+      510.245,
+      510.271,
+      510.304,
+      510.338,
+      510.391063,
+      510.41,
+      510.444,
+      510.48,
+      510.516,
+      510.541,
+      510.577,
+      510.639,
+      510.664,
+      510.701,
+      510.735,
+      510.772,
+      510.798,
+      510.833,
+      510.87,
+      510.906,
+      510.927,
+      510.964,
+      510.999,
+      511.044,
+      511.066,
+      511.102,
+      511.148,
+      511.16,
+      511.205,
+      511.238,
+      511.266,
+      511.302,
+      511.333,
+      511.369,
+      511.406063,
+      511.441,
+      511.469,
+      511.5,
+      511.534,
+      511.568,
+      511.603,
+      511.64,
+      511.664,
+      511.711,
+      511.736,
+      511.76,
+      511.806,
+      511.843,
+      511.866,
+      511.9,
+      511.936,
+      511.961,
+      512.009,
+      512.033,
+      512.068,
+      512.103,
+      512.128,
+      512.179,
+      512.213,
+      512.235,
+      512.283,
+      512.305,
+      512.349,
+      512.385,
+      512.407063,
+      512.442,
+      512.475,
+      512.502,
+      512.537,
+      512.573,
+      512.614,
+      512.635,
+      512.684,
+      512.704,
+      512.741,
+      512.765,
+      512.801,
+      512.839,
+      512.863,
+      512.911,
+      512.933,
+      512.968,
+      513.004,
+      513.054,
+      513.078,
+      513.127,
+      513.137,
+      513.173,
+      513.208,
+      513.232,
+      513.286,
+      513.312,
+      513.332,
+      513.368,
+      513.402063,
+      513.434,
+      513.459,
+      513.522,
+      513.545,
+      513.583,
+      513.605,
+      513.644,
+      513.667,
+      513.702,
+      513.741,
+      513.777,
+      513.815,
+      513.835,
+      513.869,
+      513.907,
+      513.937,
+      513.978,
+      514.011,
+      514.033,
+      514.067,
+      514.102,
+      514.136,
+      514.185,
+      514.205,
+      514.241,
+      514.277,
+      514.3,
+      514.336,
+      514.373,
+      514.408063,
+      514.443,
+      514.466,
+      514.502,
+      514.537,
+      514.572,
+      514.612,
+      514.632,
+      514.667,
+      514.714,
+      514.738,
+      514.775,
+      514.816,
+      514.845,
+      514.88,
+      514.902,
+      514.95,
+      514.973,
+      515.012,
+      515.046,
+      515.081,
+      515.102,
+      515.139,
+      515.176,
+      515.216,
+      515.252,
+      515.282,
+      515.313,
+      515.352,
+      515.374,
+      515.412063,
+      515.445,
+      515.468,
+      515.492,
+      515.54,
+      515.575,
+      515.613,
+      515.644,
+      515.684,
+      515.707,
+      515.744,
+      515.767,
+      515.814,
+      515.835,
+      515.872,
+      515.91,
+      515.941,
+      515.977,
+      516.0,
+      516.036,
+      516.071,
+      516.111,
+      516.131,
+      516.181,
+      516.202,
+      516.251,
+      516.271,
+      516.323,
+      516.333,
+      516.38,
+      516.404063,
+      516.435,
+      516.471,
+      516.509,
+      516.533,
+      516.579,
+      516.603,
+      516.647,
+      516.671,
+      516.704,
+      516.741,
+      516.778,
+      516.815,
+      516.854,
+      516.875,
+      516.912,
+      516.946,
+      516.981,
+      517.019,
+      517.053,
+      517.076,
+      517.116,
+      517.151,
+      517.171,
+      517.208,
+      517.242,
+      517.276,
+      517.316,
+      517.348,
+      517.374,
+      517.429062,
+      517.477,
+      517.501,
+      517.539,
+      517.575,
+      517.595,
+      517.646,
+      517.676,
+      517.699,
+      517.745,
+      517.778,
+      517.8,
+      517.841,
+      517.876,
+      517.897,
+      517.944,
+      517.969,
+      518.004,
+      518.038
+    ],
+    "source_pts_sha256": "5a8dd79e5b8e95d47ce029e681a691f40c4a78404b14fe52c75ba032adb88506"
+  },
+  "failures": [
+    "FAIL_TARGET_1_COVERAGE",
+    "FAIL_TARGET_2_COVERAGE",
+    "FAIL_TARGET_3_COVERAGE",
+    "FAIL_TARGET_1_COVERAGE_GAIN",
+    "FAIL_TARGET_2_COVERAGE_GAIN",
+    "FAIL_TARGET_3_COVERAGE_GAIN",
+    "FAIL_TARGET_1_DOMINANT_SHARE",
+    "FAIL_TARGET_2_DOMINANT_SHARE",
+    "FAIL_TARGET_3_DOMINANT_SHARE",
+    "FAIL_TOTAL_OFF_PATH_EXCESS_VS_REV3_CPU"
+  ],
+  "fixture": {
+    "command": "ffmpeg -y -hide_banner -loglevel info -err_detect ignore_err -copyts -ss 510.000 -i /Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_191345_attempt1.mp4 -map 0:v:0 -frames:v 240 -vf crop=640:480:640:300,trim=end_frame=240,showinfo,setpts=PTS-STARTPTS -an -fps_mode passthrough -c:v libx264 -preset ultrafast -qp 0 -pix_fmt yuv420p /private/tmp/drone-upgrade-20260904/motion-rev4-metal-validation/canonical_crop_lossless.mkv",
+    "duration_requested_s": 12.0,
+    "elapsed_s": 0.2648418331518769,
+    "ffmpeg_version": "ffmpeg version 8.0.1 Copyright (c) 2000-2025 the FFmpeg developers",
+    "frame_limit": 240,
+    "kind": "derived lossless canonical crop",
+    "note": "No enhancement; lossless H.264 QP 0 crop outside recordings/. Source PTS comes from showinfo on the exact decoded input frames, not from derived-container or nominal-FPS arithmetic.",
+    "path": "/private/tmp/drone-upgrade-20260904/motion-rev4-metal-validation/canonical_crop_lossless.mkv",
+    "receipt": {
+      "bytes": 5151833,
+      "path": "/private/tmp/drone-upgrade-20260904/motion-rev4-metal-validation/canonical_crop_lossless.mkv",
+      "sha256": "3a49beffbd05193584f4daaa9d5baf81b5d75ea3635336462121198353ddf8b3"
+    },
+    "roi_xywh": [
+      640,
+      300,
+      640,
+      480
+    ],
+    "source_pts_sidecar": {
+      "bytes": 17317,
+      "path": "/private/tmp/drone-upgrade-20260904/motion-rev4-metal-validation/canonical_crop_source_pts.json",
+      "sha256": "9f0a2727f6a394dab62b5b7beb74dd32cbed40f391d9225eaed253ca78293e44"
+    },
+    "source_start_pts_s": 510.0,
+    "stderr_tail": "wn\n[h264 @ 0xb8ac42300] no frame!\n[Parsed_showinfo_2 @ 0xb8b003b40] n: 232 pts:8284800 pts_time:517.8   duration:    656 duration_time:0.041   fmt:yuv420p cl:unspecified sar:0/1 s:640x480 i:P iskey:0 type:P checksum:3F578160 plane_checksum:[7C5E4EEB 5A70B247 56E3801F] mean:[153 129 123] stdev:[17.7 3.9 1.6]\n[Parsed_showinfo_2 @ 0xb8b003b40] color_range:tv color_space:unknown color_primaries:unknown color_trc:unknown\n[Parsed_showinfo_2 @ 0xb8b003b40] n: 233 pts:8285456 pts_time:517.841 duration:    560 duration_time:0.035   fmt:yuv420p cl:unspecified sar:0/1 s:640x480 i:P iskey:0 type:P checksum:9639813D plane_checksum:[1ABF4F43 6892B1CA 39CD8021] mean:[153 129 123] stdev:[17.7 3.9 1.6]\n[Parsed_showinfo_2 @ 0xb8b003b40] color_range:tv color_space:unknown color_primaries:unknown color_trc:unknown\n[Parsed_showinfo_2 @ 0xb8b003b40] n: 234 pts:8286016 pts_time:517.876 duration:    336 duration_time:0.021   fmt:yuv420p cl:unspecified sar:0/1 s:640x480 i:P iskey:0 type:P checksum:F2E67482 plane_checksum:[E55B4561 7E6EAE41 8BA380D1] mean:[153 129 123] stdev:[17.7 3.9 1.6]\n[Parsed_showinfo_2 @ 0xb8b003b40] color_range:tv color_space:unknown color_primaries:unknown color_trc:unknown\n[Parsed_showinfo_2 @ 0xb8b003b40] n: 235 pts:8286352 pts_time:517.897 duration:    752 duration_time:0.047   fmt:yuv420p cl:unspecified sar:0/1 s:640x480 i:P iskey:0 type:P checksum:85EB79CF plane_checksum:[425F4B90 EE57AC62 C52981CE] mean:[153 129 123] stdev:[17.7 3.9 1.7]\n[Parsed_showinfo_2 @ 0xb8b003b40] color_range:tv color_space:unknown color_primaries:unknown color_trc:unknown\n[libx264 @ 0xb8ac41180] non-strictly-monotonic PTS\n[Parsed_showinfo_2 @ 0xb8b003b40] n: 236 pts:8287104 pts_time:517.944 duration:    400 duration_time:0.025   fmt:yuv420p cl:unspecified sar:0/1 s:640x480 i:P iskey:0 type:P checksum:BD7682C9 plane_checksum:[1D48564B 5BFCAB4B FA068124] mean:[153 129 123] stdev:[17.6 3.9 1.6]\n[Parsed_showinfo_2 @ 0xb8b003b40] color_range:tv color_space:unknown color_primaries:unknown color_trc:unknown\n[Parsed_showinfo_2 @ 0xb8b003b40] n: 237 pts:8287504 pts_time:517.969 duration:    560 duration_time:0.035   fmt:yuv420p cl:unspecified sar:0/1 s:640x480 i:P iskey:0 type:P checksum:99408EF6 plane_checksum:[882A656D 7492AAEF 64867E8B] mean:[153 129 123] stdev:[17.7 3.9 1.6]\n[Parsed_showinfo_2 @ 0xb8b003b40] color_range:tv color_space:unknown color_primaries:unknown color_trc:unknown\n[libx264 @ 0xb8ac41180] non-strictly-monotonic PTS\n[Parsed_showinfo_2 @ 0xb8b003b40] n: 238 pts:8288064 pts_time:518.004 duration:    544 duration_time:0.034   fmt:yuv420p cl:unspecified sar:0/1 s:640x480 i:P iskey:0 type:P checksum:5D8F8EA4 plane_checksum:[63FB5F90 91E4ABB0 BC968355] mean:[153 129 123] stdev:[17.7 3.9 1.7]\n[Parsed_showinfo_2 @ 0xb8b003b40] color_range:tv color_space:unknown color_primaries:unknown color_trc:unknown\n[Parsed_showinfo_2 @ 0xb8b003b40] n: 239 pts:8288608 pts_time:518.038 duration:    544 duration_time:0.034   fmt:yuv420p cl:unspecified sar:0/1 s:640x480 i:P iskey:0 type:P checksum:AC897D21 plane_checksum:[A86C5105 40D7AA10 7C2C81FD] mean:[153 129 123] stdev:[17.7 3.9 1.7]\n[Parsed_showinfo_2 @ 0xb8b003b40] color_range:tv color_space:unknown color_primaries:unknown color_trc:unknown\n[out#0/matroska @ 0xb8b000780] video:5028KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.052669%\nframe=  240 fps=0.0 q=-1.0 Lsize=    5031KiB time=00:00:00.00 bitrate=N/A speed=   0x elapsed=0:00:00.17    \n[libx264 @ 0xb8ac41180] frame I:1     Avg QP: 0.00  size: 35355\n[libx264 @ 0xb8ac41180] frame P:239   Avg QP: 0.00  size: 21394\n[libx264 @ 0xb8ac41180] mb I  I16..4: 100.0%  0.0%  0.0%\n[libx264 @ 0xb8ac41180] mb P  I16..4: 53.6%  0.0%  0.0%  P16..4: 24.0%  0.0%  0.0%  0.0%  0.0%    skip:22.4%\n[libx264 @ 0xb8ac41180] coded y,uvDC,uvAC intra: 88.8% 49.6% 48.7% inter: 27.8% 11.4% 11.3%\n[libx264 @ 0xb8ac41180] i16 v,h,dc,p: 31% 69%  0%  0%\n[libx264 @ 0xb8ac41180] i8c dc,h,v,p: 30% 56% 14%  0%\n[libx264 @ 0xb8ac41180] kb/s:5111.18\n"
+  },
+  "injection": {
+    "frame_count": 240,
+    "ground_truth_xy_by_frame": [
+      [
+        [
+          89.60000000000001,
+          115.19999999999999
+        ],
+        [
+          537.6,
+          240.0
+        ],
+        [
+          160.0,
+          403.2
+        ]
+      ],
+      [
+        [
+          90.02000000000001,
+          115.30999999999999
+        ],
+        [
+          537.22,
+          240.17
+        ],
+        [
+          160.52,
+          402.89
+        ]
+      ],
+      [
+        [
+          90.44000000000001,
+          115.41999999999999
+        ],
+        [
+          536.84,
+          240.34
+        ],
+        [
+          161.04,
+          402.58
+        ]
+      ],
+      [
+        [
+          90.86000000000001,
+          115.52999999999999
+        ],
+        [
+          536.46,
+          240.51
+        ],
+        [
+          161.56,
+          402.27
+        ]
+      ],
+      [
+        [
+          91.28000000000002,
+          115.63999999999999
+        ],
+        [
+          536.08,
+          240.68
+        ],
+        [
+          162.08,
+          401.96
+        ]
+      ],
+      [
+        [
+          91.7,
+          115.74999999999999
+        ],
+        [
+          535.7,
+          240.85
+        ],
+        [
+          162.6,
+          401.65
+        ]
+      ],
+      [
+        [
+          92.12,
+          115.85999999999999
+        ],
+        [
+          535.32,
+          241.02
+        ],
+        [
+          163.12,
+          401.34
+        ]
+      ],
+      [
+        [
+          92.54,
+          115.96999999999998
+        ],
+        [
+          534.94,
+          241.19
+        ],
+        [
+          163.64,
+          401.03
+        ]
+      ],
+      [
+        [
+          92.96000000000001,
+          116.07999999999998
+        ],
+        [
+          534.5600000000001,
+          241.36
+        ],
+        [
+          164.16,
+          400.71999999999997
+        ]
+      ],
+      [
+        [
+          93.38000000000001,
+          116.18999999999998
+        ],
+        [
+          534.1800000000001,
+          241.53
+        ],
+        [
+          164.68,
+          400.40999999999997
+        ]
+      ],
+      [
+        [
+          93.80000000000001,
+          116.29999999999998
+        ],
+        [
+          533.8000000000001,
+          241.7
+        ],
+        [
+          165.2,
+          400.09999999999997
+        ]
+      ],
+      [
+        [
+          94.22000000000001,
+          116.40999999999998
+        ],
+        [
+          533.4200000000001,
+          241.87
+        ],
+        [
+          165.72,
+          399.78999999999996
+        ]
+      ],
+      [
+        [
+          94.64000000000001,
+          116.51999999999998
+        ],
+        [
+          533.0400000000001,
+          242.04
+        ],
+        [
+          166.24,
+          399.47999999999996
+        ]
+      ],
+      [
+        [
+          95.06,
+          116.63
+        ],
+        [
+          532.66,
+          242.21
+        ],
+        [
+          166.76,
+          399.17
+        ]
+      ],
+      [
+        [
+          95.48,
+          116.74
+        ],
+        [
+          532.28,
+          242.38
+        ],
+        [
+          167.28,
+          398.86
+        ]
+      ],
+      [
+        [
+          95.9,
+          116.85
+        ],
+        [
+          531.9,
+          242.55
+        ],
+        [
+          167.8,
+          398.55
+        ]
+      ],
+      [
+        [
+          96.32000000000001,
+          116.96
+        ],
+        [
+          531.52,
+          242.72
+        ],
+        [
+          168.32,
+          398.24
+        ]
+      ],
+      [
+        [
+          96.74000000000001,
+          117.07
+        ],
+        [
+          531.14,
+          242.89
+        ],
+        [
+          168.84,
+          397.93
+        ]
+      ],
+      [
+        [
+          97.16000000000001,
+          117.17999999999999
+        ],
+        [
+          530.76,
+          243.06
+        ],
+        [
+          169.36,
+          397.62
+        ]
+      ],
+      [
+        [
+          97.58000000000001,
+          117.28999999999999
+        ],
+        [
+          530.38,
+          243.23
+        ],
+        [
+          169.88,
+          397.31
+        ]
+      ],
+      [
+        [
+          98.00000000000001,
+          117.39999999999999
+        ],
+        [
+          530.0,
+          243.4
+        ],
+        [
+          170.4,
+          397.0
+        ]
+      ],
+      [
+        [
+          98.42000000000002,
+          117.50999999999999
+        ],
+        [
+          529.62,
+          243.57
+        ],
+        [
+          170.92,
+          396.69
+        ]
+      ],
+      [
+        [
+          98.84,
+          117.61999999999999
+        ],
+        [
+          529.24,
+          243.74
+        ],
+        [
+          171.44,
+          396.38
+        ]
+      ],
+      [
+        [
+          99.26,
+          117.72999999999999
+        ],
+        [
+          528.86,
+          243.91
+        ],
+        [
+          171.96,
+          396.07
+        ]
+      ],
+      [
+        [
+          99.68,
+          117.83999999999999
+        ],
+        [
+          528.48,
+          244.08
+        ],
+        [
+          172.48,
+          395.76
+        ]
+      ],
+      [
+        [
+          100.10000000000001,
+          117.94999999999999
+        ],
+        [
+          528.1,
+          244.25
+        ],
+        [
+          173.0,
+          395.45
+        ]
+      ],
+      [
+        [
+          100.52000000000001,
+          118.05999999999999
+        ],
+        [
+          527.72,
+          244.42
+        ],
+        [
+          173.52,
+          395.14
+        ]
+      ],
+      [
+        [
+          100.94000000000001,
+          118.16999999999999
+        ],
+        [
+          527.34,
+          244.59
+        ],
+        [
+          174.04,
+          394.83
+        ]
+      ],
+      [
+        [
+          101.36000000000001,
+          118.27999999999999
+        ],
+        [
+          526.96,
+          244.76
+        ],
+        [
+          174.56,
+          394.52
+        ]
+      ],
+      [
+        [
+          101.78,
+          118.38999999999999
+        ],
+        [
+          526.58,
+          244.93
+        ],
+        [
+          175.08,
+          394.21
+        ]
+      ],
+      [
+        [
+          102.2,
+          118.49999999999999
+        ],
+        [
+          526.2,
+          245.1
+        ],
+        [
+          175.6,
+          393.9
+        ]
+      ],
+      [
+        [
+          102.62,
+          118.60999999999999
+        ],
+        [
+          525.82,
+          245.27
+        ],
+        [
+          176.12,
+          393.59
+        ]
+      ],
+      [
+        [
+          103.04,
+          118.71999999999998
+        ],
+        [
+          525.44,
+          245.44
+        ],
+        [
+          176.64,
+          393.28
+        ]
+      ],
+      [
+        [
+          103.46000000000001,
+          118.82999999999998
+        ],
+        [
+          525.0600000000001,
+          245.61
+        ],
+        [
+          177.16,
+          392.96999999999997
+        ]
+      ],
+      [
+        [
+          103.88000000000001,
+          118.93999999999998
+        ],
+        [
+          524.6800000000001,
+          245.78
+        ],
+        [
+          177.68,
+          392.65999999999997
+        ]
+      ],
+      [
+        [
+          104.30000000000001,
+          119.04999999999998
+        ],
+        [
+          524.3000000000001,
+          245.95
+        ],
+        [
+          178.2,
+          392.34999999999997
+        ]
+      ],
+      [
+        [
+          104.72000000000001,
+          119.15999999999998
+        ],
+        [
+          523.9200000000001,
+          246.12
+        ],
+        [
+          178.72,
+          392.03999999999996
+        ]
+      ],
+      [
+        [
+          105.14000000000001,
+          119.26999999999998
+        ],
+        [
+          523.5400000000001,
+          246.29
+        ],
+        [
+          179.24,
+          391.72999999999996
+        ]
+      ],
+      [
+        [
+          105.56,
+          119.38
+        ],
+        [
+          523.16,
+          246.46
+        ],
+        [
+          179.76,
+          391.42
+        ]
+      ],
+      [
+        [
+          105.98,
+          119.49
+        ],
+        [
+          522.78,
+          246.63
+        ],
+        [
+          180.28,
+          391.11
+        ]
+      ],
+      [
+        [
+          106.4,
+          119.6
+        ],
+        [
+          522.4,
+          246.8
+        ],
+        [
+          180.8,
+          390.8
+        ]
+      ],
+      [
+        [
+          106.82000000000001,
+          119.71
+        ],
+        [
+          522.02,
+          246.97
+        ],
+        [
+          181.32,
+          390.49
+        ]
+      ],
+      [
+        [
+          107.24000000000001,
+          119.82
+        ],
+        [
+          521.64,
+          247.14
+        ],
+        [
+          181.84,
+          390.18
+        ]
+      ],
+      [
+        [
+          107.66000000000001,
+          119.92999999999999
+        ],
+        [
+          521.26,
+          247.31
+        ],
+        [
+          182.36,
+          389.87
+        ]
+      ],
+      [
+        [
+          108.08000000000001,
+          120.03999999999999
+        ],
+        [
+          520.88,
+          247.48
+        ],
+        [
+          182.88,
+          389.56
+        ]
+      ],
+      [
+        [
+          108.5,
+          120.14999999999999
+        ],
+        [
+          520.5,
+          247.65
+        ],
+        [
+          183.4,
+          389.25
+        ]
+      ],
+      [
+        [
+          108.92000000000002,
+          120.25999999999999
+        ],
+        [
+          520.12,
+          247.82
+        ],
+        [
+          183.92000000000002,
+          388.94
+        ]
+      ],
+      [
+        [
+          109.34,
+          120.36999999999999
+        ],
+        [
+          519.74,
+          247.99
+        ],
+        [
+          184.44,
+          388.63
+        ]
+      ],
+      [
+        [
+          109.76,
+          120.47999999999999
+        ],
+        [
+          519.36,
+          248.16
+        ],
+        [
+          184.96,
+          388.32
+        ]
+      ],
+      [
+        [
+          110.18,
+          120.58999999999999
+        ],
+        [
+          518.98,
+          248.33
+        ],
+        [
+          185.48,
+          388.01
+        ]
+      ],
+      [
+        [
+          110.60000000000001,
+          120.69999999999999
+        ],
+        [
+          518.6,
+          248.5
+        ],
+        [
+          186.0,
+          387.7
+        ]
+      ],
+      [
+        [
+          111.02000000000001,
+          120.80999999999999
+        ],
+        [
+          518.22,
+          248.67
+        ],
+        [
+          186.52,
+          387.39
+        ]
+      ],
+      [
+        [
+          111.44000000000001,
+          120.91999999999999
+        ],
+        [
+          517.84,
+          248.84
+        ],
+        [
+          187.04,
+          387.08
+        ]
+      ],
+      [
+        [
+          111.86000000000001,
+          121.02999999999999
+        ],
+        [
+          517.46,
+          249.01
+        ],
+        [
+          187.56,
+          386.77
+        ]
+      ],
+      [
+        [
+          112.28,
+          121.13999999999999
+        ],
+        [
+          517.08,
+          249.18
+        ],
+        [
+          188.08,
+          386.46
+        ]
+      ],
+      [
+        [
+          112.7,
+          121.24999999999999
+        ],
+        [
+          516.7,
+          249.35
+        ],
+        [
+          188.6,
+          386.15
+        ]
+      ],
+      [
+        [
+          113.12,
+          121.35999999999999
+        ],
+        [
+          516.32,
+          249.52
+        ],
+        [
+          189.12,
+          385.84
+        ]
+      ],
+      [
+        [
+          113.54,
+          121.46999999999998
+        ],
+        [
+          515.94,
+          249.69
+        ],
+        [
+          189.64,
+          385.53
+        ]
+      ],
+      [
+        [
+          113.96000000000001,
+          121.57999999999998
+        ],
+        [
+          515.5600000000001,
+          249.86
+        ],
+        [
+          190.16,
+          385.21999999999997
+        ]
+      ],
+      [
+        [
+          114.38000000000001,
+          121.68999999999998
+        ],
+        [
+          515.1800000000001,
+          250.03
+        ],
+        [
+          190.68,
+          384.90999999999997
+        ]
+      ],
+      [
+        [
+          114.80000000000001,
+          121.79999999999998
+        ],
+        [
+          514.8000000000001,
+          250.2
+        ],
+        [
+          191.2,
+          384.59999999999997
+        ]
+      ],
+      [
+        [
+          115.22,
+          121.90999999999998
+        ],
+        [
+          514.4200000000001,
+          250.37
+        ],
+        [
+          191.72,
+          384.28999999999996
+        ]
+      ],
+      [
+        [
+          115.64000000000001,
+          122.01999999999998
+        ],
+        [
+          514.0400000000001,
+          250.54
+        ],
+        [
+          192.24,
+          383.98
+        ]
+      ],
+      [
+        [
+          116.06,
+          122.13
+        ],
+        [
+          513.66,
+          250.71
+        ],
+        [
+          192.76,
+          383.66999999999996
+        ]
+      ],
+      [
+        [
+          116.48,
+          122.24
+        ],
+        [
+          513.28,
+          250.88
+        ],
+        [
+          193.28,
+          383.36
+        ]
+      ],
+      [
+        [
+          116.9,
+          122.35
+        ],
+        [
+          512.9,
+          251.05
+        ],
+        [
+          193.8,
+          383.05
+        ]
+      ],
+      [
+        [
+          117.32000000000001,
+          122.46
+        ],
+        [
+          512.52,
+          251.22
+        ],
+        [
+          194.32,
+          382.74
+        ]
+      ],
+      [
+        [
+          117.74000000000001,
+          122.57
+        ],
+        [
+          512.14,
+          251.39
+        ],
+        [
+          194.84,
+          382.43
+        ]
+      ],
+      [
+        [
+          118.16000000000001,
+          122.67999999999999
+        ],
+        [
+          511.76000000000005,
+          251.56
+        ],
+        [
+          195.36,
+          382.12
+        ]
+      ],
+      [
+        [
+          118.58000000000001,
+          122.78999999999999
+        ],
+        [
+          511.38,
+          251.73
+        ],
+        [
+          195.88,
+          381.81
+        ]
+      ],
+      [
+        [
+          119.0,
+          122.89999999999999
+        ],
+        [
+          511.0,
+          251.9
+        ],
+        [
+          196.4,
+          381.5
+        ]
+      ],
+      [
+        [
+          119.42000000000002,
+          123.00999999999999
+        ],
+        [
+          510.62,
+          252.07
+        ],
+        [
+          196.92000000000002,
+          381.19
+        ]
+      ],
+      [
+        [
+          119.84,
+          123.11999999999999
+        ],
+        [
+          510.24,
+          252.24
+        ],
+        [
+          197.44,
+          380.88
+        ]
+      ],
+      [
+        [
+          120.26,
+          123.22999999999999
+        ],
+        [
+          509.86,
+          252.41
+        ],
+        [
+          197.96,
+          380.57
+        ]
+      ],
+      [
+        [
+          120.68,
+          123.33999999999999
+        ],
+        [
+          509.48,
+          252.58
+        ],
+        [
+          198.48000000000002,
+          380.26
+        ]
+      ],
+      [
+        [
+          121.10000000000001,
+          123.44999999999999
+        ],
+        [
+          509.1,
+          252.75
+        ],
+        [
+          199.0,
+          379.95
+        ]
+      ],
+      [
+        [
+          121.52000000000001,
+          123.55999999999999
+        ],
+        [
+          508.72,
+          252.92000000000002
+        ],
+        [
+          199.52,
+          379.64
+        ]
+      ],
+      [
+        [
+          121.94,
+          123.66999999999999
+        ],
+        [
+          508.34000000000003,
+          253.09
+        ],
+        [
+          200.04,
+          379.33
+        ]
+      ],
+      [
+        [
+          122.36000000000001,
+          123.77999999999999
+        ],
+        [
+          507.96000000000004,
+          253.26
+        ],
+        [
+          200.56,
+          379.02
+        ]
+      ],
+      [
+        [
+          122.78,
+          123.88999999999999
+        ],
+        [
+          507.58000000000004,
+          253.43
+        ],
+        [
+          201.07999999999998,
+          378.71
+        ]
+      ],
+      [
+        [
+          123.20000000000002,
+          123.99999999999999
+        ],
+        [
+          507.20000000000005,
+          253.6
+        ],
+        [
+          201.6,
+          378.4
+        ]
+      ],
+      [
+        [
+          123.62,
+          124.10999999999999
+        ],
+        [
+          506.82000000000005,
+          253.77
+        ],
+        [
+          202.12,
+          378.09
+        ]
+      ],
+      [
+        [
+          124.04,
+          124.21999999999998
+        ],
+        [
+          506.44,
+          253.94
+        ],
+        [
+          202.64,
+          377.78
+        ]
+      ],
+      [
+        [
+          124.46000000000001,
+          124.32999999999998
+        ],
+        [
+          506.06,
+          254.11
+        ],
+        [
+          203.16,
+          377.46999999999997
+        ]
+      ],
+      [
+        [
+          124.88000000000001,
+          124.43999999999998
+        ],
+        [
+          505.68,
+          254.28
+        ],
+        [
+          203.68,
+          377.15999999999997
+        ]
+      ],
+      [
+        [
+          125.30000000000001,
+          124.54999999999998
+        ],
+        [
+          505.3,
+          254.45
+        ],
+        [
+          204.2,
+          376.84999999999997
+        ]
+      ],
+      [
+        [
+          125.72,
+          124.66
+        ],
+        [
+          504.92,
+          254.62
+        ],
+        [
+          204.72,
+          376.53999999999996
+        ]
+      ],
+      [
+        [
+          126.14000000000001,
+          124.76999999999998
+        ],
+        [
+          504.54,
+          254.79
+        ],
+        [
+          205.24,
+          376.23
+        ]
+      ],
+      [
+        [
+          126.56,
+          124.88
+        ],
+        [
+          504.16,
+          254.96
+        ],
+        [
+          205.76,
+          375.91999999999996
+        ]
+      ],
+      [
+        [
+          126.98,
+          124.99
+        ],
+        [
+          503.78000000000003,
+          255.13
+        ],
+        [
+          206.28,
+          375.61
+        ]
+      ],
+      [
+        [
+          127.4,
+          125.1
+        ],
+        [
+          503.40000000000003,
+          255.3
+        ],
+        [
+          206.8,
+          375.3
+        ]
+      ],
+      [
+        [
+          127.82000000000001,
+          125.21
+        ],
+        [
+          503.02000000000004,
+          255.47
+        ],
+        [
+          207.32,
+          374.99
+        ]
+      ],
+      [
+        [
+          128.24,
+          125.32
+        ],
+        [
+          502.64000000000004,
+          255.64
+        ],
+        [
+          207.84,
+          374.68
+        ]
+      ],
+      [
+        [
+          128.66,
+          125.42999999999999
+        ],
+        [
+          502.26,
+          255.81
+        ],
+        [
+          208.36,
+          374.37
+        ]
+      ],
+      [
+        [
+          129.08,
+          125.53999999999999
+        ],
+        [
+          501.88,
+          255.98
+        ],
+        [
+          208.88,
+          374.06
+        ]
+      ],
+      [
+        [
+          129.5,
+          125.64999999999999
+        ],
+        [
+          501.5,
+          256.15
+        ],
+        [
+          209.4,
+          373.75
+        ]
+      ],
+      [
+        [
+          129.92000000000002,
+          125.75999999999999
+        ],
+        [
+          501.12,
+          256.32
+        ],
+        [
+          209.92000000000002,
+          373.44
+        ]
+      ],
+      [
+        [
+          130.34,
+          125.86999999999999
+        ],
+        [
+          500.74,
+          256.49
+        ],
+        [
+          210.44,
+          373.13
+        ]
+      ],
+      [
+        [
+          130.76,
+          125.97999999999999
+        ],
+        [
+          500.36,
+          256.66
+        ],
+        [
+          210.96,
+          372.82
+        ]
+      ],
+      [
+        [
+          131.18,
+          126.08999999999999
+        ],
+        [
+          499.98,
+          256.83
+        ],
+        [
+          211.48000000000002,
+          372.51
+        ]
+      ],
+      [
+        [
+          131.60000000000002,
+          126.19999999999999
+        ],
+        [
+          499.6,
+          257.0
+        ],
+        [
+          212.0,
+          372.2
+        ]
+      ],
+      [
+        [
+          132.02,
+          126.30999999999999
+        ],
+        [
+          499.22,
+          257.17
+        ],
+        [
+          212.52,
+          371.89
+        ]
+      ],
+      [
+        [
+          132.44,
+          126.41999999999999
+        ],
+        [
+          498.84000000000003,
+          257.34
+        ],
+        [
+          213.04,
+          371.58
+        ]
+      ],
+      [
+        [
+          132.86,
+          126.52999999999999
+        ],
+        [
+          498.46000000000004,
+          257.51
+        ],
+        [
+          213.56,
+          371.27
+        ]
+      ],
+      [
+        [
+          133.28,
+          126.63999999999999
+        ],
+        [
+          498.08000000000004,
+          257.68
+        ],
+        [
+          214.07999999999998,
+          370.96
+        ]
+      ],
+      [
+        [
+          133.70000000000002,
+          126.74999999999999
+        ],
+        [
+          497.70000000000005,
+          257.85
+        ],
+        [
+          214.6,
+          370.65
+        ]
+      ],
+      [
+        [
+          134.12,
+          126.85999999999999
+        ],
+        [
+          497.32000000000005,
+          258.02
+        ],
+        [
+          215.12,
+          370.34
+        ]
+      ],
+      [
+        [
+          134.54000000000002,
+          126.96999999999998
+        ],
+        [
+          496.94,
+          258.19
+        ],
+        [
+          215.64,
+          370.03
+        ]
+      ],
+      [
+        [
+          134.96,
+          127.07999999999998
+        ],
+        [
+          496.56,
+          258.36
+        ],
+        [
+          216.16,
+          369.71999999999997
+        ]
+      ],
+      [
+        [
+          135.38,
+          127.18999999999998
+        ],
+        [
+          496.18,
+          258.53
+        ],
+        [
+          216.68,
+          369.40999999999997
+        ]
+      ],
+      [
+        [
+          135.8,
+          127.29999999999998
+        ],
+        [
+          495.8,
+          258.7
+        ],
+        [
+          217.2,
+          369.09999999999997
+        ]
+      ],
+      [
+        [
+          136.22,
+          127.41
+        ],
+        [
+          495.42,
+          258.87
+        ],
+        [
+          217.72,
+          368.78999999999996
+        ]
+      ],
+      [
+        [
+          136.64000000000001,
+          127.51999999999998
+        ],
+        [
+          495.04,
+          259.04
+        ],
+        [
+          218.24,
+          368.48
+        ]
+      ],
+      [
+        [
+          137.06,
+          127.63
+        ],
+        [
+          494.66,
+          259.21
+        ],
+        [
+          218.76,
+          368.16999999999996
+        ]
+      ],
+      [
+        [
+          137.48000000000002,
+          127.74
+        ],
+        [
+          494.28000000000003,
+          259.38
+        ],
+        [
+          219.28,
+          367.86
+        ]
+      ],
+      [
+        [
+          137.9,
+          127.85
+        ],
+        [
+          493.90000000000003,
+          259.55
+        ],
+        [
+          219.8,
+          367.55
+        ]
+      ],
+      [
+        [
+          138.32,
+          127.96
+        ],
+        [
+          493.52000000000004,
+          259.72
+        ],
+        [
+          220.32,
+          367.24
+        ]
+      ],
+      [
+        [
+          138.74,
+          128.07
+        ],
+        [
+          493.14000000000004,
+          259.89
+        ],
+        [
+          220.84,
+          366.93
+        ]
+      ],
+      [
+        [
+          139.16,
+          128.17999999999998
+        ],
+        [
+          492.76,
+          260.06
+        ],
+        [
+          221.36,
+          366.62
+        ]
+      ],
+      [
+        [
+          139.58,
+          128.29
+        ],
+        [
+          492.38,
+          260.23
+        ],
+        [
+          221.88,
+          366.31
+        ]
+      ],
+      [
+        [
+          140.0,
+          128.39999999999998
+        ],
+        [
+          492.0,
+          260.4
+        ],
+        [
+          222.4,
+          366.0
+        ]
+      ],
+      [
+        [
+          140.42000000000002,
+          128.51
+        ],
+        [
+          491.62,
+          260.57
+        ],
+        [
+          222.92000000000002,
+          365.69
+        ]
+      ],
+      [
+        [
+          140.84,
+          128.61999999999998
+        ],
+        [
+          491.24,
+          260.74
+        ],
+        [
+          223.44,
+          365.38
+        ]
+      ],
+      [
+        [
+          141.26,
+          128.73
+        ],
+        [
+          490.86,
+          260.91
+        ],
+        [
+          223.96,
+          365.07
+        ]
+      ],
+      [
+        [
+          141.68,
+          128.83999999999997
+        ],
+        [
+          490.48,
+          261.08
+        ],
+        [
+          224.48000000000002,
+          364.76
+        ]
+      ],
+      [
+        [
+          142.10000000000002,
+          128.95
+        ],
+        [
+          490.1,
+          261.25
+        ],
+        [
+          225.0,
+          364.45
+        ]
+      ],
+      [
+        [
+          142.52,
+          129.06
+        ],
+        [
+          489.72,
+          261.42
+        ],
+        [
+          225.51999999999998,
+          364.14
+        ]
+      ],
+      [
+        [
+          142.94,
+          129.17
+        ],
+        [
+          489.34000000000003,
+          261.59
+        ],
+        [
+          226.04000000000002,
+          363.83
+        ]
+      ],
+      [
+        [
+          143.36,
+          129.28
+        ],
+        [
+          488.96000000000004,
+          261.76
+        ],
+        [
+          226.56,
+          363.52
+        ]
+      ],
+      [
+        [
+          143.78,
+          129.39
+        ],
+        [
+          488.58000000000004,
+          261.93
+        ],
+        [
+          227.07999999999998,
+          363.21
+        ]
+      ],
+      [
+        [
+          144.20000000000002,
+          129.5
+        ],
+        [
+          488.20000000000005,
+          262.1
+        ],
+        [
+          227.60000000000002,
+          362.9
+        ]
+      ],
+      [
+        [
+          144.62,
+          129.60999999999999
+        ],
+        [
+          487.82000000000005,
+          262.27
+        ],
+        [
+          228.12,
+          362.59
+        ]
+      ],
+      [
+        [
+          145.04000000000002,
+          129.72
+        ],
+        [
+          487.44,
+          262.44
+        ],
+        [
+          228.64,
+          362.28
+        ]
+      ],
+      [
+        [
+          145.46,
+          129.82999999999998
+        ],
+        [
+          487.06,
+          262.61
+        ],
+        [
+          229.16,
+          361.96999999999997
+        ]
+      ],
+      [
+        [
+          145.88,
+          129.94
+        ],
+        [
+          486.68,
+          262.78
+        ],
+        [
+          229.68,
+          361.65999999999997
+        ]
+      ],
+      [
+        [
+          146.3,
+          130.04999999999998
+        ],
+        [
+          486.3,
+          262.95
+        ],
+        [
+          230.2,
+          361.34999999999997
+        ]
+      ],
+      [
+        [
+          146.72,
+          130.16
+        ],
+        [
+          485.92,
+          263.12
+        ],
+        [
+          230.72,
+          361.03999999999996
+        ]
+      ],
+      [
+        [
+          147.14000000000001,
+          130.26999999999998
+        ],
+        [
+          485.54,
+          263.29
+        ],
+        [
+          231.24,
+          360.73
+        ]
+      ],
+      [
+        [
+          147.56,
+          130.38
+        ],
+        [
+          485.16,
+          263.46
+        ],
+        [
+          231.76,
+          360.41999999999996
+        ]
+      ],
+      [
+        [
+          147.98000000000002,
+          130.48999999999998
+        ],
+        [
+          484.78000000000003,
+          263.63
+        ],
+        [
+          232.28,
+          360.11
+        ]
+      ],
+      [
+        [
+          148.4,
+          130.6
+        ],
+        [
+          484.40000000000003,
+          263.8
+        ],
+        [
+          232.8,
+          359.8
+        ]
+      ],
+      [
+        [
+          148.82,
+          130.70999999999998
+        ],
+        [
+          484.02000000000004,
+          263.97
+        ],
+        [
+          233.32,
+          359.49
+        ]
+      ],
+      [
+        [
+          149.24,
+          130.82
+        ],
+        [
+          483.64000000000004,
+          264.14
+        ],
+        [
+          233.84,
+          359.18
+        ]
+      ],
+      [
+        [
+          149.66,
+          130.92999999999998
+        ],
+        [
+          483.26,
+          264.31
+        ],
+        [
+          234.36,
+          358.87
+        ]
+      ],
+      [
+        [
+          150.08,
+          131.04
+        ],
+        [
+          482.88,
+          264.48
+        ],
+        [
+          234.88,
+          358.56
+        ]
+      ],
+      [
+        [
+          150.5,
+          131.14999999999998
+        ],
+        [
+          482.5,
+          264.65
+        ],
+        [
+          235.4,
+          358.25
+        ]
+      ],
+      [
+        [
+          150.92000000000002,
+          131.26
+        ],
+        [
+          482.12,
+          264.82
+        ],
+        [
+          235.92000000000002,
+          357.94
+        ]
+      ],
+      [
+        [
+          151.34,
+          131.37
+        ],
+        [
+          481.74,
+          264.99
+        ],
+        [
+          236.44,
+          357.63
+        ]
+      ],
+      [
+        [
+          151.76,
+          131.48
+        ],
+        [
+          481.36,
+          265.16
+        ],
+        [
+          236.96,
+          357.32
+        ]
+      ],
+      [
+        [
+          152.18,
+          131.58999999999997
+        ],
+        [
+          480.98,
+          265.33
+        ],
+        [
+          237.48000000000002,
+          357.01
+        ]
+      ],
+      [
+        [
+          152.60000000000002,
+          131.7
+        ],
+        [
+          480.6,
+          265.5
+        ],
+        [
+          238.0,
+          356.7
+        ]
+      ],
+      [
+        [
+          153.02,
+          131.81
+        ],
+        [
+          480.22,
+          265.67
+        ],
+        [
+          238.51999999999998,
+          356.39
+        ]
+      ],
+      [
+        [
+          153.44,
+          131.92
+        ],
+        [
+          479.84000000000003,
+          265.84000000000003
+        ],
+        [
+          239.04000000000002,
+          356.08
+        ]
+      ],
+      [
+        [
+          153.86,
+          132.03
+        ],
+        [
+          479.46000000000004,
+          266.01
+        ],
+        [
+          239.56,
+          355.77
+        ]
+      ],
+      [
+        [
+          154.28,
+          132.14
+        ],
+        [
+          479.08000000000004,
+          266.18
+        ],
+        [
+          240.07999999999998,
+          355.46
+        ]
+      ],
+      [
+        [
+          154.7,
+          132.25
+        ],
+        [
+          478.70000000000005,
+          266.35
+        ],
+        [
+          240.60000000000002,
+          355.15
+        ]
+      ],
+      [
+        [
+          155.12,
+          132.35999999999999
+        ],
+        [
+          478.32000000000005,
+          266.52
+        ],
+        [
+          241.12,
+          354.84
+        ]
+      ],
+      [
+        [
+          155.54000000000002,
+          132.47
+        ],
+        [
+          477.94,
+          266.69
+        ],
+        [
+          241.64,
+          354.53
+        ]
+      ],
+      [
+        [
+          155.96,
+          132.57999999999998
+        ],
+        [
+          477.56,
+          266.86
+        ],
+        [
+          242.16,
+          354.21999999999997
+        ]
+      ],
+      [
+        [
+          156.38,
+          132.69
+        ],
+        [
+          477.18,
+          267.03
+        ],
+        [
+          242.68,
+          353.90999999999997
+        ]
+      ],
+      [
+        [
+          156.8,
+          132.79999999999998
+        ],
+        [
+          476.8,
+          267.2
+        ],
+        [
+          243.2,
+          353.59999999999997
+        ]
+      ],
+      [
+        [
+          157.22000000000003,
+          132.91
+        ],
+        [
+          476.42,
+          267.37
+        ],
+        [
+          243.72,
+          353.28999999999996
+        ]
+      ],
+      [
+        [
+          157.64,
+          133.01999999999998
+        ],
+        [
+          476.04,
+          267.54
+        ],
+        [
+          244.24,
+          352.98
+        ]
+      ],
+      [
+        [
+          158.06,
+          133.13
+        ],
+        [
+          475.66,
+          267.71
+        ],
+        [
+          244.76,
+          352.66999999999996
+        ]
+      ],
+      [
+        [
+          158.48000000000002,
+          133.23999999999998
+        ],
+        [
+          475.28000000000003,
+          267.88
+        ],
+        [
+          245.28,
+          352.36
+        ]
+      ],
+      [
+        [
+          158.9,
+          133.35
+        ],
+        [
+          474.90000000000003,
+          268.05
+        ],
+        [
+          245.8,
+          352.05
+        ]
+      ],
+      [
+        [
+          159.32,
+          133.45999999999998
+        ],
+        [
+          474.52000000000004,
+          268.22
+        ],
+        [
+          246.32,
+          351.74
+        ]
+      ],
+      [
+        [
+          159.74,
+          133.57
+        ],
+        [
+          474.14000000000004,
+          268.39
+        ],
+        [
+          246.84,
+          351.43
+        ]
+      ],
+      [
+        [
+          160.16000000000003,
+          133.67999999999998
+        ],
+        [
+          473.76,
+          268.56
+        ],
+        [
+          247.36,
+          351.12
+        ]
+      ],
+      [
+        [
+          160.58,
+          133.79
+        ],
+        [
+          473.38,
+          268.73
+        ],
+        [
+          247.88,
+          350.81
+        ]
+      ],
+      [
+        [
+          161.0,
+          133.89999999999998
+        ],
+        [
+          473.0,
+          268.9
+        ],
+        [
+          248.4,
+          350.5
+        ]
+      ],
+      [
+        [
+          161.42000000000002,
+          134.01
+        ],
+        [
+          472.62,
+          269.07
+        ],
+        [
+          248.92000000000002,
+          350.19
+        ]
+      ],
+      [
+        [
+          161.84,
+          134.12
+        ],
+        [
+          472.24,
+          269.24
+        ],
+        [
+          249.44,
+          349.88
+        ]
+      ],
+      [
+        [
+          162.26,
+          134.23
+        ],
+        [
+          471.86,
+          269.41
+        ],
+        [
+          249.96,
+          349.57
+        ]
+      ],
+      [
+        [
+          162.68,
+          134.33999999999997
+        ],
+        [
+          471.48,
+          269.58
+        ],
+        [
+          250.48000000000002,
+          349.26
+        ]
+      ],
+      [
+        [
+          163.10000000000002,
+          134.45
+        ],
+        [
+          471.1,
+          269.75
+        ],
+        [
+          251.0,
+          348.95
+        ]
+      ],
+      [
+        [
+          163.52,
+          134.56
+        ],
+        [
+          470.72,
+          269.92
+        ],
+        [
+          251.52,
+          348.64
+        ]
+      ],
+      [
+        [
+          163.94,
+          134.67
+        ],
+        [
+          470.34000000000003,
+          270.09000000000003
+        ],
+        [
+          252.04000000000002,
+          348.33
+        ]
+      ],
+      [
+        [
+          164.36,
+          134.78
+        ],
+        [
+          469.96000000000004,
+          270.26
+        ],
+        [
+          252.56,
+          348.02
+        ]
+      ],
+      [
+        [
+          164.78,
+          134.89
+        ],
+        [
+          469.58000000000004,
+          270.43
+        ],
+        [
+          253.07999999999998,
+          347.71
+        ]
+      ],
+      [
+        [
+          165.2,
+          135.0
+        ],
+        [
+          469.20000000000005,
+          270.6
+        ],
+        [
+          253.60000000000002,
+          347.4
+        ]
+      ],
+      [
+        [
+          165.62,
+          135.10999999999999
+        ],
+        [
+          468.82000000000005,
+          270.77
+        ],
+        [
+          254.12,
+          347.09
+        ]
+      ],
+      [
+        [
+          166.04000000000002,
+          135.22
+        ],
+        [
+          468.44000000000005,
+          270.94
+        ],
+        [
+          254.64,
+          346.78
+        ]
+      ],
+      [
+        [
+          166.46,
+          135.32999999999998
+        ],
+        [
+          468.06,
+          271.11
+        ],
+        [
+          255.16,
+          346.46999999999997
+        ]
+      ],
+      [
+        [
+          166.88,
+          135.44
+        ],
+        [
+          467.68,
+          271.28
+        ],
+        [
+          255.68,
+          346.15999999999997
+        ]
+      ],
+      [
+        [
+          167.3,
+          135.54999999999998
+        ],
+        [
+          467.3,
+          271.45
+        ],
+        [
+          256.2,
+          345.84999999999997
+        ]
+      ],
+      [
+        [
+          167.72,
+          135.66
+        ],
+        [
+          466.92,
+          271.62
+        ],
+        [
+          256.72,
+          345.53999999999996
+        ]
+      ],
+      [
+        [
+          168.14,
+          135.76999999999998
+        ],
+        [
+          466.54,
+          271.79
+        ],
+        [
+          257.24,
+          345.23
+        ]
+      ],
+      [
+        [
+          168.56,
+          135.88
+        ],
+        [
+          466.16,
+          271.96
+        ],
+        [
+          257.76,
+          344.91999999999996
+        ]
+      ],
+      [
+        [
+          168.98000000000002,
+          135.98999999999998
+        ],
+        [
+          465.78000000000003,
+          272.13
+        ],
+        [
+          258.28,
+          344.61
+        ]
+      ],
+      [
+        [
+          169.4,
+          136.1
+        ],
+        [
+          465.40000000000003,
+          272.3
+        ],
+        [
+          258.8,
+          344.3
+        ]
+      ],
+      [
+        [
+          169.82,
+          136.20999999999998
+        ],
+        [
+          465.02000000000004,
+          272.47
+        ],
+        [
+          259.32,
+          343.99
+        ]
+      ],
+      [
+        [
+          170.24,
+          136.32
+        ],
+        [
+          464.64,
+          272.64
+        ],
+        [
+          259.84000000000003,
+          343.68
+        ]
+      ],
+      [
+        [
+          170.66000000000003,
+          136.42999999999998
+        ],
+        [
+          464.26,
+          272.81
+        ],
+        [
+          260.36,
+          343.37
+        ]
+      ],
+      [
+        [
+          171.08,
+          136.54
+        ],
+        [
+          463.88,
+          272.98
+        ],
+        [
+          260.88,
+          343.06
+        ]
+      ],
+      [
+        [
+          171.5,
+          136.64999999999998
+        ],
+        [
+          463.5,
+          273.15
+        ],
+        [
+          261.4,
+          342.75
+        ]
+      ],
+      [
+        [
+          171.92000000000002,
+          136.76
+        ],
+        [
+          463.12,
+          273.32
+        ],
+        [
+          261.92,
+          342.44
+        ]
+      ],
+      [
+        [
+          172.34,
+          136.87
+        ],
+        [
+          462.74,
+          273.49
+        ],
+        [
+          262.44,
+          342.13
+        ]
+      ],
+      [
+        [
+          172.76,
+          136.98
+        ],
+        [
+          462.36,
+          273.66
+        ],
+        [
+          262.96000000000004,
+          341.82
+        ]
+      ],
+      [
+        [
+          173.18,
+          137.08999999999997
+        ],
+        [
+          461.98,
+          273.83
+        ],
+        [
+          263.48,
+          341.51
+        ]
+      ],
+      [
+        [
+          173.60000000000002,
+          137.2
+        ],
+        [
+          461.6,
+          274.0
+        ],
+        [
+          264.0,
+          341.2
+        ]
+      ],
+      [
+        [
+          174.02,
+          137.31
+        ],
+        [
+          461.22,
+          274.17
+        ],
+        [
+          264.52,
+          340.89
+        ]
+      ],
+      [
+        [
+          174.44,
+          137.42
+        ],
+        [
+          460.84000000000003,
+          274.34000000000003
+        ],
+        [
+          265.04,
+          340.58
+        ]
+      ],
+      [
+        [
+          174.86,
+          137.53
+        ],
+        [
+          460.46000000000004,
+          274.51
+        ],
+        [
+          265.56,
+          340.27
+        ]
+      ],
+      [
+        [
+          175.28,
+          137.64
+        ],
+        [
+          460.08000000000004,
+          274.68
+        ],
+        [
+          266.08,
+          339.96
+        ]
+      ],
+      [
+        [
+          175.7,
+          137.75
+        ],
+        [
+          459.70000000000005,
+          274.85
+        ],
+        [
+          266.6,
+          339.65
+        ]
+      ],
+      [
+        [
+          176.12,
+          137.85999999999999
+        ],
+        [
+          459.32000000000005,
+          275.02
+        ],
+        [
+          267.12,
+          339.34
+        ]
+      ],
+      [
+        [
+          176.54000000000002,
+          137.97
+        ],
+        [
+          458.94000000000005,
+          275.19
+        ],
+        [
+          267.64,
+          339.03
+        ]
+      ],
+      [
+        [
+          176.96,
+          138.07999999999998
+        ],
+        [
+          458.56,
+          275.36
+        ],
+        [
+          268.15999999999997,
+          338.71999999999997
+        ]
+      ],
+      [
+        [
+          177.38,
+          138.19
+        ],
+        [
+          458.18,
+          275.53
+        ],
+        [
+          268.68,
+          338.40999999999997
+        ]
+      ],
+      [
+        [
+          177.8,
+          138.29999999999998
+        ],
+        [
+          457.8,
+          275.7
+        ],
+        [
+          269.2,
+          338.1
+        ]
+      ],
+      [
+        [
+          178.22,
+          138.41
+        ],
+        [
+          457.42,
+          275.87
+        ],
+        [
+          269.72,
+          337.78999999999996
+        ]
+      ],
+      [
+        [
+          178.64,
+          138.51999999999998
+        ],
+        [
+          457.04,
+          276.04
+        ],
+        [
+          270.24,
+          337.48
+        ]
+      ],
+      [
+        [
+          179.06,
+          138.63
+        ],
+        [
+          456.66,
+          276.21
+        ],
+        [
+          270.76,
+          337.16999999999996
+        ]
+      ],
+      [
+        [
+          179.48000000000002,
+          138.73999999999998
+        ],
+        [
+          456.28000000000003,
+          276.38
+        ],
+        [
+          271.28,
+          336.86
+        ]
+      ],
+      [
+        [
+          179.9,
+          138.85
+        ],
+        [
+          455.90000000000003,
+          276.55
+        ],
+        [
+          271.8,
+          336.54999999999995
+        ]
+      ],
+      [
+        [
+          180.32,
+          138.95999999999998
+        ],
+        [
+          455.52000000000004,
+          276.72
+        ],
+        [
+          272.32,
+          336.24
+        ]
+      ],
+      [
+        [
+          180.74,
+          139.07
+        ],
+        [
+          455.14,
+          276.89
+        ],
+        [
+          272.84000000000003,
+          335.93
+        ]
+      ],
+      [
+        [
+          181.16000000000003,
+          139.17999999999998
+        ],
+        [
+          454.76,
+          277.06
+        ],
+        [
+          273.36,
+          335.62
+        ]
+      ],
+      [
+        [
+          181.57999999999998,
+          139.29
+        ],
+        [
+          454.38,
+          277.23
+        ],
+        [
+          273.88,
+          335.31
+        ]
+      ],
+      [
+        [
+          182.0,
+          139.39999999999998
+        ],
+        [
+          454.0,
+          277.4
+        ],
+        [
+          274.4,
+          335.0
+        ]
+      ],
+      [
+        [
+          182.42000000000002,
+          139.51
+        ],
+        [
+          453.62,
+          277.57
+        ],
+        [
+          274.92,
+          334.69
+        ]
+      ],
+      [
+        [
+          182.84,
+          139.62
+        ],
+        [
+          453.24,
+          277.74
+        ],
+        [
+          275.44,
+          334.38
+        ]
+      ],
+      [
+        [
+          183.26,
+          139.73
+        ],
+        [
+          452.86,
+          277.91
+        ],
+        [
+          275.96000000000004,
+          334.07
+        ]
+      ],
+      [
+        [
+          183.68,
+          139.83999999999997
+        ],
+        [
+          452.48,
+          278.08
+        ],
+        [
+          276.48,
+          333.76
+        ]
+      ],
+      [
+        [
+          184.10000000000002,
+          139.95
+        ],
+        [
+          452.1,
+          278.25
+        ],
+        [
+          277.0,
+          333.45
+        ]
+      ],
+      [
+        [
+          184.52,
+          140.06
+        ],
+        [
+          451.72,
+          278.42
+        ],
+        [
+          277.52,
+          333.14
+        ]
+      ],
+      [
+        [
+          184.94,
+          140.17
+        ],
+        [
+          451.34000000000003,
+          278.59000000000003
+        ],
+        [
+          278.04,
+          332.83
+        ]
+      ],
+      [
+        [
+          185.36,
+          140.28
+        ],
+        [
+          450.96000000000004,
+          278.76
+        ],
+        [
+          278.56,
+          332.52
+        ]
+      ],
+      [
+        [
+          185.78,
+          140.39
+        ],
+        [
+          450.58000000000004,
+          278.93
+        ],
+        [
+          279.08,
+          332.21
+        ]
+      ],
+      [
+        [
+          186.2,
+          140.5
+        ],
+        [
+          450.20000000000005,
+          279.1
+        ],
+        [
+          279.6,
+          331.9
+        ]
+      ],
+      [
+        [
+          186.62,
+          140.60999999999999
+        ],
+        [
+          449.82000000000005,
+          279.27
+        ],
+        [
+          280.12,
+          331.59
+        ]
+      ],
+      [
+        [
+          187.04000000000002,
+          140.72
+        ],
+        [
+          449.44000000000005,
+          279.44
+        ],
+        [
+          280.64,
+          331.28
+        ]
+      ],
+      [
+        [
+          187.46,
+          140.82999999999998
+        ],
+        [
+          449.06,
+          279.61
+        ],
+        [
+          281.16,
+          330.96999999999997
+        ]
+      ],
+      [
+        [
+          187.88,
+          140.94
+        ],
+        [
+          448.68,
+          279.78
+        ],
+        [
+          281.68,
+          330.65999999999997
+        ]
+      ],
+      [
+        [
+          188.3,
+          141.04999999999998
+        ],
+        [
+          448.3,
+          279.95
+        ],
+        [
+          282.2,
+          330.35
+        ]
+      ],
+      [
+        [
+          188.72,
+          141.16
+        ],
+        [
+          447.92,
+          280.12
+        ],
+        [
+          282.72,
+          330.03999999999996
+        ]
+      ],
+      [
+        [
+          189.14,
+          141.26999999999998
+        ],
+        [
+          447.54,
+          280.29
+        ],
+        [
+          283.24,
+          329.73
+        ]
+      ],
+      [
+        [
+          189.56,
+          141.38
+        ],
+        [
+          447.16,
+          280.46
+        ],
+        [
+          283.76,
+          329.41999999999996
+        ]
+      ],
+      [
+        [
+          189.98000000000002,
+          141.48999999999998
+        ],
+        [
+          446.78000000000003,
+          280.63
+        ],
+        [
+          284.28,
+          329.11
+        ]
+      ]
+    ],
+    "kind": "deterministic low-contrast moving-splat injection",
+    "limitations": [
+      "Targets are deterministic injected point-spread functions, not annotated real animals or aircraft.",
+      "Coverage proves detector behavior on this controlled source-derived challenge, not whole-flight recall."
+    ],
+    "movers": [
+      {
+        "delta": 5.0,
+        "sigma": 0.65,
+        "vx": 0.42,
+        "vy": 0.11,
+        "x0": 89.60000000000001,
+        "y0": 115.19999999999999
+      },
+      {
+        "delta": 5.0,
+        "sigma": 0.65,
+        "vx": -0.38,
+        "vy": 0.17,
+        "x0": 537.6,
+        "y0": 240.0
+      },
+      {
+        "delta": 5.0,
+        "sigma": 0.65,
+        "vx": 0.52,
+        "vy": -0.31,
+        "x0": 160.0,
+        "y0": 403.2
+      }
+    ],
+    "output_frames_sha256": "2b60e71a95bed8ba4daa41a2608224427777524588bf70564d8d8e3b1b79bb0d"
+  },
+  "injection_attribution": {
+    "rev3_cpu": {
+      "micro_confirmed": {
+        "coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "dominant_id": [
+          null,
+          null,
+          null
+        ],
+        "dominant_share": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "first_confirm_frame": [
+          null,
+          null,
+          null
+        ],
+        "first_confirm_source_pts_s": [
+          null,
+          null,
+          null
+        ]
+      },
+      "micro_detection": {
+        "coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "dominant_id": [
+          null,
+          null,
+          null
+        ],
+        "dominant_share": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "first_confirm_frame": [
+          null,
+          null,
+          null
+        ],
+        "first_confirm_source_pts_s": [
+          null,
+          null,
+          null
+        ]
+      },
+      "overall_confirmed": {
+        "coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "dominant_id": [
+          null,
+          null,
+          null
+        ],
+        "dominant_share": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "first_confirm_frame": [
+          null,
+          null,
+          null
+        ],
+        "first_confirm_source_pts_s": [
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "rev3_mps": {
+      "micro_confirmed": {
+        "coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "dominant_id": [
+          null,
+          null,
+          null
+        ],
+        "dominant_share": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "first_confirm_frame": [
+          null,
+          null,
+          null
+        ],
+        "first_confirm_source_pts_s": [
+          null,
+          null,
+          null
+        ]
+      },
+      "micro_detection": {
+        "coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "dominant_id": [
+          null,
+          null,
+          null
+        ],
+        "dominant_share": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "first_confirm_frame": [
+          null,
+          null,
+          null
+        ],
+        "first_confirm_source_pts_s": [
+          null,
+          null,
+          null
+        ]
+      },
+      "overall_confirmed": {
+        "coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "dominant_id": [
+          null,
+          null,
+          null
+        ],
+        "dominant_share": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "first_confirm_frame": [
+          null,
+          null,
+          null
+        ],
+        "first_confirm_source_pts_s": [
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "rev4": {
+      "micro_confirmed": {
+        "coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "dominant_id": [
+          null,
+          null,
+          null
+        ],
+        "dominant_share": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "first_confirm_frame": [
+          null,
+          null,
+          null
+        ],
+        "first_confirm_source_pts_s": [
+          null,
+          null,
+          null
+        ]
+      },
+      "micro_detection": {
+        "coverage": [
+          0.0,
+          0.008333333333333333,
+          0.0
+        ],
+        "coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.008333333333333333,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.008333333333333333,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.008333333333333333,
+            0.0
+          ]
+        },
+        "dominant_id": [
+          null,
+          null,
+          null
+        ],
+        "dominant_share": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "first_confirm_frame": [
+          null,
+          null,
+          null
+        ],
+        "first_confirm_source_pts_s": [
+          null,
+          null,
+          null
+        ]
+      },
+      "overall_confirmed": {
+        "coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "dominant_id": [
+          null,
+          null,
+          null
+        ],
+        "dominant_share": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "first_confirm_frame": [
+          null,
+          null,
+          null
+        ],
+        "first_confirm_source_pts_s": [
+          null,
+          null,
+          null
+        ]
+      }
+    }
+  },
+  "limits": {
+    "candidate_coverage_each_min": 0.6,
+    "candidate_dominant_share_each_min": 0.75,
+    "candidate_micro_off_path_increase_vs_clean_per_frame_max": 0.02,
+    "candidate_micro_off_path_unique_count_increase_vs_clean_max": 1,
+    "candidate_mps_synchronizations_min": 1,
+    "candidate_mps_uploads_min": 1,
+    "candidate_total_off_path_excess_vs_rev3_cpu_per_frame_max": 0.02,
+    "coverage_gain_each_vs_best_rev3_min": 0.2
+  },
+  "paired_input_receipts": {
+    "clean": {
+      "dtypes": [
+        "uint8"
+      ],
+      "frames": 240,
+      "sha256": "5ea5c415d070512ed7beadb54179050175b4d7b8f4969b284c595014c81674e8",
+      "shapes": [
+        [
+          480,
+          640,
+          3
+        ]
+      ],
+      "total_pixel_bytes": 221184000
+    },
+    "injected": {
+      "dtypes": [
+        "uint8"
+      ],
+      "frames": 240,
+      "sha256": "38ffbfcb4459df1040e50762ab2b521407026f5e9134e6a0dd0b96ff417561d3",
+      "shapes": [
+        [
+          480,
+          640,
+          3
+        ]
+      ],
+      "total_pixel_bytes": 221184000
+    }
+  },
+  "provenance": {
+    "baseline": {
+      "bytes": 202955,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/_09_M5_Fable_MotionISR_Rev3.py",
+      "sha256": "f4d39b4eb548a20a44415421911d1e6a61ed8bf0a5090b4c69a78779d4391b0c"
+    },
+    "candidate": {
+      "bytes": 4157,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/_09_M5_Fable_MotionISR_Rev4.py",
+      "sha256": "70ce79880e83811d08d0537fc2a8825d7af12eacfe783fdf59d0535874ec0245"
+    },
+    "candidate_core": {
+      "bytes": 77375,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_motionisr_rev4.py",
+      "sha256": "7eb37afb2d7578e5bc8fbfb56086584b9aea500afb31bfdfb444100748fbc9dc"
+    },
+    "catalog": {
+      "bytes": 20429,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/testdata/flight_scenes/2026-07-14.json",
+      "sha256": "5b1f2cf5b08e03f5b1f33ec97d445d208636b521dc3919e903132c3cf79251f1"
+    },
+    "catalog_module": {
+      "bytes": 14018,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_flight_catalog.py",
+      "sha256": "5b372cab61a1e4180f64e935545e583cd806ff094eeff570f10be60855c499a0"
+    },
+    "validator": {
+      "bytes": 51818,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_motionisr_rev4_validation.py",
+      "sha256": "060d496d83e9e168ea8937cd6906380c315ccf9f7d04394c3afc2ed7df8e4ff7"
+    }
+  },
+  "results": {
+    "rev3_cpu": {
+      "clean": {
+        "confirmed_distance_to_injection_path": {
+          "counts": {
+            "0_to_3px": 0,
+            "gt_16px": 284,
+            "gt_3_to_5px": 0,
+            "gt_5_to_9px": 0,
+            "gt_9_to_16px": 0
+          },
+          "exhaustive": true,
+          "off_path_definition": "distance > 9 px (includes the 9--16 px annulus)",
+          "per_eligible_frame": {
+            "0_to_3px": 0.0,
+            "gt_16px": 2.3666666666666667,
+            "gt_3_to_5px": 0.0,
+            "gt_5_to_9px": 0.0,
+            "gt_9_to_16px": 0.0
+          },
+          "total": 284
+        },
+        "confirmed_off_path_per_frame": 2.3666666666666667,
+        "confirmed_off_path_track_ids": [
+          49,
+          455,
+          538,
+          1209,
+          1339,
+          1904,
+          1984,
+          2104,
+          2797,
+          2892
+        ],
+        "confirmed_tracks_per_frame": 2.6875,
+        "coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "detections_per_frame": 38.7875,
+        "dominant_id": [
+          null,
+          null,
+          null
+        ],
+        "dominant_share": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "eligible_frames": 120,
+        "explicit_origin_frames": 0,
+        "explicit_origin_mismatches": 0,
+        "first_confirm_frame": [
+          null,
+          null,
+          null
+        ],
+        "frames": 240,
+        "micro_confirmed_distance_to_injection_path": {
+          "counts": {
+            "0_to_3px": 0,
+            "gt_16px": 0,
+            "gt_3_to_5px": 0,
+            "gt_5_to_9px": 0,
+            "gt_9_to_16px": 0
+          },
+          "exhaustive": true,
+          "off_path_definition": "distance > 9 px (includes the 9--16 px annulus)",
+          "per_eligible_frame": {
+            "0_to_3px": 0.0,
+            "gt_16px": 0.0,
+            "gt_3_to_5px": 0.0,
+            "gt_5_to_9px": 0.0,
+            "gt_9_to_16px": 0.0
+          },
+          "total": 0
+        },
+        "micro_confirmed_off_path_per_frame": 0.0,
+        "micro_detection_coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "micro_detection_coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "micro_detection_distance_to_injection_path": {
+          "counts": {
+            "0_to_3px": 0,
+            "gt_16px": 0,
+            "gt_3_to_5px": 0,
+            "gt_5_to_9px": 0,
+            "gt_9_to_16px": 0
+          },
+          "exhaustive": true,
+          "off_path_definition": "distance > 9 px (includes the 9--16 px annulus)",
+          "per_eligible_frame": {
+            "0_to_3px": 0.0,
+            "gt_16px": 0.0,
+            "gt_3_to_5px": 0.0,
+            "gt_5_to_9px": 0.0,
+            "gt_9_to_16px": 0.0
+          },
+          "total": 0
+        },
+        "micro_off_path_track_ids": [],
+        "micro_track_coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "micro_track_coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "reg_frames": 239,
+        "terminal_telemetry": {
+          "blob_channels": [
+            {
+              "channel": "INST",
+              "components": 95,
+              "dropped": 0,
+              "eligible": 95,
+              "inspected": 95,
+              "mode": "legacy-quality",
+              "selected": 48,
+              "small_reserved": 0,
+              "track_reserved": 0
+            },
+            {
+              "channel": "TBD",
+              "components": 1822,
+              "dropped": 1682,
+              "eligible": 140,
+              "inspected": 140,
+              "mode": "legacy-quality",
+              "selected": 48,
+              "small_reserved": 0,
+              "track_reserved": 0
+            }
+          ],
+          "cap_pressure": 0.6894,
+          "cap_streak": 8,
+          "components": 1917,
+          "det_cap": true,
+          "detections": 48,
+          "device": "cpu",
+          "dropped_components": 1682,
+          "effective_min_px": 2.0,
+          "effective_sens": 1.1,
+          "estimated_gap_frames": 0,
+          "estimated_gap_total": 48,
+          "frame": 240,
+          "gap_excess_ms": 0.0,
+          "gate": "",
+          "gate_hold": 0,
+          "guard_eligible": false,
+          "heavy_backend": "cpu",
+          "inspected_components": 235,
+          "metal_dispatches": 0,
+          "model_frame": 240,
+          "raw_blobs": 102,
+          "raw_diff_frac": 0.0,
+          "raw_diff_median": 0.0,
+          "raw_identity_score": 0.0,
+          "raw_zoom_scale": 1.0,
+          "raw_zoom_score": 0.0,
+          "reg": "REG",
+          "run_id": "0e8aad794c6e460394e5a8618bfe935e",
+          "source_clock_reset": false,
+          "source_period_ms": 22.0,
+          "stage_ms": {
+            "blob": 3.052,
+            "ego": 1.587,
+            "heavy": 13.659,
+            "mog": 0.65,
+            "reacquire": 0.004,
+            "sigma": 0.369,
+            "track": 2.03
+          },
+          "template_reacquired": 0,
+          "template_reacquired_total": 0,
+          "track_cap": false,
+          "tracks": 104,
+          "ts": 518.038,
+          "version": "rev3"
+        },
+        "timing_ms": {
+          "count": 240,
+          "maximum": 29.620290733873844,
+          "mean": 20.218914601719007,
+          "minimum": 1.9439170137047768,
+          "p50": 20.46856260858476,
+          "p90": 23.048141784965992,
+          "p95": 23.706081160344183
+        }
+      },
+      "injected": {
+        "confirmed_distance_to_injection_path": {
+          "counts": {
+            "0_to_3px": 0,
+            "gt_16px": 168,
+            "gt_3_to_5px": 0,
+            "gt_5_to_9px": 0,
+            "gt_9_to_16px": 0
+          },
+          "exhaustive": true,
+          "off_path_definition": "distance > 9 px (includes the 9--16 px annulus)",
+          "per_eligible_frame": {
+            "0_to_3px": 0.0,
+            "gt_16px": 1.4,
+            "gt_3_to_5px": 0.0,
+            "gt_5_to_9px": 0.0,
+            "gt_9_to_16px": 0.0
+          },
+          "total": 168
+        },
+        "confirmed_off_path_per_frame": 1.4,
+        "confirmed_off_path_track_ids": [
+          452,
+          552,
+          1328,
+          2091,
+          2781,
+          2892,
+          2917,
+          2934
+        ],
+        "confirmed_tracks_per_frame": 1.6208333333333333,
+        "coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "detections_per_frame": 38.795833333333334,
+        "dominant_id": [
+          null,
+          null,
+          null
+        ],
+        "dominant_share": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "eligible_frames": 120,
+        "explicit_origin_frames": 0,
+        "explicit_origin_mismatches": 0,
+        "first_confirm_frame": [
+          null,
+          null,
+          null
+        ],
+        "frames": 240,
+        "micro_confirmed_distance_to_injection_path": {
+          "counts": {
+            "0_to_3px": 0,
+            "gt_16px": 0,
+            "gt_3_to_5px": 0,
+            "gt_5_to_9px": 0,
+            "gt_9_to_16px": 0
+          },
+          "exhaustive": true,
+          "off_path_definition": "distance > 9 px (includes the 9--16 px annulus)",
+          "per_eligible_frame": {
+            "0_to_3px": 0.0,
+            "gt_16px": 0.0,
+            "gt_3_to_5px": 0.0,
+            "gt_5_to_9px": 0.0,
+            "gt_9_to_16px": 0.0
+          },
+          "total": 0
+        },
+        "micro_confirmed_off_path_per_frame": 0.0,
+        "micro_detection_coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "micro_detection_coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "micro_detection_distance_to_injection_path": {
+          "counts": {
+            "0_to_3px": 0,
+            "gt_16px": 0,
+            "gt_3_to_5px": 0,
+            "gt_5_to_9px": 0,
+            "gt_9_to_16px": 0
+          },
+          "exhaustive": true,
+          "off_path_definition": "distance > 9 px (includes the 9--16 px annulus)",
+          "per_eligible_frame": {
+            "0_to_3px": 0.0,
+            "gt_16px": 0.0,
+            "gt_3_to_5px": 0.0,
+            "gt_5_to_9px": 0.0,
+            "gt_9_to_16px": 0.0
+          },
+          "total": 0
+        },
+        "micro_off_path_track_ids": [],
+        "micro_track_coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "micro_track_coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "reg_frames": 239,
+        "terminal_telemetry": {
+          "blob_channels": [
+            {
+              "channel": "INST",
+              "components": 94,
+              "dropped": 0,
+              "eligible": 94,
+              "inspected": 94,
+              "mode": "legacy-quality",
+              "selected": 48,
+              "small_reserved": 0,
+              "track_reserved": 0
+            },
+            {
+              "channel": "TBD",
+              "components": 1825,
+              "dropped": 1685,
+              "eligible": 140,
+              "inspected": 140,
+              "mode": "legacy-quality",
+              "selected": 48,
+              "small_reserved": 0,
+              "track_reserved": 0
+            }
+          ],
+          "cap_pressure": 0.6893,
+          "cap_streak": 8,
+          "components": 1919,
+          "det_cap": true,
+          "detections": 48,
+          "device": "cpu",
+          "dropped_components": 1685,
+          "effective_min_px": 2.0,
+          "effective_sens": 1.1,
+          "estimated_gap_frames": 0,
+          "estimated_gap_total": 48,
+          "frame": 240,
+          "gap_excess_ms": 0.0,
+          "gate": "",
+          "gate_hold": 0,
+          "guard_eligible": false,
+          "heavy_backend": "cpu",
+          "inspected_components": 234,
+          "metal_dispatches": 0,
+          "model_frame": 240,
+          "raw_blobs": 101,
+          "raw_diff_frac": 0.0,
+          "raw_diff_median": 0.0,
+          "raw_identity_score": 0.0,
+          "raw_zoom_scale": 1.0,
+          "raw_zoom_score": 0.0,
+          "reg": "REG",
+          "run_id": "c6e88a8da4a743ab81ab684d114384ad",
+          "source_clock_reset": false,
+          "source_period_ms": 22.0,
+          "stage_ms": {
+            "blob": 2.915,
+            "ego": 1.598,
+            "heavy": 11.622,
+            "mog": 0.587,
+            "reacquire": 0.005,
+            "sigma": 0.412,
+            "track": 2.081
+          },
+          "template_reacquired": 0,
+          "template_reacquired_total": 0,
+          "track_cap": false,
+          "tracks": 104,
+          "ts": 518.038,
+          "version": "rev3"
+        },
+        "timing_ms": {
+          "count": 240,
+          "maximum": 28.478124644607306,
+          "mean": 20.18598974876416,
+          "minimum": 0.8953339420258999,
+          "p50": 20.537395495921373,
+          "p90": 22.82005464658141,
+          "p95": 23.460415960289538
+        }
+      }
+    },
+    "rev3_mps": {
+      "clean": {
+        "confirmed_distance_to_injection_path": {
+          "counts": {
+            "0_to_3px": 0,
+            "gt_16px": 129,
+            "gt_3_to_5px": 0,
+            "gt_5_to_9px": 0,
+            "gt_9_to_16px": 0
+          },
+          "exhaustive": true,
+          "off_path_definition": "distance > 9 px (includes the 9--16 px annulus)",
+          "per_eligible_frame": {
+            "0_to_3px": 0.0,
+            "gt_16px": 1.075,
+            "gt_3_to_5px": 0.0,
+            "gt_5_to_9px": 0.0,
+            "gt_9_to_16px": 0.0
+          },
+          "total": 129
+        },
+        "confirmed_off_path_per_frame": 1.075,
+        "confirmed_off_path_track_ids": [
+          58,
+          273,
+          1187,
+          2850
+        ],
+        "confirmed_tracks_per_frame": 1.675,
+        "coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "detections_per_frame": 38.75,
+        "dominant_id": [
+          null,
+          null,
+          null
+        ],
+        "dominant_share": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "eligible_frames": 120,
+        "explicit_origin_frames": 0,
+        "explicit_origin_mismatches": 0,
+        "first_confirm_frame": [
+          null,
+          null,
+          null
+        ],
+        "frames": 240,
+        "micro_confirmed_distance_to_injection_path": {
+          "counts": {
+            "0_to_3px": 0,
+            "gt_16px": 0,
+            "gt_3_to_5px": 0,
+            "gt_5_to_9px": 0,
+            "gt_9_to_16px": 0
+          },
+          "exhaustive": true,
+          "off_path_definition": "distance > 9 px (includes the 9--16 px annulus)",
+          "per_eligible_frame": {
+            "0_to_3px": 0.0,
+            "gt_16px": 0.0,
+            "gt_3_to_5px": 0.0,
+            "gt_5_to_9px": 0.0,
+            "gt_9_to_16px": 0.0
+          },
+          "total": 0
+        },
+        "micro_confirmed_off_path_per_frame": 0.0,
+        "micro_detection_coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "micro_detection_coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "micro_detection_distance_to_injection_path": {
+          "counts": {
+            "0_to_3px": 0,
+            "gt_16px": 0,
+            "gt_3_to_5px": 0,
+            "gt_5_to_9px": 0,
+            "gt_9_to_16px": 0
+          },
+          "exhaustive": true,
+          "off_path_definition": "distance > 9 px (includes the 9--16 px annulus)",
+          "per_eligible_frame": {
+            "0_to_3px": 0.0,
+            "gt_16px": 0.0,
+            "gt_3_to_5px": 0.0,
+            "gt_5_to_9px": 0.0,
+            "gt_9_to_16px": 0.0
+          },
+          "total": 0
+        },
+        "micro_off_path_track_ids": [],
+        "micro_track_coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "micro_track_coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "reg_frames": 239,
+        "terminal_telemetry": {
+          "blob_channels": [
+            {
+              "channel": "INST",
+              "components": 95,
+              "dropped": 0,
+              "eligible": 95,
+              "inspected": 95,
+              "mode": "legacy-quality",
+              "selected": 48,
+              "small_reserved": 0,
+              "track_reserved": 0
+            },
+            {
+              "channel": "TBD",
+              "components": 1809,
+              "dropped": 1669,
+              "eligible": 140,
+              "inspected": 140,
+              "mode": "legacy-quality",
+              "selected": 48,
+              "small_reserved": 0,
+              "track_reserved": 0
+            }
+          ],
+          "cap_pressure": 0.6894,
+          "cap_streak": 8,
+          "components": 1904,
+          "det_cap": true,
+          "detections": 48,
+          "device": "mps",
+          "dropped_components": 1669,
+          "effective_min_px": 2.0,
+          "effective_sens": 1.1,
+          "estimated_gap_frames": 0,
+          "estimated_gap_total": 48,
+          "frame": 240,
+          "gap_excess_ms": 0.0,
+          "gate": "",
+          "gate_hold": 0,
+          "guard_eligible": false,
+          "heavy_backend": "native-metal",
+          "inspected_components": 235,
+          "metal_dispatches": 232,
+          "model_frame": 240,
+          "raw_blobs": 101,
+          "raw_diff_frac": 0.0,
+          "raw_diff_median": 0.0,
+          "raw_identity_score": 0.0,
+          "raw_zoom_scale": 1.0,
+          "raw_zoom_score": 0.0,
+          "reg": "REG",
+          "run_id": "82feedd1508c49d7a9dda90a4e501c5a",
+          "source_clock_reset": false,
+          "source_period_ms": 22.0,
+          "stage_ms": {
+            "blob": 2.987,
+            "ego": 1.731,
+            "heavy": 15.688,
+            "mog": 0.636,
+            "reacquire": 0.004,
+            "sigma": 0.378,
+            "track": 1.956
+          },
+          "template_reacquired": 0,
+          "template_reacquired_total": 0,
+          "track_cap": false,
+          "tracks": 109,
+          "ts": 518.038,
+          "version": "rev3"
+        },
+        "timing_ms": {
+          "count": 240,
+          "maximum": 98.22133323177695,
+          "mean": 26.227560030141223,
+          "minimum": 3.5095419734716415,
+          "p50": 24.607124971225858,
+          "p90": 29.578212136402726,
+          "p95": 40.59329361189147
+        }
+      },
+      "injected": {
+        "confirmed_distance_to_injection_path": {
+          "counts": {
+            "0_to_3px": 0,
+            "gt_16px": 189,
+            "gt_3_to_5px": 0,
+            "gt_5_to_9px": 0,
+            "gt_9_to_16px": 0
+          },
+          "exhaustive": true,
+          "off_path_definition": "distance > 9 px (includes the 9--16 px annulus)",
+          "per_eligible_frame": {
+            "0_to_3px": 0.0,
+            "gt_16px": 1.575,
+            "gt_3_to_5px": 0.0,
+            "gt_5_to_9px": 0.0,
+            "gt_9_to_16px": 0.0
+          },
+          "total": 189
+        },
+        "confirmed_off_path_per_frame": 1.575,
+        "confirmed_off_path_track_ids": [
+          49,
+          58,
+          273,
+          2104,
+          2112,
+          2860
+        ],
+        "confirmed_tracks_per_frame": 2.0791666666666666,
+        "coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "detections_per_frame": 38.75416666666667,
+        "dominant_id": [
+          null,
+          null,
+          null
+        ],
+        "dominant_share": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "eligible_frames": 120,
+        "explicit_origin_frames": 0,
+        "explicit_origin_mismatches": 0,
+        "first_confirm_frame": [
+          null,
+          null,
+          null
+        ],
+        "frames": 240,
+        "micro_confirmed_distance_to_injection_path": {
+          "counts": {
+            "0_to_3px": 0,
+            "gt_16px": 0,
+            "gt_3_to_5px": 0,
+            "gt_5_to_9px": 0,
+            "gt_9_to_16px": 0
+          },
+          "exhaustive": true,
+          "off_path_definition": "distance > 9 px (includes the 9--16 px annulus)",
+          "per_eligible_frame": {
+            "0_to_3px": 0.0,
+            "gt_16px": 0.0,
+            "gt_3_to_5px": 0.0,
+            "gt_5_to_9px": 0.0,
+            "gt_9_to_16px": 0.0
+          },
+          "total": 0
+        },
+        "micro_confirmed_off_path_per_frame": 0.0,
+        "micro_detection_coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "micro_detection_coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "micro_detection_distance_to_injection_path": {
+          "counts": {
+            "0_to_3px": 0,
+            "gt_16px": 0,
+            "gt_3_to_5px": 0,
+            "gt_5_to_9px": 0,
+            "gt_9_to_16px": 0
+          },
+          "exhaustive": true,
+          "off_path_definition": "distance > 9 px (includes the 9--16 px annulus)",
+          "per_eligible_frame": {
+            "0_to_3px": 0.0,
+            "gt_16px": 0.0,
+            "gt_3_to_5px": 0.0,
+            "gt_5_to_9px": 0.0,
+            "gt_9_to_16px": 0.0
+          },
+          "total": 0
+        },
+        "micro_off_path_track_ids": [],
+        "micro_track_coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "micro_track_coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "reg_frames": 239,
+        "terminal_telemetry": {
+          "blob_channels": [
+            {
+              "channel": "INST",
+              "components": 95,
+              "dropped": 0,
+              "eligible": 95,
+              "inspected": 95,
+              "mode": "legacy-quality",
+              "selected": 48,
+              "small_reserved": 0,
+              "track_reserved": 0
+            },
+            {
+              "channel": "TBD",
+              "components": 1814,
+              "dropped": 1674,
+              "eligible": 140,
+              "inspected": 140,
+              "mode": "legacy-quality",
+              "selected": 48,
+              "small_reserved": 0,
+              "track_reserved": 0
+            }
+          ],
+          "cap_pressure": 0.6893,
+          "cap_streak": 8,
+          "components": 1909,
+          "det_cap": true,
+          "detections": 48,
+          "device": "mps",
+          "dropped_components": 1674,
+          "effective_min_px": 2.0,
+          "effective_sens": 1.1,
+          "estimated_gap_frames": 0,
+          "estimated_gap_total": 48,
+          "frame": 240,
+          "gap_excess_ms": 0.0,
+          "gate": "",
+          "gate_hold": 0,
+          "guard_eligible": false,
+          "heavy_backend": "native-metal",
+          "inspected_components": 235,
+          "metal_dispatches": 232,
+          "model_frame": 240,
+          "raw_blobs": 102,
+          "raw_diff_frac": 0.0,
+          "raw_diff_median": 0.0,
+          "raw_identity_score": 0.0,
+          "raw_zoom_scale": 1.0,
+          "raw_zoom_score": 0.0,
+          "reg": "REG",
+          "run_id": "7646409f846d48b8a634019289023d34",
+          "source_clock_reset": false,
+          "source_period_ms": 22.0,
+          "stage_ms": {
+            "blob": 2.599,
+            "ego": 1.449,
+            "heavy": 10.038,
+            "mog": 0.527,
+            "reacquire": 0.004,
+            "sigma": 0.358,
+            "track": 1.765
+          },
+          "template_reacquired": 0,
+          "template_reacquired_total": 0,
+          "track_cap": false,
+          "tracks": 107,
+          "ts": 518.038,
+          "version": "rev3"
+        },
+        "timing_ms": {
+          "count": 240,
+          "maximum": 42.16729197651148,
+          "mean": 18.215080581527825,
+          "minimum": 3.4813745878636837,
+          "p50": 17.95620867051184,
+          "p90": 21.160267246887088,
+          "p95": 22.910645767115053
+        }
+      }
+    },
+    "rev4": {
+      "clean": {
+        "confirmed_distance_to_injection_path": {
+          "counts": {
+            "0_to_3px": 0,
+            "gt_16px": 460,
+            "gt_3_to_5px": 0,
+            "gt_5_to_9px": 0,
+            "gt_9_to_16px": 0
+          },
+          "exhaustive": true,
+          "off_path_definition": "distance > 9 px (includes the 9--16 px annulus)",
+          "per_eligible_frame": {
+            "0_to_3px": 0.0,
+            "gt_16px": 3.8333333333333335,
+            "gt_3_to_5px": 0.0,
+            "gt_5_to_9px": 0.0,
+            "gt_9_to_16px": 0.0
+          },
+          "total": 460
+        },
+        "confirmed_off_path_per_frame": 3.8333333333333335,
+        "confirmed_off_path_track_ids": [
+          49,
+          455,
+          538,
+          1209,
+          1339,
+          1904,
+          1984,
+          2104,
+          2797,
+          2892,
+          1000029,
+          1000038,
+          1000047,
+          1000071,
+          1000086
+        ],
+        "confirmed_tracks_per_frame": 3.4625,
+        "coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "detections_per_frame": 51.666666666666664,
+        "dominant_id": [
+          null,
+          null,
+          null
+        ],
+        "dominant_share": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "eligible_frames": 120,
+        "explicit_origin_frames": 240,
+        "explicit_origin_mismatches": 0,
+        "first_confirm_frame": [
+          null,
+          null,
+          null
+        ],
+        "frames": 240,
+        "micro_confirmed_distance_to_injection_path": {
+          "counts": {
+            "0_to_3px": 0,
+            "gt_16px": 197,
+            "gt_3_to_5px": 0,
+            "gt_5_to_9px": 0,
+            "gt_9_to_16px": 0
+          },
+          "exhaustive": true,
+          "off_path_definition": "distance > 9 px (includes the 9--16 px annulus)",
+          "per_eligible_frame": {
+            "0_to_3px": 0.0,
+            "gt_16px": 1.6416666666666666,
+            "gt_3_to_5px": 0.0,
+            "gt_5_to_9px": 0.0,
+            "gt_9_to_16px": 0.0
+          },
+          "total": 197
+        },
+        "micro_confirmed_off_path_per_frame": 1.6416666666666666,
+        "micro_detection_coverage": [
+          0.0,
+          0.025,
+          0.008333333333333333
+        ],
+        "micro_detection_coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.025,
+            0.008333333333333333
+          ]
+        },
+        "micro_detection_distance_to_injection_path": {
+          "counts": {
+            "0_to_3px": 0,
+            "gt_16px": 2486,
+            "gt_3_to_5px": 0,
+            "gt_5_to_9px": 5,
+            "gt_9_to_16px": 22
+          },
+          "exhaustive": true,
+          "off_path_definition": "distance > 9 px (includes the 9--16 px annulus)",
+          "per_eligible_frame": {
+            "0_to_3px": 0.0,
+            "gt_16px": 20.716666666666665,
+            "gt_3_to_5px": 0.0,
+            "gt_5_to_9px": 0.041666666666666664,
+            "gt_9_to_16px": 0.18333333333333332
+          },
+          "total": 2513
+        },
+        "micro_off_path_track_ids": [
+          1000029,
+          1000038,
+          1000047,
+          1000071,
+          1000086
+        ],
+        "micro_track_coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "micro_track_coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "reg_frames": 239,
+        "terminal_telemetry": {
+          "blob_channels": [
+            {
+              "channel": "INST",
+              "components": 95,
+              "dropped": 0,
+              "eligible": 95,
+              "inspected": 95,
+              "mode": "legacy-quality",
+              "selected": 48,
+              "small_reserved": 0,
+              "track_reserved": 0
+            },
+            {
+              "channel": "TBD",
+              "components": 1822,
+              "dropped": 1682,
+              "eligible": 140,
+              "inspected": 140,
+              "mode": "legacy-quality",
+              "selected": 48,
+              "small_reserved": 0,
+              "track_reserved": 0
+            }
+          ],
+          "cap_pressure": 0.6894,
+          "cap_streak": 8,
+          "components": 1917,
+          "det_cap": true,
+          "detections": 48,
+          "device": "cpu",
+          "dropped_components": 1682,
+          "effective_min_px": 2.0,
+          "effective_sens": 1.1,
+          "estimated_gap_frames": 0,
+          "estimated_gap_total": 48,
+          "frame": 240,
+          "gap_excess_ms": 0.0,
+          "gate": "",
+          "gate_hold": 0,
+          "guard_eligible": false,
+          "heavy_backend": "cpu",
+          "inspected_components": 235,
+          "metal_dispatches": 0,
+          "model_frame": 240,
+          "raw_blobs": 102,
+          "raw_diff_frac": 0.0,
+          "raw_diff_median": 0.0,
+          "raw_identity_score": 0.0,
+          "raw_zoom_scale": 1.0,
+          "raw_zoom_score": 0.0,
+          "reg": "REG",
+          "rev4_micro_tbd": {
+            "blobness_mean": 0.03252100571990013,
+            "cfar_z_max": 16.324851989746094,
+            "confirmed": 0,
+            "continuity_last_reason": "ZOOM 0.976x",
+            "continuity_last_transform": [
+              [
+                0.9776232432486611,
+                -0.010296993456306672,
+                4.323582067479246
+              ],
+              [
+                -0.004710006023553658,
+                0.9817695283353367,
+                2.587062149885477
+              ],
+              [
+                -2.542686298320607e-05,
+                -2.4510608031783272e-05,
+                1.0
+              ]
+            ],
+            "continuity_policy": "GPU bank and candidates reset at every transition; confirmed tracks alone are rebased across exact registered zoom 0.94..1.06 and require fresh-detection reacquisition",
+            "coord_generation": 0,
+            "device": "mps",
+            "eligible_cells": 113,
+            "even_support_max": 3.82138991355896,
+            "explicit_reanchors": 0,
+            "fallback_reason": "",
+            "fallback_used": false,
+            "frame_uploads": 156,
+            "frames": 8,
+            "frontend_device": "cpu",
+            "hypotheses": 72,
+            "input_kind": "rev3_deposit_plus_spatial_psf",
+            "integration_tau_s": 1.8,
+            "invalid_reanchors": 0,
+            "last_step_ms": 115.20358268171549,
+            "max_ready_frames": 99,
+            "odd_support_max": 3.769310712814331,
+            "peaks": 48,
+            "psf_likelihood_max": 21.680923461914062,
+            "quality_max": 18.324851989746094,
+            "quality_mean": 0.003256694646552205,
+            "quality_std": 0.17382179200649261,
+            "raw_margin_max": 3.481490135192871,
+            "ready_frames": 8,
+            "requested_frontend_device": "mps",
+            "runner_far_max": 19.12222671508789,
+            "small_parameter_uploads": 156,
+            "small_zoom_continuity_events": 2,
+            "state_reprojections": 0,
+            "state_resets": 2,
+            "stationary_max": 19.217510223388672,
+            "support_margin_max": 4.611360549926758,
+            "support_margin_mean": 0.7859483361244202,
+            "synchronized_steps": 156,
+            "threshold": 7.0,
+            "tracks": 48,
+            "view_detections": [
+              {
+                "energy": 2.6178359985351562,
+                "origin": "rev4_micro_tbd",
+                "x": 482.947372647224,
+                "y": 254.07992713688355
+              },
+              {
+                "energy": 2.29247556413923,
+                "origin": "rev4_micro_tbd",
+                "x": 577.71417983937,
+                "y": 251.09596213770573
+              },
+              {
+                "energy": 1.9651795795985632,
+                "origin": "rev4_micro_tbd",
+                "x": 95.07207991037869,
+                "y": 177.7257243384778
+              },
+              {
+                "energy": 1.8908872604370117,
+                "origin": "rev4_micro_tbd",
+                "x": 70.11583364918845,
+                "y": 137.57543939299012
+              },
+              {
+                "energy": 1.760915892464774,
+                "origin": "rev4_micro_tbd",
+                "x": 85.0514655239839,
+                "y": 177.7194991925689
+              },
+              {
+                "energy": 1.7223649706159319,
+                "origin": "rev4_micro_tbd",
+                "x": 355.2383237712952,
+                "y": 169.87199703046758
+              },
+              {
+                "energy": 1.6503050667898995,
+                "origin": "rev4_micro_tbd",
+                "x": 180.91947746772652,
+                "y": 315.23507458865913
+              },
+              {
+                "energy": 1.6170102528163366,
+                "origin": "rev4_micro_tbd",
+                "x": 494.1784479419598,
+                "y": 19.865080818954596
+              },
+              {
+                "energy": 1.5897645950317383,
+                "origin": "rev4_micro_tbd",
+                "x": 421.1010551425383,
+                "y": 213.98946141811794
+              },
+              {
+                "energy": 1.5845627103533064,
+                "origin": "rev4_micro_tbd",
+                "x": 414.0706189425562,
+                "y": 244.04489946707605
+              },
+              {
+                "energy": 1.5352961676461356,
+                "origin": "rev4_micro_tbd",
+                "x": 275.06122572784903,
+                "y": 288.13784821223993
+              },
+              {
+                "energy": 1.508619717189244,
+                "origin": "rev4_micro_tbd",
+                "x": 576.6293604165047,
+                "y": 358.2606260326794
+              },
+              {
+                "energy": 1.4981287547520228,
+                "origin": "rev4_micro_tbd",
+                "x": 576.5694129818122,
+                "y": 431.41488216063925
+              },
+              {
+                "energy": 1.4827720097133092,
+                "origin": "rev4_micro_tbd",
+                "x": 565.6579020576996,
+                "y": 358.2645681820888
+              },
+              {
+                "energy": 1.477823121207101,
+                "origin": "rev4_micro_tbd",
+                "x": 598.7905283620199,
+                "y": 62.009544232675104
+              },
+              {
+                "energy": 1.4647584642682756,
+                "origin": "rev4_micro_tbd",
+                "x": 169.98473575559225,
+                "y": 276.09215582511956
+              },
+              {
+                "energy": 1.4042861121041434,
+                "origin": "rev4_micro_tbd",
+                "x": 146.89912246423702,
+                "y": 298.17310495491154
+              },
+              {
+                "energy": 1.3787570680890764,
+                "origin": "rev4_micro_tbd",
+                "x": 595.6081661169754,
+                "y": 317.1862736402267
+              },
+              {
+                "energy": 1.363349097115653,
+                "origin": "rev4_micro_tbd",
+                "x": 61.56684802657796,
+                "y": 354.4269914615006
+              },
+              {
+                "energy": 1.34414427621024,
+                "origin": "rev4_micro_tbd",
+                "x": 119.39706023761318,
+                "y": 54.39179438420418
+              },
+              {
+                "energy": 1.337278093610491,
+                "origin": "rev4_micro_tbd",
+                "x": 562.9317345769135,
+                "y": 49.96414025416965
+              },
+              {
+                "energy": 1.3329824720110213,
+                "origin": "rev4_micro_tbd",
+                "x": 493.82537495879285,
+                "y": 346.2628511425856
+              },
+              {
+                "energy": 1.3259447642735072,
+                "origin": "rev4_micro_tbd",
+                "x": 95.83190507611356,
+                "y": 281.10564338949877
+              },
+              {
+                "energy": 1.3229707990373885,
+                "origin": "rev4_micro_tbd",
+                "x": 41.82674426145975,
+                "y": 226.87915901119985
+              },
+              {
+                "energy": 1.3020553588867188,
+                "origin": "rev4_micro_tbd",
+                "x": 512.101208092159,
+                "y": 43.8955925010618
+              },
+              {
+                "energy": 1.2940014430454798,
+                "origin": "rev4_micro_tbd",
+                "x": 396.0788118179255,
+                "y": 253.05971272270335
+              },
+              {
+                "energy": 1.2590460096086775,
+                "origin": "rev4_micro_tbd",
+                "x": 567.7436788303338,
+                "y": 251.0937316980899
+              },
+              {
+                "energy": 1.2476328441074915,
+                "origin": "rev4_micro_tbd",
+                "x": 531.0288128672315,
+                "y": 58.923941019152565
+              },
+              {
+                "energy": 1.2317592075892858,
+                "origin": "rev4_micro_tbd",
+                "x": 91.8106912906773,
+                "y": 286.12564703513925
+              },
+              {
+                "energy": 1.2268172672816686,
+                "origin": "rev4_micro_tbd",
+                "x": 192.66095862878697,
+                "y": 450.79108673184743
+              },
+              {
+                "energy": 1.2255633217947823,
+                "origin": "rev4_micro_tbd",
+                "x": 605.4734408699039,
+                "y": 460.45908778497505
+              },
+              {
+                "energy": 1.2128571101597376,
+                "origin": "rev4_micro_tbd",
+                "x": 446.1510756107227,
+                "y": 141.8957592810296
+              },
+              {
+                "energy": 1.203584943498884,
+                "origin": "rev4_micro_tbd",
+                "x": 448.82269204047543,
+                "y": 405.43470018952667
+              },
+              {
+                "energy": 1.1916304997035436,
+                "origin": "rev4_micro_tbd",
+                "x": 445.92864726626374,
+                "y": 322.2183526618212
+              },
+              {
+                "energy": 1.1795708792550224,
+                "origin": "rev4_micro_tbd",
+                "x": 83.14288133581914,
+                "y": 137.58636883500432
+              },
+              {
+                "energy": 1.169567653111049,
+                "origin": "rev4_micro_tbd",
+                "x": 343.24768751137617,
+                "y": 169.8640258026877
+              },
+              {
+                "energy": 1.1640235355922155,
+                "origin": "rev4_micro_tbd",
+                "x": 433.2925133031782,
+                "y": 49.793297855617986
+              },
+              {
+                "energy": 1.162734031677246,
+                "origin": "rev4_micro_tbd",
+                "x": 345.08278545183646,
+                "y": 275.1048620389577
+              },
+              {
+                "energy": 1.1540372031075614,
+                "origin": "rev4_micro_tbd",
+                "x": 288.0011502055495,
+                "y": 325.25381613369984
+              },
+              {
+                "energy": 1.1526257651192802,
+                "origin": "rev4_micro_tbd",
+                "x": 252.03804719551783,
+                "y": 294.1566820878319
+              },
+              {
+                "energy": 1.1518302645002092,
+                "origin": "rev4_micro_tbd",
+                "x": 427.30086639256064,
+                "y": 52.78765220095039
+              },
+              {
+                "energy": 1.1473985399518694,
+                "origin": "rev4_micro_tbd",
+                "x": 609.7470419856758,
+                "y": 63.023095006616224
+              },
+              {
+                "energy": 1.1326480593000139,
+                "origin": "rev4_micro_tbd",
+                "x": 542.7022013759348,
+                "y": 370.29806111221285
+              },
+              {
+                "energy": 1.1308627128601074,
+                "origin": "rev4_micro_tbd",
+                "x": 430.0878241862296,
+                "y": 213.9932827243277
+              },
+              {
+                "energy": 1.1246027265276228,
+                "origin": "rev4_micro_tbd",
+                "x": 550.683870143225,
+                "y": 370.2946711470471
+              },
+              {
+                "energy": 1.1230511665344238,
+                "origin": "rev4_micro_tbd",
+                "x": 278.99732787141284,
+                "y": 325.2554319551572
+              },
+              {
+                "energy": 1.1146838324410575,
+                "origin": "rev4_micro_tbd",
+                "x": 506.112423360791,
+                "y": 49.88926208599769
+              },
+              {
+                "energy": 1.109917368207659,
+                "origin": "rev4_micro_tbd",
+                "x": 377.2898076539103,
+                "y": 119.80591038033434
+              }
+            ],
+            "visible_confirmed": 0,
+            "zoom_assisted_reacquisitions": 1,
+            "zoom_reacquisition_candidates": 1,
+            "zoom_tracks_pending": 0,
+            "zoom_tracks_preserved": 6,
+            "zoom_tracks_reacquired": 1
+          },
+          "run_id": "26ef57b5032e457cab4f429c2b6e06b3",
+          "source_clock_reset": false,
+          "source_period_ms": 22.0,
+          "stage_ms": {
+            "blob": 2.506,
+            "ego": 1.608,
+            "heavy": 10.748,
+            "mog": 0.491,
+            "reacquire": 0.003,
+            "sigma": 0.326,
+            "track": 1.678
+          },
+          "template_reacquired": 0,
+          "template_reacquired_total": 0,
+          "track_cap": false,
+          "tracks": 104,
+          "ts": 518.038,
+          "version": "rev3"
+        },
+        "timing_ms": {
+          "count": 240,
+          "maximum": 3951.0136670432985,
+          "mean": 305.5042614423049,
+          "minimum": 2.8759166598320007,
+          "p50": 133.64766631275415,
+          "p90": 823.3451963402331,
+          "p95": 851.0007288074121
+        }
+      },
+      "injected": {
+        "confirmed_distance_to_injection_path": {
+          "counts": {
+            "0_to_3px": 0,
+            "gt_16px": 363,
+            "gt_3_to_5px": 0,
+            "gt_5_to_9px": 0,
+            "gt_9_to_16px": 0
+          },
+          "exhaustive": true,
+          "off_path_definition": "distance > 9 px (includes the 9--16 px annulus)",
+          "per_eligible_frame": {
+            "0_to_3px": 0.0,
+            "gt_16px": 3.025,
+            "gt_3_to_5px": 0.0,
+            "gt_5_to_9px": 0.0,
+            "gt_9_to_16px": 0.0
+          },
+          "total": 363
+        },
+        "confirmed_off_path_per_frame": 3.025,
+        "confirmed_off_path_track_ids": [
+          452,
+          552,
+          1328,
+          2091,
+          2781,
+          2892,
+          2917,
+          2934,
+          1000027,
+          1000037,
+          1000046,
+          1000069,
+          1000082
+        ],
+        "confirmed_tracks_per_frame": 2.475,
+        "coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "detections_per_frame": 51.72083333333333,
+        "dominant_id": [
+          null,
+          null,
+          null
+        ],
+        "dominant_share": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "eligible_frames": 120,
+        "explicit_origin_frames": 240,
+        "explicit_origin_mismatches": 0,
+        "first_confirm_frame": [
+          null,
+          null,
+          null
+        ],
+        "frames": 240,
+        "micro_confirmed_distance_to_injection_path": {
+          "counts": {
+            "0_to_3px": 0,
+            "gt_16px": 197,
+            "gt_3_to_5px": 0,
+            "gt_5_to_9px": 0,
+            "gt_9_to_16px": 0
+          },
+          "exhaustive": true,
+          "off_path_definition": "distance > 9 px (includes the 9--16 px annulus)",
+          "per_eligible_frame": {
+            "0_to_3px": 0.0,
+            "gt_16px": 1.6416666666666666,
+            "gt_3_to_5px": 0.0,
+            "gt_5_to_9px": 0.0,
+            "gt_9_to_16px": 0.0
+          },
+          "total": 197
+        },
+        "micro_confirmed_off_path_per_frame": 1.6416666666666666,
+        "micro_detection_coverage": [
+          0.0,
+          0.03333333333333333,
+          0.008333333333333333
+        ],
+        "micro_detection_coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.008333333333333333,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.008333333333333333,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.03333333333333333,
+            0.008333333333333333
+          ]
+        },
+        "micro_detection_distance_to_injection_path": {
+          "counts": {
+            "0_to_3px": 1,
+            "gt_16px": 2497,
+            "gt_3_to_5px": 0,
+            "gt_5_to_9px": 5,
+            "gt_9_to_16px": 20
+          },
+          "exhaustive": true,
+          "off_path_definition": "distance > 9 px (includes the 9--16 px annulus)",
+          "per_eligible_frame": {
+            "0_to_3px": 0.008333333333333333,
+            "gt_16px": 20.808333333333334,
+            "gt_3_to_5px": 0.0,
+            "gt_5_to_9px": 0.041666666666666664,
+            "gt_9_to_16px": 0.16666666666666666
+          },
+          "total": 2523
+        },
+        "micro_off_path_track_ids": [
+          1000027,
+          1000037,
+          1000046,
+          1000069,
+          1000082
+        ],
+        "micro_track_coverage": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "micro_track_coverage_sensitivity": {
+          "3px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "5px": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "9px": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "reg_frames": 239,
+        "terminal_telemetry": {
+          "blob_channels": [
+            {
+              "channel": "INST",
+              "components": 94,
+              "dropped": 0,
+              "eligible": 94,
+              "inspected": 94,
+              "mode": "legacy-quality",
+              "selected": 48,
+              "small_reserved": 0,
+              "track_reserved": 0
+            },
+            {
+              "channel": "TBD",
+              "components": 1825,
+              "dropped": 1685,
+              "eligible": 140,
+              "inspected": 140,
+              "mode": "legacy-quality",
+              "selected": 48,
+              "small_reserved": 0,
+              "track_reserved": 0
+            }
+          ],
+          "cap_pressure": 0.6893,
+          "cap_streak": 8,
+          "components": 1919,
+          "det_cap": true,
+          "detections": 48,
+          "device": "cpu",
+          "dropped_components": 1685,
+          "effective_min_px": 2.0,
+          "effective_sens": 1.1,
+          "estimated_gap_frames": 0,
+          "estimated_gap_total": 48,
+          "frame": 240,
+          "gap_excess_ms": 0.0,
+          "gate": "",
+          "gate_hold": 0,
+          "guard_eligible": false,
+          "heavy_backend": "cpu",
+          "inspected_components": 234,
+          "metal_dispatches": 0,
+          "model_frame": 240,
+          "raw_blobs": 101,
+          "raw_diff_frac": 0.0,
+          "raw_diff_median": 0.0,
+          "raw_identity_score": 0.0,
+          "raw_zoom_scale": 1.0,
+          "raw_zoom_score": 0.0,
+          "reg": "REG",
+          "rev4_micro_tbd": {
+            "blobness_mean": 0.03251983970403671,
+            "cfar_z_max": 16.198732376098633,
+            "confirmed": 0,
+            "continuity_last_reason": "ZOOM 0.976x",
+            "continuity_last_transform": [
+              [
+                0.9776248672231336,
+                -0.01029854048718392,
+                4.323319502892349
+              ],
+              [
+                -0.004709814465277987,
+                0.981765644167252,
+                2.5872217172089527
+              ],
+              [
+                -2.5424291329490516e-05,
+                -2.452397862151643e-05,
+                1.0
+              ]
+            ],
+            "continuity_policy": "GPU bank and candidates reset at every transition; confirmed tracks alone are rebased across exact registered zoom 0.94..1.06 and require fresh-detection reacquisition",
+            "coord_generation": 0,
+            "device": "mps",
+            "eligible_cells": 112,
+            "even_support_max": 3.82138991355896,
+            "explicit_reanchors": 0,
+            "fallback_reason": "",
+            "fallback_used": false,
+            "frame_uploads": 156,
+            "frames": 8,
+            "frontend_device": "cpu",
+            "hypotheses": 72,
+            "input_kind": "rev3_deposit_plus_spatial_psf",
+            "integration_tau_s": 1.8,
+            "invalid_reanchors": 0,
+            "last_step_ms": 147.81204191967845,
+            "max_ready_frames": 99,
+            "odd_support_max": 3.769310712814331,
+            "peaks": 48,
+            "psf_likelihood_max": 21.680932998657227,
+            "quality_max": 18.198732376098633,
+            "quality_mean": 0.0032304797787219286,
+            "quality_std": 0.17316603660583496,
+            "raw_margin_max": 3.499011993408203,
+            "ready_frames": 8,
+            "requested_frontend_device": "mps",
+            "runner_far_max": 19.09880256652832,
+            "small_parameter_uploads": 156,
+            "small_zoom_continuity_events": 2,
+            "state_reprojections": 0,
+            "state_resets": 2,
+            "stationary_max": 19.200237274169922,
+            "support_margin_max": 4.613239288330078,
+            "support_margin_mean": 0.786512017250061,
+            "synchronized_steps": 156,
+            "threshold": 7.0,
+            "tracks": 48,
+            "view_detections": [
+              {
+                "energy": 2.599818910871233,
+                "origin": "rev4_micro_tbd",
+                "x": 482.94753202495775,
+                "y": 254.0801623200512
+              },
+              {
+                "energy": 2.2909188951764787,
+                "origin": "rev4_micro_tbd",
+                "x": 577.7143426497086,
+                "y": 251.0962289583417
+              },
+              {
+                "energy": 1.9681856972830636,
+                "origin": "rev4_micro_tbd",
+                "x": 95.07206018857181,
+                "y": 177.72571753054743
+              },
+              {
+                "energy": 1.8985436303274972,
+                "origin": "rev4_micro_tbd",
+                "x": 70.11578080893263,
+                "y": 137.57537206268339
+              },
+              {
+                "energy": 1.7612991333007812,
+                "origin": "rev4_micro_tbd",
+                "x": 85.05144006029526,
+                "y": 177.7194882153285
+              },
+              {
+                "energy": 1.723459107535226,
+                "origin": "rev4_micro_tbd",
+                "x": 355.2384033388456,
+                "y": 169.87208971962886
+              },
+              {
+                "energy": 1.6475011280604772,
+                "origin": "rev4_micro_tbd",
+                "x": 180.91957486607626,
+                "y": 315.2352807994211
+              },
+              {
+                "energy": 1.6058954511369978,
+                "origin": "rev4_micro_tbd",
+                "x": 494.1784380989122,
+                "y": 19.865096702685214
+              },
+              {
+                "energy": 1.584749358040946,
+                "origin": "rev4_micro_tbd",
+                "x": 421.10117725109006,
+                "y": 213.98962895102113
+              },
+              {
+                "energy": 1.5747511727469308,
+                "origin": "rev4_micro_tbd",
+                "x": 414.0707601670894,
+                "y": 244.04509789993685
+              },
+              {
+                "energy": 1.5163733618600028,
+                "origin": "rev4_micro_tbd",
+                "x": 576.6296067606771,
+                "y": 358.2610115229546
+              },
+              {
+                "energy": 1.4989005497523717,
+                "origin": "rev4_micro_tbd",
+                "x": 275.0613526105736,
+                "y": 288.13805009152793
+              },
+              {
+                "energy": 1.4924697875976562,
+                "origin": "rev4_micro_tbd",
+                "x": 576.5697163418172,
+                "y": 431.41535715934305
+              },
+              {
+                "energy": 1.4831759589059013,
+                "origin": "rev4_micro_tbd",
+                "x": 565.6581475929446,
+                "y": 358.2649503796097
+              },
+              {
+                "energy": 1.4798834664481026,
+                "origin": "rev4_micro_tbd",
+                "x": 598.790540854185,
+                "y": 62.00964639782022
+              },
+              {
+                "energy": 1.4608020782470703,
+                "origin": "rev4_micro_tbd",
+                "x": 169.9848065736799,
+                "y": 276.0923052837228
+              },
+              {
+                "energy": 1.4044641767229353,
+                "origin": "rev4_micro_tbd",
+                "x": 146.89919193096551,
+                "y": 298.17327635012913
+              },
+              {
+                "energy": 1.3744194848196847,
+                "origin": "rev4_micro_tbd",
+                "x": 595.6083810005389,
+                "y": 317.18661799637715
+              },
+              {
+                "energy": 1.3633787972586495,
+                "origin": "rev4_micro_tbd",
+                "x": 61.56688948096203,
+                "y": 354.42721638984096
+              },
+              {
+                "energy": 1.3456518990652901,
+                "origin": "rev4_micro_tbd",
+                "x": 119.39699301697091,
+                "y": 54.391653875084586
+              },
+              {
+                "energy": 1.3373061588832311,
+                "origin": "rev4_micro_tbd",
+                "x": 562.9317422101844,
+                "y": 49.96421514569254
+              },
+              {
+                "energy": 1.3328478676932198,
+                "origin": "rev4_micro_tbd",
+                "x": 493.825602663189,
+                "y": 346.26319707098367
+              },
+              {
+                "energy": 1.325430461338588,
+                "origin": "rev4_micro_tbd",
+                "x": 41.82671447073277,
+                "y": 226.87919512350004
+              },
+              {
+                "energy": 1.321474347795759,
+                "origin": "rev4_micro_tbd",
+                "x": 95.8319353083097,
+                "y": 281.10577362830077
+              },
+              {
+                "energy": 1.306689671107701,
+                "origin": "rev4_micro_tbd",
+                "x": 512.101215097441,
+                "y": 43.89563711904897
+              },
+              {
+                "energy": 1.2908894675118583,
+                "origin": "rev4_micro_tbd",
+                "x": 396.07895520687146,
+                "y": 253.05991486055527
+              },
+              {
+                "energy": 1.2694926943097795,
+                "origin": "rev4_micro_tbd",
+                "x": 567.7438415888055,
+                "y": 251.09399484070133
+              },
+              {
+                "energy": 1.244544437953404,
+                "origin": "rev4_micro_tbd",
+                "x": 531.0288300341932,
+                "y": 58.924007484103285
+              },
+              {
+                "energy": 1.2314299174717493,
+                "origin": "rev4_micro_tbd",
+                "x": 91.81072137153463,
+                "y": 286.1257828605581
+              },
+              {
+                "energy": 1.2293128967285156,
+                "origin": "rev4_micro_tbd",
+                "x": 605.4737701229509,
+                "y": 460.4596069924283
+              },
+              {
+                "energy": 1.2259870256696428,
+                "origin": "rev4_micro_tbd",
+                "x": 193.66293950031508,
+                "y": 450.79063153879486
+              },
+              {
+                "energy": 1.2141621453421456,
+                "origin": "rev4_micro_tbd",
+                "x": 446.1511513757309,
+                "y": 141.89586197709295
+              },
+              {
+                "energy": 1.2038249969482422,
+                "origin": "rev4_micro_tbd",
+                "x": 448.8229524395407,
+                "y": 405.4351080641308
+              },
+              {
+                "energy": 1.1812793186732702,
+                "origin": "rev4_micro_tbd",
+                "x": 445.9288488410384,
+                "y": 322.2186542285581
+              },
+              {
+                "energy": 1.1782945905412947,
+                "origin": "rev4_micro_tbd",
+                "x": 83.14283585707578,
+                "y": 137.58630726038237
+              },
+              {
+                "energy": 1.1721128736223494,
+                "origin": "rev4_micro_tbd",
+                "x": 343.24776421586415,
+                "y": 169.86411344374105
+              },
+              {
+                "energy": 1.1638693128313338,
+                "origin": "rev4_micro_tbd",
+                "x": 433.29252416386214,
+                "y": 49.793308231849906
+              },
+              {
+                "energy": 1.1637646811349052,
+                "origin": "rev4_micro_tbd",
+                "x": 345.08292941223846,
+                "y": 275.10507206038716
+              },
+              {
+                "energy": 1.158907209123884,
+                "origin": "rev4_micro_tbd",
+                "x": 252.03816785211285,
+                "y": 294.1568838488727
+              },
+              {
+                "energy": 1.1497056143624442,
+                "origin": "rev4_micro_tbd",
+                "x": 427.30087894664996,
+                "y": 52.78766226471762
+              },
+              {
+                "energy": 1.147073200770787,
+                "origin": "rev4_micro_tbd",
+                "x": 609.7470536101455,
+                "y": 63.023203325730655
+              },
+              {
+                "energy": 1.1352387837001257,
+                "origin": "rev4_micro_tbd",
+                "x": 288.0013044798381,
+                "y": 325.2540706201032
+              },
+              {
+                "energy": 1.1266187259129115,
+                "origin": "rev4_micro_tbd",
+                "x": 430.0879478149952,
+                "y": 213.99345378636463
+              },
+              {
+                "energy": 1.1234422411237444,
+                "origin": "rev4_micro_tbd",
+                "x": 542.7024538420403,
+                "y": 370.29845093667245
+              },
+              {
+                "energy": 1.1212849617004395,
+                "origin": "rev4_micro_tbd",
+                "x": 550.6841235055541,
+                "y": 370.29506330519916
+              },
+              {
+                "energy": 1.1175761904035295,
+                "origin": "rev4_micro_tbd",
+                "x": 377.28985921096904,
+                "y": 119.80596036739799
+              },
+              {
+                "energy": 1.116807324545724,
+                "origin": "rev4_micro_tbd",
+                "x": 277.99699888011645,
+                "y": 325.25586277279433
+              },
+              {
+                "energy": 1.1144533157348633,
+                "origin": "rev4_micro_tbd",
+                "x": 505.1016858052739,
+                "y": 62.89264811075688
+              }
+            ],
+            "visible_confirmed": 0,
+            "zoom_assisted_reacquisitions": 1,
+            "zoom_reacquisition_candidates": 1,
+            "zoom_tracks_pending": 0,
+            "zoom_tracks_preserved": 6,
+            "zoom_tracks_reacquired": 1
+          },
+          "run_id": "806020bf1407445094a19cd2073144dc",
+          "source_clock_reset": false,
+          "source_period_ms": 22.0,
+          "stage_ms": {
+            "blob": 3.698,
+            "ego": 1.948,
+            "heavy": 12.584,
+            "mog": 0.592,
+            "reacquire": 0.005,
+            "sigma": 0.399,
+            "track": 3.685
+          },
+          "template_reacquired": 0,
+          "template_reacquired_total": 0,
+          "track_cap": false,
+          "tracks": 104,
+          "ts": 518.038,
+          "version": "rev3"
+        },
+        "timing_ms": {
+          "count": 240,
+          "maximum": 330.3537918254733,
+          "mean": 105.11869165541914,
+          "minimum": 4.424875136464834,
+          "p50": 142.27414573542774,
+          "p90": 156.80037955753505,
+          "p95": 161.59103142563254
+        }
+      }
+    }
+  },
+  "runtime": {
+    "mps_available": true,
+    "numpy": "2.4.2",
+    "opencv": "4.13.0",
+    "platform": "macOS-26.1-arm64-arm-64bit",
+    "python": "3.11.14",
+    "torch": "2.10.0"
+  },
+  "scene": {
+    "canonical_id": "superres.soft_barn_soak",
+    "purpose": "Long telephoto hold on a white barn, tree line, poles and field tracks.",
+    "roi_xywh": [
+      640,
+      300,
+      640,
+      480
+    ],
+    "source_expected_sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744",
+    "source_id": "seg_191345",
+    "source_path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_191345_attempt1.mp4",
+    "source_start_pts_s": 510.0
+  },
+  "schema": "m5.motionisr-rev4-ab.v3",
+  "source_verification": {
+    "catalog": "/Users/randyblasik/Documents/Drone_EnhancedVision/testdata/flight_scenes/2026-07-14.json",
+    "full_hash": true,
+    "ok": true,
+    "schema": "m5.flight-source-verification.v1",
+    "sources": [
+      {
+        "actual_bytes": 358895612,
+        "actual_sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744",
+        "exists": true,
+        "expected_bytes": 358895612,
+        "expected_sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744",
+        "hash_ok": true,
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_191345_attempt1.mp4",
+        "role": "canonical",
+        "size_ok": true,
+        "source": "seg_191345"
+      }
+    ]
+  },
+  "status": "FAIL",
+  "validator_notes": [
+    "Candidate coverage consumes result.rev4_micro_tracks explicitly; ordinary Rev3 tracks cannot take credit for the Rev4 micro detector.",
+    "A candidate hit is injection-attributable only when its paired clean run has no same-frame output inside the same target gate.",
+    "Every confirmed output is assigned to exactly one <=3, 3--5, 5--9, 9--16, or >16 px bin; the former 9--16 px annulus is not ignored.",
+    "Total off-path inflation is compared with paired clean behavior of the identical Rev3 CPU evidence frontend.",
+    "Source PTS is captured before output setpts from FFmpeg showinfo on the exact decoded source frames used to create the fixture."
+  ],
+  "warnings": [
+    "Motion ground truth is deterministic injected point-spread targets on real flight structure; native-flight human annotations remain open.",
+    "Clean-source outputs are unlabeled native structure. They are reported as clean-relative off-path nuisance/output inflation, never as absolute false positives.",
+    "Timing runs are serial and interleaved, include first-use work, and support no speed claim."
+  ]
+}

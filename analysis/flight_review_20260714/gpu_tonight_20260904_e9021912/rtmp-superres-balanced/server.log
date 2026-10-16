@@ -1,0 +1,14 @@
+[9/4/2026, 8:31:25 PM] [INFO] Node-Media-Server v4.2.8
+[9/4/2026, 8:31:25 PM] [INFO] Homepage: https://github.com/illuspas/Node-Media-Server
+[9/4/2026, 8:31:25 PM] [INFO] License: Apache-2.0
+[9/4/2026, 8:31:25 PM] [INFO] Author: Chen Mingliang
+[9/4/2026, 8:31:25 PM] [INFO] WebSocket server listening on port undefined:18080
+[9/4/2026, 8:31:25 PM] [INFO] HTTP server listening on port undefined:18080
+[9/4/2026, 8:31:25 PM] [INFO] Rtmp Server listening on port undefined:21935
+[9/4/2026, 8:31:25 PM] [INFO] RTMP session mtnndlllwaqzw8le close
+[9/4/2026, 8:31:25 PM] [INFO] RTMP session mtnndlm2xbkrkv50 ::ffff:127.0.0.1:53438 start push /live/qa_tonight
+[9/4/2026, 8:31:28 PM] [INFO] RTMP session mtnndnua88eu2xa2 ::ffff:127.0.0.1:53445 start play /live/qa_tonight
+[9/4/2026, 8:32:10 PM] [INFO] RTMP session mtnndnua88eu2xa2 socket error, Error: read ECONNRESET
+[9/4/2026, 8:32:10 PM] [INFO] RTMP session mtnndnua88eu2xa2 close
+[9/4/2026, 8:32:10 PM] [INFO] RTMP session mtnndlm2xbkrkv50 close
+[nms-heartbeat] stopping on SIGINT
