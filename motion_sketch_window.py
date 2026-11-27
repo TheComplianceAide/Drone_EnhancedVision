@@ -21,7 +21,7 @@ class _Rect(ctypes.Structure):
     _fields_ = [("origin", _Point), ("size", _Size)]
 
 
-def _fit_mac(title, image_width, image_height):
+def _fit_mac(title, image_width, image_height, *, measure_pixels=False):
     # HighGUI owns this NSWindow on the main thread. Use its actual title-bar
     # height and its own screen in AppKit points, including the Dock offset.
     lib = ctypes.CDLL("/usr/lib/libobjc.A.dylib")
@@ -71,6 +71,12 @@ def _fit_mac(title, image_width, image_height):
         return None
     safe = rect(screen, "visibleFrame")
     outer, inner = rect(window, "frame"), rect(view, "bounds")
+    if measure_pixels:
+        backing = send(ctypes.c_double)(window, selector("backingScaleFactor"))
+        scale = backing * min(inner.size.width / image_width, inner.size.height / image_height)
+        if not math.isfinite(scale) or scale <= 0:
+            return None
+        return max(1, round(scale * image_width)), max(1, round(scale * image_height))
     border_w = max(0, outer.size.width - inner.size.width)
     border_h = max(0, outer.size.height - inner.size.height)
     margin = 4
@@ -100,4 +106,14 @@ def fit_painted_window(title, image_width, image_height):
     scale = min((sw - 60) / image_width, (sh - 120) / image_height)
     width, height = max(1, int(image_width * scale)), max(1, int(image_height * scale))
     cv2.resizeWindow(title, width, height)
+    return width, height
+
+
+def display_pixel_size(title, width, height):
+    """Get the drawable image resolution on the window's current screen."""
+    if sys.platform == "darwin":
+        try:
+            return _fit_mac(title, width, height, measure_pixels=True) or (width, height)
+        except (AttributeError, OSError, ValueError, ctypes.ArgumentError):
+            pass
     return width, height

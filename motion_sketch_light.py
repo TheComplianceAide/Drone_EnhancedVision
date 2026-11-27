@@ -1,4 +1,4 @@
-"""Display-only lighting for the Motion Sketch overview."""
+"""Optional picture effects applied after the Landscape base in the field viewer."""
 
 import cv2
 import numpy as np
@@ -12,7 +12,7 @@ MODES = ("source", "auto", "clear", "daylight", "haze", "neutral", "dusk", "temp
 
 
 class OverviewLight:
-    """Keep exposure adaptation local to a continuous run of overview frames."""
+    """Keep each optional effect's exposure history within a continuous run."""
 
     def __init__(self, device="auto"):
         self.device = device
@@ -34,8 +34,8 @@ class OverviewLight:
     def apply(self, image, stamp, mode):
         """Return a same-sized BGR display image and one current quality note.
 
-        The caller supplies the unannotated, display-sized overview and resets
-        on source generation changes. The source image is never modified.
+        The field viewer supplies its unannotated Landscape frame. Standalone
+        replays can also supply an ungraded image. Reset on source changes.
         """
         if mode == "source":
             if self._mode != "source":

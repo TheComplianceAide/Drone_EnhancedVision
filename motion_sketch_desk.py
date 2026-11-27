@@ -15,6 +15,7 @@ from motion_sketch_zoom import enlarge
 from motion_sketch_stack import HeldStack
 from motion_sketch_cues import ChangeInk
 from motion_sketch_light import OverviewLight
+from motion_sketch_landscape import LandscapeGrade
 from motion_sketch_icons import draw_icon
 
 WIDTH, HEIGHT = 1440, 840
@@ -25,9 +26,13 @@ CHANGE = (235, 531, 466, 262)
 FOCUS_STAGE = (0, 0, 1440, 794)
 PANE_NAMES = {"all": "All views", "overview": "Overview", "zoom": "Zoom",
               "sketch": "Sketch", "change": "Motion Map"}
-LOOKS = {"source": "Original", "auto": "Auto clear / night", "clear": "Clear",
+LOOKS = {"landscape": "Landscape", "source": "Original", "auto": "Auto clear / night", "clear": "Clear",
          "daylight": "Daylight", "haze": "Haze", "neutral": "Neutral",
          "dusk": "Night", "temporal": "Temporal denoise"}
+
+
+def picture_title(look):
+    return LOOKS[look] if look in ("source", "landscape") else f"Landscape + {LOOKS[look]}"
 
 BG=(24,21,19)
 SURFACE=(41,36,32)
@@ -149,7 +154,12 @@ class Desk:
         self.ink = ChangeInk()
         self.cues_enabled = True
         self.light = OverviewLight(device=device)
-        self.look = "source"
+        self.landscape = LandscapeGrade(device=device)
+        self._base_key = None
+        self._base_picture = None
+        self.picture_frame = None
+        self.overview_clean_pixels = None
+        self.look = "landscape"
         self.split = False
         self.zebras = False
         self.flash = ""
@@ -173,10 +183,10 @@ class Desk:
         if key == "source":
             self.split = False
             self.zebras = False
-        if self.focus not in ("all", "overview"):
+        if self.focus == "change":
             self.set_focus("overview")
         self.light.reset()
-        self.notice(LOOKS[key])
+        self.notice(picture_title(key))
 
     def stop_follow(self, *, lost=False, keep_point=False):
         was_following = self.following_bird
@@ -194,7 +204,7 @@ class Desk:
     def select_bird(self, x, y, stamp):
         # A click belongs to the displayed observation; a stalled view cannot
         # transfer an old animal selection onto a newer frame.
-        if (self.birds is None or not self.cues_enabled or self.clean or self.bird_paused
+        if (self.birds is None or not self.cues_enabled or self.clean or self.look == "source" or self.bird_paused
                 or self.last_t is None or abs(stamp - self.last_t) > .35
                 or not self.birds.select(x, y)):
             return False
@@ -256,6 +266,9 @@ class Desk:
     def _reset_images(self):
         self.stack.reset()
         self.light.reset()
+        self.landscape.reset()
+        self._base_key = self._base_picture = None
+        self.picture_frame = self.overview_clean_pixels = None
         self.ink.reset()
         if self.birds is not None:
             self.birds.reset()
@@ -350,9 +363,46 @@ class Desk:
         patch=frame[b:b+height,a:a+width]
         return patch, width
 
-    def _sketch(self, canvas, display, rect):
+    def _picture(self, frame, t, paused):
+        """Prepare one full-scene photo for all visible photographic panes."""
+        self.last_warning = ""
+        if self.clean or self.look == "source":
+            return frame
+        # Pausing can replace a live observation with a JPEG replay of the
+        # same timestamp. Repeated redraws of that replay share its cached grade.
+        key = (self.gen, t, paused, frame.shape)
+        if key != self._base_key:
+            if self._base_key is not None and (paused != self._base_key[2] or frame.shape != self._base_key[3]):
+                self.landscape.reset()
+                self.light.reset()
+            self._base_picture = self.landscape.apply(frame, t)
+            self._base_key = key
+        if self.look == "landscape":
+            return self._base_picture
+        result, self.last_warning = self.light.apply(self._base_picture, t, self.look)
+        return result
+
+    @property
+    def active_look(self):
+        if self.picture_frame is None:
+            return None
+        if self.clean or self.look == "source":
+            return "source"
+        return self.light.active if self.look == "auto" else self.look
+
+    def _sketch_tile(self, picture):
+        """Sample the photo beneath the sketch on the same 1080p measurement grid."""
         x, y = self.point
-        raw = display[y-H//2:y+H//2, x-W//2:x+W//2]
+        h, w = picture.shape[:2]
+        left = min(w-1,round((x-W//2)*w/1920))
+        top = min(h-1,round((y-H//2)*h/1080))
+        right = max(left+1, round((x+W//2)*w/1920))
+        bottom = max(top+1, round((y+H//2)*h/1080))
+        tile = picture[top:bottom,left:right]
+        return tile if tile.shape[:2] == (H,W) else cv2.resize(tile, (W,H), interpolation=cv2.INTER_AREA)
+
+    def _sketch(self, canvas, display, rect):
+        raw = self._sketch_tile(display)
         w, h = rect[2:]
         back = cv2.resize((raw * .46).astype(np.uint8), (w, h), interpolation=cv2.INTER_NEAREST)
         current, old = self.current_stroke, self.old_stroke
@@ -420,13 +470,15 @@ class Desk:
             write(canvas, PANE_NAMES[name], x+26, 805, 14, ACCENT if active else FG, active)
             x += width + 2
         x += 5
+        selected_look = "source" if self.clean else self.look
         for key in (*LOOKS, "split", "zebras", "cues"):
             action = "look_" + key if key in LOOKS else key
-            active = ({"split": self.split, "zebras": self.zebras,
-                       "cues": self.cues_enabled}.get(key, key == self.look) and not self.clean)
-            self._button(canvas,action,"",(x,799,32,37),active=active)
-            draw_icon(canvas,key,x+16,817,ACCENT if active else FG)
-            x += 34
+            active = key == selected_look if key in LOOKS else (
+                selected_look != "source" and {"split": self.split, "zebras": self.zebras,
+                                               "cues": self.cues_enabled}[key])
+            self._button(canvas,action,"",(x,799,30,37),active=active)
+            draw_icon(canvas,key,x+15,817,ACCENT if active else FG)
+            x += 32
         x += 5
         options = (
             ("pause", None, 34, has_frame), ("back", None, 32, has_frame),
@@ -460,12 +512,12 @@ class Desk:
                 "best":"Compare live stack, best exposure and verified stack (B)",
                 "capture":"Save source + viewer (P)", "split":"Compare original and adjusted picture",
                 "zebras":"Stripes on clipped source highlights", "cues":"Motion highlights and bird cues"}
-        tips.update({"look_"+name: title for name,title in LOOKS.items()})
+        tips.update({"look_"+name: picture_title(name) for name in LOOKS})
         for i, name in enumerate(PANE_NAMES):
             tips["view_"+name] = f"{PANE_NAMES[name]} ({i})"
         message = (self.flash if time.monotonic() < self.flash_until else tips.get(hovered)) or (
             f"Paused · {abs(age):.1f}s behind" if paused else status)
-        if message and not (self.clean and self.focus == "overview"):
+        if message and not ((self.clean or self.look == "source") and self.focus == "overview"):
             size = label_mask(message, 15, False).shape[1]
             center = (self.buttons[hovered][0] + self.buttons[hovered][2]//2) if hovered else 720
             min_left = WIDTH//2 + 2 if self.focus == "overview" and self.split else 4
@@ -497,31 +549,30 @@ class Desk:
             cv2.polylines(canvas, trace, False, ACCENT, 1, cv2.LINE_AA)
             over_video(canvas, "20 s", x+chart_w+4, baseline-12, 12, ACCENT)
 
-    def _overview(self, canvas, display, rect, t, source=None):
-        put(canvas, rect, display)
-        if self.clean:
-            return canvas
+    def _overview(self, canvas, picture, rect, t, source):
+        put(canvas, rect, picture)
         left,top,width,height = rect
         pixels = canvas[top:top+height,left:left+width]
-        # The adaptive modes cache their last image to make paused redraws
-        # deterministic. Their cache must never alias a canvas we draw on.
-        light_input = pixels if self.look == "source" else pixels.copy()
-        adjusted, self.last_warning = self.light.apply(light_input, t, self.look)
+        original_view = self.clean or self.look == "source"
+        middle = width // 2 if self.split and not original_view else 0
+        if middle:
+            interp = cv2.INTER_AREA if source.shape[1] > width else cv2.INTER_LINEAR
+            pixels[:,:middle] = cv2.resize(source,(width,height),interpolation=interp)[:,:middle]
+        # The Retina presenter uses this logical photo to identify where HUD
+        # pixels overlap the higher-resolution photographic layer.
+        self.overview_clean_pixels = pixels.copy()
+        if original_view:
+            return canvas
         if self.zebras:
             # Find clipped channels on the native grid before downsampling can
             # average away a small bright patch in the operator's overview.
-            original = display if source is None else source
-            mask = cv2.bitwise_not(cv2.inRange(original,(0,0,0),(254,254,254)))
+            mask = cv2.bitwise_not(cv2.inRange(source,(0,0,0),(254,254,254)))
             clipped = cv2.resize(mask,(width,height),interpolation=cv2.INTER_AREA) > 0
             yy,xx = np.ogrid[:height,:width]
             stripes = clipped & ((xx + yy) % 10 < 3)
-        middle = width // 2 if self.split and self.look != "source" else 0
         if middle:
-            pixels[:,middle:] = adjusted[:,middle:]
             cv2.line(pixels,(middle,0),(middle,height-1),FG,1)
-            over_video(pixels,"Original | " + LOOKS[self.look],middle+6,5)
-        else:
-            pixels[:] = adjusted
+            over_video(pixels,"Original | " + picture_title(self.look),middle+6,5)
         if self.zebras:
             pixels[stripes] = (55,170,255)
         if self.cues_enabled:
@@ -551,12 +602,12 @@ class Desk:
         if middle:
             # Retain a truly original comparison, including when the operator
             # enables clipping stripes, motion tint, marked paths or labels.
-            canvas[top:top+height,left:left+middle] = light_input[:,:middle]
+            canvas[top:top+height,left:left+middle] = self.overview_clean_pixels[:,:middle]
         return canvas
 
     def _zoom(self, canvas, rect, raw, fused):
         if not self.stack_enabled:
-            put(canvas, rect, enlarge(raw))
+            put(canvas, rect, raw if self.clean or self.look == "source" else enlarge(raw))
             return
         best = self.show_best and self.stack.best is not None
         candidate = self.stack.best if best else fused
@@ -585,21 +636,28 @@ class Desk:
     def render(self, frame, t, mode="FILE REPLAY", source_name="", generation=1, paused=False,
                age=0, buffer_seconds=0, note=""):
         t = float(t)
-        display, change = self._sample(frame, t, generation, paused)
+        _, change = self._sample(frame, t, generation, paused)
         canvas = np.full((HEIGHT, WIDTH, 3), BG, np.uint8)
         self.buttons.clear()
         multi = self.focus == "all"
         self.overview_rect = None
+        self.overview_clean_pixels = None
+        show_overview = multi or self.focus == "overview"
+        show_zoom = multi or self.focus == "zoom"
+        show_sketch = multi or self.focus == "sketch"
+        needs_picture = show_overview or (self.point is not None and (show_sketch or (show_zoom and not self.stack_enabled)))
+        self.picture_frame = self._picture(frame,t,paused) if needs_picture else None
 
-        if multi or self.focus == "overview":
+        if show_overview:
             stage = OVERVIEW if multi else FOCUS_STAGE
             self.overview_rect = aspect_fit(stage, frame.shape[1], frame.shape[0])
-            canvas = self._overview(canvas, display, self.overview_rect, t, source=frame)
+            canvas = self._overview(canvas, self.picture_frame, self.overview_rect, t, source=frame)
 
-        show_zoom = multi or self.focus == "zoom"
         raw = fused = None
         if self.point and (show_zoom or self.stack_enabled):
-            raw, source_width = self._lens(frame)
+            # HeldStack always receives the decoded crop, including its paired
+            # source and verified exposure. Ordinary zoom uses the chosen look.
+            raw, source_width = self._lens(frame if self.stack_enabled else self.picture_frame)
             if self.stack_enabled:
                 # A hold continues gathering while the operator looks at another pane.
                 fused = self.stack.push(raw, t)
@@ -635,7 +693,7 @@ class Desk:
                         write(canvas, "Zoom", x, top+h+2, 16, FG, True)
                         write(canvas, detail, x+64, top+h+2, 15, SECONDARY)
 
-        if multi or self.focus == "sketch":
+        if show_sketch:
             rect = SKETCH if multi else aspect_fit(FOCUS_STAGE, W, H)
             x, y, w, h = rect
             if self.point is None:
@@ -643,7 +701,7 @@ class Desk:
                 if multi:
                     write(canvas, "Shape sketch", x, y+h+2, 16, FG, True)
             else:
-                self._sketch(canvas, display, rect)
+                self._sketch(canvas, self.picture_frame, rect)
                 if multi:
                     write(canvas, "Shape sketch", x, y+h+2, 16, FG, True)
                     write(canvas, "Current", x+128, y+h+3, 15, ACCENT)

@@ -18,7 +18,8 @@ import torch
 
 from motion_sketch_desk import Desk, WIDTH, HEIGHT, OVERVIEW, in_rect
 from motion_sketch_live import MotionSketchTimeline
-from motion_sketch_window import fit_painted_window
+from motion_sketch_window import display_pixel_size, fit_painted_window
+from motion_sketch_retina import present
 from motion_sketch_birds import BirdWatch
 from motion_sketch_capture import FrameCapture
 
@@ -51,11 +52,16 @@ class Controls:
             if self.desk.focus not in ("all","overview"):
                 self.desk.set_focus("overview")
             self.desk.clean = False
-            if action == "split" and self.desk.look == "source":
-                self.desk.choose_look("auto")
+            if self.desk.look == "source":
+                self.desk.choose_look("landscape")
             setattr(self.desk,action,not getattr(self.desk,action))
         elif action == "cues":
-            self.desk.cues_enabled = not self.desk.cues_enabled
+            if self.desk.clean or self.desk.look == "source":
+                if self.desk.look == "source":
+                    self.desk.choose_look("landscape")
+                self.desk.cues_enabled = True
+            else:
+                self.desk.cues_enabled = not self.desk.cues_enabled
             self.desk.ink.reset()
             self.desk.stop_follow()
             if self.desk.birds is not None:
@@ -177,14 +183,24 @@ def run(args):
     saved = set()
     window_open = False
     window_size = None
+    backing_size = mouse_size = (WIDTH, HEIGHT)
+    measure_window_at = 0.
+
+    def native_mouse(event, x, y, flags, param):
+        # HighGUI delivers positions in the pixel grid of the last imshow image.
+        controls.mouse(event, x * WIDTH // mouse_size[0], y * HEIGHT // mouse_size[1], flags, param)
+
     try:
         cv2.namedWindow(WINDOW, cv2.WINDOW_NORMAL | cv2.WINDOW_KEEPRATIO)
         window_open = True
-        cv2.setMouseCallback(WINDOW, controls.mouse)
+        cv2.setMouseCallback(WINDOW, native_mouse)
         if args.snapshot_dir:
             args.snapshot_dir.mkdir(parents=True, exist_ok=True)
         while args.seconds is None or time.monotonic() - start < args.seconds:
             now = time.monotonic()
+            if window_size is not None and now >= measure_window_at:
+                backing_size = display_pixel_size(WINDOW, WIDTH, HEIGHT)
+                measure_window_at = now + .5
             saved_note = capture.poll()
             if saved_note:
                 desk.notice(saved_note)
@@ -199,6 +215,7 @@ def run(args):
             if snap.frame is None:
                 controls.painted = None
                 canvas = desk.render_waiting(snap.state, source_name, mode="LIVE" if timeline.live else "FILE REPLAY")
+                canvas = present(canvas, desk, None, backing_size)
             else:
                 if first_frame_at is None:
                     first_frame_at = now
@@ -218,10 +235,11 @@ def run(args):
                 canvas = desk.render(snap.frame, snap.source_ts, mode=mode, source_name=source_name,
                                      generation=snap.generation, paused=snap.paused,
                                      age=snap.age_seconds or 0, buffer_seconds=snap.history_seconds)
+                canvas = present(canvas, desk, snap.frame, backing_size)
                 controls.painted = (snap,canvas,{"source":args.source,"source_time":float(snap.source_ts),
                     "clock":"local receive time" if timeline.live else "decoded source PTS",
                     "generation":snap.generation,"paused":snap.paused,"view":desk.focus,
-                    "look":desk.look,"active_look":desk.light.active,"clean_overview":desk.clean,
+                    "look":desk.look,"active_look":desk.active_look,"clean_overview":desk.clean,
                     "split":desk.split,"zebras":desk.zebras,"motion_cues":desk.cues_enabled,
                     "inspection_center_1080":desk.point,"verified_stack_time":desk.stack.verified_best_stamp,
                     "zoom_comparison":"verified stack" if desk.show_verified else "best exposure" if desk.show_best else "live"})
@@ -230,6 +248,7 @@ def run(args):
                     _, action = schedule.popleft()
                     bench_event(controls, action)
                     bench_actions.append({"action": action, "at": round(now - start, 3)})
+            mouse_size = (canvas.shape[1], canvas.shape[0])
             cv2.imshow(WINDOW, canvas)
             if window_size is None:
                 if not controls.key(cv2.waitKeyEx(1)):

@@ -31,6 +31,10 @@ def draw_icon(canvas, key, cx, cy, color):
         rectangle(-9,-7,18,14)
         line([(-8,4),(-3,-1),(1,3),(4,0),(8,4)])
         circle(4,-3,1,True)
+    elif key == "landscape":
+        circle(5,-5,3)
+        line([(-10,5),(-4,-4),(2,4),(5,0),(10,6)])
+        line([(-10,8),(10,8)])
     elif key == "auto":
         line([(-8,7),(-3,-7),(2,7)])
         line([(-6,2),(0,2)])

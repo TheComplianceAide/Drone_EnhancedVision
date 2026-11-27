@@ -9,7 +9,11 @@ For a fresh checkout, install the Python dependencies in the repository's `.venv
 .venv/bin/python _MotionSketch.py --source "/path/to/recording.mp4"
 ```
 
-Select a picture icon for Original, Auto, Clear, Daylight, Haze, Neutral, Night, or Temporal. Hover to see its name. Compare displays the source and adjustment at the same image coordinates. The striped icon marks clipped source highlights. **R** toggles a clean original overview.
+Motion Sketch opens in **All Views** with **Landscape** selected. The mountain icon returns to Landscape at any time. It brings out local contrast and muted colors across the camera image. Overview, the normal zoom and the picture underneath the sketch share the same full-scene adjustment. On the Mac, the viewer draws the overview directly from the camera picture at the window's Retina resolution.
+
+Auto, Clear, Daylight, Haze, Neutral, Night and Temporal each add their effect on top of Landscape. Hover over a picture icon to see its name. Choose **Original** to bypass both layers, or press **R** to toggle a clean original overview and return to your selected look. **Compare** shows the original and the selected treatment at the same coordinates. The striped icon marks clipped highlights in the source.
+
+Motion Map and the sketch strokes measure the decoded camera frames. Hold and stack compares original exposures.
 
 Click the overview to inspect a fixed patch. Drag to mark a route. Click a visible bird ring to follow current observations. A lost sighting clears the zoom and breaks the route. Bright reflections or a camera pan can also cause pixel changes on the Motion Map. Bird recognition can miss small flocks.
 
