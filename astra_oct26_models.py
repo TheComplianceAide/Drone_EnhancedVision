@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from pathlib import Path
 import sys
 import time
@@ -28,6 +29,7 @@ def sha256(path):
 
 def activate_cache(cache=DEFAULT_CACHE):
     cache = Path(cache).expanduser().resolve()
+    os.environ["YOLO_OFFLINE"] = "true"
     # Explicit local sources only; no torch.hub or implicit network fetch.
     for rel in ("pydeps", "tsrn/src", "tapnet", "edgetam", "xfeat"):
         path = str(cache / rel)

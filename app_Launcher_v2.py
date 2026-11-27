@@ -260,6 +260,8 @@ class App:
         self.master.protocol("WM_DELETE_WINDOW", self.on_exit)
 
     def _script_label(self, script: str) -> str:
+        if script == "_MotionSketch.py":
+            return "Astra Motion Sketch"
         if script == "_AstraOct26.py":
             return "AstraOct26"
         mapping = {
@@ -770,6 +772,12 @@ class App:
 
         all_scripts = [s for s in sorted(os.listdir(self.path)) if s.startswith("_") and s.endswith(".py")]
         featured = [
+            (
+                "_MotionSketch.py",
+                "◴",
+                "Astra Motion Sketch",
+                "Motion Map, bird trails + picture modes",
+            ),
             (
                 "_AstraOct26.py",
                 "A26",

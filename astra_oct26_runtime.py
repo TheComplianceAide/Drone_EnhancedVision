@@ -45,7 +45,11 @@ class AstraLiveSource:
             cap=None
             try:
                 with self.lock:self.status='connecting';self.stats['open_attempts']+=1
-                cap=open_latest_capture(self.url,cv2.CAP_FFMPEG,params)
+                # Native DJI feed needs enough probe data to initialize H.264.
+                # Keep latest-frame delivery and bounded I/O, but do not discard
+                # startup pictures with the shared 32-byte/nobuffer preset.
+                cap=open_latest_capture(self.url,cv2.CAP_FFMPEG,params,
+                    stream_options="fflags;discardcorrupt|flags;low_delay|probesize;1048576|analyzeduration;1000000|rw_timeout;5000000")
                 if not cap.isOpened():
                     with self.lock:self.status='waiting for video';self.stats['open_failures']+=1
                     self.stop.wait(.35);continue
@@ -54,8 +58,12 @@ class AstraLiveSource:
                     ok,frame=cap.read()
                     if not ok or frame is None:
                         with self.lock:self.stats['failed_reads']+=1
-                        # A timed-out protocol read is not reliably resumable.
-                        # Release before opening the next single consumer.
+                        # DJI can supply a non-picture H.264 packet. Let the
+                        # existing decoder recover rather than reopening at
+                        # every transient miss (which discards keyframe state).
+                        if time.monotonic()-last_good < 2.5:
+                            self.stop.wait(.01)
+                            continue
                         with self.lock:self.status='reconnecting';self.stats['reconnects']+=1
                         break
                     last_good=time.monotonic()

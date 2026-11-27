@@ -116,3 +116,102 @@ class InspectionView:
                          (status, (10, height - 8))):
             cv2.putText(out, text, xy, cv2.FONT_HERSHEY_SIMPLEX, .48, (220, 220, 220), 1, cv2.LINE_AA)
         return out
+
+
+class FieldTone:
+    """Smooth, monotonic, hue-preserving contrast and shadow display curve.
+
+    A single intensity curve avoids skyline halos and local tile boundaries.
+    Only the curve parameters have temporal state; every output pixel comes
+    from the current raw frame. Bright and clipped source observations stay
+    protected. This is visibility adjustment, never reconstruction.
+    """
+    def __init__(self):
+        self.levels = None
+        self.ts = None
+        self.lut = np.arange(256,dtype=np.uint8)
+        self.metadata = {}
+
+    def reset(self):
+        self.levels = None
+        self.ts = None
+
+    def process(self, raw, ts):
+        if raw.dtype != np.uint8 or raw.ndim != 3 or raw.shape[2] != 3:
+            raise ValueError('field display requires uint8 BGR')
+        started=time.perf_counter()
+        b,g,r=cv2.split(raw)
+        peak=cv2.max(cv2.max(b,g),r)
+        # Bounded analysis samples determine a global tone curve, not detail.
+        sample=peak[::max(1,peak.shape[0]//180),::max(1,peak.shape[1]//320)]
+        levels=np.percentile(sample,[2,10,50,98]).astype(float)
+        gap=self.ts is None or not 0<float(ts)-self.ts<=.5
+        cut=self.levels is not None and abs(levels[2]-self.levels[2])>45
+        if self.levels is None or gap or cut:self.levels=levels
+        else:
+            alpha=1.-np.exp(-(float(ts)-self.ts)/.7)
+            self.levels+=alpha*(levels-self.levels)
+        self.ts=float(ts)
+        low,shadow,median,high=self.levels
+        x=np.arange(256,dtype=float)
+        # Open shadows only when the source contains a substantial dark area.
+        gain=float(np.clip(42./max(14.,shadow),1.,2.7))
+        rational=x*gain/(1.+(gain-1.)*x/255.)
+        shoulder=np.clip((160.-x)/100.,0.,1.)
+        shoulder=shoulder*shoulder*(3.-2.*shoulder)
+        lifted=x+(rational-x)*shoulder
+        # Compressed daylight gets a gentle black/white expansion. Avoid
+        # expanding already broad dusk contrast or the near-black noise floor.
+        expansion=float(np.clip((155.-(high-low))/100.,0.,1.)) if median>=65 else 0.
+        lo=float(np.clip(low,24,180));hi=float(np.clip(high,max(lo+24,150),246))
+        stretch=np.interp(x,[0,lo,hi,255],[0,max(1,lo-18*expansion),min(252,hi+18*expansion),255])
+        # Daylight black-point expansion must not dim a small dark subject.
+        # Preserve its low codes; reserve expansion for the compressed field.
+        day_gate=np.clip((x-72.)/72.,0.,1.)
+        day_gate=day_gate*day_gate*(3.-2.*day_gate)
+        curve=lifted+(stretch-x)*day_gate*(1.-np.clip((gain-1.)/1.7,0,1))
+        # Keep black, saturated highlights, and the highlight shoulder honest.
+        preserve=np.clip((x-220.)/30.,0.,1.);preserve=preserve*preserve*(3.-2.*preserve)
+        curve=curve*(1.-preserve)+x*preserve
+        curve=np.maximum.accumulate(np.clip(curve,0,255))
+        curve[0]=0;curve[250:]=x[250:]
+        self.lut=np.rint(curve).astype(np.uint8)
+        # Native OpenCV lookup/multiply avoids three large indexed temporaries.
+        factor=(self.lut.astype(np.float32)/np.maximum(np.arange(256),1)).astype(np.float32)
+        scale=cv2.LUT(peak,factor)
+        result=cv2.merge([cv2.multiply(c,scale,dtype=cv2.CV_8U) for c in (b,g,r)])
+        self.metadata={'shadow_gain_ceiling':gain,'contrast_expansion':expansion,
+                       'levels_peak':self.levels.tolist(),'curve':self.lut.tolist(),
+                       'processing_ms':(time.perf_counter()-started)*1000,
+                       'current_raw_only':True,'scene_reset':bool(gap or cut)}
+        return result,self.metadata
+
+
+class LightPolicy:
+    """Source-time hysteresis; no mode oscillation from repeated GUI renders."""
+    def __init__(self):self.reset()
+
+    def reset(self):
+        self.night=False;self.pending=None;self.since=None;self.last=None;self.stats={}
+
+    def observe(self, raw, pts):
+        if self.last is not None and pts==self.last:return self.night
+        if self.last is not None and not 0<pts-self.last<=.5:self.reset()
+        sample=raw[::max(1,raw.shape[0]//90),::max(1,raw.shape[1]//160)]
+        gray=cv2.cvtColor(sample,cv2.COLOR_BGR2GRAY)
+        median=float(np.median(gray));shadow=float(np.mean(gray<32))
+        desired=(median<42 and shadow>.40) if not self.night else not (median>60 or shadow<.25)
+        if self.last is None:self.night=desired
+        elif desired!=self.night:
+            if self.pending!=desired:self.pending=desired;self.since=pts
+            if pts-self.since>=.8:self.night=desired;self.pending=None
+        else:self.pending=None
+        self.last=pts;self.stats=dict(median=median,shadow_fraction=shadow,night=self.night)
+        return self.night
+
+
+def overlap(a, b):
+    x1,y1 = max(a[0],b[0]), max(a[1],b[1])
+    x2,y2 = min(a[2],b[2]), min(a[3],b[3])
+    intersection = max(0,x2-x1)*max(0,y2-y1)
+    return intersection/max(1.,(a[2]-a[0])*(a[3]-a[1])+(b[2]-b[0])*(b[3]-b[1])-intersection)

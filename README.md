@@ -1,5 +1,7 @@
 # Drone Enhanced Vision (Mavic 3 RTMP Toolkit)
 
+**Astra Motion Sketch** is available in the launcher for the Mac RTMP feed and recorded-file review. [Picture modes, zoom and controls](MOTION_SKETCH.md)
+
 Apple-Silicon-first, RTMP toolkit for viewing, recording, enhancing, and evaluating a DJI Mavic 3 live feed. The current field path is the macOS launcher plus GPU-required Motion ISR Rev3, ImageScout Rev3, SuperRes Rev4, and NightVision Max Rev3; older Windows/Surface viewers remain available as legacy tools.
 
 The current flow is:

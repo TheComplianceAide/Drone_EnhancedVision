@@ -1,7 +1,7 @@
 #!/bin/zsh
 set -euo pipefail
 
-APP_DIR="/Users/randyblasik/Documents/Drone_EnhancedVision"
+APP_DIR="${0:A:h}"
 PYTHON_VENV="${APP_DIR}/.venv/bin/python"
 LAUNCHER_SCRIPT="app_Launcher_v2.py"
 LAUNCHER_MARKER="[a]pp_Launcher_v2.py"

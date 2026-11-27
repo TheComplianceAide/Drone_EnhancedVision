@@ -24,7 +24,7 @@ _OPEN_LOCK = threading.Lock()
 _STREAM_OPTIONS = "fflags;nobuffer|flags;low_delay|probesize;32|analyzeduration;0|rw_timeout;5000000"
 
 
-def open_latest_capture(url, api, params):
+def open_latest_capture(url, api, params, *, stream_options=None):
     """Apply bounded live probing only while opening a network source.
 
     FFmpeg consumes this environment option during open; restore it so later
@@ -34,7 +34,7 @@ def open_latest_capture(url, api, params):
     with _OPEN_LOCK:
         previous = os.environ.get("OPENCV_FFMPEG_CAPTURE_OPTIONS")
         if is_stream and previous is None:
-            os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = _STREAM_OPTIONS
+            os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = _STREAM_OPTIONS if stream_options is None else stream_options
         try:
             return cv2.VideoCapture(url, api, params) if params else cv2.VideoCapture(url, api)
         finally:

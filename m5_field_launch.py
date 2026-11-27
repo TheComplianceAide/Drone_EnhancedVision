@@ -8,7 +8,7 @@ GPU_RECONSTRUCTION = ('_11_M5_Fable_SuperRes_Rev4.py', '_12_M5_NightVision_Max_R
 
 
 def mission_arguments(script):
-    if script in (MOTION, ASTRA_OCT26):
+    if script in (MOTION, ASTRA_OCT26, '_MotionSketch.py'):
         return ['--device', 'mps', '--require-mps']
     if script in GPU_RECONSTRUCTION:
         return ['--quality-device', 'mps', '--require-mps']
