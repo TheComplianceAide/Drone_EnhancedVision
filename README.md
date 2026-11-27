@@ -1,5 +1,7 @@
 # Drone Enhanced Vision (Mavic 3 RTMP Toolkit)
 
+**Flying with Astra Motion Sketch?** Download the Mac launcher and viewer from the [latest field release](https://github.com/TheComplianceAide/Drone_EnhancedVision/releases/latest). Open **Start_DroneVision_Ops.command** for the Landscape + Shallows view.
+
 Modernized, RTMP‑first toolkit for viewing and enhancing a DJI Mavic 3 live feed on Windows (tested on Surface Pro 8). Includes a touch‑friendly launcher, multiple viewing/enhancement pipelines, and object/motion detection examples.
 
 The current flow is:
