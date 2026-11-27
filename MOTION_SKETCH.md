@@ -9,9 +9,11 @@ For a fresh checkout, install the Python dependencies in the repository's `.venv
 .venv/bin/python _MotionSketch.py --source "/path/to/recording.mp4"
 ```
 
-On a Mac with Metal, Motion Sketch opens in **All Views** with **Landscape + Shallows** selected. The wave icon reduces the green cast in shallow water where the scene supports it. The cloud icon selects **Sky Detail** to separate cloud bands at sunset. The mountain icon selects **Landscape** alone. CPU playback starts in Landscape. The overview, normal zoom and image underneath the sketch share the selected look. The Mac draws the overview at the window’s Retina resolution.
+On a Mac with Metal, Motion Sketch opens in **All Views** with **Landscape + Shallows** selected. The wave icon reduces the green cast in shallow water where the scene supports it. The cloud icon selects **Sky Detail** to separate cloud bands at sunset. The mountain icon selects the **Landscape** base. CPU playback starts in Landscape. The overview, normal zoom and image underneath the sketch share the selected look. The Mac draws the overview at the window’s Retina resolution.
 
-**Compare** shows Landscape beside Shallows or Sky Detail. For Auto, Clear, Daylight, Haze, Neutral, Night and Temporal it shows the camera source beside the selected look. **Original** shows the camera picture. Press **R** for a clean original overview, then press it again to return. The striped icon marks clipped highlights in the source.
+On the Mac GPU, Landscape also cleans up colored speckles in dim foliage and gently reduces excess blue-purple color in cool shadows when the scene looks like dusk. Both effects run automatically beneath the selected picture mode. The normal zoom and the photograph behind the sketch use that same picture. Press **R** to compare a shaded ridge with the camera recording.
+
+**Compare** shows the shared Landscape base beside Shallows or Sky Detail. For Auto, Clear, Daylight, Haze, Neutral, Night and Temporal it shows the camera source beside the selected look. **Original** shows the camera picture. Press **R** for a clean original overview, then press it again to return. The striped icon marks clipped highlights in the source.
 
 Motion Map and the sketch strokes measure the decoded camera frames. Hold and stack compares original exposures.
 

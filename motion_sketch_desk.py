@@ -16,6 +16,7 @@ from motion_sketch_stack import HeldStack
 from motion_sketch_cues import ChangeInk
 from motion_sketch_light import OverviewLight
 from motion_sketch_landscape import LandscapeGrade
+from motion_sketch_dusk_picture import DuskPicture
 from motion_sketch_sky import SkyDetail
 from motion_sketch_waterlight import ShallowsLook
 from motion_sketch_icons import draw_icon
@@ -159,6 +160,7 @@ class Desk:
         self.ink = ChangeInk()
         self.cues_enabled = True
         self.light = OverviewLight(device=self.device)
+        self.dusk_picture = DuskPicture() if self.device == "mps" else None
         self._base_key = None
         self._base_picture = None
         self.look = "shallows" if self.device == "mps" else "landscape"
@@ -279,6 +281,8 @@ class Desk:
         self.stack.reset()
         self.light.reset()
         self.landscape.reset()
+        if self.dusk_picture is not None:
+            self.dusk_picture.reset()
         if self._finish is not None:
             self._finish.reset()
         self._finish_key = self._finished_picture = None
@@ -389,10 +393,14 @@ class Desk:
         if key != self._base_key:
             if self._base_key is not None and (paused != self._base_key[2] or frame.shape != self._base_key[3]):
                 self.landscape.reset()
+                if self.dusk_picture is not None:
+                    self.dusk_picture.reset()
                 self.light.reset()
                 if self._finish is not None:
                     self._finish.reset()
             self._base_picture = self.landscape.apply(frame, t)
+            if self.dusk_picture is not None:
+                self._base_picture = self.dusk_picture.apply(frame, self._base_picture, t)
             self._base_key = key
         if self.look == "landscape":
             return self._base_picture
