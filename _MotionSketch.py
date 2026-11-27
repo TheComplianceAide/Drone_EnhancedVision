@@ -164,6 +164,10 @@ def run(args):
     timeline = MotionSketchTimeline(args.source)
     birds = BirdWatch(device)
     desk = Desk(device, args.trail_seconds, birds=birds)
+    if getattr(args, "compare_look", None):
+        desk.choose_look(args.compare_look)
+        desk.set_focus("overview")
+        desk.split = True
     capture = FrameCapture(args.captures)
     controls = Controls(timeline, desk, capture)
     start = time.monotonic()
@@ -240,7 +244,8 @@ def run(args):
                     "clock":"local receive time" if timeline.live else "decoded source PTS",
                     "generation":snap.generation,"paused":snap.paused,"view":desk.focus,
                     "look":desk.look,"active_look":desk.active_look,"clean_overview":desk.clean,
-                    "split":desk.split,"zebras":desk.zebras,"motion_cues":desk.cues_enabled,
+                    "split":desk.split,"split_reference":("Landscape" if desk.look in ("sky","shallows") else "Original"),
+                    "zebras":desk.zebras,"motion_cues":desk.cues_enabled,
                     "inspection_center_1080":desk.point,"verified_stack_time":desk.stack.verified_best_stamp,
                     "zoom_comparison":"verified stack" if desk.show_verified else "best exposure" if desk.show_best else "live"})
                 render_ms.append((time.perf_counter() - before) * 1000)
@@ -291,6 +296,8 @@ def main():
     parser.add_argument("--source", default=DEFAULT_RELAY, help="local video path or loopback RTMP URL")
     parser.add_argument("--device", choices=("cpu", "mps"))
     parser.add_argument("--require-mps", action="store_true")
+    parser.add_argument("--compare-look", choices=("sky", "shallows"),
+                        help="open Overview comparing Landscape with Sky Detail or Shallows")
     parser.add_argument("--trail-seconds", type=int, choices=(10, 20, 30), default=20)
     parser.add_argument("--seconds", type=float, help="close the window after this many wall seconds")
     parser.add_argument("--receipt", type=Path)
@@ -299,6 +306,8 @@ def main():
                         help="directory for operator-saved original and displayed frame pairs")
     parser.add_argument("--bench", action="store_true", help="exercise mouse controls on a timed rehearsal")
     args = parser.parse_args()
+    if args.compare_look and (args.device == "cpu" or not torch.backends.mps.is_available()):
+        parser.error("--compare-look requires Apple Metal")
     if args.seconds is not None and args.seconds <= 0:
         parser.error("--seconds must be positive")
     run(args)

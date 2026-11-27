@@ -101,7 +101,7 @@ def present(canvas, desk, source, size):
         if desk.split and not desk.clean and desk.look != "source":
             # The two halves use identical pixel centers; split after scaling.
             middle = round((overview[2]//2)*extent[0]/overview[2])
-            raw_left = _resample(source,extent,desk.device)[:,:middle]
+            raw_left = _resample(desk.comparison_picture(source),extent,desk.device)[:,:middle]
         _underlay(canvas,overview,desk.overview_clean_pixels,dst,redraw)
         if raw_left is not None:
             dst[:,:raw_left.shape[1]] = raw_left

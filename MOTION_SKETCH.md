@@ -9,9 +9,9 @@ For a fresh checkout, install the Python dependencies in the repository's `.venv
 .venv/bin/python _MotionSketch.py --source "/path/to/recording.mp4"
 ```
 
-Motion Sketch opens in **All Views** with **Landscape** selected. The mountain icon returns to Landscape at any time. It brings out local contrast and muted colors across the camera image. Overview, the normal zoom and the picture underneath the sketch share the same full-scene adjustment. On the Mac, the viewer draws the overview directly from the camera picture at the window's Retina resolution.
+On a Mac with Metal, Motion Sketch opens in **All Views** with **Landscape + Shallows** selected. The wave icon reduces the green cast in shallow water where the scene supports it. The cloud icon selects **Sky Detail** to separate cloud bands at sunset. The mountain icon selects **Landscape** alone. CPU playback starts in Landscape. The overview, normal zoom and image underneath the sketch share the selected look. The Mac draws the overview at the window’s Retina resolution.
 
-Auto, Clear, Daylight, Haze, Neutral, Night and Temporal each add their effect on top of Landscape. Hover over a picture icon to see its name. Choose **Original** to bypass both layers, or press **R** to toggle a clean original overview and return to your selected look. **Compare** shows the original and the selected treatment at the same coordinates. The striped icon marks clipped highlights in the source.
+**Compare** shows Landscape beside Shallows or Sky Detail. For Auto, Clear, Daylight, Haze, Neutral, Night and Temporal it shows the camera source beside the selected look. **Original** shows the camera picture. Press **R** for a clean original overview, then press it again to return. The striped icon marks clipped highlights in the source.
 
 Motion Map and the sketch strokes measure the decoded camera frames. Hold and stack compares original exposures.
 

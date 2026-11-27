@@ -16,6 +16,8 @@ from motion_sketch_stack import HeldStack
 from motion_sketch_cues import ChangeInk
 from motion_sketch_light import OverviewLight
 from motion_sketch_landscape import LandscapeGrade
+from motion_sketch_sky import SkyDetail
+from motion_sketch_waterlight import ShallowsLook
 from motion_sketch_icons import draw_icon
 
 WIDTH, HEIGHT = 1440, 840
@@ -26,7 +28,9 @@ CHANGE = (235, 531, 466, 262)
 FOCUS_STAGE = (0, 0, 1440, 794)
 PANE_NAMES = {"all": "All views", "overview": "Overview", "zoom": "Zoom",
               "sketch": "Sketch", "change": "Motion Map"}
-LOOKS = {"landscape": "Landscape", "source": "Original", "auto": "Auto clear / night", "clear": "Clear",
+PICTURE_FINISHES = {"sky": SkyDetail, "shallows": ShallowsLook}
+LOOKS = {"landscape": "Landscape", "sky": "Sky Detail", "shallows": "Shallows",
+         "source": "Original", "auto": "Auto clear / night", "clear": "Clear",
          "daylight": "Daylight", "haze": "Haze", "neutral": "Neutral",
          "dusk": "Night", "temporal": "Temporal denoise"}
 
@@ -118,7 +122,8 @@ def fit_text(value, max_width, size, bold=False):
 class Desk:
     """Full-field change display and an explicitly selected source-pixel inspection lens."""
     def __init__(self,device="mps",trail_seconds=20, birds=None):
-        self.device=device
+        self.landscape = LandscapeGrade(device=device)
+        self.device = self.landscape.device
         self.trail=Trail(keep_seconds=trail_seconds,max_gap_seconds=.55)
         self.times=deque(maxlen=4)
         self.previous=deque(maxlen=4)
@@ -153,13 +158,15 @@ class Desk:
         self.bird_paused = False
         self.ink = ChangeInk()
         self.cues_enabled = True
-        self.light = OverviewLight(device=device)
-        self.landscape = LandscapeGrade(device=device)
+        self.light = OverviewLight(device=self.device)
         self._base_key = None
         self._base_picture = None
+        self.look = "shallows" if self.device == "mps" else "landscape"
+        self._finish = PICTURE_FINISHES[self.look]() if self.look in PICTURE_FINISHES else None
+        self._finish_key = None
+        self._finished_picture = None
         self.picture_frame = None
         self.overview_clean_pixels = None
-        self.look = "landscape"
         self.split = False
         self.zebras = False
         self.flash = ""
@@ -178,6 +185,11 @@ class Desk:
     def choose_look(self, key):
         if key not in LOOKS:
             raise ValueError(f"Unknown picture mode: {key}")
+        if key in PICTURE_FINISHES and self.device != "mps":
+            self.notice(f"{LOOKS[key]} requires Apple Metal")
+            return
+        self._finish = PICTURE_FINISHES[key]() if key in PICTURE_FINISHES else None
+        self._finish_key = self._finished_picture = None
         self.look = key
         self.clean = False
         if key == "source":
@@ -267,6 +279,9 @@ class Desk:
         self.stack.reset()
         self.light.reset()
         self.landscape.reset()
+        if self._finish is not None:
+            self._finish.reset()
+        self._finish_key = self._finished_picture = None
         self._base_key = self._base_picture = None
         self.picture_frame = self.overview_clean_pixels = None
         self.ink.reset()
@@ -375,12 +390,22 @@ class Desk:
             if self._base_key is not None and (paused != self._base_key[2] or frame.shape != self._base_key[3]):
                 self.landscape.reset()
                 self.light.reset()
+                if self._finish is not None:
+                    self._finish.reset()
             self._base_picture = self.landscape.apply(frame, t)
             self._base_key = key
         if self.look == "landscape":
             return self._base_picture
+        if self._finish is not None:
+            if self._finish_key != key:
+                self._finished_picture = self._finish.apply(self._base_picture, t)
+                self._finish_key = key
+            return self._finished_picture
         result, self.last_warning = self.light.apply(self._base_picture, t, self.look)
         return result
+
+    def comparison_picture(self, source):
+        return self._base_picture if self.look in PICTURE_FINISHES else source
 
     @property
     def active_look(self):
@@ -476,9 +501,10 @@ class Desk:
             active = key == selected_look if key in LOOKS else (
                 selected_look != "source" and {"split": self.split, "zebras": self.zebras,
                                                "cues": self.cues_enabled}[key])
-            self._button(canvas,action,"",(x,799,30,37),active=active)
-            draw_icon(canvas,key,x+15,817,ACCENT if active else FG)
-            x += 32
+            enabled = key not in PICTURE_FINISHES or self.device == "mps"
+            self._button(canvas,action,"",(x,799,26,37),active=active,enabled=enabled)
+            draw_icon(canvas,key,x+13,817,ACCENT if active else FG if enabled else SECONDARY)
+            x += 28
         x += 5
         options = (
             ("pause", None, 34, has_frame), ("back", None, 32, has_frame),
@@ -510,7 +536,9 @@ class Desk:
                 "zoom":"Change zoom (Z)", "trail":"Change trail length (T)",
                 "stack":"End hold (S)" if self.stack_enabled else "Hold this crop (S)",
                 "best":"Compare live stack, best exposure and verified stack (B)",
-                "capture":"Save source + viewer (P)", "split":"Compare original and adjusted picture",
+                "capture":"Save source + viewer (P)",
+                "split":"Compare Landscape and " + LOOKS[self.look] if self.look in PICTURE_FINISHES
+                        else "Compare original and adjusted picture",
                 "zebras":"Stripes on clipped source highlights", "cues":"Motion highlights and bird cues"}
         tips.update({"look_"+name: picture_title(name) for name in LOOKS})
         for i, name in enumerate(PANE_NAMES):
@@ -556,8 +584,9 @@ class Desk:
         original_view = self.clean or self.look == "source"
         middle = width // 2 if self.split and not original_view else 0
         if middle:
-            interp = cv2.INTER_AREA if source.shape[1] > width else cv2.INTER_LINEAR
-            pixels[:,:middle] = cv2.resize(source,(width,height),interpolation=interp)[:,:middle]
+            comparison = self.comparison_picture(source)
+            interp = cv2.INTER_AREA if comparison.shape[1] > width else cv2.INTER_LINEAR
+            pixels[:,:middle] = cv2.resize(comparison,(width,height),interpolation=interp)[:,:middle]
         # The Retina presenter uses this logical photo to identify where HUD
         # pixels overlap the higher-resolution photographic layer.
         self.overview_clean_pixels = pixels.copy()
@@ -572,7 +601,9 @@ class Desk:
             stripes = clipped & ((xx + yy) % 10 < 3)
         if middle:
             cv2.line(pixels,(middle,0),(middle,height-1),FG,1)
-            over_video(pixels,"Original | " + picture_title(self.look),middle+6,5)
+            caption = ("Landscape | " + LOOKS[self.look] if self.look in PICTURE_FINISHES
+                       else "Original | " + picture_title(self.look))
+            over_video(pixels,caption,middle+6,5)
         if self.zebras:
             pixels[stripes] = (55,170,255)
         if self.cues_enabled:

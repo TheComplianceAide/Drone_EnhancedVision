@@ -776,7 +776,7 @@ class App:
                 "_MotionSketch.py",
                 "◴",
                 "Astra Motion Sketch",
-                "Motion Map, bird trails + picture modes",
+                "Landscape + Shallows, Sky Detail",
             ),
             (
                 "_AstraOct26.py",
@@ -929,7 +929,8 @@ class App:
             return upgraded
         if saved and os.path.exists(os.path.join(self.path, saved)):
             return saved
-        # Owner-selected GPU suite default; preserve an explicit saved selection.
+        if os.path.isfile(os.path.join(self.path, "_MotionSketch.py")):
+            return "_MotionSketch.py"
         if os.path.exists(os.path.join(self.path, "_09_M5_Fable_MotionISR_Rev3.py")):
             return "_09_M5_Fable_MotionISR_Rev3.py"
         # Legacy fallbacks for incomplete checkouts.
