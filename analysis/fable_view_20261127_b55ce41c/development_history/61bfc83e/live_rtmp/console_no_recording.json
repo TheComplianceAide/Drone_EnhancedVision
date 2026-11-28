@@ -1,0 +1,105 @@
+[tcp @ 0xae1baf340] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0xae1baf2a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:2@26.682] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0xae1baf340] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0xae1baf2a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:2@27.042] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0xae1baf340] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0xae1baf2a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:2@27.395] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0xae1baf340] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0xae1baf2a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:2@27.751] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0xae1baf340] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0xae1baf2a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:2@28.104] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0xae1baf340] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0xae1baf2a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:2@28.460] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0xae1baf340] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0xae1baf2a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:2@28.812] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0xae1baf340] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0xae1baf2a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:2@29.170] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0xae1baf340] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0xae1baf2a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:2@29.523] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0xae1baf340] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0xae1baf2a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:2@29.883] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0xae1baf340] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0xae1baf2a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:2@30.242] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0xae1baf340] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0xae1baf2a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:2@30.599] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+{
+  "app": "Fable View",
+  "source": "rtmp://127.0.0.1:1935/live/mavic3",
+  "live": true,
+  "clock": "local receive time",
+  "device": "mps",
+  "frames_processed": 419,
+  "wall_seconds": 30.14,
+  "source_seconds": 22.921,
+  "frame_ms": {
+    "p50": 57.68,
+    "p95": 70.88,
+    "max": 154.07
+  },
+  "stage_ms_recent": {
+    "register": 5.44,
+    "upload+warp": 3.58,
+    "accumulate": 12.47,
+    "detect": 17.16,
+    "render": 5.67,
+    "tone": 2.38,
+    "download": 8.76,
+    "zoom": 0.76,
+    "total": 56.49
+  },
+  "replay_frames_skipped": 0,
+  "capture_stats": {
+    "open_attempts": 13,
+    "decoded": 720,
+    "delivered": 419,
+    "failed_reads": 196,
+    "reconnects": 1,
+    "open_failures": 12
+  },
+  "canvas_rekeys": 5,
+  "tracks_confirmed_total": 13,
+  "cues_started_total": 1566,
+  "night_last": {
+    "sigma_px": 0.00871,
+    "kappa": 0.58762,
+    "n_cap": 32.0,
+    "n_mean": 31.58598,
+    "changed": 0.00411,
+    "exposure_gain": 8.99724,
+    "night_level": 1.0,
+    "black": 0.04745,
+    "median": 0.09904,
+    "photometric_gain": 1.00509
+  },
+  "saved": [],
+  "save_error": null,
+  "history_records": 42,
+  "history_dropped": 0,
+  "source_closed": true,
+  "actions": [
+    "follow",
+    "compare",
+    "drawer_next",
+    "compare",
+    "drawer_inspect",
+    "drawer_inspect",
+    "drawer_raw",
+    "drawer_raw",
+    "compare",
+    "follow",
+    "follow"
+  ],
+  "governor_note": ""
+}

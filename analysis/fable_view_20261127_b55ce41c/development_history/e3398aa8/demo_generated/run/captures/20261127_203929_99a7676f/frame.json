@@ -1,0 +1,61 @@
+{
+  "app": "Fable View",
+  "source": "/tmp/fable_view_fixture/fable_view_generated_rehearsal.mp4",
+  "clock": "decoded source PTS",
+  "source_time": 23.0,
+  "frame_index": 690,
+  "device": "mps",
+  "night_mode": "auto",
+  "look": "natural",
+  "raw_view": false,
+  "registration": {
+    "ok": true,
+    "model": "similarity",
+    "inliers": 399,
+    "tracked": 426,
+    "rms_px": 0.934
+  },
+  "night": {
+    "sigma_px": 0.02869,
+    "kappa": 0.23928,
+    "n_cap": 21.91937,
+    "n_mean": 21.87163,
+    "changed": 0.00098,
+    "exposure_gain": 3.21177,
+    "night_level": 1.0,
+    "black": 0.05065,
+    "median": 0.10266,
+    "photometric_gain": 1.0
+  },
+  "tracks": [
+    {
+      "id": 13,
+      "x": 1058.8,
+      "y": 900.3,
+      "w": 8.0,
+      "h": 8.0,
+      "speed_px_s": 41.5,
+      "score": 1.28,
+      "coasting": false,
+      "followed": false
+    },
+    {
+      "id": 14,
+      "x": 1317.5,
+      "y": 420.9,
+      "w": 8.0,
+      "h": 8.0,
+      "speed_px_s": 92.4,
+      "score": 1.16,
+      "coasting": false,
+      "followed": false
+    }
+  ],
+  "zoom": null,
+  "statement": "source.png is the decoded frame, unmodified. processed.png is a weighted mean of registered source frames with a monotonic exposure curve. zoom_stack.png is a multi-frame mean of the window with bounded deconvolution; zoom_frame.png is the same window from this frame alone. Tracks are image detections of unknown identity.",
+  "sha256": {
+    "source.png": "b9a942d65f6500520bcfebca8ae81bc23ae66e6fb114af326f6baa16db7101f3",
+    "processed.png": "a2e778e8eef55c3e19cfcbff6cef3acf180223d584ff3be84dd094d8273cb99e",
+    "view.png": "ce9f3e38e580bf50a6f168a7cc59a3a2e15b722ae480a9c25774cd420bd80a1f"
+  }
+}

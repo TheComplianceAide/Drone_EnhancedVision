@@ -1,0 +1,9 @@
+20:41  up 29 days, 13:22, 2 users, load averages: 4.81 5.44 6.34
+ %CPU COMM
+110.9 /Users/randy/Library/Caches/ms-playwright/chromium_headless_shell-1193/chrome-mac/headless_shell
+100.0 /Users/randy/Library/Caches/ms-playwright/chromium_headless_shell-1193/chrome-mac/headless_shell
+ 25.5 node
+  7.3 /Applications/Microsoft Defender.app/Contents/MacOS/wdavdaemon_unprivileged.app/Contents/MacOS/wdavdaemon_unprivileged
+  6.4 /Applications/Microsoft Defender.app/Contents/MacOS/wdavdaemon
+  5.1 /Applications/Microsoft Teams.app/Contents/Helpers/Microsoft Teams WebView.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/154.0.4258.62/Helpers/Microsoft Teams WebView Helper (Renderer).app/Contents/MacOS/Microsoft Teams WebView Helper (Renderer)
+  3.3 /Applications/Microsoft Defender.app/Contents/MacOS/wdavdaemon_enterprise.app/Contents/MacOS/wdavdaemon_enterprise

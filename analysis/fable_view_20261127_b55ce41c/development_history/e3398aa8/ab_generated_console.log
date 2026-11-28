@@ -1,0 +1,8 @@
+procedural_hover night {"unprocessed": 25.66, "night_preview": 25.83, "temporal_quality_8": 34.89, "fable_view": 38.01}
+procedural_hover motion_faint {"fable_view": [5, 0], "rev3_search": [1, 0], "rev3_small_game": [4, 0]}
+procedural_hover motion {"fable_view": [6, 0], "rev3_search": [5, 0], "rev3_small_game": [6, 0]}
+procedural_pan night {"unprocessed": 25.67, "night_preview": 25.84, "temporal_quality_8": 34.79, "fable_view": 38.05}
+procedural_pan motion_faint {"fable_view": [5, 0], "rev3_search": [1, 1], "rev3_small_game": [4, 2]}
+procedural_pan motion {"fable_view": [6, 0], "rev3_search": [5, 0], "rev3_small_game": [6, 3]}
+zoom {"hover": {"astra_oct26_nearest": 27.39, "motion_sketch_enlarge": 29.67, "one_frame_bicubic": 29.17, "fable_view_stack": 31.5}, "pan": {"astra_oct26_nearest": 27.39, "motion_sketch_enlarge": 29.64, "one_frame_bicubic": 28.41, "fable_view_stack": 30.33}}
+receipt: analysis/fable_view_20261127_e3398aa8/ab_generated/receipt.json

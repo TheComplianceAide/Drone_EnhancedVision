@@ -1,0 +1,9 @@
+[vost#0:0/copy @ 0xc4b0bc300] Error submitting a packet to the muxer: Broken pipe
+    Last message repeated 1 times
+[out#0/flv @ 0xc4b074180] Error muxing a packet
+[out#0/flv @ 0xc4b074180] Task finished with error code: -32 (Broken pipe)
+[out#0/flv @ 0xc4b074180] Terminating thread with return code -32 (Broken pipe)
+[flv @ 0xc4b02c500] Failed to update header with correct duration.
+[flv @ 0xc4b02c500] Failed to update header with correct filesize.
+[out#0/flv @ 0xc4b074180] Error writing trailer: Broken pipe
+[out#0/flv @ 0xc4b074180] Error closing file: Broken pipe

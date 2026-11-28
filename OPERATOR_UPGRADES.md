@@ -189,3 +189,50 @@ capture latency. Research asset licenses are recorded in the manifest.
 This remains an experimental flight-evaluation app. Controlled execution,
 source-binding and regression checks do not establish native-flight recall,
 tracking accuracy, improved physical resolution or native night effectiveness.
+
+## Astra Fable View — motion, zoom and night in one window (November 27, 2026)
+
+Select **Astra Fable View** in the launcher, or run `Start_FableView.command`. It is one experimental
+app built from what the other views do best, with three new pieces of processing:
+
+- **Night** is a full-frame, motion-compensated average on the GPU with a per-pixel change test and a
+  noise model measured on the flat parts of the picture, in place of the single-frame night preview.
+  It needs no setting: daylight is left as decoded. Exposure is limited by the noise that remains, so
+  a night sky is not lifted into coloured grain.
+- **Motion** normalises every pixel by what that pixel normally does, tests three object sizes, and
+  sums evidence along slow paths so a small low-contrast object can still be found. Tracks confirm
+  only after steady movement, and only for movement the aircraft's own travel does not explain, so
+  posts, walls and trees are not marked while flying past them.
+- **Zoom** is a stabilised window cut from native source pixels, aligned to a fraction of a pixel and
+  stacked, on a clicked point or on a followed target. Compare shows one frame beside the stack. A
+  lost target leaves the window on the ground where it was last seen.
+
+It reuses the AstraOct26 sources and screen rules (mostly video, eight controls, **LOST** never
+hidden), the Motion Sketch looks with the dusk picture under them, the Motion Sketch window fitting,
+and the save-with-receipt convention. Controls and limits are in [FABLE_VIEW.md](FABLE_VIEW.md).
+
+The first build passed every check on generated scenes and then failed on real recordings in eight
+ways that generated scenes could not show: daylight averaged into blur, a night sky lifted into
+purple noise, a statue and a stone pillar marked as moving from a travelling aircraft, a 4K zoom that
+never stacked. Those are fixed and each has a check. Measured on nine clips from one Mavic 3 card,
+on the M4 Pro used for the build:
+
+- Night, three skyline clips: 3.3, 9.5 and 21.1 dB of noise removed, against 0.5, 1.9 and 5.1 dB for
+  the best existing method.
+- Motion, test objects added to real frames: 6 of 6 over water and 4 of 6 over a quarry, with 4 other
+  tracks in each. Motion Rev3 SMALL-GAME: 5 and 1, with 37 and 30 other tracks. Over a yard from a
+  travelling aircraft, marks fell from 19 to 6 in 19 seconds.
+- Zoom, a cell tower in 4K: 22 frames stacked and 7.2 dB of noise removed, against 6 frames and
+  1.6 dB for the first build.
+- About 55 ms a frame in daylight and 74 ms at night with a zoom open; about 17 frames a second from
+  a live 1080p stream. Not real time at 30.
+
+Retained failures: with the aircraft travelling 4 to 10 pixels a frame for a whole five-second
+window, none of six test objects was confirmed over the yard or over breaking waves (Rev3 confirmed
+none either and raised 5 to 18 other tracks; Fable View raised 0 and 1). A person working on one spot
+is not marked until they walk. At dusk under a bright sky Night Auto stays off; use Night Max or the
+Landscape look. [Receipt](analysis/fable_view_20261127_b55ce41c/README.md).
+
+None of this is flight evidence. No real clip is annotated, so recall on real movers is not counted.
+It has not run on the M5, from the launcher, or against a live aircraft link. Motion Rev3 remains
+the launcher default.

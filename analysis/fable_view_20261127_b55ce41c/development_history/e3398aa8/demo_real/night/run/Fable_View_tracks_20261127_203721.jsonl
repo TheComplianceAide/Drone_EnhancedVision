@@ -1,0 +1,7 @@
+{"event":"confirmed","id":1,"pts":91.058,"x":734.1,"y":744.9,"w":43.0,"h":22.4,"score":2.25}
+{"event":"positions","pts":91.058,"tracks":[[1,734.1,744.9,94.9]]}
+{"event":"positions","pts":92.059,"tracks":[[1,704.2,741.4,2.8]]}
+{"event":"lost","id":1,"pts":92.359}
+{"event":"confirmed","id":2,"pts":103.804,"x":1574.3,"y":766.7,"w":13.2,"h":13.8,"score":2.75}
+{"event":"positions","pts":103.804,"tracks":[[2,1574.3,766.7,74.2]]}
+{"event":"lost","id":2,"pts":104.204}

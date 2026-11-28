@@ -260,6 +260,8 @@ class App:
         self.master.protocol("WM_DELETE_WINDOW", self.on_exit)
 
     def _script_label(self, script: str) -> str:
+        if script == "_FableView.py":
+            return "Astra Fable View"
         if script == "_MotionSketch.py":
             return "Astra Motion Sketch"
         if script == "_AstraOct26.py":
@@ -772,6 +774,12 @@ class App:
 
         all_scripts = [s for s in sorted(os.listdir(self.path)) if s.startswith("_") and s.endswith(".py")]
         featured = [
+            (
+                "_FableView.py",
+                "\u25ce",
+                "Astra Fable View",
+                "Motion + stabilised zoom + night, one window",
+            ),
             (
                 "_MotionSketch.py",
                 "◴",

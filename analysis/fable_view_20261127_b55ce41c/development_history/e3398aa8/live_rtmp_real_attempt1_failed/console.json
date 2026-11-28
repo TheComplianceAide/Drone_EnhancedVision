@@ -1,0 +1,481 @@
+[ WARN:1@1.738] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 1002.038067 ms
+[ WARN:1@1.738] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 1002.124443 ms
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 3106573 != 795402
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 5261105 != 3782406
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 8377798 != 10619992
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 12058308 != 5792743
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 13051506 != 6191273
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 16133175 != 4441935
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 13178215 != 12146840
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 3712191 != 2835852
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 7556099 != 12514887
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 4026156 != 5544241
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 11835828 != 3159363
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 13934616 != 9801862
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 11787405 != 10533138
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 49186 != 4833134
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 908386 != 9166930
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 13382013 != 929369
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 12982461 != 3484390
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 9669210 != 5514104
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 1157876 != 16658886
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 2183811 != 2099438
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 10242062 != 13251593
+[rtmp @ 0x7beb07e80] Too short user control packet (0)
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 2999720 != 5700993
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 1989332 != 14380442
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 13353677 != 25536
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 3195079 != 4397931
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 1998899 != 3901887
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 10192674 != 13028985
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 15025191 != 26016
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 7313285 != 15390059
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 9606598 != 5326243
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 7646697 != 777375
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 4354685 != 8623484
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 8545653 != 13694682
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 7049609 != 279
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 6515094 != 12579207
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 9239234 != 8739681
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 7009222 != 1799440
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 1879167 != 4765150
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 13131034 != 15672417
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 4409787 != 15161908
+[rtmp @ 0x7beb07e80] Too short user control packet (0)
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 12961362 != 13025020
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 13961575 != 2957827
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 8714907 != 11981349
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 8008687 != 4037310
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 11625685 != 3523668
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 3730482 != 13568941
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 6131108 != 1136005
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 3792012 != 477465
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 15249009 != 6455129
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 14758615 != 6128678
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 1108848 != 515791
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 3910371 != 4491628
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 13019519 != 98609
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 2647390 != 454602
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 10913595 != 14738258
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 8043062 != 3762786
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 3053831 != 16315204
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 5421328 != 12438730
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 16111920 != 13023846
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 7981895 != 8977341
+[rtmp @ 0x7beb07e80] Too short user control packet (0)
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 10100959 != 4790243
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 13214797 != 7468658
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 2133367 != 5828650
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 2965434 != 14631274
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 15811950 != 7063635
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 15935788 != 7187271
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 4332928 != 12283520
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 9116249 != 39514
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 1721555 != 3692446
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 6590447 != 16108502
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 12154870 != 12151912
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 14678839 != 14128307
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 4298498 != 728935
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 820198 != 4534074
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 15574780 != 14356734
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 4949973 != 3638528
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 13192601 != 6812948
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 1459945 != 16409346
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 13726981 != 8888233
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 5975699 != 7317130
+[rtmp @ 0x7beb07e80] Too short user control packet (0)
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 10470527 != 8347626
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 875651 != 16342474
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 15348745 != 3037007
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 12618600 != 11470871
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 11527695 != 10390488
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 13430216 != 8882196
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 2627261 != 5324348
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 9504756 != 1293997
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 8961044 != 12647080
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 11241840 != 10288128
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 15399838 != 13651454
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 16541794 != 3547625
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 12206633 != 4726699
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 1448972 != 8095465
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 7541337 != 3978009
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 13435133 != 13760119
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 7475450 != 4962821
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 3837319 != 829067
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 571062 != 1131426
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 3172677 != 3537829
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 15862570 != 778352
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 9852508 != 16695713
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 3392833 != 3493322
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 16654034 != 1464447
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 357171 != 8582485
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 7827742 != 15732278
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 3306052 != 2906587
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 10275899 != 8213413
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 5784926 != 14155424
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 11850551 != 4376136
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 6926113 != 3410215
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 8744223 != 9338544
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 1685739 != 2571776
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 1416357 != 12800175
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 5313414 != 11765910
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 15715026 != 3152347
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 6453782 != 15550592
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 7942091 != 5126099
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 1146642 != 13491376
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 7047011 != 10673888
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 4126248 != 14382017
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 8077350 != 13713985
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 16651283 != 16151409
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 8808794 != 807263
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 12460401 != 1017658
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 10768304 != 16090651
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 5006140 != 10386798
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 9817790 != 4225879
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 11739894 != 9138481
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 14076698 != 9457773
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 13529100 != 835959
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 6552870 != 1647200
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 15653775 != 6778870
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 2774815 != 15764831
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 205689 != 4942378
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 8726016 != 13016103
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 11322367 != 7367870
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 15648914 != 14815499
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 1538837 != 16029649
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 15575457 != 6215382
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 11928910 != 6647340
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 4478487 != 9888126
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 3149173 != 4112487
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 6397029 != 10299859
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 10910554 != 11411628
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 8188575 != 384895
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 8139936 != 7198352
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 7058302 != 528779
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 459217 != 10465011
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 14988549 != 2058919
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 6895386 != 1428628
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 4115779 != 13391008
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 13108798 != 12893135
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 6627429 != 6808144
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 3818169 != 647404
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 1173783 != 923577
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 9066560 != 12410321
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 7526999 != 16292294
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 14518392 != 2660375
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 1550556 != 10806141
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 1856552 != 11512392
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 13715336 != 5970920
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 4368565 != 5246907
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 3877203 != 1026373
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 8143303 != 10826338
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 1045067 != 4278356
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 14104009 != 10894292
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 15001980 != 1705623
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 12158701 != 15011252
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 8357178 != 6976409
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 7843601 != 2687421
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 9175681 != 15757082
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 10153203 != 316779
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 15783011 != 15852917
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 16606279 != 12373251
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 16591757 != 6027020
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 14833712 != 6475878
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 9622933 != 3097365
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 11724078 != 1389773
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 10959849 != 7663145
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 9097732 != 2475204
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 14300842 != 6935785
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 1210492 != 13509900
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 12710995 != 3490224
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 3983758 != 11658467
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 1406470 != 599138
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 813145 != 7449707
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 9162090 != 7661314
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 14239144 != 13727772
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 3153640 != 5575349
+[tcp @ 0x7beb07f20] RTMP packet size mismatch 659031 != 481807
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@4.253] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@4.613] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@4.974] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@5.330] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@5.683] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@6.034] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@6.388] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@6.748] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@7.106] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@7.461] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@7.816] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@8.175] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@8.527] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@8.887] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@9.239] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@9.593] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@9.953] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@10.307] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@10.667] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@11.023] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@11.381] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@11.734] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@12.095] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@12.454] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@12.814] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@13.175] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@13.530] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@13.890] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@14.245] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@14.604] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@14.964] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@15.315] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@15.666] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@16.023] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@16.383] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@16.744] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@17.104] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@17.457] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@17.808] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@18.168] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@18.519] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@18.880] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@19.240] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@19.600] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@19.956] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@20.312] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@20.663] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@21.015] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@21.372] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@21.733] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@22.086] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@22.440] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@22.797] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@23.154] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@23.514] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@23.875] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@24.235] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@24.596] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@24.948] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@25.300] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@25.652] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@26.010] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@26.367] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@26.724] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@27.083] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@27.436] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@27.794] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@28.145] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@28.496] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@28.854] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@29.205] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@29.559] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@29.917] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@30.267] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[tcp @ 0x7c01c3840] Connection to tcp://127.0.0.1:1935?tcp_nodelay=0 failed: Connection refused
+[rtmp @ 0x7c01c37a0] Cannot open connection tcp://127.0.0.1:1935?tcp_nodelay=0
+[ WARN:1@30.627] global cap.cpp:214 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+{
+  "app": "Fable View",
+  "source": "rtmp://127.0.0.1:1935/live/mavic3",
+  "live": true,
+  "clock": "local receive time",
+  "device": "mps",
+  "frames_processed": 2,
+  "wall_seconds": 30.3,
+  "source_seconds": 0.003,
+  "frame_ms": {
+    "p50": 168.55,
+    "p95": 260.9,
+    "max": 271.16
+  },
+  "stage_ms_recent": {
+    "register": 6.61,
+    "upload+warp": 45.87,
+    "accumulate": 44.69,
+    "detect": 76.49,
+    "render": 11.58,
+    "tone": 2.22,
+    "download": 5.94,
+    "zoom": 0.01,
+    "total": 250.64
+  },
+  "replay_frames_skipped": 0,
+  "capture_stats": {
+    "open_attempts": 76,
+    "decoded": 8,
+    "delivered": 2,
+    "failed_reads": 194,
+    "reconnects": 1,
+    "open_failures": 75
+  },
+  "canvas_rekeys": 0,
+  "tracks_confirmed_total": 0,
+  "cues_started_total": 0,
+  "night_last": {
+    "sigma_px": 0.00588,
+    "kappa": 0.45,
+    "n_cap": 1.0,
+    "n_mean": 1.0,
+    "changed": 0.05098,
+    "exposure_gain": 1.0,
+    "night_level": 0.0,
+    "black": 0.0,
+    "median": 0.62355,
+    "photometric_gain": 1.0
+  },
+  "saved": [],
+  "save_error": null,
+  "history_records": 0,
+  "history_dropped": 0,
+  "source_closed": true,
+  "actions": [],
+  "governor_note": "",
+  "recorded_frames": 2,
+  "recording": "analysis/fable_view_20261127_e3398aa8/live_rtmp_real/fable_view_live_rtmp_real.mp4"
+}

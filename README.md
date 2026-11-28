@@ -172,6 +172,13 @@ Note: None of the Python scripts publish RTMP. They are viewers/consumers. The d
 
 ## Script Catalog (Latest Behavior)
 
+- **`_FableView.py` — Astra Fable View (experimental, one window).** Motion detection, a stabilised
+  multi-frame zoom and automatic night handling share one camera-motion estimate and one screen. Click a
+  numbered mover to follow it, click anywhere else to inspect that ground, press **F** to follow the
+  strongest target. Night is automatic; the Motion Sketch looks are under **Look**. GPU required from the
+  launcher. Controls, limits and checks: [FABLE_VIEW.md](FABLE_VIEW.md). Not flight-validated; the launcher
+  default mission is unchanged.
+
 All scripts assume default `RTMP_URL = rtmp://127.0.0.1:1935/live/mavic3` unless otherwise noted.
 
 Night vision

@@ -1,0 +1,9 @@
+[vost#0:0/copy @ 0xb3547c300] Error submitting a packet to the muxer: Connection reset by peer
+    Last message repeated 1 times
+[out#0/flv @ 0xb35420180] Error muxing a packet
+[out#0/flv @ 0xb35420180] Task finished with error code: -54 (Connection reset by peer)
+[out#0/flv @ 0xb35420180] Terminating thread with return code -54 (Connection reset by peer)
+[flv @ 0xb35028500] Failed to update header with correct duration.
+[flv @ 0xb35028500] Failed to update header with correct filesize.
+[out#0/flv @ 0xb35420180] Error writing trailer: Connection reset by peer
+[out#0/flv @ 0xb35420180] Error closing file: Broken pipe

@@ -1,0 +1,12 @@
+[in#0 @ 0x82f410000] stream 0, timescale not set
+[vist#0:0/h264 @ 0x82f40c300] Resumed reading at pts 0.931 with rate 1.050 after a lag of 0.429s
+[vist#0:0/h264 @ 0x82f40c300] Resumed reading at pts 2.633 with rate 1.050 after a lag of 1.284s
+[vost#0:0/h264_videotoolbox @ 0x82f418000] Error submitting a packet to the muxer: Broken pipe
+    Last message repeated 1 times
+[out#0/flv @ 0x82f4143c0] Error muxing a packet
+[out#0/flv @ 0x82f4143c0] Task finished with error code: -32 (Broken pipe)
+[out#0/flv @ 0x82f4143c0] Terminating thread with return code -32 (Broken pipe)
+[flv @ 0x82f410500] Failed to update header with correct duration.
+[flv @ 0x82f410500] Failed to update header with correct filesize.
+[out#0/flv @ 0x82f4143c0] Error writing trailer: Broken pipe
+[out#0/flv @ 0x82f4143c0] Error closing file: Broken pipe

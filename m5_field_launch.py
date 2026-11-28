@@ -4,11 +4,12 @@ Backend selection is not a native-flight detection acceptance claim.
 """
 MOTION = '_09_M5_Fable_MotionISR_Rev3.py'
 ASTRA_OCT26 = '_AstraOct26.py'
+FABLE_VIEW = '_FableView.py'
 GPU_RECONSTRUCTION = ('_11_M5_Fable_SuperRes_Rev4.py', '_12_M5_NightVision_Max_Rev3.py')
 
 
 def mission_arguments(script):
-    if script in (MOTION, ASTRA_OCT26, '_MotionSketch.py'):
+    if script in (MOTION, ASTRA_OCT26, FABLE_VIEW, '_MotionSketch.py'):
         return ['--device', 'mps', '--require-mps']
     if script in GPU_RECONSTRUCTION:
         return ['--quality-device', 'mps', '--require-mps']

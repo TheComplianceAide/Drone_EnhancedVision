@@ -1,0 +1,72 @@
+{
+  "app": "Fable View",
+  "source": "/tmp/fable_view_fixture/fable_view_generated_rehearsal.mp4",
+  "clock": "decoded source PTS",
+  "source_time": 23.0,
+  "frame_index": 690,
+  "device": "mps",
+  "night_mode": "auto",
+  "look": "natural",
+  "raw_view": false,
+  "registration": {
+    "ok": true,
+    "model": "homography",
+    "inliers": 418,
+    "tracked": 434,
+    "rms_px": 0.928
+  },
+  "night": {
+    "sigma_px": 0.02896,
+    "kappa": 0.23846,
+    "n_cap": 32.0,
+    "n_mean": 31.80245,
+    "changed": 0.00122,
+    "exposure_gain": 8.71206,
+    "night_level": 1.0,
+    "black": 0.04951,
+    "median": 0.10257,
+    "photometric_gain": 1.0
+  },
+  "tracks": [
+    {
+      "id": 13,
+      "x": 1058.9,
+      "y": 899.9,
+      "w": 8.1,
+      "h": 8.1,
+      "speed_px_s": 39.9,
+      "score": 1.41,
+      "coasting": false,
+      "followed": false
+    },
+    {
+      "id": 15,
+      "x": 1319.9,
+      "y": 419.1,
+      "w": 8.1,
+      "h": 8.1,
+      "speed_px_s": 101.6,
+      "score": 1.19,
+      "coasting": false,
+      "followed": false
+    },
+    {
+      "id": 14,
+      "x": 1459.2,
+      "y": 235.4,
+      "w": 8.1,
+      "h": 8.1,
+      "speed_px_s": 14.0,
+      "score": 1.39,
+      "coasting": false,
+      "followed": false
+    }
+  ],
+  "zoom": null,
+  "statement": "source.png is the decoded frame, unmodified. processed.png is a weighted mean of registered source frames with a monotonic exposure curve. zoom_stack.png is a multi-frame mean of the window with bounded deconvolution; zoom_frame.png is the same window from this frame alone. Tracks are image detections of unknown identity.",
+  "sha256": {
+    "source.png": "b9a942d65f6500520bcfebca8ae81bc23ae66e6fb114af326f6baa16db7101f3",
+    "processed.png": "4e098f2f297a51a9aad0eda079be766879d0cffc5826b0ffb82a0c8e57dcf07d",
+    "view.png": "4bf0b0b8c2c2f6a8bb359fbfe1d097695915edf981fe6273d00e534ef7a281ca"
+  }
+}
