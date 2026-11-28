@@ -1,0 +1,84 @@
+{
+  "sources": {
+    "tsrn": {
+      "repository": "msu-video-group/tsrn-rtvd",
+      "commit": "144587a25b692f00c830c0e899c27e7cf7754b59"
+    },
+    "tapnet": {
+      "repository": "google-deepmind/tapnet",
+      "commit": "730cda1c730877cfedbe01bf87fb1cadb78a565d"
+    },
+    "xfeat": {
+      "repository": "verlab/accelerated_features",
+      "commit": "e92685f57f8318b18725c5c8c0bd28c7fe188d9a"
+    },
+    "edgetam": {
+      "repository": "facebookresearch/EdgeTAM",
+      "commit": "7711e012a30a2402c4eaab637bdb00a521302c91"
+    }
+  },
+  "weights": [
+    {
+      "file": "tapnextpp.pt",
+      "url": "https://storage.googleapis.com/dm-tapnet/tapnextpp/tapnextpp_ckpt.pt",
+      "bytes": 2532282370,
+      "sha256": "cb96a43444ccb4fbdb25d800b88c7ba196179a526e78f01b021a16b1c1eff6da"
+    },
+    {
+      "file": "edgetam.pt",
+      "url": "https://huggingface.co/facebook/EdgeTAM/resolve/14d7ecc48c656b94e5184519f698cd5386c5a2bf/edgetam.pt",
+      "bytes": 56116523,
+      "sha256": "ed2d4850b8792c239689b043c47046ec239b6e808a3d9b6ae676c803fd8780df"
+    },
+    {
+      "file": "tsrn.pth",
+      "url": "https://huggingface.co/egorchistov/deblurring-tsrn-rtvd/resolve/2c9a43a8111ea398f87dd295bc6693f5189d7568/checkpoints/tsrnn_bt1_exact_ft.pth",
+      "bytes": 56649149,
+      "sha256": "c284eec09148c4e0a88d069396847418018e8abec6fbe00576f39acab1914b5f"
+    },
+    {
+      "file": "tsrn_trajectory.pt",
+      "url": "https://huggingface.co/egorchistov/deblurring-tsrn-rtvd/resolve/2c9a43a8111ea398f87dd295bc6693f5189d7568/checkpoints/tinydelta3d_k3_108x192.pt",
+      "bytes": 2425652,
+      "sha256": "760a1f48997c9c0e3ada46786530c61efed0b96bad4bc831069ec365d8e70373"
+    },
+    {
+      "file": "tsrn_stats.pt",
+      "url": "https://huggingface.co/egorchistov/deblurring-tsrn-rtvd/resolve/2c9a43a8111ea398f87dd295bc6693f5189d7568/checkpoints/tinydelta3d_k3_108x192_stats.pt",
+      "bytes": 2441,
+      "sha256": "972d563f0674a270ea0e4aa167ca638130177a54b8345098ca34d3c8b5fe3f96"
+    },
+    {
+      "file": "yolo26n.pt",
+      "url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26n.pt",
+      "bytes": 5544453,
+      "sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef"
+    }
+  ],
+  "dependencies": [
+    "einops==0.8.1",
+    "timm==1.0.15",
+    "hydra-core==1.3.2",
+    "omegaconf==2.3.0",
+    "antlr4-python3-runtime==4.9.3",
+    "iopath==0.1.10",
+    "portalocker==3.2.0",
+    "huggingface-hub==0.34.4",
+    "safetensors==0.6.2",
+    "tqdm==4.67.1",
+    "av==16.1.0"
+  ],
+  "licenses": {
+    "tsrn": "BSD-3-Clause",
+    "tapnet": "Apache-2.0",
+    "xfeat": "Apache-2.0",
+    "edgetam": "Apache-2.0",
+    "ultralytics": "AGPL-3.0; existing project dependency"
+  },
+  "notes": [
+    "Source revisions and model file SHA-256 are pinned.",
+    "Optional research previews do not feed detection or accepted reconstruction.",
+    "No automatic runtime downloads.",
+    "Research models and dependencies are installed outside the repository venv."
+  ]
+}

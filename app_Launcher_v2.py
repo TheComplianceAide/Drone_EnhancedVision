@@ -259,6 +259,7 @@ class App:
 
     def _script_label(self, script: str) -> str:
         mapping = {
+            "_FieldMotionReview.py": "FIELD MOTION REVIEW (Experimental)",
             "_1_4General_Target_Acquisition_4.py": "GENERAL TRACKER (Rev4)",
             "_12_M5_NightVision_Max_Rev1.py": "M5 NIGHTVISION MAX",
             "_08_M5_LuckySkylineSuperZoom_Rev1.py": "M5 LUCKY SKYLINE SUPERZOOM",
