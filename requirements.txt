@@ -1,6 +1,7 @@
 opencv-python
 mss
 numpy
+scipy
 psutil
 Pillow
 torch

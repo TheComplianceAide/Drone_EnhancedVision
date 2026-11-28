@@ -10,6 +10,8 @@ The current flow is:
 
 This README documents the latest scripts, what they do, which ones are light/heavy, how to launch with `app_Launcher_v2.py`, and how to configure/verify RTMP.
 
+For Apple Silicon, see [Field Motion Review](experimental/field_motion_review/README.md), an experimental motion viewer with original camera and replay panels.
+
 ## Review the results before flying
 
 For changes to vision or operator controls, the normal handoff includes a short
