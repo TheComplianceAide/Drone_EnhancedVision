@@ -1,0 +1,21 @@
+{
+  "reviewer": "Codex visual inspection; human operator acceptance remains open",
+  "resolution": "original",
+  "reviewed_files": {
+    "quality-frozen-mps/soft_barn_soak/source.png": "430b6f6edbd959de554b923e2afeb799e083da5d0aca1da0eb151d30c00454ea",
+    "quality-frozen-mps/soft_barn_soak/raw.png": "f717d4e597e505a93302981b589f44803c28b90a87d5bb01b011aedbf2dcff30",
+    "quality-frozen-mps/soft_barn_soak/temporal.png": "7c969762877e35a29901a9067d3184183612a04027eabbc86879e9d56759c48a",
+    "quality-frozen-mps/soft_barn_soak/comparison.png": "4a33f7a26a32c07d406ad3b46249b0d6b767b31e3adc6d7d23ca4da0b9c00a1a",
+    "quality-frozen-mps/construction_facade/source.png": "45ed8ad5269ba699274b71edd7cc1a2c1b37e9fa93c296281d40ceab5bb1488c",
+    "quality-frozen-mps/construction_facade/raw.png": "4502ce9debe7023d48314bb2494007deae671db3f15d50029889d95427f6b09b",
+    "quality-frozen-mps/construction_facade/temporal.png": "cb8de2e8019514af77694237414ffef1d8491dab9a904d6ec4a5a91783f2bad2",
+    "quality-frozen-mps/construction_facade/comparison.png": "1464e8bce4a09c3add83998c8e98cf05222e7285ee654ebf70d7529248451ed1",
+    "quality-frozen-mps/skyline_rail/source.png": "a86d47793e35e3adc129bdf6c2cfacf1c5e08aa04416268bebb93dba329e212c",
+    "quality-frozen-mps/skyline_rail/raw.png": "aa43d7a684b778594634cff0d8c9f26f20915d638167218924fa2d371dcde5c1",
+    "quality-frozen-mps/skyline_rail/temporal.png": "98f96bd3e97d261a4f5042471681f4f9da0f041c314bc75846bb2b41eba53ace",
+    "quality-frozen-mps/skyline_rail/comparison.png": "bb4740ac201428ddc07316012d0a15a35a9f7d8811ae299c2fc68123896c845a",
+    "gui-_11_M5_Fable_SuperRes_Rev4-scheduler-final/step-05-window-1.png": "ccfe80b3cbfc3da7433cf0f1fcd8004572add8358607b743752afad31cf2b062",
+    "gui-_12_M5_NightVision_Max_Rev3-balanced/step-05-window-1.png": "a47bdc05b9058b7904b2785d6ff8ed290799a9774f952b6a5e42542dbf96c929"
+  },
+  "observations": "Temporal panels visibly reduce chroma noise and mottling. Barn and skyline remain soft/hazy; no new readable or identifying detail. Construction facade edges remain coherent, while fine foliage is smoother. No obvious doubled contours, checkerboard or ringing in inspected final stills. Very faint moving-detail preservation is not proved by these static proxies."
+}

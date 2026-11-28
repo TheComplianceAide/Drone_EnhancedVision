@@ -1,0 +1,21 @@
+[
+  {
+    "source_pts": 44.990938,
+    "select": [
+      520,
+      480
+    ]
+  },
+  {
+    "source_pts": 49.467937,
+    "action": "zoom_in"
+  },
+  {
+    "source_pts": 61.529938,
+    "action": "night"
+  },
+  {
+    "source_pts": 64.902938,
+    "action": "night"
+  }
+]

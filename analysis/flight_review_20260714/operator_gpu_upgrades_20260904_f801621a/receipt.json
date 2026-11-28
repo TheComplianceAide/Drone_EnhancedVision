@@ -1,0 +1,211 @@
+{
+  "status": "PASS_NON_RELEASE",
+  "scope": "Local operator upgrades and bounded M5 GPU repair/optimization; native-flight release gates remain open",
+  "candidate_code_verified_unchanged": true,
+  "additional_service_cost_usd": 0,
+  "hardware": {
+    "chip": "Apple M5",
+    "cpu_cores": 10,
+    "performance_cpu_cores": 4,
+    "efficiency_cpu_cores": 6,
+    "gpu_cores": 10,
+    "unified_memory_gib": 24,
+    "macos": "26.1",
+    "arch": "arm64",
+    "python": "3.11.14",
+    "torch": "2.10.0",
+    "opencv": "4.13.0",
+    "mps_available": true,
+    "source": "system_profiler filtered hardware facts and local runtime probes; hardware identifiers excluded"
+  },
+  "unit_tests": {
+    "passed": 132,
+    "failed": 0
+  },
+  "lanes": {
+    "nightvision": {
+      "status": "PASS_METRICS_REVIEW_REQUIRED",
+      "failures": [],
+      "warnings": [
+        "The fixture is a deterministic low-light/detector simulation derived from canonical flight structure; native night-flight validation remains open.",
+        "A pass cannot prove identifying detail, physical resolution recovery, or detail absent from the source observations.",
+        "Automatic success remains review-required; inspect every full-resolution comparison and 3x nearest-neighbor crop sheet."
+      ]
+    },
+    "superres_direct": {
+      "status": "PASS_METRICS_REVIEW_REQUIRED",
+      "failures": [],
+      "warnings": [
+        "construction_facade: fixture ended after 212 decoded frames; requested 256",
+        "skyline_rail: fixture ended after 209 decoded frames; requested 256"
+      ]
+    },
+    "superres_independent": {
+      "status": "PASS_METRICS_REVIEW_REQUIRED",
+      "failures": [],
+      "warnings": []
+    },
+    "night_preview": {
+      "status": "PASS_METRICS_REVIEW_REQUIRED",
+      "failures": [],
+      "warnings": [
+        "Simulated low light; native night-flight effectiveness is unmeasured.",
+        "Spatial filtering can attenuate tiny low-contrast details; raw is retained.",
+        "No inference of detection recall or physical resolution."
+      ]
+    },
+    "native_metal_frontend": {
+      "status": "PASS_BOUNDED_FRONTEND",
+      "failures": [],
+      "warnings": [
+        "Synthetic frontend benchmark; not end-to-end stream FPS or native-flight recall.",
+        "CPU/MPS interpolation remains numerically distinct; byte identity applies to corrected eager MPS versus native Metal state update."
+      ]
+    },
+    "motion_rev4_experimental": {
+      "status": "FAIL",
+      "failures": [
+        "FAIL_TARGET_1_COVERAGE",
+        "FAIL_TARGET_2_COVERAGE",
+        "FAIL_TARGET_3_COVERAGE",
+        "FAIL_TARGET_1_COVERAGE_GAIN",
+        "FAIL_TARGET_2_COVERAGE_GAIN",
+        "FAIL_TARGET_3_COVERAGE_GAIN",
+        "FAIL_TARGET_1_DOMINANT_SHARE",
+        "FAIL_TARGET_2_DOMINANT_SHARE",
+        "FAIL_TARGET_3_DOMINANT_SHARE",
+        "FAIL_TOTAL_OFF_PATH_EXCESS_VS_REV3_CPU"
+      ],
+      "warnings": [
+        "Motion ground truth is deterministic injected point-spread targets on real flight structure; native-flight human annotations remain open.",
+        "Clean-source outputs are unlabeled native structure. They are reported as clean-relative off-path nuisance/output inflation, never as absolute false positives.",
+        "Timing runs are serial and interleaved, include first-use work, and support no speed claim."
+      ]
+    }
+  },
+  "gpu_1080p_median_ms": {
+    "cpu": [
+      48.1157295871526,
+      46.151124872267246
+    ],
+    "corrected_eager_mps": [
+      49.356208415701985,
+      46.33510438725352
+    ],
+    "native_metal": [
+      36.94085404276848,
+      36.32664610631764
+    ]
+  },
+  "open_gates": [
+    "Synchronized native-flight Motion/ImageScout annotations and transition acceptance are missing.",
+    "Motion Rev4 experimental micro-target validator retains all reported failures.",
+    "Native night-flight range, 3x reconstruction, large ROI-divisor detail recovery, and multihour GPU stability remain unproven.",
+    "No live DJI RTMP or actual flight was exercised in this task. Local file GUI replay was used."
+  ],
+  "coordination": {
+    "issue": "https://github.com/compliance-aide/Business-Command-and-Control-center/issues/378",
+    "guidance_pr": "https://github.com/compliance-aide/Business-Command-and-Control-center/pull/383"
+  },
+  "artifact_relocation": "Original machine receipts retain /tmp paths; matching directories here preserve the files and hashes. Reusable source fixtures are still addressed by catalog PTS and source hashes.",
+  "gui_label_amendment": {
+    "status": "PASS_UI_ONLY_AMENDMENT",
+    "file": "_11_M5_Fable_SuperRes_Rev3.py",
+    "quality_validated_sha256": "003c35ee485743dae7d3732a308c26739bb150ab2a4d063252e8fcb939a23d5d",
+    "final_sha256": "1e81e58d6dc0dd15359bba8469d1ceba99cb99f9ba0c2b57265667d2e4f7ea8d",
+    "changed_functions": [
+      "run_gui"
+    ],
+    "exact_one_line_gui_render_call_only": true,
+    "all_reconstruction_and_validation_functions_AST_identical": true,
+    "meaning": "Display label correction only; the completed full quality receipts bind the preserved pre-label code, not the final GUI label bytes. No algorithm, input, threshold, or image pixels changed.",
+    "gui_replay": {
+      "app": "_11_M5_Fable_SuperRes_Rev4.py",
+      "args": [
+        "--source",
+        "/tmp/drone-upgrade-20260904/derived_gui_lowlight.mkv",
+        "--zoom",
+        "16",
+        "--quality-device",
+        "mps",
+        "--output-dir",
+        "/tmp/drone-upgrade-20260904/gui-grid-label-output"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 12.062332666944712,
+      "imshow_calls": 406,
+      "actions": [
+        {
+          "key": "]",
+          "elapsed": 2.013003167230636,
+          "windows": [
+            "Fable SuperRes V4 - click static target",
+            "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+          ]
+        },
+        {
+          "key": "6",
+          "elapsed": 3.0511729582212865,
+          "windows": [
+            "Fable SuperRes V4 - click static target",
+            "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+          ]
+        },
+        {
+          "key": "+",
+          "elapsed": 4.042823541909456,
+          "windows": [
+            "Fable SuperRes V4 - click static target",
+            "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+          ]
+        },
+        {
+          "key": "v",
+          "elapsed": 5.034147208090872,
+          "windows": [
+            "Fable SuperRes V4 - click static target",
+            "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+          ]
+        },
+        {
+          "key": "f",
+          "elapsed": 6.034846167080104,
+          "windows": [
+            "Fable SuperRes V4 - click static target",
+            "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+          ]
+        },
+        {
+          "key": "f",
+          "elapsed": 7.039424125105143,
+          "windows": [
+            "Fable SuperRes V4 - click static target",
+            "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+          ]
+        },
+        {
+          "key": "i",
+          "elapsed": 8.032676000148058,
+          "windows": [
+            "Fable SuperRes V4 - click static target",
+            "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+          ]
+        },
+        {
+          "key": "q",
+          "elapsed": 12.046522167045623,
+          "windows": [
+            "Fable SuperRes V4 - click static target",
+            "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+          ]
+        }
+      ],
+      "windows": [
+        "Fable SuperRes V4 - click static target",
+        "Fable SuperRes V4 - RAW | SINGLE | RECON | CLEAR"
+      ],
+      "mode": "real OpenCV windows; automated keys; derived file decoded at <=30fps; no live RTMP claim"
+    },
+    "original_resolution_visual_review": "PASS: registered input grid and input-grid dimensions displayed; 16x ROI control remains active"
+  }
+}

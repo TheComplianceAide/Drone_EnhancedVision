@@ -1,0 +1,646 @@
+{
+  "status": "PASS_METRICS_REVIEW_REQUIRED",
+  "command": [
+    "m5_operator_view_validation.py",
+    "--baseline-dir",
+    "/tmp/drone-upgrade-20260904/baseline",
+    "--output-dir",
+    "/tmp/drone-upgrade-20260904/final-preview-validation"
+  ],
+  "python": "3.11.14 (main, Oct  9 2025, 16:16:55) [Clang 17.0.0 (clang-1700.6.3.2)]",
+  "opencv": "4.13.0",
+  "numpy": "2.4.2",
+  "ffmpeg": "ffmpeg version 8.0.1 Copyright (c) 2000-2025 the FFmpeg developers",
+  "device": "CPU; native-grid spatial preview",
+  "sources": {
+    "schema": "m5.flight-source-verification.v1",
+    "catalog": "/Users/randyblasik/Documents/Drone_EnhancedVision/testdata/flight_scenes/2026-07-14.json",
+    "full_hash": true,
+    "ok": true,
+    "sources": [
+      {
+        "source": "seg_191345",
+        "role": "canonical",
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_191345_attempt1.mp4",
+        "exists": true,
+        "expected_bytes": 358895612,
+        "expected_sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744",
+        "actual_bytes": 358895612,
+        "size_ok": true,
+        "actual_sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744",
+        "hash_ok": true
+      },
+      {
+        "source": "seg_192339",
+        "role": "canonical",
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_192339_attempt1.mp4",
+        "exists": true,
+        "expected_bytes": 408065138,
+        "expected_sha256": "499add8093ab589e5b050cb7b49ca3bc16b5ee35fc201765c0371f8fb7541851",
+        "actual_bytes": 408065138,
+        "size_ok": true,
+        "actual_sha256": "499add8093ab589e5b050cb7b49ca3bc16b5ee35fc201765c0371f8fb7541851",
+        "hash_ok": true
+      },
+      {
+        "source": "seg_193338",
+        "role": "canonical",
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_193338_attempt1.mp4",
+        "exists": true,
+        "expected_bytes": 449967995,
+        "expected_sha256": "c3e102b5f607d139811ca0d50f8bf362d5a0f8aa61a4358fa2e8f84bc9f40419",
+        "actual_bytes": 449967995,
+        "size_ok": true,
+        "actual_sha256": "c3e102b5f607d139811ca0d50f8bf362d5a0f8aa61a4358fa2e8f84bc9f40419",
+        "hash_ok": true
+      },
+      {
+        "source": "seg_194336",
+        "role": "canonical",
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_194336_attempt1.mp4",
+        "exists": true,
+        "expected_bytes": 455310717,
+        "expected_sha256": "2507c542ab029d1db69ef8ca60b73c4634b4dd9b0aa40fb7e31de6106cdb5a23",
+        "actual_bytes": 455310717,
+        "size_ok": true,
+        "actual_sha256": "2507c542ab029d1db69ef8ca60b73c4634b4dd9b0aa40fb7e31de6106cdb5a23",
+        "hash_ok": true
+      },
+      {
+        "source": "seg_195336",
+        "role": "canonical",
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_195336_attempt1.mp4",
+        "exists": true,
+        "expected_bytes": 457650637,
+        "expected_sha256": "5096d8eed9c12d8905e0c484aa356598eb9f56534b172102ac37a94d19ff8ba6",
+        "actual_bytes": 457650637,
+        "size_ok": true,
+        "actual_sha256": "5096d8eed9c12d8905e0c484aa356598eb9f56534b172102ac37a94d19ff8ba6",
+        "hash_ok": true
+      },
+      {
+        "source": "seg_200336",
+        "role": "canonical",
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_200336_attempt1.mp4",
+        "exists": true,
+        "expected_bytes": 483337480,
+        "expected_sha256": "d2bf09908553f25abae626e7b837cf430dbca73f7a574c455c0bf099c303c228",
+        "actual_bytes": 483337480,
+        "size_ok": true,
+        "actual_sha256": "d2bf09908553f25abae626e7b837cf430dbca73f7a574c455c0bf099c303c228",
+        "hash_ok": true
+      },
+      {
+        "source": "seg_201336",
+        "role": "canonical",
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_201336_attempt1.mp4",
+        "exists": true,
+        "expected_bytes": 145909867,
+        "expected_sha256": "838ac1ed6045a9c72ae5faa6887ff90963697d28d193f60cb0cb496cd6422682",
+        "actual_bytes": 145909867,
+        "size_ok": true,
+        "actual_sha256": "838ac1ed6045a9c72ae5faa6887ff90963697d28d193f60cb0cb496cd6422682",
+        "hash_ok": true
+      }
+    ]
+  },
+  "baseline_sha256": {
+    "ops_window.py": "0ce0570ff8659ad9ad0e631415cb5ba639245b839daae0d02dc70b7aaec589ba",
+    "m5_v3_imaging.py": "5a75a4ae906ec5475ac3cab8a692986d09363609d60091248395895378ae3c10",
+    "_09_M5_Fable_MotionISR_Rev3.py": "fad7575061c835eaa2d227506152d413704571afb6bebf293dd0518020ec6cc3",
+    "_09_M5_Fable_MotionISR_Rev4.py": "70ce79880e83811d08d0537fc2a8825d7af12eacfe783fdf59d0535874ec0245",
+    "_10_M5_Fable_ImageScout_Rev3.py": "98e3b997414bb838e052ac41b7e1b0aa698b099ff4743bc6b89d56bd60a2061c",
+    "_11_M5_Fable_SuperRes_Rev3.py": "0c4fbed0871b6fba6591e0689cea5cb23ceceef22e40ddfe521eedcbc35f5b31",
+    "_11_M5_Fable_SuperRes_Rev4.py": "ced59fb88d5fdfab53ca35669a1924a3d6eff61cdd7d5316c328e5eea6a5cc76",
+    "_12_M5_NightVision_Max_Rev3.py": "9956c3cda5628396029220c476682773955a80cce5698ee93fa33929fbbe3abd",
+    "app_Launcher_v2.py": "9cc43563a865e1ce88a659ec86438f5f6bba9a5ebfedc828fb622afb1b393a88"
+  },
+  "candidate_sha256": {
+    "m5_motion_metal.py": "d778fa6b1b740efd7a71159bac10556d62ba4024dd1264fdb5f3769cd8e89e07",
+    "ops_window.py": "46655cb0e38b7f043d12fb070591562e317049807c00ded0e319c1ac05cc783c",
+    "m5_operator_view.py": "71a8d3c26200e1023174c56ea020b5af1961903ff4115edd9a545fba02f822e3",
+    "m5_operator_view_validation.py": "674c4604c95ed85023fbb637166f97f64f4cef84ade2b40e43da2485250254e0",
+    "m5_isr_evidence.py": "2c8abaddaf1772fec15da8f42b5a621184673b993ce38fccfc2a32ec43eba78f",
+    "m5_v3_imaging.py": "f2c1fdb669ef333010a89e0cb6b874b24038c22f0ee0132ec45a637a85cffd1e",
+    "_09_M5_Fable_MotionISR_Rev3.py": "f801621a8809c0ec232450fd0e0e41d813019dad98974ab97f93f6f979736eb7",
+    "_09_M5_Fable_MotionISR_Rev4.py": "70ce79880e83811d08d0537fc2a8825d7af12eacfe783fdf59d0535874ec0245",
+    "_10_M5_Fable_ImageScout_Rev3.py": "2507df3f24289382e5a2f30d1129342ee43e13655a24758e88b55347be9984e0",
+    "_11_M5_Fable_SuperRes_Rev3.py": "003c35ee485743dae7d3732a308c26739bb150ab2a4d063252e8fcb939a23d5d",
+    "_11_M5_Fable_SuperRes_Rev4.py": "e765240efef118384abeac7d471c4ad7854e8df8a5f725ce331f855b0ce8d359",
+    "_12_M5_NightVision_Max_Rev3.py": "07c12a12e699039d5e14f65880eb764e8db43623eb2a309b6625fd2e35925e64",
+    "app_Launcher_v2.py": "206d53537f5b24dc3dbda75dd9ae57d8a7c475c1ca0182578df7ff3c43d5a898"
+  },
+  "thresholds": {
+    "brightness_ratio_min": 2,
+    "normalized_noise_ratio_max": 1
+  },
+  "scenes": [
+    {
+      "scene_id": "superres.soft_barn_soak",
+      "source_sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744",
+      "decode": {
+        "source_path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_191345_attempt1.mp4",
+        "target_pts_s": 510.0,
+        "seek_pts_s": 506.5,
+        "decoded_source_frames": 110,
+        "decode_failures": 4,
+        "selected_pts_s": 510.011,
+        "roi_xywh": [
+          640,
+          300,
+          640,
+          480
+        ],
+        "processing_wh": [
+          640,
+          480
+        ],
+        "decoded_reference_sha256": "75099c3e1869f21fbf58ae0b24cc9af0063faeaf3606e038d0373ffb6a59573d",
+        "decoder": "OpenCV 4.13.0 FFmpeg backend"
+      },
+      "frames": 24,
+      "derivation": {
+        "exposure": 0.115,
+        "black_offset_codes": 1.8,
+        "read_noise_sigma": 2.35,
+        "seed": 20260904
+      },
+      "pixel_hashes": [
+        {
+          "input": "09931962278d903be5228653d9b7907784488fc82ec88837a32b2ccd2055575d",
+          "baseline": "09931962278d903be5228653d9b7907784488fc82ec88837a32b2ccd2055575d",
+          "candidate": "246a213edff8dbd5de0b1aaa27a32869ad6e4cff71ff59b9c53061e5e71f6be8"
+        },
+        {
+          "input": "9385c14764eb683d27ee2ea9446924ad5d72075c6946f6b17c06b5b8f0d0bdee",
+          "baseline": "9385c14764eb683d27ee2ea9446924ad5d72075c6946f6b17c06b5b8f0d0bdee",
+          "candidate": "6600fa48a2e9178dd6e807e0fd64a3c5d34f128b66559b3f433c2b1c567b008d"
+        },
+        {
+          "input": "2ad4acdffc36e041d6b89216c2ae417a9f6b54ebac834d53ea70a498d334290b",
+          "baseline": "2ad4acdffc36e041d6b89216c2ae417a9f6b54ebac834d53ea70a498d334290b",
+          "candidate": "a6d8f8bfbec3a6497bf094ee049a420d1f4f7569b0de8e3e2bf5b7780c9a444b"
+        },
+        {
+          "input": "f11865a15cb4d7318f04b531702e1623a62d73436aa298bf3aeaeb6081158ef9",
+          "baseline": "f11865a15cb4d7318f04b531702e1623a62d73436aa298bf3aeaeb6081158ef9",
+          "candidate": "4fcf5c9187f7d599c837195289f08d45368a4ee04dfb823cbc11e7f425e89ba4"
+        },
+        {
+          "input": "f9233048f48ff92597713a24d7fd1ed80abe4fb1178151d2bec8fe809a03efee",
+          "baseline": "f9233048f48ff92597713a24d7fd1ed80abe4fb1178151d2bec8fe809a03efee",
+          "candidate": "4d8bd82c5741706da20ef1bf08c7483698947c928079a8b64d87b3cae0d0ce88"
+        },
+        {
+          "input": "1d31e4629928169233ac03821f3fc33df6129efba3c2bba92be6c82600c98520",
+          "baseline": "1d31e4629928169233ac03821f3fc33df6129efba3c2bba92be6c82600c98520",
+          "candidate": "df71050794d00b4e66cfd20be309911baff10de36fdd302f5b59023ab68f0fd1"
+        },
+        {
+          "input": "ed9b43e5db4b73ca8ac9bd5b3c6f6accc6c9165e39ec4e1dff68b999e174b9bf",
+          "baseline": "ed9b43e5db4b73ca8ac9bd5b3c6f6accc6c9165e39ec4e1dff68b999e174b9bf",
+          "candidate": "c572d784331e5a38e8dad0da003d8b269c2f5ce8cadae2140daaa9ee308a716f"
+        },
+        {
+          "input": "1e5082aa0b8cacdd8effeae46147b8e83547f48d19d13ab217c2fa354bbce79d",
+          "baseline": "1e5082aa0b8cacdd8effeae46147b8e83547f48d19d13ab217c2fa354bbce79d",
+          "candidate": "4fa4c41ed25c53c2988cd9edb300aca4106f7cb429016c9d878269c5e86e019f"
+        },
+        {
+          "input": "41885a4956031640640243059c7af141e15013d7fd54802576bc9d5ebc775cdf",
+          "baseline": "41885a4956031640640243059c7af141e15013d7fd54802576bc9d5ebc775cdf",
+          "candidate": "0fa6a84351aaabecb9d64ed35a46cbc928f105bb35c5d29da078201330f85710"
+        },
+        {
+          "input": "9c5e742150c0e4999f593ce0cd1aef357ca3eaf911bdd2614868a82608413302",
+          "baseline": "9c5e742150c0e4999f593ce0cd1aef357ca3eaf911bdd2614868a82608413302",
+          "candidate": "92303c8cec1c430574d8c03c926790363bfa9ed7927f5aa13fe162b4c8cff2ec"
+        },
+        {
+          "input": "57e6984dc4e57a7530349d5b5e531b5fc8f2f5d9ed4ab9b9be01a08593665fb2",
+          "baseline": "57e6984dc4e57a7530349d5b5e531b5fc8f2f5d9ed4ab9b9be01a08593665fb2",
+          "candidate": "b40144c5cd1d4640b278f1e2d9de24f05bc6af4573f8863d44cb0b921162e2b9"
+        },
+        {
+          "input": "144007df9e7038b08a156fcf924ca06b4f6664567ec5be7cb873ce6de7ffcdbe",
+          "baseline": "144007df9e7038b08a156fcf924ca06b4f6664567ec5be7cb873ce6de7ffcdbe",
+          "candidate": "f6d0a020e0ced5a372b82378ca9bc6395df7f951a812252da752c054de5e3f05"
+        },
+        {
+          "input": "7c0cb0f2f80a6c2913c83bbabe0a7f9e55c915c1611fdba4882292576ee26407",
+          "baseline": "7c0cb0f2f80a6c2913c83bbabe0a7f9e55c915c1611fdba4882292576ee26407",
+          "candidate": "a02a22b3e3c9264e143fc09d6763d2ec6d071ba10a0dcf8e253af6d61dc51bc2"
+        },
+        {
+          "input": "cdf358a362c0c29c0c1df30536f27b51bb4a6c536398dda2fda3beaf2e6e65ee",
+          "baseline": "cdf358a362c0c29c0c1df30536f27b51bb4a6c536398dda2fda3beaf2e6e65ee",
+          "candidate": "8ad23ac9d06d64356bdf2203d850c7fd8c63644c2cac437c2dfb5ff632052904"
+        },
+        {
+          "input": "0aa418873724bd88a4d2922323eb8ca1df3629155daaf72eb779b353b9d2d7e8",
+          "baseline": "0aa418873724bd88a4d2922323eb8ca1df3629155daaf72eb779b353b9d2d7e8",
+          "candidate": "4b111f373dfbd8b8ead105f2c33336ecb446254b39903a084096143fdbf49b58"
+        },
+        {
+          "input": "ed3812f87409ff9c2d0b7cb12dfeca63d70cbdd28993da8e8040e40ca0c67c79",
+          "baseline": "ed3812f87409ff9c2d0b7cb12dfeca63d70cbdd28993da8e8040e40ca0c67c79",
+          "candidate": "c77698320123eff335f40d203ebbe9d75d8b446a4b686667e458f71f381a25a8"
+        },
+        {
+          "input": "ba6999fede1ea70c88ae61b7ddbcc525625d9a42f22918d320c3470b6920b0b6",
+          "baseline": "ba6999fede1ea70c88ae61b7ddbcc525625d9a42f22918d320c3470b6920b0b6",
+          "candidate": "571d531778452ce1d082e9c01bf8676469ff82341ad06fd657bb1da1587139d8"
+        },
+        {
+          "input": "3aaa800eab55e558c0509d51a291179500f304c461c6119ad7da6b7c42d51f73",
+          "baseline": "3aaa800eab55e558c0509d51a291179500f304c461c6119ad7da6b7c42d51f73",
+          "candidate": "2eab6a6801f1a3ff7b3c46fdb6fa0304116cb4bc9cd1ea371752331ec047113b"
+        },
+        {
+          "input": "1af93f83295046dee77167305af207b68442e89e48bc550697b925ff45b14023",
+          "baseline": "1af93f83295046dee77167305af207b68442e89e48bc550697b925ff45b14023",
+          "candidate": "4a6e2c138912155b4144e4df4dc44df6751d7d6d35f32fe0fe8925f579374265"
+        },
+        {
+          "input": "9ad308ede39c5fcc6acb1ace9aee2e2a5db2479ca643198b2044b7bf9f2f5d7d",
+          "baseline": "9ad308ede39c5fcc6acb1ace9aee2e2a5db2479ca643198b2044b7bf9f2f5d7d",
+          "candidate": "df8d23944286313bf9ef7ad639c06bc03453f95555ef32a6332912ef1d828027"
+        },
+        {
+          "input": "939b7be6d58000361f41d6b480decf7f7edd970c46ec6265cace3de6a9a31310",
+          "baseline": "939b7be6d58000361f41d6b480decf7f7edd970c46ec6265cace3de6a9a31310",
+          "candidate": "a2aa43467afb365ce1f506dc468536d2bfe61bb1a7cd362ea888bf2714beeafe"
+        },
+        {
+          "input": "1ce66b895b0cd029da4523fa7ed35e3f1aa2b89c12ac7bb6bd24b0c2587b3fc6",
+          "baseline": "1ce66b895b0cd029da4523fa7ed35e3f1aa2b89c12ac7bb6bd24b0c2587b3fc6",
+          "candidate": "657360a295e203c7c48ab2f7d277633ea1b437a2bda07261922469a9a38fc55e"
+        },
+        {
+          "input": "2856fe9cfb1e136096a39ad57ba2e847d40d22cfbf339f5a7149d2467f341e47",
+          "baseline": "2856fe9cfb1e136096a39ad57ba2e847d40d22cfbf339f5a7149d2467f341e47",
+          "candidate": "4141d3b625a0e001e8b3cf171618b938dc8bebbe9ca1e6395dfaec73dfa551c7"
+        },
+        {
+          "input": "77c2b6c0610d68424ea2303d84714b0ea3764859aabcef16d291341c97fd100e",
+          "baseline": "77c2b6c0610d68424ea2303d84714b0ea3764859aabcef16d291341c97fd100e",
+          "candidate": "acf780cc06a0a899d8a9c017917331dc3578acbce8f7a83ec8891f20aef7aae5"
+        }
+      ],
+      "metrics": {
+        "brightness_ratio_median": 4.105263157894737,
+        "normalized_noise_ratio_median": 0.4153126067789974
+      },
+      "candidate_ms": {
+        "p50": 4.117666510865092,
+        "p95": 4.459747625514865,
+        "max": 4.6532913111150265
+      },
+      "baseline_ms": {
+        "p50": 0.016833888366818428,
+        "p95": 0.026262737810611718,
+        "max": 0.029457733035087585
+      }
+    },
+    {
+      "scene_id": "superres.construction_facade",
+      "source_sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744",
+      "decode": {
+        "source_path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_191345_attempt1.mp4",
+        "target_pts_s": 221.0,
+        "seek_pts_s": 217.5,
+        "decoded_source_frames": 121,
+        "decode_failures": 4,
+        "selected_pts_s": 221.0120625,
+        "roi_xywh": [
+          700,
+          180,
+          720,
+          520
+        ],
+        "processing_wh": [
+          720,
+          520
+        ],
+        "decoded_reference_sha256": "77f5e658a75507b21e87dee2ccb427ca292bf83fb429bd727e55e002e5bad18a",
+        "decoder": "OpenCV 4.13.0 FFmpeg backend"
+      },
+      "frames": 24,
+      "derivation": {
+        "exposure": 0.115,
+        "black_offset_codes": 1.8,
+        "read_noise_sigma": 2.35,
+        "seed": 20260904
+      },
+      "pixel_hashes": [
+        {
+          "input": "648fdb69fa048f1673519380d24def02f79eeb5ad021c87926d93fa63fea56db",
+          "baseline": "648fdb69fa048f1673519380d24def02f79eeb5ad021c87926d93fa63fea56db",
+          "candidate": "5b9eb6d758c481675e06baf5ab6675b7223a72d5aa573307db5be13ddafb93b3"
+        },
+        {
+          "input": "ab6ae10a2587dcf0af185a29d347fd598179780b17b632c52c7c94dd90880c23",
+          "baseline": "ab6ae10a2587dcf0af185a29d347fd598179780b17b632c52c7c94dd90880c23",
+          "candidate": "cf97f1cb265a6238111932d5d42cc99c792378ccfdb7291147a0beeceafe1cc8"
+        },
+        {
+          "input": "cd7d9f59f226d4d9cadaa24b6c22ef15fc724c6b856a94c91a0a6cad85f6b418",
+          "baseline": "cd7d9f59f226d4d9cadaa24b6c22ef15fc724c6b856a94c91a0a6cad85f6b418",
+          "candidate": "63e3751c0abd75eec61552697e576e414867486d33f0aaccaa754b74dcd9e641"
+        },
+        {
+          "input": "019dabeda255e3f2191af67e2747a63c860608a5567c6aa845bbe33f4e99a730",
+          "baseline": "019dabeda255e3f2191af67e2747a63c860608a5567c6aa845bbe33f4e99a730",
+          "candidate": "35631a6223527d89ad6a9e01a53eb6b967192004b7ff5c4bd7c25072b3fbb0ae"
+        },
+        {
+          "input": "99a3584b36ea056eab55935d3c67ebf6ecda1e289a15574f5cc1bcdf872a1442",
+          "baseline": "99a3584b36ea056eab55935d3c67ebf6ecda1e289a15574f5cc1bcdf872a1442",
+          "candidate": "d3d87bb7a271aed8372db5543eea4f7587a29c7d4e78d43b714c45c3e4974c0b"
+        },
+        {
+          "input": "a331e872ff59317cfbd5f3f87c6b7527a05a3138d28ede26416b40642360c7c7",
+          "baseline": "a331e872ff59317cfbd5f3f87c6b7527a05a3138d28ede26416b40642360c7c7",
+          "candidate": "8e07efe32dd40139ad1129a47bee038286e2e8a1a3c8cf6df2070f0125ac887e"
+        },
+        {
+          "input": "ac8c31a40e481a4da00563970fe933b20fbb1a8d79732a0731874f85ccd12e79",
+          "baseline": "ac8c31a40e481a4da00563970fe933b20fbb1a8d79732a0731874f85ccd12e79",
+          "candidate": "e234f57edd34666b21d3a0f391e39bb0fba47d2aa656f1b01f250f0ec4c780ef"
+        },
+        {
+          "input": "e07f3ef714d0c0a83c7b62f56d86bb36fd698a8a11eb8c701dcd39625ea37671",
+          "baseline": "e07f3ef714d0c0a83c7b62f56d86bb36fd698a8a11eb8c701dcd39625ea37671",
+          "candidate": "19990a5fae41460d9962f88192cf657dad971fc2009b3dfdbd984fddb31189cf"
+        },
+        {
+          "input": "d0b744610f6a486f0d1be921cb8331d040104a6935cb811fa8af7d0582a20ba1",
+          "baseline": "d0b744610f6a486f0d1be921cb8331d040104a6935cb811fa8af7d0582a20ba1",
+          "candidate": "8cb5218c37deae0086ceeeefea0cd4f5f2d678e75a33b9cf2e010b50a8d18488"
+        },
+        {
+          "input": "7485e3ec96270e31af4ad3c5ecfd2d9afa7a479f22edab8c5d5a14e6eaee2f16",
+          "baseline": "7485e3ec96270e31af4ad3c5ecfd2d9afa7a479f22edab8c5d5a14e6eaee2f16",
+          "candidate": "45ca1de76009e54ae2034a13db2521e26182f8f7a4712ce6040f2056dc4648f5"
+        },
+        {
+          "input": "b13d1fa50f1419a91cc17a0168ecd8fe01755cfb338ca271744ff1b89d89e0ed",
+          "baseline": "b13d1fa50f1419a91cc17a0168ecd8fe01755cfb338ca271744ff1b89d89e0ed",
+          "candidate": "f505545d72657b3196554fafdec62f26da1d60fcccd45a330628fc21328536b9"
+        },
+        {
+          "input": "7fccfcfefc8b4cf31e965fc0f04471775595550ae9ef0604cf632fe917da24de",
+          "baseline": "7fccfcfefc8b4cf31e965fc0f04471775595550ae9ef0604cf632fe917da24de",
+          "candidate": "6e66a1babd76c16000473d2ead0ace46cf848a5378c1b0d2559a8f96ee607179"
+        },
+        {
+          "input": "d34708ac09306039ba774dddfd37aae087bdaefcb6eea0747f407cef8f739c54",
+          "baseline": "d34708ac09306039ba774dddfd37aae087bdaefcb6eea0747f407cef8f739c54",
+          "candidate": "61e64cc2eda26bb99c21d3fb1aebfd636e64c9368f5e43892c93292c5fe497e7"
+        },
+        {
+          "input": "f04421f4501851a431ca08d5ec8c7d6cbc8b875487648eb11f8991668d003078",
+          "baseline": "f04421f4501851a431ca08d5ec8c7d6cbc8b875487648eb11f8991668d003078",
+          "candidate": "a311d2256786a74f0fd5fdfc1bb307e7d50780c06db22f042c681cb5099ac87b"
+        },
+        {
+          "input": "e1758f71ff20e611f9d3dbc59dce149ac2c817abc81f1598429e62bc75a171d2",
+          "baseline": "e1758f71ff20e611f9d3dbc59dce149ac2c817abc81f1598429e62bc75a171d2",
+          "candidate": "ca401c148ce988a119dc68a7148c8e48d2ff104893c81a95641604652f4086b8"
+        },
+        {
+          "input": "b97feb7d3fa0447eeb26c262f8a31bc61764a6a0bda1034e2d15699ae1ad4a35",
+          "baseline": "b97feb7d3fa0447eeb26c262f8a31bc61764a6a0bda1034e2d15699ae1ad4a35",
+          "candidate": "f5dabdc2dce60cc1464ac736799eaac29120336a28c3eef3655a4910c7fdff20"
+        },
+        {
+          "input": "0cd5d24eef3f72cd86e277b760f690e771c3b0f169e778579d3b4fa44c4236eb",
+          "baseline": "0cd5d24eef3f72cd86e277b760f690e771c3b0f169e778579d3b4fa44c4236eb",
+          "candidate": "6f2fe47875cc7b60b8122bad47c6868ecf6408b8fbb41bd66739431ffe539a38"
+        },
+        {
+          "input": "ce970fb725049b6fe727508a3ced97e9583b9bb6841132d5e6d90fd8ed36134f",
+          "baseline": "ce970fb725049b6fe727508a3ced97e9583b9bb6841132d5e6d90fd8ed36134f",
+          "candidate": "764d92e36bb1bf9bc0b76215d0469a3a22370892a1e9c699b76f387a9b6ba5bf"
+        },
+        {
+          "input": "c87cd89d37901ecb58147bca9ac9f1e0c5f908f255c824b3a8a1c7f13d74d3e2",
+          "baseline": "c87cd89d37901ecb58147bca9ac9f1e0c5f908f255c824b3a8a1c7f13d74d3e2",
+          "candidate": "4a44e7d100e712026c4f5c7c2e2c48031cc1a07758da31c4e6f140d35939daf9"
+        },
+        {
+          "input": "ff81c688e0f1933a9a1a88b20f759ff5eecaf62535b6310e67bf26b28add02a1",
+          "baseline": "ff81c688e0f1933a9a1a88b20f759ff5eecaf62535b6310e67bf26b28add02a1",
+          "candidate": "34955523da55ece580cb25c2d5c2eff4bc41b544a3a0afe3f3f435a2e07e2ad3"
+        },
+        {
+          "input": "9ab7c84760ca3d17cefebc5def2427658097fd16b26c86ec87e43632ba1442e8",
+          "baseline": "9ab7c84760ca3d17cefebc5def2427658097fd16b26c86ec87e43632ba1442e8",
+          "candidate": "5f2dc7f713d1399b2e9892c70137c4f46460046be478cdf50a3e37ff756c1da8"
+        },
+        {
+          "input": "fc9c17c7321947869a71ff016d0025f2ed992d14b667f711619137ccbe937417",
+          "baseline": "fc9c17c7321947869a71ff016d0025f2ed992d14b667f711619137ccbe937417",
+          "candidate": "e74494004d0724460f3355f7b5f3284af77da0bc942450019058af1fed30182f"
+        },
+        {
+          "input": "352d4dce15ce14fd8e93869bccc4763fab1e392e82e79dedcd3be1a1ec29450f",
+          "baseline": "352d4dce15ce14fd8e93869bccc4763fab1e392e82e79dedcd3be1a1ec29450f",
+          "candidate": "53fe0334eee035505fbe942c1675ad326c699e9bd152b90e86860921f1b4e1d9"
+        },
+        {
+          "input": "e922c3d3fc8cccb4afb2710099acc882795eb6d76a76a1518a915378544fdd46",
+          "baseline": "e922c3d3fc8cccb4afb2710099acc882795eb6d76a76a1518a915378544fdd46",
+          "candidate": "97b59b0b1d6766ff41ba62381c1d25e67b07a1d904d7b14d05ca61fd59130bf6"
+        }
+      ],
+      "metrics": {
+        "brightness_ratio_median": 4.875,
+        "normalized_noise_ratio_median": 0.49691853412306175
+      },
+      "candidate_ms": {
+        "p50": 4.946812521666288,
+        "p95": 5.217625177465379,
+        "max": 5.536540877074003
+      },
+      "baseline_ms": {
+        "p50": 0.019541475921869278,
+        "p95": 0.0228917459025979,
+        "max": 0.034582801163196564
+      }
+    },
+    {
+      "scene_id": "superres.skyline_rail",
+      "source_sha256": "5096d8eed9c12d8905e0c484aa356598eb9f56534b172102ac37a94d19ff8ba6",
+      "decode": {
+        "source_path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_195336_attempt1.mp4",
+        "target_pts_s": 302.0,
+        "seek_pts_s": 298.5,
+        "decoded_source_frames": 113,
+        "decode_failures": 3,
+        "selected_pts_s": 302.0299375,
+        "roi_xywh": [
+          320,
+          100,
+          960,
+          620
+        ],
+        "processing_wh": [
+          960,
+          620
+        ],
+        "decoded_reference_sha256": "ef11c88e425706a3c95ddbbd6314f600fa8857becc3740e6770fdf9c8d631c70",
+        "decoder": "OpenCV 4.13.0 FFmpeg backend"
+      },
+      "frames": 24,
+      "derivation": {
+        "exposure": 0.115,
+        "black_offset_codes": 1.8,
+        "read_noise_sigma": 2.35,
+        "seed": 20260904
+      },
+      "pixel_hashes": [
+        {
+          "input": "5d3e7b048209b531ba71ebad93b01e48d1a5b6f1399b7160587f675df47e8b5b",
+          "baseline": "5d3e7b048209b531ba71ebad93b01e48d1a5b6f1399b7160587f675df47e8b5b",
+          "candidate": "71d0e3e5127acd3ab017290432b4310f4dd7f8d138ff147b045c23cd2664b605"
+        },
+        {
+          "input": "f36c865e25dd2fcc0e08b67db4c8785a639cf1a972ef631ba14961a71a419fa5",
+          "baseline": "f36c865e25dd2fcc0e08b67db4c8785a639cf1a972ef631ba14961a71a419fa5",
+          "candidate": "6dec977b5bc31f231fac210a22e48064a93df799928924ae34e06085643de537"
+        },
+        {
+          "input": "3d97739fde015b838d6a2d67263df75a09ae77247634d9d8395cc875dc2fe09c",
+          "baseline": "3d97739fde015b838d6a2d67263df75a09ae77247634d9d8395cc875dc2fe09c",
+          "candidate": "39facbafbb25e8439d87ec6b27db2301e2ad0d4b30a12f10eb74df85d0026564"
+        },
+        {
+          "input": "50219b81a3cad8d36e8b9d4a0548da021ae8500a3a004140663aa7f05f794c4b",
+          "baseline": "50219b81a3cad8d36e8b9d4a0548da021ae8500a3a004140663aa7f05f794c4b",
+          "candidate": "fac2f025528427a53cebde1cf629654274f82d1809a4fbbf7d76a6fe5f519ba6"
+        },
+        {
+          "input": "5aeed475058bba0b5d7e305d233ea96ebc18679af3b8596f6cc106506d9d7343",
+          "baseline": "5aeed475058bba0b5d7e305d233ea96ebc18679af3b8596f6cc106506d9d7343",
+          "candidate": "80e141becf65bf29a1d917aca7dc2a6e7d1bdc9ecbc996013a2f9b7cc2ce14fe"
+        },
+        {
+          "input": "0d94acfac5329fd7ea4a6ed91912c5f9d8515760f9036207ad02515f979c76bc",
+          "baseline": "0d94acfac5329fd7ea4a6ed91912c5f9d8515760f9036207ad02515f979c76bc",
+          "candidate": "ddbd446fafb267ed77bbf15ccc6659d678acb0e4c7e7a0bd006de69b203f6207"
+        },
+        {
+          "input": "16addd0038d3522c215ff66909a2d719e1d0e5ae95002bde24ec2b8e6aa3caac",
+          "baseline": "16addd0038d3522c215ff66909a2d719e1d0e5ae95002bde24ec2b8e6aa3caac",
+          "candidate": "6f205da3d73f8f5bc27be4613a66f828982486281f51aa3744f97a5df281e4d3"
+        },
+        {
+          "input": "f21c16f6558d4e41262bcb4af78d96e36a8e33c401f9231656653d9a3ce063c0",
+          "baseline": "f21c16f6558d4e41262bcb4af78d96e36a8e33c401f9231656653d9a3ce063c0",
+          "candidate": "bfe348a9939d9d13912c722145aa41291943fd94b5ef3eec4d89e78ebb7d9827"
+        },
+        {
+          "input": "55c8756eff46deec7c1dbd58e5e57781c8e24aaf0a51bcfbfc5f6b4fa3cc85cf",
+          "baseline": "55c8756eff46deec7c1dbd58e5e57781c8e24aaf0a51bcfbfc5f6b4fa3cc85cf",
+          "candidate": "0fe043db5e8b878dee2d5a866dc48e2e61b2bb7a0d96302bc5033bd3e82a8f26"
+        },
+        {
+          "input": "a1d2153e65ee18cdb2b70992cd92cb2cb84b471d5eec713ded5d972c6b833d9d",
+          "baseline": "a1d2153e65ee18cdb2b70992cd92cb2cb84b471d5eec713ded5d972c6b833d9d",
+          "candidate": "b0a85ee37901e363fb4d356ecd913694f2ec7d5d9f7a81a856f64a204d606188"
+        },
+        {
+          "input": "5d94e8c466be9f0663f70251f535c1df540673cc03935903c8b55522d6335aea",
+          "baseline": "5d94e8c466be9f0663f70251f535c1df540673cc03935903c8b55522d6335aea",
+          "candidate": "beb6f23e3fd92056b2601df480dc3a6d541e26d4ccfb889f4b9d1525cabda2ed"
+        },
+        {
+          "input": "95eb13a36fcf5170491b2dfe8bbc314dad74b09691bd3edf10b7eef32a5f48eb",
+          "baseline": "95eb13a36fcf5170491b2dfe8bbc314dad74b09691bd3edf10b7eef32a5f48eb",
+          "candidate": "6bcc5c69cdaec2234db20990f3d19dc830be8d80e937a94bf3adc7bb144f6a3a"
+        },
+        {
+          "input": "97295943fc392a997a209e7b27cfbcff2ba1b14bb365ebb36e5d6e2cfd37d349",
+          "baseline": "97295943fc392a997a209e7b27cfbcff2ba1b14bb365ebb36e5d6e2cfd37d349",
+          "candidate": "58f062468997209be73c7f33947316de99ba6c40125c9108586cc3979f8a01f9"
+        },
+        {
+          "input": "289401006d0852682c984aecfdfcb3fe87326e76701b77e8b167cb3d62149a9b",
+          "baseline": "289401006d0852682c984aecfdfcb3fe87326e76701b77e8b167cb3d62149a9b",
+          "candidate": "4fd60581b439c6f84db0913ee83076ee7f5d2d3593f795408e862d71933c5c7f"
+        },
+        {
+          "input": "86b834b52b3ef8d3c04cf54344e70aec5505e9c76f518671b8adf32271499a1a",
+          "baseline": "86b834b52b3ef8d3c04cf54344e70aec5505e9c76f518671b8adf32271499a1a",
+          "candidate": "6dca9314a1fe70139c2c25190ee919e52fa9b2d3af7d1da60374d984255f41e5"
+        },
+        {
+          "input": "2b3450af888307450ed01776eb52298351322daab238e2f55c58ce65f4a8765f",
+          "baseline": "2b3450af888307450ed01776eb52298351322daab238e2f55c58ce65f4a8765f",
+          "candidate": "d4d2871df16fa02c475688e7f6c01928a24cd665d1e50e903c423397125e2af5"
+        },
+        {
+          "input": "33c8b0920138d559594106e72f0f8837c9260e85e87cc53f4cfbd1b88ff92008",
+          "baseline": "33c8b0920138d559594106e72f0f8837c9260e85e87cc53f4cfbd1b88ff92008",
+          "candidate": "2c4f95ade7bb440566bafea5f8fab612b772a31334cdfafd8edc5ea96d181cbc"
+        },
+        {
+          "input": "0dd9e5bcf82229780570de1e6f8aa252491b90d0a089d8ae43085a20d01aae06",
+          "baseline": "0dd9e5bcf82229780570de1e6f8aa252491b90d0a089d8ae43085a20d01aae06",
+          "candidate": "8644118dbdfdf149764e7b9accbeb00d912e1b89a666f8e82fed4b3b43064b5b"
+        },
+        {
+          "input": "d41851503873c0164dbe3ad3595428bfc6c98c4af4bf1996376458a8bae2cd25",
+          "baseline": "d41851503873c0164dbe3ad3595428bfc6c98c4af4bf1996376458a8bae2cd25",
+          "candidate": "d0ca75ef4e7cbbe7acd7fe13dec1c64b1bfebc17fe005710b83b53b211c1fcf5"
+        },
+        {
+          "input": "91e9f52bb819ccb52279aa1003d3f1ee32f2103a159abf0d2185c4d63d231781",
+          "baseline": "91e9f52bb819ccb52279aa1003d3f1ee32f2103a159abf0d2185c4d63d231781",
+          "candidate": "3d144c5ddfb2802e6753fffadbc70eb171515b29ac65d6306fa5de86953fc92d"
+        },
+        {
+          "input": "5bc5b30e35bed2edf8c7dcd1551b2bc08e4f13a1510ecf6fb4ef4739833b1537",
+          "baseline": "5bc5b30e35bed2edf8c7dcd1551b2bc08e4f13a1510ecf6fb4ef4739833b1537",
+          "candidate": "f082218753070bb4fee4f7f5c64dc6af2087038c5c9c5cf8e7d2bd35a8f1e0bb"
+        },
+        {
+          "input": "2a8e39e850cf978db8055df28d494458fb94b161cb2abb77e6f587e6ec57626c",
+          "baseline": "2a8e39e850cf978db8055df28d494458fb94b161cb2abb77e6f587e6ec57626c",
+          "candidate": "0f69ced24e672c9b3b27fdcfeff10c3bb8fc46203adeb92b03e9f40973b7a880"
+        },
+        {
+          "input": "ffa614f23b4509b3d34bf84057579fad2b3f333a6cc9eebd1fb515b3cae32942",
+          "baseline": "ffa614f23b4509b3d34bf84057579fad2b3f333a6cc9eebd1fb515b3cae32942",
+          "candidate": "0061a9e1757204f4eeb1ed2cec874e8db1b5e1b8b539e196f4258a09b45f4ad4"
+        },
+        {
+          "input": "c179a3de19b7c5ab22d67616e0a8aebf7c993f8b4a05d17d439714b5f10881be",
+          "baseline": "c179a3de19b7c5ab22d67616e0a8aebf7c993f8b4a05d17d439714b5f10881be",
+          "candidate": "ea21a63120d84cbc91ea37023ecf4c104ad4450a30a7b2b21129c99cc7532780"
+        }
+      ],
+      "metrics": {
+        "brightness_ratio_median": 3.6666666666666665,
+        "normalized_noise_ratio_median": 0.59432144471449
+      },
+      "candidate_ms": {
+        "p50": 7.702145492658019,
+        "p95": 15.990415145643048,
+        "max": 19.867666997015476
+      },
+      "baseline_ms": {
+        "p50": 0.03441632725298405,
+        "p95": 0.07200229447335005,
+        "max": 0.1982082612812519
+      }
+    }
+  ],
+  "failures": [],
+  "warnings": [
+    "Simulated low light; native night-flight effectiveness is unmeasured.",
+    "Spatial filtering can attenuate tiny low-contrast details; raw is retained.",
+    "No inference of detection recall or physical resolution."
+  ]
+}

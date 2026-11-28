@@ -1,0 +1,13 @@
+# This repository is public.  Pictures and video cut from the owner's personal
+# DJI recordings stay on this machine unless the owner decides to publish them.
+# Receipts, logs and numbers are tracked.
+demo_real/**/*.mp4
+demo_real/**/*.png
+ab_real/*.png
+live_rtmp_real/*.mp4
+live_rtmp_real_attempt1_failed/*.mp4
+zoom_real_tower/*.png
+demo_real/**/*.png
+# Superseded candidates: receipts are tracked, their videos and pictures stay local.
+development_history/**/*.mp4
+development_history/**/*.png

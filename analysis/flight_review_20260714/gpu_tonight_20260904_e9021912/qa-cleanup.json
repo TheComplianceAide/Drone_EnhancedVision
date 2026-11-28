@@ -1,0 +1,44 @@
+[
+  {
+    "file": "fable_motion_isr_rev3_tracks_20260904_202246_985181.jsonl",
+    "sha256": "22ceb17c135aaad0aed12d518265aa40e6c57f0438a5dbe18af10f4ee9317f6e",
+    "preserved_under": "local-development-history/qa-snapshots",
+    "removed_from_operator_snapshots": true
+  },
+  {
+    "file": "fable_motion_isr_rev3_source_20260904_203003_731140.png",
+    "sha256": "da587835c7899ff311f6b31ad76ef41f6ab4a5b2939d2dbe649681ba80e83da6",
+    "preserved_under": "local-development-history/qa-snapshots",
+    "removed_from_operator_snapshots": true
+  },
+  {
+    "file": "fable_motion_isr_rev3_source_20260904_202319_625148.png",
+    "sha256": "3d3a37bdef4dd17961154e9b429c5c95367ba9e8437e7d36c971f3fe3f0ca87d",
+    "preserved_under": "local-development-history/qa-snapshots",
+    "removed_from_operator_snapshots": true
+  },
+  {
+    "file": "fable_motion_isr_rev3_source_20260904_202317_094672.png",
+    "sha256": "ca800d5125179920c5cea0791d199f78589c16afd52470a9c5fc6af5af78e1d0",
+    "preserved_under": "local-development-history/qa-snapshots",
+    "removed_from_operator_snapshots": true
+  },
+  {
+    "file": "fable_motion_isr_rev3_source_20260904_202312_397099.png",
+    "sha256": "95f3a81b598a898505a8ba0fee8e8859bbd9c9fe93cdb5a38a2e6e10b63c44fb",
+    "preserved_under": "local-development-history/qa-snapshots",
+    "removed_from_operator_snapshots": true
+  },
+  {
+    "file": "fable_motion_isr_rev3_source_20260904_202309_913286.png",
+    "sha256": "745fd0d1277ed1c95d9293e1e0e31cba50888270c68482e457720137b38ac70a",
+    "preserved_under": "local-development-history/qa-snapshots",
+    "removed_from_operator_snapshots": true
+  },
+  {
+    "file": "fable_motion_isr_rev3_tracks_20260904_203001_496596.jsonl",
+    "sha256": "826d3d8334dfb57f50533365574d435c16eede2b9c4fb3c20a2fbff492db0dbf",
+    "preserved_under": "local-development-history/qa-snapshots",
+    "removed_from_operator_snapshots": true
+  }
+]

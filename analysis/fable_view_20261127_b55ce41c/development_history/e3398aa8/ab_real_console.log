@@ -1,0 +1,12 @@
+night_recording_1 night_native {"unprocessed": 0.0, "night_preview": 1.89, "temporal_quality_8": 0.44, "fable_view": 9.46}
+night_recording_2 night_native {"unprocessed": 0.0, "night_preview": 0.48, "temporal_quality_8": 0.25, "fable_view": 3.29}
+night_recording_3 night_native {"unprocessed": 0.0, "night_preview": 5.05, "temporal_quality_8": 2.91, "fable_view": 21.06}
+recording_1 night {"unprocessed": 26.38, "night_preview": 26.59, "temporal_quality_8": 35.99, "fable_view": 40.65}
+recording_1 motion {"fable_view": [6, 4], "rev3_search": [3, 15], "rev3_small_game": [5, 37]}
+recording_2 night {"unprocessed": 26.31, "night_preview": 26.49, "temporal_quality_8": 31.01, "fable_view": 30.63}
+recording_2 motion {"fable_view": [0, 0], "rev3_search": [0, 5], "rev3_small_game": [0, 18]}
+recording_3 night {"unprocessed": 26.51, "night_preview": 26.7, "temporal_quality_8": 34.18, "fable_view": 34.78}
+recording_3 motion {"fable_view": [0, 1], "rev3_search": [0, 9], "rev3_small_game": [0, 16]}
+recording_4 night {"unprocessed": 26.73, "night_preview": 26.94, "temporal_quality_8": 34.76, "fable_view": 36.14}
+recording_4 motion {"fable_view": [4, 4], "rev3_search": [1, 20], "rev3_small_game": [1, 30]}
+receipt: analysis/fable_view_20261127_e3398aa8/ab_real/receipt.json

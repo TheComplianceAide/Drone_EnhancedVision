@@ -1,0 +1,154 @@
+{
+  "core": {
+    "base_receipt": {
+      "accepted_frames": 24,
+      "actual_backend": "mps",
+      "compute_ms": 23.701625410467386,
+      "download_count": 24,
+      "download_ms": 0.19883271306753159,
+      "fallback_reason": "",
+      "fallback_used": false,
+      "frame_shape": [
+        96,
+        160,
+        3
+      ],
+      "persistent_bank": true,
+      "requested_backend": "auto",
+      "robust_iterations": 2,
+      "synchronization_count": 24,
+      "total_ms": 24.96212488040328,
+      "upload_count": 24,
+      "upload_ms": 0.5858750082552433
+    },
+    "edge_mae_baseline": 0.004605991765856743,
+    "edge_mae_candidate": 0.004186325240880251,
+    "edge_mae_ratio": 0.9088868269180609,
+    "limitations": [
+      "Synthetic detector phases validate solver mechanics only.",
+      "No physical detail absent from the input observations is claimed."
+    ],
+    "mps": {
+      "mps_available": true,
+      "mps_built": true,
+      "platform": "Darwin 25.1.0 arm64",
+      "reason": "available",
+      "torch_imported": true,
+      "torch_version": "2.10.0"
+    },
+    "ok": true,
+    "receipt": {
+      "accepted_frames": 24,
+      "actual_backend": "mps",
+      "candidate_forward_mse": 0.0006659610662609339,
+      "compute_ms": 68.76766728237271,
+      "detector_phases_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "download_ms": 0.4197079688310623,
+      "ecc_registration_count": 23,
+      "fallback_reason": "",
+      "fallback_used": false,
+      "forward_gain_db": 0.11335664145096071,
+      "forward_projection_count": 1500,
+      "ibp_iterations_requested": 3,
+      "ibp_iterations_run": 3,
+      "last_registration_correlation": 0.8355171396468261,
+      "mps_current_allocated_bytes": 24884992,
+      "mps_driver_allocated_bytes": 1406189568,
+      "native_input_shape": [
+        96,
+        160,
+        3
+      ],
+      "native_upload_count": 24,
+      "output_download_count": 24,
+      "output_shape": [
+        192,
+        320,
+        3
+      ],
+      "persistent_native_bank": true,
+      "prior_forward_mse": 0.0006835723761469126,
+      "reconstruction_count": 24,
+      "registration_backend": "OpenCV local-contrast ECC translation with Rev2 phase-correlation fallback",
+      "registration_fallback_count": 0,
+      "requested_backend": "auto",
+      "split_consistency_mean": 0.8638212084770203,
+      "split_disagreement_rmse": 0.007331745699048042,
+      "synchronization_count": 24,
+      "total_ms": 107.57258394733071,
+      "upload_ms": 9.849917143583298
+    },
+    "stats": {
+      "forward_gain_db": 0.11335664145096071,
+      "frames": 24,
+      "occupied_detector_phases": 4,
+      "output_scale": 2,
+      "split_consistency_mean": 0.8638212084770203,
+      "split_disagreement_rmse": 0.007331745699048042,
+      "status": "2x forward reconstruction 24f 4/4 phases"
+    },
+    "timing_ms": {
+      "maximum": 222.5940409116447,
+      "p50": 100.7269169203937,
+      "p95": 141.13839995115993
+    }
+  },
+  "field_app": {
+    "button": "SOAK",
+    "byte_identical_rev2_fallback": true,
+    "default_process_max_width": 640,
+    "default_stack_frames": 64,
+    "latest_pending_jobs": 1,
+    "non_generative": true
+  },
+  "field_hardening": {
+    "closed_waiting_window_detected": true,
+    "latest_job_replaced": true,
+    "ok": true,
+    "stale_generation_rejected": true,
+    "worker_quit_within_deadline": true
+  },
+  "mps": {
+    "mps_available": true,
+    "mps_built": true,
+    "platform": "Darwin 25.1.0 arm64",
+    "reason": "available",
+    "torch_imported": true,
+    "torch_version": "2.10.0"
+  },
+  "ok": true,
+  "terminal_refinement": {
+    "actual_backend": "mps",
+    "compute_ms": 18.191833049058914,
+    "detail_restore": 0.65,
+    "download_ms": 0.1843329519033432,
+    "fallback_reason": "",
+    "fallback_used": false,
+    "input_uploads": 1,
+    "kernel": "bounded 5x5 bilateral plus split-supported detail restore",
+    "output_downloads": 1,
+    "requested_backend": "auto",
+    "sigma_color_code_values": 4.0,
+    "sigma_space": 1.55,
+    "synchronization_count": 3,
+    "total_ms": 18.64212518557906,
+    "upload_ms": 0.24174991995096207
+  }
+}

@@ -1,0 +1,10 @@
+20:55  up 29 days, 13:37, 2 users, load averages: 4.77 5.30 5.79
+Apple M4 Pro
+ %CPU COMM
+111.6 /Users/randy/Library/Caches/ms-playwright/chromium_headless_shell-1193/chrome-mac/headless_shell
+100.0 /Users/randy/Library/Caches/ms-playwright/chromium_headless_shell-1193/chrome-mac/headless_shell
+ 34.3 /Applications/Microsoft Defender.app/Contents/MacOS/wdavdaemon_unprivileged.app/Contents/MacOS/wdavdaemon_unprivileged
+ 32.0 /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XPCServices/XprotectService.xpc/Contents/MacOS/XprotectService
+ 30.3 node
+ 26.6 /Library/SystemExtensions/D4594C8B-6F52-454F-8137-46728C83FF25/com.microsoft.wdav.epsext.systemextension/Contents/MacOS/epsext
+ 15.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer

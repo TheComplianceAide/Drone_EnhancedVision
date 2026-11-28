@@ -1,0 +1,20 @@
+Fable View self-test on MPS
+PASS  registration accuracy              worst corner error 0.109 px over 15 steps of ~6.6 px
+PASS  night noise reduction (hover)      +12.3 dB against the noise-free scene, exposure x3.3, 23 frames per pixel
+PASS  night noise reduction (pan)        +12.5 dB against the noise-free scene, exposure x3.2, 22 frames per pixel
+PASS  moving object not ghosted          object at 92% of its true brightness; residue where it was 0.0079 (limit 0.02)
+PASS  daylight left alone                exposure x1.00, 45.7 dB to the clean scene, clipped highlight minimum 255
+PASS  scene change not blended           first frame after the cut is 29.7 dB to the new scene (single-frame level 26.4 dB)
+PASS  moving objects (hover)             6 of 6 confirmed, slowest after 1.5 s, 0 false tracks, 0 canvas re-keys
+PASS  moving objects (pan)               6 of 6 confirmed, slowest after 1.5 s, 0 false tracks, 2 canvas re-keys
+PASS  empty scene stays quiet (hover)    0 false tracks in 5 s with no moving object
+PASS  empty scene stays quiet (pan)      0 false tracks in 5 s with no moving object
+PASS  compressed video stays quiet       JPEG quality 60 on every frame: 0 false tracks on an empty scene, 6 of 6 objects confirmed with 0 false
+PASS  faint object needs accumulation    5-code object in 2-code noise: confirmed at 0.8 s with path accumulation (held 126 of 150 frames), confirmed at 3.3 s without
+PASS  raised structure is not a mover    camera travelling 2.2 px/frame past three static blocks a quarter of the way up to it: 0 marked (8 with the camera-motion allowance switched off), 2 of 2 real movers confirmed, 0 other
+PASS  stabilised zoom (hover)            3.0x: 31.5 dB stacked against 29.2 dB for one frame (+2.3 dB), 24 frames per pixel
+PASS  stabilised zoom (pan)              3.0x: 30.3 dB stacked against 28.4 dB for one frame (+1.9 dB), 24 frames per pixel
+PASS  zoom from a larger source          3840x2160 JPEG-30 source under a 1920-wide overview: 22 frames per pixel (11 with the noise correction off), stack +0.2 dB against one frame, correction x1.59
+PASS  zoom follows a moving object       followed=True, window within 0.7 px of the object, alignment 0.87, detail ratio 1.68
+PASS  CPU and GPU agree                  denoised estimate agrees to 48.1 dB; automatic exposure within 0.1%
+PASS  18 of 18 checks passed in 466 s; 1080p frame time with detection 68 ms median on MPS

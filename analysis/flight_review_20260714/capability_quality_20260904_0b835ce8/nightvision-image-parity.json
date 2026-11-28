@@ -1,0 +1,170 @@
+[
+  {
+    "file": "superres_construction_facade/rev3_trial.png",
+    "identical": true
+  },
+  {
+    "file": "superres_construction_facade/rev1.png",
+    "identical": true
+  },
+  {
+    "file": "superres_construction_facade/comparison.png",
+    "identical": true
+  },
+  {
+    "file": "superres_construction_facade/rev3_split_consistency.png",
+    "identical": true
+  },
+  {
+    "file": "superres_construction_facade/derived_clean_lowlight.png",
+    "identical": true
+  },
+  {
+    "file": "superres_construction_facade/rev3_detail_support.png",
+    "identical": true
+  },
+  {
+    "file": "superres_construction_facade/rev3_confidence.png",
+    "identical": true
+  },
+  {
+    "file": "superres_construction_facade/rev3_selected.png",
+    "identical": true
+  },
+  {
+    "file": "superres_construction_facade/rev3_reconstruction_preterminal.png",
+    "identical": true
+  },
+  {
+    "file": "superres_construction_facade/detail_crops_3x.png",
+    "identical": true
+  },
+  {
+    "file": "superres_construction_facade/ghost_mask.png",
+    "identical": true
+  },
+  {
+    "file": "superres_construction_facade/rev2_floor.png",
+    "identical": true
+  },
+  {
+    "file": "superres_construction_facade/source_reference.png",
+    "identical": true
+  },
+  {
+    "file": "superres_construction_facade/raw_detector_nearest.png",
+    "identical": true
+  },
+  {
+    "file": "superres_soft_barn_soak/rev3_trial.png",
+    "identical": true
+  },
+  {
+    "file": "superres_soft_barn_soak/rev1.png",
+    "identical": true
+  },
+  {
+    "file": "superres_soft_barn_soak/comparison.png",
+    "identical": true
+  },
+  {
+    "file": "superres_soft_barn_soak/rev3_split_consistency.png",
+    "identical": true
+  },
+  {
+    "file": "superres_soft_barn_soak/derived_clean_lowlight.png",
+    "identical": true
+  },
+  {
+    "file": "superres_soft_barn_soak/rev3_detail_support.png",
+    "identical": true
+  },
+  {
+    "file": "superres_soft_barn_soak/rev3_confidence.png",
+    "identical": true
+  },
+  {
+    "file": "superres_soft_barn_soak/rev3_selected.png",
+    "identical": true
+  },
+  {
+    "file": "superres_soft_barn_soak/rev3_reconstruction_preterminal.png",
+    "identical": true
+  },
+  {
+    "file": "superres_soft_barn_soak/detail_crops_3x.png",
+    "identical": true
+  },
+  {
+    "file": "superres_soft_barn_soak/ghost_mask.png",
+    "identical": true
+  },
+  {
+    "file": "superres_soft_barn_soak/rev2_floor.png",
+    "identical": true
+  },
+  {
+    "file": "superres_soft_barn_soak/source_reference.png",
+    "identical": true
+  },
+  {
+    "file": "superres_soft_barn_soak/raw_detector_nearest.png",
+    "identical": true
+  },
+  {
+    "file": "superres_skyline_rail/rev3_trial.png",
+    "identical": true
+  },
+  {
+    "file": "superres_skyline_rail/rev1.png",
+    "identical": true
+  },
+  {
+    "file": "superres_skyline_rail/comparison.png",
+    "identical": true
+  },
+  {
+    "file": "superres_skyline_rail/rev3_split_consistency.png",
+    "identical": true
+  },
+  {
+    "file": "superres_skyline_rail/derived_clean_lowlight.png",
+    "identical": true
+  },
+  {
+    "file": "superres_skyline_rail/rev3_detail_support.png",
+    "identical": true
+  },
+  {
+    "file": "superres_skyline_rail/rev3_confidence.png",
+    "identical": true
+  },
+  {
+    "file": "superres_skyline_rail/rev3_selected.png",
+    "identical": true
+  },
+  {
+    "file": "superres_skyline_rail/rev3_reconstruction_preterminal.png",
+    "identical": true
+  },
+  {
+    "file": "superres_skyline_rail/detail_crops_3x.png",
+    "identical": true
+  },
+  {
+    "file": "superres_skyline_rail/ghost_mask.png",
+    "identical": true
+  },
+  {
+    "file": "superres_skyline_rail/rev2_floor.png",
+    "identical": true
+  },
+  {
+    "file": "superres_skyline_rail/source_reference.png",
+    "identical": true
+  },
+  {
+    "file": "superres_skyline_rail/raw_detector_nearest.png",
+    "identical": true
+  }
+]

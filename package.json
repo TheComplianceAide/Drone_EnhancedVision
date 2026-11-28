@@ -1,0 +1,12 @@
+{
+  "name": "drone-enhanced-vision-local-runtime",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Pinned local media-server runtime for Drone Vision Ops",
+  "scripts": {
+    "nms": "node nms_local_server.js"
+  },
+  "dependencies": {
+    "node-media-server": "4.2.8"
+  }
+}

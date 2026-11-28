@@ -1,0 +1,1153 @@
+{
+  "title": "Fable View A/B against existing Astra views",
+  "command": "python fable_view_validation.py --device mps --require-mps --no-procedural --output-dir analysis/fable_view_20261127_e3398aa8/ab_real --night-source /Volumes/Randy 12TB Drive/Drone Card Archive 2026-11-07/Originals/DCIM/101MEDIA/DJI_0975.MP4@90 --night-source /Volumes/Randy 12TB Drive/Drone Card Archive 2026-11-07/Originals/DCIM/101MEDIA/DJI_0977.MP4@80 --night-source /Volumes/Randy 12TB Drive/Drone Card Archive 2026-11-07/Originals/DCIM/101MEDIA/DJI_0973.MP4@60 --source /Volumes/Randy 12TB Drive/Drone Card Archive 2026-11-07/Originals/DCIM/101MEDIA/DJI_0947.MP4@30 --source /Volumes/Randy 12TB Drive/Drone Card Archive 2026-11-07/Originals/DCIM/101MEDIA/DJI_0951.MP4@50 --source /Volumes/Randy 12TB Drive/Drone Card Archive 2026-11-07/Originals/DCIM/101MEDIA/DJI_0966.MP4@50 --source /Volumes/Randy 12TB Drive/Drone Card Archive 2026-11-07/Originals/DCIM/100MEDIA/DJI_0993.MP4@30",
+  "device": "mps",
+  "machine": "arm64",
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "python": "3.13.13",
+  "torch": "2.12.1",
+  "opencv": "5.0.0",
+  "ffmpeg": "ffmpeg version 8.1.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "candidate_sha256": {
+    "fable_view_engine.py": "3990ee380d32013c59d535610b197ffaab08344fb5fde700d18a5f2bc0153703",
+    "fable_view_gpu.py": "e81bac856109e0d2e6905ed32dcca92c6860d4a7e16bbe87cd89690db688fd1b",
+    "fable_view_registration.py": "f4e2729a9e5126c577ce769a42eb192c94de8d4968aecdf8854576e193af5d0a",
+    "fable_view_night.py": "0db49c05788d651118aaec2cbe4a4cf32e31cc40c53287f101b36063ce8edfbc",
+    "fable_view_motion.py": "517139f38757340a8105af5bb1d59fe2d42ed2f930488878f17533a15e3d0ce0",
+    "fable_view_zoom.py": "12ae598b66ec83071ca048b3c13fd2a8b737d426838feaf7414c15f9f813125a",
+    "fable_view_app.py": "f4bbc4ab506d96204f35e3333ef288467f1727925e2fc245ed3984fa3d516656",
+    "fable_view_selftest.py": "1590231e7cb2e34827ac744b6b16f4b6d4262e79d4b94928118e497a49acc249",
+    "fable_view_validation.py": "fe5c6aa31afc5c3de587e24ae656002084265c78691f7a71e016e501d8f8b872",
+    "_FableView.py": "86f9eba1d6c18f6028265de80e7287a4522a89a48fc9d4a4cb3b92d13f6b260b"
+  },
+  "baseline_sha256": {
+    "_09_M5_Fable_MotionISR_Rev3.py": "cbb54ccaa7d2d225f80d9c49952fb9fbd4dc3e94030f12d2db9c261a44c896a5",
+    "m5_operator_view.py": "b0298024d69b1b07cb0ddf04360f84b953f342190597b235711108c0660be582",
+    "m5_temporal_quality.py": "46f2f9ed754666f85a95bc7f577b850298f1e5857c9b24e7a9759ceddb3f236b",
+    "motion_sketch_zoom.py": "d36751f2690ff819c35b94dcb40f936e3cff5295b94973ab853f63824baf0c13"
+  },
+  "inputs": [
+    {
+      "id": "night_recording_1",
+      "path": "/Volumes/Randy 12TB Drive/Drone Card Archive 2026-11-07/Originals/DCIM/101MEDIA/DJI_0975.MP4",
+      "bytes": 3760101496,
+      "sha256": "a2297cca51addb2705b064f7452f44651f6529061273e58ba969733a9f6b2e6a",
+      "start_pts": 90.023267,
+      "end_pts": 94.9949,
+      "frames": 150,
+      "clock": "decoded source PTS",
+      "native_size": [
+        3840,
+        2160
+      ],
+      "size_under_test": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "id": "night_recording_2",
+      "path": "/Volumes/Randy 12TB Drive/Drone Card Archive 2026-11-07/Originals/DCIM/101MEDIA/DJI_0977.MP4",
+      "bytes": 2944263145,
+      "sha256": "def10d0967869b3768162458dbc317e9c51d5d0f7a773ee71d5326da87ada2e3",
+      "start_pts": 80.013267,
+      "end_pts": 84.9849,
+      "frames": 150,
+      "clock": "decoded source PTS",
+      "native_size": [
+        3840,
+        2160
+      ],
+      "size_under_test": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "id": "night_recording_3",
+      "path": "/Volumes/Randy 12TB Drive/Drone Card Archive 2026-11-07/Originals/DCIM/101MEDIA/DJI_0973.MP4",
+      "bytes": 3760888509,
+      "sha256": "688a47c1010f003647f0e76ced37a02605f16d62ae58b5e47aa4e4c36254035c",
+      "start_pts": 60.026633,
+      "end_pts": 64.998267,
+      "frames": 150,
+      "clock": "decoded source PTS",
+      "native_size": [
+        3840,
+        2160
+      ],
+      "size_under_test": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "id": "recording_1",
+      "path": "/Volumes/Randy 12TB Drive/Drone Card Archive 2026-11-07/Originals/DCIM/101MEDIA/DJI_0947.MP4",
+      "bytes": 1496933861,
+      "sha256": "d98941d595f43f7ef3f99a35a6f08888f32a8d325acb51587ddf72ab5478525a",
+      "start_pts": 30.03,
+      "end_pts": 35.001633,
+      "frames": 150,
+      "clock": "decoded source PTS",
+      "native_size": [
+        3840,
+        2160
+      ],
+      "size_under_test": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "id": "recording_2",
+      "path": "/Volumes/Randy 12TB Drive/Drone Card Archive 2026-11-07/Originals/DCIM/101MEDIA/DJI_0951.MP4",
+      "bytes": 3151364410,
+      "sha256": "d177170c8bf8864c7231cd4309f81e98ede96048e1f9ef8e93c878e152222906",
+      "start_pts": 50.016633,
+      "end_pts": 54.988267,
+      "frames": 150,
+      "clock": "decoded source PTS",
+      "native_size": [
+        3840,
+        2160
+      ],
+      "size_under_test": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "id": "recording_3",
+      "path": "/Volumes/Randy 12TB Drive/Drone Card Archive 2026-11-07/Originals/DCIM/101MEDIA/DJI_0966.MP4",
+      "bytes": 2338752847,
+      "sha256": "af782bffb2553a0a990e51a1488ebc909aa829f073beeea2e8e686d5f7bd559c",
+      "start_pts": 50.016633,
+      "end_pts": 54.988267,
+      "frames": 150,
+      "clock": "decoded source PTS",
+      "native_size": [
+        3840,
+        2160
+      ],
+      "size_under_test": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "id": "recording_4",
+      "path": "/Volumes/Randy 12TB Drive/Drone Card Archive 2026-11-07/Originals/DCIM/100MEDIA/DJI_0993.MP4",
+      "bytes": 1654610200,
+      "sha256": "73343735640fede058d44368b48dc5574b1c47be43235cf5f8651a0526a2d38b",
+      "start_pts": 30.03,
+      "end_pts": 35.001633,
+      "frames": 150,
+      "clock": "decoded source PTS",
+      "native_size": [
+        3840,
+        2160
+      ],
+      "size_under_test": [
+        1920,
+        1080
+      ]
+    }
+  ],
+  "results": {
+    "night_recording_1": {
+      "night_native": {
+        "scored_pairs": 71,
+        "gap_frames": 4,
+        "input_frames": 150,
+        "source_noise_codes": 2.912,
+        "unprocessed": {
+          "residual_codes": 2.912,
+          "noise_reduction_db": 0.0,
+          "frame_ms": {}
+        },
+        "night_preview": {
+          "residual_codes": 2.343,
+          "noise_reduction_db": 1.89,
+          "frame_ms": {
+            "p50": 51.73,
+            "p95": 66.17
+          }
+        },
+        "temporal_quality_8": {
+          "residual_codes": 2.77,
+          "noise_reduction_db": 0.44,
+          "frame_ms": {
+            "p50": 144.57,
+            "p95": 225.99
+          }
+        },
+        "fable_view": {
+          "residual_codes": 0.98,
+          "noise_reduction_db": 9.46,
+          "frame_ms": {
+            "p50": 52.21,
+            "p95": 60.68
+          },
+          "exposure_gain": 10.94,
+          "frames_per_pixel": 31.4
+        },
+        "note": "No clean reference exists for native night footage.  Residual = error against a later, registered decoded frame, minus one frame of measured source noise, on pixels that did not move or clip.  In-camera noise reduction correlates neighbouring frames, so the source noise is a lower bound and the gains are conservative."
+      }
+    },
+    "night_recording_2": {
+      "night_native": {
+        "scored_pairs": 71,
+        "gap_frames": 4,
+        "input_frames": 150,
+        "source_noise_codes": 2.647,
+        "unprocessed": {
+          "residual_codes": 2.647,
+          "noise_reduction_db": 0.0,
+          "frame_ms": {}
+        },
+        "night_preview": {
+          "residual_codes": 2.506,
+          "noise_reduction_db": 0.48,
+          "frame_ms": {
+            "p50": 49.27,
+            "p95": 61.96
+          }
+        },
+        "temporal_quality_8": {
+          "residual_codes": 2.573,
+          "noise_reduction_db": 0.25,
+          "frame_ms": {
+            "p50": 131.54,
+            "p95": 172.85
+          }
+        },
+        "fable_view": {
+          "residual_codes": 1.812,
+          "noise_reduction_db": 3.29,
+          "frame_ms": {
+            "p50": 51.03,
+            "p95": 57.73
+          },
+          "exposure_gain": 13.23,
+          "frames_per_pixel": 25.2
+        },
+        "note": "No clean reference exists for native night footage.  Residual = error against a later, registered decoded frame, minus one frame of measured source noise, on pixels that did not move or clip.  In-camera noise reduction correlates neighbouring frames, so the source noise is a lower bound and the gains are conservative."
+      }
+    },
+    "night_recording_3": {
+      "night_native": {
+        "scored_pairs": 71,
+        "gap_frames": 4,
+        "input_frames": 150,
+        "source_noise_codes": 1.437,
+        "unprocessed": {
+          "residual_codes": 1.437,
+          "noise_reduction_db": 0.0,
+          "frame_ms": {}
+        },
+        "night_preview": {
+          "residual_codes": 0.803,
+          "noise_reduction_db": 5.05,
+          "frame_ms": {
+            "p50": 40.09,
+            "p95": 48.81
+          }
+        },
+        "temporal_quality_8": {
+          "residual_codes": 1.027,
+          "noise_reduction_db": 2.91,
+          "frame_ms": {
+            "p50": 129.52,
+            "p95": 186.52
+          }
+        },
+        "fable_view": {
+          "residual_codes": 0.127,
+          "noise_reduction_db": 21.06,
+          "frame_ms": {
+            "p50": 65.43,
+            "p95": 132.13
+          },
+          "exposure_gain": 14.61,
+          "frames_per_pixel": 14.2
+        },
+        "note": "No clean reference exists for native night footage.  Residual = error against a later, registered decoded frame, minus one frame of measured source noise, on pixels that did not move or clip.  In-camera noise reduction correlates neighbouring frames, so the source noise is a lower bound and the gains are conservative."
+      }
+    },
+    "recording_1": {
+      "night": {
+        "unprocessed": {
+          "psnr_db": 26.38,
+          "ssim": 0.5245,
+          "frame_ms": {
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        },
+        "night_preview": {
+          "psnr_db": 26.59,
+          "ssim": 0.5393,
+          "frame_ms": {
+            "p50": 32.29,
+            "p95": 35.53
+          }
+        },
+        "temporal_quality_8": {
+          "psnr_db": 35.99,
+          "ssim": 0.9319,
+          "frame_ms": {
+            "p50": 143.41,
+            "p95": 183.65
+          }
+        },
+        "fable_view": {
+          "psnr_db": 40.65,
+          "ssim": 0.995,
+          "frame_ms": {
+            "p50": 51.58,
+            "p95": 55.71
+          },
+          "exposure_gain": 3.51,
+          "frames_per_pixel": 19.6
+        },
+        "scored_frames": 20,
+        "input_frames": 60,
+        "note": "PSNR/SSIM against the noise-free frame in the input encoding; night_preview is scored after undoing its documented exposure curve.  temporal_quality ran on CPU, as the NightVision app runs it."
+      },
+      "motion": {
+        "fable_view": {
+          "objects_confirmed": 6,
+          "objects": 6,
+          "seconds_to_confirm": [
+            0.73,
+            0.77,
+            1.97,
+            0.9,
+            0.73,
+            3.0
+          ],
+          "frames_held": [
+            97,
+            127,
+            87,
+            123,
+            128,
+            60
+          ],
+          "track_identities_per_object": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "other_confirmed_tracks": 4,
+          "frame_ms": {
+            "p50": 38.85,
+            "p95": 46.02
+          }
+        },
+        "rev3_search": {
+          "objects_confirmed": 3,
+          "objects": 6,
+          "seconds_to_confirm": [
+            1.23,
+            1.77,
+            null,
+            null,
+            1.67,
+            null
+          ],
+          "frames_held": [
+            78,
+            97,
+            0,
+            0,
+            100,
+            0
+          ],
+          "track_identities_per_object": [
+            2,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "other_confirmed_tracks": 15,
+          "frame_ms": {
+            "p50": 30.92,
+            "p95": 32.67
+          }
+        },
+        "rev3_small_game": {
+          "objects_confirmed": 5,
+          "objects": 6,
+          "seconds_to_confirm": [
+            1.33,
+            1.53,
+            2.2,
+            null,
+            1.3,
+            1.77
+          ],
+          "frames_held": [
+            110,
+            104,
+            84,
+            0,
+            111,
+            97
+          ],
+          "track_identities_per_object": [
+            3,
+            1,
+            3,
+            0,
+            1,
+            1
+          ],
+          "other_confirmed_tracks": 37,
+          "frame_ms": {
+            "p50": 35.26,
+            "p95": 40.03
+          }
+        },
+        "frames": 150,
+        "objects_spec": [
+          {
+            "start": [
+              576.0,
+              378.0
+            ],
+            "px_per_frame": [
+              3.0,
+              0.5
+            ],
+            "contrast_codes": 90.0,
+            "sigma_px": 1.6
+          },
+          {
+            "start": [
+              1344.0,
+              648.0
+            ],
+            "px_per_frame": [
+              -1.2,
+              0.8
+            ],
+            "contrast_codes": 50.0,
+            "sigma_px": 1.4
+          },
+          {
+            "start": [
+              864.0,
+              540.0
+            ],
+            "px_per_frame": [
+              0.6,
+              -0.4
+            ],
+            "contrast_codes": 25.0,
+            "sigma_px": 1.2
+          },
+          {
+            "start": [
+              1536.0,
+              324.0
+            ],
+            "px_per_frame": [
+              -2.0,
+              -1.0
+            ],
+            "contrast_codes": 15.0,
+            "sigma_px": 1.3
+          },
+          {
+            "start": [
+              480.0,
+              810.0
+            ],
+            "px_per_frame": [
+              1.5,
+              0.0
+            ],
+            "contrast_codes": -45.0,
+            "sigma_px": 2.5
+          },
+          {
+            "start": [
+              1152.0,
+              270.0
+            ],
+            "px_per_frame": [
+              0.25,
+              0.15
+            ],
+            "contrast_codes": 60.0,
+            "sigma_px": 1.5
+          }
+        ],
+        "note": "\"other confirmed tracks\" are confirmed tracks away from every injected object.  On the procedural scene they are false by construction; on a recording they may be real movers."
+      }
+    },
+    "recording_2": {
+      "night": {
+        "unprocessed": {
+          "psnr_db": 26.31,
+          "ssim": 0.6646,
+          "frame_ms": {
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        },
+        "night_preview": {
+          "psnr_db": 26.49,
+          "ssim": 0.6712,
+          "frame_ms": {
+            "p50": 36.32,
+            "p95": 45.73
+          }
+        },
+        "temporal_quality_8": {
+          "psnr_db": 31.01,
+          "ssim": 0.7625,
+          "frame_ms": {
+            "p50": 152.89,
+            "p95": 198.95
+          }
+        },
+        "fable_view": {
+          "psnr_db": 30.63,
+          "ssim": 0.7258,
+          "frame_ms": {
+            "p50": 61.23,
+            "p95": 70.44
+          },
+          "exposure_gain": 1.81,
+          "frames_per_pixel": 8.7
+        },
+        "scored_frames": 20,
+        "input_frames": 60,
+        "note": "PSNR/SSIM against the noise-free frame in the input encoding; night_preview is scored after undoing its documented exposure curve.  temporal_quality ran on CPU, as the NightVision app runs it."
+      },
+      "motion": {
+        "fable_view": {
+          "objects_confirmed": 0,
+          "objects": 6,
+          "seconds_to_confirm": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "frames_held": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "track_identities_per_object": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "other_confirmed_tracks": 0,
+          "frame_ms": {
+            "p50": 42.47,
+            "p95": 54.57
+          }
+        },
+        "rev3_search": {
+          "objects_confirmed": 0,
+          "objects": 6,
+          "seconds_to_confirm": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "frames_held": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "track_identities_per_object": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "other_confirmed_tracks": 5,
+          "frame_ms": {
+            "p50": 31.59,
+            "p95": 39.17
+          }
+        },
+        "rev3_small_game": {
+          "objects_confirmed": 0,
+          "objects": 6,
+          "seconds_to_confirm": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "frames_held": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "track_identities_per_object": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "other_confirmed_tracks": 18,
+          "frame_ms": {
+            "p50": 35.61,
+            "p95": 42.31
+          }
+        },
+        "frames": 150,
+        "objects_spec": [
+          {
+            "start": [
+              576.0,
+              378.0
+            ],
+            "px_per_frame": [
+              3.0,
+              0.5
+            ],
+            "contrast_codes": 90.0,
+            "sigma_px": 1.6
+          },
+          {
+            "start": [
+              1344.0,
+              648.0
+            ],
+            "px_per_frame": [
+              -1.2,
+              0.8
+            ],
+            "contrast_codes": 50.0,
+            "sigma_px": 1.4
+          },
+          {
+            "start": [
+              864.0,
+              540.0
+            ],
+            "px_per_frame": [
+              0.6,
+              -0.4
+            ],
+            "contrast_codes": 25.0,
+            "sigma_px": 1.2
+          },
+          {
+            "start": [
+              1536.0,
+              324.0
+            ],
+            "px_per_frame": [
+              -2.0,
+              -1.0
+            ],
+            "contrast_codes": 15.0,
+            "sigma_px": 1.3
+          },
+          {
+            "start": [
+              480.0,
+              810.0
+            ],
+            "px_per_frame": [
+              1.5,
+              0.0
+            ],
+            "contrast_codes": -45.0,
+            "sigma_px": 2.5
+          },
+          {
+            "start": [
+              1152.0,
+              270.0
+            ],
+            "px_per_frame": [
+              0.25,
+              0.15
+            ],
+            "contrast_codes": 60.0,
+            "sigma_px": 1.5
+          }
+        ],
+        "note": "\"other confirmed tracks\" are confirmed tracks away from every injected object.  On the procedural scene they are false by construction; on a recording they may be real movers."
+      }
+    },
+    "recording_3": {
+      "night": {
+        "unprocessed": {
+          "psnr_db": 26.51,
+          "ssim": 0.595,
+          "frame_ms": {
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        },
+        "night_preview": {
+          "psnr_db": 26.7,
+          "ssim": 0.6053,
+          "frame_ms": {
+            "p50": 34.58,
+            "p95": 44.54
+          }
+        },
+        "temporal_quality_8": {
+          "psnr_db": 34.18,
+          "ssim": 0.8889,
+          "frame_ms": {
+            "p50": 145.95,
+            "p95": 205.75
+          }
+        },
+        "fable_view": {
+          "psnr_db": 34.78,
+          "ssim": 0.8823,
+          "frame_ms": {
+            "p50": 52.96,
+            "p95": 66.74
+          },
+          "exposure_gain": 3.31,
+          "frames_per_pixel": 23.8
+        },
+        "scored_frames": 20,
+        "input_frames": 60,
+        "note": "PSNR/SSIM against the noise-free frame in the input encoding; night_preview is scored after undoing its documented exposure curve.  temporal_quality ran on CPU, as the NightVision app runs it."
+      },
+      "motion": {
+        "fable_view": {
+          "objects_confirmed": 0,
+          "objects": 6,
+          "seconds_to_confirm": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "frames_held": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "track_identities_per_object": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "other_confirmed_tracks": 1,
+          "frame_ms": {
+            "p50": 41.67,
+            "p95": 50.17
+          }
+        },
+        "rev3_search": {
+          "objects_confirmed": 0,
+          "objects": 6,
+          "seconds_to_confirm": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "frames_held": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "track_identities_per_object": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "other_confirmed_tracks": 9,
+          "frame_ms": {
+            "p50": 35.89,
+            "p95": 43.26
+          }
+        },
+        "rev3_small_game": {
+          "objects_confirmed": 0,
+          "objects": 6,
+          "seconds_to_confirm": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "frames_held": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "track_identities_per_object": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "other_confirmed_tracks": 16,
+          "frame_ms": {
+            "p50": 41.12,
+            "p95": 47.82
+          }
+        },
+        "frames": 150,
+        "objects_spec": [
+          {
+            "start": [
+              576.0,
+              378.0
+            ],
+            "px_per_frame": [
+              3.0,
+              0.5
+            ],
+            "contrast_codes": 90.0,
+            "sigma_px": 1.6
+          },
+          {
+            "start": [
+              1344.0,
+              648.0
+            ],
+            "px_per_frame": [
+              -1.2,
+              0.8
+            ],
+            "contrast_codes": 50.0,
+            "sigma_px": 1.4
+          },
+          {
+            "start": [
+              864.0,
+              540.0
+            ],
+            "px_per_frame": [
+              0.6,
+              -0.4
+            ],
+            "contrast_codes": 25.0,
+            "sigma_px": 1.2
+          },
+          {
+            "start": [
+              1536.0,
+              324.0
+            ],
+            "px_per_frame": [
+              -2.0,
+              -1.0
+            ],
+            "contrast_codes": 15.0,
+            "sigma_px": 1.3
+          },
+          {
+            "start": [
+              480.0,
+              810.0
+            ],
+            "px_per_frame": [
+              1.5,
+              0.0
+            ],
+            "contrast_codes": -45.0,
+            "sigma_px": 2.5
+          },
+          {
+            "start": [
+              1152.0,
+              270.0
+            ],
+            "px_per_frame": [
+              0.25,
+              0.15
+            ],
+            "contrast_codes": 60.0,
+            "sigma_px": 1.5
+          }
+        ],
+        "note": "\"other confirmed tracks\" are confirmed tracks away from every injected object.  On the procedural scene they are false by construction; on a recording they may be real movers."
+      }
+    },
+    "recording_4": {
+      "night": {
+        "unprocessed": {
+          "psnr_db": 26.73,
+          "ssim": 0.5959,
+          "frame_ms": {
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        },
+        "night_preview": {
+          "psnr_db": 26.94,
+          "ssim": 0.6075,
+          "frame_ms": {
+            "p50": 32.93,
+            "p95": 35.51
+          }
+        },
+        "temporal_quality_8": {
+          "psnr_db": 34.76,
+          "ssim": 0.8911,
+          "frame_ms": {
+            "p50": 144.26,
+            "p95": 169.48
+          }
+        },
+        "fable_view": {
+          "psnr_db": 36.14,
+          "ssim": 0.9197,
+          "frame_ms": {
+            "p50": 57.39,
+            "p95": 63.89
+          },
+          "exposure_gain": 2.74,
+          "frames_per_pixel": 16.3
+        },
+        "scored_frames": 20,
+        "input_frames": 60,
+        "note": "PSNR/SSIM against the noise-free frame in the input encoding; night_preview is scored after undoing its documented exposure curve.  temporal_quality ran on CPU, as the NightVision app runs it."
+      },
+      "motion": {
+        "fable_view": {
+          "objects_confirmed": 4,
+          "objects": 6,
+          "seconds_to_confirm": [
+            2.3,
+            3.97,
+            null,
+            null,
+            1.37,
+            2.4
+          ],
+          "frames_held": [
+            6,
+            31,
+            0,
+            0,
+            10,
+            56
+          ],
+          "track_identities_per_object": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1
+          ],
+          "other_confirmed_tracks": 4,
+          "frame_ms": {
+            "p50": 43.14,
+            "p95": 51.08
+          }
+        },
+        "rev3_search": {
+          "objects_confirmed": 1,
+          "objects": 6,
+          "seconds_to_confirm": [
+            null,
+            null,
+            2.24,
+            null,
+            null,
+            null
+          ],
+          "frames_held": [
+            0,
+            0,
+            3,
+            0,
+            0,
+            0
+          ],
+          "track_identities_per_object": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "other_confirmed_tracks": 20,
+          "frame_ms": {
+            "p50": 31.31,
+            "p95": 39.33
+          }
+        },
+        "rev3_small_game": {
+          "objects_confirmed": 1,
+          "objects": 6,
+          "seconds_to_confirm": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            2.47
+          ],
+          "frames_held": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            56
+          ],
+          "track_identities_per_object": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "other_confirmed_tracks": 30,
+          "frame_ms": {
+            "p50": 35.08,
+            "p95": 41.59
+          }
+        },
+        "frames": 150,
+        "objects_spec": [
+          {
+            "start": [
+              576.0,
+              378.0
+            ],
+            "px_per_frame": [
+              3.0,
+              0.5
+            ],
+            "contrast_codes": 90.0,
+            "sigma_px": 1.6
+          },
+          {
+            "start": [
+              1344.0,
+              648.0
+            ],
+            "px_per_frame": [
+              -1.2,
+              0.8
+            ],
+            "contrast_codes": 50.0,
+            "sigma_px": 1.4
+          },
+          {
+            "start": [
+              864.0,
+              540.0
+            ],
+            "px_per_frame": [
+              0.6,
+              -0.4
+            ],
+            "contrast_codes": 25.0,
+            "sigma_px": 1.2
+          },
+          {
+            "start": [
+              1536.0,
+              324.0
+            ],
+            "px_per_frame": [
+              -2.0,
+              -1.0
+            ],
+            "contrast_codes": 15.0,
+            "sigma_px": 1.3
+          },
+          {
+            "start": [
+              480.0,
+              810.0
+            ],
+            "px_per_frame": [
+              1.5,
+              0.0
+            ],
+            "contrast_codes": -45.0,
+            "sigma_px": 2.5
+          },
+          {
+            "start": [
+              1152.0,
+              270.0
+            ],
+            "px_per_frame": [
+              0.25,
+              0.15
+            ],
+            "contrast_codes": 60.0,
+            "sigma_px": 1.5
+          }
+        ],
+        "note": "\"other confirmed tracks\" are confirmed tracks away from every injected object.  On the procedural scene they are false by construction; on a recording they may be real movers."
+      }
+    }
+  },
+  "scope": "Controlled evidence on derived input with references known by construction.  Not native-flight recall, night range, or optical resolution.",
+  "wall_seconds": 1702.7
+}

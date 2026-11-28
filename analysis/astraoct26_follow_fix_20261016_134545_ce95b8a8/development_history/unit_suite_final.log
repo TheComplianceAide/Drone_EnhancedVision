@@ -1,0 +1,17 @@
+................F........[click-zoom] frame=1 source=60x40 age_ms=2 zoom=5x
+[click-zoom] stopped frames=1
+..........................................[ISR evidence] OSError: PNG write returned false: fable_motion_isr_rev3_source_20261016_134252_690280.png
+......................................................[superres-v3] quit cancelled unsolved milestone job(s): 3
+..........................................................
+======================================================================
+FAIL: test_file_decoder_preserves_nonuniform_pts_and_prompt_close (test_astra_oct26.SourceTruthTests.test_file_decoder_preserves_nonuniform_pts_and_prompt_close)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/randyblasik/Documents/Drone_EnhancedVision/tests/test_astra_oct26.py", line 112, in test_file_decoder_preserves_nonuniform_pts_and_prompt_close
+    self.assertTrue(source.ended)
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 179 tests in 7.923s
+
+FAILED (failures=1)

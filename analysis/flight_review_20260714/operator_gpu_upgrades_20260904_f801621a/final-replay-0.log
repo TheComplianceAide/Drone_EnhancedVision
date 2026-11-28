@@ -1,0 +1,43 @@
+[h264 @ 0x70afed180] missing picture in access unit with size 30
+[h264 @ 0x70afed500] no frame!
+[h264 @ 0x70afed180] missing picture in access unit with size 30
+[h264 @ 0x70afed880] no frame!
+[h264 @ 0x70afed180] missing picture in access unit with size 30
+[h264 @ 0x70afedc00] no frame!
+[h264 @ 0x70afece00] missing picture in access unit with size 30
+[h264 @ 0x70afeed80] no frame!
+[h264 @ 0x70afece00] missing picture in access unit with size 30
+[h264 @ 0x70afed880] no frame!
+[h264 @ 0x70afece00] missing picture in access unit with size 30
+[h264 @ 0x70afed500] no frame!
+[h264 @ 0x70afece00] missing picture in access unit with size 30
+[h264 @ 0x70afed500] no frame!
+[h264 @ 0x70afed180] missing picture in access unit with size 30
+[h264 @ 0x70afed500] no frame!
+[h264 @ 0x70afed180] missing picture in access unit with size 30
+[h264 @ 0x70afed880] no frame!
+[h264 @ 0x70afed180] missing picture in access unit with size 30
+[h264 @ 0x70afedc00] no frame!
+[h264 @ 0x70afece00] missing picture in access unit with size 30
+[h264 @ 0x70afef480] no frame!
+[h264 @ 0x70afece00] missing picture in access unit with size 30
+[h264 @ 0x70afef100] no frame!
+[h264 @ 0x70afece00] missing picture in access unit with size 30
+[h264 @ 0x70afee680] no frame!
+[h264 @ 0x70afed180] missing picture in access unit with size 30
+[h264 @ 0x70afed500] no frame!
+[h264 @ 0x70afed180] missing picture in access unit with size 30
+[h264 @ 0x70afed880] no frame!
+[h264 @ 0x70afed180] missing picture in access unit with size 30
+[h264 @ 0x70afedc00] no frame!
+[h264 @ 0x70afece00] missing picture in access unit with size 30
+[h264 @ 0x70afef480] no frame!
+[h264 @ 0x70afece00] missing picture in access unit with size 30
+[h264 @ 0x70afef100] no frame!
+[h264 @ 0x70afece00] missing picture in access unit with size 30
+[h264 @ 0x70afeed80] no frame!
+M5 V3 validation PASS_NON_RELEASE | synthetic metrics ok | failures=0 warnings=4
+WARN: candidate motion JSON not supplied; motion release gates not evaluated
+WARN: transition annotations not supplied; suppression/recovery gates not evaluated
+WARN: human 5Hz annotations not supplied; target retention/ID gates not evaluated
+WARN: image manifest not supplied; image utility/honesty gates not evaluated

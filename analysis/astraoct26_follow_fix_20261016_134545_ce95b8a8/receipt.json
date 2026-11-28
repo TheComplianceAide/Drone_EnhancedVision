@@ -1,0 +1,213 @@
+{
+  "status": "BOUNDED_FOLLOW_FIX_VERIFIED_WITH_EXISTING_TEST_FAILURE",
+  "finalized_at": "2026-10-16T13:51:24.726254-04:00",
+  "scope": "User-authorized side-conversation fix for false Follow reacquisition only; no staging, commit or parent-thread messaging.",
+  "baseline_code_sha256": {
+    "astra_oct26_runtime.py": "1008121f0aaecd960e21553f73f2eebf531c3117ff9b98e97a9b6a584cce03d5",
+    "astra_oct26.py": "92b40811ad06b2f7de7725be448f866b225a715e7ccd91282a6364546e381447",
+    "tests/test_astra_oct26.py": "93a5f7de9a00065291cd0a9ae880d72bc9bf4ec96b06feb162ebe9ee7eea56e8",
+    "OPERATOR_UPGRADES.md": "925f1025f19f8aecf989b3046f261c5e3b5a189a1b816d2f1d71d3dfe96f042e",
+    "m5_field_launch.py": "f26cd4ec71b6acf08519c85a0c7a2450b89a8f1bb475afc4b03d301dfb6050a9",
+    "app_Launcher_v2.py": "3c8dd7138e723a2dcc740e4325fc8b91d48fa0d0365b1434534ff736e8610e6f"
+  },
+  "candidate_code_sha256": {
+    "astra_oct26_runtime.py": "ce95b8a89e6a935c45959577bf85b352b887585a355129840d118ca80dcf7bf6",
+    "astra_oct26.py": "12e0d501c5843d3cd0d5179bfb60ae4eb190c8eecab4ff0dc25dc2937705c564",
+    "tests/test_astra_oct26.py": "d286659275402062abe84b73555d6d9cbf0f43df8a4c29ffec680e9d5a480b78",
+    "OPERATOR_UPGRADES.md": "617005b6c8d2998dd404081725e336096beba405a74be8ec86d6649785b16900",
+    "m5_field_launch.py": "f26cd4ec71b6acf08519c85a0c7a2450b89a8f1bb475afc4b03d301dfb6050a9",
+    "app_Launcher_v2.py": "3c8dd7138e723a2dcc740e4325fc8b91d48fa0d0365b1434534ff736e8610e6f"
+  },
+  "frozen_candidate_matches_current": {
+    "astra_oct26_runtime.py": true,
+    "astra_oct26.py": true,
+    "tests/test_astra_oct26.py": true,
+    "OPERATOR_UPGRADES.md": true,
+    "m5_field_launch.py": true,
+    "app_Launcher_v2.py": true
+  },
+  "catalog_sha256": "5b1f2cf5b08e03f5b1f33ec97d445d208636b521dc3919e903132c3cf79251f1",
+  "shared_code_sha256": {
+    "_AstraOct26.py": "ea2cc642e2a486184b5c6f6bd6bbbb72b8422438b1234ffce7fda14b084659d4",
+    "astra_oct26_models.py": "73fcade76c4b40f813d61a0cd763b6305f408fd86d98d35c25cfabd46c6c763d",
+    "astra_oct26_models.json": "23ab12ac2f888f15d87f74561a278b4f3f1c1c1015f115258aacf009fa66852c",
+    "astra_oct26_decode.py": "f53ec94cad195ae3296be9629978d0c45d58d007af0e3991ac65060308283009",
+    "_09_M5_Fable_MotionISR_Rev3.py": "cbb54ccaa7d2d225f80d9c49952fb9fbd4dc3e94030f12d2db9c261a44c896a5"
+  },
+  "versions": {
+    "python": "3.11.14",
+    "opencv-python": "4.13.0.92",
+    "numpy": "2.4.2",
+    "torch": "2.10.0",
+    "ffmpeg": "ffmpeg version 8.0.1 Copyright (c) 2000-2025 the FFmpeg developers"
+  },
+  "source": {
+    "source": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_201336_attempt1.mp4",
+    "scene": "motion.human_sequence",
+    "source_sha256": "838ac1ed6045a9c72ae5faa6887ff90963697d28d193f60cb0cb496cd6422682",
+    "source_pts": [
+      43.025937,
+      69.050938
+    ],
+    "decoded_frames": 780,
+    "source_dimensions": [
+      1920,
+      1080
+    ],
+    "selection": {
+      "source_pts": 44.990938,
+      "point": [
+        520,
+        480
+      ]
+    }
+  },
+  "thresholds": {
+    "original_template_pixels": 25,
+    "normal_NCC_min": 0.5,
+    "research_NCC_min": 0.65,
+    "template_recovery_NCC_min": 0.88,
+    "distinct_peak_margin_min": 0.08,
+    "recovery_search_radius_pixels": 96,
+    "recovery_limit_source_seconds": 1.0,
+    "tentative_flow_limit_source_seconds": 0.2,
+    "tentative_flow_NCC_min": 0.35,
+    "Lab_chroma_distance_max": 18,
+    "Lab_lightness_difference_max": 45,
+    "contrast_std_min": 3,
+    "contrast_original_fraction_min": 0.4,
+    "research_to_template_distance_pixels_max": 3
+  },
+  "replay_counts": {
+    "baseline": {
+      "background_region_follow": 183,
+      "negative_window_frames": 187,
+      "total_tracking_frames": 455,
+      "losses": 5,
+      "reacquired": 5
+    },
+    "candidate": {
+      "background_region_follow": 0,
+      "negative_window_frames": 187,
+      "total_tracking_frames": 211,
+      "losses": 7,
+      "reacquired": 6
+    }
+  },
+  "replay_timing_ms": {
+    "baseline": {
+      "p50": 2.4582709884271026,
+      "p95": 3.0334107344970107,
+      "max": 7.484000001568347
+    },
+    "candidate": {
+      "p50": 0.21491647930815816,
+      "p95": 2.553855630685575,
+      "max": 3.3812919864431024
+    }
+  },
+  "replay_source_warning_lines": 109,
+  "diagnostic_window": {
+    "source_pts": [
+      60.744937,
+      67
+    ],
+    "background_region": "point x > 1150 native pixels; interpreted with original-resolution raw inspection",
+    "ground_truth": "Not annotated identity or whole-flight recall"
+  },
+  "tests": {
+    "total": 179,
+    "passed": 178,
+    "failed": 1,
+    "failure": "test_file_decoder_preserves_nonuniform_pts_and_prompt_close: source.ended false",
+    "baseline_failure_reproduced": true,
+    "new_follow_regressions": 6,
+    "compilation": "passed",
+    "launcher_policy_tests": "passed; MPS-required launch arguments unchanged"
+  },
+  "demo": {
+    "path": "demo/AstraOct26_follow_fixed.mp4",
+    "validation": {
+      "ffmpeg_version": "ffmpeg version 8.0.1 Copyright (c) 2000-2025 the FFmpeg developers",
+      "full_video_decode_exit": 0,
+      "decode_errors": "",
+      "video_sha256": "27e2ac9f5e36942eefd6434c0e4c5d8456a3f965187a738088702f6b33ac08c5",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1440,
+            "height": 900,
+            "avg_frame_rate": "30/1",
+            "nb_frames": "866"
+          }
+        ],
+        "format": {
+          "duration": "28.866667",
+          "size": "8190664"
+        }
+      },
+      "late_tracking_claims": 0,
+      "late_screen_samples": 60
+    },
+    "shutdown": {
+      "detector": true,
+      "research": true,
+      "writer": true
+    },
+    "errors": [],
+    "render_ms": {
+      "count": 579,
+      "p50": 28.652667009737343,
+      "p95": 30.434516415698454,
+      "max": 50.98187498515472
+    },
+    "source_frames_seen": 590,
+    "controls": {
+      "deep_track": false,
+      "outline": false,
+      "deblur": false,
+      "labels": true,
+      "align": true,
+      "night": true,
+      "follow": true,
+      "roi_size": 192
+    },
+    "device": "mps",
+    "require_mps": true
+  },
+  "visual_review": {
+    "raw_resolution": [
+      1920,
+      1080
+    ],
+    "app_resolution": [
+      1440,
+      900
+    ],
+    "raw_source_pts": [
+      48.036938,
+      52.041938,
+      60.779938,
+      65.011938,
+      67.012938
+    ],
+    "app_video_seconds": [
+      5,
+      9,
+      23
+    ],
+    "result": "Useful child follow before loss; candidate shows LOST instead of baseline driveway FOLLOW; no claim that every accepted follow observation proves target identity."
+  },
+  "limitations": [
+    "Observed sequence only; final child lock still lost at source 53.666938 and requires reselection after expiry.",
+    "Original recording has damaged packets/timing; warning counts are not missing-frame counts.",
+    "Replay and GUI demonstration use independent FFmpeg source-PTS adapter because the existing field file decoder startup test fails.",
+    "178/179 unit tests pass, not an all-green repository or flight acceptance.",
+    "First optional-model GUI trial did not finish research shutdown within four seconds; preserved under development_history/astra_demo_fixed. Final default labels/Align GUI run shuts down cleanly. Optional Outline/Clear/Deep Track are not cleared by it.",
+    "Timing includes early return after expired loss and non-isolated application workload; not a semantically neutral speedup benchmark.",
+    "No tiny-ball/bird detection claim, target identity ground truth, aircraft/radio validation, or native-night acceptance."
+  ]
+}

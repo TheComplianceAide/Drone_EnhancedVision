@@ -1,0 +1,143 @@
+{
+  "app": "Fable View",
+  "device": "mps",
+  "torch": "2.12.1",
+  "opencv": "5.0.0",
+  "passed": true,
+  "seconds": 180.7,
+  "frame_ms_p50_1080p_with_detection": 40.39,
+  "scope": "synthetic scenes with known truth; not flight acceptance",
+  "checks": [
+    {
+      "check": "registration accuracy",
+      "passed": true,
+      "detail": "worst corner error 0.135 px over 15 steps of ~6.6 px",
+      "worst_px": 0.13527121457203012
+    },
+    {
+      "check": "night noise reduction (hover)",
+      "passed": true,
+      "detail": "+12.3 dB against the noise-free scene, exposure x8.3, 32 frames per pixel",
+      "gain_db": 12.328681552347536,
+      "exposure": 8.306484176102805
+    },
+    {
+      "check": "night noise reduction (pan)",
+      "passed": true,
+      "detail": "+12.4 dB against the noise-free scene, exposure x8.3, 31 frames per pixel",
+      "gain_db": 12.380690519155094,
+      "exposure": 8.3116917695251
+    },
+    {
+      "check": "moving object not ghosted",
+      "passed": true,
+      "detail": "object at 88% of its true brightness; residue where it was 0.0089 (limit 0.02)",
+      "object_ratio": 0.8836177587509155,
+      "residue": 0.008884971961379051
+    },
+    {
+      "check": "daylight left alone",
+      "passed": true,
+      "detail": "exposure x1.00, 45.7 dB to the clean scene, clipped highlight minimum 255",
+      "psnr_db": 45.65682499693437,
+      "clipped_min": 255
+    },
+    {
+      "check": "scene change not blended",
+      "passed": true,
+      "detail": "first frame after the cut is 35.8 dB to the new scene (single-frame level 26.4 dB); restart: registration: no reliable motion model (0 tracks, phase 0.01)",
+      "psnr_db": 35.83196259674831,
+      "single_db": 26.425176850845684
+    },
+    {
+      "check": "moving objects (hover)",
+      "passed": true,
+      "detail": "6 of 6 confirmed, slowest after 1.6 s, 0 false tracks, 0 canvas re-keys",
+      "confirmed": 6,
+      "false_tracks": 0,
+      "first_frames": [
+        10,
+        15,
+        17,
+        13,
+        19,
+        47
+      ],
+      "frame_ms_p50": 40.38958391174674
+    },
+    {
+      "check": "moving objects (pan)",
+      "passed": true,
+      "detail": "6 of 6 confirmed, slowest after 1.6 s, 0 false tracks, 2 canvas re-keys",
+      "confirmed": 6,
+      "false_tracks": 0,
+      "first_frames": [
+        10,
+        15,
+        17,
+        13,
+        21,
+        48
+      ],
+      "frame_ms_p50": 41.18220787495375
+    },
+    {
+      "check": "empty scene stays quiet (hover)",
+      "passed": true,
+      "detail": "0 false tracks in 5 s with no moving object",
+      "false_tracks": 0
+    },
+    {
+      "check": "empty scene stays quiet (pan)",
+      "passed": true,
+      "detail": "0 false tracks in 5 s with no moving object",
+      "false_tracks": 0
+    },
+    {
+      "check": "compressed video stays quiet",
+      "passed": true,
+      "detail": "JPEG quality 60 on every frame: 0 false tracks on an empty scene, 6 of 6 objects confirmed with 0 false",
+      "empty_false": 0,
+      "confirmed": 6,
+      "false_tracks": 0
+    },
+    {
+      "check": "faint object needs accumulation",
+      "passed": true,
+      "detail": "5-code object in 2-code noise: confirmed at 0.8 s with path accumulation (held 127 of 150 frames), confirmed at 3.3 s without",
+      "with_accumulation_first": 23,
+      "without_accumulation_first": 99,
+      "tracked_frames": 127
+    },
+    {
+      "check": "stabilised zoom (hover)",
+      "passed": true,
+      "detail": "3.0x: 31.3 dB stacked against 29.0 dB for one frame (+2.3 dB), 24 frames per pixel",
+      "gain_db": 2.3145687030988285,
+      "frames": 23.968233108520508,
+      "magnification": 3.0
+    },
+    {
+      "check": "stabilised zoom (pan)",
+      "passed": true,
+      "detail": "3.0x: 30.3 dB stacked against 28.4 dB for one frame (+2.0 dB), 24 frames per pixel",
+      "gain_db": 1.964626234089529,
+      "frames": 23.988584518432617,
+      "magnification": 3.0
+    },
+    {
+      "check": "zoom follows a moving object",
+      "passed": true,
+      "detail": "followed=True, window within 0.7 px of the object, alignment 1.04, detail ratio 1.45",
+      "centre_error_px": 0.6894137509042979,
+      "detail_ratio": 1.4490390564255529
+    },
+    {
+      "check": "CPU and GPU agree",
+      "passed": true,
+      "detail": "denoised estimate agrees to 50.5 dB; automatic exposure within 0.8%",
+      "psnr_db": 50.4879902344084,
+      "exposure_difference": 0.0080368994508897
+    }
+  ]
+}

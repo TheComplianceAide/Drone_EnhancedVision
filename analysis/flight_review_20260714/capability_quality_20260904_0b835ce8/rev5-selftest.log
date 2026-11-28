@@ -1,0 +1,25 @@
+[rev5-selftest] MPS trajectory-bank smoke
+[rev5-selftest] {"target_peak_frames": 35, "telemetry": {"blobness_mean": 0.0, "cfar_z_max": 12.209700584411621, "device": "mps", "eligible_cells": 14, "even_support_max": 11.673236846923828, "fallback_reason": "", "fallback_used": false, "frame_uploads": 48, "frames": 48, "hypotheses": 72, "input_kind": "raw_frame", "integration_tau_s": 1.0, "last_step_ms": 11.11795799806714, "max_ready_frames": 47, "odd_support_max": 11.10505485534668, "propagation": "phase_accumulated_integer_transport", "psf_likelihood_max": 0.0, "quality_max": 14.209700584411621, "quality_mean": 0.008540965616703033, "quality_std": 0.2884347140789032, "raw_margin_max": 16.22772789001465, "ready_frames": 47, "runner_far_max": 12.52248764038086, "small_parameter_uploads": 95, "state_reprojections": 0, "state_resets": 0, "stationary_max": 9.881937980651855, "support_margin_max": 18.985509872436523, "support_margin_mean": 1.9266698360443115, "synchronized_steps": 48, "threshold": 3.0}}
+[selftest] deterministic synthetic ISR scene 960x540 frames=400 fps=30 pan=1.15px/f movers=3(delta=10,2-4px) sway=2 noise sigma=2.5 salt=10px/f device=cpu
+Traceback (most recent call last):
+  File "/Users/randyblasik/Documents/Drone_EnhancedVision/_09_M5_Fable_MotionISR_Rev5.py", line 118, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/randyblasik/Documents/Drone_EnhancedVision/_09_M5_Fable_MotionISR_Rev5.py", line 112, in main
+    return int(original_selftest())
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/randyblasik/Documents/Drone_EnhancedVision/_09_M5_Fable_MotionISR_Rev3.py", line 3380, in run_selftest
+    m_on, _ = _run_synthetic(SynthScene(42), SELF_FRAMES, use_reg=True, use_tbd=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/randyblasik/Documents/Drone_EnhancedVision/_09_M5_Fable_MotionISR_Rev3.py", line 3313, in _run_synthetic
+    res = pipe.process(frame, i / SELF_FPS)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_motionisr_rev5.py", line 1403, in process
+    self.micro_bank.reproject_state(
+  File "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_motionisr_rev5.py", line 687, in reproject_state
+    self.background = TF.grid_sample(self.background, grid, mode="bilinear", padding_mode="border", align_corners=True)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/lib/python3.11/site-packages/torch/nn/functional.py", line 5230, in grid_sample
+    return torch.grid_sampler(input, grid, mode_enum, padding_mode_enum, align_corners)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: MPS: Unsupported Border padding mode

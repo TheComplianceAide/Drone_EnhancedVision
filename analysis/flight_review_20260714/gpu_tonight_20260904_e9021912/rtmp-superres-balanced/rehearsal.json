@@ -1,0 +1,73 @@
+{
+  "status": "PASS_LOCAL_RTMP_LIFECYCLE",
+  "scope": "1920x1080 localRTMP rehearsal from upscaled derived footage; no aircraft or native optical detail claim",
+  "fixture_sha256": "864b82baaedc12d4dc33a9c938a2e6735bca23b9c931eee387e2b7d21509baec",
+  "server_command": [
+    "/opt/homebrew/bin/node",
+    "/tmp/drone-tonight-gpu-20260904/isolated_nms.js"
+  ],
+  "publisher_command": [
+    "ffmpeg",
+    "-hide_banner",
+    "-loglevel",
+    "warning",
+    "-re",
+    "-stream_loop",
+    "-1",
+    "-i",
+    "/tmp/drone-upgrade-20260904/derived_gui_lowlight.mkv",
+    "-vf",
+    "scale=1920:1080",
+    "-an",
+    "-c:v",
+    "libx264",
+    "-preset",
+    "ultrafast",
+    "-tune",
+    "zerolatency",
+    "-g",
+    "30",
+    "-pix_fmt",
+    "yuv420p",
+    "-f",
+    "flv",
+    "rtmp://127.0.0.1:21935/live/qa_tonight"
+  ],
+  "apps": [
+    {
+      "app": "_11_M5_Fable_SuperRes_Rev4.py",
+      "command": [
+        "/Users/randyblasik/Documents/Drone_EnhancedVision/.venv/bin/python",
+        "/tmp/drone-tonight-gpu-20260904/gui_rehearsal.py",
+        "_11_M5_Fable_SuperRes_Rev4.py",
+        "--source",
+        "rtmp://127.0.0.1:21935/live/qa_tonight",
+        "--quality-device",
+        "mps",
+        "--require-mps",
+        "--zoom",
+        "4",
+        "--output-dir",
+        "/tmp/drone-tonight-gpu-20260904/rtmp-superres-balanced/qa-superres-output",
+        "-ApplePersistenceIgnoreState",
+        "YES"
+      ],
+      "exit_code": 0,
+      "wall_s": 43.380638122558594
+    }
+  ],
+  "cleanup": [
+    {
+      "pid": 24271,
+      "exit_code": 0
+    },
+    {
+      "pid": 24272,
+      "exit_code": 255
+    },
+    {
+      "pid": 24281,
+      "exit_code": 0
+    }
+  ]
+}

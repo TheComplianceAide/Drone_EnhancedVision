@@ -1,0 +1,32 @@
+[h264 @ 0x7ef04c000] missing picture in access unit with size 30
+[h264 @ 0x7ef04ca80] no frame!
+[h264 @ 0x7ef04c000] missing picture in access unit with size 30
+[h264 @ 0x7ef04ce00] no frame!
+[h264 @ 0x7ef04c000] missing picture in access unit with size 30
+[h264 @ 0x7ef04d180] no frame!
+[h264 @ 0x7ef04c000] missing picture in access unit with size 30
+[h264 @ 0x7ef04d500] no frame!
+soft_barn_soak display error ratio 0.085 raw error ratio 0.091
+[h264 @ 0x7ef04c380] missing picture in access unit with size 30
+[h264 @ 0x7ef04ca80] no frame!
+[h264 @ 0x7ef04c380] missing picture in access unit with size 30
+[h264 @ 0x7ef04ce00] no frame!
+[h264 @ 0x7ef04c380] missing picture in access unit with size 30
+[h264 @ 0x7ef04d180] no frame!
+[h264 @ 0x7ef04c380] missing picture in access unit with size 30
+[h264 @ 0x7ef04d500] no frame!
+[h264 @ 0x7ef04c380] missing picture in access unit with size 30
+[h264 @ 0x7ef04d880] no frame!
+construction_facade display error ratio 0.196 raw error ratio 0.089
+[h264 @ 0x7ef04c380] missing picture in access unit with size 30
+[h264 @ 0x7ef04ca80] no frame!
+[h264 @ 0x7ef04c380] missing picture in access unit with size 30
+[h264 @ 0x7ef04ce00] no frame!
+[h264 @ 0x7ef04c380] missing picture in access unit with size 30
+[h264 @ 0x7ef04d180] no frame!
+[h264 @ 0x7ef04c380] missing picture in access unit with size 30
+[h264 @ 0x7ef04d500] no frame!
+[h264 @ 0x7ef04c380] missing picture in access unit with size 30
+[h264 @ 0x7ef04d880] no frame!
+skyline_rail display error ratio 0.45 raw error ratio 0.087
+PASS_METRICS_REVIEW_REQUIRED []

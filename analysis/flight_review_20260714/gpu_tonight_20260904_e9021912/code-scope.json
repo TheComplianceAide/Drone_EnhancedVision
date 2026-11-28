@@ -1,0 +1,11 @@
+{
+  "baseline_sha256": "7c818e08660ec9f99c1830cd1381bc326d3b18e79cdee34de30eaecb7dfa267c",
+  "candidate_sha256": "cbb54ccaa7d2d225f80d9c49952fb9fbd4dc3e94030f12d2db9c261a44c896a5",
+  "changed_functions": [
+    "choose_device",
+    "main",
+    "_init_for",
+    "process"
+  ],
+  "scope": "Only required-device selection, explicit initialization failure and processing failure handling, and CLI config. HeavyCPU, HeavyMPS, rendering, registration, blob and tracker function bodies unchanged."
+}

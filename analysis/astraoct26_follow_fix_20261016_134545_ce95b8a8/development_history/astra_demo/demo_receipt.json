@@ -1,0 +1,7474 @@
+{
+  "kind": "actual app render during paced native source replay",
+  "app_exit": 0,
+  "encoder_exit": 0,
+  "source": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_201336_attempt1.mp4",
+  "scene": "motion.human_sequence",
+  "source_sha256": "838ac1ed6045a9c72ae5faa6887ff90963697d28d193f60cb0cb496cd6422682",
+  "source_hash_verified_in_main_run": "/tmp/astra_small_target_sources_20261016.log",
+  "source_start_requested": 43,
+  "encoding_command": [
+    "ffmpeg",
+    "-hide_banner",
+    "-loglevel",
+    "error",
+    "-f",
+    "rawvideo",
+    "-pix_fmt",
+    "bgr24",
+    "-s",
+    "1440x900",
+    "-r",
+    "30",
+    "-i",
+    "pipe:0",
+    "-an",
+    "-c:v",
+    "libx264",
+    "-preset",
+    "veryfast",
+    "-crf",
+    "20",
+    "-threads",
+    "3",
+    "-pix_fmt",
+    "yuv420p",
+    "-movflags",
+    "+faststart",
+    "/Users/randyblasik/.codex/visualizations/2026/10/16/01a145a7-a364-7981-8dec-d6f471f11c65/astra_demo/AstraOct26_actual_replay.mp4"
+  ],
+  "controls": [
+    {
+      "at": 2,
+      "select": [
+        520,
+        480
+      ]
+    },
+    {
+      "at": 7,
+      "action": "zoom_in"
+    },
+    {
+      "at": 11,
+      "action": "outline"
+    },
+    {
+      "at": 15,
+      "action": "deblur"
+    },
+    {
+      "at": 20,
+      "action": "night"
+    },
+    {
+      "at": 24,
+      "action": "night"
+    }
+  ],
+  "capture": {
+    "start": 456077.080968625,
+    "frames": 870,
+    "renders": 753,
+    "timeline": [
+      {
+        "wall_s": 0.0,
+        "source_pts": 43.025937,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.015858165977988392,
+        "source_pts": 43.064937,
+        "copies": 0,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.04870974994264543,
+        "source_pts": 43.141,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.08167958294507116,
+        "source_pts": 43.178938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.1164949579979293,
+        "source_pts": 43.223937,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.1509086659643799,
+        "source_pts": 43.247937,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.1862012079800479,
+        "source_pts": 43.284937,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.22341758297989145,
+        "source_pts": 43.320937,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.2571638749795966,
+        "source_pts": 43.355938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.2955171249923296,
+        "source_pts": 43.413938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.32781204098137096,
+        "source_pts": 43.413938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.3611679999739863,
+        "source_pts": 43.462938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.39654654095647857,
+        "source_pts": 43.512937,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.45364029094344005,
+        "source_pts": 43.545938,
+        "copies": 2,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.46755791595205665,
+        "source_pts": 43.581938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.5034222909598611,
+        "source_pts": 43.616937,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.5374027079669759,
+        "source_pts": 43.649938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.5722538329428062,
+        "source_pts": 43.685938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.6238212499883957,
+        "source_pts": 43.722938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.6412409159820527,
+        "source_pts": 43.766937,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.6770173749537207,
+        "source_pts": 43.800938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.7129073329851963,
+        "source_pts": 43.822938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.7483092909678817,
+        "source_pts": 43.858938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.8017071249778382,
+        "source_pts": 43.898938,
+        "copies": 2,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.8213720409548841,
+        "source_pts": 43.931938,
+        "copies": 0,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.8519902909756638,
+        "source_pts": 43.971938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.8869449999765493,
+        "source_pts": 43.998938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.9209784579579718,
+        "source_pts": 44.029938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.9556736249942333,
+        "source_pts": 44.066938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 0.988721290952526,
+        "source_pts": 44.090938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.0237462499644607,
+        "source_pts": 44.126938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.0579382079886273,
+        "source_pts": 44.165,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.1120432499446906,
+        "source_pts": 44.218938,
+        "copies": 2,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.133172082947567,
+        "source_pts": 44.218938,
+        "copies": 0,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.1675238329917192,
+        "source_pts": 44.291938,
+        "copies": 2,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.1997977079590783,
+        "source_pts": 44.291938,
+        "copies": 0,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.233361040998716,
+        "source_pts": 44.329937,
+        "copies": 2,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.2689085829770193,
+        "source_pts": 44.389938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.301743040967267,
+        "source_pts": 44.427937,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.3386412909603678,
+        "source_pts": 44.427937,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.3699789579841308,
+        "source_pts": 44.465938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.4049419579678215,
+        "source_pts": 44.498938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.4387688749702647,
+        "source_pts": 44.554938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.4731177909998223,
+        "source_pts": 44.590938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.5107127909432165,
+        "source_pts": 44.623938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.5441361659904942,
+        "source_pts": 44.658938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.5782404999481514,
+        "source_pts": 44.697938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.6117548329639249,
+        "source_pts": 44.718938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.648712207970675,
+        "source_pts": 44.753937,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.6797967499587685,
+        "source_pts": 44.789938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.7163844159804285,
+        "source_pts": 44.837938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.7673190409550443,
+        "source_pts": 44.861938,
+        "copies": 2,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.80523108295165,
+        "source_pts": 44.896937,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.8190674579818733,
+        "source_pts": 44.933937,
+        "copies": 0,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.8514587079989724,
+        "source_pts": 44.953938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.8853433749754913,
+        "source_pts": 44.990938,
+        "copies": 1,
+        "selection": null,
+        "lock": "CLICK TO INSPECT"
+      },
+      {
+        "wall_s": 1.9273825829732232,
+        "source_pts": 45.040937,
+        "copies": 1,
+        "selection": [
+          517.4906616210938,
+          478.02252197265625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 1.9595251659629866,
+        "source_pts": 45.062938,
+        "copies": 1,
+        "selection": [
+          516.6205444335938,
+          478.7522277832031
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 1.9915277909603901,
+        "source_pts": 45.099938,
+        "copies": 1,
+        "selection": [
+          515.2572021484375,
+          478.95416259765625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.045135540945921,
+        "source_pts": 45.129938,
+        "copies": 2,
+        "selection": [
+          513.68212890625,
+          477.6222229003906
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.085177915985696,
+        "source_pts": 45.168,
+        "copies": 1,
+        "selection": [
+          511.8587646484375,
+          476.9606628417969
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.118327165953815,
+        "source_pts": 45.205937,
+        "copies": 1,
+        "selection": [
+          510.3314208984375,
+          476.2945861816406
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.1576025409740396,
+        "source_pts": 45.230938,
+        "copies": 1,
+        "selection": [
+          507.9770202636719,
+          475.5942077636719
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.196012374944985,
+        "source_pts": 45.268937,
+        "copies": 1,
+        "selection": [
+          505.8680725097656,
+          475.710205078125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.3050924579729326,
+        "source_pts": 45.333937,
+        "copies": 4,
+        "selection": [
+          502.6754150390625,
+          474.5312805175781
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.344332582957577,
+        "source_pts": 45.357937,
+        "copies": 1,
+        "selection": [
+          500.9707946777344,
+          473.9687805175781
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.38002191594569,
+        "source_pts": 45.398938,
+        "copies": 1,
+        "selection": [
+          497.4796142578125,
+          472.96795654296875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.4699905829620548,
+        "source_pts": 45.430937,
+        "copies": 3,
+        "selection": [
+          496.8020324707031,
+          472.8309020996094
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.508449124987237,
+        "source_pts": 45.467937,
+        "copies": 1,
+        "selection": [
+          496.1625671386719,
+          471.8887634277344
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.544921082968358,
+        "source_pts": 45.490938,
+        "copies": 1,
+        "selection": [
+          495.6382141113281,
+          471.06689453125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.5817816659691744,
+        "source_pts": 45.530938,
+        "copies": 1,
+        "selection": [
+          495.7862854003906,
+          470.320068359375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.6186144159873948,
+        "source_pts": 45.568938,
+        "copies": 1,
+        "selection": [
+          495.1205139160156,
+          469.4668273925781
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.6621496249572374,
+        "source_pts": 45.589937,
+        "copies": 1,
+        "selection": [
+          495.0992736816406,
+          468.68841552734375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.700396374973934,
+        "source_pts": 45.622937,
+        "copies": 2,
+        "selection": [
+          494.8594665527344,
+          468.2959289550781
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.784397582989186,
+        "source_pts": 45.658938,
+        "copies": 2,
+        "selection": [
+          494.9098815917969,
+          468.4430847167969
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.8211664159898646,
+        "source_pts": 45.698937,
+        "copies": 1,
+        "selection": [
+          494.1634216308594,
+          468.14178466796875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.8591620409861207,
+        "source_pts": 45.730938,
+        "copies": 1,
+        "selection": [
+          494.11578369140625,
+          468.1935119628906
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.895551749970764,
+        "source_pts": 45.751938,
+        "copies": 1,
+        "selection": [
+          494.4378356933594,
+          468.3323059082031
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.9320462909527123,
+        "source_pts": 45.788938,
+        "copies": 1,
+        "selection": [
+          494.4237976074219,
+          468.2147216796875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 2.968495665991213,
+        "source_pts": 45.822938,
+        "copies": 2,
+        "selection": [
+          494.7967224121094,
+          468.2019958496094
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 3.0080057499581017,
+        "source_pts": 45.858938,
+        "copies": 1,
+        "selection": [
+          495.4908752441406,
+          468.5401611328125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 3.045427707955241,
+        "source_pts": 45.898938,
+        "copies": 1,
+        "selection": [
+          496.3124694824219,
+          469.38262939453125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 3.08293891599169,
+        "source_pts": 45.931938,
+        "copies": 1,
+        "selection": [
+          497.59442138671875,
+          470.3945617675781
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 3.121076165989507,
+        "source_pts": 45.951937,
+        "copies": 1,
+        "selection": [
+          498.3847961425781,
+          470.56732177734375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 3.157295749988407,
+        "source_pts": 45.997937,
+        "copies": 1,
+        "selection": [
+          500.0755310058594,
+          471.8529052734375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 3.1926038329838775,
+        "source_pts": 46.019937,
+        "copies": 1,
+        "selection": [
+          503.384033203125,
+          473.1056823730469
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 3.2288636249722913,
+        "source_pts": 46.068938,
+        "copies": 1,
+        "selection": [
+          503.384033203125,
+          473.1056823730469
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 3.2645462909713387,
+        "source_pts": 46.106938,
+        "copies": 1,
+        "selection": [
+          506.9387512207031,
+          476.083251953125
+        ],
+        "lock": "REACQUIRED"
+      },
+      {
+        "wall_s": 3.2998339999467134,
+        "source_pts": 46.127938,
+        "copies": 1,
+        "selection": [
+          508.6767272949219,
+          477.8158874511719
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 3.3357812079484574,
+        "source_pts": 46.163,
+        "copies": 2,
+        "selection": [
+          510.7884216308594,
+          479.4108581542969
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 3.373248915944714,
+        "source_pts": 46.200938,
+        "copies": 1,
+        "selection": [
+          513.56640625,
+          480.5890808105469
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 3.4087909999652766,
+        "source_pts": 46.221938,
+        "copies": 1,
+        "selection": [
+          515.3656005859375,
+          480.45587158203125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 3.444634415965993,
+        "source_pts": 46.256937,
+        "copies": 1,
+        "selection": [
+          516.8175048828125,
+          479.1652526855469
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 3.4805881249485537,
+        "source_pts": 46.295938,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 3.516276582959108,
+        "source_pts": 46.332937,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 3.5516296249697916,
+        "source_pts": 46.353938,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 3.5869078329997137,
+        "source_pts": 46.388938,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 3.623219540982973,
+        "source_pts": 46.431938,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 3.6587282909895293,
+        "source_pts": 46.464937,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 3.6947946249856614,
+        "source_pts": 46.501938,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 3.730682999943383,
+        "source_pts": 46.522937,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 3.7662650409620255,
+        "source_pts": 46.564937,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 3.8036208749981597,
+        "source_pts": 46.602938,
+        "copies": 2,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 3.8405285829794593,
+        "source_pts": 46.619937,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 3.8763382909819484,
+        "source_pts": 46.656937,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 3.9121768749901094,
+        "source_pts": 46.691938,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 3.948112665966619,
+        "source_pts": 46.735937,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 3.9837342079845257,
+        "source_pts": 46.773938,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 4.020072207960766,
+        "source_pts": 46.793937,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 4.056274665985256,
+        "source_pts": 46.830937,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 4.091648624977097,
+        "source_pts": 46.864938,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 4.1274477079859935,
+        "source_pts": 46.900937,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 4.163014457968529,
+        "source_pts": 46.935938,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 4.198910457955208,
+        "source_pts": 46.964937,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 4.2350812499644235,
+        "source_pts": 47.009937,
+        "copies": 2,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 4.271990040957462,
+        "source_pts": 47.034937,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 4.30705008294899,
+        "source_pts": 47.071938,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 4.342418457963504,
+        "source_pts": 47.096938,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 4.378143290989101,
+        "source_pts": 47.130938,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 4.415233540988993,
+        "source_pts": 47.155,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 4.450905540958047,
+        "source_pts": 47.198937,
+        "copies": 1,
+        "selection": [
+          518.3138427734375,
+          477.67041015625
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 4.486833165981807,
+        "source_pts": 47.226937,
+        "copies": 1,
+        "selection": [
+          545.0,
+          484.0
+        ],
+        "lock": "REACQUIRED"
+      },
+      {
+        "wall_s": 4.522615915979259,
+        "source_pts": 47.269937,
+        "copies": 1,
+        "selection": [
+          545.974365234375,
+          484.2438049316406
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 4.558486040972639,
+        "source_pts": 47.290937,
+        "copies": 1,
+        "selection": [
+          547.3870849609375,
+          484.0281982421875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 4.594403207942378,
+        "source_pts": 47.339937,
+        "copies": 1,
+        "selection": [
+          549.2813110351562,
+          484.08538818359375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 4.630745749978814,
+        "source_pts": 47.353938,
+        "copies": 1,
+        "selection": [
+          550.9119262695312,
+          484.7589416503906
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 4.666188957984559,
+        "source_pts": 47.402938,
+        "copies": 1,
+        "selection": [
+          552.9227905273438,
+          485.91070556640625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 4.701506040990353,
+        "source_pts": 47.430937,
+        "copies": 2,
+        "selection": [
+          554.4321899414062,
+          486.4059143066406
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 4.738145374984015,
+        "source_pts": 47.466938,
+        "copies": 1,
+        "selection": [
+          556.6901245117188,
+          487.254150390625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 4.774215874960646,
+        "source_pts": 47.490938,
+        "copies": 1,
+        "selection": [
+          558.96044921875,
+          487.41473388671875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 4.810641874966677,
+        "source_pts": 47.531937,
+        "copies": 1,
+        "selection": [
+          560.896728515625,
+          488.26318359375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 4.845749707950745,
+        "source_pts": 47.567937,
+        "copies": 1,
+        "selection": [
+          563.3509521484375,
+          488.76641845703125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 4.8811614999431185,
+        "source_pts": 47.591938,
+        "copies": 1,
+        "selection": [
+          566.5662231445312,
+          490.03851318359375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 4.9168416249449365,
+        "source_pts": 47.626938,
+        "copies": 1,
+        "selection": [
+          569.8759155273438,
+          490.482177734375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 4.952720499946736,
+        "source_pts": 47.663938,
+        "copies": 1,
+        "selection": [
+          573.5818481445312,
+          490.47979736328125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 4.988414332969114,
+        "source_pts": 47.701937,
+        "copies": 1,
+        "selection": [
+          576.8515014648438,
+          490.6820983886719
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.023455832968466,
+        "source_pts": 47.722938,
+        "copies": 1,
+        "selection": [
+          581.095458984375,
+          490.4941101074219
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.058926457946654,
+        "source_pts": 47.764938,
+        "copies": 1,
+        "selection": [
+          585.3527221679688,
+          489.35357666015625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.094389374949969,
+        "source_pts": 47.801938,
+        "copies": 1,
+        "selection": [
+          588.5310668945312,
+          487.6978454589844
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.130396165943239,
+        "source_pts": 47.821938,
+        "copies": 1,
+        "selection": [
+          591.8588256835938,
+          487.057373046875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.166523749998305,
+        "source_pts": 47.856938,
+        "copies": 1,
+        "selection": [
+          595.236328125,
+          487.0361633300781
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.202115832944401,
+        "source_pts": 47.895938,
+        "copies": 2,
+        "selection": [
+          598.3720092773438,
+          486.0516662597656
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.239027165982407,
+        "source_pts": 47.929938,
+        "copies": 1,
+        "selection": [
+          601.5570678710938,
+          486.0634765625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.274595082970336,
+        "source_pts": 47.963938,
+        "copies": 1,
+        "selection": [
+          604.7368774414062,
+          485.6682434082031
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.310035124944989,
+        "source_pts": 47.997937,
+        "copies": 1,
+        "selection": [
+          607.9317016601562,
+          485.7635803222656
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.345609790994786,
+        "source_pts": 48.036938,
+        "copies": 1,
+        "selection": [
+          610.8015747070312,
+          485.8472900390625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.381448582978919,
+        "source_pts": 48.069938,
+        "copies": 1,
+        "selection": [
+          613.6943969726562,
+          486.769775390625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.416198332968634,
+        "source_pts": 48.094938,
+        "copies": 1,
+        "selection": [
+          617.1281127929688,
+          487.2731628417969
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.451529665966518,
+        "source_pts": 48.128937,
+        "copies": 1,
+        "selection": [
+          619.3748779296875,
+          488.36578369140625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.487268040946219,
+        "source_pts": 48.152,
+        "copies": 1,
+        "selection": [
+          623.495361328125,
+          489.04852294921875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.523115999996662,
+        "source_pts": 48.186937,
+        "copies": 1,
+        "selection": [
+          627.8839721679688,
+          490.5224304199219
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.557896290963981,
+        "source_pts": 48.234938,
+        "copies": 1,
+        "selection": [
+          631.1428833007812,
+          491.3147277832031
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.592635207984131,
+        "source_pts": 48.269937,
+        "copies": 1,
+        "selection": [
+          635.32958984375,
+          493.1265869140625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.627831082965713,
+        "source_pts": 48.295938,
+        "copies": 1,
+        "selection": [
+          639.2318115234375,
+          493.8406066894531
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.663418457959779,
+        "source_pts": 48.330938,
+        "copies": 1,
+        "selection": [
+          643.14599609375,
+          493.8484191894531
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.6992033329443075,
+        "source_pts": 48.364938,
+        "copies": 1,
+        "selection": [
+          646.2447509765625,
+          493.9695739746094
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.7346727079711854,
+        "source_pts": 48.389938,
+        "copies": 2,
+        "selection": [
+          649.6705932617188,
+          493.96307373046875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.772636415960733,
+        "source_pts": 48.436937,
+        "copies": 1,
+        "selection": [
+          653.2576293945312,
+          493.3889465332031
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.807729915948585,
+        "source_pts": 48.463938,
+        "copies": 1,
+        "selection": [
+          656.3739013671875,
+          494.0777282714844
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.843396415992174,
+        "source_pts": 48.513938,
+        "copies": 1,
+        "selection": [
+          660.1971435546875,
+          494.1987609863281
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.879168624989688,
+        "source_pts": 48.534937,
+        "copies": 1,
+        "selection": [
+          663.7033081054688,
+          494.99114990234375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.914597290975507,
+        "source_pts": 48.569938,
+        "copies": 1,
+        "selection": [
+          667.0753173828125,
+          496.1019592285156
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.949521082977299,
+        "source_pts": 48.590938,
+        "copies": 1,
+        "selection": [
+          670.1743774414062,
+          496.62847900390625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 5.988839832949452,
+        "source_pts": 48.623938,
+        "copies": 1,
+        "selection": [
+          674.4375,
+          496.8868408203125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.026697374996729,
+        "source_pts": 48.657938,
+        "copies": 1,
+        "selection": [
+          678.1835327148438,
+          497.7518310546875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.065309790952597,
+        "source_pts": 48.704937,
+        "copies": 1,
+        "selection": [
+          682.1678466796875,
+          498.8627624511719
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.1023958749719895,
+        "source_pts": 48.748938,
+        "copies": 2,
+        "selection": [
+          687.1459350585938,
+          499.23223876953125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.143685207993258,
+        "source_pts": 48.769937,
+        "copies": 1,
+        "selection": [
+          692.266845703125,
+          499.6456298828125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.183084874995984,
+        "source_pts": 48.804938,
+        "copies": 1,
+        "selection": [
+          697.3202514648438,
+          500.09246826171875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.222086207999382,
+        "source_pts": 48.831938,
+        "copies": 1,
+        "selection": [
+          701.3751220703125,
+          499.4169921875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.2612137499963865,
+        "source_pts": 48.868938,
+        "copies": 1,
+        "selection": [
+          706.0697631835938,
+          499.46942138671875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.300009582948405,
+        "source_pts": 48.901938,
+        "copies": 2,
+        "selection": [
+          709.4784545898438,
+          498.597412109375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.339723749959376,
+        "source_pts": 48.935938,
+        "copies": 1,
+        "selection": [
+          713.4446411132812,
+          498.7695007324219
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.3779522079858,
+        "source_pts": 48.972938,
+        "copies": 1,
+        "selection": [
+          717.2606201171875,
+          498.59356689453125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.415989832952619,
+        "source_pts": 48.996938,
+        "copies": 1,
+        "selection": [
+          721.1692504882812,
+          499.0497131347656
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.45120049995603,
+        "source_pts": 49.038938,
+        "copies": 1,
+        "selection": [
+          724.9367065429688,
+          499.3601989746094
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.486570874985773,
+        "source_pts": 49.063938,
+        "copies": 1,
+        "selection": [
+          728.7054443359375,
+          499.098876953125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.522137124964502,
+        "source_pts": 49.096938,
+        "copies": 1,
+        "selection": [
+          732.3901977539062,
+          499.7615966796875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.557535582978744,
+        "source_pts": 49.130938,
+        "copies": 1,
+        "selection": [
+          736.2044067382812,
+          500.0419616699219
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.593021457956638,
+        "source_pts": 49.168,
+        "copies": 1,
+        "selection": [
+          740.031005859375,
+          501.3836975097656
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.628364332951605,
+        "source_pts": 49.203938,
+        "copies": 1,
+        "selection": [
+          744.2283325195312,
+          502.18310546875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.663090082991403,
+        "source_pts": 49.235937,
+        "copies": 1,
+        "selection": [
+          748.943359375,
+          503.0830383300781
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.698540040990338,
+        "source_pts": 49.258938,
+        "copies": 1,
+        "selection": [
+          753.2929077148438,
+          504.6333312988281
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.7341924159554765,
+        "source_pts": 49.306938,
+        "copies": 2,
+        "selection": [
+          758.0556030273438,
+          504.7503967285156
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.771008540992625,
+        "source_pts": 49.331938,
+        "copies": 1,
+        "selection": [
+          762.78662109375,
+          505.0934143066406
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.806517332966905,
+        "source_pts": 49.370938,
+        "copies": 1,
+        "selection": [
+          766.5557861328125,
+          505.2084045410156
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.841957332973834,
+        "source_pts": 49.408938,
+        "copies": 1,
+        "selection": [
+          770.3497924804688,
+          504.7073059082031
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.877370874979533,
+        "source_pts": 49.431938,
+        "copies": 1,
+        "selection": [
+          773.6127319335938,
+          504.2620544433594
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.9124772909563035,
+        "source_pts": 49.467937,
+        "copies": 1,
+        "selection": [
+          777.2410888671875,
+          504.0237121582031
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.949041332991328,
+        "source_pts": 49.490938,
+        "copies": 1,
+        "selection": [
+          780.4630126953125,
+          503.9735107421875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 6.984537415963132,
+        "source_pts": 49.534937,
+        "copies": 1,
+        "selection": [
+          784.1670532226562,
+          503.83538818359375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.018811790971085,
+        "source_pts": 49.569938,
+        "copies": 1,
+        "selection": [
+          787.5374755859375,
+          504.0709533691406
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.053206040989608,
+        "source_pts": 49.597938,
+        "copies": 1,
+        "selection": [
+          790.0728759765625,
+          503.8207092285156
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.088591165957041,
+        "source_pts": 49.638938,
+        "copies": 1,
+        "selection": [
+          794.2758178710938,
+          504.41668701171875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.1245020409696735,
+        "source_pts": 49.663938,
+        "copies": 1,
+        "selection": [
+          797.5372314453125,
+          505.1695861816406
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.159120165975764,
+        "source_pts": 49.698937,
+        "copies": 1,
+        "selection": [
+          801.6840209960938,
+          505.9768981933594
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.194219915952999,
+        "source_pts": 49.721938,
+        "copies": 1,
+        "selection": [
+          805.1289672851562,
+          506.66571044921875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.229545749956742,
+        "source_pts": 49.768937,
+        "copies": 1,
+        "selection": [
+          809.6701049804688,
+          507.50750732421875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.264866499986965,
+        "source_pts": 49.793937,
+        "copies": 1,
+        "selection": [
+          814.2626953125,
+          507.50323486328125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.299597915960476,
+        "source_pts": 49.830938,
+        "copies": 1,
+        "selection": [
+          819.4895629882812,
+          508.0040588378906
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.333859957987443,
+        "source_pts": 49.869937,
+        "copies": 2,
+        "selection": [
+          823.1618041992188,
+          507.4578552246094
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.370761874946766,
+        "source_pts": 49.901938,
+        "copies": 1,
+        "selection": [
+          827.5836181640625,
+          506.5016174316406
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.40579174994491,
+        "source_pts": 49.950938,
+        "copies": 1,
+        "selection": [
+          831.5485229492188,
+          506.39532470703125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.441383165947627,
+        "source_pts": 49.972938,
+        "copies": 1,
+        "selection": [
+          835.4447021484375,
+          506.0908508300781
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.476789957960136,
+        "source_pts": 49.999938,
+        "copies": 1,
+        "selection": [
+          838.623291015625,
+          505.2413635253906
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.512349874945357,
+        "source_pts": 50.033938,
+        "copies": 1,
+        "selection": [
+          841.7799072265625,
+          504.6742858886719
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.5468919579871,
+        "source_pts": 50.071938,
+        "copies": 1,
+        "selection": [
+          844.879150390625,
+          504.4490051269531
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.581776124949101,
+        "source_pts": 50.102938,
+        "copies": 1,
+        "selection": [
+          848.4927368164062,
+          504.36163330078125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.616987124958541,
+        "source_pts": 50.126938,
+        "copies": 1,
+        "selection": [
+          851.8863525390625,
+          504.6932678222656
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.653657540970016,
+        "source_pts": 50.159,
+        "copies": 1,
+        "selection": [
+          855.7289428710938,
+          505.2734680175781
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.692424415959977,
+        "source_pts": 50.195937,
+        "copies": 1,
+        "selection": [
+          859.5632934570312,
+          505.8002014160156
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.7310503329499625,
+        "source_pts": 50.234938,
+        "copies": 1,
+        "selection": [
+          863.3372802734375,
+          506.0180358886719
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.770762207976077,
+        "source_pts": 50.269937,
+        "copies": 2,
+        "selection": [
+          866.8339233398438,
+          506.64666748046875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.811160915996879,
+        "source_pts": 50.292938,
+        "copies": 1,
+        "selection": [
+          870.7838134765625,
+          506.82080078125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.850425457989331,
+        "source_pts": 50.322938,
+        "copies": 1,
+        "selection": [
+          875.5156860351562,
+          507.60150146484375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.889818249968812,
+        "source_pts": 50.374938,
+        "copies": 1,
+        "selection": [
+          880.49072265625,
+          508.4195251464844
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.927740540995728,
+        "source_pts": 50.401938,
+        "copies": 1,
+        "selection": [
+          885.0516967773438,
+          508.4649353027344
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 7.9651766659808345,
+        "source_pts": 50.434938,
+        "copies": 1,
+        "selection": [
+          889.5451049804688,
+          507.95703125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.001904790988192,
+        "source_pts": 50.470937,
+        "copies": 2,
+        "selection": [
+          893.1051025390625,
+          507.85296630859375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.039967082964722,
+        "source_pts": 50.504938,
+        "copies": 1,
+        "selection": [
+          897.0911254882812,
+          507.5169677734375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.074893540993799,
+        "source_pts": 50.529938,
+        "copies": 1,
+        "selection": [
+          900.5814208984375,
+          508.128173828125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.109928165969905,
+        "source_pts": 50.564937,
+        "copies": 1,
+        "selection": [
+          904.6395263671875,
+          507.7665710449219
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.14595458295662,
+        "source_pts": 50.602938,
+        "copies": 1,
+        "selection": [
+          906.8284301757812,
+          508.0375061035156
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.181267457955983,
+        "source_pts": 50.631937,
+        "copies": 1,
+        "selection": [
+          910.4304809570312,
+          508.29925537109375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.216954374976922,
+        "source_pts": 50.666938,
+        "copies": 1,
+        "selection": [
+          913.2123413085938,
+          507.911376953125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.251991165976506,
+        "source_pts": 50.703938,
+        "copies": 1,
+        "selection": [
+          916.6517333984375,
+          508.2644348144531
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.28687341598561,
+        "source_pts": 50.726937,
+        "copies": 1,
+        "selection": [
+          920.7461547851562,
+          509.5284118652344
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.321893332991749,
+        "source_pts": 50.760938,
+        "copies": 1,
+        "selection": [
+          924.1017456054688,
+          509.8563537597656
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.356521249981597,
+        "source_pts": 50.800938,
+        "copies": 1,
+        "selection": [
+          928.5216674804688,
+          509.9552307128906
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.391802999947686,
+        "source_pts": 50.843938,
+        "copies": 1,
+        "selection": [
+          931.54052734375,
+          510.5768127441406
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.42663924995577,
+        "source_pts": 50.869937,
+        "copies": 1,
+        "selection": [
+          935.5216064453125,
+          510.7550964355469
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.461573874985334,
+        "source_pts": 50.914938,
+        "copies": 1,
+        "selection": [
+          939.353271484375,
+          512.025146484375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.497208624961786,
+        "source_pts": 50.936937,
+        "copies": 1,
+        "selection": [
+          943.920166015625,
+          512.1775512695312
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.532581332954578,
+        "source_pts": 50.959938,
+        "copies": 1,
+        "selection": [
+          948.7669677734375,
+          511.8847351074219
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.568290957948193,
+        "source_pts": 51.006937,
+        "copies": 2,
+        "selection": [
+          952.5744018554688,
+          509.77081298828125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.604928165965248,
+        "source_pts": 51.042938,
+        "copies": 1,
+        "selection": [
+          956.3306274414062,
+          509.4108581542969
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.640444540942553,
+        "source_pts": 51.068938,
+        "copies": 1,
+        "selection": [
+          959.8743896484375,
+          507.8811950683594
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.67602941597579,
+        "source_pts": 51.089937,
+        "copies": 1,
+        "selection": [
+          962.9443359375,
+          507.62713623046875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.71209445799468,
+        "source_pts": 51.134937,
+        "copies": 1,
+        "selection": [
+          965.806884765625,
+          507.16888427734375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.751328582991846,
+        "source_pts": 51.172,
+        "copies": 1,
+        "selection": [
+          969.0647583007812,
+          506.8553161621094
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.787316540954635,
+        "source_pts": 51.196938,
+        "copies": 1,
+        "selection": [
+          971.5272827148438,
+          506.4228515625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.822856957965996,
+        "source_pts": 51.230938,
+        "copies": 1,
+        "selection": [
+          974.5236206054688,
+          506.4120788574219
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.859030665946193,
+        "source_pts": 51.265937,
+        "copies": 1,
+        "selection": [
+          977.6454467773438,
+          506.5760803222656
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.893925790966023,
+        "source_pts": 51.300938,
+        "copies": 1,
+        "selection": [
+          980.5226440429688,
+          506.7611083984375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.929860707954504,
+        "source_pts": 51.334938,
+        "copies": 1,
+        "selection": [
+          984.3289184570312,
+          507.2743225097656
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 8.965209707967006,
+        "source_pts": 51.367938,
+        "copies": 1,
+        "selection": [
+          987.7903442382812,
+          507.85302734375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 9.00043520797044,
+        "source_pts": 51.405938,
+        "copies": 2,
+        "selection": [
+          991.7164306640625,
+          509.3466796875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 9.038385415973607,
+        "source_pts": 51.438938,
+        "copies": 1,
+        "selection": [
+          995.94970703125,
+          510.6296081542969
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 9.074388040986378,
+        "source_pts": 51.464937,
+        "copies": 1,
+        "selection": [
+          999.9034423828125,
+          511.16461181640625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 9.109826665953733,
+        "source_pts": 51.502938,
+        "copies": 1,
+        "selection": [
+          1004.2599487304688,
+          511.984130859375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 9.144645124964882,
+        "source_pts": 51.536938,
+        "copies": 1,
+        "selection": [
+          1008.9080810546875,
+          513.1355590820312
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 9.179754374956246,
+        "source_pts": 51.556938,
+        "copies": 1,
+        "selection": [
+          1013.2731323242188,
+          514.3408203125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 9.215051457984373,
+        "source_pts": 51.603938,
+        "copies": 1,
+        "selection": [
+          1017.226806640625,
+          513.974853515625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 9.2503974159481,
+        "source_pts": 51.638938,
+        "copies": 1,
+        "selection": [
+          1019.5870971679688,
+          513.6378173828125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 9.285297582973726,
+        "source_pts": 51.664938,
+        "copies": 1,
+        "selection": [
+          1022.9475708007812,
+          513.98583984375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 9.319990249990951,
+        "source_pts": 51.710938,
+        "copies": 1,
+        "selection": [
+          1025.6865234375,
+          513.0211181640625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 9.354821374989115,
+        "source_pts": 51.734938,
+        "copies": 1,
+        "selection": [
+          1028.517822265625,
+          512.956787109375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 9.389986915979534,
+        "source_pts": 51.758938,
+        "copies": 1,
+        "selection": [
+          1031.026123046875,
+          512.9852294921875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 9.425057165964972,
+        "source_pts": 51.796937,
+        "copies": 1,
+        "selection": [
+          1033.609619140625,
+          512.7666625976562
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 9.460667790961452,
+        "source_pts": 51.830938,
+        "copies": 1,
+        "selection": [
+          1036.325927734375,
+          512.72802734375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 9.495541457959916,
+        "source_pts": 51.867938,
+        "copies": 1,
+        "selection": [
+          1039.218994140625,
+          513.1956176757812
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 9.530696582980454,
+        "source_pts": 51.902938,
+        "copies": 1,
+        "selection": [
+          1041.6368408203125,
+          512.9082641601562
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 9.565976332989521,
+        "source_pts": 51.937938,
+        "copies": 1,
+        "selection": [
+          1044.90478515625,
+          513.4305419921875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 9.601736249984242,
+        "source_pts": 51.971938,
+        "copies": 2,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 9.63803645799635,
+        "source_pts": 51.995938,
+        "copies": 1,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 9.673351665958762,
+        "source_pts": 52.041938,
+        "copies": 1,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 9.709458832978271,
+        "source_pts": 52.067937,
+        "copies": 1,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 9.745149249967653,
+        "source_pts": 52.102938,
+        "copies": 1,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 9.780367624945939,
+        "source_pts": 52.136938,
+        "copies": 1,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 9.815551749954466,
+        "source_pts": 52.162,
+        "copies": 1,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 9.850416874978691,
+        "source_pts": 52.208937,
+        "copies": 1,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 9.885653999983333,
+        "source_pts": 52.231938,
+        "copies": 1,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 9.921298790955916,
+        "source_pts": 52.255938,
+        "copies": 1,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 9.956896874995437,
+        "source_pts": 52.293937,
+        "copies": 1,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 9.99305116594769,
+        "source_pts": 52.338938,
+        "copies": 1,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 10.02776966599049,
+        "source_pts": 52.365938,
+        "copies": 1,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 10.06258391594747,
+        "source_pts": 52.402938,
+        "copies": 1,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 10.098097124951892,
+        "source_pts": 52.435938,
+        "copies": 1,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 10.133371749951039,
+        "source_pts": 52.470937,
+        "copies": 2,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 10.169096915982664,
+        "source_pts": 52.505938,
+        "copies": 1,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 10.203907624993008,
+        "source_pts": 52.538938,
+        "copies": 1,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 10.240145374962594,
+        "source_pts": 52.564937,
+        "copies": 1,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 10.275272499944549,
+        "source_pts": 52.599938,
+        "copies": 1,
+        "selection": [
+          1048.7987060546875,
+          514.204833984375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 10.310350832995027,
+        "source_pts": 52.631937,
+        "copies": 1,
+        "selection": [
+          1125.0,
+          532.0
+        ],
+        "lock": "REACQUIRED"
+      },
+      {
+        "wall_s": 10.345666624954902,
+        "source_pts": 52.665937,
+        "copies": 1,
+        "selection": [
+          1130.1070556640625,
+          534.06494140625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 10.380989040946588,
+        "source_pts": 52.691938,
+        "copies": 1,
+        "selection": [
+          1134.131103515625,
+          534.9392700195312
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 10.4159774579457,
+        "source_pts": 52.742938,
+        "copies": 1,
+        "selection": [
+          1137.693359375,
+          535.41162109375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 10.450841624988243,
+        "source_pts": 52.780938,
+        "copies": 1,
+        "selection": [
+          1140.9696044921875,
+          535.42431640625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 10.485254207975231,
+        "source_pts": 52.803938,
+        "copies": 1,
+        "selection": [
+          1143.6785888671875,
+          535.4423217773438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 10.520715999999084,
+        "source_pts": 52.825938,
+        "copies": 1,
+        "selection": [
+          1146.499755859375,
+          535.1755981445312
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 10.555584457993973,
+        "source_pts": 52.871938,
+        "copies": 1,
+        "selection": [
+          1149.9183349609375,
+          535.1577758789062
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 10.590656082960777,
+        "source_pts": 52.898938,
+        "copies": 1,
+        "selection": [
+          1151.986083984375,
+          536.1474609375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 10.62559999997029,
+        "source_pts": 52.930937,
+        "copies": 1,
+        "selection": [
+          1155.05810546875,
+          537.1432495117188
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 10.660166374989785,
+        "source_pts": 52.981938,
+        "copies": 1,
+        "selection": [
+          1157.9263916015625,
+          537.3779296875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 10.695561915985309,
+        "source_pts": 53.005938,
+        "copies": 1,
+        "selection": [
+          1160.4149169921875,
+          537.9464111328125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 10.731092040950898,
+        "source_pts": 53.029938,
+        "copies": 1,
+        "selection": [
+          1163.6514892578125,
+          538.2590942382812
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 10.766126290953252,
+        "source_pts": 53.079937,
+        "copies": 1,
+        "selection": [
+          1166.596435546875,
+          539.132080078125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 10.80068158294307,
+        "source_pts": 53.102938,
+        "copies": 2,
+        "selection": [
+          1169.894287109375,
+          539.6685180664062
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 10.83575095795095,
+        "source_pts": 53.134937,
+        "copies": 1,
+        "selection": [
+          1172.941650390625,
+          540.8253173828125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 10.87109520798549,
+        "source_pts": 53.17,
+        "copies": 1,
+        "selection": [
+          1176.450439453125,
+          541.5352783203125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 10.907791457953863,
+        "source_pts": 53.204937,
+        "copies": 1,
+        "selection": [
+          1180.352294921875,
+          542.7360229492188
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 10.942793374997564,
+        "source_pts": 53.238937,
+        "copies": 1,
+        "selection": [
+          1185.1683349609375,
+          544.0816040039062
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 10.977891790971626,
+        "source_pts": 53.273938,
+        "copies": 1,
+        "selection": [
+          1189.130859375,
+          544.7269897460938
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 11.01299445796758,
+        "source_pts": 53.307938,
+        "copies": 1,
+        "selection": [
+          1192.733154296875,
+          544.88232421875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 11.049529832962435,
+        "source_pts": 53.333938,
+        "copies": 1,
+        "selection": [
+          1195.984619140625,
+          544.7208862304688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 11.08486116596032,
+        "source_pts": 53.368938,
+        "copies": 1,
+        "selection": [
+          1198.71240234375,
+          544.6397705078125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 11.119622999976855,
+        "source_pts": 53.402938,
+        "copies": 1,
+        "selection": [
+          1201.5157470703125,
+          544.8888549804688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 11.154552165942732,
+        "source_pts": 53.439937,
+        "copies": 1,
+        "selection": [
+          1204.5380859375,
+          544.59375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 11.18977391597582,
+        "source_pts": 53.471938,
+        "copies": 1,
+        "selection": [
+          1207.1895751953125,
+          544.90966796875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 11.225058540992904,
+        "source_pts": 53.496938,
+        "copies": 1,
+        "selection": [
+          1210.275146484375,
+          545.6328735351562
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 11.260514957946725,
+        "source_pts": 53.533938,
+        "copies": 1,
+        "selection": [
+          1212.8751220703125,
+          545.4943237304688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 11.295478874992114,
+        "source_pts": 53.580938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 11.330258332949597,
+        "source_pts": 53.604937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 11.36556391598424,
+        "source_pts": 53.638938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 11.4005174159538,
+        "source_pts": 53.666938,
+        "copies": 2,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 11.438958707964048,
+        "source_pts": 53.698937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 11.474466040963307,
+        "source_pts": 53.734938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 11.509456707979552,
+        "source_pts": 53.767938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 11.545946415979415,
+        "source_pts": 53.804938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 11.581879124976695,
+        "source_pts": 53.836937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 11.61753566598054,
+        "source_pts": 53.872937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 11.653077999944799,
+        "source_pts": 53.905938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 11.688877082953695,
+        "source_pts": 53.939937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 11.72439966595266,
+        "source_pts": 53.971938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 11.759597082971595,
+        "source_pts": 54.005938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 11.794882999965921,
+        "source_pts": 54.030938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 11.829933165980037,
+        "source_pts": 54.069938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 11.866787082981318,
+        "source_pts": 54.104937,
+        "copies": 2,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 11.902736541000195,
+        "source_pts": 54.146937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 11.938109790964518,
+        "source_pts": 54.172,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 11.974774582951795,
+        "source_pts": 54.206938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.01032583299093,
+        "source_pts": 54.242938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.045966540987138,
+        "source_pts": 54.265937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.081863957981113,
+        "source_pts": 54.299937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.116902457957622,
+        "source_pts": 54.339937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.152387999987695,
+        "source_pts": 54.370938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.18730399996275,
+        "source_pts": 54.398938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.22298837499693,
+        "source_pts": 54.435938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.258249207981862,
+        "source_pts": 54.469938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.293343249999452,
+        "source_pts": 54.504938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.328946124995127,
+        "source_pts": 54.540937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.364230124978349,
+        "source_pts": 54.573937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.399375749984756,
+        "source_pts": 54.598937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.434245665965136,
+        "source_pts": 54.632938,
+        "copies": 2,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.469891874992754,
+        "source_pts": 54.660938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.505986249947455,
+        "source_pts": 54.706938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.541214207943995,
+        "source_pts": 54.743938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.576863750000484,
+        "source_pts": 54.780938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.612041749991477,
+        "source_pts": 54.815938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.648161665943917,
+        "source_pts": 54.835938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.683890457963571,
+        "source_pts": 54.870938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.71931074996246,
+        "source_pts": 54.907938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.755145165952854,
+        "source_pts": 54.930937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.79103658295935,
+        "source_pts": 54.968938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.826811207982246,
+        "source_pts": 55.000937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.862541540991515,
+        "source_pts": 55.038938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.897473124961834,
+        "source_pts": 55.075938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.934378624951933,
+        "source_pts": 55.108938,
+        "copies": 2,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 12.97166954097338,
+        "source_pts": 55.134937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.006986874970607,
+        "source_pts": 55.175,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.042748332954943,
+        "source_pts": 55.203938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.077989290992264,
+        "source_pts": 55.238937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.11336499999743,
+        "source_pts": 55.263938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.149212499964051,
+        "source_pts": 55.300938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.184756749949884,
+        "source_pts": 55.334938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.220709165965673,
+        "source_pts": 55.369937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.256138957978692,
+        "source_pts": 55.395938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.291321374999825,
+        "source_pts": 55.430937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.32716420799261,
+        "source_pts": 55.478938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.362357040983625,
+        "source_pts": 55.502938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.398168207961135,
+        "source_pts": 55.547938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.4330307499622,
+        "source_pts": 55.559938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.468407374981325,
+        "source_pts": 55.606938,
+        "copies": 2,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.505199165956583,
+        "source_pts": 55.639938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.540917457954492,
+        "source_pts": 55.663938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.575844415987376,
+        "source_pts": 55.701937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.612246415985283,
+        "source_pts": 55.747937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.647055832960177,
+        "source_pts": 55.769938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.682202124968171,
+        "source_pts": 55.792938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.717562624951825,
+        "source_pts": 55.840938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.752933624957222,
+        "source_pts": 55.874938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.78740204096539,
+        "source_pts": 55.907938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.822577415965497,
+        "source_pts": 55.943938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.857671499950811,
+        "source_pts": 55.966938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.893088915967382,
+        "source_pts": 56.014938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.927884832955897,
+        "source_pts": 56.052937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.963389999989886,
+        "source_pts": 56.063938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 13.99975104094483,
+        "source_pts": 56.105938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.034814832964912,
+        "source_pts": 56.148938,
+        "copies": 2,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.071238415956032,
+        "source_pts": 56.186,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.107003290962894,
+        "source_pts": 56.209938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.14242337498581,
+        "source_pts": 56.259937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.177393832942471,
+        "source_pts": 56.280938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.213205915992148,
+        "source_pts": 56.315938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.249193040945102,
+        "source_pts": 56.345937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.284404665988404,
+        "source_pts": 56.383938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.319165999942925,
+        "source_pts": 56.408938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.354445290984586,
+        "source_pts": 56.445937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.391317790956236,
+        "source_pts": 56.496938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.426575332996435,
+        "source_pts": 56.523938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.462182082992513,
+        "source_pts": 56.544938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.497385624970775,
+        "source_pts": 56.579937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.532875415985473,
+        "source_pts": 56.606938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.570955499948468,
+        "source_pts": 56.639938,
+        "copies": 2,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.606513040955178,
+        "source_pts": 56.675938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.64199141599238,
+        "source_pts": 56.712938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.67715166596463,
+        "source_pts": 56.746938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.712327582994476,
+        "source_pts": 56.773938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.746931290952489,
+        "source_pts": 56.810938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.782307332963683,
+        "source_pts": 56.843938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.817065665964037,
+        "source_pts": 56.877938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.851779915974475,
+        "source_pts": 56.916938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.885564415948465,
+        "source_pts": 56.938938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.92053991596913,
+        "source_pts": 56.986938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.954350999963935,
+        "source_pts": 57.022938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 14.989984332991298,
+        "source_pts": 57.043937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.02510062494548,
+        "source_pts": 57.067937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.060727832955308,
+        "source_pts": 57.114938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.095078165992163,
+        "source_pts": 57.153937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.128839374985546,
+        "source_pts": 57.176,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.163009999960195,
+        "source_pts": 57.210938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.198190999974031,
+        "source_pts": 57.259937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.232835874950979,
+        "source_pts": 57.279938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.26720912498422,
+        "source_pts": 57.328938,
+        "copies": 2,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.304772999952547,
+        "source_pts": 57.341938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.33947858295869,
+        "source_pts": 57.389938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.373746165947523,
+        "source_pts": 57.410938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.407967499981169,
+        "source_pts": 57.445937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.442806457984261,
+        "source_pts": 57.478938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.477843499975279,
+        "source_pts": 57.512937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.515028832945973,
+        "source_pts": 57.547938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.550111249962356,
+        "source_pts": 57.581938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.584501582954545,
+        "source_pts": 57.612938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.618389540992212,
+        "source_pts": 57.638938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.652821165975183,
+        "source_pts": 57.684938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.6871779159992,
+        "source_pts": 57.709938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.72105108294636,
+        "source_pts": 57.743938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.756018999963999,
+        "source_pts": 57.777938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.791412415972445,
+        "source_pts": 57.801938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.825596457987558,
+        "source_pts": 57.842937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.86008104099892,
+        "source_pts": 57.877938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.894947624998167,
+        "source_pts": 57.926938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.928868165996391,
+        "source_pts": 57.947938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 15.9642362499726,
+        "source_pts": 57.983938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.00204270798713,
+        "source_pts": 58.009937,
+        "copies": 2,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.03863216598984,
+        "source_pts": 58.045938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.073931707942393,
+        "source_pts": 58.078938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.108611707983073,
+        "source_pts": 58.124938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.144062707957346,
+        "source_pts": 58.136938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.179671832942404,
+        "source_pts": 58.188,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.215259374992456,
+        "source_pts": 58.209938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.250496999942698,
+        "source_pts": 58.248938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.286051582952496,
+        "source_pts": 58.283938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.32088054099586,
+        "source_pts": 58.307938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.356454165943433,
+        "source_pts": 58.342937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.392027040943503,
+        "source_pts": 58.377938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.427405665977858,
+        "source_pts": 58.415937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.462391249951907,
+        "source_pts": 58.457937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.49837258295156,
+        "source_pts": 58.475938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.535759374964982,
+        "source_pts": 58.512937,
+        "copies": 2,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.573089290992357,
+        "source_pts": 58.548938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.608935415977612,
+        "source_pts": 58.587938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.647171499964315,
+        "source_pts": 58.621938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.684868499985896,
+        "source_pts": 58.655938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.722713625000324,
+        "source_pts": 58.677937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.76003112498438,
+        "source_pts": 58.713938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.79818374995375,
+        "source_pts": 58.748938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.83528599998681,
+        "source_pts": 58.784937,
+        "copies": 2,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.873849165975116,
+        "source_pts": 58.810938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.912068332952913,
+        "source_pts": 58.844938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.949765207944438,
+        "source_pts": 58.872937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 16.986749707954004,
+        "source_pts": 58.917938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.022871749999467,
+        "source_pts": 58.954937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.06268862495199,
+        "source_pts": 58.976937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.103275957982987,
+        "source_pts": 59.026938,
+        "copies": 2,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.143430540978443,
+        "source_pts": 59.051938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.1817877079593,
+        "source_pts": 59.075938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.21795870794449,
+        "source_pts": 59.108938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.256255249958485,
+        "source_pts": 59.155938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.29358329094248,
+        "source_pts": 59.179,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.331288290966768,
+        "source_pts": 59.215938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.36682233295869,
+        "source_pts": 59.248938,
+        "copies": 2,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.40700033295434,
+        "source_pts": 59.288938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.444030790997203,
+        "source_pts": 59.322938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.48277699999744,
+        "source_pts": 59.344938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.520242040976882,
+        "source_pts": 59.380938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.5574583329726,
+        "source_pts": 59.417938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.5954090829473,
+        "source_pts": 59.439937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.63445704098558,
+        "source_pts": 59.477938,
+        "copies": 2,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.673210499982815,
+        "source_pts": 59.512937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.710387332946993,
+        "source_pts": 59.545938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.74981329095317,
+        "source_pts": 59.581938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.788468207989354,
+        "source_pts": 59.614938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.825846749998163,
+        "source_pts": 59.650937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.863427332951687,
+        "source_pts": 59.688938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.90145629097242,
+        "source_pts": 59.710938,
+        "copies": 2,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.94101883296389,
+        "source_pts": 59.746938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 17.977247207949404,
+        "source_pts": 59.778937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.015853874967434,
+        "source_pts": 59.810938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.05474274995504,
+        "source_pts": 59.860937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.090828457963653,
+        "source_pts": 59.882938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.127178165945224,
+        "source_pts": 59.928938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.16590774996439,
+        "source_pts": 59.956938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.204530915943906,
+        "source_pts": 59.981938,
+        "copies": 2,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.242318415956106,
+        "source_pts": 60.005938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.278766874980647,
+        "source_pts": 60.041938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.31621058296878,
+        "source_pts": 60.080938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.35261233296478,
+        "source_pts": 60.112938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.390243165951688,
+        "source_pts": 60.147938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.428214957995806,
+        "source_pts": 60.184,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.46453787497012,
+        "source_pts": 60.212938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.50303962494945,
+        "source_pts": 60.248938,
+        "copies": 2,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.541722124966327,
+        "source_pts": 60.279938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.580828874954022,
+        "source_pts": 60.313938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.617600040975958,
+        "source_pts": 60.354937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.65650874999119,
+        "source_pts": 60.390937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.694719207996968,
+        "source_pts": 60.425938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.731428457947914,
+        "source_pts": 60.445937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.76974945794791,
+        "source_pts": 60.470937,
+        "copies": 2,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.808912207954563,
+        "source_pts": 60.517938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.8470025829738,
+        "source_pts": 60.560938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.883673665986862,
+        "source_pts": 60.581938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.92060362495249,
+        "source_pts": 60.616937,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.95748395798728,
+        "source_pts": 60.639938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 18.99492658296367,
+        "source_pts": 60.672938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 19.033206415944733,
+        "source_pts": 60.708938,
+        "copies": 1,
+        "selection": [
+          1214.8302001953125,
+          544.3485717773438
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 19.070075165946037,
+        "source_pts": 60.744937,
+        "copies": 2,
+        "selection": [
+          1218.8880615234375,
+          544.9783935546875
+        ],
+        "lock": "REACQUIRED"
+      },
+      {
+        "wall_s": 19.108373915951233,
+        "source_pts": 60.779938,
+        "copies": 1,
+        "selection": [
+          1223.603515625,
+          546.3429565429688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.145074540982023,
+        "source_pts": 60.829937,
+        "copies": 1,
+        "selection": [
+          1227.1484375,
+          547.2149658203125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.183803790947422,
+        "source_pts": 60.851937,
+        "copies": 1,
+        "selection": [
+          1229.19873046875,
+          547.6312866210938
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.219323999946937,
+        "source_pts": 60.889938,
+        "copies": 1,
+        "selection": [
+          1231.2274169921875,
+          548.07470703125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.25765666598454,
+        "source_pts": 60.928938,
+        "copies": 1,
+        "selection": [
+          1231.3919677734375,
+          548.1624145507812
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.296088749950286,
+        "source_pts": 60.947938,
+        "copies": 1,
+        "selection": [
+          1231.3953857421875,
+          548.1576538085938
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.33447141596116,
+        "source_pts": 60.983938,
+        "copies": 2,
+        "selection": [
+          1231.294677734375,
+          548.4723510742188
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.371184749994427,
+        "source_pts": 61.012937,
+        "copies": 1,
+        "selection": [
+          1231.647216796875,
+          548.9044799804688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.409263832960278,
+        "source_pts": 61.047938,
+        "copies": 1,
+        "selection": [
+          1231.7379150390625,
+          549.83056640625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.447193124971818,
+        "source_pts": 61.084938,
+        "copies": 1,
+        "selection": [
+          1231.226318359375,
+          549.984619140625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.482839249947574,
+        "source_pts": 61.121938,
+        "copies": 1,
+        "selection": [
+          1231.4390869140625,
+          550.0244140625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.52134129096521,
+        "source_pts": 61.140937,
+        "copies": 1,
+        "selection": [
+          1231.439697265625,
+          550.0254516601562
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.559164624952246,
+        "source_pts": 61.18,
+        "copies": 1,
+        "selection": [
+          1232.28173828125,
+          550.02490234375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.595136207994074,
+        "source_pts": 61.215938,
+        "copies": 1,
+        "selection": [
+          1232.2811279296875,
+          550.0244750976562
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.63254058297025,
+        "source_pts": 61.252938,
+        "copies": 1,
+        "selection": [
+          1232.3851318359375,
+          551.0697021484375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.671672540949658,
+        "source_pts": 61.288938,
+        "copies": 2,
+        "selection": [
+          1232.341552734375,
+          551.1050415039062
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.708816165977623,
+        "source_pts": 61.310938,
+        "copies": 1,
+        "selection": [
+          1232.3382568359375,
+          551.10302734375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.74708554096287,
+        "source_pts": 61.343938,
+        "copies": 1,
+        "selection": [
+          1232.34716796875,
+          551.0977172851562
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.78600312495837,
+        "source_pts": 61.381937,
+        "copies": 1,
+        "selection": [
+          1232.281005859375,
+          551.1040649414062
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.822196915978566,
+        "source_pts": 61.434938,
+        "copies": 1,
+        "selection": [
+          1232.53857421875,
+          551.1619873046875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.86073629098246,
+        "source_pts": 61.471938,
+        "copies": 1,
+        "selection": [
+          1232.8702392578125,
+          551.1804809570312
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.899373665975872,
+        "source_pts": 61.519938,
+        "copies": 1,
+        "selection": [
+          1232.6270751953125,
+          551.1885375976562
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.941553457989357,
+        "source_pts": 61.529938,
+        "copies": 2,
+        "selection": [
+          1232.9449462890625,
+          551.1414794921875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 19.983410624961834,
+        "source_pts": 61.578938,
+        "copies": 1,
+        "selection": [
+          1232.986328125,
+          551.109619140625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.02040208299877,
+        "source_pts": 61.612938,
+        "copies": 1,
+        "selection": [
+          1234.1768798828125,
+          551.2118530273438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.060153999947943,
+        "source_pts": 61.635938,
+        "copies": 1,
+        "selection": [
+          1234.175537109375,
+          551.21337890625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.098007790977135,
+        "source_pts": 61.670938,
+        "copies": 1,
+        "selection": [
+          1233.5758056640625,
+          551.2694702148438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.137037665990647,
+        "source_pts": 61.704937,
+        "copies": 2,
+        "selection": [
+          1233.987548828125,
+          551.6464233398438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.17802579095587,
+        "source_pts": 61.742938,
+        "copies": 1,
+        "selection": [
+          1233.9854736328125,
+          551.6461181640625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.21536545798881,
+        "source_pts": 61.775938,
+        "copies": 1,
+        "selection": [
+          1233.86962890625,
+          551.9603881835938
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.25379545794567,
+        "source_pts": 61.800938,
+        "copies": 1,
+        "selection": [
+          1233.862060546875,
+          551.9647216796875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.290857499989215,
+        "source_pts": 61.849938,
+        "copies": 1,
+        "selection": [
+          1234.0052490234375,
+          552.0037841796875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.329093124950305,
+        "source_pts": 61.868938,
+        "copies": 1,
+        "selection": [
+          1233.6138916015625,
+          552.08154296875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.368413290998433,
+        "source_pts": 61.901938,
+        "copies": 2,
+        "selection": [
+          1233.154541015625,
+          551.6974487304688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.407773957995232,
+        "source_pts": 61.936937,
+        "copies": 1,
+        "selection": [
+          1233.107666015625,
+          551.6416015625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.445397457981016,
+        "source_pts": 61.969938,
+        "copies": 1,
+        "selection": [
+          1233.233154296875,
+          551.4970092773438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.484174707962666,
+        "source_pts": 62.017938,
+        "copies": 1,
+        "selection": [
+          1233.10888671875,
+          551.8552856445312
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.52271429094253,
+        "source_pts": 62.045938,
+        "copies": 1,
+        "selection": [
+          1232.4346923828125,
+          551.3899536132812
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.56192183296662,
+        "source_pts": 62.068938,
+        "copies": 1,
+        "selection": [
+          1232.3272705078125,
+          551.3989868164062
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.60243145795539,
+        "source_pts": 62.103938,
+        "copies": 2,
+        "selection": [
+          1232.3267822265625,
+          551.4017333984375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.64247283298755,
+        "source_pts": 62.139938,
+        "copies": 1,
+        "selection": [
+          1232.298828125,
+          551.4677734375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.682618249964435,
+        "source_pts": 62.177937,
+        "copies": 1,
+        "selection": [
+          1232.3017578125,
+          551.4688720703125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.720460540964268,
+        "source_pts": 62.201,
+        "copies": 1,
+        "selection": [
+          1231.825439453125,
+          551.4916381835938
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.758320790948346,
+        "source_pts": 62.249938,
+        "copies": 1,
+        "selection": [
+          1231.8331298828125,
+          551.4780883789062
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.79808812495321,
+        "source_pts": 62.270938,
+        "copies": 1,
+        "selection": [
+          1231.8319091796875,
+          551.4784545898438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.83541720797075,
+        "source_pts": 62.307938,
+        "copies": 2,
+        "selection": [
+          1231.8311767578125,
+          551.4794311523438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.877728707971983,
+        "source_pts": 62.351937,
+        "copies": 1,
+        "selection": [
+          1231.8311767578125,
+          551.4826049804688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.915924082975835,
+        "source_pts": 62.379938,
+        "copies": 1,
+        "selection": [
+          1231.66943359375,
+          551.50244140625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.954359707946423,
+        "source_pts": 62.413938,
+        "copies": 1,
+        "selection": [
+          1231.4822998046875,
+          551.0792236328125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 20.99464170797728,
+        "source_pts": 62.446938,
+        "copies": 1,
+        "selection": [
+          1231.481201171875,
+          551.0822143554688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.03537029097788,
+        "source_pts": 62.469938,
+        "copies": 2,
+        "selection": [
+          1231.4481201171875,
+          551.0897827148438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.074458624992985,
+        "source_pts": 62.518937,
+        "copies": 1,
+        "selection": [
+          1231.379638671875,
+          551.1342163085938
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.113186457951088,
+        "source_pts": 62.531937,
+        "copies": 1,
+        "selection": [
+          1231.5787353515625,
+          551.16650390625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.15405162499519,
+        "source_pts": 62.576937,
+        "copies": 1,
+        "selection": [
+          1231.556884765625,
+          551.1544799804688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.194588457990903,
+        "source_pts": 62.604937,
+        "copies": 1,
+        "selection": [
+          1231.55517578125,
+          551.1602172851562
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.234172499971464,
+        "source_pts": 62.648938,
+        "copies": 2,
+        "selection": [
+          1231.579345703125,
+          551.0889892578125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.27478787495056,
+        "source_pts": 62.669938,
+        "copies": 1,
+        "selection": [
+          1230.801513671875,
+          550.9849853515625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.313904249982443,
+        "source_pts": 62.705938,
+        "copies": 1,
+        "selection": [
+          1230.9359130859375,
+          550.9852294921875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.353452874987852,
+        "source_pts": 62.744937,
+        "copies": 1,
+        "selection": [
+          1231.631103515625,
+          551.133544921875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.393733082979452,
+        "source_pts": 62.780938,
+        "copies": 1,
+        "selection": [
+          1231.8260498046875,
+          551.0354614257812
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.430715665977914,
+        "source_pts": 62.815938,
+        "copies": 1,
+        "selection": [
+          1231.8575439453125,
+          551.0067749023438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.468716624949593,
+        "source_pts": 62.851937,
+        "copies": 2,
+        "selection": [
+          1231.791015625,
+          551.0482788085938
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.511648874962702,
+        "source_pts": 62.872937,
+        "copies": 1,
+        "selection": [
+          1230.9608154296875,
+          550.9573364257812
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.551182415976655,
+        "source_pts": 62.910938,
+        "copies": 1,
+        "selection": [
+          1230.957763671875,
+          550.957275390625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.58814916596748,
+        "source_pts": 62.947938,
+        "copies": 1,
+        "selection": [
+          1231.6728515625,
+          551.0140991210938
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.625342957966495,
+        "source_pts": 62.966938,
+        "copies": 1,
+        "selection": [
+          1231.884521484375,
+          550.6447143554688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.664205415989272,
+        "source_pts": 63.017938,
+        "copies": 1,
+        "selection": [
+          1231.886962890625,
+          550.6435546875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.703714165952988,
+        "source_pts": 63.040937,
+        "copies": 2,
+        "selection": [
+          1231.8863525390625,
+          550.6421508789062
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.742609707987867,
+        "source_pts": 63.063938,
+        "copies": 1,
+        "selection": [
+          1231.237548828125,
+          550.7374267578125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.78101479099132,
+        "source_pts": 63.110937,
+        "copies": 1,
+        "selection": [
+          1231.23876953125,
+          550.737060546875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.820318749989383,
+        "source_pts": 63.143937,
+        "copies": 1,
+        "selection": [
+          1231.1475830078125,
+          550.1641845703125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.860344790969975,
+        "source_pts": 63.177937,
+        "copies": 1,
+        "selection": [
+          1231.1431884765625,
+          550.1682739257812
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.897926624980755,
+        "source_pts": 63.202,
+        "copies": 1,
+        "selection": [
+          1231.351806640625,
+          550.3643188476562
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.936041415960062,
+        "source_pts": 63.238937,
+        "copies": 2,
+        "selection": [
+          1231.26904296875,
+          550.3877563476562
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 21.976634708000347,
+        "source_pts": 63.273938,
+        "copies": 1,
+        "selection": [
+          1231.42333984375,
+          550.462890625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.01657445798628,
+        "source_pts": 63.311937,
+        "copies": 1,
+        "selection": [
+          1231.4249267578125,
+          550.465576171875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.056139915948734,
+        "source_pts": 63.347938,
+        "copies": 1,
+        "selection": [
+          1231.4248046875,
+          550.4696655273438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.093269082950428,
+        "source_pts": 63.369937,
+        "copies": 1,
+        "selection": [
+          1231.42138671875,
+          550.4678955078125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.13195312494645,
+        "source_pts": 63.421937,
+        "copies": 1,
+        "selection": [
+          1231.6953125,
+          550.3822631835938
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.173913665988948,
+        "source_pts": 63.433937,
+        "copies": 2,
+        "selection": [
+          1231.6673583984375,
+          550.4149780273438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.223364582983777,
+        "source_pts": 63.470937,
+        "copies": 1,
+        "selection": [
+          1231.667236328125,
+          550.4179077148438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.26337383297505,
+        "source_pts": 63.517938,
+        "copies": 1,
+        "selection": [
+          1231.6658935546875,
+          550.4201049804688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.301923957944382,
+        "source_pts": 63.542938,
+        "copies": 2,
+        "selection": [
+          1231.6678466796875,
+          550.4174194335938
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.346116749977227,
+        "source_pts": 63.579937,
+        "copies": 1,
+        "selection": [
+          1231.646728515625,
+          550.3970336914062
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.3865632499801,
+        "source_pts": 63.614938,
+        "copies": 1,
+        "selection": [
+          1231.8468017578125,
+          550.3909301757812
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.428031374991406,
+        "source_pts": 63.649938,
+        "copies": 1,
+        "selection": [
+          1231.8748779296875,
+          550.362548828125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.47068774997024,
+        "source_pts": 63.673938,
+        "copies": 2,
+        "selection": [
+          1231.8758544921875,
+          550.3648681640625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.50957783299964,
+        "source_pts": 63.710938,
+        "copies": 1,
+        "selection": [
+          1231.874267578125,
+          550.3558349609375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.550659374974202,
+        "source_pts": 63.746938,
+        "copies": 1,
+        "selection": [
+          1231.8753662109375,
+          550.3529663085938
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.592775624943897,
+        "source_pts": 63.765937,
+        "copies": 1,
+        "selection": [
+          1231.87451171875,
+          550.35400390625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.633338165993337,
+        "source_pts": 63.812938,
+        "copies": 2,
+        "selection": [
+          1231.8760986328125,
+          550.3527221679688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.67250312498072,
+        "source_pts": 63.837938,
+        "copies": 1,
+        "selection": [
+          1231.8759765625,
+          550.3529052734375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.71377512498293,
+        "source_pts": 63.874938,
+        "copies": 1,
+        "selection": [
+          1231.876953125,
+          550.3526611328125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.754311415948905,
+        "source_pts": 63.911938,
+        "copies": 1,
+        "selection": [
+          1231.73779296875,
+          550.155517578125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.792992040980607,
+        "source_pts": 63.945937,
+        "copies": 1,
+        "selection": [
+          1231.606201171875,
+          550.102783203125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.83220970799448,
+        "source_pts": 63.968938,
+        "copies": 1,
+        "selection": [
+          1231.6280517578125,
+          550.0877075195312
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.87166579096811,
+        "source_pts": 64.005938,
+        "copies": 2,
+        "selection": [
+          1231.5035400390625,
+          550.7611694335938
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.911615874967538,
+        "source_pts": 64.047938,
+        "copies": 1,
+        "selection": [
+          1231.523193359375,
+          550.6838989257812
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.951023790985346,
+        "source_pts": 64.079937,
+        "copies": 1,
+        "selection": [
+          1231.5191650390625,
+          550.6860961914062
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 22.99128512496827,
+        "source_pts": 64.118938,
+        "copies": 1,
+        "selection": [
+          1231.521484375,
+          550.68701171875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.02891070797341,
+        "source_pts": 64.148938,
+        "copies": 1,
+        "selection": [
+          1231.5201416015625,
+          550.6910400390625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.067036415974144,
+        "source_pts": 64.172938,
+        "copies": 2,
+        "selection": [
+          1232.3150634765625,
+          550.5374755859375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.109571582986973,
+        "source_pts": 64.212,
+        "copies": 1,
+        "selection": [
+          1232.7181396484375,
+          550.1953125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.150024374946952,
+        "source_pts": 64.245937,
+        "copies": 1,
+        "selection": [
+          1232.715576171875,
+          550.1958618164062
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.187804082990624,
+        "source_pts": 64.273938,
+        "copies": 1,
+        "selection": [
+          1232.570068359375,
+          549.9564208984375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.226010207959916,
+        "source_pts": 64.312938,
+        "copies": 1,
+        "selection": [
+          1231.6864013671875,
+          549.9317626953125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.266402332985308,
+        "source_pts": 64.346937,
+        "copies": 1,
+        "selection": [
+          1231.6856689453125,
+          549.9340209960938
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.307328249968123,
+        "source_pts": 64.367937,
+        "copies": 2,
+        "selection": [
+          1231.6861572265625,
+          549.9336547851562
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.34577479097061,
+        "source_pts": 64.395938,
+        "copies": 1,
+        "selection": [
+          1231.6910400390625,
+          549.9385986328125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.386466749943793,
+        "source_pts": 64.445937,
+        "copies": 1,
+        "selection": [
+          1230.96826171875,
+          549.9223022460938
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.425277457979973,
+        "source_pts": 64.481938,
+        "copies": 1,
+        "selection": [
+          1231.1328125,
+          550.3201293945312
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.465973082988057,
+        "source_pts": 64.517938,
+        "copies": 1,
+        "selection": [
+          1231.1724853515625,
+          550.249755859375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.505577749980148,
+        "source_pts": 64.539938,
+        "copies": 2,
+        "selection": [
+          1231.1739501953125,
+          550.25
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.547092249966227,
+        "source_pts": 64.563937,
+        "copies": 1,
+        "selection": [
+          1231.1741943359375,
+          550.2507934570312
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.58553087495966,
+        "source_pts": 64.610938,
+        "copies": 1,
+        "selection": [
+          1231.1732177734375,
+          550.2510375976562
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.629560499975923,
+        "source_pts": 64.647937,
+        "copies": 1,
+        "selection": [
+          1231.1771240234375,
+          550.250732421875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.670298082986847,
+        "source_pts": 64.667938,
+        "copies": 2,
+        "selection": [
+          1231.1729736328125,
+          550.2515869140625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.71239329094533,
+        "source_pts": 64.702938,
+        "copies": 1,
+        "selection": [
+          1232.2086181640625,
+          550.2530517578125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.749960082990583,
+        "source_pts": 64.748937,
+        "copies": 1,
+        "selection": [
+          1232.2078857421875,
+          550.2531127929688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.789618415990844,
+        "source_pts": 64.770938,
+        "copies": 1,
+        "selection": [
+          1232.1669921875,
+          550.2691650390625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.830146041000262,
+        "source_pts": 64.806938,
+        "copies": 1,
+        "selection": [
+          1232.17041015625,
+          550.2703247070312
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.86961437499849,
+        "source_pts": 64.846937,
+        "copies": 2,
+        "selection": [
+          1232.0458984375,
+          550.0985717773438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.910685957991518,
+        "source_pts": 64.879937,
+        "copies": 1,
+        "selection": [
+          1232.04931640625,
+          550.1109619140625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.947358082979918,
+        "source_pts": 64.902938,
+        "copies": 1,
+        "selection": [
+          1231.201416015625,
+          550.7373657226562
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 23.985846415976994,
+        "source_pts": 64.952938,
+        "copies": 1,
+        "selection": [
+          1231.2431640625,
+          550.6537475585938
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.02381012495607,
+        "source_pts": 64.975938,
+        "copies": 1,
+        "selection": [
+          1231.242919921875,
+          550.6539306640625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.059997790958732,
+        "source_pts": 65.011938,
+        "copies": 1,
+        "selection": [
+          1231.0064697265625,
+          549.8028564453125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.096002332982607,
+        "source_pts": 65.045938,
+        "copies": 1,
+        "selection": [
+          1231.00439453125,
+          549.8029174804688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.134178082982544,
+        "source_pts": 65.068938,
+        "copies": 2,
+        "selection": [
+          1231.7630615234375,
+          549.8875122070312
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.174424499971792,
+        "source_pts": 65.103938,
+        "copies": 1,
+        "selection": [
+          1231.8280029296875,
+          549.8977661132812
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.211245749960653,
+        "source_pts": 65.138937,
+        "copies": 1,
+        "selection": [
+          1231.63427734375,
+          549.990478515625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.248811957950238,
+        "source_pts": 65.176938,
+        "copies": 1,
+        "selection": [
+          1231.63623046875,
+          549.9892578125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.28607395797735,
+        "source_pts": 65.209,
+        "copies": 1,
+        "selection": [
+          1231.5997314453125,
+          550.6373291015625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.325398040993605,
+        "source_pts": 65.250938,
+        "copies": 1,
+        "selection": [
+          1231.5479736328125,
+          550.710205078125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.36091587494593,
+        "source_pts": 65.266937,
+        "copies": 1,
+        "selection": [
+          1231.6812744140625,
+          550.5589599609375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.39770095795393,
+        "source_pts": 65.303938,
+        "copies": 1,
+        "selection": [
+          1231.681640625,
+          550.5618896484375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.43637733295327,
+        "source_pts": 65.343937,
+        "copies": 2,
+        "selection": [
+          1231.6558837890625,
+          550.5188598632812
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.481233249942306,
+        "source_pts": 65.393938,
+        "copies": 1,
+        "selection": [
+          1231.7042236328125,
+          550.4229125976562
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.520536457945127,
+        "source_pts": 65.415937,
+        "copies": 1,
+        "selection": [
+          1231.8729248046875,
+          550.4527587890625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.560151540965308,
+        "source_pts": 65.434938,
+        "copies": 1,
+        "selection": [
+          1231.7718505859375,
+          550.6014404296875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.60280520794913,
+        "source_pts": 65.471937,
+        "copies": 2,
+        "selection": [
+          1232.30419921875,
+          550.8110961914062
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.64944170799572,
+        "source_pts": 65.510937,
+        "copies": 1,
+        "selection": [
+          1235.3038330078125,
+          552.1422729492188
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.714446250000037,
+        "source_pts": 65.555937,
+        "copies": 2,
+        "selection": [
+          1238.625,
+          553.0320434570312
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.791830707981717,
+        "source_pts": 65.568938,
+        "copies": 2,
+        "selection": [
+          1242.7265625,
+          552.3948974609375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.833557207952254,
+        "source_pts": 65.622938,
+        "copies": 2,
+        "selection": [
+          1245.6905517578125,
+          552.4324951171875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.87490270799026,
+        "source_pts": 65.642938,
+        "copies": 1,
+        "selection": [
+          1247.869140625,
+          552.6202392578125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.91210024995962,
+        "source_pts": 65.681938,
+        "copies": 1,
+        "selection": [
+          1249.3260498046875,
+          552.6837768554688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.950458749954123,
+        "source_pts": 65.701937,
+        "copies": 1,
+        "selection": [
+          1249.8330078125,
+          553.5658569335938
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 24.991874082945287,
+        "source_pts": 65.747938,
+        "copies": 1,
+        "selection": [
+          1249.6090087890625,
+          553.7369995117188
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.028022874961607,
+        "source_pts": 65.782938,
+        "copies": 1,
+        "selection": [
+          1249.93505859375,
+          553.9594116210938
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.06590387498727,
+        "source_pts": 65.823937,
+        "copies": 1,
+        "selection": [
+          1250.349609375,
+          554.138916015625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.105600749957375,
+        "source_pts": 65.845938,
+        "copies": 2,
+        "selection": [
+          1251.1595458984375,
+          554.4149780273438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.147052499989513,
+        "source_pts": 65.878938,
+        "copies": 1,
+        "selection": [
+          1250.718505859375,
+          555.5201416015625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.183326457976364,
+        "source_pts": 65.903937,
+        "copies": 1,
+        "selection": [
+          1250.718994140625,
+          555.5208129882812
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.22019466594793,
+        "source_pts": 65.937938,
+        "copies": 1,
+        "selection": [
+          1250.72021484375,
+          555.5203247070312
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.259964707947802,
+        "source_pts": 65.988938,
+        "copies": 1,
+        "selection": [
+          1250.4617919921875,
+          555.576904296875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.300905999960378,
+        "source_pts": 66.011938,
+        "copies": 2,
+        "selection": [
+          1249.8519287109375,
+          557.208984375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.34044358297251,
+        "source_pts": 66.048938,
+        "copies": 1,
+        "selection": [
+          1250.8294677734375,
+          558.0044555664062
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.377292374963872,
+        "source_pts": 66.078937,
+        "copies": 1,
+        "selection": [
+          1250.7967529296875,
+          557.8836059570312
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.41641174996039,
+        "source_pts": 66.112938,
+        "copies": 1,
+        "selection": [
+          1250.1331787109375,
+          557.9247436523438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.456194374943152,
+        "source_pts": 66.144937,
+        "copies": 1,
+        "selection": [
+          1250.134033203125,
+          557.9247436523438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.49302329099737,
+        "source_pts": 66.167938,
+        "copies": 1,
+        "selection": [
+          1249.8450927734375,
+          557.3541870117188
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.5290214579436,
+        "source_pts": 66.218,
+        "copies": 1,
+        "selection": [
+          1250.7310791015625,
+          557.6385498046875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.568236790946685,
+        "source_pts": 66.245937,
+        "copies": 2,
+        "selection": [
+          1250.9541015625,
+          558.2100219726562
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.610759207978845,
+        "source_pts": 66.279938,
+        "copies": 1,
+        "selection": [
+          1250.9539794921875,
+          558.2067260742188
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.647830249974504,
+        "source_pts": 66.315938,
+        "copies": 1,
+        "selection": [
+          1250.230712890625,
+          558.4495239257812
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.68519537494285,
+        "source_pts": 66.337937,
+        "copies": 1,
+        "selection": [
+          1250.2283935546875,
+          558.4501953125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.72524458297994,
+        "source_pts": 66.377938,
+        "copies": 1,
+        "selection": [
+          1250.2310791015625,
+          558.4503173828125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.763740540947765,
+        "source_pts": 66.414938,
+        "copies": 1,
+        "selection": [
+          1250.239013671875,
+          558.424072265625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.799932874972,
+        "source_pts": 66.451937,
+        "copies": 1,
+        "selection": [
+          1249.3790283203125,
+          558.489501953125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.83689112495631,
+        "source_pts": 66.471937,
+        "copies": 2,
+        "selection": [
+          1249.14599609375,
+          558.1080932617188
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.878186540969182,
+        "source_pts": 66.511938,
+        "copies": 1,
+        "selection": [
+          1248.946533203125,
+          558.165771484375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.914655624947045,
+        "source_pts": 66.544938,
+        "copies": 1,
+        "selection": [
+          1249.424072265625,
+          558.1008911132812
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.95176637498662,
+        "source_pts": 66.584937,
+        "copies": 1,
+        "selection": [
+          1250.0126953125,
+          558.087158203125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 25.991246624966152,
+        "source_pts": 66.617937,
+        "copies": 1,
+        "selection": [
+          1249.9527587890625,
+          558.0861206054688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.03116841596784,
+        "source_pts": 66.639938,
+        "copies": 1,
+        "selection": [
+          1249.9482421875,
+          558.0929565429688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.067272915970534,
+        "source_pts": 66.675938,
+        "copies": 2,
+        "selection": [
+          1250.29296875,
+          558.2708129882812
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.108450207975693,
+        "source_pts": 66.710938,
+        "copies": 1,
+        "selection": [
+          1250.1912841796875,
+          558.0849609375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.147787874971982,
+        "source_pts": 66.746938,
+        "copies": 1,
+        "selection": [
+          1250.3516845703125,
+          558.73681640625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.185730915982276,
+        "source_pts": 66.780938,
+        "copies": 1,
+        "selection": [
+          1249.293701171875,
+          557.5712280273438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.22263637499418,
+        "source_pts": 66.802937,
+        "copies": 1,
+        "selection": [
+          1249.291259765625,
+          557.5635986328125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.259982457966544,
+        "source_pts": 66.861937,
+        "copies": 1,
+        "selection": [
+          1249.1986083984375,
+          557.171630859375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.29839599999832,
+        "source_pts": 66.882937,
+        "copies": 1,
+        "selection": [
+          1249.1986083984375,
+          557.171630859375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 26.335007624991704,
+        "source_pts": 66.921937,
+        "copies": 2,
+        "selection": [
+          1249.1986083984375,
+          557.171630859375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 26.374126707960386,
+        "source_pts": 66.944937,
+        "copies": 1,
+        "selection": [
+          1249.1986083984375,
+          557.171630859375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 26.41238237498328,
+        "source_pts": 66.977937,
+        "copies": 1,
+        "selection": [
+          1249.1986083984375,
+          557.171630859375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 26.450430665980093,
+        "source_pts": 67.012938,
+        "copies": 1,
+        "selection": [
+          1249.1986083984375,
+          557.171630859375
+        ],
+        "lock": "LOST / HOLDING LAST POSITION"
+      },
+      {
+        "wall_s": 26.48898687498877,
+        "source_pts": 67.049937,
+        "copies": 1,
+        "selection": [
+          1249.2548828125,
+          557.4564208984375
+        ],
+        "lock": "REACQUIRED"
+      },
+      {
+        "wall_s": 26.5275092079537,
+        "source_pts": 67.071938,
+        "copies": 1,
+        "selection": [
+          1248.299072265625,
+          557.0138549804688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.564471415942535,
+        "source_pts": 67.121938,
+        "copies": 1,
+        "selection": [
+          1248.6112060546875,
+          556.9577026367188
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.601868915953673,
+        "source_pts": 67.143938,
+        "copies": 2,
+        "selection": [
+          1248.5745849609375,
+          556.9512329101562
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.643827624968253,
+        "source_pts": 67.182938,
+        "copies": 1,
+        "selection": [
+          1249.1708984375,
+          556.7444458007812
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.68063783296384,
+        "source_pts": 67.204,
+        "copies": 1,
+        "selection": [
+          1248.8663330078125,
+          556.1300048828125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.719458165985998,
+        "source_pts": 67.252938,
+        "copies": 1,
+        "selection": [
+          1248.6802978515625,
+          555.9094848632812
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.757671749975998,
+        "source_pts": 67.276938,
+        "copies": 1,
+        "selection": [
+          1248.6815185546875,
+          555.9071655273438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.796723249950446,
+        "source_pts": 67.312938,
+        "copies": 1,
+        "selection": [
+          1248.6900634765625,
+          555.90087890625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.833696457964834,
+        "source_pts": 67.348938,
+        "copies": 2,
+        "selection": [
+          1248.6815185546875,
+          555.9005737304688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.874847374972887,
+        "source_pts": 67.384938,
+        "copies": 1,
+        "selection": [
+          1248.72509765625,
+          555.8895263671875
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.913846540963277,
+        "source_pts": 67.406937,
+        "copies": 1,
+        "selection": [
+          1247.834228515625,
+          555.9960327148438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.950410499994177,
+        "source_pts": 67.454937,
+        "copies": 1,
+        "selection": [
+          1247.973388671875,
+          556.0510864257812
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 26.986083915981,
+        "source_pts": 67.486937,
+        "copies": 1,
+        "selection": [
+          1247.972412109375,
+          556.060302734375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.024379374983255,
+        "source_pts": 67.499938,
+        "copies": 1,
+        "selection": [
+          1247.96875,
+          556.0607299804688
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.06359854096081,
+        "source_pts": 67.544938,
+        "copies": 1,
+        "selection": [
+          1247.9654541015625,
+          556.0667724609375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.09957429097267,
+        "source_pts": 67.582937,
+        "copies": 1,
+        "selection": [
+          1247.7777099609375,
+          556.1595458984375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.1378493749653,
+        "source_pts": 67.618938,
+        "copies": 2,
+        "selection": [
+          1247.7706298828125,
+          556.1698608398438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.18019312497927,
+        "source_pts": 67.643938,
+        "copies": 1,
+        "selection": [
+          1247.77197265625,
+          556.17041015625
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.217639457958285,
+        "source_pts": 67.679938,
+        "copies": 1,
+        "selection": [
+          1247.7701416015625,
+          556.1688842773438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.254611040989403,
+        "source_pts": 67.715937,
+        "copies": 1,
+        "selection": [
+          1247.771728515625,
+          556.1669311523438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.291945624980144,
+        "source_pts": 67.736937,
+        "copies": 1,
+        "selection": [
+          1247.767822265625,
+          556.1683349609375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.330740082950797,
+        "source_pts": 67.770938,
+        "copies": 1,
+        "selection": [
+          1247.766845703125,
+          556.1658325195312
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.36760499997763,
+        "source_pts": 67.818938,
+        "copies": 2,
+        "selection": [
+          1247.767578125,
+          556.1655883789062
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.40572204097407,
+        "source_pts": 67.840937,
+        "copies": 1,
+        "selection": [
+          1247.7684326171875,
+          556.1676635742188
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.442698082944844,
+        "source_pts": 67.873937,
+        "copies": 1,
+        "selection": [
+          1247.68408203125,
+          556.0165405273438
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.481573874945752,
+        "source_pts": 67.909937,
+        "copies": 1,
+        "selection": [
+          1247.6834716796875,
+          556.0150146484375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.518070832942612,
+        "source_pts": 67.944937,
+        "copies": 1,
+        "selection": [
+          1247.6839599609375,
+          556.01220703125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.55673674994614,
+        "source_pts": 67.978938,
+        "copies": 1,
+        "selection": [
+          1247.5821533203125,
+          556.2682495117188
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.596045374986716,
+        "source_pts": 68.012938,
+        "copies": 1,
+        "selection": [
+          1247.582275390625,
+          556.2734985351562
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.634103957971092,
+        "source_pts": 68.061937,
+        "copies": 2,
+        "selection": [
+          1248.61328125,
+          556.4200439453125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.67344599997159,
+        "source_pts": 68.085938,
+        "copies": 1,
+        "selection": [
+          1248.916015625,
+          556.4920043945312
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.71013524994487,
+        "source_pts": 68.108937,
+        "copies": 1,
+        "selection": [
+          1248.797607421875,
+          555.885986328125
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.749672540987376,
+        "source_pts": 68.152938,
+        "copies": 1,
+        "selection": [
+          1248.79833984375,
+          555.8850708007812
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.788725165999494,
+        "source_pts": 68.190938,
+        "copies": 1,
+        "selection": [
+          1248.7979736328125,
+          555.8877563476562
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.82678099995246,
+        "source_pts": 68.215,
+        "copies": 1,
+        "selection": [
+          1247.58349609375,
+          556.5169677734375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.863770915952045,
+        "source_pts": 68.239937,
+        "copies": 1,
+        "selection": [
+          1247.5830078125,
+          556.5200805664062
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 27.900912040960975,
+        "source_pts": 68.279938,
+        "copies": 2,
+        "selection": [
+          1247.575439453125,
+          556.5452880859375
+        ],
+        "lock": "TRACKING"
+      },
+      {
+        "wall_s": 28.976097957987804,
+        "source_pts": 68.279938,
+        "copies": 32,
+        "selection": [
+          1247.575439453125,
+          556.5452880859375
+        ],
+        "lock": "TRACKING"
+      }
+    ]
+  },
+  "code_sha256": {
+    "astra_oct26.py": "92b40811ad06b2f7de7725be448f866b225a715e7ccd91282a6364546e381447",
+    "astra_oct26_runtime.py": "1008121f0aaecd960e21553f73f2eebf531c3117ff9b98e97a9b6a584cce03d5",
+    "astra_oct26_models.py": "73fcade76c4b40f813d61a0cd763b6305f408fd86d98d35c25cfabd46c6c763d",
+    "_09_M5_Fable_MotionISR_Rev3.py": "cbb54ccaa7d2d225f80d9c49952fb9fbd4dc3e94030f12d2db9c261a44c896a5"
+  },
+  "limitations": [
+    "Actual default SEARCH detector and asynchronous processing; no hand-drawn detection markers.",
+    "Recorded file replay with FFmpeg PTS decoder adapter, not aircraft/radio flight.",
+    "Video repeats screen frames to preserve wall-clock pacing; no synthesized motion.",
+    "Clear is learned preview; source raw comparison remains in app.",
+    "This is a demonstration, not native flight detection acceptance."
+  ],
+  "validation": {
+    "ffmpeg_version": "ffmpeg version 8.0.1 Copyright (c) 2000-2025 the FFmpeg developers",
+    "full_video_decode_exit": 0,
+    "decode_errors": "",
+    "video_sha256": "0a7aad4332450fd5ee45368a61557d43b8a83cd6760f20ab7c77a0198f901750",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 900,
+          "avg_frame_rate": "30/1",
+          "nb_frames": "870"
+        }
+      ],
+      "format": {
+        "duration": "29.000000",
+        "size": "8752447"
+      }
+    }
+  }
+}

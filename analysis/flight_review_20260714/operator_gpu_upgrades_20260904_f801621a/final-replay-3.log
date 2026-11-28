@@ -1,0 +1,5 @@
+[superres-v3-validation] scene=soft_barn_soak
+[superres-v3-validation] scene=construction_facade
+[superres-v3-validation] scene=skyline_rail
+PASS_METRICS_REVIEW_REQUIRED: 0 failure(s), 0 warning(s)
+receipt: /private/tmp/drone-upgrade-20260904/final-superres-independent/superres_v3_validation.json

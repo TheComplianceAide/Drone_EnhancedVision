@@ -1,0 +1,5 @@
+water exit 0
+yard exit 0
+night exit 0
+tower exit 0
+dusk exit 0

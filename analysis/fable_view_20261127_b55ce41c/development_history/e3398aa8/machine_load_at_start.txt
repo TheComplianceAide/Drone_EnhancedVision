@@ -1,0 +1,10 @@
+19:54  up 29 days, 12:36, 2 users, load averages: 18.53 17.95 17.33
+Apple M4 Pro
+ %CPU COMM
+111.0 /Users/randy/Library/Caches/ms-playwright/chromium_headless_shell-1193/chrome-mac/headless_shell
+ 99.3 /Users/randy/Library/Caches/ms-playwright/chromium_headless_shell-1193/chrome-mac/headless_shell
+ 86.9 tesseract
+ 80.4 tesseract
+ 78.3 tesseract
+ 75.1 tesseract
+ 70.9 tesseract

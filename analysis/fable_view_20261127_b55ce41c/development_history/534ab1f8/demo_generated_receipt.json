@@ -1,0 +1,66 @@
+{
+  "app": "Fable View",
+  "source": "/tmp/fable_view_fixture/fable_view_generated_rehearsal.mp4",
+  "live": false,
+  "clock": "decoded source PTS",
+  "device": "mps",
+  "frames_processed": 720,
+  "wall_seconds": 48.04,
+  "source_seconds": 23.967,
+  "frame_ms": {
+    "p50": 65.33,
+    "p95": 73.49,
+    "max": 89.06
+  },
+  "stage_ms_recent": {
+    "register": 6.18,
+    "upload+warp": 2.73,
+    "accumulate": 10.75,
+    "detect": 16.34,
+    "render": 6.53,
+    "tone": 7.39,
+    "download": 8.56,
+    "zoom": 0.01,
+    "total": 58.8
+  },
+  "replay_frames_skipped": 0,
+  "canvas_rekeys": 5,
+  "tracks_confirmed_total": 15,
+  "cues_started_total": 1158,
+  "night_last": {
+    "sigma_px": 0.0291,
+    "kappa": 0.23803,
+    "n_cap": 32.0,
+    "n_mean": 31.78032,
+    "changed": 0.00122,
+    "exposure_gain": 8.72687,
+    "night_level": 1.0,
+    "black": 0.04951,
+    "median": 0.10249,
+    "photometric_gain": 1.0
+  },
+  "saved": [
+    "analysis/fable_view_20261127_534ab1f8/demo_generated/run/captures/20261127_163755_90525b64"
+  ],
+  "save_error": null,
+  "history_records": 49,
+  "history_dropped": 0,
+  "source_closed": true,
+  "actions": [
+    "follow",
+    "compare",
+    "drawer_next",
+    "compare",
+    "drawer_inspect",
+    "drawer_inspect",
+    "drawer_raw",
+    "drawer_raw",
+    "compare",
+    "follow",
+    "follow",
+    "save"
+  ],
+  "governor_note": "",
+  "recorded_frames": 720,
+  "recording": "analysis/fable_view_20261127_534ab1f8/demo_generated/fable_view_generated_rehearsal_demo.mp4"
+}

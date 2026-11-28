@@ -1,0 +1,53 @@
+{
+  "app": "Fable View",
+  "source": "/Volumes/Randy 12TB Drive/Drone Card Archive 2026-11-07/Originals/DCIM/101MEDIA/DJI_0975.MP4",
+  "clock": "decoded source PTS",
+  "source_time": 107.040267,
+  "frame_index": 510,
+  "device": "mps",
+  "night_mode": "auto",
+  "look": "natural",
+  "raw_view": false,
+  "registration": {
+    "ok": true,
+    "model": "similarity",
+    "inliers": 98,
+    "tracked": 102,
+    "rms_px": 0.473
+  },
+  "night": {
+    "sigma_px": 0.01007,
+    "kappa": 0.47262,
+    "n_cap": 32.0,
+    "n_mean": 31.30249,
+    "changed": 0.00312,
+    "exposure_gain": 11.0019,
+    "night_level": 1.0,
+    "black": 0.01985,
+    "median": 0.03873,
+    "photometric_gain": 1.0
+  },
+  "tracks": [],
+  "zoom": {
+    "mode": "point",
+    "centre": [
+      339.1,
+      720.15
+    ],
+    "window_px": 240.0,
+    "magnification": 1.5,
+    "supporting_frames": 22.64,
+    "supported_fraction": 0.985,
+    "aligned": true,
+    "lost": false,
+    "track_id": 0
+  },
+  "statement": "source.png is the decoded frame, unmodified. processed.png is a weighted mean of registered source frames with a monotonic exposure curve. zoom_stack.png is a multi-frame mean of the window with bounded deconvolution; zoom_frame.png is the same window from this frame alone. Tracks are image detections of unknown identity.",
+  "sha256": {
+    "source.png": "a137921a9f23e3f1e1678289f4ae21f3e615364c532eb08488268ac93d862b86",
+    "processed.png": "d05a3fa3bd7b4e719d7e854caeb74093f3b2f811a7d9a36bef6d953b05bd2e53",
+    "view.png": "7e4c73993b4e60faf4472e59ccce51034c4cdeb540e30019da9de1baadeb1731",
+    "zoom_stack.png": "eff8aaf86260330f2431802909f7b74ca95c05c1902193751e9c90a89e9b7a13",
+    "zoom_frame.png": "6b02136b9aa118cb07960a6a35294e139744669dc290ee638b9b16eed7e3be9e"
+  }
+}

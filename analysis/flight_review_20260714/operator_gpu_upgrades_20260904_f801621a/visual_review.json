@@ -1,0 +1,158 @@
+[
+  {
+    "path": "night-preview/soft_barn_soak/comparison.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/preview-validation-v2/soft_barn_soak/comparison.png",
+    "detail": "original",
+    "finding": "Brighter shadows; visible residual noise and source blur. No identifying detail recovered."
+  },
+  {
+    "path": "night-preview/soft_barn_soak/candidate.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/preview-validation-v2/soft_barn_soak/candidate.png",
+    "detail": "original",
+    "finding": "Brighter shadows; visible residual noise and source blur. No identifying detail recovered."
+  },
+  {
+    "path": "nightvision/superres_soft_barn_soak/comparison.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/final-night-validation/superres_soft_barn_soak/comparison.png",
+    "detail": "original",
+    "finding": "Source structure retained; skyline falls back to exact floor; barn/facade retain noise/blur."
+  },
+  {
+    "path": "nightvision/superres_soft_barn_soak/rev3_selected.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/final-night-validation/superres_soft_barn_soak/rev3_selected.png",
+    "detail": "original",
+    "finding": "Source structure retained; skyline falls back to exact floor; barn/facade retain noise/blur."
+  },
+  {
+    "path": "nightvision/superres_soft_barn_soak/detail_crops_3x.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/final-night-validation/superres_soft_barn_soak/detail_crops_3x.png",
+    "detail": "original",
+    "finding": "Source structure retained; skyline falls back to exact floor; barn/facade retain noise/blur."
+  },
+  {
+    "path": "superres-ab/soft_barn_soak/terminal_display_comparison.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/final-superres-ab/soft_barn_soak/terminal_display_comparison.png",
+    "detail": "original",
+    "finding": "Sharper supported contours; large enlargement exposes source softness and compression. No physical resolution or text recovery claim."
+  },
+  {
+    "path": "superres-ab/soft_barn_soak/candidate_raw_display_comparison.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/final-superres-ab/soft_barn_soak/candidate_raw_display_comparison.png",
+    "detail": "original",
+    "finding": "Sharper supported contours; large enlargement exposes source softness and compression. No physical resolution or text recovery claim."
+  },
+  {
+    "path": "night-preview/construction_facade/comparison.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/preview-validation-v2/construction_facade/comparison.png",
+    "detail": "original",
+    "finding": "Brighter shadows; visible residual noise and source blur. No identifying detail recovered."
+  },
+  {
+    "path": "night-preview/construction_facade/candidate.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/preview-validation-v2/construction_facade/candidate.png",
+    "detail": "original",
+    "finding": "Brighter shadows; visible residual noise and source blur. No identifying detail recovered."
+  },
+  {
+    "path": "nightvision/superres_construction_facade/comparison.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/final-night-validation/superres_construction_facade/comparison.png",
+    "detail": "original",
+    "finding": "Source structure retained; skyline falls back to exact floor; barn/facade retain noise/blur."
+  },
+  {
+    "path": "nightvision/superres_construction_facade/rev3_selected.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/final-night-validation/superres_construction_facade/rev3_selected.png",
+    "detail": "original",
+    "finding": "Source structure retained; skyline falls back to exact floor; barn/facade retain noise/blur."
+  },
+  {
+    "path": "nightvision/superres_construction_facade/detail_crops_3x.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/final-night-validation/superres_construction_facade/detail_crops_3x.png",
+    "detail": "original",
+    "finding": "Source structure retained; skyline falls back to exact floor; barn/facade retain noise/blur."
+  },
+  {
+    "path": "superres-ab/construction_facade/terminal_display_comparison.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/final-superres-ab/construction_facade/terminal_display_comparison.png",
+    "detail": "original",
+    "finding": "Sharper supported contours; large enlargement exposes source softness and compression. No physical resolution or text recovery claim."
+  },
+  {
+    "path": "superres-ab/construction_facade/candidate_raw_display_comparison.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/final-superres-ab/construction_facade/candidate_raw_display_comparison.png",
+    "detail": "original",
+    "finding": "Sharper supported contours; large enlargement exposes source softness and compression. No physical resolution or text recovery claim."
+  },
+  {
+    "path": "night-preview/skyline_rail/comparison.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/preview-validation-v2/skyline_rail/comparison.png",
+    "detail": "original",
+    "finding": "Brighter shadows; visible residual noise and source blur. No identifying detail recovered."
+  },
+  {
+    "path": "night-preview/skyline_rail/candidate.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/preview-validation-v2/skyline_rail/candidate.png",
+    "detail": "original",
+    "finding": "Brighter shadows; visible residual noise and source blur. No identifying detail recovered."
+  },
+  {
+    "path": "nightvision/superres_skyline_rail/comparison.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/final-night-validation/superres_skyline_rail/comparison.png",
+    "detail": "original",
+    "finding": "Source structure retained; skyline falls back to exact floor; barn/facade retain noise/blur."
+  },
+  {
+    "path": "nightvision/superres_skyline_rail/rev3_selected.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/final-night-validation/superres_skyline_rail/rev3_selected.png",
+    "detail": "original",
+    "finding": "Source structure retained; skyline falls back to exact floor; barn/facade retain noise/blur."
+  },
+  {
+    "path": "nightvision/superres_skyline_rail/detail_crops_3x.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/final-night-validation/superres_skyline_rail/detail_crops_3x.png",
+    "detail": "original",
+    "finding": "Source structure retained; skyline falls back to exact floor; barn/facade retain noise/blur."
+  },
+  {
+    "path": "superres-ab/skyline_rail/terminal_display_comparison.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/final-superres-ab/skyline_rail/terminal_display_comparison.png",
+    "detail": "original",
+    "finding": "Sharper supported contours; large enlargement exposes source softness and compression. No physical resolution or text recovery claim."
+  },
+  {
+    "path": "superres-ab/skyline_rail/candidate_raw_display_comparison.png",
+    "viewed_from": "/tmp/drone-upgrade-20260904/final-superres-ab/skyline_rail/candidate_raw_display_comparison.png",
+    "detail": "original",
+    "finding": "Sharper supported contours; large enlargement exposes source softness and compression. No physical resolution or text recovery claim."
+  },
+  {
+    "path": "superres-independent/soft_barn_soak/terminal_comparison.png",
+    "detail": "original",
+    "finding": "Early milestones preserve fallback; later roof edges improve. Source blur remains."
+  },
+  {
+    "path": "superres-independent/soft_barn_soak/milestone_contact_sheet.png",
+    "detail": "original",
+    "finding": "Early milestones preserve fallback; later roof edges improve. Source blur remains."
+  },
+  {
+    "path": "superres-independent/construction_facade/terminal_comparison.png",
+    "detail": "original",
+    "finding": "Source roof/window contours strengthened without interpreting new identity; early best-single fallback retained. Texture remains soft."
+  },
+  {
+    "path": "superres-independent/construction_facade/milestone_contact_sheet.png",
+    "detail": "original",
+    "finding": "Source roof/window contours strengthened without interpreting new identity; early best-single fallback retained. Texture remains soft."
+  },
+  {
+    "path": "superres-independent/skyline_rail/terminal_comparison.png",
+    "detail": "original",
+    "finding": "Sharper distant building and mast contours; no recovered readable text or identifying detail. Early fallbacks and source softness remain visible."
+  },
+  {
+    "path": "superres-independent/skyline_rail/milestone_contact_sheet.png",
+    "detail": "original",
+    "finding": "Sharper distant building and mast contours; no recovered readable text or identifying detail. Early fallbacks and source softness remain visible."
+  }
+]

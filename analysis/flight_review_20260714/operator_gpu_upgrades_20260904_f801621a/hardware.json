@@ -1,0 +1,16 @@
+{
+  "hardware": {
+    "machine_name": "MacBook Pro",
+    "machine_model": "Mac17,2",
+    "chip_type": "Apple M5",
+    "number_processors": "proc 10:4:6",
+    "physical_memory": "24 GB"
+  },
+  "graphics": {
+    "sppci_model": "Apple M5",
+    "sppci_cores": "10"
+  },
+  "os": "26.1",
+  "arch": "arm64",
+  "command": "system_profiler SPHardwareDataType SPDisplaysDataType -json; hardware identifiers excluded"
+}

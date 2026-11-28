@@ -1,0 +1,317 @@
+{
+  "schema": "m5-v3-validation.v1",
+  "thresholds": {
+    "motion": {
+      "det_cap_duty": 0.02,
+      "det_cap_run": 5,
+      "track_cap_duty": 0.01,
+      "track_cap_run": 3,
+      "churn_ratio_to_baseline": 0.5,
+      "stable_reg_rate": 0.99,
+      "stable_suppression_rate": 0.01,
+      "pan_recovery_frames": 15,
+      "zoom_recovery_frames": 30,
+      "moving_recall": 0.95,
+      "visible_recall": 0.85,
+      "both_recall": 0.75,
+      "max_continuous_miss_s": 0.75,
+      "confirmation_latency_s": 1.2,
+      "gap_reacquire_s": 1.5,
+      "idf1": 0.8,
+      "ids_per_person": 2,
+      "switches_per_run": 1,
+      "dominant_id_share": 0.8
+    },
+    "image": {
+      "contrast_gain": 0.15,
+      "cnr_gain": 0.15,
+      "acutance_gain": 0.1,
+      "novel_edge_rate": 0.005,
+      "supported_added_energy": 0.95,
+      "added_energy_floor_per_pixel": 0.5,
+      "low_energy_ssim": 0.98,
+      "true_clip_rise_pp": 0.0,
+      "highlight_headroom_tolerance_pp": 0.0,
+      "flat_clip_texture_rms": 0.6,
+      "flat_clip_texture_rise": 0.1,
+      "flat_clip_min_pixels": 64,
+      "shadow_rise_pp": 0.001,
+      "stable_ssim": 0.92,
+      "superres_ssim": 0.98,
+      "superres_psnr_db": 35.0
+    }
+  },
+  "scenes": [
+    {
+      "name": "human_sequence",
+      "file": "stream_20260714_201336_attempt1.mp4",
+      "start_s": 32.0,
+      "quick_frames": 540,
+      "purpose": "Two people; full acceptance window is local 32-110 seconds."
+    },
+    {
+      "name": "human_clutter",
+      "file": "stream_20260714_201336_attempt1.mp4",
+      "start_s": 25.0,
+      "quick_frames": 300,
+      "purpose": "Mixed trees, roofs, roads and approach motion."
+    },
+    {
+      "name": "stable_wide",
+      "file": "stream_20260714_195336_attempt1.mp4",
+      "start_s": 300.0,
+      "quick_frames": 300,
+      "purpose": "Stable control; useful imagery must not be overprocessed."
+    },
+    {
+      "name": "soft_telephoto",
+      "file": "stream_20260714_191345_attempt1.mp4",
+      "start_s": 495.0,
+      "quick_frames": 300,
+      "purpose": "Start of the audited 138-second haze and softness interval."
+    },
+    {
+      "name": "rapid_pan_zoom",
+      "file": "stream_20260714_192339_attempt1.mp4",
+      "start_s": 150.0,
+      "quick_frames": 300,
+      "purpose": "Hard camera transition and registration recovery."
+    },
+    {
+      "name": "highlight_transition",
+      "file": "stream_20260714_200336_attempt1.mp4",
+      "start_s": 116.0,
+      "quick_frames": 300,
+      "purpose": "Sky sweep containing the measured bright-clipping peak."
+    }
+  ],
+  "source_verification": {
+    "schema": "m5.flight-source-verification.v1",
+    "catalog": "/Users/randyblasik/Documents/Drone_EnhancedVision/testdata/flight_scenes/2026-07-14.json",
+    "full_hash": false,
+    "ok": true,
+    "sources": [
+      {
+        "source": "seg_191345",
+        "role": "canonical",
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_191345_attempt1.mp4",
+        "exists": true,
+        "expected_bytes": 358895612,
+        "expected_sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744",
+        "actual_bytes": 358895612,
+        "size_ok": true
+      },
+      {
+        "source": "seg_192339",
+        "role": "canonical",
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_192339_attempt1.mp4",
+        "exists": true,
+        "expected_bytes": 408065138,
+        "expected_sha256": "499add8093ab589e5b050cb7b49ca3bc16b5ee35fc201765c0371f8fb7541851",
+        "actual_bytes": 408065138,
+        "size_ok": true
+      },
+      {
+        "source": "seg_193338",
+        "role": "canonical",
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_193338_attempt1.mp4",
+        "exists": true,
+        "expected_bytes": 449967995,
+        "expected_sha256": "c3e102b5f607d139811ca0d50f8bf362d5a0f8aa61a4358fa2e8f84bc9f40419",
+        "actual_bytes": 449967995,
+        "size_ok": true
+      },
+      {
+        "source": "seg_194336",
+        "role": "canonical",
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_194336_attempt1.mp4",
+        "exists": true,
+        "expected_bytes": 455310717,
+        "expected_sha256": "2507c542ab029d1db69ef8ca60b73c4634b4dd9b0aa40fb7e31de6106cdb5a23",
+        "actual_bytes": 455310717,
+        "size_ok": true
+      },
+      {
+        "source": "seg_195336",
+        "role": "canonical",
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_195336_attempt1.mp4",
+        "exists": true,
+        "expected_bytes": 457650637,
+        "expected_sha256": "5096d8eed9c12d8905e0c484aa356598eb9f56534b172102ac37a94d19ff8ba6",
+        "actual_bytes": 457650637,
+        "size_ok": true
+      },
+      {
+        "source": "seg_200336",
+        "role": "canonical",
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_200336_attempt1.mp4",
+        "exists": true,
+        "expected_bytes": 483337480,
+        "expected_sha256": "d2bf09908553f25abae626e7b837cf430dbca73f7a574c455c0bf099c303c228",
+        "actual_bytes": 483337480,
+        "size_ok": true
+      },
+      {
+        "source": "seg_201336",
+        "role": "canonical",
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_201336_attempt1.mp4",
+        "exists": true,
+        "expected_bytes": 145909867,
+        "expected_sha256": "838ac1ed6045a9c72ae5faa6887ff90963697d28d193f60cb0cb496cd6422682",
+        "actual_bytes": 145909867,
+        "size_ok": true
+      }
+    ]
+  },
+  "synthetic": {
+    "honest_contrast_gain": 0.17647058823529416,
+    "honest_acutance_gain": 0.3939364425788121,
+    "honest_novel_edge_rate": 0.001896701388888889,
+    "fake_novel_edge_rate": 0.003120659722222222,
+    "tiny_added_energy_per_pixel": 0.0,
+    "tiny_structural_ssim": 1.0,
+    "material_fake_supported_energy": 0.7979518485083688,
+    "highlight_true_clip_raw": 0.5,
+    "highlight_true_clip_honest": 0.0,
+    "highlight_flat_texture_honest": 0.060375723987817764,
+    "highlight_flat_texture_fake": 5.4685492515563965
+  },
+  "july14_replay": [
+    {
+      "name": "human_sequence",
+      "available": true,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_201336_attempt1.mp4",
+      "start_s": 32.0,
+      "frames": 60,
+      "sharpness_median": 4562.57666015625,
+      "contrast_median": 154.0,
+      "true_clip_fraction_max": 0.004756944444444445,
+      "motion_mad_median": 1.0750347222222223,
+      "decode_checksum": 423381608
+    },
+    {
+      "name": "human_clutter",
+      "available": true,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_201336_attempt1.mp4",
+      "start_s": 25.0,
+      "frames": 60,
+      "sharpness_median": 4577.116943359375,
+      "contrast_median": 153.0,
+      "true_clip_fraction_max": 0.0003993055555555556,
+      "motion_mad_median": 0.8777256944444445,
+      "decode_checksum": 423076248
+    },
+    {
+      "name": "stable_wide",
+      "available": true,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_195336_attempt1.mp4",
+      "start_s": 300.0,
+      "frames": 60,
+      "sharpness_median": 414.6240539550781,
+      "contrast_median": 90.0,
+      "true_clip_fraction_max": 0.00043402777777777775,
+      "motion_mad_median": 0.7933333333333333,
+      "decode_checksum": 528530313
+    },
+    {
+      "name": "soft_telephoto",
+      "available": true,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_191345_attempt1.mp4",
+      "start_s": 495.0,
+      "frames": 60,
+      "sharpness_median": 311.2111053466797,
+      "contrast_median": 77.0,
+      "true_clip_fraction_max": 0.0,
+      "motion_mad_median": 5.615243055555555,
+      "decode_checksum": 442875081
+    },
+    {
+      "name": "rapid_pan_zoom",
+      "available": true,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_192339_attempt1.mp4",
+      "start_s": 150.0,
+      "frames": 60,
+      "sharpness_median": 4258.39990234375,
+      "contrast_median": 157.0,
+      "true_clip_fraction_max": 0.0036805555555555554,
+      "motion_mad_median": 21.590711805555557,
+      "decode_checksum": 446539935
+    },
+    {
+      "name": "highlight_transition",
+      "available": true,
+      "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_200336_attempt1.mp4",
+      "start_s": 116.0,
+      "frames": 60,
+      "sharpness_median": 3103.5084228515625,
+      "contrast_median": 151.0,
+      "true_clip_fraction_max": 0.0060416666666666665,
+      "motion_mad_median": 17.958211805555557,
+      "decode_checksum": 484427284
+    }
+  ],
+  "warnings": [
+    "candidate motion JSON not supplied; motion release gates not evaluated",
+    "transition annotations not supplied; suppression/recovery gates not evaluated",
+    "human 5Hz annotations not supplied; target retention/ID gates not evaluated",
+    "image manifest not supplied; image utility/honesty gates not evaluated"
+  ],
+  "failures": [],
+  "status": "PASS_NON_RELEASE",
+  "provenance": {
+    "files": {
+      "validator": {
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/m5_v3_validation.py",
+        "bytes": 55643,
+        "sha256": "04c9c77d1ee6cd20264556c77f0834fa0aac4692bfe16b57320c008dcccad82f"
+      },
+      "flight_catalog": {
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/testdata/flight_scenes/2026-07-14.json",
+        "bytes": 20429,
+        "sha256": "5b1f2cf5b08e03f5b1f33ec97d445d208636b521dc3919e903132c3cf79251f1"
+      }
+    },
+    "sources": [
+      {
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_191345_attempt1.mp4",
+        "bytes": 358895612,
+        "sha256": "709b4a741d9ff446f0c72a9d454b9e2d554529d5c765265c506f383bc2e9b744"
+      },
+      {
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_192339_attempt1.mp4",
+        "bytes": 408065138,
+        "sha256": "499add8093ab589e5b050cb7b49ca3bc16b5ee35fc201765c0371f8fb7541851"
+      },
+      {
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_193338_attempt1.mp4",
+        "bytes": 449967995,
+        "sha256": "c3e102b5f607d139811ca0d50f8bf362d5a0f8aa61a4358fa2e8f84bc9f40419"
+      },
+      {
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_194336_attempt1.mp4",
+        "bytes": 455310717,
+        "sha256": "2507c542ab029d1db69ef8ca60b73c4634b4dd9b0aa40fb7e31de6106cdb5a23"
+      },
+      {
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_195336_attempt1.mp4",
+        "bytes": 457650637,
+        "sha256": "5096d8eed9c12d8905e0c484aa356598eb9f56534b172102ac37a94d19ff8ba6"
+      },
+      {
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_200336_attempt1.mp4",
+        "bytes": 483337480,
+        "sha256": "d2bf09908553f25abae626e7b837cf430dbca73f7a574c455c0bf099c303c228"
+      },
+      {
+        "path": "/Users/randyblasik/Documents/Drone_EnhancedVision/recordings/research_stream_20260714_191345/stream_20260714_201336_attempt1.mp4",
+        "bytes": 145909867,
+        "sha256": "838ac1ed6045a9c72ae5faa6887ff90963697d28d193f60cb0cb496cd6422682"
+      }
+    ],
+    "runtime": {
+      "python": "3.11.14 (main, Oct  9 2025, 16:16:55) [Clang 17.0.0 (clang-1700.6.3.2)]",
+      "opencv": "4.13.0",
+      "numpy": "2.4.2"
+    }
+  }
+}

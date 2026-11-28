@@ -1,0 +1,22 @@
+[selftest] PASS raw input remains byte-identical
+[selftest] PASS neutral profile is exact passthrough
+[selftest] PASS output geometry and type preserved
+[selftest] PASS enhanced frame is explicitly not source truth
+[selftest] PASS source clipping is reported
+[selftest] PASS highlight shoulder engages: 0.620
+[selftest] PASS highlight display clipping >=235 materially reduced: reduction=99.3%
+[selftest] PASS flat clipped sky remains texture-free: std=0.000
+[selftest] PASS shoulder does not increase clipped pixels
+[selftest] PASS persistent haze engages bounded dehaze: conf=0.983 apply=0.020
+[selftest] PASS haze display contrast increases modestly: 16.95->17.51
+[selftest] PASS applied haze release remains honestly labeled: Counter({'HAZE_RELEASE': 17, 'HAZE': 12})
+[selftest] PASS scene transition is detected
+[selftest] PASS scene transition clears dehaze immediately
+[selftest] PASS transition hold is exact source truth
+[selftest] PASS soft or low-texture source is warned: SOFT_OR_LOW_TEXTURE
+[selftest] PASS severe softness is not aggressively sharpened: 0.000
+[selftest] PASS fresh soft launch never learns frames 11-45 as GOOD: Counter({'SOFT_OR_LOW_TEXTURE': 35})
+[selftest] PASS deterministic fresh-pipeline output
+[selftest] PASS deterministic action telemetry
+[selftest] 20/20 checks passed
+SELFTEST PASS

@@ -1,0 +1,124 @@
+{
+  "status": "PASS_LOCAL_GPU_RTMP_REHEARSAL",
+  "created_utc": "2026-09-05T00:34:14.151173+00:00",
+  "baseline_commit": "7dde0d17079030590fcf767dbb76947c5cb8bc7a",
+  "candidate_sha256": {
+    "_09_M5_Fable_MotionISR_Rev3.py": "cbb54ccaa7d2d225f80d9c49952fb9fbd4dc3e94030f12d2db9c261a44c896a5",
+    "app_Launcher_v2.py": "f17e53e8bf3f9359fa9393e0ece3143cedc9d9bad713472cf4654749edd9ebdf",
+    "m5_field_launch.py": "f9280de9ad0b1d5e45d82e1d1d2702c08a95cf030bf4d23f8c6268c89d07e96a",
+    "rtmp_latest.py": "e9021912990e237b7607fbef4ce355b5433f00ba89dbfd5d0c3c92ef61ea7040",
+    "tests/test_field_gpu_launch.py": "b78e1acd0b8a1d3ab6f5f75ed09a3108aaece143872e328d41387c977a64876f",
+    "Start_Tonights_GPU_Launcher.command": "cbb9e490db3d16b47ba7515ca298b7a7fd084b448a5639897d4dd0214249d36b",
+    "Start_MotionISR_GPU_Experimental.command": "1988b9ac468c16da5ead92a4283d66960138648b9c55b4a2d621c25241f62c73",
+    "TONIGHT_GPU.md": "b034d505d9131c2c9af371beaf99bb6674f43716dd8dd281fc24b735adb816e1",
+    "OPERATOR_UPGRADES.md": "59f2e6c3f1b4ff2d55c18a5be4e7e04f0a2e1a64c74d27d0004e4919871ba20b",
+    "AGENTS.md": "90c200e86506c2f8524422cfca5bb2afa4bf9ca23407056e4bc8e7e997362882",
+    "README.md": "0a066484a7562551479354c2ae684394de2fc6e6d552e55b096196b208a00db3",
+    "_11_M5_Fable_SuperRes_Rev3.py": "4e41ee8c884cb1f9052658b7c01dc1f46115781477c0ff85a5d372c651ec0d90"
+  },
+  "hardware": "Apple M5,10GPU/10CPU cores,24GiB unified memory; native arm64 Python3.11/PyTorch2.10/macOS26.1",
+  "unit_tests": 152,
+  "motion_full_selftest": "PASS including S5 MPS parity",
+  "launcher_ui": "PASS; actual Tk launch callback inspected, child spawning intercepted; missions exercised separately",
+  "apps": [
+    {
+      "app": "_09_M5_Fable_MotionISR_Rev3",
+      "unique_frames": 317,
+      "first_elapsed_s": 2.3220815830864012,
+      "last_source_ts": 1788568043.703268,
+      "frame_shape": [
+        1080,
+        1920,
+        3
+      ],
+      "max_read_age_ms": 180.89604377746582,
+      "temporal_calls": 93,
+      "max_temporal_history": 8,
+      "temporal_device": [
+        "mps"
+      ],
+      "quit_elapsed_s": 38.119683874771,
+      "receipt": "rtmp-fixed/gui-_09_M5_Fable_MotionISR_Rev3-rtmp/receipt.json"
+    },
+    {
+      "app": "_12_M5_NightVision_Max_Rev3",
+      "unique_frames": 436,
+      "first_elapsed_s": 1.370516125112772,
+      "last_source_ts": 1788568082.375329,
+      "frame_shape": [
+        1080,
+        1920,
+        3
+      ],
+      "max_read_age_ms": 45.319318771362305,
+      "temporal_calls": 95,
+      "max_temporal_history": 8,
+      "temporal_device": [
+        "cpu"
+      ],
+      "quit_elapsed_s": 38.19530308386311,
+      "receipt": "rtmp-fixed/gui-_12_M5_NightVision_Max_Rev3-rtmp/receipt.json"
+    },
+    {
+      "app": "_11_M5_Fable_SuperRes_Rev4",
+      "unique_frames": 343,
+      "first_elapsed_s": 1.3586065000854433,
+      "last_source_ts": 1788568324.854482,
+      "frame_shape": [
+        1080,
+        1920,
+        3
+      ],
+      "max_read_age_ms": 81.46929740905762,
+      "temporal_calls": 191,
+      "max_temporal_history": 7,
+      "temporal_device": [
+        "cpu"
+      ],
+      "quit_elapsed_s": 42.87678891699761,
+      "receipt": "rtmp-superres-balanced/gui-_11_M5_Fable_SuperRes_Rev4-rtmp/receipt.json"
+    },
+    {
+      "app": "_10_M5_Fable_ImageScout_Rev3",
+      "unique_frames": 502,
+      "first_elapsed_s": 1.1409302083775401,
+      "last_source_ts": 1788568159.641015,
+      "frame_shape": [
+        1080,
+        1920,
+        3
+      ],
+      "max_read_age_ms": 145.6146240234375,
+      "temporal_calls": 92,
+      "max_temporal_history": 8,
+      "temporal_device": [
+        "mps"
+      ],
+      "quit_elapsed_s": 38.088724167086184,
+      "receipt": "rtmp-fixed/gui-_10_M5_Fable_ImageScout_Rev3-rtmp/receipt.json"
+    }
+  ],
+  "motion_reconnect": {
+    "first_recorded_resumed_frame_after_restart_s": 1.3737280368804932,
+    "post_restart_telemetry_rows": 40,
+    "all_records_mps_native_metal": true,
+    "note": "1Hz telemetry bounds observation; not exact radio-link recovery latency"
+  },
+  "superres_gpu": {
+    "actual_backend": "mps",
+    "fallback_used": false,
+    "proof": "rtmp-superres-balanced/qa-superres-output/20260904_203128_72ba2c/milestone_0004_receipt.json"
+  },
+  "cost_usd": 0,
+  "warnings": [
+    "Scope is local1080p RTMP using upscaled derived video, not aircraft/radio path or native night-flight detection acceptance.",
+    "Rev5 full acceptance and selftest failures remain open; featured GPU detector remainsRev3.",
+    "Real-time modes skip frames by design; no every-frame recall claim.",
+    "Temporal quality remains optional and costs processing time. NightVision/SuperRes reserve GPU for reconstruction and use CPU temporal preview.",
+    "Raw re-seed/registration gates and source-support rejection appear in this synthetic low-light fixture; clean runtime does not establish detector recall.",
+    "Disconnect deliberately caused read timeout/packet warnings; resumed MPS processing was independently observed.",
+    "First rehearsal exposed NightVision open-probe retries; shared capture options fixed them in repeated run.",
+    "SuperRes cancels pending unsolved jobs on quit; final quit took about43s from process start after a38s scheduled key.",
+    "Earlier image-quality acceptance remains bounded proxy evidence; this change does not add optical resolution or field performance claims."
+  ]
+}

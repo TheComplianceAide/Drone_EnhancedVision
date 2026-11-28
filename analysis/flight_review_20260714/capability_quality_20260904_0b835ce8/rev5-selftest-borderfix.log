@@ -1,0 +1,28 @@
+[rev5-selftest] MPS trajectory-bank smoke
+[rev5-selftest] {"target_peak_frames": 35, "telemetry": {"blobness_mean": 0.0, "cfar_z_max": 12.209700584411621, "device": "mps", "eligible_cells": 14, "even_support_max": 11.673236846923828, "fallback_reason": "", "fallback_used": false, "frame_uploads": 48, "frames": 48, "hypotheses": 72, "input_kind": "raw_frame", "integration_tau_s": 1.0, "last_step_ms": 9.400249924510717, "max_ready_frames": 47, "odd_support_max": 11.10505485534668, "propagation": "phase_accumulated_integer_transport", "psf_likelihood_max": 0.0, "quality_max": 14.209700584411621, "quality_mean": 0.008540965616703033, "quality_std": 0.2884347140789032, "raw_margin_max": 16.22772789001465, "ready_frames": 47, "runner_far_max": 12.52248764038086, "small_parameter_uploads": 95, "state_reprojections": 0, "state_resets": 0, "stationary_max": 9.881937980651855, "support_margin_max": 18.985509872436523, "support_margin_mean": 1.9266698360443115, "synchronized_steps": 48, "threshold": 3.0}}
+[selftest] deterministic synthetic ISR scene 960x540 frames=400 fps=30 pan=1.15px/f movers=3(delta=10,2-4px) sway=2 noise sigma=2.5 salt=10px/f device=cpu
+[selftest] S1 mover1: coverage=1.000 dominant_id=262 dominant_share=1.000 first_confirm_frame=120
+[selftest] S1 mover2: coverage=1.000 dominant_id=280 dominant_share=1.000 first_confirm_frame=120
+[selftest] S1 mover3: coverage=1.000 dominant_id=282 dominant_share=0.979 first_confirm_frame=120
+[selftest] S1 sway_confirmed_tracks=0 confirmed_fp_per_frame=3.9500 candidates_per_frame=81.98 raw_blobs_per_frame=45.53 motion_px_frac=0.00181 sigma=2.47 reg_frames=399/400
+[selftest] S2 ego-comp OFF: confirmed_fp_per_frame=28.0536 candidates_per_frame=83.34 raw_blobs_per_frame=129.65 motion_px_frac=0.01106 sigma=2.47
+[selftest] S2 vs S1: confirmed_fp 28.0536 vs 3.9500 | sigma 2.47 vs 2.47 | raw_blobs 129.65 vs 45.53
+[selftest] S3 TBD ON : recall=1.000 confirm_latency_frames=[120, 120, 120]
+[selftest] S3 TBD OFF: recall=0.000 confirm_latency_frames=['never', 'never', 'never']
+[selftest] S4 noise step 2.5->7.0 at frame 220: baseline_dets/f=39.78 bound=101.45 peak_after_step=37 reconverged_after=0 frames (sigma 2.47 -> 6.96) confirmed_fp_per_frame=3.6458
+[selftest] S5 MPS parity: coverage=['1.000', '1.000', '1.000'] sway_confirmed_tracks=0 confirmed_fp_per_frame=3.9500 reg_frames=399/400
+[selftest] S6 Rev3 diversity: components=210 dets=48 cells=25 mog_only_dets=0 near_tracks(no/yes)=0/1
+[selftest] S7 transition gates: zoom='ZOOM 1.040x' pan='FAST-PAN 110px'
+[selftest] S8 cap guard: pressure=0.865 sens_scale=0.550 min_floor=50.0
+[selftest] S9 stationary reacquire: blocked=0 matches=1 expired=0 misses=20
+[selftest] S10 RAW fallback: local=0.008/0.0 cut=0.768/75.0 reasons='RAW-CUT 77%'/'RAW-RESEED x10' held='' zoom=HFalse/16 raw=0.194/16.0 scale=2.00 q=0.976/-0.014 gate='RAW-ZOOM 2.00x q=0.98'
+[selftest] S11 TBD coordinates: point=(30.0, 60.0) dets=1 track_reserved=1
+[selftest] S12 telemetry clock: due=[0.0, 1.0, 2.0] reset=True/True period_ms=33.33 every_other_gaps=12
+[selftest] S13 stream stall: before=False after=True stale_age=True
+[selftest] S14 preset default: names=('SMALL-GAME', 'STANDARD', 'VEHICLES', 'SEARCH') cli='search' idx=3 values=(50.0, 0.02, 0.0025, 1.5, 0.5)
+[selftest] wall time 336.3s
+[selftest] FAIL: confirmed FP/frame 3.9500 > 0.02
+[selftest] FAIL: ego-comp OFF should explode false confirms: 28.0536 vs ON 3.9500
+[selftest] FAIL: S4 confirmed FP/frame 3.6458 > 0.05
+[selftest] FAIL: S5 MPS confirmed FP/frame 3.9500 > 0.02 (CPU 3.9500)
+SELFTEST FAIL

@@ -1,0 +1,36 @@
+test_close_does_not_wait_for_stalled_inference (test_astra_oct26.BoundedWorkTests.test_close_does_not_wait_for_stalled_inference) ... ok
+test_continuous_detector_cannot_starve_queued_inspection (test_astra_oct26.BoundedWorkTests.test_continuous_detector_cannot_starve_queued_inspection) ... ok
+test_copy_is_immutable_and_failure_is_visible (test_astra_oct26.BoundedWorkTests.test_copy_is_immutable_and_failure_is_visible) ... ok
+test_gpu_wait_can_be_cancelled_without_running_callback (test_astra_oct26.BoundedWorkTests.test_gpu_wait_can_be_cancelled_without_running_callback) ... ok
+test_one_pending_per_kind_and_no_publish_after_reset (test_astra_oct26.BoundedWorkTests.test_one_pending_per_kind_and_no_publish_after_reset) ... ok
+test_cached_label_cannot_hide_lost_target (test_astra_oct26.SessionTests.test_cached_label_cannot_hide_lost_target) ... ok
+test_click_mapping_excludes_letterbox_and_buttons_work (test_astra_oct26.SessionTests.test_click_mapping_excludes_letterbox_and_buttons_work) ... ok
+test_launcher_requires_mps_and_keeps_original_policy (test_astra_oct26.SessionTests.test_launcher_requires_mps_and_keeps_original_policy) ... ok
+test_live_view_updates_while_research_is_blocked (test_astra_oct26.SessionTests.test_live_view_updates_while_research_is_blocked) ... ok
+test_old_target_label_cannot_populate_new_selection (test_astra_oct26.SessionTests.test_old_target_label_cannot_populate_new_selection) ... ok
+test_signal_loss_invalidates_selection_and_results (test_astra_oct26.SessionTests.test_signal_loss_invalidates_selection_and_results) ... ok
+test_snapshot_failure_is_not_reported_as_saved (test_astra_oct26.SessionTests.test_snapshot_failure_is_not_reported_as_saved) ... ok
+test_three_frame_preview_uses_fixed_source_roi_and_middle_pts (test_astra_oct26.SessionTests.test_three_frame_preview_uses_fixed_source_roi_and_middle_pts) ... ok
+test_best_raw_retains_timestamp_and_rejection_reason (test_astra_oct26.SourceTruthTests.test_best_raw_retains_timestamp_and_rejection_reason) ... ok
+test_detector_receives_native_raw_and_never_chip_labeler (test_astra_oct26.SourceTruthTests.test_detector_receives_native_raw_and_never_chip_labeler) ... ok
+test_expired_loss_requires_selection_even_for_an_exact_match (test_astra_oct26.SourceTruthTests.test_expired_loss_requires_selection_even_for_an_exact_match) ... ok
+test_file_decoder_preserves_nonuniform_pts_and_prompt_close (test_astra_oct26.SourceTruthTests.test_file_decoder_preserves_nonuniform_pts_and_prompt_close) ... FAIL
+test_learned_guard_bounds_delta_and_preserves_clipping (test_astra_oct26.SourceTruthTests.test_learned_guard_bounds_delta_and_preserves_clipping) ... ok
+test_lost_point_cannot_resume_from_a_weak_background_match (test_astra_oct26.SourceTruthTests.test_lost_point_cannot_resume_from_a_weak_background_match) ... ok
+test_low_texture_selection_cannot_claim_follow (test_astra_oct26.SourceTruthTests.test_low_texture_selection_cannot_claim_follow) ... ok
+test_matching_gray_texture_with_wrong_color_is_not_target_identity (test_astra_oct26.SourceTruthTests.test_matching_gray_texture_with_wrong_color_is_not_target_identity) ... ok
+test_moving_patch_loss_and_reentry (test_astra_oct26.SourceTruthTests.test_moving_patch_loss_and_reentry) ... ok
+test_xfeat_geometry_rejects_collapsed_correspondences (test_astra_oct26.SourceTruthTests.test_xfeat_geometry_rejects_collapsed_correspondences) ... ok
+
+======================================================================
+FAIL: test_file_decoder_preserves_nonuniform_pts_and_prompt_close (test_astra_oct26.SourceTruthTests.test_file_decoder_preserves_nonuniform_pts_and_prompt_close)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/randyblasik/Documents/Drone_EnhancedVision/tests/test_astra_oct26.py", line 112, in test_file_decoder_preserves_nonuniform_pts_and_prompt_close
+    self.assertTrue(source.ended)
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 23 tests in 5.280s
+
+FAILED (failures=1)

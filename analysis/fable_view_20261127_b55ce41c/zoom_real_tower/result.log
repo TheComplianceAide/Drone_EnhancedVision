@@ -1,0 +1,3 @@
+new                                frames median=22.1 aligned=100% flat-area noise: one frame 0.80 codes, stack 0.35 codes (7.2 dB)
+no noise correction                frames median=6.5 aligned=100% flat-area noise: one frame 0.80 codes, stack 0.67 codes (1.6 dB)
+no correction, no creep (before)   frames median=6.3 aligned=83% flat-area noise: one frame 0.80 codes, stack 0.66 codes (1.6 dB)
