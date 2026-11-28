@@ -267,7 +267,7 @@ class App:
         if script == "_AstraOct26.py":
             return "AstraOct26"
         mapping = {
-            "_FieldMotionReview.py": "FIELD MOTION REVIEW (Experimental)",
+            "_FieldMotionReview.py": "Field Motion Review (Experimental)",
             "_1_4General_Target_Acquisition_4.py": "GENERAL TRACKER (Rev4)",
             "_12_M5_NightVision_Max_Rev1.py": "M5 NIGHTVISION MAX",
             "_12_M5_NightVision_Max_Rev3.py": "M5 NIGHTVISION MAX V3 (GPU-AWARE 2X SOAK)",

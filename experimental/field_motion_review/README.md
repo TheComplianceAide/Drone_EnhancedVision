@@ -1,6 +1,6 @@
 # Field Motion Review
 
-Open Drone Vision, expand **Advanced experiments**, select **Field Motion Review (Experimental)** and launch it. It uses the same local DJI RTMP relay as the other missions.
+Open Drone Vision, expand **Advanced experiments**, select **Astra Field Motion Review (Experimental)** and launch it. It uses the same local DJI RTMP relay as the other missions.
 
 The viewer keeps the camera feed on the left and uses the right panel for timed motion cues and original source crops. It checks rapid crossings and sustained movement in ordinary light and switches to a search for moving points of light in deep shadows. Automatic cues can include pans, parallax, reflections and lighting changes. They need an original-frame check.
 
